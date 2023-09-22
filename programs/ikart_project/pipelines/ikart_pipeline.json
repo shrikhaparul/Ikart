@@ -1,0 +1,86 @@
+{
+  "pipeline_id": 138,
+  "project_id": 51,
+  "pipeline_name": "ikart_pipeline",
+  "pipeline_cd": null,
+  "pipeline_description": "ikart_pipeline",
+  "is_active": "Y",
+  "tasks_details": {},
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "294",
+      "data": {
+        "label": "294-task_ikart_mysql_mysql"
+      },
+      "position": {
+        "x": 50,
+        "y": 50
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "298",
+      "data": {
+        "label": "298-mysql-bjhj"
+      },
+      "position": {
+        "x": 50,
+        "y": 100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "299",
+      "data": {
+        "label": "299-task_ikart_localserver_mysql"
+      },
+      "position": {
+        "x": 50,
+        "y": 150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "303",
+      "data": {
+        "label": "303-task_xml_mysql"
+      },
+      "position": {
+        "x": 50,
+        "y": 200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "304",
+      "data": {
+        "label": "304-task_excel_csv"
+      },
+      "position": {
+        "x": 50,
+        "y": 250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": null,
+  "created_dttm": "2023-09-22T09:55:40.402Z",
+  "updated_dttm": "2023-09-22T09:55:40.402Z"
+}
