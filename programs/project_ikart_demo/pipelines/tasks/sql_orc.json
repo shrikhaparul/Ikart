@@ -5,7 +5,7 @@
   "task_type": "SQL Execution",
   "sql_execution": {
     "connection_name": "mysql_connection_ikart_varun",
-    "restart": "skip"
+    "restart": "no restart"
   },
   "sql_list": [
     {
