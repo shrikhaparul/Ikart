@@ -1,0 +1,17 @@
+{
+  "task_id": 275,
+  "pipeline_id": 111,
+  "task_name": "sql_orc",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql_connection_ikart_varun",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "select * from example_table;",
+      "table_used_desc": "select"
+    }
+  ]
+}
