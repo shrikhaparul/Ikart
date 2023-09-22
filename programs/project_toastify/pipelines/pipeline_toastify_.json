@@ -1,0 +1,64 @@
+{
+  "pipeline_id": 140,
+  "project_id": 53,
+  "pipeline_name": "pipeline_toastify_",
+  "pipeline_cd": null,
+  "pipeline_description": "pipeline_toastify",
+  "is_active": "Y",
+  "tasks_details": {
+    "task_csv_csv": 0,
+    "task_threshhold": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "311",
+      "data": {
+        "label": "311-task_threshhold"
+      },
+      "position": {
+        "x": 50,
+        "y": 300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "312",
+      "data": {
+        "label": "312-task_csv_csv"
+      },
+      "position": {
+        "x": 50,
+        "y": 350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-312",
+      "source": "0",
+      "target": "312"
+    },
+    {
+      "id": "flow-0-311",
+      "source": "0",
+      "target": "311"
+    }
+  ],
+  "created_dttm": "2023-09-22T09:53:09.627Z",
+  "updated_dttm": "2023-09-22T09:53:09.627Z"
+}
