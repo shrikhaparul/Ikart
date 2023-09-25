@@ -1,0 +1,9 @@
+{
+  "is_active": "Y",
+  "id": 0,
+  "pipeline_id": 120,
+  "task_name": "s3csv_to_mysql",
+  "task_description": "ingest s3 csv file to mysql ",
+  "task_type": "Ingestion",
+  "task_sequence": "1"
+}
