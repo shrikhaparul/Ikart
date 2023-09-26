@@ -1,0 +1,13 @@
+{
+  "id": null,
+  "pipeline_id": 120,
+  "task_name": "s3parquet_to_mysql",
+  "task_description": "ingest s3 parquet file to mysql ",
+  "task_type": "Ingestion",
+  "task_sequence": "1",
+  "is_active": "Y",
+  "created_by": "admin",
+  "created_dttm": "2023-09-25T05:44:20.000Z",
+  "updated_by": "admin",
+  "updated_dttm": "2023-09-25T05:55:51.000Z"
+}
