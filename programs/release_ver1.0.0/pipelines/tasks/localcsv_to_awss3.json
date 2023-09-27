@@ -1,0 +1,9 @@
+{
+  "is_active": "Y",
+  "id": 0,
+  "pipeline_id": 120,
+  "task_name": "localcsv_to_awss3",
+  "task_description": "ingest data from local csv file to s3 bucket.",
+  "task_type": "Ingestion",
+  "task_sequence": "3"
+}
