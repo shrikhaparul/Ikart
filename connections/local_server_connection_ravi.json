@@ -1,0 +1,10 @@
+{
+  "project_id": 47,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "local_server_connection_ravi",
+  "connection_details": {
+    "file_name": "sales_data1.csv",
+    "file_path": "/home/rperuman/src_files/"
+  }
+}
