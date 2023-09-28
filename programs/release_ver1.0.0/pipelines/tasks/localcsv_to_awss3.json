@@ -1,0 +1,55 @@
+{
+  "id": 319,
+  "project_name": "release_ver1.0.0",
+  "pipeline_name": "test_for_s3",
+  "project_id": 48,
+  "pipeline_id": 120,
+  "task_name": "localcsv_to_awss3",
+  "task_description": "ingest data from local csv file to s3 bucket.",
+  "task_type": "Ingestion",
+  "task_sequence": "3",
+  "source": "Local Server",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "admin",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_data.csv",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "escape_char": null,
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local_server_connection"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "csv_from_target.csv",
+      "file_path": "test/",
+      "file_type": "csv",
+      "operation": "replace",
+      "quote_char": "\"",
+      "escape_char": "\\",
+      "parameter_type": "AWS S3",
+      "connection_name": "connection_for_s3",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
