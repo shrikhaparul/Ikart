@@ -1,0 +1,13 @@
+{
+  "id": null,
+  "pipeline_id": 122,
+  "task_name": "csv_to_sqlserver",
+  "task_description": "inserts csv data to mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "2",
+  "is_active": "Y",
+  "created_by": "admin",
+  "created_dttm": "2023-09-28T09:48:23.000Z",
+  "updated_by": "admin",
+  "updated_dttm": "2023-09-28T09:49:17.000Z"
+}
