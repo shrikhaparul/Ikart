@@ -1,0 +1,100 @@
+{
+  "pipeline_id": 140,
+  "project_id": 53,
+  "pipeline_name": "pipeline_toastify_",
+  "pipeline_cd": null,
+  "pipeline_description": "pipeline_toastify1",
+  "is_active": "Y",
+  "tasks_details": {
+    "task_csv_csv": 0,
+    "task_threshhold": 0
+  },
+  "nodes": [
+    {
+      "id": "324",
+      "data": {
+        "label": "324-mm_Mmm89@"
+      },
+      "position": {
+        "x": 50,
+        "y": 950
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "316",
+      "data": {
+        "label": "316-.,mnbn"
+      },
+      "position": {
+        "x": 50,
+        "y": 900
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "314",
+      "data": {
+        "label": "314-lkn,jbm"
+      },
+      "position": {
+        "x": 50,
+        "y": 850
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "312",
+      "data": {
+        "label": "312-task_csv_csv"
+      },
+      "position": {
+        "x": 50,
+        "y": 800
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "311",
+      "data": {
+        "label": "311-task_threshhold"
+      },
+      "position": {
+        "x": 50,
+        "y": 750
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-311",
+      "source": "0",
+      "target": "311"
+    },
+    {
+      "id": "flow-0-312",
+      "source": "0",
+      "target": "312"
+    }
+  ],
+  "created_dttm": "2023-09-28T05:33:27.272Z",
+  "updated_dttm": "2023-09-28T05:33:27.272Z"
+}
