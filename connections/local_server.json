@@ -1,0 +1,10 @@
+{
+  "project_id": 49,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "local server",
+  "connection_details": {
+    "file_name": "",
+    "file_path": "/home/shilpi/data/"
+  }
+}
