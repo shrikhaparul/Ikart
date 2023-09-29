@@ -1,0 +1,13 @@
+{
+  "id": 49,
+  "program_id": 249,
+  "project_name": "IMR",
+  "project_description": "This project deals with medical related transactions of IMR customers",
+  "project_manager": "hg",
+  "project_lead": "Priyankahht",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "created_dttm": "2023-09-28T09:40:03.000Z",
+  "updated_by": "rperuman",
+  "updated_dttm": "2023-09-29T07:02:07.000Z"
+}
