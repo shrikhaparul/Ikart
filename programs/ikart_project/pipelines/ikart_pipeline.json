@@ -1,0 +1,158 @@
+{
+  "pipeline_id": 138,
+  "project_id": 51,
+  "pipeline_name": "ikart_pipeline",
+  "pipeline_cd": null,
+  "pipeline_description": "ikart_pipeline",
+  "is_active": "Y",
+  "tasks_details": {
+    "kjkbhvju": [
+      "task_ikart_localserver_mysql"
+    ],
+    "task_xml_mysql": 0,
+    "task_excel_csv": [
+      "task_ikart_localserver_mysql"
+    ],
+    "task_ikart_mysql_mysql": 0,
+    "task_ikart_localserver_mysql": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "329",
+      "data": {
+        "label": "329-sql_exc"
+      },
+      "position": {
+        "x": 50,
+        "y": 400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "327",
+      "data": {
+        "label": "327-multiple_to_single"
+      },
+      "position": {
+        "x": 50,
+        "y": 350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "313",
+      "data": {
+        "label": "313-kjkbhvju"
+      },
+      "position": {
+        "x": 50,
+        "y": 300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "304",
+      "data": {
+        "label": "304-task_excel_csv"
+      },
+      "position": {
+        "x": 50,
+        "y": 250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "303",
+      "data": {
+        "label": "303-task_xml_mysql"
+      },
+      "position": {
+        "x": 50,
+        "y": 200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "299",
+      "data": {
+        "label": "299-task_ikart_localserver_mysql"
+      },
+      "position": {
+        "x": 50,
+        "y": 150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "298",
+      "data": {
+        "label": "298-mysql-bjhj"
+      },
+      "position": {
+        "x": 50,
+        "y": 100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "294",
+      "data": {
+        "label": "294-task_ikart_mysql_mysql"
+      },
+      "position": {
+        "x": 50,
+        "y": 50
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-294",
+      "source": "0",
+      "target": "294"
+    },
+    {
+      "id": "flow-0-299",
+      "source": "0",
+      "target": "299"
+    },
+    {
+      "id": "flow-0-303",
+      "source": "0",
+      "target": "303"
+    },
+    {
+      "id": "flow-299-304",
+      "source": "299",
+      "target": "304"
+    },
+    {
+      "id": "flow-299-313",
+      "source": "299",
+      "target": "313"
+    }
+  ],
+  "created_dttm": "2023-09-29T11:37:19.070Z",
+  "updated_dttm": "2023-09-29T11:37:19.070Z"
+}
