@@ -1,0 +1,54 @@
+{
+  "id": 326,
+  "project_name": "ikart_project",
+  "pipeline_name": "test_split_functionality",
+  "project_id": 51,
+  "pipeline_id": 146,
+  "task_name": "one_to_multiple",
+  "task_description": "single file can be able to split into multiple",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "admin",
+  "task": {
+    "source": {
+      "source_type": "parquet_read",
+      "header": "Y",
+      "encoding": null,
+      "delimiter": null,
+      "file_name": "user.parquet",
+      "file_path": "/home/madhu/Ingestion_code2/parquet_files/",
+      "file_type": "parquet",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "registration_dttm,id,first_name,last_name,email,gender,ip_address,cc,country,birthdate,salary,title,comments",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "ikart_local_server_connection"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "index": "True",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "csvsplitfile.csv",
+      "file_path": "home/madhu/ingestion_code2/parquet_files/",
+      "file_type": "csv",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "ikart_local_server_connection",
+      "target_max_record_count": "500"
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
