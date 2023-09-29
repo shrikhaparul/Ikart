@@ -1,0 +1,32 @@
+{
+  "task_id": 281,
+  "pipeline_id": 111,
+  "task_name": "sql_orc",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql_connection_ikart_varun",
+    "restart": "skip"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "CREATE DATABASE IF NOT EXISTS testDB;\n",
+      "table_used_desc": "create"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "select * from tbl_test;",
+      "table_used_desc": "create"
+    },
+    {
+      "seq_no": 3,
+      "sql_query": "CREATE TABLE products IF NOT EXISTS(product_id INT PRIMARY KEY,\nproduct_price DECIMAL(10, 2)\n);",
+      "table_used_desc": "create"
+    },
+    {
+      "seq_no": 4,
+      "sql_query": "CREATE TABLE order_items  IF NOT EXISTS (\norder_item_id INT PRIMARY KEY,\n    order_id INT,\n    product_id INT,\n    quantity INT,\n    FOREIGN KEY (order_id) REFERENCES orders(order_id),\n    FOREIGN KEY (product_id) REFERENCES products(product_id)\n);",
+      "table_used_desc": "create"
+    }
+  ]
+}
