@@ -1,0 +1,50 @@
+{
+  "id": 318,
+  "project_name": "ing_kart_project_1",
+  "pipeline_name": "ing_kart_project_1_123",
+  "project_id": 49,
+  "pipeline_id": 122,
+  "task_name": "ing_kart_task_1",
+  "task_description": "ing_kart_task_1",
+  "task_type": "Ingestion",
+  "task_sequence": "1",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "admin",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales.csv",
+      "file_path": "/home/shilpi/data/",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local server"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "replace",
+      "table_name": "data_test",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
