@@ -1,0 +1,17 @@
+{
+  "task_id": 285,
+  "pipeline_id": 134,
+  "task_name": "sql_executiontask1",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql_connection_ikart_varun",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "select *",
+      "table_used_desc": "select"
+    }
+  ]
+}
