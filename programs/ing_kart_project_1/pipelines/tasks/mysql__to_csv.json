@@ -1,0 +1,44 @@
+{
+  "id": 319,
+  "project_name": "ing_kart_project_1",
+  "pipeline_name": "ing_kart_project_1_123",
+  "project_id": 49,
+  "pipeline_id": 122,
+  "task_name": "mysql_ to_csv",
+  "task_description": "moving data in files",
+  "task_type": "Ingestion",
+  "task_sequence": "2",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "admin",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from data_test",
+      "schema": "ikart",
+      "chunk_size": 1000,
+      "table_name": "data_test",
+      "parameter_type": "MySQL",
+      "select_columns": "",
+      "connection_name": "mysql"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "data_test.csv",
+      "file_path": "/home/shilpi/data/",
+      "file_type": "csv",
+      "parameter_type": "Local Server",
+      "connection_name": "local server",
+      "target_max_record_count": 2823
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
