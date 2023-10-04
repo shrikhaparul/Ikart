@@ -1,0 +1,26 @@
+{
+  "pipeline_id": 149,
+  "project_id": 60,
+  "pipeline_name": "organization_pipeline",
+  "pipeline_cd": null,
+  "pipeline_description": "organization_pipeline",
+  "is_active": "Y",
+  "tasks_details": {},
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    }
+  ],
+  "edges": null,
+  "created_dttm": "2023-10-04T11:27:19.187Z",
+  "updated_dttm": "2023-10-04T11:27:19.187Z"
+}
