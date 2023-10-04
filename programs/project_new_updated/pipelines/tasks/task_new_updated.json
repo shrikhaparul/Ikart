@@ -1,0 +1,40 @@
+{
+  "id": 335,
+  "project_name": "project_new_updated",
+  "pipeline_name": "pipeline_new_updated",
+  "project_id": 56,
+  "pipeline_id": 147,
+  "task_name": "task_new_updated",
+  "task_description": "task_new_updated",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select id, full_name, login_id, password from tbl_user",
+      "schema": "public",
+      "chunk_size": 1000,
+      "table_name": "tbl_user",
+      "parameter_type": "MySQL",
+      "select_columns": "id,full_name,login_id,password",
+      "connection_name": "mysql_updated-conn"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "create",
+      "table_name": "tbl_new123",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "ikart",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
