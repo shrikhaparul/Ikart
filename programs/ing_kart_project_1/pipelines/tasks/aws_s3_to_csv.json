@@ -1,0 +1,50 @@
+{
+  "id": 320,
+  "project_name": "ing_kart_project_1",
+  "pipeline_name": "ing_kart_project_1_123",
+  "project_id": 49,
+  "pipeline_id": 122,
+  "task_name": "aws_s3_to_csv",
+  "task_description": "checking s3 files",
+  "task_type": "Ingestion",
+  "task_sequence": "3",
+  "source": "AWS S3",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "admin",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "icpc-1999.csv",
+      "file_path": "",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "AWS S3",
+      "select_columns": null,
+      "connection_name": "aws_s3"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "create",
+      "table_name": "test_s3",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
