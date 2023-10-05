@@ -17,6 +17,14 @@ from dotenv import load_dotenv
 
 JSON = ".json"
 
+script_directory = os.path.dirname(os.path.abspath(__file__))
+logging.basicConfig(level=logging.INFO, stream=sys.stdout,
+                    format="%(asctime)s | %(name)-10s | %(processName)-12s | "
+                              "%(funcName)-22s | %(levelname)-5s | %(message)s")
+
+# Construct the path to config.json using the script's directory
+config_file_path = os.path.join(script_directory, 'config.json')
+
 def setup_logger(logger_name, log_file, level=logging.INFO):
     """Function to initiate logging for framework by creating logger objects"""
     try:
@@ -201,8 +209,9 @@ if __name__ == "__main__":
         task_name = args.task_name
         restart = args.restart
         RUNID= str(uuid.uuid4())
+
         try:
-            with open("config.json",'r', encoding='utf-8') as jsonfile:
+            with open(config_file_path,'r', encoding='utf-8') as jsonfile:
                 # reading paths json data started
                 config_paths = json.load(jsonfile)
                 # reading paths json data completed
