@@ -221,6 +221,8 @@ def write(json_data,datafram,counter,config_file_path,task_id,run_id,paths_data,
         task_logger.info("ingest data to postgres db initiated")
         _ ,conn_details = establish_conn_for_postgres(json_data,'target',
                                                      config_file_path)
+         # Remove spaces on the right of column names
+        datafram = datafram.rename(columns=lambda x: x.strip())
         status="Pass"
         if target["operation"] == "create":
             if counter == 1:
