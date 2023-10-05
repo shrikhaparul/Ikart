@@ -2,10 +2,64 @@
 import logging
 import os
 from datetime import datetime
+import xml.etree.ElementTree as ET
 import pandas as pd
 from utility import replace_date_placeholders
 
 task_logger = logging.getLogger('task_logger')
+
+def split_large_xml_file(input_file, output_directory, records_per_split, ext):
+    """To split the large xml file to multiple files"""
+    default_encoding = 'utf-8'
+
+    # Parse the input XML file
+    tree = ET.parse(input_file)
+    root = tree.getroot()
+    records = list(root)  # Assuming each element is a record
+
+    split_number = 1
+    record_count = 0
+
+    if records_per_split <= 0:
+        # If records_per_split is zero or negative, write the entire XML content to one file
+        split_file_path = os.path.join(output_directory, f"{ext}")
+        tree.write(split_file_path, encoding=default_encoding)
+    else:
+        # Initialize an empty list to hold the records for each split
+        split_records = []
+
+        for record in records:
+            split_records.append(record)
+            record_count += 1
+
+            if record_count >= records_per_split:
+                # Create a new XML tree and add the records to it
+                split_tree = ET.ElementTree(ET.Element("root"))
+                split_root = split_tree.getroot()
+                split_root.extend(split_records)
+
+                # Write the XML content to a split file
+                split_file_path = os.path.join(output_directory, 
+                                               f"{output_directory}_part_000{split_number}{ext}")
+                split_tree.write(split_file_path, encoding=default_encoding)
+
+                # Reset the record count and clear the split_records list
+                record_count = 0
+                split_records = []
+                split_number += 1
+
+        # Write any remaining records to the final split file
+        if record_count > 0:
+            split_tree = ET.ElementTree(ET.Element("root"))
+            split_root = split_tree.getroot()
+            split_root.extend(split_records)
+
+            split_file_path = os.path.join(output_directory, f"{output_directory}_part_000{split_number}{ext}")
+            split_tree.write(split_file_path, encoding=default_encoding)
+
+    # # Remove the original input XML file
+    # os.remove(input_file)
+
 
 def write(json_data: dict, dataframe, counter) -> bool:
     """ function for writing to XML """
