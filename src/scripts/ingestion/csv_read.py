@@ -45,7 +45,7 @@ def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
         sys.path.insert(0, engine_code_path)
         module = importlib.import_module("engine_code")
         audit = getattr(module, "audit")
-        if all_files == []:
+        if not all_files:
             task_logger.error("'%s' SOURCE FILE not found in the location",
             source["file_name"])
             write_to_txt(task_id,'FAILED',file_path)
@@ -64,9 +64,9 @@ def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
             else source["escape_char"]
             default_escapechar = "\t" if default_escapechar == "\\t" else default_escapechar
             default_escapechar = "\n" if default_escapechar == "\\n" else default_escapechar
-            default_alias_cols = None if source["alias_columns"] in {None,"None","none",""} else\
+            default_alias_cols = None if source["alias_columns"] in (None,"None","none","") else\
             list(source["alias_columns"].split(","))
-            default_encoding = "utf-8" if source["encoding"]in {None,"None","none",""} else\
+            default_encoding = "utf-8" if source["encoding"]in (None,"None","none","") else\
             source["encoding"]
             for file in all_files:
                 data = pd.read_csv(filepath_or_buffer = file,encoding=default_encoding,
@@ -75,9 +75,9 @@ def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
                 iter_value)
                 row_count = data.shape[0]-default_skip_footer
                 count1 = 0
-                source["select_columns"] = None if source["select_columns"] in {None,"None","none",""} else \
+                source["select_columns"] = None if source["select_columns"] in (None,"None","none","") else \
                 list(source["select_columns"].split(","))
-                source['alias_columns'] = None if source["alias_columns"] in {None,"None","none",""} else\
+                source['alias_columns'] = None if source["alias_columns"] in (None,"None","none","") else\
                 list(source["alias_columns"].split(","))
                 if source["select_columns"] is not None and \
                 source["alias_columns"] is not None:
@@ -87,10 +87,10 @@ def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
                         use_header = True
                     else:
                         use_header = False
-                    default_select_cols =list(source["select_columns"].split(","))
+                    # default_select_cols =list(source["select_columns"].split(","))
                     for csv_chunk in pd.read_csv(file, header=0 if  use_header else  None,
                                                  chunksize=source["chunk_size"], names = default_alias_cols,
-                        sep = default_delimiter, usecols = default_select_cols,
+                        sep = default_delimiter, usecols = source["select_columns"],
                         engine='python',
                         nrows = row_count,
                         # skiprows = default_skip_header,
@@ -98,7 +98,7 @@ def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
                         encoding = default_encoding
                         ):
                         if not use_header:
-                                csv_chunk.columns = list(source["select_columns"].split(","))
+                                csv_chunk.columns =source["select_columns"]
 
                         if default_skip_header > 0:
                             csv_chunk = csv_chunk.iloc[default_skip_header:]
@@ -111,9 +111,9 @@ def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
                         use_header = True
                     else:
                         use_header = False
-                    default_select_cols = list(source["alias_columns"].split(","))
+                    default_select_cols = source["select_columns"]
 
-                    for csv_chunk in pd.read_csv(file, header=0 if  use_header else  None, 
+                    for csv_chunk in pd.read_csv(file, header=0 if  use_header else  None,
                                                 chunksize=source["chunk_size"], names = default_select_cols,
                     sep = default_delimiter, usecols = default_select_cols,
                     nrows = row_count,
@@ -136,10 +136,10 @@ def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
                         use_header = True
                     else:
                         use_header = False
-                    default_select_cols = list(source["alias_columns"].split(","))
+                    # default_select_cols = list(source["alias_columns"].split(","))
                     for csv_chunk in pd.read_csv(file, header=0 if use_header else  None,
                      chunksize=source["chunk_size"], names = default_alias_cols,
-                    sep = default_delimiter, usecols = default_select_cols,
+                    sep = default_delimiter, usecols = source['select_columns'],
                     nrows = row_count,
                     # skiprows = default_skip_header,
                     quotechar = default_quotechar, escapechar = default_escapechar,
