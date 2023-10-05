@@ -6,6 +6,7 @@ import os
 from datetime import datetime
 import pandas as pd
 from sqlalchemy.exc import OperationalError
+import pymysql
 import sqlalchemy
 from sqlalchemy import text
 
@@ -54,6 +55,10 @@ def insert_data(json_data,conn_details,dataframe,sessions):
             dataframe.to_sql(target["table_name"], connection,
             schema = schema,index = False, if_exists = "append")
             task_logger.info(SQLSERVER_LOG_STATEMENT)
+    except pymysql.err.ProgrammingError as error:
+        if 'Incorrect column name' in str(error):
+            task_logger.error("error due to incorrect column name %s", str(error))
+            sys.exit()
     except Exception as error:
         # Rollback the transaction in case of an error
         # sessions.rollback()
@@ -221,6 +226,8 @@ def write(json_data,datafram,counter,config_file_path,task_id,run_id,paths_data,
         task_logger.info("ingest data to sqlserver db initiated")
         _ ,conn_details = establish_conn_for_sqlserver(json_data,'target',
                                                      config_file_path)
+         # Remove spaces on the right of column names
+        datafram = datafram.rename(columns=lambda x: x.strip())
         status="Pass"
         if target["operation"] == "create":
             if counter == 1:
