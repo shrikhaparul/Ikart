@@ -243,7 +243,7 @@ def begin_transaction(paths_data,json_data,config_file_path):
     session = ssession()
     # Start a transaction
     session.begin()
-    task_logger.info("=================================================================")
+    task_logger.info("=========================================")
     task_logger.info("Transaction Started")
     return session
 
@@ -329,7 +329,7 @@ def engine_main(prj_nm,task_id,paths_data,run_id,file_path,iter_value):
                         return False
                 elif target["target_type"] == "aws_s3_write":
                     value=write(json_data, i,config_file_path,task_id,run_id,
-                    paths_data,file_path,iter_value)
+                    paths_data,file_path,iter_value,counter)
                     if value is False:
                         task_failed(task_id,file_path,json_data,run_id,iter_value)
                         return False

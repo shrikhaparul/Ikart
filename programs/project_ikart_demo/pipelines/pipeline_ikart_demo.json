@@ -6,12 +6,32 @@
   "pipeline_description": "pipeline_ikart_demo1",
   "is_active": "Y",
   "tasks_details": {
-    "sql_orc": 0,
-    "task_csvmysql_org": 0,
-    "task_csvmysql_ikartdemo": 0,
+    "sql_orc": [
+      "task_xmlmysql_ikartdemo"
+    ],
+    "sql_orc1": [
+      "task_pamysql_orgrquet"
+    ],
+    "sql_orc3": [
+      "task_csvmysql_org_failure"
+    ],
+    "task_pamysql_orgrquet": 0,
+    "task_xmlmysql_ikartdemo": 0,
     "task_csvmysql_org_failure": 0
   },
   "nodes": [
+    {
+      "id": "283",
+      "data": {
+        "label": "283-sql_orc3"
+      },
+      "position": {
+        "x": 50,
+        "y": 1400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
     {
       "id": "0",
       "data": {
@@ -25,37 +45,25 @@
       "sourcePosition": "right"
     },
     {
-      "id": "275",
+      "id": "282",
       "data": {
-        "label": "275-sql_orc"
+        "label": "282-sql_orc1"
+      },
+      "position": {
+        "x": 50,
+        "y": 1350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "281",
+      "data": {
+        "label": "281-sql_orc"
       },
       "position": {
         "x": 50,
         "y": 1300
-      },
-      "sourcePosition": "right",
-      "targetPosition": "left"
-    },
-    {
-      "id": "260",
-      "data": {
-        "label": "260-task_csvmysql_ikartdemo"
-      },
-      "position": {
-        "x": 50,
-        "y": 1150
-      },
-      "sourcePosition": "right",
-      "targetPosition": "left"
-    },
-    {
-      "id": "262",
-      "data": {
-        "label": "262-task_csvmysql_org"
-      },
-      "position": {
-        "x": 50,
-        "y": 1200
       },
       "sourcePosition": "right",
       "targetPosition": "left"
@@ -71,9 +79,43 @@
       },
       "sourcePosition": "right",
       "targetPosition": "left"
+    },
+    {
+      "id": "260",
+      "data": {
+        "label": "260-task_xmlmysql_ikartdemo"
+      },
+      "position": {
+        "x": 50,
+        "y": 1150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "262",
+      "data": {
+        "label": "262-task_pamysql_orgrquet"
+      },
+      "position": {
+        "x": 50,
+        "y": 1200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
     }
   ],
   "edges": [
+    {
+      "id": "flow-263-283",
+      "source": "263",
+      "target": "283"
+    },
+    {
+      "id": "flow-262-282",
+      "source": "262",
+      "target": "282"
+    },
     {
       "id": "flow-0-260",
       "source": "0",
@@ -90,11 +132,11 @@
       "target": "263"
     },
     {
-      "id": "flow-0-275",
-      "source": "0",
-      "target": "275"
+      "id": "flow-260-281",
+      "source": "260",
+      "target": "281"
     }
   ],
-  "created_dttm": "2023-09-25T07:24:26.919Z",
-  "updated_dttm": "2023-09-25T07:24:26.919Z"
+  "created_dttm": "2023-10-03T10:41:19.270Z",
+  "updated_dttm": "2023-10-03T10:41:19.270Z"
 }

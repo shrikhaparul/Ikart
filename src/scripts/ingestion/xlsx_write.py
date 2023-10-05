@@ -7,6 +7,39 @@ from utility import replace_date_placeholders
 
 task_logger = logging.getLogger('task_logger')
 
+def split_large_excel_file(input_file, output_directory, rows_per_split, ext):
+    """splitting the large excel files into multiple files"""
+    # Read the Excel file into a DataFrame
+    df = pd.read_excel(input_file)
+
+    split_number = 1
+    row_count = 0
+
+    if rows_per_split <= 0:
+        # If rows_per_split is zero or negative, write the entire Excel content to one file
+        output_file_path = os.path.join(output_directory, f"{ext}")
+        df.to_excel(output_file_path, index=False)
+    else:
+        start_row = 0
+
+        while start_row < len(df):
+            end_row = start_row + rows_per_split
+            if end_row > len(df):
+                end_row = len(df)
+
+            # Create a new DataFrame with the selected rows
+            split_df = df[start_row:end_row]
+
+            # Write the DataFrame to a split Excel file
+            output_file_path = os.path.join(output_directory, 
+                                            f"{output_directory}_part_000{split_number}{ext}")
+            split_df.to_excel(output_file_path, index=False)
+
+            # Update start_row and split_number
+            start_row = end_row
+            split_number += 1
+    os.remove(input_file)
+
 def write(json_data: dict, dataframe, counter) -> bool:
     """ function for writing to Excel """
     try:
@@ -50,6 +83,3 @@ def write(json_data: dict, dataframe, counter) -> bool:
     except Exception as error:
         task_logger.exception("converting_to_excel() is %s", str(error))
         raise error
-
-
-

@@ -36,21 +36,39 @@ def write_to_txt(task_id,status,file_path):
         raise error
 
 def get_files_from_bucket(conn, bucket_name, path, json_data):
-    '''Function to get the mentioned files from s3'''
-    # List all objects in the bucket
-    response = conn.list_objects_v2(Bucket=bucket_name, Prefix=path)
-    objects = response.get('Contents', [])
+    '''Function to get files from a folder in S3 based on extension'''
     source = json_data['task']['source']
-    if source['file_type'] in {'csv', 'json','excel', 'parquet', 'xml'}:
-        extensions = {'csv': '.csv',
-            'parquet': '.parquet',
-            'excel': '.xlsx',
-            'json': '.json',
-            'xml': '.xml'}
-        # extension = extensions.get(source['file_type'], '')
-    # Filter the objects based on extension mentioned files
-    return [obj['Key'] for obj in objects if obj['Key'].lower().endswith(extensions.get(
-        source['file_type'], ''))]
+    extensions = {
+        'csv': '.csv',
+        'parquet': '.parquet',
+        'excel': '.xlsx',
+        'json': '.json',
+        'xml': '.xml'
+    }
+    if '*' in path:
+        # Handle wildcard path
+        prefix, suffix = path.split('*', 1)  # Split only at the first asterisk
+        response = conn.list_objects_v2(Bucket=bucket_name, Prefix=prefix)
+        objects = response.get('Contents', [])
+
+        # Filter the objects to exclude subfolders and retrieve matching files
+        if suffix == '.*':
+            # Return all files regardless of extension
+            all_files = [obj['Key'] for obj in objects if not obj['Key'].endswith('/')]
+        else:
+            # Return files matching the specified extension
+            all_files = [obj['Key'] for obj in objects if not obj['Key'].endswith('/')
+                         and obj['Key'].lower().endswith(suffix)]
+    else:
+        # Non-wildcard path, just list objects with the specified path
+        response = conn.list_objects_v2(Bucket=bucket_name, Prefix=path)
+        objects = response.get('Contents', [])
+
+        # Filter the objects based on extension mentioned files
+        all_files = [obj['Key'] for obj in objects if obj['Key'].lower().endswith(
+            extensions.get(source['file_type'], ''))]
+    return all_files
+
 
 def get_row_count(conn,bucket_name,file):
     '''Function to get the row count from diiferent file formats'''
@@ -68,22 +86,22 @@ def get_row_count_s3(conn,bucket_name,file_key,file_extension):
     file_content = response['Body'].read()
     if file_extension == 'csv':
         # Count the rows using pandas
-        df = pd.read_csv(BytesIO(file_content))
-        row_count = len(df)
+        data_frame = pd.read_csv(BytesIO(file_content))
+        row_count = len(data_frame)
     elif file_extension == 'excel':
         # Read the Parquet file using pandas
-        df = pd.read_excel(BytesIO(file_content))
-        row_count = len(df)
+        data_frame = pd.read_excel(BytesIO(file_content))
+        row_count = len(data_frame)
     elif file_extension == 'parquet':
         # Read the Parquet file using pandas
-        df = pd.read_parquet(BytesIO(file_content))
-        row_count = len(df)
+        data_frame = pd.read_parquet(BytesIO(file_content))
+        row_count = len(data_frame)
     elif file_extension == 'json':
         # Decode the file content
         # decoded_content = file_content.decode('utf-8')
         # Count the rows using pandas
-        df = pd.read_json(BytesIO(file_content))
-        row_count = len(df)
+        data_frame = pd.read_json(BytesIO(file_content))
+        row_count = len(data_frame)
     elif file_extension == 'zip':
         # Extract the file from the ZIP archive
         zip_archive = zipfile.ZipFile(BytesIO(file_content))
@@ -95,12 +113,12 @@ def get_row_count_s3(conn,bucket_name,file_key,file_extension):
             # Decode the extracted file content
             decoded_content = extracted_file_content.decode('utf-8')
             # Count the rows using pandas
-            df = pd.read_csv(BytesIO(decoded_content))
-            row_count = len(df)
+            data_frame = pd.read_csv(BytesIO(decoded_content))
+            row_count = len(data_frame)
         elif extracted_file_extension == 'parquet':
             # Read the extracted Parquet file using pandas
-            df = pd.read_parquet(BytesIO(extracted_file_content))
-            row_count = len(df)
+            data_frame = pd.read_parquet(BytesIO(extracted_file_content))
+            row_count = len(data_frame)
         else:
             raise ValueError(f"Unsupported file format inside \
                              the ZIP archive: {extracted_file_extension}")
@@ -115,22 +133,20 @@ def read_data_with_or_without_chunk(json_data,src_file,default_header,row_count,
     source = json_data['task']['source']
     default_delimiter = delimiter if "delimiter" not in source else source["delimiter"]
     default_skip_header = skip_header if "skip_header" not in source else source["skip_header"]
-    default_quotechar = quotechar if "quote_char" not in source else source["quote_char"]
-    default_quotechar = '"' if default_quotechar == "" else default_quotechar
-    default_escapechar=escapechar if "escape_char" not in source else source["escape_char"]
+    default_quotechar = quotechar if source["quote_char"] in {None,"None","none",""}  else\
+    source["quote_char"]
+    default_escapechar=escapechar if source["escape_char"] in {None,"None","none",""}  \
+    else source["escape_char"]
     default_escapechar = "\t" if default_escapechar == "\\t" else default_escapechar
     default_escapechar = "\n" if default_escapechar == "\\n" else default_escapechar
-    default_escapechar = None if default_escapechar in ["","None","none"] else default_escapechar
-    default_select_cols = None if "select_columns" not in source else \
+    default_select_cols = None if source["select_columns"] in (None,"None","none","") else\
     list(source["select_columns"].split(","))
-    default_select_cols = None if default_select_cols in ["","None","none"] else default_select_cols
-    default_alias_cols = None if "alias_columns" not in source else \
+    default_alias_cols = None if source["alias_columns"] in (None,"None","none","") else\
     list(source["alias_columns"].split(","))
-    # default_alias_cols = None if default_alias_cols not in source else default_alias_cols
-    default_alias_cols = None if default_alias_cols == "" else default_alias_cols
-    default_encoding = "utf-8" if "encoding" not in source else source["encoding"]
+    default_encoding = "utf-8" if source["encoding"] in (None,"None","none","") else\
+    source["encoding"]
     count1 = 0
-    if source['chunk_size'] == "None":
+    if source['chunk_size'] is None:
         #chunk size must be greater than or equal to one
         if source['file_type'] == 'csv':
             datafram = pd.read_csv(src_file)
@@ -153,7 +169,6 @@ def read_data_with_or_without_chunk(json_data,src_file,default_header,row_count,
         count1 = 1 + count1
         task_logger.info(ITERATION , str(count1))
         task_logger.info("Number of rowes presnt in the above file are %s", datafram.shape[0])
-        task_logger.info("Reading data without using chunk")
     else:
         if source['file_type'] == 'csv':
             for chunk in pd.read_csv(src_file,
@@ -175,7 +190,6 @@ def read_data_with_or_without_chunk(json_data,src_file,default_header,row_count,
             datafram = pd.read_parquet(src_file, engine='auto')
             print("Dtataframe shape is:", datafram.shape)
             yield datafram
-        task_logger.info("Reading data with using chunk")
 
 def read(json_data: dict,config_file_path,task_id,run_id,paths_data,file_path,
          iter_value, skip_header= 0,skip_footer= 0):
@@ -199,12 +213,15 @@ def read(json_data: dict,config_file_path,task_id,run_id,paths_data,file_path,
             audit(json_data, task_id,run_id,'STATUS','FAILED',iter_value)
             sys.exit()
         else:
-            default_skip_header = skip_header if "skip_header" not in source else source["skip_header"]
-            default_skip_footer = skip_footer if "skip_footer" not in source else source["skip_footer"]
-            default_select_cols = None if "select_columns" not in source else \
+            default_skip_header = skip_header if source["skip_header"]\
+            is None else source["skip_header"]
+            default_skip_footer = skip_footer if source["skip_footer"]\
+            is None else source["skip_footer"]
+            default_select_cols = None if source["select_columns"] in (None,"None","none","") else\
             list(source["select_columns"].split(","))
-            default_alias_cols = None if "alias_columns" not in source else \
+            default_alias_cols = None if source["alias_columns"] in (None,"None","none","") else \
             list(source["alias_columns"].split(","))
+            dataframes = []  # List to collect dataframes from all files
             for file in all_files:
                 file_extension = source['file_type']
                 rows_count = get_row_count_s3(conn,bucket_name,file,file_extension)
@@ -223,18 +240,21 @@ def read(json_data: dict,config_file_path,task_id,run_id,paths_data,file_path,
 
                 if default_select_cols is not None and default_alias_cols is not None:
                     default_header = 0
-                    var = read_data_with_or_without_chunk(json_data,buffer,
-                                                          default_header,row_count)
+                    var = list(read_data_with_or_without_chunk(json_data,buffer,
+                                                          default_header,row_count))
                 elif (default_select_cols is not None and default_alias_cols is None) or \
                 (default_select_cols is None and default_alias_cols is not None):
                     default_header = 'infer' if default_alias_cols is None else 0
-                    var = read_data_with_or_without_chunk(json_data,buffer,
-                                                            default_header,row_count)
+                    var = list(read_data_with_or_without_chunk(json_data,buffer,
+                                                            default_header,row_count))
                 elif default_select_cols is None and default_alias_cols is None:
                     default_header ='infer' if default_alias_cols is None else None
-                    var = read_data_with_or_without_chunk(json_data,buffer,
-                                                          default_header,row_count)
-                return var
+                    var = list(read_data_with_or_without_chunk(json_data,buffer,
+                                                          default_header,row_count))
+                dataframes.extend(var)  # Add dataframes to the list
+
+            return dataframes  # Return the list of dataframes
+            # return var
     except Exception as error:
         write_to_txt(task_id,'FAILED',file_path)
         audit(json_data, task_id,run_id,'STATUS','FAILED',iter_value)

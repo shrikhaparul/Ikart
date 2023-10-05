@@ -22,7 +22,7 @@
       "file_name": "sales_data.csv",
       "file_path": "/home/puneeths/sample_data/",
       "file_type": "csv",
-      "chunk_size": 1000,
+      "chunk_size": 3000,
       "quote_char": null,
       "escape_char": null,
       "skip_footer": 0,
@@ -37,15 +37,15 @@
       "header": "Y",
       "encoding": "utf-8",
       "delimiter": ",",
-      "file_name": "tests3csv.csv",
+      "file_name": "csv_to_s3parquet.parquet",
       "file_path": "test/",
-      "file_type": "csv",
+      "file_type": "parquet",
       "operation": "append",
       "quote_char": "\"",
       "escape_char": "\\",
       "parameter_type": "AWS S3",
       "connection_name": "connection_for_s3",
-      "target_max_record_count": null
+      "target_max_record_count": 0
     },
     "data_quality_execution": {
       "pre_check_enable": "N",

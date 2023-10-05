@@ -1,0 +1,27 @@
+{
+  "task_id": 283,
+  "pipeline_id": 111,
+  "task_name": "sql_orc3",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql_connection_ikart_varun",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "SELECT Year, Industry_name_NZSIOC, SUM(CAST(Value AS DECIMAL(10, 2))) AS Total_Value\nFROM tbl_organization\nWHERE Year = 2022\nGROUP BY Year, Industry_name_NZSIOC\nORDER BY Total_Value DESC;\n",
+      "table_used_desc": "insert"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "SELECT Year, Industry_name_NZSIOC, SUM(CAST(Value AS DECIMAL(10, 2))) AS Total_Value\nFROM tbl_organization\nGROUP BY Year, Industry_name_NZSIOC\nORDER BY Total_Value DESC\nLIMIT 1;\n",
+      "table_used_desc": "insert"
+    },
+    {
+      "seq_no": 3,
+      "sql_query": "SELECT Industry_name_NZSIOC\nFROM (\n    SELECT Industry_name_NZSIOC, Year,\n           LAG(SUM(CAST(Value AS DECIMAL(10, 2)))) OVER (PARTITION BY Industry_name_NZSIOC ORDER BY Year) AS Prev_Year_Value,\n           SUM(CAST(Value AS DECIMAL(10, 2))) AS Curr_Year_Value\n    FROM tbl_organization\n    GROUP BY Industry_name_NZSIOC, Year\n) AS Yearly_Values\nWHERE Curr_Year_Value > Prev_Year_Value;\n",
+      "table_used_desc": "insert"
+    }
+  ]
+}

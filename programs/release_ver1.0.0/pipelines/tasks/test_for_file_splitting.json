@@ -33,18 +33,18 @@
       "connection_name": "local_server_connection"
     },
     "target": {
-      "target_type": "csv_write",
-      "index": "True",
+      "target_type": "parquet_write",
+      "index": "False",
       "header": "Y",
       "encoding": "utf-8",
       "delimiter": ",",
-      "file_name": "filesplit.csv",
+      "file_name": "filesplittoparquet_%HH%%MI%%SS%.parquet",
       "file_path": "/home/puneeths/sample_data/",
-      "file_type": "csv",
+      "file_type": "parquet",
       "audit_columns": "inactive",
       "parameter_type": "Local Server",
       "connection_name": "local_server_connection",
-      "target_max_record_count": 999
+      "target_max_record_count": 3000
     },
     "data_quality_execution": {
       "pre_check_enable": "N",
