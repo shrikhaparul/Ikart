@@ -1,0 +1,9 @@
+{
+  "is_active": "Y",
+  "id": 0,
+  "pipeline_id": 122,
+  "task_name": "postgres_postgres",
+  "task_description": "testing",
+  "task_type": "Ingestion",
+  "task_sequence": "9"
+}
