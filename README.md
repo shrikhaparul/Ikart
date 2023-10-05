@@ -19,17 +19,17 @@
 
 2. **Create a virtual environment:**
 
-   Run the following command in your Ubuntu terminal to create a virtual environment named `<virtual environment name>` (replace `<virtual environment name>` with your preferred name):
+   Run the following command in your Ubuntu terminal to create a virtual environment named `<yours_virtual_environment_name>` (replace `<yours_virtual_environment_name>` with your preferred name):
    
    ```bash
-   python3 -m venv <virtual environment name>
+   python3 -m venv <yours_virtual_environment_name>
 
 3. **Activate the virtual environment:**
 
-   Activate the virtual environment by running the following command in your terminal (replace `<virtual environment name>` with your preferred name):
+   Activate the virtual environment by running the following command in your terminal (replace `<yours_virtual_environment_name>` with your preferred name):
 
    ```bash
-   source <virtual environment name>/bin/activate
+   source <yours_virtual_environment_name>/bin/activate
 
 4. **Install required libraries:**
 
@@ -44,10 +44,10 @@
 
    Create a folder on your Ubuntu system and place the following files inside it:
 
-   config.json
-   master.py
-   .env
-   requirements.txt
+   1. config.json
+   2. master.py
+   3. .env
+   4. requirements.txt
 
 6. **Configure config.json:**
 
