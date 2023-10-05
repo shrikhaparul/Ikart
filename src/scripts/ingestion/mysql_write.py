@@ -62,6 +62,10 @@ def insert_data(json_data,conn_details,dataframe,sessions):
                               target["schema"])
         else:
             task_logger.error("An error occurred: %s", str(error))
+    except sqlalchemy.exc.ProgrammingError as error:
+        if 'Incorrect column name' in str(error):
+            task_logger.error("error due to incorrect column name %s", str(error))
+            sys.exit()
     except Exception as error:
         task_logger.info("error occured in insert_data function %s", str(error))
         raise error
@@ -204,6 +208,8 @@ def write(json_data,datafram,counter,config_file_path,task_id,run_id,paths_data,
         task_logger.info("ingest data to mysql db initiated")
         _ ,conn_details = establish_conn_for_mysql(json_data,'target',
                                                      config_file_path)
+        # Remove spaces on the right of column names
+        datafram = datafram.rename(columns=lambda x: x.strip())
         status="Pass"
         if target["operation"] == "create":
             if counter == 1:
