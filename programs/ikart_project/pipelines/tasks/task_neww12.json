@@ -1,0 +1,54 @@
+{
+  "id": 286,
+  "project_name": "ikart_project",
+  "pipeline_name": "injest_pipeline",
+  "project_id": 48,
+  "pipeline_id": 128,
+  "task_name": "task_neww12",
+  "task_description": "task_neww12",
+  "task_type": "Ingestion",
+  "task_sequence": "1",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": null,
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select id,full_name,login_id from tbl_user",
+      "schema": "public",
+      "chunk_size": 1000,
+      "table_name": "tbl_user",
+      "parameter_type": "MySQL",
+      "select_columns": "id,full_name,login_id",
+      "connection_name": "mysql_con_test"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "replace",
+      "table_name": "tbl_newwwww",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_ikart_testing"
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_be_null",
+        "parameters": {
+          "column": "full_name"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      }
+    ]
+  }
+}

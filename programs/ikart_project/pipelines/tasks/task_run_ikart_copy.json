@@ -11,8 +11,8 @@
   "source": "Local Server",
   "target": "MySQL",
   "is_active": "Y",
-  "created_by": "madhu",
-  "updated_by": "admin",
+  "created_by": "jjones",
+  "updated_by": "jjones",
   "task": {
     "source": {
       "source_type": "csv_read",
@@ -27,15 +27,15 @@
       "escape_char": null,
       "skip_footer": 0,
       "skip_header": 0,
-      "alias_columns": null,
+      "alias_columns": "ORDERNUMBER,QUANTITY,PRICE,LINENUMBER,SALES,ORDERDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE",
       "parameter_type": "Local Server",
-      "select_columns": null,
+      "select_columns": "SALES,PRICE,ORDERNUMBER,STATUS",
       "connection_name": "localserver_ikart_testing"
     },
     "target": {
       "target_type": "mysql_write",
       "schema": "ikart",
-      "operation": "create",
+      "operation": "replace",
       "table_name": "new_task_running",
       "audit_columns": "active",
       "parameter_type": "MySQL",

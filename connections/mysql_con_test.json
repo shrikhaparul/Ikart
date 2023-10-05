@@ -4,10 +4,12 @@
   "connection_subtype": "MySQL",
   "connection_name": "mysql_con_test",
   "connection_details": {
-    "port": "6603",
     "database": "config",
+    "port": "6603",
     "hostname": "localhost",
     "username": "root",
-    "password": "b82ef62efa0ad8406ca92872bf984c40200a9da3"
+    "password": "b82ef62efa0ad8406ca92872bf984c40200a9da3",
+    "created_by": "jjones",
+    "updated_by": "jjones"
   }
 }

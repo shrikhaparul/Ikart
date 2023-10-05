@@ -1,0 +1,41 @@
+{
+  "id": 276,
+  "project_name": "ikart_project",
+  "pipeline_name": "injest_pipeline",
+  "project_id": 48,
+  "pipeline_id": 128,
+  "task_name": "task-1234",
+  "task_description": "task-1234",
+  "task_type": "Ingestion",
+  "task_sequence": "1",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select login_id,password,user_email,is_active from tbl_user",
+      "schema": "public",
+      "chunk_size": 10000,
+      "table_name": "tbl_user",
+      "parameter_type": "MySQL",
+      "select_columns": "login_id,password,user_email,is_active",
+      "connection_name": "mysql_con_test"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "create",
+      "table_name": "tbl_newww",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_ikart_testing"
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}

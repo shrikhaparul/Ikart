@@ -1,0 +1,82 @@
+{
+  "pipeline_id": 148,
+  "project_id": 59,
+  "pipeline_name": "ikart_pipeline_questkart",
+  "pipeline_cd": null,
+  "pipeline_description": "ikart_pipeline_questkart",
+  "is_active": "Y",
+  "tasks_details": {
+    "csv_mysql_ikart12": 0,
+    "mysql_mysql_ikart": 0,
+    "csv_mysql_ikart12_copy": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "341",
+      "data": {
+        "label": "341-csv_mysql_ikart12"
+      },
+      "position": {
+        "x": 50,
+        "y": 50
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "342",
+      "data": {
+        "label": "342-mysql_mysql_ikart"
+      },
+      "position": {
+        "x": 50,
+        "y": 100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "343",
+      "data": {
+        "label": "343-csv_mysql_ikart12_copy"
+      },
+      "position": {
+        "x": 50,
+        "y": 150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-343",
+      "source": "0",
+      "target": "343"
+    },
+    {
+      "id": "flow-0-342",
+      "source": "0",
+      "target": "342"
+    },
+    {
+      "id": "flow-0-341",
+      "source": "0",
+      "target": "341"
+    }
+  ],
+  "created_dttm": "2023-10-04T11:22:13.660Z",
+  "updated_dttm": "2023-10-04T11:22:13.660Z"
+}

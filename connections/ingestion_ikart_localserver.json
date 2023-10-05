@@ -1,0 +1,12 @@
+{
+  "project_id": 50,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "ingestion_ikart_localserver",
+  "connection_details": {
+    "file_name": "sales.csv",
+    "file_path": "/home/madhu/Ingestion_code2/",
+    "created_by": "jjones",
+    "updated_by": "jjones"
+  }
+}

@@ -1,12 +1,13 @@
 {
-  "created_dttm": "2023-09-08T06:43:45.358Z",
-  "updated_dttm": "2023-09-08T06:43:45.358Z",
-  "id": 48,
-  "program_id": 246,
+  "id": 51,
+  "program_id": 250,
   "project_name": "ikart_project",
   "project_description": "ikart_project",
-  "project_manager": "system",
-  "project_lead": "admin",
+  "project_manager": "jjones",
+  "project_lead": "jjones",
   "is_active": "Y",
-  "created_by": "Madhushree"
+  "created_by": "jjones",
+  "created_dttm": "2023-09-19T07:46:02.000Z",
+  "updated_by": "jjones",
+  "updated_dttm": "2023-09-27T07:39:33.000Z"
 }

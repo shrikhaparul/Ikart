@@ -1,0 +1,17 @@
+{
+  "project_id": 47,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MySQL",
+  "connection_name": "jfvhcdjksllkmnbkljhg",
+  "connection_details": {
+    "port": "6603",
+    "database": "core",
+    "hostname": "localhost",
+    "password": "b82ef62efa0ad8406ca92872bf984c40200a9da3",
+    "username": "root",
+    "created_by": "admin",
+    "updated_by": "admin"
+  },
+  "created_by": "admin",
+  "updated_by": "admin"
+}

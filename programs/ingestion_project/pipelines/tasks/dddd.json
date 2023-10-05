@@ -11,6 +11,8 @@
   "source": "MySQL",
   "target": "MySQL",
   "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "admin",
   "task": {
     "source": {
       "source_type": "mysql_read",

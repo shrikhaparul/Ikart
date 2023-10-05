@@ -10,6 +10,18 @@
   },
   "nodes": [
     {
+      "id": "271",
+      "data": {
+        "label": "271-task_torun"
+      },
+      "position": {
+        "x": 50,
+        "y": 1100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
       "id": "0",
       "data": {
         "label": "Start"
@@ -20,18 +32,6 @@
         "y": "10"
       },
       "sourcePosition": "right"
-    },
-    {
-      "id": "271",
-      "data": {
-        "label": "271-task_torun"
-      },
-      "position": {
-        "x": 50,
-        "y": 1300
-      },
-      "sourcePosition": "right",
-      "targetPosition": "left"
     }
   ],
   "edges": [
@@ -41,6 +41,6 @@
       "target": "271"
     }
   ],
-  "created_dttm": "2023-09-08T09:19:16.825Z",
-  "updated_dttm": "2023-09-08T09:19:16.825Z"
+  "created_dttm": "2023-09-15T03:45:46.708Z",
+  "updated_dttm": "2023-09-15T03:45:46.708Z"
 }

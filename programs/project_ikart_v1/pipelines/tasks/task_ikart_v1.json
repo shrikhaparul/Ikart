@@ -1,0 +1,74 @@
+{
+  "id": 281,
+  "project_name": "project_ikart_v1",
+  "pipeline_name": "pipeline_ikart_v1",
+  "project_id": 49,
+  "pipeline_id": 134,
+  "task_name": "task_ikart_v1",
+  "task_description": "task_ikart_v1",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "copyfake_customer_data.csv",
+      "file_path": "/home/madhu/Ingestion_code2/",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "escape_char": null,
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver_ikart_testing"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "replace",
+      "table_name": "tbl_v1",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_ikart_testing"
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_match_strftime_format",
+        "parameters": {
+          "column": "DateOfBirth",
+          "strftime_format": "%m-%d-%Y"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 50,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "LastName"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 40,
+        "type": "pre_check"
+      }
+    ]
+  }
+}

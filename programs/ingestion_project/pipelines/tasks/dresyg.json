@@ -1,0 +1,10 @@
+{
+  "is_active": "Y",
+  "id": 0,
+  "pipeline_id": 106,
+  "task_name": "dresyg",
+  "task_description": "trsg",
+  "task_type": "Ingestion",
+  "task_sequence": "1",
+  "created_by": "jjones"
+}

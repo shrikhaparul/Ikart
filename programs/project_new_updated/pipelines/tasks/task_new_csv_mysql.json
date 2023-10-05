@@ -1,0 +1,48 @@
+{
+  "id": 338,
+  "project_name": "project_new_updated",
+  "pipeline_name": "pipeline_new_updated",
+  "project_id": 56,
+  "pipeline_id": 147,
+  "task_name": "task_new_csv_mysql",
+  "task_description": "task_new_csv_mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales.csv",
+      "file_path": "/home/madhu/Ingestion_code2/",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "escape_char": null,
+      "skip_footer": 0,
+      "skip_header": 1,
+      "alias_columns": "ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE",
+      "parameter_type": "Local Server",
+      "select_columns": "ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,ADDRESSLINE",
+      "connection_name": "local_updated_conn"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "replace",
+      "table_name": "tbl_csv_mysql_90",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "ikart",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}

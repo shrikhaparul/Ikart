@@ -1,0 +1,49 @@
+{
+  "id": 288,
+  "project_name": "project_ikart_v1",
+  "pipeline_name": "pipeline_ikart_v1",
+  "project_id": 49,
+  "pipeline_id": 134,
+  "task_name": "task_csv_mysql_threshold",
+  "task_description": "task_csv_mysql_threshold",
+  "task_type": "Ingestion",
+  "task_sequence": "1",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_1000000_0.97gb.csv",
+      "file_path": "/home/madhu/Ingestion_code2/",
+      "file_type": "csv",
+      "chunk_size": 100000,
+      "quote_char": null,
+      "escape_char": null,
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": "",
+      "connection_name": "localserver_ikart_testing"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "create",
+      "table_name": "tbl_threshold",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_ikart_testing"
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}

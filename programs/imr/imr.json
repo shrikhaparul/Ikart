@@ -1,12 +1,13 @@
 {
-  "created_dttm": "2023-08-18T12:41:04.772Z",
-  "updated_dttm": "2023-08-18T12:41:04.772Z",
-  "id": 42,
-  "program_id": 239,
-  "project_name": "imr",
-  "project_description": "ETL processing of imr",
-  "project_manager": "ravikiran",
-  "project_lead": "kiran",
+  "id": 49,
+  "program_id": 249,
+  "project_name": "IMR",
+  "project_description": "This project deals with medical related transactions of IMR customers",
+  "project_manager": "hg",
+  "project_lead": "Priyan",
   "is_active": "Y",
-  "created_by": "system"
+  "created_by": "rperuman",
+  "created_dttm": "2023-09-28T09:40:03.000Z",
+  "updated_by": "rperuman",
+  "updated_dttm": "2023-09-29T10:00:40.000Z"
 }

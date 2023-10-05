@@ -1,0 +1,40 @@
+{
+  "id": 284,
+  "project_name": "project_ikart_demo",
+  "pipeline_name": "pipeline_ikart_demo",
+  "project_id": 45,
+  "pipeline_id": 111,
+  "task_name": "fascfds",
+  "task_description": "dsc",
+  "task_type": "Ingestion",
+  "task_sequence": "1",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "null_read",
+      "header": null,
+      "encoding": null,
+      "delimiter": null,
+      "file_name": null,
+      "file_path": null,
+      "file_type": null,
+      "chunk_size": null,
+      "quote_char": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}

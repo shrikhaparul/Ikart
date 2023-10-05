@@ -1,0 +1,94 @@
+{
+  "pipeline_id": 134,
+  "project_id": 49,
+  "pipeline_name": "pipeline_ikart_v1",
+  "pipeline_cd": null,
+  "pipeline_description": "pipeline_ikart_v1",
+  "is_active": "Y",
+  "tasks_details": {
+    "task_ikart_v1": 0,
+    "task_ikart1_v1": 0,
+    "task_new_csv_parquet": 0
+  },
+  "nodes": [
+    {
+      "id": "289",
+      "data": {
+        "label": "289-task_new_csv_parquet"
+      },
+      "position": {
+        "x": 50,
+        "y": 1600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "288",
+      "data": {
+        "label": "288-task_csv_mysql_threshold"
+      },
+      "position": {
+        "x": 50,
+        "y": 1550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "287",
+      "data": {
+        "label": "287-task_ikart1_v1"
+      },
+      "position": {
+        "x": 50,
+        "y": 1500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "281",
+      "data": {
+        "label": "281-task_ikart_v1"
+      },
+      "position": {
+        "x": 50,
+        "y": 1450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-289",
+      "source": "0",
+      "target": "289"
+    },
+    {
+      "id": "flow-0-287",
+      "source": "0",
+      "target": "287"
+    },
+    {
+      "id": "flow-0-281",
+      "source": "0",
+      "target": "281"
+    }
+  ],
+  "created_dttm": "2023-09-15T07:45:33.128Z",
+  "updated_dttm": "2023-09-15T07:45:33.128Z"
+}

@@ -1,0 +1,94 @@
+{
+  "pipeline_id": 136,
+  "project_id": 50,
+  "pipeline_name": "ingestion_ikart_pipeline",
+  "pipeline_cd": null,
+  "pipeline_description": "ingestion_ikart_pipeline12",
+  "is_active": "Y",
+  "tasks_details": {
+    "ingestion_ikart_mysql_mysql": 0,
+    "ingestion_ikart_mysql_mysql_copy": 0,
+    "ingestion_ikart_mysql_mysql_copy_copy": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "290",
+      "data": {
+        "label": "290-ingestion_ikart_mysql_mysql"
+      },
+      "position": {
+        "x": 50,
+        "y": 50
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "291",
+      "data": {
+        "label": "291-ingestion_ikart_mysql_mysql_copy"
+      },
+      "position": {
+        "x": 50,
+        "y": 100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "292",
+      "data": {
+        "label": "292-ingestion_ikart_mysql_mysql_copy_copy"
+      },
+      "position": {
+        "x": 50,
+        "y": 150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "293",
+      "data": {
+        "label": "293-task_ik_csv_mysql"
+      },
+      "position": {
+        "x": 50,
+        "y": 200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-292",
+      "source": "0",
+      "target": "292"
+    },
+    {
+      "id": "flow-0-291",
+      "source": "0",
+      "target": "291"
+    },
+    {
+      "id": "flow-0-290",
+      "source": "0",
+      "target": "290"
+    }
+  ],
+  "created_dttm": "2023-09-19T06:33:49.269Z",
+  "updated_dttm": "2023-09-19T06:33:49.269Z"
+}

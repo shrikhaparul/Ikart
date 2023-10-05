@@ -12,14 +12,14 @@
   "target": "MySQL",
   "is_active": "Y",
   "created_by": "admin",
-  "updated_by": "admin",
+  "updated_by": "jjones",
   "task": {
     "source": {
       "source_type": "csv_read",
       "header": "Y",
       "encoding": "utf-8",
       "delimiter": ",",
-      "file_name": "sales.csv",
+      "file_name": "copyfake_customer_data.csv",
       "file_path": "/home/madhu/Ingestion_code2/",
       "file_type": "csv",
       "chunk_size": 1000,
@@ -42,8 +42,22 @@
       "connection_name": "mysql_ikart_testing"
     },
     "data_quality_execution": {
-      "pre_check_enable": "N",
+      "pre_check_enable": "Y",
       "post_check_enable": "N"
-    }
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_match_strftime_format",
+        "parameters": {
+          "column": "DateOfBirth",
+          "strftime_format": "%m-%d-%Y"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 62,
+        "type": "pre_check"
+      }
+    ]
   }
 }

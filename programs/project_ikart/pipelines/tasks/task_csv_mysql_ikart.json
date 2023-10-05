@@ -7,16 +7,19 @@
   "task_name": "task_csv_mysql_ikart",
   "task_description": "task_csv_mysql_ikart",
   "task_type": "Ingestion",
-  "task_sequence": "1",
+  "task_sequence": "\"244\"",
   "source": "Local Server",
   "target": "MySQL",
   "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "admin",
   "task": {
     "source": {
       "source_type": "csv_read",
+      "header": null,
       "encoding": "utf-8",
       "delimiter": ",",
-      "file_name": "sales",
+      "file_name": "sales.csv",
       "file_path": "/home/madhu/Ingestion_code2/",
       "file_type": "csv",
       "chunk_size": 1000,
@@ -27,7 +30,7 @@
       "alias_columns": "",
       "parameter_type": "Local Server",
       "select_columns": "",
-      "connection_name": "local_con_new"
+      "connection_name": "localserver_ikart_testing"
     },
     "target": {
       "target_type": "mysql_write",
@@ -36,7 +39,7 @@
       "table_name": "tbl_csv_mysql",
       "audit_columns": "active",
       "parameter_type": "MySQL",
-      "connection_name": "mysql_connection_ikart"
+      "connection_name": "mysql_connection_ikart_varun"
     },
     "data_quality_execution": {
       "pre_check_enable": "N",

@@ -1,0 +1,54 @@
+{
+  "id": 289,
+  "project_name": "project_ikart_v1",
+  "pipeline_name": "pipeline_ikart_v1",
+  "project_id": 49,
+  "pipeline_id": 134,
+  "task_name": "task_new_csv_parquet",
+  "task_description": "task_new_csv_parquet",
+  "task_type": "Ingestion",
+  "task_sequence": "1",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales.csv",
+      "file_path": "/home/madhu/Ingestion_code2/",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "quote_char": "\"",
+      "escape_char": "",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver_ikart_testing"
+    },
+    "target": {
+      "target_type": "parquet_write",
+      "index": "False",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "targetFile_%DD%-%MM%-%YYYY%.parquet",
+      "file_path": "/home/madhu/Ingestion_code2/",
+      "file_type": "parquet",
+      "quote_char": "\"",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_ikart_testing"
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}

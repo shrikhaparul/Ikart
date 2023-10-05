@@ -1,0 +1,54 @@
+{
+  "id": 290,
+  "project_name": "ingestion_ikart_project",
+  "pipeline_name": "ingestion_ikart_pipeline",
+  "project_id": 50,
+  "pipeline_id": 136,
+  "task_name": "ingestion_ikart_mysql_mysql",
+  "task_description": "ingestion_ikart_mysql_mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select id,full_name,login_id,user_email from tbl_user",
+      "schema": "public",
+      "chunk_size": 1000,
+      "table_name": "tbl_user",
+      "parameter_type": "MySQL",
+      "select_columns": "id,full_name,login_id,user_email",
+      "connection_name": "ingestion_ikart_mysql"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "create",
+      "table_name": "tbl_ikart_new121",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "ingestion_ikart_ikart"
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "full_name"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 40,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
