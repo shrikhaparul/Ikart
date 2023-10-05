@@ -1,0 +1,42 @@
+{
+  "id": 324,
+  "project_name": "ing_kart_project_1",
+  "pipeline_name": "ing_kart_project_1_123",
+  "project_id": 49,
+  "pipeline_id": 122,
+  "task_name": "mysql_to_mysql",
+  "task_description": "testing sql",
+  "task_type": "Ingestion",
+  "task_sequence": "7",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "admin",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select QUANTITYORDERED,ORDERNUMBER,PRICEEACH,SALES from data_test",
+      "schema": "ikart",
+      "chunk_size": null,
+      "table_name": "data_test",
+      "parameter_type": "MySQL",
+      "select_columns": "QUANTITYORDERED,ORDERNUMBER,PRICEEACH,SALES",
+      "connection_name": "mysql_shilpi"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "create",
+      "table_name": "data_test_1",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_shilpi",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
