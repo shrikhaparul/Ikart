@@ -1,0 +1,17 @@
+{
+  "task_id": 287,
+  "pipeline_id": 136,
+  "task_name": "sql_orchestration",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql_connection_ikart_varun",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "ALTER TABLE tbl1\nADD COLUMN demo int;\n",
+      "table_used_desc": "select"
+    }
+  ]
+}
