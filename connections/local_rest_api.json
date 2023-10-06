@@ -1,0 +1,15 @@
+{
+  "project_id": 61,
+  "connection_type": "Application",
+  "connection_subtype": "REST API",
+  "connection_name": "local_rest_api",
+  "connection_details": {
+    "url": "http://localhost:8080/api/programs/",
+    "password": "a3283961424fce5896946e768d64ced0",
+    "username": "",
+    "api_token": "a3283961424fce5896946e768d64ced0",
+    "access_token": "af38d33284857ec2d6ac1911177f23b9855df2ab1a206fa4a2058839058054e33d215f698f434d7732d60c8df4871f7e9544c27b449d5a240a96ab7ab156cc396bc7b5b9b221231c4bb9985f5a9f17adf8184d9e0fe692288e45a480028491362184109236c374e99039d5258eff21fc427e148327c54791bc8ca198423515da856b68be6a9cf1f638d7ec36a40cc92a489aa7ced4dc320c3a55782b78e26b44121b65",
+    "authentication_type": "access_token",
+    "updated_by": "jjones"
+  }
+}
