@@ -1,0 +1,17 @@
+{
+  "task_id": 287,
+  "pipeline_id": 136,
+  "task_name": "sql_orchestration",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql_connection_ikart_varun",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "CREATE VIEW my_view AS\nSELECT Year, Industry_name_NZSIOC, Value\nFROM tbl1\nWHERE Year >= 2020;\n",
+      "table_used_desc": "select"
+    }
+  ]
+}
