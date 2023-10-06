@@ -1,0 +1,17 @@
+{
+  "task_id": 287,
+  "pipeline_id": 136,
+  "task_name": "sql_orchestration",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql_connection_ikart_varun",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "INSERT INTO tbl1 (`Year`, `Industry_aggregation_NZSIOC`, `Industry_code_NZSIOC`, `Industry_name_NZSIOC`, `Units`, `Variable_code`, `Variable_name`, `Variable_category`, `Value`, `Industry_code_ANZSIC06`)\nVALUES (2025, 'Aggregation', 'Code', 'Name', 'Unit', 'Code123', 'Name123', 'Category123', '12345', 'ANZ123');",
+      "table_used_desc": "select"
+    }
+  ]
+}
