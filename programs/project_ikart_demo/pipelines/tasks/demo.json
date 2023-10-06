@@ -1,0 +1,22 @@
+{
+  "id": 286,
+  "project_name": "project_ikart_demo",
+  "pipeline_name": "Demo",
+  "project_id": 45,
+  "pipeline_id": 136,
+  "task_name": "demo",
+  "task_description": "demo",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": null,
+  "task": {
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
