@@ -1,0 +1,66 @@
+{
+  "pipeline_id": 136,
+  "project_id": 45,
+  "pipeline_name": "Demo",
+  "pipeline_cd": null,
+  "pipeline_description": "Demo",
+  "is_active": "Y",
+  "tasks_details": {
+    "demo": 0,
+    "sql_orchestration": [
+      "demo"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "286",
+      "data": {
+        "label": "286-demo"
+      },
+      "position": {
+        "x": 50,
+        "y": 1650
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "287",
+      "data": {
+        "label": "287-sql_orchestration"
+      },
+      "position": {
+        "x": 50,
+        "y": 1700
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-286",
+      "source": "0",
+      "target": "286"
+    },
+    {
+      "id": "flow-286-287",
+      "source": "286",
+      "target": "287"
+    }
+  ],
+  "created_dttm": "2023-10-06T09:18:43.588Z",
+  "updated_dttm": "2023-10-06T09:18:43.588Z"
+}
