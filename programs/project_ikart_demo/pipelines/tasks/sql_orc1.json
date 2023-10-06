@@ -1,0 +1,37 @@
+{
+  "task_id": 282,
+  "pipeline_id": 111,
+  "task_name": "sql_orc1",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql_connection_ikart_varun",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "SELECT * FROM tbl_test;\n",
+      "table_used_desc": "create"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "SELECT * FROM tbl_test\nWHERE `Year` = 2022 AND `Industry_name_NZSIOC` = 'Manufacturing';\n",
+      "table_used_desc": "select"
+    },
+    {
+      "seq_no": 3,
+      "sql_query": "SELECT SUM(CAST(`Value` AS DECIMAL)) AS `TotalValue`\nFROM tbl_test\nWHERE `Year` = 2022 AND `Industry_name_NZSIOC` = 'Manufacturing';\n",
+      "table_used_desc": "insert"
+    },
+    {
+      "seq_no": 4,
+      "sql_query": "INSERT INTO tbl_test (`Year`, `Industry_aggregation_NZSIOC`, `Industry_code_NZSIOC`, `Industry_name_NZSIOC`, `Units`, `Variable_code`, `Variable_name`, `Variable_category`, `Value`, `Industry_code_ANZSIC06`, `CRTD_BY`, `CRTD_DTTM`, `UPDT_BY`, `UPDT_DTTM`)\nVALUES (2023, 'Some Aggregation', 'Some Code', 'Some Industry', 'Some Units', 'Some Code', 'Some Name', 'Some Category', '123.45', 'Some ANZSIC06', 'User123', '2023-10-06 12:00:00', 'User123', '2023-10-06 12:00:00');\n",
+      "table_used_desc": "select"
+    },
+    {
+      "seq_no": 5,
+      "sql_query": "DELETE FROM tbl_test\nWHERE `Year` = 2022;\n",
+      "table_used_desc": ""
+    }
+  ]
+}
