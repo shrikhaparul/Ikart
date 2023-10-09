@@ -1,0 +1,51 @@
+{
+  "login_id": "jjones",
+  "id": 334,
+  "project_name": "ikart_project",
+  "pipeline_name": "test_split_functionality",
+  "project_id": 51,
+  "pipeline_id": 146,
+  "task_name": "task_newwww",
+  "task_description": "task_newwww",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "admin",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "*.csv",
+      "file_path": "/home/madhu/Ingestion_code2/csv_files/",
+      "file_type": "csv",
+      "chunk_size": 100000,
+      "quote_char": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Region,Country,Item Type,Sales Channel,Order Priority,Order Date,Order ID,Ship Date,Units Sold,Unit Price,Unit Cost,Total Revenue,Total Cost,Total Profit",
+      "parameter_type": "Local Server",
+      "select_columns": "Region,Country,Item Type,Sales Channel,Order Priority",
+      "connection_name": "ikart_local_server_connection"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "create",
+      "table_name": "tbl_local_new_mysql",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "ikart_mysql_config_connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
