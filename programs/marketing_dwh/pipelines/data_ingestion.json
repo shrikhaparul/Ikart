@@ -1,0 +1,13 @@
+{
+  "id": 150,
+  "project_id": 61,
+  "pipeline_name": "Data Ingestion",
+  "pipeline_cd": null,
+  "pipeline_description": "To ingest the data from Source",
+  "pipeline_sequence": 0,
+  "is_active": "Y",
+  "created_by": "jjones",
+  "created_dttm": "2023-10-09T11:07:16.000Z",
+  "updated_by": "jjones",
+  "updated_dttm": "2023-10-09T13:23:14.000Z"
+}
