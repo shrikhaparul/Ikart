@@ -1,0 +1,50 @@
+{
+  "id": 351,
+  "project_name": "ikart_project_questkart_update",
+  "pipeline_name": "ikart_pipeline_questkart",
+  "project_id": 59,
+  "pipeline_id": 148,
+  "task_name": "combine_sales_to_mysql",
+  "task_description": "combine different sales data and ingest into mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "*.csv",
+      "file_path": "/home/rperuman/src_files/files/",
+      "file_type": "csv",
+      "chunk_size": 100000,
+      "quote_char": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Region,Country,Item Type,Sales Channel,Order Priority,Order Date,Order ID,Ship Date,Units Sold,Unit Price,Unit Cost,Total Revenue,Total Cost,Total Profit",
+      "parameter_type": "Local Server",
+      "select_columns": "Region,Order Priority,",
+      "connection_name": "localserver"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "test",
+      "operation": "replace",
+      "table_name": "combined_sales",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
