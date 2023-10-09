@@ -1,0 +1,46 @@
+{
+  "pipeline_id": 147,
+  "project_id": 56,
+  "pipeline_name": ".,m,nbm",
+  "pipeline_cd": null,
+  "pipeline_description": ";lkjbmbnv78",
+  "is_active": "Y",
+  "tasks_details": {
+    "task_for_user_access": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "335",
+      "data": {
+        "label": "335-task_for_user_access"
+      },
+      "position": {
+        "x": 50,
+        "y": 1000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-335",
+      "source": "0",
+      "target": "335"
+    }
+  ],
+  "created_dttm": "2023-10-09T07:00:49.496Z",
+  "updated_dttm": "2023-10-09T07:00:49.496Z"
+}
