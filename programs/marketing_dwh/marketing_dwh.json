@@ -1,0 +1,13 @@
+{
+  "id": 61,
+  "program_id": 263,
+  "project_name": "marketing_dwh",
+  "project_description": "DWH to hold the Marketing Data and other Campaigns ",
+  "project_manager": "James Peterson",
+  "project_lead": "John Guild",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "created_dttm": "2023-10-09T11:06:08.000Z",
+  "updated_by": "jjones",
+  "updated_dttm": "2023-10-10T07:15:58.000Z"
+}
