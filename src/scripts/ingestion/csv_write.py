@@ -48,7 +48,6 @@ def write(json_data: dict,datafram, counter) -> bool:
         target = json_data["task"]["target"]
         file_name = replace_date_placeholders(target['file_name'])
         file_path = replace_date_placeholders(target['file_path'])
-        target['filename'] = "*.*" if target['filename'] in ("",None) else target['filename']
         task_logger.info("writing data to csv file")
         created_by = json_data['created_by'] if 'created_by' in json_data else "etl_user"
         if counter ==1: # for first iteration
