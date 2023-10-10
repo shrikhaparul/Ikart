@@ -1,0 +1,47 @@
+{
+  "id": 356,
+  "project_name": "marketing_dwh",
+  "pipeline_name": "data_ingestion",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "export_data_xml",
+  "task_description": "To export the to XML format",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from loc_details_01",
+      "schema": "test_db",
+      "chunk_size": 1000,
+      "table_name": "loc_details_01",
+      "parameter_type": "MySQL",
+      "select_columns": "",
+      "connection_name": "mysql-testdb"
+    },
+    "target": {
+      "target_type": "xml_write",
+      "index": "True",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "",
+      "file_name": "loc_details.xml",
+      "file_path": "/home/luke/datafiles/tgt/",
+      "file_type": "xml",
+      "quote_char": "\"",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "local_files",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
