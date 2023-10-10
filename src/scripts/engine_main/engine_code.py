@@ -1,4 +1,4 @@
-""" importing required modules. """
+""" importing required modules """
 import json
 import logging
 import sys
@@ -299,19 +299,28 @@ def engine_main(prj_nm,task_id,paths_data,run_id,file_path,iter_value):
             counter=0
             for i in data_fram :
                 counter+=1
-                if target["target_type"] != "csv_write":
-                    value=write(json_data, i,counter,config_file_path,task_id,run_id,
-                    paths_data,file_path,iter_value,session)
+                if target["target_type"] != "rest_api_write":
+                    if target["target_type"] != "csv_write":
+                        value=write(json_data, i,counter,config_file_path,task_id,run_id,
+                        paths_data,file_path,iter_value,session)
+                        if value is False:
+                            task_failed(task_id,file_path,json_data,run_id,iter_value)
+                            return False
+                        if value is True:
+                            task_success(task_id,file_path,json_data,run_id,iter_value)
+                            return False
+                    else:
+                        value=write(json_data, i,counter)
+                        if value is False:
+                            task_failed(task_id,file_path,json_data,run_id,iter_value)
+                            return False
+                else:
+                    value=write(json_data,i,task_id,run_id,paths_data,file_path,iter_value)
                     if value is False:
                         task_failed(task_id,file_path,json_data,run_id,iter_value)
                         return False
                     if value is True:
                         task_success(task_id,file_path,json_data,run_id,iter_value)
-                        return False
-                else:
-                    value=write(json_data, i,counter)
-                    if value is False:
-                        task_failed(task_id,file_path,json_data,run_id,iter_value)
                         return False
         elif source["source_type"] in ("csv_read", "parquet_read", "json_read",
                                        "xml_read", "xlsx_read"):
