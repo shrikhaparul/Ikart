@@ -1,0 +1,43 @@
+{
+  "login_id": "jjones",
+  "id": 338,
+  "project_name": "popiuygh",
+  "pipeline_name": ".,m,nbm",
+  "project_id": 56,
+  "pipeline_id": 147,
+  "task_name": "task_00090",
+  "task_description": "\ntask_for_user_access",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "admin",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select id, program_name, program_description from tbl_program",
+      "schema": "public",
+      "chunk_size": 1000,
+      "table_name": "tbl_program",
+      "parameter_type": "MySQL",
+      "select_columns": "id,program_name,program_description",
+      "connection_name": "ikart_mysql_config_connection"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "create",
+      "table_name": "tbl_program00",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "ikart_mysql_ikart_connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
