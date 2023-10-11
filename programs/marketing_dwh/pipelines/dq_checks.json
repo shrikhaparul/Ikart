@@ -1,0 +1,82 @@
+{
+  "pipeline_id": 153,
+  "project_id": 61,
+  "pipeline_name": "dq_checks",
+  "pipeline_cd": null,
+  "pipeline_description": "To validate applicable data quality functions",
+  "is_active": "Y",
+  "tasks_details": {
+    "dq_pre_files": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "358",
+      "data": {
+        "label": "358-tsk_dq"
+      },
+      "position": {
+        "x": 50,
+        "y": 850
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "359",
+      "data": {
+        "label": "359-dq_pre_files"
+      },
+      "position": {
+        "x": 50,
+        "y": 900
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "360",
+      "data": {
+        "label": "360-pre_check_dqa"
+      },
+      "position": {
+        "x": 50,
+        "y": 950
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "361",
+      "data": {
+        "label": "361-pre_check_dq"
+      },
+      "position": {
+        "x": 50,
+        "y": 1000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-359",
+      "source": "0",
+      "target": "359"
+    }
+  ],
+  "created_dttm": "2023-10-11T07:08:53.366Z",
+  "updated_dttm": "2023-10-11T07:08:53.366Z"
+}
