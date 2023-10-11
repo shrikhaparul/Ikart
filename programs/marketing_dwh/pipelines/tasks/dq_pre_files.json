@@ -1,0 +1,78 @@
+{
+  "id": 359,
+  "project_name": "marketing_dwh",
+  "pipeline_name": "dq_checks",
+  "project_id": 61,
+  "pipeline_id": 153,
+  "task_name": "dq_pre_files",
+  "task_description": "Applicable DQ Checks on files ",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "loc_details_202310102206*.csv",
+      "file_path": "/home/luke/datafiles/src/pincode_data/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "quote_char": "\"",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local_files"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "test_db",
+      "operation": "create",
+      "table_name": "after_pre_check_data",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql-testdb",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "Y"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_be_between",
+        "parameters": {
+          "column": "Pincode",
+          "max_value": "900000",
+          "min_value": "100000",
+          "type_list": "100000"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 10,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_values_to_be_in_type_list",
+        "parameters": {
+          "column": "Pincode",
+          "type_list": "int"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 5,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
