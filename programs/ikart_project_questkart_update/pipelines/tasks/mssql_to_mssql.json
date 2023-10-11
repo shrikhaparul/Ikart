@@ -1,0 +1,42 @@
+{
+  "id": 348,
+  "project_name": "ikart_project_questkart_update",
+  "pipeline_name": "ikart_pipeline_questkart",
+  "project_id": 59,
+  "pipeline_id": 148,
+  "task_name": "mssql_to_mssql",
+  "task_description": "ingesting postgres sales table to string_sales table",
+  "task_type": "Ingestion",
+  "task_sequence": "\"343\"",
+  "source": "MSSQL",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "select concat(\"CONTACTFIRSTNAME\",' ',\"CONTACTLASTNAME\") as NAME, lower(\"COUNTRY\") as COUNTRY, substring(\"PRODUCTCODE\",5,4) as code, reverse(\"ORDERDATE\") as date from sales where country = 'france';",
+      "schema": "dbo",
+      "chunk_size": 10000,
+      "table_name": "sales",
+      "parameter_type": "MSSQL",
+      "select_columns": null,
+      "connection_name": "sql_server"
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "create",
+      "table_name": "string_sales",
+      "audit_columns": "inactive",
+      "parameter_type": "MSSQL",
+      "connection_name": "sql_server",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
