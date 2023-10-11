@@ -1,0 +1,47 @@
+{
+  "id": 348,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "release_v1.0.0_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "restapi_to_mysql",
+  "task_description": "ingest data from api to mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "REST API",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "rest_api_read",
+      "timeout": "100",
+      "content_type": "json",
+      "query_params": "?page=1&per_page=1",
+      "parameter_type": "REST API",
+      "connection_name": "local_rest_api12",
+      "response_headers": "",
+      "response_data_type": "json",
+      "chunk_size": null
+    },
+    "target": {
+      "target_type": "csv_write",
+      "index": "False",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "csv_file_from_api.csv",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_connection_puneeth",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
