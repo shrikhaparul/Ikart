@@ -1,0 +1,100 @@
+{
+  "pipeline_id": 142,
+  "project_id": 54,
+  "pipeline_name": "pipelien_new",
+  "pipeline_cd": null,
+  "pipeline_description": "pipelien_new",
+  "is_active": "Y",
+  "tasks_details": {
+    "task_neew": 0,
+    "task_local_mysql123": 0
+  },
+  "nodes": [
+    {
+      "id": "332",
+      "data": {
+        "label": "332-mnb"
+      },
+      "position": {
+        "x": 50,
+        "y": 1150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "337",
+      "data": {
+        "label": "337-task_local_mysql123"
+      },
+      "position": {
+        "x": 50,
+        "y": 1200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "339",
+      "data": {
+        "label": "339-task897678"
+      },
+      "position": {
+        "x": 50,
+        "y": 1250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "331",
+      "data": {
+        "label": "331-mnbn"
+      },
+      "position": {
+        "x": 50,
+        "y": 1100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "330",
+      "data": {
+        "label": "330-task_neew"
+      },
+      "position": {
+        "x": 50,
+        "y": 1050
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-330",
+      "source": "0",
+      "target": "330"
+    },
+    {
+      "id": "flow-0-337",
+      "source": "0",
+      "target": "337"
+    }
+  ],
+  "created_dttm": "2023-10-12T17:56:36.969Z",
+  "updated_dttm": "2023-10-12T17:56:36.969Z"
+}
