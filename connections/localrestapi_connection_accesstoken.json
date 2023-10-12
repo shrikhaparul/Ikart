@@ -1,0 +1,16 @@
+{
+  "project_id": 61,
+  "connection_type": "Application",
+  "connection_subtype": "REST API",
+  "connection_name": "localrestapi_connection_accesstoken",
+  "connection_details": {
+    "url": "http://localhost:8080/api/columnreference/",
+    "password": "a3283961424fce5896946e768d64ced0",
+    "username": "",
+    "api_token": "ab23ae6887a02b99fdf0353a706753e9aa50ddef65790ef4f377f73f798d468b0d5025629914515e74b97da6f2af1339821fc27c4ec9100f4bb9fe73ed02b71239bb87d6bf597e2c1ec1aa035be14eeea47571c51a969b70c533f9db06fcfd6218dc14375d77f753b8d3bea5e9a3b806",
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Impqb25lcyIsImlhdCI6MTY5NzExMDk2MiwiZXhwIjoxNjk3MTE0NTYyfQ.nzUDWZBrijWYp7x91b8-LiU3yU5wytr2NGd9NQULjdQ",
+    "authentication_type": "access_token",
+    "created_by": "jjones",
+    "updated_by": "jjones"
+  }
+}
