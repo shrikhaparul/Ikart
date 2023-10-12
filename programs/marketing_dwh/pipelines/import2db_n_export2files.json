@@ -1,0 +1,146 @@
+{
+  "pipeline_id": 150,
+  "project_id": 61,
+  "pipeline_name": "import2db_n_export2files",
+  "pipeline_cd": null,
+  "pipeline_description": "To ingest the data from Source",
+  "is_active": "Y",
+  "tasks_details": {
+    "ing_titles": 0,
+    "export_data_csv": [
+      "ing_titles"
+    ],
+    "export_data_xml": [
+      "ing_titles"
+    ],
+    "export_data_json": [
+      "ing_titles"
+    ],
+    "export_data_excel": [
+      "ing_titles"
+    ],
+    "export_data_parquet": [
+      "ing_titles"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "349",
+      "data": {
+        "label": "349-export_data_json"
+      },
+      "position": {
+        "x": 50,
+        "y": 350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "356",
+      "data": {
+        "label": "356-export_data_xml"
+      },
+      "position": {
+        "x": 50,
+        "y": 500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "351",
+      "data": {
+        "label": "351-export_data_excel"
+      },
+      "position": {
+        "x": 50,
+        "y": 450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "350",
+      "data": {
+        "label": "350-export_data_parquet"
+      },
+      "position": {
+        "x": 50,
+        "y": 400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "348",
+      "data": {
+        "label": "348-export_data_csv"
+      },
+      "position": {
+        "x": 50,
+        "y": 300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "346",
+      "data": {
+        "label": "346-ing_titles"
+      },
+      "position": {
+        "x": 50,
+        "y": 250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-346",
+      "source": "0",
+      "target": "346"
+    },
+    {
+      "id": "flow-346-348",
+      "source": "346",
+      "target": "348"
+    },
+    {
+      "id": "flow-346-349",
+      "source": "346",
+      "target": "349"
+    },
+    {
+      "id": "flow-346-350",
+      "source": "346",
+      "target": "350"
+    },
+    {
+      "id": "flow-346-351",
+      "source": "346",
+      "target": "351"
+    },
+    {
+      "id": "flow-346-356",
+      "source": "346",
+      "target": "356"
+    }
+  ],
+  "created_dttm": "2023-10-12T11:09:38.963Z",
+  "updated_dttm": "2023-10-12T11:09:38.963Z"
+}
