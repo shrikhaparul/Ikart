@@ -1,0 +1,118 @@
+{
+  "pipeline_id": 152,
+  "project_id": 61,
+  "pipeline_name": "export_db2files",
+  "pipeline_cd": null,
+  "pipeline_description": "Exports the data into multiple formats",
+  "is_active": "Y",
+  "tasks_details": {
+    "export_csv": 0,
+    "export_xml": 0,
+    "export_json": 0,
+    "export_excel": 0,
+    "export_parquet": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "352",
+      "data": {
+        "label": "352-export_csv"
+      },
+      "position": {
+        "x": 50,
+        "y": 550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "353",
+      "data": {
+        "label": "353-export_json"
+      },
+      "position": {
+        "x": 50,
+        "y": 600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "354",
+      "data": {
+        "label": "354-export_parquet"
+      },
+      "position": {
+        "x": 50,
+        "y": 650
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "355",
+      "data": {
+        "label": "355-export_excel"
+      },
+      "position": {
+        "x": 50,
+        "y": 700
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "357",
+      "data": {
+        "label": "357-export_xml"
+      },
+      "position": {
+        "x": 50,
+        "y": 750
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-352",
+      "source": "0",
+      "target": "352"
+    },
+    {
+      "id": "flow-0-353",
+      "source": "0",
+      "target": "353"
+    },
+    {
+      "id": "flow-0-354",
+      "source": "0",
+      "target": "354"
+    },
+    {
+      "id": "flow-0-355",
+      "source": "0",
+      "target": "355"
+    },
+    {
+      "id": "flow-0-357",
+      "source": "0",
+      "target": "357"
+    }
+  ],
+  "created_dttm": "2023-10-12T11:12:07.564Z",
+  "updated_dttm": "2023-10-12T11:12:07.564Z"
+}
