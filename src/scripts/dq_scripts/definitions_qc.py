@@ -1024,6 +1024,7 @@ def qc_pre_check(prj_nm,main_json_file,cm_json_file,paths_data,config_file_path,
                 task_id,run_id,file_path,iter_value,cm_json_file, config_file_path)
             task_logger.info(PRE_OP_ENDED)
         else:
+            task_logger.info("Data quality feature is not present in the json")
             task_logger.info(PRE_OP_STARTED)
             pre_check_result = qc_check_function_calling(prj_nm,main_json_file,paths_data,
             task_id,run_id,file_path,iter_value,cm_json_file, config_file_path)

@@ -2,10 +2,7 @@
 import logging
 import json
 import datetime
-import os
-from pathlib import Path
 import re
-import pandas as pd 
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 # custom log function for framework
@@ -54,35 +51,25 @@ def decrypt(data):
     return decrypted.decode('utf-8')
 
 def replace_date_placeholders(file_name):
-    """function to replace the date and time placeholders in target filenames"""
-    # Define the regular expression pattern to match date and time placeholders
-    date_pattern = r"%[DdMmYyHhMmIiSs]+%"
+    """function to replace the date for target filenames"""
+    #Define the regular expression pattern to match date placeholders
+    date_pattern = r"%[DdMmYy]+%"
 
-    # Find all date and time placeholders in the input string
-    date_time_placeholders = re.findall(date_pattern, file_name)
+    # Find all date placeholders in the input string
+    date_placeholders = re.findall(date_pattern, file_name)
 
-    # Get current date and time components
-    current_datetime = datetime.datetime.now()
-    year = current_datetime.strftime("%Y")
-    month = current_datetime.strftime("%m")
-    day = current_datetime.strftime("%d")
-    hour = current_datetime.strftime("%H")
-    minute = current_datetime.strftime("%M")
-    second = current_datetime.strftime("%S")
+    # Get today's date components
+    today_date = datetime.datetime.now()
+    year = today_date.strftime("%Y")
+    month = today_date.strftime("%m")
+    day = today_date.strftime("%d")
 
-    # Replace each date and time placeholder with the corresponding component
-    for placeholder in date_time_placeholders:
+    # Replace each date placeholder with the corresponding date component
+    for placeholder in date_placeholders:
         if "YYYY" in placeholder:
             file_name = file_name.replace(placeholder, year)
         elif "MM" in placeholder:
             file_name = file_name.replace(placeholder, month)
         elif "DD" in placeholder:
             file_name = file_name.replace(placeholder, day)
-        elif "HH" in placeholder:
-            file_name = file_name.replace(placeholder, hour)
-        elif "MI" in placeholder:
-            file_name = file_name.replace(placeholder, minute)
-        elif "SS" in placeholder:
-            file_name = file_name.replace(placeholder, second)
-
     return file_name

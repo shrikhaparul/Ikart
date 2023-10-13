@@ -64,6 +64,8 @@ def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
             else source["escape_char"]
             default_escapechar = "\t" if default_escapechar == "\\t" else default_escapechar
             default_escapechar = "\n" if default_escapechar == "\\n" else default_escapechar
+            default_select_cols = None if source["select_columns"] in (None,"None","none","") else \
+                list(source["select_columns"].split(","))
             default_alias_cols = None if source["alias_columns"] in (None,"None","none","") else\
             list(source["alias_columns"].split(","))
             default_encoding = "utf-8" if source["encoding"]in (None,"None","none","") else\
@@ -75,30 +77,26 @@ def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
                 iter_value)
                 row_count = data.shape[0]-default_skip_footer
                 count1 = 0
-                source["select_columns"] = None if source["select_columns"] in (None,"None","none","") else \
-                list(source["select_columns"].split(","))
-                source['alias_columns'] = None if source["alias_columns"] in (None,"None","none","") else\
-                list(source["alias_columns"].split(","))
+                task_logger.info(type(source["select_columns"]))
+                task_logger.info("select columns before:%s",default_select_cols)                
+                task_logger.info("select columns after:%s",default_select_cols)
                 if source["select_columns"] is not None and \
                 source["alias_columns"] is not None:
                     default_header = 0
-                    # print(row_count)
                     if source["header"] == "Y":
                         use_header = True
                     else:
                         use_header = False
-                    # default_select_cols =list(source["select_columns"].split(","))
                     for csv_chunk in pd.read_csv(file, header=0 if  use_header else  None,
                                                  chunksize=source["chunk_size"], names = default_alias_cols,
-                        sep = default_delimiter, usecols = source["select_columns"],
+                        sep = default_delimiter, usecols = default_select_cols,
                         engine='python',
                         nrows = row_count,
-                        # skiprows = default_skip_header,
                         quotechar = default_quotechar, escapechar = default_escapechar,
                         encoding = default_encoding
                         ):
                         if not use_header:
-                                csv_chunk.columns =source["select_columns"]
+                                csv_chunk.columns =default_select_cols
 
                         if default_skip_header > 0:
                             csv_chunk = csv_chunk.iloc[default_skip_header:]
@@ -111,13 +109,11 @@ def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
                         use_header = True
                     else:
                         use_header = False
-                    default_select_cols = source["select_columns"]
 
                     for csv_chunk in pd.read_csv(file, header=0 if  use_header else  None,
                                                 chunksize=source["chunk_size"], names = default_select_cols,
                     sep = default_delimiter, usecols = default_select_cols,
                     nrows = row_count,
-                    # skiprows = default_skip_header,
                     quotechar = default_quotechar, escapechar = default_escapechar,
                     encoding = default_encoding):
                         if not use_header:
@@ -136,12 +132,10 @@ def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
                         use_header = True
                     else:
                         use_header = False
-                    # default_select_cols = list(source["alias_columns"].split(","))
                     for csv_chunk in pd.read_csv(file, header=0 if use_header else  None,
                      chunksize=source["chunk_size"], names = default_alias_cols,
-                    sep = default_delimiter, usecols = source['select_columns'],
+                    sep = default_delimiter, usecols = default_select_cols,
                     nrows = row_count,
-                    # skiprows = default_skip_header,
                     quotechar = default_quotechar, escapechar = default_escapechar,
                     encoding = default_encoding):
                         if not use_header:
@@ -162,12 +156,10 @@ def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
                         use_header = False
                     default_select_cols = None
                     # Read the CSV data from the file
-                    # csv_lines = csv_data.strip().split('\n')
                     for csv_chunk in pd.read_csv(file, header=0 if  use_header else  None,
                     chunksize=source["chunk_size"], names = default_alias_cols,
                     sep = default_delimiter, usecols = default_select_cols,
                     nrows = row_count,
-                    # skiprows = default_skip_header,
                     quotechar = default_quotechar, escapechar = default_escapechar,
                     encoding = default_encoding):
                         if not use_header:

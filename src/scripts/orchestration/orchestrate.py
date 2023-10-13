@@ -28,8 +28,7 @@ TASK_OR_PIPE_LINE_NM = "taskorpipeline_name"
 def execute_job(prj_nm,paths_data,task_id,run_id,file_path,iter_value):
     """function for master_executor calling"""
     try:
-        logging_path= os.path.expanduser(paths_data["folder_path"])+paths_data[
-            "local_repo"]+paths_data["programs"]+prj_nm+\
+        logging_path= os.path.expanduser(paths_data["folder_path"])+paths_data["local_repo"]+paths_data["programs"]+prj_nm+\
         paths_data["task_log_path"]
         logging.info(logging_path)
         logging.info("inside master executor")
@@ -524,13 +523,13 @@ def pipeline_execution(proj_nm,path_data,pipe_nm,run_id1,log_file_path1,log_file
         df_2=pd.DataFrame(json_data['tasks_details'].items())
         df_1 = df_flatten(df_2)
         df_1['Job_Status']= 'Start'
-        file_path=os.path.expanduser(path_data["folder_path"])+path_data["local_repo"]+path_data[
-        "programs"]+proj_nm+path_data["status_txt_file_path"]+pipe_nm+'_Pipeline_'+run_id1+".txt"
+        file_path=os.path.expanduser(path_data["folder_path"])+path_data["local_repo"]+path_data["programs"]+proj_nm+\
+        path_data["status_txt_file_path"]+pipe_nm+'_Pipeline_'+run_id1+".txt"
         main_logger.info("execution at pipeline level")
         # send_mail('STARTED', proj_nm,run_id1,path_data,pipe_nm,log_file_path1,log_file_name1)
         main_job(proj_nm,path_data,pipe_nm) #this checks for cyclic dependency
-        text_filepath=os.path.expanduser(path_data["folder_path"])+path_data["local_repo"]+ \
-        path_data["programs"]+proj_nm+path_data["status_txt_file_path"]
+        text_filepath=os.path.expanduser(path_data["folder_path"])+path_data["local_repo"]+path_data["programs"]+proj_nm+\
+        path_data["status_txt_file_path"]
         # * means all if need specific format then *.csv
         list_of_prev_files = glob.glob(text_filepath+pipe_nm+'*'+".txt")
         if len(list_of_prev_files) != 0:
@@ -670,10 +669,10 @@ mode,iter_value):
     """executes the orchestration at task or
     pipeline level based on the command given"""
     try:
-        if task_nm is not None:
+        if task_nm != None:
             task_orc_execution(prj_nm,paths_data,task_nm,run_id,log_file_path,log_file_name,
             iter_value)
-        elif pip_nm is not None:
+        elif pip_nm != None:
             pipeline_orc_execution(prj_nm,paths_data,pip_nm,run_id,log_file_path,log_file_name,
             mode,iter_value)
         else:

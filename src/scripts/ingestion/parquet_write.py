@@ -1,3 +1,4 @@
+# '''code to write the output dataframes into parquet files'''
 import logging
 import os
 from datetime import datetime
@@ -79,20 +80,26 @@ def write(json_data: dict, dataframe, counter) -> bool:
                 dataframe['UPDT_DTTM'] = " "
                 table = pa.Table.from_pandas(dataframe)
                 existing_table = pq.read_table(file_path + file_name)
+                if existing_table.schema != table.schema:
+                    # Align schemas by casting if they are different
+                    table = table.cast(existing_table.schema)
                 updated_table = pa.concat_tables([existing_table, table])
                 pq.write_table(updated_table, file_path + file_name, version='1.0')
             else:
                 table = pa.Table.from_pandas(dataframe)
                 existing_table = pq.read_table(file_path + file_name)
+                if existing_table.schema != table.schema:
+                    # Align schemas by casting if they are different
+                    table = table.cast(existing_table.schema)
                 updated_table = pa.concat_tables([existing_table, table])
                 pq.write_table(updated_table, file_path + file_name, version='1.0')
 
         task_logger.info("parquet conversion completed")
 
-        # Check if the Parquet file needs to be split
         records_per_split = target['target_max_record_count']
         filename_wo_ext = os.path.splitext(file_name)[0]
-        records_per_split = 0 if 'target_max_record_count' not in target else \
+        records_per_split = 0 if 'target_max_record_count' not in target or \
+        target['target_max_record_count'] in (None,"None","") else \
         target['target_max_record_count']
         if records_per_split > 0:
             split_large_parquet_file(file_path + filename_wo_ext + '.parquet',

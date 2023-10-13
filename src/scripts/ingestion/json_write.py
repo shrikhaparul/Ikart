@@ -41,8 +41,8 @@ def split_large_json_file(input_file, output_directory, records_per_split, ext):
                 split_file_path = f"{output_directory}_part_000{split_number}{ext}"
                 with open(split_file_path, 'w',encoding=default_encoding) as split_file:
                     json.dump(split_records, split_file, indent=4)
-    # Remove the original input JSON file
-    os.remove(input_file)
+    # # Remove the original input JSON file
+    # os.remove(input_file)
 
 def write(json_data: dict, dataframe, counter) -> bool:
     """ function for writing to JSON """
@@ -84,7 +84,8 @@ def write(json_data: dict, dataframe, counter) -> bool:
                 updated_dataframe.to_json(file_path + file_name, orient='records', lines=False)
         filename_wo_ext = os.path.splitext(file_name)[0]
         extension = os.path.splitext(file_name)[1]
-        records_per_split = 0 if 'target_max_record_count' not in target else \
+        records_per_split = 0 if 'target_max_record_count' not in target or \
+        target['target_max_record_count'] in (None,"None","") else \
         target['target_max_record_count']
         if records_per_split > 0:
             split_large_json_file(file_path+file_name, file_path+filename_wo_ext,

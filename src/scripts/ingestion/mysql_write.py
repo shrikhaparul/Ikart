@@ -209,7 +209,7 @@ def write(json_data,datafram,counter,config_file_path,task_id,run_id,paths_data,
         _ ,conn_details = establish_conn_for_mysql(json_data,'target',
                                                      config_file_path)
         # Remove spaces on the right of column names
-        datafram = datafram.rename(columns=lambda x: x.strip())
+        datafram = datafram.rename(columns=lambda x: str(x).strip())
         status="Pass"
         if target["operation"] == "create":
             if counter == 1:

@@ -70,6 +70,38 @@ def get_files_from_bucket(conn, bucket_name, path, json_data):
     return all_files
 
 
+# import re
+# def get_files_from_bucket(conn, bucket_name, path, json_data):
+#     source = json_data['task']['source']
+#     extensions = {
+#         'csv': '.csv',
+#         'parquet': '.parquet',
+#         'excel': '.xlsx',
+#         'json': '.json',
+#         'xml': '.xml'
+#     }
+#     prefix = path.rstrip('*')
+
+#     # List objects in the bucket
+#     response = conn.list_objects_v2(Bucket=bucket_name, Prefix=prefix)
+#     objects = response.get('Contents', [])
+
+#     if path.endswith('*'):
+#         suffix = path.split('*')[-1]
+
+#         # Use a regular expression to match the pattern
+#         pattern = re.compile(f"^{re.escape(prefix)}.*{re.escape(suffix)}$")
+#         all_files = [obj['Key'] for obj in objects if not obj['Key'].endswith('/') and pattern.match(obj['Key'])]
+#     else:
+#         # Non-wildcard path, just list objects with the specified path
+#         all_files = [obj['Key'] for obj in objects if not obj['Key'].endswith('/') and obj['Key'].lower().endswith(
+#             extensions.get(source['file_type'], ''))]
+
+#     return all_files
+
+
+
+
 def get_row_count(conn,bucket_name,file):
     '''Function to get the row count from diiferent file formats'''
     response = conn.get_object(Bucket=bucket_name, Key=file)

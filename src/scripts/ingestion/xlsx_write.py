@@ -51,7 +51,6 @@ def write(json_data: dict, dataframe, counter) -> bool:
         check = True if target['index'] == "False" else False
         # Reset the index and create an 'index' column
         dataframe.reset_index(drop=check, inplace=True)
-
         if counter == 1: # If it's the first chunk, write the data to a new Excel file
             if os.path.exists(target["file_path"]+file_name):
                 os.remove(target["file_path"]+file_name)
@@ -79,6 +78,15 @@ def write(json_data: dict, dataframe, counter) -> bool:
                 updated_dataframe = pd.concat([existing_dataframe, dataframe], ignore_index=True)
                 updated_dataframe.to_excel(file_path + file_name, index=False)
         task_logger.info("Excel conversion completed")
+
+        records_per_split = target['target_max_record_count']
+        filename_wo_ext = os.path.splitext(file_name)[0]
+        records_per_split = 0 if 'target_max_record_count' not in target or \
+        target['target_max_record_count'] in (None,"None","") else \
+        target['target_max_record_count']
+        if records_per_split > 0:
+            split_large_excel_file(file_path + filename_wo_ext + '.parquet',
+            file_path + filename_wo_ext, records_per_split, '.parquet')
         return True
     except Exception as error:
         task_logger.exception("converting_to_excel() is %s", str(error))

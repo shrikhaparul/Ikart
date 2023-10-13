@@ -40,7 +40,7 @@ def split_large_file(input_file, output_directory, records_per_split, ext):
 
         # Close the final split file
         split_file.close()
-    os.remove(input_file)
+    # os.remove(input_file)
 
 def write(json_data: dict,datafram, counter) -> bool:
     """ function for writing data to csv file"""
@@ -89,7 +89,8 @@ def write(json_data: dict,datafram, counter) -> bool:
                 mode='a', encoding=target["encoding"])
         filename_wo_ext = os.path.splitext(file_name)[0]
         extension = os.path.splitext(file_name)[1]
-        records_per_split = 0 if 'target_max_record_count' not in target else \
+        records_per_split = 0 if 'target_max_record_count' not in target or \
+        target['target_max_record_count'] in (None,"None","") else \
         target['target_max_record_count']
         if records_per_split > 0:
             split_large_file(file_path+file_name, file_path+filename_wo_ext,

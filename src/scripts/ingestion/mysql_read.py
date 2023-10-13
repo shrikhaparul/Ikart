@@ -64,7 +64,7 @@ def read(json_data,config_file_path,task_id,run_id,paths_data,file_path,iter_val
                 yield query
         else:
             task_logger.info("reading from sql query")
-            sql = f'SELECT count(0) from ({source["query"]}) as d;'
+            sql = f'SELECT count(*) from ({source["query"]}) as d;'
             task_logger.info(sql)
             cursor.execute(sql)
             myresult = cursor.fetchall()
@@ -80,13 +80,13 @@ def read(json_data,config_file_path,task_id,run_id,paths_data,file_path,iter_val
                 yield query
         conn3.dispose()
         return True
-    except pymysql.err.ProgrammingError: #to handle table not found issue
-        task_logger.error("the table name or connection specified in the  \
-                          task is incorrect/doesnot exists")
-        write_to_txt(task_id,'FAILED',file_path)
-        audit(json_data, task_id,run_id,'STATUS','FAILED',
-        iter_value)
-        sys.exit()
+    # except pymysql.err.ProgrammingError: #to handle table not found issue
+    #     task_logger.error("the table name or connection specified in the "
+    #                       "task is incorrect/doesnot exists")
+    #     write_to_txt(task_id,'FAILED',file_path)
+    #     audit(json_data, task_id,run_id,'STATUS','FAILED',
+    #     iter_value)
+    #     sys.exit()
     # except pymysql.err.OperationalError as e:
     #     task_logger.exception(f"Caught an OperationalError: {e}")
     #     error_code, error_message = e.args

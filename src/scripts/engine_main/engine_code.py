@@ -1,4 +1,4 @@
-""" importing required modules. """
+""" importing required modules """
 import json
 import logging
 import sys
@@ -243,7 +243,7 @@ def begin_transaction(paths_data,json_data,config_file_path):
     session = ssession()
     # Start a transaction
     session.begin()
-    task_logger.info("=========================================")
+    task_logger.info("=================================================================")
     task_logger.info("Transaction Started")
     return session
 
@@ -301,7 +301,7 @@ def engine_main(prj_nm,task_id,paths_data,run_id,file_path,iter_value):
                 counter+=1
                 if target["target_type"] != "rest_api_write":
                     if target["target_type"] not in ("csv_write", "parquet_write", "json_write",
-                                                   "xml_write", "xlsx_write"):
+                                                    "xml_write", "xlsx_write"):
                         value=write(json_data, i,counter,config_file_path,task_id,run_id,
                         paths_data,file_path,iter_value,session)
                         if value is False:
@@ -367,7 +367,8 @@ def engine_main(prj_nm,task_id,paths_data,run_id,file_path,iter_value):
             counter=0
             for i in data_fram :
                 counter+=1
-                if target["target_type"] != "csv_write":
+                if target["target_type"] not in ("csv_write", "parquet_write", "json_write",
+                                                   "xml_write", "xlsx_write"):
                     value=write(json_data, i,counter,config_file_path,task_id,run_id,
                     paths_data,file_path,iter_value,session)
                     if value is False:
@@ -377,7 +378,7 @@ def engine_main(prj_nm,task_id,paths_data,run_id,file_path,iter_value):
                         task_success(task_id,file_path,json_data,run_id,iter_value)
                         return False
                 else:
-                    value=write(json_data, i,None)
+                    value=write(json_data, i,counter)
                     if value is False:
                         task_failed(task_id,file_path,json_data,run_id,iter_value)
                         return False
