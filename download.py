@@ -69,38 +69,38 @@ def required_files_download(paths_data:str,repo_name,branch):
                                     save_dir=path_src+paths_data["engine_path"])
             except Exception as error:
                 main_logger.info("error in downloading of engine_code %s", str(error))
-        # else:
-        #     downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_engine_path"],
-        #     path_src+paths_data["engine_path"]+'engine_code.py',"engine_code.py",main_logger)
+        else:
+            downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_engine_path"],
+            path_src+paths_data["engine_path"]+'engine_code.py',"engine_code.py",main_logger)
         ########### To download checks_mapping json from git ##########
         if not Path(path_src+ paths_data["dq_scripts_path"]+'checks_mapping.json').exists():
             main_logger.info("downloading of checks_mapping json started...")
             download_file_from_github(repo_name,branch, file_path=paths_data[
             "gh_checks_mapping_path"],save_dir =path_src+ paths_data["dq_scripts_path"])
             main_logger.info("downloading of checks_mapping json completed!")
-        # else:
-        #     downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_checks_mapping_path"],
-        #     path_src+ paths_data["dq_scripts_path"]+'checks_mapping.json',"checks_mapping.json",
-        #     main_logger)
+        else:
+            downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_checks_mapping_path"],
+            path_src+ paths_data["dq_scripts_path"]+'checks_mapping.json',"checks_mapping.json",
+            main_logger)
         ########### To download mapping json from git ############
         if not Path(path_src+paths_data["engine_path"]+'mapping'+JSON).exists():
             main_logger.info("downloading of mapping json started...")
             download_file_from_github(repo_name,branch, file_path=paths_data[
                 "gh_mapping_path"],save_dir =path_src+paths_data["engine_path"])
             main_logger.info("downloading of mapping json completed!")
-        # else:
-        #     downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_mapping_path"],
-        #     path_src+paths_data["engine_path"]+'mapping'+JSON,"mapping.json",main_logger)
+        else:
+            downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_mapping_path"],
+            path_src+paths_data["engine_path"]+'mapping'+JSON,"mapping.json",main_logger)
         ########### To download definitions_qc from git ##########
         if not Path(path_src+paths_data["dq_scripts_path"]+'definitions_qc.py').exists():
             main_logger.info("downloading of definitions_qc code started...")
             download_file_from_github(repo_name,branch, file_path=paths_data[
                 "gh_definitions_qc_path"],save_dir =path_src+paths_data["dq_scripts_path"])
             main_logger.info("downloading of definitions_qc code completed!")
-        # else:
-        #     downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_definitions_qc_path"],
-        #     path_src+paths_data["dq_scripts_path"]+'definitions_qc.py',"definitions_qc.py",
-        #     main_logger)
+        else:
+            downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_definitions_qc_path"],
+            path_src+paths_data["dq_scripts_path"]+'definitions_qc.py',"definitions_qc.py",
+            main_logger)
         ########### To download utility code from git ###############
         if not Path(path_src+paths_data["ingestion_path"]+'utility.py').exists():
             try:
@@ -110,9 +110,9 @@ def required_files_download(paths_data:str,repo_name,branch):
                 main_logger.info("downloading of utility code completed!")
             except Exception as error:
                 main_logger.info("error in downloading of utility code %s", str(error))
-        # else:
-        #     downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_utility_path"],
-        #     path_src+paths_data["ingestion_path"]+'utility.py',"utility.py",main_logger)
+        else:
+            downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_utility_path"],
+            path_src+paths_data["ingestion_path"]+'utility.py',"utility.py",main_logger)
         ############ To download connections code from git ############
         if not Path(path_src+paths_data["ingestion_path"]+'connections.py').exists():
             try:
@@ -122,18 +122,18 @@ def required_files_download(paths_data:str,repo_name,branch):
                 main_logger.info("downloading of connections code completed!")
             except Exception as error:
                 main_logger.info("error in downloading of connections code %s", str(error))
-        # else:
-        #     downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_connections_path"],
-        #     path_src+paths_data["ingestion_path"]+'connections.py',"connections.py",main_logger)
+        else:
+            downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_connections_path"],
+            path_src+paths_data["ingestion_path"]+'connections.py',"connections.py",main_logger)
         ############# To download orchestration code from git ##############
         if not Path(path_src+paths_data["orchestration_path"]+'orchestrate.py').exists():
             main_logger.info("downloading of orchestarte code started...")
             download_file_from_github(repo_name,branch, file_path=paths_data[
                 "gh_orchestrate_path"],save_dir =path_src+paths_data["orchestration_path"])
             main_logger.info("downloading of orchestarte code completed!")
-        # else:
-        #     downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_orchestrate_path"],
-        #     path_src+paths_data["orchestration_path"]+'orchestrate.py',"orchestrate.py",main_logger)
+        else:
+            downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_orchestrate_path"],
+            path_src+paths_data["orchestration_path"]+'orchestrate.py',"orchestrate.py",main_logger)
     except Exception as error:
         main_logger.exception("error in common_downloads %s.", str(error))
         raise error
