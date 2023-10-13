@@ -1,9 +1,0 @@
-{
-  "is_active": "Y",
-  "id": 0,
-  "pipeline_id": 122,
-  "task_name": "aws_s3_to_csv",
-  "task_description": "checking s3 files",
-  "task_type": "Ingestion",
-  "task_sequence": "3"
-}
