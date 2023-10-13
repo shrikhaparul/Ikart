@@ -142,7 +142,7 @@ def downlaod_latest_file_from_git(repository_name,
     branch,file_path,local_file_path,filename,log_name):
     '''function to get the updated file from git'''
     try:
-        if local_file_path.exists():
+        if Path(local_file_path).exists():
             auth_token = os.getenv("AUTH")
             auth = Auth.Token(auth_token)
             git = Github(auth=auth)
