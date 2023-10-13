@@ -1,0 +1,16 @@
+{
+  "project_id": 61,
+  "connection_type": "Application",
+  "connection_subtype": "REST API",
+  "connection_name": "localrestapi_connection_basic",
+  "connection_details": {
+    "url": "http://localhost:8080/api/programs/",
+    "password": "b82ef62efa0ad8406ca92872bf984c40200a9da3",
+    "username": "root",
+    "api_token": "ab23ab6987a02b92a1f2326f706753bbaa05ddea607c0ba9f676f73879d8468a0a062060c542510574bc78a6f2ab143e8210c7784ec910554ee6a22eed03b7426debd1d3b55f7f791bc1f8065fe04bb8a67677cf4f979e239039af8901fef63428f875f6679212fee32be66feb8c73ab1f5009810cc11896bfbdc79c536342a0df435eb94491db9c28afe93bea07953230dcb3477852982f9b67dfaf3b736b7bd0577fceb5db5f5bd3f8a4fef9704ad4b4daf61c95adf72b1c465e24c122c1f5d1d285b0a3dc2bf52e9ac3c1be8ceb7067f615a647a9bc049c4e36bda00137fa503ac09ca1ea99bf7269756ce351afda24739cd51b7e0fee427ec8915f1271ad37e4ccba108fde429f68a96721c9a0e94209e070d03aad891e0f57d9c1f7af11c84b2ecea252a3ab37c9087f29c5de160ee86f924ec282b2a228e32e1ef2ba939f3d327c05f7dbc037f7a891ba4b1ee048421cb04be9f088bd17a351dedbb9e06c2df56a5f5dc31ee3ba4a6ffa4b3ef6761450de545ae537b888870210be5a94f4d998df4cd2391ecc79976986a113ca5041741cfe12343f0ec6eaefb72aeb16584213336891ada4b2191fcdffeba02b53a97a7037fe3c1e866e8e40706f193399afa18227f71867dee56075bcaf8597fc9eac49c87e7c0523c88a4de9fe0b8cda56f0e35b38e0b9c73bbaf58d4df824",
+    "access_token": "",
+    "authentication_type": "basic",
+    "created_by": "jjones",
+    "updated_by": "jjones"
+  }
+}
