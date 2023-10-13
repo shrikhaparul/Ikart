@@ -1,0 +1,49 @@
+{
+  "id": 363,
+  "project_name": "marketing_dwh",
+  "pipeline_name": "hr_db",
+  "project_id": 61,
+  "pipeline_id": 157,
+  "task_name": "Ingest_hr",
+  "task_description": "Ingestion Job for HR Data",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Hr5m.csv",
+      "file_path": "/home/luke/datafiles/src/",
+      "file_type": "csv",
+      "chunk_size": 100000,
+      "quote_char": null,
+      "escape_char": "\\",
+      "skip_footer": null,
+      "skip_header": 1,
+      "alias_columns": "Emp ID,Name Prefix,First Name,Middle Initial,Last Name,Gender,E Mail,Father's Name,Mother's Name,Mother's Maiden Name,Date of Birth,Time of Birth,Age in Yrs.,Weight in Kgs.,Date of Joining,Quarter of Joining,Half of Joining,Year of Joining,Month of Joining,Month Name of Joining,Short Month,Day of Joining,DOW of Joining,Short DOW,Age in Company (Years),Salary,Last % Hike,SSN,Phone No. ,Place Name,County,City,State,Zip,Region,User Name,Password",
+      "parameter_type": "Local Server",
+      "select_columns": "",
+      "connection_name": "local_files"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "stg",
+      "operation": "truncate",
+      "table_name": "hr_data",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "pg_dev",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
