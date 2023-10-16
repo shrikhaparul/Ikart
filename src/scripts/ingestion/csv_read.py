@@ -36,7 +36,11 @@ def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
         file_name = source["file_name"]
         # function for reading files present in a folder with different csv formats
         # Combine file_path and file_name
-        pattern = f'{file_path}{file_name}'
+        # Ensure src_file_path ends with a trailing slash
+        if not src_file_path.endswith('/'):
+            src_file_path = src_file_path + '/'
+        # Combine file_path and file_name using os.path.join
+        pattern = os.path.join(src_file_path, file_name)
         # Use glob.glob to get a list of matching file paths
         all_files = glob.glob(pattern)
         task_logger.info("all files %s", all_files)
