@@ -36,7 +36,7 @@
       "audit_columns": "active",
       "parameter_type": "Local Server",
       "connection_name": "local_files",
-      "target_max_record_count": 2000
+      "target_max_record_count": 0
     },
     "data_quality_execution": {
       "pre_check_enable": "N",
