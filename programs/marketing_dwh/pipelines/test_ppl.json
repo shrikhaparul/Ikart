@@ -1,0 +1,46 @@
+{
+  "pipeline_id": 156,
+  "project_id": 61,
+  "pipeline_name": "test_ppl",
+  "pipeline_cd": null,
+  "pipeline_description": "test",
+  "is_active": "Y",
+  "tasks_details": {
+    "tsk_test_ppl": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "362",
+      "data": {
+        "label": "362-tsk_test_ppl"
+      },
+      "position": {
+        "x": 50,
+        "y": 1000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-362",
+      "source": "0",
+      "target": "362"
+    }
+  ],
+  "created_dttm": "2023-10-17T04:45:04.548Z",
+  "updated_dttm": "2023-10-17T04:45:04.548Z"
+}
