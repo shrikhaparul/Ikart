@@ -1,0 +1,47 @@
+{
+  "id": 358,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "release_v1.0.0_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "mysql_to_flatfile",
+  "task_description": "ingest the data from mysql table to flatfiles",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from csvmultiplefiles",
+      "schema": "karttest",
+      "chunk_size": 1000,
+      "table_name": "csvmultiplefiles",
+      "parameter_type": "MySQL",
+      "select_columns": null,
+      "connection_name": "mysql_karttest_connection_puneeth"
+    },
+    "target": {
+      "target_type": "json_write",
+      "index": "False",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "targetfile%DD%%MM%%YYYY%.json",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "json",
+      "quote_char": "\"",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_connection_puneeth",
+      "target_max_record_count": 1000
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
