@@ -1,0 +1,48 @@
+{
+  "login_id": "luke",
+  "id": 352,
+  "project_name": "marketing_dwh",
+  "pipeline_name": "export_db2files",
+  "project_id": 61,
+  "pipeline_id": 152,
+  "task_name": "export_csv",
+  "task_description": "To export the to CSV format",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "luke",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from loc_details_01",
+      "schema": "test_db",
+      "chunk_size": 1000,
+      "table_name": "loc_details_01",
+      "parameter_type": "MySQL",
+      "select_columns": "",
+      "connection_name": "mysql-testdb"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "index": "False",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "|",
+      "file_name": "loc_details.csv",
+      "file_path": "/home/luke/datafiles/tgt/export_pipeline/",
+      "file_type": "csv",
+      "quote_char": "\"",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "local_files",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
