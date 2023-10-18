@@ -1,0 +1,46 @@
+{
+  "login_id": "luke",
+  "id": 354,
+  "project_name": "marketing_dwh",
+  "pipeline_name": "export_db2files",
+  "project_id": 61,
+  "pipeline_id": 152,
+  "task_name": "export_parquet",
+  "task_description": "Exports the data to parquet format",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from loc_details_01",
+      "schema": "test_db",
+      "chunk_size": 1000,
+      "table_name": "loc_details_01",
+      "parameter_type": "MySQL",
+      "select_columns": null,
+      "connection_name": "mysql-testdb"
+    },
+    "target": {
+      "target_type": "parquet_write",
+      "index": "False",
+      "encoding": "utf-8",
+      "file_name": "loc_details.parquet",
+      "file_path": "/home/luke/datafiles/tgt/export_pipeline/",
+      "file_type": "parquet",
+      "quote_char": "\"",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "local_files",
+      "target_max_record_count": 2000
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
