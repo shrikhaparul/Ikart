@@ -1,0 +1,47 @@
+{
+  "task_id": 289,
+  "pipeline_id": 137,
+  "task_name": "sql_orchestrate",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql_connection_ikart_varun",
+    "restart": "normal"
+  },
+  "sql_list": [
+    {
+      "seq_no": 2,
+      "sql_query": "INSERT INTO tbl1 (`Year`, `Industry_aggregation_NZSIOC`, `Industry_code_NZSIOC`, `Industry_name_NZSIOC`, `Units`, `Variable_code`, `Variable_name`, `Variable_category`, `Value`, `Industry_code_ANZSIC06`)\nVALUES (2026, 'Aggregation', 'Code', 'Name', 'Unit', 'Code123', 'Name123', 'Category123', '12345', 'ANZ123');\n",
+      "table_used_desc": "insert"
+    },
+    {
+      "seq_no": 7,
+      "sql_query": "SELECT * FROM tbl1\nWHERE `Year` = 2023;",
+      "table_used_desc": "select"
+    },
+    {
+      "seq_no": 6,
+      "sql_query": "SELECT * FROM my_view;",
+      "table_used_desc": "select"
+    },
+    {
+      "seq_no": 5,
+      "sql_query": "CREATE VIEW my_view AS\nSELECT Year, Industry_name_NZSIOC, Value\nFROM tbl1\nWHERE Year >= 2020;",
+      "table_used_desc": "view"
+    },
+    {
+      "seq_no": 4,
+      "sql_query": "UPDATE tbl1\nSET Units = 'UpdatedUnits';",
+      "table_used_desc": "update"
+    },
+    {
+      "seq_no": 3,
+      "sql_query": "\nALTER TABLE tbl1\nADD COLUMN demo int;",
+      "table_used_desc": "alter"
+    },
+    {
+      "seq_no": 1,
+      "sql_query": "\nDELETE FROM tbl1\nWHERE `Industry_code_NZSIOC` = 'AA131';",
+      "table_used_desc": "delete"
+    }
+  ]
+}
