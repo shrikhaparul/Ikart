@@ -1,0 +1,10 @@
+{
+  "project_id": 52,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "local_conn",
+  "connection_details": {
+    "file_name": "target",
+    "file_path": "/home/nandishms/backend_project/Program/ingestion_kart/Pipeline/Task/target_files"
+  }
+}

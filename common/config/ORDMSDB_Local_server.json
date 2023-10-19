@@ -1,0 +1,10 @@
+{
+  "project_id": 1,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "ORDMSDB_Local_server",
+  "connection_details": {
+    "file_name": "test1.csv",
+    "file_path": "C:\\Users\\NandishMS\\Downloads\\uploads"
+  }
+}

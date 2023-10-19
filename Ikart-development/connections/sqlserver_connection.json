@@ -1,0 +1,13 @@
+{
+  "project_id": 47,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MSSQL",
+  "connection_name": "sqlserver_connection",
+  "connection_details": {
+    "port": "1433",
+    "database": "karttest",
+    "hostname": "localhost",
+    "password": "f631ec3483a769c3eafb7b8bad2c439c6b5bb607ee65476a193f",
+    "username": "SA"
+  }
+}

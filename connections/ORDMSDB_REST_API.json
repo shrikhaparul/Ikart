@@ -1,0 +1,14 @@
+{
+  "project_id": 5,
+  "connection_type": "Application",
+  "connection_subtype": "REST API",
+  "connection_name": "ORDMSDB_REST_API",
+  "connection_details": {
+    "url": "https://gorest.co.in/public/v2/users",
+    "password": "M3opWPaRlApFahC2Do9FdoVlXUIOgfewWYwdsb1q1FQ",
+    "username": "root",
+    "api_token": "",
+    "authentication_type": "access_token",
+    "access_token": "245124305afd279671071f05644c0751eb8f4b0d6191beeb13e344cd2c95545d"
+  }
+}

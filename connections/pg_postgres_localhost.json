@@ -1,0 +1,13 @@
+{
+  "project_id": 1,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "PostgreSQL",
+  "connection_name": "pg_postgres_localhost",
+  "connection_details": {
+    "port": "5432",
+    "database": "postgres",
+    "hostname": "localhost",
+    "password": "ba26eb3589b60e1bb2d211db6789fbcb0a05ea0128af",
+    "username": "pguser"
+  }
+}

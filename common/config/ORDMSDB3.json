@@ -1,0 +1,13 @@
+{
+  "project_id": 1,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "Oracle",
+  "connection_name": "ORDMSDB3",
+  "connection_details": {
+    "port": "1521",
+    "database": "core1",
+    "hostname": "localhost",
+    "password": "AyTQQeysiRzWZON8OIAYCw",
+    "username": "system"
+  }
+}

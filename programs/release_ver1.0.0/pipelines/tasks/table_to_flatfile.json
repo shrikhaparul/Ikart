@@ -1,0 +1,52 @@
+{
+  "id": 312,
+  "project_name": "release_ver1.0.0",
+  "pipeline_name": "large_files_test",
+  "project_id": 48,
+  "pipeline_id": 117,
+  "task_name": "table_to_flatfile",
+  "task_description": "ingest data from table to flatfile",
+  "task_type": "Ingestion",
+  "task_sequence": "5",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "appendingcsv - Copy.csv",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "chunk_size": 100000,
+      "quote_char": "\"",
+      "escape_char": "\\",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local_server_connection"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "index": "False",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "1500MBorg_data.csv",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "quote_char": "\"",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "local_server_connection"
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}

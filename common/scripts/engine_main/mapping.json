@@ -1,0 +1,33 @@
+{
+"mapping":{
+   "csv_read":"csv_read.py",
+   "rest_api_read":"rest_api_read.py",
+   "rest_api_write":"rest_api_write.py",
+   "csv_write":"csv_write.py",
+   "postgres_write":"postgres_write.py",
+   "postgres_read": "postgres_read.py",
+   "mysql_read": "mysql_read.py",
+   "mysql_write": "mysql_write.py",
+   "csvfile_read":"csvfile_read.py",
+   "csvfile_write":"csvfile_write.py",
+   "excel_read": "excel_read.py",
+   "excel_write": "excel_write.py",
+   "parquet_read": "parquet_read.py",
+   "parquet_write":"parquet_write.py",
+   "json_read":"json_read.py",
+   "json_write":"json_write.py",
+   "xml_read":"xml_read.py",
+   "xml_write":"xml_write.py",
+   "sqlserver_read":"sqlserver_read.py",
+   "sqlserver_write":"sqlserver_write.py",
+   "text_read":"text_read.py",
+   "text_write":"text_write.py",
+   "snowflake_read": "snowflake_read.py",
+   "snowflake_write": "snowflake_write.py" ,
+   "aws_s3_read":"aws_s3_read.py",
+   "aws_s3_write":"aws_s3_write.py" 
+}
+}
+
+
+

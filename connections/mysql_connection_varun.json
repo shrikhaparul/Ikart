@@ -1,0 +1,15 @@
+{
+  "project_id": 47,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MySQL",
+  "connection_name": "mysql_connection_varun",
+  "connection_details": {
+    "port": "3306",
+    "database": "config",
+    "hostname": "localhost",
+    "password": "b82ef62efa0ad8406ca92872bf984c40200a9da3",
+    "username": "root",
+    "created_by": "jjones",
+    "updated_by": "jjones"
+  }
+}

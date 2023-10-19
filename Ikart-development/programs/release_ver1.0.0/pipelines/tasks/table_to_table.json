@@ -1,0 +1,39 @@
+{
+  "id": 309,
+  "project_name": "release_ver1.0.0",
+  "pipeline_name": "large_files_test",
+  "project_id": 48,
+  "pipeline_id": 117,
+  "task_name": "table_to_table",
+  "task_description": "ingest data from table to table",
+  "task_type": "Ingestion",
+  "task_sequence": "1",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from org_largefiles",
+      "schema": "karttest",
+      "chunk_size": 100000,
+      "table_name": "org_largefiles",
+      "parameter_type": "MySQL",
+      "select_columns": null,
+      "connection_name": "mysql_connection"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "karttest",
+      "operation": "append",
+      "table_name": "org_largefiles2",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_connection"
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}

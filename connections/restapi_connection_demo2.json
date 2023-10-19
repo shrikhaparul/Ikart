@@ -1,0 +1,14 @@
+{
+  "project_id": 36,
+  "connection_type": "Application",
+  "connection_subtype": "REST API",
+  "connection_name": "restapi_connection_demo2",
+  "connection_details": {
+    "url": "https://gorest.co.in/public/v2/users",
+    "password": "a3283961424fce5896946e768d64ced0",
+    "username": "",
+    "api_token": "ab23ae6887a02b99fdf0353a706753e9aa50ddef65790ef4f377f73f798d468b0d5025629914515e74b97da6f2af1339821fc27c4ec9100f4bb9fe73ed02b71239bb87d6bf597e2c1ec1aa035be14eeea47571c51a969b70c533f9db06fcfd6218dc14375d77f753b8d3bea5e9a3b806",
+    "access_token": "fa79a96cd0fb7f9efba6626175335deaaf068eef367a0aa5a222f56d2e8f41dd5d01266095150d0476bc2ef4f0ab443b8015962b49981b5d4eeaa373eb53bb15ce897a09ed1fa5b1ab17ff5291d56451",
+    "authentication_type": "access_token"
+  }
+}

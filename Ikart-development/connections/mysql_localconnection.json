@@ -1,0 +1,13 @@
+{
+  "project_id": 1,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MySQL",
+  "connection_name": "mysql_localconnection",
+  "connection_details": {
+    "username": "root",
+    "port": "3306",
+    "database": "karttest",
+    "hostname": "localhost",
+    "password": "a738eb3589b62c99aa3c60111ea17d51fdc3eae286b9c9ba99"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "project_id": 42,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "local_connection_123",
+  "connection_details": {
+    "file_name": "sales",
+    "file_path": "/home/madhu/Ingestion_code2/"
+  }
+}

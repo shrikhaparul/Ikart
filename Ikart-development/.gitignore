@@ -1,0 +1,12 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Ignore compiled Python files and the __pycache__ directory
+__pycache__/
+*.pyc
+*.pyo
+
+
+**/*.bak
+**/*.env
+**/*.log
+**/*.txt

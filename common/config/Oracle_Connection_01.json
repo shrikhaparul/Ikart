@@ -1,0 +1,13 @@
+{
+  "project_id": 44,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "Oracle",
+  "connection_name": "Oracle_Connection_01",
+  "connection_details": {
+    "port": "1521",
+    "database": "config",
+    "hostname": "localhost",
+    "password": "ab25f433886f6e94e4642728fa8f627fd55c72db73",
+    "username": "system"
+  }
+}

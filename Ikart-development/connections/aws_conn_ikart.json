@@ -1,0 +1,15 @@
+{
+  "project_id": 51,
+  "connection_type": "File Storage",
+  "connection_subtype": "AWS S3",
+  "connection_name": "aws_conn_ikart",
+  "connection_details": {
+    "iam_role": "Parameshwar",
+    "access_key": "8b0ad01bb4f04ae6cb921a1b715125c7897ff382fa538f7bafe52bebfc64afd2822deab2",
+    "bucket_name": "ikart-s3",
+    "region_name": "ap-south-1",
+    "secret_access_key": "8971e80ebcfa47cef48b322b2e6808b98a75faa1303b53ebee738f7938a40fd12d032104c46e065043dcbaadcea81bd126f04bc585140bb3",
+    "created_by": "jjones",
+    "updated_by": "jjones"
+  }
+}

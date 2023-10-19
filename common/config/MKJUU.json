@@ -1,0 +1,14 @@
+{
+  "project_id": 3,
+  "connection_type": "Application",
+  "connection_subtype": "REST API",
+  "connection_name": "MKJUU",
+  "connection_details": {
+    "url": "http://localhost:8080/api/users",
+    "password": "-ZbER1YIoMQnAtjgi-qGgXMdP4KRkdhQ7LKQtI88qhE",
+    "username": "",
+    "api_token": "",
+    "access_token": "previewInfosafCEACFXA",
+    "authentication_type": "access_token"
+  }
+}

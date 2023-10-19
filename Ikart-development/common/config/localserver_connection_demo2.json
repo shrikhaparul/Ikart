@@ -1,0 +1,10 @@
+{
+  "project_id": 36,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "localserver_connection_demo2",
+  "connection_details": {
+    "file_path": "/home/madhu",
+    "file_name": "csv"
+  }
+}

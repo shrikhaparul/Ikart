@@ -1,0 +1,13 @@
+{
+  "project_id": 3,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "PostgreSQL",
+  "connection_name": "ORDMSDB_postgres_sql",
+  "connection_details": {
+    "port": "5432",
+    "database": "core1",
+    "hostname": "localhost",
+    "password": "gWPXPxufXLGcpE3Zf8CHYg",
+    "username": "postgres"
+  }
+}

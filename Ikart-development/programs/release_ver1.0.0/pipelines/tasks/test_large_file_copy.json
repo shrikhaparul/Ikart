@@ -1,0 +1,75 @@
+{
+  "id": 314,
+  "project_name": "release_ver1.0.0",
+  "pipeline_name": "large_files_test",
+  "project_id": 48,
+  "pipeline_id": 117,
+  "task_name": "test_large_file_copy",
+  "task_description": "to test large file processing",
+  "task_type": "Ingestion",
+  "task_sequence": "1",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "admin",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_1000000_0.97gb.csv",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "chunk_size": 500000,
+      "quote_char": "\"",
+      "escape_char": "\\",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": "",
+      "connection_name": "local_server_connection"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "karttest",
+      "operation": "create",
+      "table_name": "1500gb_data_test1",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_connection"
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_match_strftime_format",
+        "parameters": {
+          "column": "Order Date",
+          "strftime_format": "%Y-%m-%d"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_values_to_be_in_set",
+        "parameters": {
+          "column": "Sales Channel",
+          "value_set": "[\"Online\",\"Offline\"]"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      }
+    ]
+  }
+}

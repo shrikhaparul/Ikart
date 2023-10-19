@@ -1,0 +1,10 @@
+{
+  "project_id": 43,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "local_con_new",
+  "connection_details": {
+    "file_path": "/home/puneeths/Sample Data/",
+    "file_name": "sales.csv"
+  }
+}

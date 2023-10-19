@@ -1,0 +1,13 @@
+{
+  "project_id": 3,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MSSQL",
+  "connection_name": "ORDMSDB16",
+  "connection_details": {
+    "port": "1433",
+    "database": "core1",
+    "hostname": "localhost",
+    "password": "FNF1LeeBM1UCQPlddSGp5A",
+    "username": "SA"
+  }
+}

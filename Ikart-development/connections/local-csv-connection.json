@@ -1,0 +1,10 @@
+{
+  "project_id": 43,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "local-csv-connection",
+  "connection_details": {
+    "file_name": "sales.csv",
+    "file_path": "/home/ragasana/Data Folder"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "project_id": 1,
+  "connection_type": "Application",
+  "connection_subtype": "REST API",
+  "connection_name": "ORDMSDB",
+  "connection_details": {
+    "authentication_type": "basic",
+    "url": "http://localhost:8080/api/projects",
+    "password": "M3opWPaRlApFahC2Do9FdoVlXUIOgfewWYwdsb1q1FQ",
+    "username": "root",
+    "api_token": "",
+    "access_token": ""
+  }
+}

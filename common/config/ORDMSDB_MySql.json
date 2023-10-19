@@ -1,0 +1,13 @@
+{
+  "project_id": 1,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MySQL",
+  "connection_name": "ORDMSDB_MySql",
+  "connection_details": {
+    "port": "3306",
+    "database": "config",
+    "hostname": "localhost",
+    "password": "8720fd3293822c92a0fc5232e6fb0862423a95034475daf66c23",
+    "username": "root"
+  }
+}

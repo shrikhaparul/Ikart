@@ -1,0 +1,13 @@
+{
+  "id": null,
+  "pipeline_id": 117,
+  "task_name": "table_to_flatfile_copy",
+  "task_description": "ingest data from table to flatfile",
+  "task_type": "Ingestion",
+  "task_sequence": "5",
+  "is_active": "Y",
+  "created_by": "admin",
+  "created_dttm": "2023-09-08T07:49:28.000Z",
+  "updated_by": "admin",
+  "updated_dttm": "2023-09-08T07:49:28.000Z"
+}

@@ -1,0 +1,13 @@
+{
+  "project_id": 3,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MySQL",
+  "connection_name": "rds_core",
+  "connection_details": {
+    "port": "3306",
+    "database": "core",
+    "hostname": "ikart-dev.cpe2skhikiyu.us-east-1.rds.amazonaws.com",
+    "password": "IbyL9Ybfnd9BJmb97_-d6g",
+    "username": "core"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "project_id": 4,
+  "connection_type": "File Storage",
+  "connection_subtype": "AWS S3",
+  "connection_name": "new_awss3_connection_new",
+  "connection_details": {
+    "access_key": "8b0ad01bb79745f3ddf61e1b12442cc18607fc8c07b486eb7ac61b1682b7ca05c7fe30ad",
+    "secret_access_key": "8f0cda0ed38b4edff4ea640b76501cb0fa42f08f26650bf9f920f95b1c86468f1d542d039149665f88cc6e4176a0cc237fe27ea089f81d0c",
+    "region_name": "ap-south-1",
+    "bucket_name": "pg-mystoreinventory-6134",
+    "iam_role": "varun"
+  }
+}

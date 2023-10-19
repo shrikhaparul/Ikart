@@ -1,0 +1,13 @@
+{
+  "project_id": 43,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MySQL",
+  "connection_name": "mysql_rds",
+  "connection_details": {
+    "port": "3306",
+    "database": "ingestion",
+    "hostname": "ikart-dev.cpe2skhikiyu.us-east-1.rds.amazonaws.com",
+    "password": "a32ffe3f95b65d9aabf6ed740eb2e246b3a1ebba53a11c063681",
+    "username": "ingest"
+  }
+}

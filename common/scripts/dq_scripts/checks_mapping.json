@@ -1,0 +1,213 @@
+{
+"checks_mapping": [
+	{
+		"func_name" : "expect_multicolumn_sum_to_equal",
+		"arguments": "column_list|sum_total",
+		"parameters" : "list|int",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_select_column_values_to_be_unique_within_record",
+		"arguments": "column_list",
+		"parameters" : "list",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_sum_to_be_between",
+		"arguments": "column|min_value|max_value",
+		"parameters" : "string|comparable type|comparable type",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_min_to_be_between",
+		"arguments": "column|min_value|max_value",
+		"parameters" : "string|comparable type|comparable type",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_max_to_be_between",
+		"arguments": "column|min_value|max_value",
+		"parameters" : "string|comparable type|comparable type",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_most_common_value_to_be_in_set",
+		"arguments": "column|value_set",		
+		"parameters" : "string|list",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_unique_value_count_to_be_between",
+		"arguments": "column|min_value|max_value",
+		"parameters" : "string|int|int",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_median_to_be_between",
+		"arguments": "column|min_value|max_value",
+		"parameters" : "string|int|int",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_mean_to_be_between",
+		"arguments": "column|min_value|max_value",
+		"parameters" : "string|float|float",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_distinct_values_to_be_in_set",
+		"arguments": "column|value_set",
+		"parameters" : "string|list",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_values_to_not_match_regex",
+		"arguments": "column|regex",
+		"parameters" : "string|string",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_values_to_match_regex",
+		"arguments": "column|regex",
+		"parameters" : "string|string",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_value_lengths_to_equal",
+		"arguments": "column|value",
+		"parameters" : "string|int",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_values_to_be_decreasing",
+		"arguments": "column",
+		"parameters" : "string",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_values_to_be_increasing",
+		"arguments": "column",
+		"parameters" : "string",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_values_to_match_regex_list",
+		"arguments": "column|regex_list",
+		"parameters" : "string|list",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_values_to_be_between",
+		"arguments": "column|min_value|max_value",
+		"parameters" : "string|number|number",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_values_to_be_in_set",
+		"arguments": "column|value_set",
+		"parameters" : "string|list",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_values_to_be_of_type",
+		"arguments": "column|type_",
+		"parameters" : "string|string",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_values_to_be_unique",
+		"arguments": "column",
+		"parameters" : "string",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_table_row_count_to_equal",
+		"arguments": "value",
+		"parameters" : "int",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_table_row_count_to_be_between",
+		"arguments": "min_value|max_value",
+		"parameters" : "int|int",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_table_columns_to_match_set",
+		"arguments": "column_set",
+		"parameters" : "list",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_table_columns_to_match_ordered_list",
+		"arguments": "column_list",
+		"parameters" : "list",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_to_exist",
+		"arguments": "column",
+		"parameters" : "string",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_pair_values_A_to_be_greater_than_B",
+		"arguments": "column_A|column_B",
+		"parameters" : "string|string",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_values_to_match_strftime_format",
+		"arguments": "column|strftime_format",
+		"parameters" : "string|string",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_values_to_not_be_null",
+		"arguments": "column",
+		"parameters" : "string",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_value_lengths_to_be_between",
+		"arguments": "column|min_value|max_value",
+		"parameters" : "string|int|int",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_values_to_be_null",
+		"arguments": "column",
+		"parameters" : "string",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_column_values_to_be_in_type_list",
+		"arguments": "column|type_list",
+		"parameters" : "string|list",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_reconciliation",
+		"type":"custom_checks"
+	},
+	{
+		"func_name" : "expect_column_count_comparison",
+		"parameters" : "",
+		"type":"custom_checks"
+	},
+	{
+		"func_name" : "expect_one_to_one_mapping",
+		"parameters" : "string|string",
+		"type":"custom_checks"
+	},
+	{
+		"func_name" : "expect_multi_to_one_mapping",
+		"parameters" : "string|string",
+		"type":"custom_checks"
+	},
+	{
+		"func_name" : "expect_schema_comparison",
+		"parameters" : "",
+		"type":"custom_checks"
+	}
+]}

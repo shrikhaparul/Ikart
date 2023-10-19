@@ -1,0 +1,12 @@
+{
+  "created_dttm": "2023-09-08T07:48:18.935Z",
+  "updated_dttm": "2023-09-08T07:48:18.935Z",
+  "id": 117,
+  "project_id": 48,
+  "pipeline_name": "large_files_test",
+  "pipeline_cd": "12",
+  "pipeline_description": "to test large file processing",
+  "pipeline_sequence": "1",
+  "is_active": "Y",
+  "created_by": "system"
+}

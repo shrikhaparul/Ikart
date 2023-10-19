@@ -1,0 +1,13 @@
+{
+  "project_id": 5,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "SqlServer",
+  "connection_name": "local_sqlserver_connection",
+  "connection_details": {
+    "port": "1433",
+    "database": "master",
+    "hostname": "localhost",
+    "password": "Oy_fZ0TB-70eWAndb1u7hw",
+    "username": "SA"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": 311,
+  "project_name": "release_ver1.0.0",
+  "pipeline_name": "large_files_test",
+  "project_id": 48,
+  "pipeline_id": 117,
+  "task_name": "csv_to_parquet_conversion",
+  "task_description": "to test large csv file processing to parquet file",
+  "task_type": "Ingestion",
+  "task_sequence": "1",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "admin",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales.csv",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "quote_char": "\"",
+      "escape_char": "\\",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local_server_connection"
+    },
+    "target": {
+      "target_type": "parquet_write",
+      "index": "False",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "largeparquetfile.parquet",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "parquet",
+      "quote_char": "",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "local_server_connection",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}

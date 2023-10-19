@@ -1,0 +1,14 @@
+{
+  "project_id": 5,
+  "connection_type": "Cloud DB",
+  "connection_subtype": "Snowflake",
+  "connection_name": "",
+  "connection_details": {
+    "role": "accountadmin",
+    "account": "jycoaes-fm14716",
+    "database": "test",
+    "password": "8a62c92f88a778dff1f4616b7bff06662c048406bbf7d7921319491c",
+    "username": "PuneethS",
+    "warehouse": "COMPUTE_WH"
+  }
+}
