@@ -1,0 +1,17 @@
+{
+  "task_id": 371,
+  "pipeline_id": 157,
+  "task_name": "sads",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql-testdb",
+    "restart": "normal"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "create table test_db.mytable (invoice int);",
+      "table_used_desc": "Test"
+    }
+  ]
+}
