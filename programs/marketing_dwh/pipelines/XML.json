@@ -1,0 +1,38 @@
+{
+  "pipeline_id": 158,
+  "project_id": 61,
+  "pipeline_name": "XML",
+  "pipeline_cd": null,
+  "pipeline_description": "XML",
+  "is_active": "Y",
+  "tasks_details": {},
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "374",
+      "data": {
+        "label": "374-XML"
+      },
+      "position": {
+        "x": 50,
+        "y": 1550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": null,
+  "created_dttm": "2023-10-24T06:49:15.303Z",
+  "updated_dttm": "2023-10-24T06:49:15.303Z"
+}
