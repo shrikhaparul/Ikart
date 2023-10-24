@@ -1,0 +1,56 @@
+{
+  "login_id": "luke",
+  "id": 374,
+  "project_name": "marketing_dwh",
+  "pipeline_name": "XML",
+  "project_id": 61,
+  "pipeline_id": 158,
+  "task_name": "XML",
+  "task_description": "XML",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "luke",
+  "updated_by": "luke",
+  "task": {
+    "source": {
+      "source_type": "xml_read",
+      "header": "N",
+      "encoding": "utf-8",
+      "delimiter": "",
+      "file_name": "Sample_Data.xml",
+      "file_path": "/home/luke/datafiles/src/",
+      "file_type": "xml",
+      "chunk_size": 10000,
+      "quote_char": "",
+      "escape_char": "",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local_files"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "index": "True",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "|",
+      "file_name": "xml2csv.csv",
+      "file_path": "/home/luke/datafiles/tgt/",
+      "file_type": "csv",
+      "quote_char": "\"",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "local_files",
+      "target_max_record_count": 1000
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
