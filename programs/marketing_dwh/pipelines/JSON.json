@@ -1,0 +1,38 @@
+{
+  "pipeline_id": 159,
+  "project_id": 61,
+  "pipeline_name": "JSON",
+  "pipeline_cd": null,
+  "pipeline_description": "Test JSON files processing",
+  "is_active": "Y",
+  "tasks_details": {},
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "375",
+      "data": {
+        "label": "375-json2csv"
+      },
+      "position": {
+        "x": 50,
+        "y": 1600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": null,
+  "created_dttm": "2023-10-25T08:24:07.604Z",
+  "updated_dttm": "2023-10-25T08:24:07.604Z"
+}
