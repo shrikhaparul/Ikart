@@ -1,0 +1,55 @@
+{
+  "login_id": "Puneeth",
+  "id": 362,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "release_v1.0.0_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "awss3_to_localserver",
+  "task_description": "awss3_to_localserver",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "AWS S3",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "samplefile25102023.json",
+      "file_path": "test/",
+      "file_type": "json",
+      "chunk_size": 10000,
+      "quote_char": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "AWS S3",
+      "select_columns": null,
+      "connection_name": "awss3_connection_puneeth"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "index": "False",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "samplefilecsv%DD%%MM%%YYYY%.csv",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "quote_char": "\"",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_connection_puneeth",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
