@@ -14,7 +14,7 @@
       "table_used_desc": "insert"
     },
     {
-      "seq_no": 7,
+      "seq_no": 2,
       "sql_query": "SELECT * FROM tbl1\nWHERE `Year` = 2023;",
       "table_used_desc": "select"
     },
