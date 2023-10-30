@@ -85,8 +85,8 @@ def write(json_data: dict, dataframe, counter) -> bool:
         target['target_max_record_count'] in (None,"None","") else \
         target['target_max_record_count']
         if records_per_split > 0:
-            split_large_excel_file(file_path + filename_wo_ext + '.parquet',
-            file_path + filename_wo_ext, records_per_split, '.parquet')
+            split_large_excel_file(file_path + filename_wo_ext + '.xlsx',
+            file_path + filename_wo_ext, records_per_split, '.xlsx')
         return True
     except Exception as error:
         task_logger.exception("converting_to_excel() is %s", str(error))
