@@ -1,0 +1,54 @@
+{
+  "login_id": "Puneeth",
+  "id": 363,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "one_to_one",
+  "project_id": 61,
+  "pipeline_id": 154,
+  "task_name": "csv_to_csv_task",
+  "task_description": "read data from csv and generate one csv",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "json_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "targetfile17102023.json",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "json",
+      "chunk_size": 10,
+      "quote_char": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "index,Year,Date,Host,City,Venue,Rank,University,Country,Team,Contestant 1,Contestant 2,Contestant 3,Gold,Silver,Bronze,Honorable,Score,Total,Score Percentage,Penalty,Prize,CRTD_BY,CRTD_DTTM,UPDT_BY,UPDT_DTTM",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver_connection_puneeth"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "index": "True",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "csvfile_W_Index_and_Audit %DD%%MM%%YYYY%.csv",
+      "file_path": "/home/puneeths/sample_data/one_to_one/",
+      "file_type": "csv",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_connection_puneeth",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
