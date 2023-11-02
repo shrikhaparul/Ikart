@@ -1,0 +1,22 @@
+{
+  "task_id": 329,
+  "pipeline_id": 138,
+  "task_name": "sql_exc",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "ikart_mysql_config_connection",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "select * from tbl_user",
+      "table_used_desc": "tble userdata"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "select * from tb_programs",
+      "table_used_desc": "select * from tb_programs"
+    }
+  ]
+}
