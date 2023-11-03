@@ -1,0 +1,27 @@
+{
+  "task_id": 283,
+  "pipeline_id": 111,
+  "task_name": "sql_orc3",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql_connection_ikart_varun",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "SELECT * FROM tbl_organization;\n",
+      "table_used_desc": "select"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `config`.`vw_connection_list` AS with `users_with_only_programs` as (select `tu`.`login_id` AS `login_id`,`lup`.`user_id` AS `user_id`,`lup`.`program_id` AS `program_id`,`lup`.`project_id` AS `project_id`,`lup`.`read_role` AS `read_role`,`lup`.`write_role` AS `write_role`,`lup`.`execute_role` AS `execute_role` from (`config`.`tbl_user` `tu` join `config`.`lnk_user_project` `lup` on((`tu`.`id` = `lup`.`user_id`))) where (`lup`.`project_id` is null)), `users_with_specfic_projects` as (select `tu`.`login_id` AS `login_id`,`lup`.`user_id` AS `user_id`,`lup`.`program_id` AS `program_id`,`lup`.`project_id` AS `project_id`,`lup`.`read_role` AS `read_role`,`lup`.`write_role` AS `write_role`,`lup`.`execute_role` AS `execute_role` from (`config`.`tbl_user` `tu` join `config`.`lnk_user_project` `lup` on((`tu`.`id` = `lup`.`user_id`))) where (`lup`.`project_id` is not null)), `connection_details_recs` as (select `tcd`.`connection_id` AS `connection_id`,json_object(`tcd`.`key_01`,`tcd`.`value_01`) AS `fields` from `config`.`tbl_connection_detail` `tcd` order by `tcd`.`sequence`), `connection_details` as (select `connection_details_recs`.`connection_id` AS `connection_id`,json_arrayagg(`connection_details_recs`.`fields`) AS `fields_list` from `connection_details_recs` group by `connection_details_recs`.`connection_id`) select `up`.`login_id` AS `login_id`,`tc`.`id` AS `id`,`tp`.`id` AS `project_id`,`tp`.`project_name` AS `project_name`,`tc`.`connection_type` AS `connection_type`,`tc`.`connection_subtype` AS `connection_subtype`,`tc`.`connection_name` AS `connection_name`,`tc`.`created_by` AS `created_by`,`tc`.`updated_by` AS `updated_by`,`cd`.`fields_list` AS `fields_list` from (((`config`.`tbl_connection` `tc` join `config`.`tbl_project` `tp` on((`tc`.`project_id` = `tp`.`id`))) left join `connection_details` `cd` on((`tc`.`id` = `cd`.`connection_id`))) join `users_with_only_programs` `up` on((`up`.`program_id` = `tp`.`program_id`))) union select `usp`.`login_id` AS `login_id`,`tc`.`id` AS `id`,`tp`.`id` AS `project_id`,`tp`.`project_name` AS `project_name`,`tc`.`connection_type` AS `connection_type`,`tc`.`connection_subtype` AS `connection_subtype`,`tc`.`connection_name` AS `connection_name`,`tc`.`created_by` AS `created_by`,`tc`.`updated_by` AS `updated_by`,`cd`.`fields_list` AS `fields_list` from (((`config`.`tbl_connection` `tc` join `config`.`tbl_project` `tp` on((`tc`.`project_id` = `tp`.`id`))) left join `connection_details` `cd` on((`tc`.`id` = `cd`.`connection_id`))) join `users_with_specfic_projects` `usp` on((`usp`.`project_id` = `tp`.`id`)))",
+      "table_used_desc": "madhutesting"
+    },
+    {
+      "seq_no": 3,
+      "sql_query": "select * from tbl1;SELECT * FROM tbl_organization;\n",
+      "table_used_desc": ""
+    }
+  ]
+}
