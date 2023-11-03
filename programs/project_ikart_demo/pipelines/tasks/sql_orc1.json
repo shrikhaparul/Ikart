@@ -1,0 +1,32 @@
+{
+  "task_id": 282,
+  "pipeline_id": 111,
+  "task_name": "sql_orc1",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql_connection_ikart_varun",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "INSERT INTO tbl1 (`Year`, `Industry_aggregation_NZSIOC`, `Industry_code_NZSIOC`, `Industry_name_NZSIOC`, `Units`, `Variable_code`, `Variable_name`, `Variable_category`, `Value`, `Industry_code_ANZSIC06`)VALUES (2026, 'Aggregation', 'Code', 'Name', 'Unit', 'Code123', 'Name123', 'Category123', '12345', 'ANZ123');",
+      "table_used_desc": "insert"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "UPDATE tbl1 SET Units = 'UpdatedUnits';",
+      "table_used_desc": "update"
+    },
+    {
+      "seq_no": 3,
+      "sql_query": "DELETE FROM tbl1 WHERE `Industry_code_NZSIOC` = 'AA131';",
+      "table_used_desc": "delete"
+    },
+    {
+      "seq_no": 4,
+      "sql_query": "SELECT * FROM tbl1 WHERE `Year` = 2023;",
+      "table_used_desc": "select"
+    }
+  ]
+}
