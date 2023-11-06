@@ -1,0 +1,52 @@
+{
+  "login_id": "varun",
+  "id": 286,
+  "project_name": "project_ikart_demo",
+  "pipeline_name": "demo",
+  "project_id": 45,
+  "pipeline_id": 136,
+  "task_name": "demo",
+  "task_description": "demo",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "testtttttttgzip.csv.gz",
+      "file_path": "/home/varun/",
+      "file_type": "csv",
+      "chunk_size": 100000,
+      "quote_char": "",
+      "compression": "gzip",
+      "escape_char": "",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": "",
+      "parameter_type": "Local Server",
+      "select_columns": "",
+      "connection_name": "local"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "create",
+      "table_name": "varun",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_connection_ikart_varun",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
