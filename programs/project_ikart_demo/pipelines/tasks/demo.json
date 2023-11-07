@@ -32,7 +32,7 @@
       "alias_columns": "",
       "parameter_type": "Local Server",
       "select_columns": "",
-      "connection_name": "1103"
+      "connection_name": "1105"
     },
     "target": {
       "target_type": "json_write",
