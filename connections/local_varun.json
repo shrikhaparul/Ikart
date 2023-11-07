@@ -1,0 +1,12 @@
+{
+  "project_id": 45,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "local_varun",
+  "connection_details": {
+    "file_name": "5m.csv",
+    "file_path": "/home/varun/",
+    "created_by": "jjones",
+    "updated_by": "jjones"
+  }
+}
