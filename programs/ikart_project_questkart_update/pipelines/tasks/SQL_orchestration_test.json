@@ -1,0 +1,32 @@
+{
+  "task_id": 368,
+  "pipeline_id": 148,
+  "task_name": "SQL_orchestration_test",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "INSERT INTO test.string_sales\n(name, country, code, `date`, CRTD_BY, CRTD_DTTM, UPDT_BY, UPDT_DTTM)\nVALUES('ravi kiran', 'India', 'QK0007', '07-11-2023', 'ravi', '2023-11-07 10:24:52', '', '');",
+      "table_used_desc": "Insert record"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "DELETE FROM test.string_sales\nWHERE name='ravi';",
+      "table_used_desc": "delete query"
+    },
+    {
+      "seq_no": 3,
+      "sql_query": "UPDATE test.string_sales\nSET name='Raj thakur', country='Combodia' where name = 'ravi kiran';",
+      "table_used_desc": "update"
+    },
+    {
+      "seq_no": 4,
+      "sql_query": "INSERT INTO test.string_sales\n(name, country, code, `date`, CRTD_BY, CRTD_DTTM, UPDT_BY, UPDT_DTTM)\nVALUES('ram', 'USA', 'QK0007', '07-11-2023', 'ravi', '2023-11-07 10:24:52', '', '');",
+      "table_used_desc": "Insert2"
+    }
+  ]
+}
