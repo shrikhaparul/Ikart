@@ -1,0 +1,57 @@
+{
+  "login_id": "varun",
+  "id": 302,
+  "project_name": "project_ikart_demo",
+  "pipeline_name": "compression_demo",
+  "project_id": 45,
+  "pipeline_id": 140,
+  "task_name": "JSON",
+  "task_description": "json",
+  "task_type": "Ingestion",
+  "task_sequence": "\"299\"",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "json_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "large-file.zip",
+      "file_path": "/home/varun/",
+      "file_type": "json",
+      "chunk_size": 1000000,
+      "quote_char": null,
+      "compression": "zip",
+      "escape_char": "",
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "id,type,actor,repo,payload,public,created_at",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local"
+    },
+    "target": {
+      "target_type": "json_write",
+      "index": "False",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "json_sample",
+      "file_path": "/home/varun/compression/",
+      "file_type": "json",
+      "compression": "zip",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "local",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
