@@ -1,0 +1,57 @@
+{
+  "login_id": "varun",
+  "id": 297,
+  "project_name": "project_ikart_demo",
+  "pipeline_name": "pipeline_ikart_demo",
+  "project_id": 45,
+  "pipeline_id": 111,
+  "task_name": "compression_ikart",
+  "task_description": "compression",
+  "task_type": "Ingestion",
+  "task_sequence": "1",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "parquet_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "par.zip",
+      "file_path": "/home/varun/",
+      "file_type": "parquet",
+      "chunk_size": 10000,
+      "quote_char": null,
+      "compression": "zip",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local"
+    },
+    "target": {
+      "target_type": "parquet_write",
+      "index": "False",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "demo1.parquet",
+      "file_path": "/home/varun/",
+      "file_type": "parquet",
+      "compression": "",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "local",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
