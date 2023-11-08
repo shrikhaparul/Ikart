@@ -1,0 +1,32 @@
+{
+  "task_id": 368,
+  "pipeline_id": 148,
+  "task_name": "SQL_orchestration_test",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "CREATE TABLE test.string_sales1 (\n  `name` text,\n  `country` text,\n  `code` text,\n  `date` text,\n  `CRTD_BY` text,\n  `CRTD_DTTM` text,\n  `UPDT_BY` text,\n  `UPDT_DTTM` text\n);",
+      "table_used_desc": "create"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "INSERT INTO test.string_sales1\nSELECT * FROM test.string_sales;",
+      "table_used_desc": "copy data"
+    },
+    {
+      "seq_no": 3,
+      "sql_query": "UPDATE test.string_sales\nSET code=1000 where country = 'USA';",
+      "table_used_desc": "update"
+    },
+    {
+      "seq_no": 4,
+      "sql_query": "DELETE FROM test.string_sales1\nWHERE country = 'NORWAY';",
+      "table_used_desc": "drop"
+    }
+  ]
+}
