@@ -1,0 +1,58 @@
+{
+  "login_id": "varun",
+  "id": 305,
+  "project_name": "project_ikart_demo",
+  "pipeline_name": "compression_demo1",
+  "project_id": 45,
+  "pipeline_id": 141,
+  "task_name": "ziptocsv",
+  "task_description": "ziptocsv",
+  "task_type": "Ingestion",
+  "task_sequence": "1",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "annual-enterprise-survey-2021-financial-year-provisional-csv.zip",
+      "file_path": "/home/varun/",
+      "file_type": "csv",
+      "chunk_size": 100000,
+      "quote_char": null,
+      "compression": "zip",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "index": "False",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "ziptocsv.csv",
+      "file_path": "/home/varun/compression",
+      "file_type": "csv",
+      "quote_char": "",
+      "compression": "none",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "local",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
