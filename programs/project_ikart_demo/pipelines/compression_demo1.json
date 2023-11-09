@@ -1,0 +1,106 @@
+{
+  "pipeline_id": 141,
+  "project_id": 45,
+  "pipeline_name": "compression_demo1",
+  "pipeline_cd": null,
+  "pipeline_description": "compression_demo1",
+  "is_active": "Y",
+  "tasks_details": {
+    "csv_bzip": 0,
+    "ziptocsv": [
+      "csv_bzip"
+    ],
+    "csvtotar": [
+      "ziptocsv"
+    ],
+    "csvtozip": [
+      "csvtotar"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "304",
+      "data": {
+        "label": "304-csv_bzip"
+      },
+      "position": {
+        "x": 50,
+        "y": 2450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "305",
+      "data": {
+        "label": "305-ziptocsv"
+      },
+      "position": {
+        "x": 50,
+        "y": 2500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "306",
+      "data": {
+        "label": "306-csvtotar"
+      },
+      "position": {
+        "x": 50,
+        "y": 2550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "307",
+      "data": {
+        "label": "307-csvtozip"
+      },
+      "position": {
+        "x": 50,
+        "y": 2600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-306-307",
+      "source": "306",
+      "target": "307"
+    },
+    {
+      "id": "flow-305-306",
+      "source": "305",
+      "target": "306"
+    },
+    {
+      "id": "flow-304-305",
+      "source": "304",
+      "target": "305"
+    },
+    {
+      "id": "flow-0-304",
+      "source": "0",
+      "target": "304"
+    }
+  ],
+  "created_dttm": "2023-11-09T04:52:47.690Z",
+  "updated_dttm": "2023-11-09T04:52:47.690Z"
+}
