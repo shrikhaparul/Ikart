@@ -1,0 +1,45 @@
+{
+  "login_id": "Dudipala Swetha",
+  "id": 357,
+  "project_name": "project_demo_13",
+  "pipeline_name": "pipeline_1",
+  "project_id": 61,
+  "pipeline_id": 153,
+  "task_name": "task_1",
+  "task_description": "task",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "Dudipala Swetha",
+  "updated_by": "Dudipala Swetha",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from config.tbl_program",
+      "schema": "config",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "tbl_program",
+      "parameter_type": "MySQL",
+      "select_columns": "",
+      "connection_name": "connection"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "create",
+      "table_name": "ikart_1",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "connection_ikart",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
