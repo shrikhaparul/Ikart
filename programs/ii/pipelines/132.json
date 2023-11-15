@@ -1,0 +1,50 @@
+{
+  "pipeline_id": 153,
+  "project_id": 61,
+  "pipeline_name": "132",
+  "pipeline_cd": null,
+  "pipeline_description": "test",
+  "is_active": "Y",
+  "tasks_details": {},
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "357",
+      "data": {
+        "label": "357-task1"
+      },
+      "position": {
+        "x": 50,
+        "y": 1850
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "358",
+      "data": {
+        "label": "358-task2"
+      },
+      "position": {
+        "x": 50,
+        "y": 1900
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": null,
+  "created_dttm": "2023-11-15T19:31:46.809Z",
+  "updated_dttm": "2023-11-15T19:31:46.809Z"
+}
