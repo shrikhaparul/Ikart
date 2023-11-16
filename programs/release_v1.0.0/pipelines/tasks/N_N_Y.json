@@ -29,7 +29,7 @@
       "escape_char": null,
       "skip_footer": 1,
       "skip_header": null,
-      "alias_columns": "Central America and the Caribbean,Haiti,Baby Food,Online,M,10/17/2018,487086427,10/30/2018,8553,255.28,159.42,2183409.84,1363519.26,819890.58",
+      "alias_columns": null,
       "parameter_type": "Local Server",
       "select_columns": null,
       "connection_name": "localserver_connection_puneeth"
