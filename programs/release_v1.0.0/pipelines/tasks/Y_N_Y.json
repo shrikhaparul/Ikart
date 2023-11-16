@@ -29,7 +29,7 @@
       "escape_char": null,
       "skip_footer": null,
       "skip_header": null,
-      "alias_columns": "Region,Country,Item Type,Sales Channel,Order Priority,Order Date,Order ID,Ship Date,Units Sold,Unit Price,Unit Cost,Total Revenue,Total Cost,Total Profit",
+      "alias_columns": null,
       "parameter_type": "Local Server",
       "select_columns": null,
       "connection_name": "localserver_connection_puneeth"
