@@ -1,0 +1,26 @@
+{
+  "pipeline_id": 156,
+  "project_id": 62,
+  "pipeline_name": "pipeline_1",
+  "pipeline_cd": null,
+  "pipeline_description": "testing",
+  "is_active": "Y",
+  "tasks_details": {},
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    }
+  ],
+  "edges": null,
+  "created_dttm": "2023-11-21T07:13:28.627Z",
+  "updated_dttm": "2023-11-21T07:13:28.627Z"
+}
