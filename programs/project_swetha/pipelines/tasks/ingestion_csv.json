@@ -1,0 +1,23 @@
+{
+  "login_id": "swetha",
+  "id": 370,
+  "project_name": "project_swetha",
+  "pipeline_name": "pipeline_1",
+  "project_id": 62,
+  "pipeline_id": 156,
+  "task_name": "ingestion_csv",
+  "task_description": "testing",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": null,
+  "task": {
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
