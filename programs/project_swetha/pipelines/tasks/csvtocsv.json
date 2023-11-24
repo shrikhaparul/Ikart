@@ -1,0 +1,57 @@
+{
+  "login_id": "swetha",
+  "id": 383,
+  "project_name": "project_swetha",
+  "pipeline_name": "pipeline_1",
+  "project_id": 62,
+  "pipeline_id": 156,
+  "task_name": "csvtocsv",
+  "task_description": "testing json",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "N",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "noheader.csv",
+      "file_path": "/home/dswetha/csv/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "quote_char": "\"",
+      "compression": "lz4",
+      "escape_char": "",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": "1,\"Eldon Base for stackable storage shelf, platinum\",Muhammed MacIntyre,3,-213.25,38.94,35,Nunavut,Storage & Organization,0.8",
+      "connection_name": "connection_csv"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "csvnoheader.csv",
+      "file_path": "test_s3",
+      "file_type": "csv",
+      "operation": "append",
+      "quote_char": "\"",
+      "compression": "tar",
+      "escape_char": "",
+      "parameter_type": "AWS S3",
+      "connection_name": "connection_s3",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
