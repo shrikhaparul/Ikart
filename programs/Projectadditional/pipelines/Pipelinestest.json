@@ -1,0 +1,13 @@
+{
+  "id": 156,
+  "project_id": 63,
+  "pipeline_name": "Pipelinestest",
+  "pipeline_cd": null,
+  "pipeline_description": "Test EDIT",
+  "pipeline_sequence": 1,
+  "is_active": "Y",
+  "created_by": "jjones",
+  "created_dttm": "2023-11-16T10:17:58.000Z",
+  "updated_by": "jjones",
+  "updated_dttm": "2023-11-16T10:17:58.000Z"
+}
