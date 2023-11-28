@@ -1,0 +1,57 @@
+{
+  "login_id": "jjones",
+  "id": 352,
+  "project_name": "ikart_project_questkart_update",
+  "pipeline_name": "ikart_pipeline_questkart",
+  "project_id": 59,
+  "pipeline_id": 148,
+  "task_name": "split_by_rows_csv",
+  "task_description": "split_by_rows",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_data.csv",
+      "file_path": "/home/rperuman/src_files/files/",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Region,Country,Item Type,Sales Channel,Order Priority,Order Date,Order ID,Ship Date,Units Sold,Unit Price,Unit Cost,Total Revenue,Total Cost,Total Profit",
+      "parameter_type": "Local Server",
+      "select_columns": "Region,Country,Item Type,Sales Channel,Order Priority,Order Date,Order ID,Ship Date,Units Sold,Unit Price,Unit Cost,Total Revenue,Total Cost,Total Profit",
+      "connection_name": "localserver"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "index": "False",
+      "header": "N",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Item_types.csv",
+      "file_path": "/home/rperuman/src_files/target/",
+      "file_type": "csv",
+      "compression": "zip",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver",
+      "target_max_record_count": 1000
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
