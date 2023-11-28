@@ -31,6 +31,7 @@
       "skip_header": null,
       "parameter_type": "Remote Server",
       "select_columns": "",
+      "alias_columns": "",
       "connection_name": "remote_server_connection_puneeth_1"
     },
     "target": {
