@@ -1,0 +1,23 @@
+{
+  "login_id": "swetha",
+  "id": 406,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "simplecsv",
+  "task_description": "testing simple csv",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": null,
+  "task": {
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
