@@ -1,0 +1,15 @@
+{
+  "project_id": 61,
+  "connection_type": "File Storage",
+  "connection_subtype": "Remote Server",
+  "connection_name": "remote_server_conn_sdf_org",
+  "connection_details": {
+    "path": "/sdf/udd/p/puneeth/test",
+    "port": "22",
+    "hostname": "tty.sdf.org",
+    "password": "ff2cc81ea29a6a9ac1841d0b0654f8e6bf03d7b9bb0275a16fc20378f358",
+    "username": "puneeth",
+    "created_by": "Puneeth",
+    "updated_by": "Puneeth"
+  }
+}
