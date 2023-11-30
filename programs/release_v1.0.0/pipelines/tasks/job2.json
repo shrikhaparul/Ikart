@@ -1,0 +1,57 @@
+{
+  "login_id": "Puneeth",
+  "id": 404,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "compression_job_testing",
+  "project_id": 61,
+  "pipeline_id": 158,
+  "task_name": "job2",
+  "task_description": "To test compression for csv",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "annual.zip",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "compression": "zip",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver_connection_puneeth"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "index": "False",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "csv_comp_%DD%%MM%%YYYY%.csv",
+      "file_path": "/home/puneeths/sample_data/compression/",
+      "file_type": "csv",
+      "compression": "zip",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_connection_puneeth",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
