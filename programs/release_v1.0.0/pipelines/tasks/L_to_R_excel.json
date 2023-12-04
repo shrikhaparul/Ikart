@@ -1,0 +1,56 @@
+{
+  "login_id": "Puneeth",
+  "id": 407,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "sftp_server_testing_jobs",
+  "project_id": 61,
+  "pipeline_id": 159,
+  "task_name": "L_to_R_excel",
+  "task_description": "Task to performing the ingestion of local server csv file to remote server excel file",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "Remote Server",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales.csv",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "",
+      "parameter_type": "Local Server",
+      "select_columns": "",
+      "connection_name": "localserver_connection_puneeth"
+    },
+    "target": {
+      "target_type": "remote_server_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "testfile_%DD%%MM%%YYYY%.xlsx",
+      "file_path": "/Files/split_files/",
+      "file_type": "xlsx",
+      "operation": "replace",
+      "compression": "",
+      "parameter_type": "Remote Server",
+      "connection_name": "remote_server_connection_puneeth_1",
+      "target_max_record_count": 1500
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
