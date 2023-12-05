@@ -1,0 +1,56 @@
+{
+  "login_id": "pshrikh",
+  "id": 357,
+  "project_name": "ii",
+  "pipeline_name": "132",
+  "project_id": 61,
+  "pipeline_id": 153,
+  "task_name": "task1",
+  "task_description": "test",
+  "task_type": "Ingestion",
+  "task_sequence": "1",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "pshrikh",
+  "updated_by": "pshrikh",
+  "task": {
+    "source": {
+      "source_type": "xlsx_read",
+      "header": null,
+      "encoding": "utf-8",
+      "delimiter": null,
+      "file_name": "test1.xlsx",
+      "file_path": "/home/pshrikh/test_files/",
+      "file_type": "xlsx",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": "id,user_id,program_id,project_id,read_role,write_role,execute_role,is_active,created_by,created_dttm,updated_by,updated_dttm",
+      "connection_name": "ikart_local_server_connection"
+    },
+    "target": {
+      "target_type": "parquet_write",
+      "index": "False",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "test%MM%-%DD%-%YYYY%.parquet",
+      "file_path": "/home/pshrikh/test_files/",
+      "file_type": "parquet",
+      "compression": "",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "ikart_local_server_connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
