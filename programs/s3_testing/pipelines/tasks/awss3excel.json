@@ -1,0 +1,42 @@
+{
+  "login_id": "swetha",
+  "id": 417,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "awss3excel",
+  "task_description": "testing excel",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "",
+      "file_name": "Sample_Student.xlsx",
+      "file_path": "Excel_folder/",
+      "file_type": "xlsx",
+      "chunk_size": 10000,
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "AWS S3",
+      "select_columns": "id,student_name,school_name,address,city,county,postal,phone,email",
+      "connection_name": "connection_s3"
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
