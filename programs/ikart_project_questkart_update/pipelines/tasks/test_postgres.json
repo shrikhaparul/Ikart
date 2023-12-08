@@ -1,0 +1,55 @@
+{
+  "login_id": "Madhu",
+  "id": 416,
+  "project_name": "ikart_project_questkart_update",
+  "pipeline_name": "pipeline_new",
+  "project_id": 59,
+  "pipeline_id": 161,
+  "task_name": "test_postgres",
+  "task_description": "to test postgres job",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "json_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "json_file_from_localcsv 06122023.json",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "json",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver_connection_puneeth"
+    },
+    "target": {
+      "target_type": "parquet_write",
+      "index": "False",
+      "header": "Y",
+      "encoding": "utf-8",
+      "file_name": "public.parquet",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "parquet",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_connection_puneeth",
+      "target_max_record_count": 1000
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
