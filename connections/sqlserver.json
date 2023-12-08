@@ -1,0 +1,15 @@
+{
+  "project_id": 62,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MSSQL",
+  "connection_name": "sqlserver",
+  "connection_details": {
+    "port": "15432",
+    "database": "ikart",
+    "hostname": "localhost",
+    "password": "982ef62ea6f32f9824f6b07b3eec4fb44952e5744a674702",
+    "username": "SA",
+    "created_by": "shilpi",
+    "updated_by": "shilpi"
+  }
+}
