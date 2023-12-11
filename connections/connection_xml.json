@@ -1,0 +1,12 @@
+{
+  "project_id": 63,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "connection_xml",
+  "connection_details": {
+    "file_name": ".xml",
+    "file_path": "/home/dswetha/xml/",
+    "created_by": "swetha",
+    "updated_by": "swetha"
+  }
+}
