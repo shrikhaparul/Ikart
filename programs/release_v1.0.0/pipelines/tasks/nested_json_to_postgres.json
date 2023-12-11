@@ -1,0 +1,52 @@
+{
+  "login_id": "Puneeth",
+  "id": 419,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "nested_files_check",
+  "project_id": 61,
+  "pipeline_id": 155,
+  "task_name": "nested_json_to_postgres",
+  "task_description": "read nested data from json and write it into postgres.",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "json_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": null,
+      "file_name": "SalesData.json",
+      "file_path": "/home/puneeths/sample_data/Nested_json_files/",
+      "file_type": "json",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver_connection_puneeth"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "append",
+      "table_name": "nested_json_data",
+      "audit_columns": "active",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "postgres_connection_puneeth",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
