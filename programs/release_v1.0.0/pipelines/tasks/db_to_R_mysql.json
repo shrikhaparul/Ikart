@@ -1,0 +1,49 @@
+{
+  "login_id": "Puneeth",
+  "id": 423,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "sftp_server_testing_jobs",
+  "project_id": 61,
+  "pipeline_id": 159,
+  "task_name": "db_to_R_mysql",
+  "task_description": "Task to performing the ingestion of db to remote server csv file",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "MySQL",
+  "target": "Remote Server",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from karttest.remote_server_file",
+      "schema": "karttest",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 1000,
+      "table_name": "remote_server_file",
+      "parameter_type": "MySQL",
+      "select_columns": "",
+      "connection_name": "mysql_karttest_connection_puneeth"
+    },
+    "target": {
+      "target_type": "remote_server_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "|",
+      "file_name": "targetfiletestfromdb",
+      "file_path": "/Files/",
+      "file_type": "csv",
+      "operation": "replace",
+      "compression": "",
+      "parameter_type": "Remote Server",
+      "connection_name": "remote_server_connection_puneeth_1",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
