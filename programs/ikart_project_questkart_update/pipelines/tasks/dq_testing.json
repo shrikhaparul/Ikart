@@ -54,7 +54,7 @@
         "check": "column_value_lengths_to_equal",
         "parameters": {
           "value": "6",
-          "column": "\"Pincode\""
+          "column": "Pincode"
         },
         "active": "Y",
         "ignore_bad_records": "N",
