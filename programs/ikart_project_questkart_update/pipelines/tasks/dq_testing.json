@@ -1,0 +1,66 @@
+{
+  "login_id": "Madhu",
+  "id": 421,
+  "project_name": "ikart_project_questkart_update",
+  "pipeline_name": "pipeline_new",
+  "project_id": 59,
+  "pipeline_id": 161,
+  "task_name": "dq_testing",
+  "task_description": "to test data quality job",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "N",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "test_threshold.csv",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver_connection_puneeth"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "replace",
+      "table_name": "threshold_test",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_karttest_connection_puneeth",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "value": "6",
+          "column": "salary"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 20,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
