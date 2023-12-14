@@ -1,0 +1,126 @@
+{
+  "pipeline_id": 140,
+  "project_id": 53,
+  "pipeline_name": "pipeline_toastify_",
+  "pipeline_cd": null,
+  "pipeline_description": "pipeline_toastify1",
+  "is_active": "N",
+  "tasks_details": {
+    "task_csv_csv": [
+      "task_threshhold"
+    ],
+    "task_threshhold": 0
+  },
+  "nodes": [
+    {
+      "id": "325",
+      "data": {
+        "label": "325-mbvv"
+      },
+      "position": {
+        "x": 50,
+        "y": 1050
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "312",
+      "data": {
+        "label": "312-task_csv_csv"
+      },
+      "position": {
+        "x": 50,
+        "y": 1000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "311",
+      "data": {
+        "label": "311-task_threshhold"
+      },
+      "position": {
+        "x": 50,
+        "y": 950
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "333",
+      "data": {
+        "label": "333-task_csv_mysql_neew"
+      },
+      "position": {
+        "x": 50,
+        "y": 1100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "336",
+      "data": {
+        "label": "336-kjhkgmf"
+      },
+      "position": {
+        "x": 50,
+        "y": 1150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "345",
+      "data": {
+        "label": "345-task098"
+      },
+      "position": {
+        "x": 50,
+        "y": 1200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "356",
+      "data": {
+        "label": "356-taskCompression"
+      },
+      "position": {
+        "x": 50,
+        "y": 1250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-311",
+      "source": "0",
+      "target": "311"
+    },
+    {
+      "id": "flow-311-312",
+      "source": "311",
+      "target": "312"
+    }
+  ],
+  "created_dttm": "2023-12-14T08:41:15.704Z",
+  "updated_dttm": "2023-12-14T08:41:15.704Z"
+}
