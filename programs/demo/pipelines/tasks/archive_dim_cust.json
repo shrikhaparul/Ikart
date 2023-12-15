@@ -1,0 +1,48 @@
+{
+  "login_id": "Madhu",
+  "id": 444,
+  "project_name": "demo",
+  "pipeline_name": "demo_customer",
+  "project_id": 63,
+  "pipeline_id": 164,
+  "task_name": "archive_dim_cust",
+  "task_description": "Archive ",
+  "task_type": "Ingestion",
+  "task_sequence": "\"443\"",
+  "source": "PostgreSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "select * from curated.dim_customer_profile",
+      "schema": "curated",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 1000000,
+      "table_name": "dim_customer_profile",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "postgres_connection_puneeth"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "file_name": "dim_customer_profile_%DD%%MM%%YYYY%.parquet",
+      "file_path": "demo/archive/",
+      "file_type": "parquet",
+      "operation": "replace",
+      "compression": "",
+      "parameter_type": "AWS S3",
+      "connection_name": "awss3_connection_puneeth",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
