@@ -1,0 +1,47 @@
+{
+  "login_id": "Puneeth",
+  "id": 448,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "awss3_tasks_testing",
+  "project_id": 61,
+  "pipeline_id": 156,
+  "task_name": "2issue49_s3_loading_issue",
+  "task_description": "to test the issue 49 raised in github",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "MySQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from ikart.awss3data_2",
+      "schema": "ikart",
+      "chunk_size": 100000,
+      "table_name": "awss3data_2",
+      "parameter_type": "MySQL",
+      "select_columns": "",
+      "connection_name": "mysql_ikart_connection"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "agregated_sales%DD%%MM%%YYYY%.csv",
+      "file_path": "test/",
+      "file_type": "csv",
+      "operation": "replace",
+      "compression": "",
+      "parameter_type": "AWS S3",
+      "connection_name": "awss3_connection_puneeth",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
