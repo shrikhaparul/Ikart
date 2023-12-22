@@ -1,0 +1,51 @@
+{
+  "login_id": "prajwal",
+  "id": 378,
+  "project_name": "marketing_dwh",
+  "pipeline_name": "export_db2files",
+  "project_id": 61,
+  "pipeline_id": 152,
+  "task_name": "Parquet_Split",
+  "task_description": "new",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "luke",
+  "updated_by": "luke",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from test_db.loc_details_01",
+      "schema": "test_db",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "loc_details_01",
+      "parameter_type": "MySQL",
+      "select_columns": "",
+      "connection_name": "DCKR_MYSQL"
+    },
+    "target": {
+      "target_type": "parquet_write",
+      "index": "False",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ";",
+      "file_name": "pincode_test.parquet",
+      "file_path": "/home/luke/datafiles/tgt/",
+      "file_type": "parquet",
+      "quote_char": "\"",
+      "compression": "",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "local_files",
+      "target_max_record_count": 5000
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
