@@ -1,0 +1,52 @@
+{
+  "login_id": "swetha",
+  "id": 427,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "test_postgre_xml",
+  "task_description": "testing",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "xml_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "AW2022_Products.xml",
+      "file_path": "/home/dswetha/xml/",
+      "file_type": "xml",
+      "chunk_size": 10000,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "connection_xml"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "postgres",
+      "operation": "create",
+      "table_name": "Aws2022_customers",
+      "audit_columns": "active",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "connection_postgre",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
