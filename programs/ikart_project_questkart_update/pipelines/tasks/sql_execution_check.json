@@ -1,0 +1,17 @@
+{
+  "task_id": 453,
+  "pipeline_id": 161,
+  "task_name": "sql_execution_check",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql_ikart_connection",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "SELECT count(*) FROM ikart.dq_testing; ",
+      "table_used_desc": "count"
+    }
+  ]
+}
