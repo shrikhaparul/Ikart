@@ -1,0 +1,17 @@
+{
+  "task_id": 454,
+  "pipeline_id": 161,
+  "task_name": "pg_sql_execution_check",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "postgres_connection_puneeth",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "select count(*) from public.icpc_data",
+      "table_used_desc": "count"
+    }
+  ]
+}
