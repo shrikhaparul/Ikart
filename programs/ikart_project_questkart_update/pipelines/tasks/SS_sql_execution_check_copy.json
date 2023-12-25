@@ -1,0 +1,17 @@
+{
+  "task_id": 455,
+  "pipeline_id": 161,
+  "task_name": "SS_sql_execution_check_copy",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "sql_server_connection_puneeth",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "SELECT COUNT(*) FROM dbo.ContactType;",
+      "table_used_desc": "count"
+    }
+  ]
+}
