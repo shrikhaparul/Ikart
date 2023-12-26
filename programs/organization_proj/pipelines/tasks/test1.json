@@ -20,7 +20,7 @@
       "header": "Y",
       "encoding": "utf-8",
       "delimiter": ",",
-      "file_name": "agregated_sales.csv",
+      "file_name": "sales.csv",
       "file_path": "test/",
       "file_type": "csv",
       "chunk_size": 100000,
@@ -37,7 +37,7 @@
     "target": {
       "target_type": "mysql_write",
       "schema": "testing",
-      "operation": "create",
+      "operation": "replace",
       "table_name": "test_table",
       "audit_columns": "active",
       "parameter_type": "MySQL",
