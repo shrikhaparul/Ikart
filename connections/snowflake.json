@@ -1,0 +1,15 @@
+{
+  "project_id": 62,
+  "connection_type": "Cloud DB",
+  "connection_subtype": "Snowflake",
+  "connection_name": "snowflake",
+  "connection_details": {
+    "role": "admin",
+    "account": "jrrnuhe-fg47523",
+    "database": "ikart",
+    "password": "9929f03696ab2c99aa8fc7a0758088518a005f704851b2f3be",
+    "username": "shilpi",
+    "warehouse": "ikart",
+    "updated_by": "shilpi"
+  }
+}
