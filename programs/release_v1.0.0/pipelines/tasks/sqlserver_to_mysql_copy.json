@@ -1,0 +1,45 @@
+{
+  "login_id": "Puneeth",
+  "id": 458,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "database_to_database_pipeline",
+  "project_id": 61,
+  "pipeline_id": 152,
+  "task_name": "sqlserver_to_mysql_copy",
+  "task_description": "ingest data from postgres to mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "MSSQL",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "select * from dbo.Person",
+      "schema": "dbo",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "Person",
+      "parameter_type": "MSSQL",
+      "select_columns": null,
+      "connection_name": "sql_server_connection_puneeth"
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "create",
+      "table_name": "frompg12292023",
+      "audit_columns": "inactive",
+      "parameter_type": "MSSQL",
+      "connection_name": "sql_server_connection_puneeth",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
