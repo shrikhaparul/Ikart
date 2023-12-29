@@ -1,0 +1,190 @@
+{
+  "pipeline_id": 157,
+  "project_id": 61,
+  "pipeline_name": "header_testing",
+  "pipeline_cd": null,
+  "pipeline_description": "to test header functionality on different file formats",
+  "is_active": "Y",
+  "tasks_details": {
+    "json_to_mysql": 0
+  },
+  "nodes": [
+    {
+      "id": "390",
+      "data": {
+        "label": "390-tes"
+      },
+      "position": {
+        "x": 50,
+        "y": 1800
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "386",
+      "data": {
+        "label": "386-N_N_db"
+      },
+      "position": {
+        "x": 50,
+        "y": 1750
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "385",
+      "data": {
+        "label": "385-N_Y_db"
+      },
+      "position": {
+        "x": 50,
+        "y": 1700
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "384",
+      "data": {
+        "label": "384-Y_N_db"
+      },
+      "position": {
+        "x": 50,
+        "y": 1650
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "383",
+      "data": {
+        "label": "383-json_to_mysql"
+      },
+      "position": {
+        "x": 50,
+        "y": 1600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "379",
+      "data": {
+        "label": "379-N_N_N"
+      },
+      "position": {
+        "x": 50,
+        "y": 1550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "378",
+      "data": {
+        "label": "378-N_N_Y"
+      },
+      "position": {
+        "x": 50,
+        "y": 1500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "377",
+      "data": {
+        "label": "377-N_Y_N"
+      },
+      "position": {
+        "x": 50,
+        "y": 1450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "376",
+      "data": {
+        "label": "376-N_Y_Y"
+      },
+      "position": {
+        "x": 50,
+        "y": 1400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "375",
+      "data": {
+        "label": "375-Y_N_Y"
+      },
+      "position": {
+        "x": 50,
+        "y": 1350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "374",
+      "data": {
+        "label": "374-Y_N_N"
+      },
+      "position": {
+        "x": 50,
+        "y": 1300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "373",
+      "data": {
+        "label": "373-Y_Y_N"
+      },
+      "position": {
+        "x": 50,
+        "y": 1250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "372",
+      "data": {
+        "label": "372-Y_Y_Y"
+      },
+      "position": {
+        "x": 50,
+        "y": 1200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-383",
+      "source": "0",
+      "target": "383"
+    }
+  ],
+  "created_dttm": "2023-12-29T08:56:35.943Z",
+  "updated_dttm": "2023-12-29T08:56:35.943Z"
+}
