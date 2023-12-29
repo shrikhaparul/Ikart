@@ -1,0 +1,136 @@
+{
+  "pipeline_id": 154,
+  "project_id": 61,
+  "pipeline_name": "one_to_one",
+  "pipeline_cd": null,
+  "pipeline_description": "Testing one source one target scenario",
+  "is_active": "Y",
+  "tasks_details": {
+    "csv_to_csv_task": 0,
+    "csv_to_json_task": 0,
+    "csv_to_excel_task": 0,
+    "csv_to_parquet_task": 0
+  },
+  "nodes": [
+    {
+      "id": "365",
+      "data": {
+        "label": "365-csv_to_parquet_task"
+      },
+      "position": {
+        "x": 50,
+        "y": 600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "366",
+      "data": {
+        "label": "366-csv_to_excel_task"
+      },
+      "position": {
+        "x": 50,
+        "y": 650
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "367",
+      "data": {
+        "label": "367-csv_to_xml_task"
+      },
+      "position": {
+        "x": 50,
+        "y": 700
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "387",
+      "data": {
+        "label": "387-testing"
+      },
+      "position": {
+        "x": 50,
+        "y": 800
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "381",
+      "data": {
+        "label": "381-csv_to_csv_task_copy"
+      },
+      "position": {
+        "x": 50,
+        "y": 750
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "364",
+      "data": {
+        "label": "364-csv_to_json_task"
+      },
+      "position": {
+        "x": 50,
+        "y": 550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "363",
+      "data": {
+        "label": "363-csv_to_csv_task"
+      },
+      "position": {
+        "x": 50,
+        "y": 500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-363",
+      "source": "0",
+      "target": "363"
+    },
+    {
+      "id": "flow-0-364",
+      "source": "0",
+      "target": "364"
+    },
+    {
+      "id": "flow-0-365",
+      "source": "0",
+      "target": "365"
+    },
+    {
+      "id": "flow-0-366",
+      "source": "0",
+      "target": "366"
+    }
+  ],
+  "created_dttm": "2023-12-29T10:54:17.242Z",
+  "updated_dttm": "2023-12-29T10:54:17.242Z"
+}
