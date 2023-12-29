@@ -1,0 +1,136 @@
+{
+  "pipeline_id": 156,
+  "project_id": 61,
+  "pipeline_name": "awss3_tasks_testing",
+  "pipeline_cd": null,
+  "pipeline_description": "awss3_tasks_testing",
+  "is_active": "Y",
+  "tasks_details": {
+    "ee": 0,
+    "gfn": 0,
+    "puneeth": 0,
+    "to_s3csv": 0,
+    "to_s3xml": 0,
+    "sdfghgfcvb": 0
+  },
+  "nodes": [
+    {
+      "id": "380",
+      "data": {
+        "label": "380-puneeth"
+      },
+      "position": {
+        "x": 50,
+        "y": 1000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "392",
+      "data": {
+        "label": "392-ee"
+      },
+      "position": {
+        "x": 50,
+        "y": 1150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "391",
+      "data": {
+        "label": "391-gfn"
+      },
+      "position": {
+        "x": 50,
+        "y": 1100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "388",
+      "data": {
+        "label": "388-sdfghgfcvb"
+      },
+      "position": {
+        "x": 50,
+        "y": 1050
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "371",
+      "data": {
+        "label": "371-to_s3xml"
+      },
+      "position": {
+        "x": 50,
+        "y": 950
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "370",
+      "data": {
+        "label": "370-to_s3csv"
+      },
+      "position": {
+        "x": 50,
+        "y": 900
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-370",
+      "source": "0",
+      "target": "370"
+    },
+    {
+      "id": "flow-0-371",
+      "source": "0",
+      "target": "371"
+    },
+    {
+      "id": "flow-0-380",
+      "source": "0",
+      "target": "380"
+    },
+    {
+      "id": "flow-0-388",
+      "source": "0",
+      "target": "388"
+    },
+    {
+      "id": "flow-0-391",
+      "source": "0",
+      "target": "391"
+    },
+    {
+      "id": "flow-0-392",
+      "source": "0",
+      "target": "392"
+    }
+  ],
+  "created_dttm": "2023-12-29T10:25:52.876Z",
+  "updated_dttm": "2023-12-29T10:25:52.876Z"
+}
