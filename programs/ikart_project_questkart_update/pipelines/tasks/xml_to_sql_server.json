@@ -1,0 +1,54 @@
+{
+  "login_id": "jjones",
+  "id": 360,
+  "project_name": "ikart_project_questkart_update",
+  "pipeline_name": "ikart_pipeline_questkart",
+  "project_id": 59,
+  "pipeline_id": 148,
+  "task_name": "xml_to_sql_server",
+  "task_description": "xml_to_sql_server",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "xml_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "AW2022_Products.xml",
+      "file_path": "/home/rperuman/src_files/xml/",
+      "file_type": "xml",
+      "chunk_size": 1000,
+      "encryption": "no",
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "",
+      "parameter_type": "Local Server",
+      "select_columns": "Production.ProductCategory",
+      "connection_name": "localserver",
+      "public_key_path": null
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "create",
+      "table_name": "products_xml",
+      "audit_columns": "inactive",
+      "parameter_type": "MSSQL",
+      "connection_name": "sql_server",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
