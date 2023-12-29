@@ -1,0 +1,12 @@
+{
+  "project_id": 62,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "connection_excel",
+  "connection_details": {
+    "file_name": ".xlsx",
+    "file_path": "/home/dswetha/excel/",
+    "created_by": "swetha",
+    "updated_by": "swetha"
+  }
+}
