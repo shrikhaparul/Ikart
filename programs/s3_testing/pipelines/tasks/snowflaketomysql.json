@@ -1,0 +1,49 @@
+{
+  "login_id": "swetha",
+  "id": 439,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "snowflaketomysql",
+  "task_description": "snowflaketomysql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select ADDRESSLINE1, ADDRESSLINE2, CITY, CONTACTFIRSTNAME, CONTACTLASTNAME, COUNTRY, CRTD_BY, CRTD_DTTM, CUSTOMERNAME, DEALSIZE, MONTH_ID, MSRP, ORDERDATE, ORDERLINENUMBER, ORDERNUMBER, PHONE, POSTALCODE, PRICEEACH, PRODUCTCODE, PRODUCTLINE, QTR_ID, QUANTITYORDERED, SALES, SHIPDATE, STATE, STATUS, TERRITORY, UPDT_BY, UPDT_DTTM, YEAR_ID from ikart.s3sales",
+      "schema": "ikart",
+      "chunk_size": 10000,
+      "table_name": "s3sales",
+      "parameter_type": "MySQL",
+      "select_columns": "ADDRESSLINE1,ADDRESSLINE2,CITY,CONTACTFIRSTNAME,CONTACTLASTNAME,COUNTRY,CRTD_BY,CRTD_DTTM,CUSTOMERNAME,DEALSIZE,MONTH_ID,MSRP,ORDERDATE,ORDERLINENUMBER,ORDERNUMBER,PHONE,POSTALCODE,PRICEEACH,PRODUCTCODE,PRODUCTLINE,QTR_ID,QUANTITYORDERED,SALES,SHIPDATE,STATE,STATUS,TERRITORY,UPDT_BY,UPDT_DTTM,YEAR_ID",
+      "connection_name": "connection_ikart"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "index": "True",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "snowflake.csv",
+      "file_path": "target",
+      "file_type": "csv",
+      "quote_char": "\"",
+      "compression": "",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "connection_csv",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
