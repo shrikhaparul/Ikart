@@ -1,0 +1,12 @@
+{
+  "project_id": 62,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "localserver_shilpi",
+  "connection_details": {
+    "file_path": "/home/shilpi/source_data/",
+    "file_name": "sales",
+    "created_by": "shilpi",
+    "updated_by": "shilpi"
+  }
+}
