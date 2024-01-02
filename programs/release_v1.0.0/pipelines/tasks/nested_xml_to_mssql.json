@@ -1,0 +1,52 @@
+{
+  "login_id": "Puneeth",
+  "id": 452,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "nested_files_check",
+  "project_id": 61,
+  "pipeline_id": 155,
+  "task_name": "nested_xml_to_mssql",
+  "task_description": "read nested data from xml and write it into mssql.",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "xml_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": null,
+      "file_name": "AW2022_Products.xml",
+      "file_path": "/home/puneeths/sample_data/Nested_xml_files/",
+      "file_type": "xml",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver_connection_puneeth"
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "truncate",
+      "table_name": "AW_products_test",
+      "audit_columns": "active",
+      "parameter_type": "MSSQL",
+      "connection_name": "sql_server_connection_puneeth",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
