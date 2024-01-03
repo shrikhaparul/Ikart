@@ -17,7 +17,7 @@
   "task": {
     "source": {
       "source_type": "oracle_read",
-      "query": " ",
+      "query": "Select * from DEMO.DUMMY_TABLE",
       "schema": "DEMO",
       "file_name": null,
       "file_path": null,
