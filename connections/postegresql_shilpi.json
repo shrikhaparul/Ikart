@@ -1,0 +1,14 @@
+{
+  "project_id": 62,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "PostgreSQL",
+  "connection_name": "postegresql_shilpi",
+  "connection_details": {
+    "port": "5432",
+    "database": "postgres",
+    "hostname": "localhost",
+    "password": "932eec28b6a36ed8eeaa213c63083f266d88bb03229af1d3562d0af5ac",
+    "username": "postgres",
+    "updated_by": "shilpi"
+  }
+}
