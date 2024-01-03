@@ -9,23 +9,23 @@
   "task_description": "test",
   "task_type": "Ingestion",
   "task_sequence": "0",
-  "source": "MySQL",
+  "source": "ORACLE",
   "target": "MySQL",
   "is_active": "Y",
   "created_by": "pshrikh",
   "updated_by": "pshrikh",
   "task": {
     "source": {
-      "source_type": "mysql_read",
-      "query": "select * from sys.new",
-      "schema": "sys",
+      "source_type": "oracle_read",
+      "query": "select * from DEMO.DUMMY_TABLE",
+      "schema": "DEMO",
       "file_name": null,
       "file_path": null,
       "chunk_size": 1000,
-      "table_name": "new",
-      "parameter_type": "MySQL",
+      "table_name": "DUMMY_TABLE",
+      "parameter_type": "ORACLE",
       "select_columns": "",
-      "connection_name": "mysql_1"
+      "connection_name": "Oracle_local"
     },
     "target": {
       "target_type": "mysql_write",
