@@ -17,12 +17,12 @@
   "task": {
     "source": {
       "source_type": "mysql_read",
-      "query": "select id, user_id, program_id, project_id, read_role, write_role, execute_role, is_active, created_by, created_dttm, updated_by, updated_dttm from sys.new_table",
+      "query": "select * from sys.new",
       "schema": "sys",
       "file_name": null,
       "file_path": null,
       "chunk_size": 1000,
-      "table_name": "new_table",
+      "table_name": "new",
       "parameter_type": "MySQL",
       "select_columns": "id,user_id,program_id,project_id,read_role,write_role,execute_role,is_active,created_by,created_dttm,updated_by,updated_dttm",
       "connection_name": "mysql_1"
