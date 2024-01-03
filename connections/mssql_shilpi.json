@@ -1,0 +1,15 @@
+{
+  "project_id": 62,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MSSQL",
+  "connection_name": "mssql_shilpi",
+  "connection_details": {
+    "port": "1435",
+    "database": "master",
+    "hostname": "localhost",
+    "password": "f864ab6990927cf8cab2632a26394c0033cda6a39cd0d028fe0eaa4dbb",
+    "username": "SA",
+    "created_by": "shilpi",
+    "updated_by": "shilpi"
+  }
+}
