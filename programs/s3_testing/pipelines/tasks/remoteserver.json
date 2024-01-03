@@ -1,0 +1,51 @@
+{
+  "login_id": "swetha",
+  "id": 442,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "remoteserver",
+  "task_description": "remote server",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Remote Server",
+  "target": "Snowflake",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "remote_server_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_data.csv",
+      "file_path": "/home/swetha/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "parameter_type": "Remote Server",
+      "select_columns": "",
+      "connection_name": "connection_remote_server"
+    },
+    "target": {
+      "target_type": "snowflake_write",
+      "schema": "public",
+      "operation": "create",
+      "table_name": "test_remote",
+      "audit_columns": "active",
+      "parameter_type": "Snowflake",
+      "connection_name": "connection_snowflake",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
