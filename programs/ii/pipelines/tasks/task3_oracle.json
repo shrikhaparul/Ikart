@@ -31,7 +31,7 @@
       "target_type": "oracle_write",
       "schema": "DEMO",
       "operation": "create",
-      "table_name": "NEW_T",
+      "table_name": "new_t",
       "audit_columns": "active",
       "parameter_type": "Oracle",
       "connection_name": "Oracle_local",
