@@ -31,7 +31,7 @@
       "target_type": "oracle_write",
       "schema": "DEMO",
       "operation": "truncate",
-      "table_name": "new_t",
+      "table_name": "new_t2",
       "audit_columns": "inactive",
       "parameter_type": "Oracle",
       "connection_name": "Oracle_local",
