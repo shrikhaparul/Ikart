@@ -1,0 +1,52 @@
+{
+  "login_id": "pshrikh",
+  "id": 364,
+  "project_name": "ii",
+  "pipeline_name": "132",
+  "project_id": 61,
+  "pipeline_id": 153,
+  "task_name": "task5_files",
+  "task_description": "test",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "pshrikh",
+  "updated_by": "pshrikh",
+  "task": {
+    "source": {
+      "source_type": "json_read",
+      "header": "N",
+      "encoding": "utf-8",
+      "delimiter": "",
+      "file_name": "test1.json",
+      "file_path": "/home/pshrikh/test_files/",
+      "file_type": "json",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": "ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,SHIPDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE",
+      "connection_name": "ikart_local_server_connection"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "sys",
+      "operation": "create",
+      "table_name": "tab123",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_1",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
