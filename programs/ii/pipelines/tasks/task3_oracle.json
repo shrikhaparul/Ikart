@@ -31,7 +31,7 @@
       "target_type": "oracle_write",
       "schema": "DEMO",
       "operation": "create",
-      "table_name": "NWQT",
+      "table_name": "NWQT1",
       "audit_columns": "inactive",
       "parameter_type": "Oracle",
       "connection_name": "Oracle_local",
