@@ -32,7 +32,7 @@
       "schema": "DEMO",
       "operation": "truncate",
       "table_name": "new_t",
-      "audit_columns": "active",
+      "audit_columns": "inactive",
       "parameter_type": "Oracle",
       "connection_name": "Oracle_local",
       "target_max_record_count": null
