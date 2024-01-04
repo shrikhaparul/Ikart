@@ -1,0 +1,45 @@
+{
+  "login_id": "shilpi",
+  "id": 376,
+  "project_name": "test",
+  "pipeline_name": "test",
+  "project_id": 62,
+  "pipeline_id": 156,
+  "task_name": "postgres_to_mssql",
+  "task_description": "postgres_to_mssql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "PostgreSQL",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "select * from public.sales",
+      "schema": "public",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "sales",
+      "parameter_type": "PostgreSQL",
+      "select_columns": "",
+      "connection_name": "postegresql_shilpi"
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "append",
+      "table_name": "sales_1",
+      "audit_columns": "active",
+      "parameter_type": "MSSQL",
+      "connection_name": "mssql_shilpi_2",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
