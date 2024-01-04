@@ -1,0 +1,48 @@
+{
+  "login_id": "swetha",
+  "id": 450,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "snowflaketos3",
+  "task_description": "snowflaketos3",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Snowflake",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "snowflake_read",
+      "query": "select * from ikart.public.ikart_demo_1",
+      "schema": "public",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "ikart_demo_1",
+      "parameter_type": "Snowflake",
+      "select_columns": null,
+      "connection_name": "connection_snowflake"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "snowflake.csv",
+      "file_path": "test_s3/",
+      "file_type": "csv",
+      "operation": "append",
+      "compression": "",
+      "parameter_type": "AWS S3",
+      "connection_name": "connection_s3",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
