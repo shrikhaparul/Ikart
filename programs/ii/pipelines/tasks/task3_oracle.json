@@ -17,12 +17,12 @@
   "task": {
     "source": {
       "source_type": "oracle_read",
-      "query": "select * from DEMO.NEW_T",
+      "query": "select * from DEMO.DUMMY_TABLE",
       "schema": "DEMO",
       "file_name": null,
       "file_path": null,
       "chunk_size": 1000,
-      "table_name": "NEW_T",
+      "table_name": "DUMMY_TABLE",
       "parameter_type": "Oracle",
       "select_columns": "",
       "connection_name": "Oracle_local"
