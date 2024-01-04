@@ -1,0 +1,52 @@
+{
+  "login_id": "Puneeth",
+  "id": 463,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "database_to_database_pipeline",
+  "project_id": 61,
+  "pipeline_id": 152,
+  "task_name": "excel_to_mssql",
+  "task_description": "ingest data from snowflake to mssql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "xlsx_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": null,
+      "file_name": "sales_data_sample.xlsx",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "xlsx",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver_connection_puneeth"
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "create",
+      "table_name": "datafromexcel",
+      "audit_columns": "inactive",
+      "parameter_type": "MSSQL",
+      "connection_name": "sql_server_connection_puneeth",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
