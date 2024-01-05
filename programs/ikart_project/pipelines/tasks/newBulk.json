@@ -1,0 +1,19 @@
+{
+  "login_id": "jjones",
+  "id": 358,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 51,
+  "pipeline_id": 138,
+  "task_name": "newBulk",
+  "task_description": "newBulk",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2023-12-14T11:07:07.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {}
+}
