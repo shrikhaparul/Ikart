@@ -1,0 +1,43 @@
+{
+  "login_id": "pshrikh",
+  "id": 365,
+  "project_name": "ii",
+  "pipeline_name": "132",
+  "project_id": 61,
+  "pipeline_id": 153,
+  "task_name": "file_oracle",
+  "task_description": "nd",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Oracle",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "pshrikh",
+  "updated_by": "pshrikh",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "select * from sys.DUMMY_TABLE",
+      "schema": "DEMO",
+      "chunk_size": 10000,
+      "table_name": "DUMMY_TABLE",
+      "parameter_type": "Oracle",
+      "select_columns": "",
+      "connection_name": "Oracle_local"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "DEMO",
+      "operation": "create",
+      "table_name": "TABL",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "Oracle_local",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
