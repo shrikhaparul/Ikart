@@ -1,0 +1,52 @@
+{
+  "login_id": "pshrikh",
+  "id": 364,
+  "project_name": "ii",
+  "pipeline_name": "132",
+  "project_id": 61,
+  "pipeline_id": 153,
+  "task_name": "task5_files",
+  "task_description": "test",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "pshrikh",
+  "updated_by": "pshrikh",
+  "task": {
+    "source": {
+      "source_type": "xlsx_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_data.xlsx",
+      "file_path": "/home/pshrikh/test_files/",
+      "file_type": "xlsx",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": "ORDERNUMBER,ORDERLINENUMBER,ORDERDATE",
+      "connection_name": "ikart_local_server_connection"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "DEMO",
+      "operation": "create",
+      "table_name": "TAB",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "Oracle_local",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
