@@ -1,0 +1,45 @@
+{
+  "login_id": "Puneeth",
+  "id": 445,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "oracle_to_mysql",
+  "task_description": "oracle_to_mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Oracle",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "select * from TEST.EMPLOYEES",
+      "schema": "TEST",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "EMPLOYEES",
+      "parameter_type": "Oracle",
+      "select_columns": "",
+      "connection_name": "oracle_connection"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "test",
+      "operation": "create",
+      "table_name": "check",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "ec2_mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
