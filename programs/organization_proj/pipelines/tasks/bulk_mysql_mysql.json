@@ -45,7 +45,7 @@
       {
         "group": "2",
         "Source": {
-          "task_group": "1",
+          "task_group": "0",
           "object_name": "sales_data",
           "object_type": "Table",
           "schema_name": "test",
@@ -66,7 +66,7 @@
       {
         "group": "1",
         "Source": {
-          "task_group": "2",
+          "task_group": "0",
           "object_name": "sales_limited",
           "object_type": "Table",
           "schema_name": "test",
