@@ -1,0 +1,86 @@
+{
+  "login_id": "jjones",
+  "id": 376,
+  "project_name": "ORG_EMP",
+  "pipeline_name": "Extract_Employee",
+  "project_id": 61,
+  "pipeline_id": 153,
+  "task_name": "DB2DB_Fetching",
+  "task_description": "DB2DB_Fetching",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-09T05:22:29.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "skip",
+  "task": {
+    "details": [
+      {
+        "group": "1",
+        "Source": {
+          "task_group": "0",
+          "object_name": "spt_fallback_db",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "connection_name": "mssql_ikart_conn",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "spt_fallback_db",
+          "audit_fields": "YES",
+          "database_name": "ikart ",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mssql1234"
+        }
+      },
+      {
+        "group": "2",
+        "Source": {
+          "task_group": "0",
+          "object_name": "spt_values",
+          "object_type": "View",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "connection_name": "mssql_ikart_conn",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "spt_values",
+          "audit_fields": "YES",
+          "database_name": "ikart ",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mssql1234"
+        }
+      },
+      {
+        "group": "3",
+        "Source": {
+          "task_group": "0",
+          "object_name": "employee",
+          "object_type": "Table",
+          "schema_name": "ORG",
+          "database_name": "master",
+          "connection_name": "mssql_ikart_conn",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "employee",
+          "audit_fields": "YES",
+          "database_name": "ikart ",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mssql1234"
+        }
+      }
+    ]
+  }
+}
