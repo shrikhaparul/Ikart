@@ -1,0 +1,111 @@
+{
+  "login_id": "jjones",
+  "id": 371,
+  "project_name": "ORG_EMP",
+  "pipeline_name": "Extract_Employee",
+  "project_id": 61,
+  "pipeline_id": 153,
+  "task_name": "DB2DB",
+  "task_description": "Bulk Ingest Employee Data",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2023-12-29T12:23:51.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "ingest_all": "Y",
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "group": "1",
+        "Source": {
+          "task_group": "0",
+          "object_name": "Employee",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart ",
+          "connection_name": "Default_Connection_Name",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "tgt_Employee",
+          "schema_name": "ikart",
+          "audit_fields": "yes",
+          "database_name": "ikart",
+          "action_on_table": "drop_create",
+          "connection_name": "Default_Connection_Name"
+        }
+      },
+      {
+        "group": "2",
+        "Source": {
+          "task_group": "0",
+          "object_name": "EmployeeDepartmentHistory",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart ",
+          "connection_name": "Default_Connection_Name",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "tgt_EmployeeDepartmentHistory",
+          "schema_name": "ikart",
+          "audit_fields": "yes",
+          "database_name": "ikart",
+          "action_on_table": "drop_create",
+          "connection_name": "Default_Connection_Name"
+        }
+      },
+      {
+        "group": "3",
+        "Source": {
+          "task_group": "1",
+          "object_name": "EmployeePayHistory",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart ",
+          "connection_name": "Default_Connection_Name",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "tgt_EmployeePayHistory",
+          "schema_name": "ikart",
+          "audit_fields": "yes",
+          "database_name": "ikart",
+          "action_on_table": "drop_create",
+          "connection_name": "Default_Connection_Name"
+        }
+      },
+      {
+        "group": "4",
+        "Source": {
+          "task_group": "2",
+          "object_name": "JobCandidate",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart ",
+          "connection_name": "Default_Connection_Name",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "tgt_JobCandidate",
+          "schema_name": "ikart",
+          "audit_fields": "no",
+          "database_name": "ikart",
+          "action_on_table": "drop_create",
+          "connection_name": "Default_Connection_Name"
+        }
+      }
+    ]
+  }
+}
