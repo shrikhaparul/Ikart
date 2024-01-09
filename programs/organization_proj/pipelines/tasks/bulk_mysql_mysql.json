@@ -22,7 +22,7 @@
   "task": {
     "details": [
       {
-        "group": "1",
+        "group": "3",
         "Source": {
           "task_group": "0",
           "object_name": "employee",
@@ -64,7 +64,7 @@
         }
       },
       {
-        "group": "3",
+        "group": "1",
         "Source": {
           "task_group": "2",
           "object_name": "sales_limited",
