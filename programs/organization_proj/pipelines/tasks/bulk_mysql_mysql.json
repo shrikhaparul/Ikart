@@ -10,14 +10,14 @@
   "task_type": "Bulk Ingestion",
   "task_sequence": "0",
   "updated_dttm": "2024-01-09T12:13:09.000Z",
-  "source": "mysql_read",
-  "target": "mysql_write",
+  "source": "DB",
+  "target": "DB",
   "is_active": "Y",
   "created_by": "jjones",
   "updated_by": "jjones",
   "chunk_size": 10000,
-  "source_type": "DB",
-  "target_type": "DB",
+  "source_type": "mysql_read",
+  "target_type": "mysql_write",
   "restartability": "begin",
   "task": {
     "details": [
