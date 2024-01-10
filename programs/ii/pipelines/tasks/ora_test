@@ -1,6 +1,6 @@
 {
   "login_id": "pshrikh",
-  "id": 357,
+  "id": 400,
   "project_name": "ii",
   "pipeline_name": "132",
   "project_id": 61,
@@ -26,28 +26,28 @@
         "group": "1",
         "Source": {
           "task_group": "0",
-          "object_name": "Employee",
+          "object_name": "new",
           "object_type": "Table",
-          "schema_name": "ikart",
-          "database_name": "ikart ",
-          "connection_name": "Mysql_HR",
+          "schema_name": "sys",
+          "database_name": "config",
+          "connection_name": "mysql_1",
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
         "Target": {
           "object_name": "tgt_Employee",
-          "schema_name": "ikart",
+          "schema_name": "sys",
           "audit_fields": "yes",
-          "database_name": "ikart",
+          "database_name": "config",
           "action_on_table": "drop_create",
-          "connection_name": "Mysql_HR"
+          "connection_name": "mysql_1"
         }
       },
       {
         "group": "2",
         "Source": {
-          "task_group": "0",
-          "object_name": "EmployeeDepartmentHistory",
+          "task_group": "1",
+          "object_name": "new3",
           "object_type": "Table",
           "schema_name": "ikart",
           "database_name": "ikart ",
@@ -59,48 +59,6 @@
           "object_name": "tgt_EmployeeDepartmentHistory",
           "schema_name": "ikart",
           "audit_fields": "yes",
-          "database_name": "ikart",
-          "action_on_table": "drop_create",
-          "connection_name": "Mysql_HR"
-        }
-      },
-      {
-        "group": "3",
-        "Source": {
-          "task_group": "1",
-          "object_name": "EmployeePayHistory",
-          "object_type": "Table",
-          "schema_name": "ikart",
-          "database_name": "ikart ",
-          "connection_name": "Mysql_HR",
-          "extraction_type": "Full",
-          "extraction_criteria": ""
-        },
-        "Target": {
-          "object_name": "tgt_EmployeePayHistory",
-          "schema_name": "ikart",
-          "audit_fields": "yes",
-          "database_name": "ikart",
-          "action_on_table": "drop_create",
-          "connection_name": "Mysql_HR"
-        }
-      },
-      {
-        "group": "4",
-        "Source": {
-          "task_group": "2",
-          "object_name": "JobCandidate",
-          "object_type": "Table",
-          "schema_name": "ikart",
-          "database_name": "ikart ",
-          "connection_name": "Mysql_HR",
-          "extraction_type": "Full",
-          "extraction_criteria": ""
-        },
-        "Target": {
-          "object_name": "tgt_JobCandidate",
-          "schema_name": "ikart",
-          "audit_fields": "no",
           "database_name": "ikart",
           "action_on_table": "drop_create",
           "connection_name": "Mysql_HR"
