@@ -23,7 +23,7 @@
     "details": [
       {
         "subtask": "1",
-        "Source": {
+        "source": {
           "task_group": "0",
           "object_name": "employee",
           "object_type": "Table",
@@ -33,7 +33,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "trgt_employee",
           "schema_name": "test",
           "audit_fields": "NO",
@@ -44,7 +44,7 @@
       },
       {
         "subtask": "2",
-        "Source": {
+        "source": {
           "task_group": "1",
           "object_name": "sales_data",
           "object_type": "Table",
@@ -54,7 +54,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "trgt_sales_data",
           "schema_name": "test",
           "audit_fields": "NO",
@@ -65,7 +65,7 @@
       },
       {
         "subtask": "3",
-        "Source": {
+        "source": {
           "task_group": "2",
           "object_name": "sales_limited",
           "object_type": "Table",
@@ -75,7 +75,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "trgt_sales_limited",
           "schema_name": "test",
           "audit_fields": "NO",
