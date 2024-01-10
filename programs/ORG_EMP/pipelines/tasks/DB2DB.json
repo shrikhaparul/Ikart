@@ -1,0 +1,71 @@
+{
+  "login_id": "jjones",
+  "id": 371,
+  "project_name": "ORG_EMP",
+  "pipeline_name": "Extract_Employee",
+  "project_id": 61,
+  "pipeline_id": 153,
+  "task_name": "DB2DB",
+  "task_description": "Bulk Ingest Employee Data",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2023-12-29T12:23:51.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "ingest_all": "Y",
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "group": "1",
+        "source": {
+          "task_group": "0",
+          "object_name": "Employee",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_Employee"
+        }
+      },
+      {
+        "group": "2",
+        "source": {
+          "task_group": "0",
+          "object_name": "EmployeeDepartmentHistory",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_EmployeeDepartmentHistory"
+        }
+      },
+      {
+        "group": "3",
+        "source": {
+          "task_group": "1",
+          "object_name": "EmployeePayHistory",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_EmployeePayHistory"
+        }
+      },
+      {
+        "group": "4",
+        "source": {
+          "task_group": "2",
+          "object_name": "JobCandidate",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_JobCandidate"
+        }
+      }
+    ]
+  }
+}
