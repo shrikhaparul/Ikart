@@ -1,0 +1,22 @@
+{
+  "task_id": 366,
+  "pipeline_id": 153,
+  "task_name": "sql_execution",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "mysql_1",
+    "restart": "normal"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "select * from sys.new",
+      "table_used_desc": ""
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "select count(*) from sys.new",
+      "table_used_desc": ""
+    }
+  ]
+}
