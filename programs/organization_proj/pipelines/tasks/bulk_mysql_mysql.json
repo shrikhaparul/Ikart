@@ -80,7 +80,7 @@
           "schema_name": "test",
           "audit_fields": "NO",
           "database_name": "test",
-          "action_on_table": "DROP AND CREATE",
+          "action_on_table": "CREATE IF NOT",
           "connection_name": "mysql_ikart_connection"
         }
       }
