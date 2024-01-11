@@ -45,6 +45,27 @@
       {
         "subtask": "2",
         "source": {
+          "task_group": "0",
+          "object_name": "employee",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "trgt_employee2",
+          "schema_name": "test",
+          "audit_fields": "NO",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT",
+          "connection_name": "mysql_ikart_connection"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
           "task_group": "1",
           "object_name": "sales_data",
           "object_type": "Table",
@@ -64,7 +85,7 @@
         }
       },
       {
-        "subtask": "3",
+        "subtask": "4",
         "source": {
           "task_group": "2",
           "object_name": "sales_limited",
