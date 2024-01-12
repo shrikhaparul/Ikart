@@ -1,0 +1,45 @@
+{
+  "login_id": "swetha",
+  "id": 459,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "oracle_mysql",
+  "task_description": "oracle_mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "MySQL",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select ADDRESSLINE1, ADDRESSLINE2, CITY, CONTACTFIRSTNAME, CONTACTLASTNAME, COUNTRY, CRTD_BY, CRTD_DTTM, CUSTOMERNAME, DEALSIZE, index, MONTH_ID, MSRP, ORDERDATE, ORDERLINENUMBER, ORDERNUMBER, PHONE, POSTALCODE, PRICEEACH, PRODUCTCODE, PRODUCTLINE, QTR_ID, QUANTITYORDERED, SALES, SHIPDATE, STATE, STATUS, TERRITORY, UPDT_BY, UPDT_DTTM, YEAR_ID from ikart.sales",
+      "schema": "ikart",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "sales",
+      "parameter_type": "MySQL",
+      "select_columns": "ADDRESSLINE1,ADDRESSLINE2,CITY,CONTACTFIRSTNAME,CONTACTLASTNAME,COUNTRY,CRTD_BY,CRTD_DTTM,CUSTOMERNAME,DEALSIZE,index,MONTH_ID,MSRP,ORDERDATE,ORDERLINENUMBER,ORDERNUMBER,PHONE,POSTALCODE,PRICEEACH,PRODUCTCODE,PRODUCTLINE,QTR_ID,QUANTITYORDERED,SALES,SHIPDATE,STATE,STATUS,TERRITORY,UPDT_BY,UPDT_DTTM,YEAR_ID",
+      "connection_name": "connection_ikart"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "system",
+      "operation": "create",
+      "table_name": "testmy",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "connection_oracle",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
