@@ -16,14 +16,14 @@
   "created_by": "jjones",
   "updated_by": "jjones",
   "chunk_size": 10000,
-  "source_type": "DB",
-  "target_type": "DB",
+  "source_type": "bulk_mysql_read",
+  "target_type": "bulk_mysql_write",
   "restartability": "begin",
   "task": {
     "details": [
       {
-        "group": "1",
-        "Source": {
+        "subtask": "1",
+        "source": {
           "task_group": "0",
           "object_name": "SalesData_8k",
           "object_type": "Table",
@@ -33,7 +33,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "target_SalesData_8k",
           "schema_name": "test",
           "audit_fields": "YES",
@@ -43,8 +43,8 @@
         }
       },
       {
-        "group": "10",
-        "Source": {
+        "subtask": "10",
+        "source": {
           "task_group": "3",
           "object_name": "multiple_parquet",
           "object_type": "Table",
@@ -54,7 +54,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "target_multiple_parquet",
           "schema_name": "test",
           "audit_fields": "YES",
@@ -64,8 +64,8 @@
         }
       },
       {
-        "group": "11",
-        "Source": {
+        "subtask": "11",
+        "source": {
           "task_group": "4",
           "object_name": "nested_json",
           "object_type": "Table",
@@ -75,7 +75,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "target_nested_json",
           "schema_name": "test",
           "audit_fields": "YES",
@@ -85,8 +85,8 @@
         }
       },
       {
-        "group": "2",
-        "Source": {
+        "subtask": "2",
+        "source": {
           "task_group": "0",
           "object_name": "combined_sales",
           "object_type": "Table",
@@ -96,7 +96,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "target_combined_sales",
           "schema_name": "test",
           "audit_fields": "YES",
@@ -106,8 +106,8 @@
         }
       },
       {
-        "group": "3",
-        "Source": {
+        "subtask": "3",
+        "source": {
           "task_group": "0",
           "object_name": "employee",
           "object_type": "Table",
@@ -117,7 +117,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "target_employee",
           "schema_name": "test",
           "audit_fields": "YES",
@@ -127,8 +127,8 @@
         }
       },
       {
-        "group": "4",
-        "Source": {
+        "subtask": "4",
+        "source": {
           "task_group": "1",
           "object_name": "employee_excel",
           "object_type": "Table",
@@ -138,7 +138,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "target_employee_excel",
           "schema_name": "test",
           "audit_fields": "YES",
@@ -148,8 +148,8 @@
         }
       },
       {
-        "group": "5",
-        "Source": {
+        "subtask": "5",
+        "source": {
           "task_group": "1",
           "object_name": "encypted_Parq_Shipped",
           "object_type": "Table",
@@ -159,7 +159,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "target_encypted_Parq_Shipped",
           "schema_name": "test",
           "audit_fields": "YES",
@@ -169,8 +169,8 @@
         }
       },
       {
-        "group": "6",
-        "Source": {
+        "subtask": "6",
+        "source": {
           "task_group": "1",
           "object_name": "encypted_sales_data",
           "object_type": "Table",
@@ -180,7 +180,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "target_encypted_sales_data",
           "schema_name": "test",
           "audit_fields": "YES",
@@ -190,8 +190,8 @@
         }
       },
       {
-        "group": "7",
-        "Source": {
+        "subtask": "7",
+        "source": {
           "task_group": "2",
           "object_name": "encypted_sales_xml",
           "object_type": "Table",
@@ -201,7 +201,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "target_encypted_sales_xml",
           "schema_name": "test",
           "audit_fields": "YES",
@@ -211,8 +211,8 @@
         }
       },
       {
-        "group": "8",
-        "Source": {
+        "subtask": "8",
+        "source": {
           "task_group": "2",
           "object_name": "icpc_data",
           "object_type": "Table",
@@ -222,7 +222,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "target_icpc_data",
           "schema_name": "test",
           "audit_fields": "YES",
@@ -232,8 +232,8 @@
         }
       },
       {
-        "group": "9",
-        "Source": {
+        "subtask": "9",
+        "source": {
           "task_group": "3",
           "object_name": "json",
           "object_type": "Table",
@@ -243,7 +243,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "target_json",
           "schema_name": "test",
           "audit_fields": "YES",
