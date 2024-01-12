@@ -38,7 +38,7 @@
           "schema_name": "test",
           "audit_fields": "NO",
           "database_name": "test",
-          "action_on_table": "INSERT",
+          "action_on_table": "TRUNCATE",
           "connection_name": "mysql_ikart_connection"
         }
       },
@@ -59,7 +59,7 @@
           "schema_name": "test",
           "audit_fields": "NO",
           "database_name": "test",
-          "action_on_table": "INSERT",
+          "action_on_table": "TRUNCATE",
           "connection_name": "mysql_ikart_connection"
         }
       },
@@ -80,7 +80,7 @@
           "schema_name": "test",
           "audit_fields": "NO",
           "database_name": "test",
-          "action_on_table": "INSERT",
+          "action_on_table": "TRUNCATE",
           "connection_name": "mysql_ikart_connection"
         }
       },
@@ -101,7 +101,7 @@
           "schema_name": "test",
           "audit_fields": "NO",
           "database_name": "test",
-          "action_on_table": "INSERT",
+          "action_on_table": "TRUNCATE",
           "connection_name": "mysql_ikart_connection"
         }
       }
