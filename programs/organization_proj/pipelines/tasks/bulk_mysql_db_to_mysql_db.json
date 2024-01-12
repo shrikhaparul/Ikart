@@ -1,0 +1,257 @@
+{
+  "login_id": "pgopi",
+  "id": 382,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "bulk_mysql_db_to_mysql_db",
+  "task_description": "bulk_mysql_db_to_mysql_db",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-12T07:13:17.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "group": "1",
+        "Source": {
+          "task_group": "0",
+          "object_name": "SalesData_8k",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "target_SalesData_8k",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mysql"
+        }
+      },
+      {
+        "group": "10",
+        "Source": {
+          "task_group": "3",
+          "object_name": "multiple_parquet",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "target_multiple_parquet",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mysql"
+        }
+      },
+      {
+        "group": "11",
+        "Source": {
+          "task_group": "4",
+          "object_name": "nested_json",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "target_nested_json",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mysql"
+        }
+      },
+      {
+        "group": "2",
+        "Source": {
+          "task_group": "0",
+          "object_name": "combined_sales",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "target_combined_sales",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mysql"
+        }
+      },
+      {
+        "group": "3",
+        "Source": {
+          "task_group": "0",
+          "object_name": "employee",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "target_employee",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mysql"
+        }
+      },
+      {
+        "group": "4",
+        "Source": {
+          "task_group": "1",
+          "object_name": "employee_excel",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "target_employee_excel",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mysql"
+        }
+      },
+      {
+        "group": "5",
+        "Source": {
+          "task_group": "1",
+          "object_name": "encypted_Parq_Shipped",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "target_encypted_Parq_Shipped",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mysql"
+        }
+      },
+      {
+        "group": "6",
+        "Source": {
+          "task_group": "1",
+          "object_name": "encypted_sales_data",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "target_encypted_sales_data",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mysql"
+        }
+      },
+      {
+        "group": "7",
+        "Source": {
+          "task_group": "2",
+          "object_name": "encypted_sales_xml",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "target_encypted_sales_xml",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mysql"
+        }
+      },
+      {
+        "group": "8",
+        "Source": {
+          "task_group": "2",
+          "object_name": "icpc_data",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "target_icpc_data",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mysql"
+        }
+      },
+      {
+        "group": "9",
+        "Source": {
+          "task_group": "3",
+          "object_name": "json",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "target_json",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mysql"
+        }
+      }
+    ]
+  }
+}
