@@ -17,8 +17,8 @@
   "updated_by": "pshrikh",
   "chunk_size": 10000,
   "ingest_all": "Y",
-  "source_type": "mysql_read",
-  "target_type": "mysql_write",
+  "source_type": "bulk_mysql_read",
+  "target_type": "bulk_mysql_write",
   "restartability": "begin",
   "task": {
     "details": [
