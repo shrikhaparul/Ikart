@@ -29,7 +29,7 @@
           "object_name": "new",
           "object_type": "Table",
           "schema_name": "sys",
-          "database_name": "config",
+          "database_name": "sys",
           "connection_name": "mysql_1",
           "extraction_type": "Full",
           "extraction_criteria": ""
@@ -38,7 +38,7 @@
           "object_name": "tgt_Employee",
           "schema_name": "sys",
           "audit_fields": "yes",
-          "database_name": "config",
+          "database_name": "sys",
           "action_on_table": "create",
           "connection_name": "mysql_1"
         }
