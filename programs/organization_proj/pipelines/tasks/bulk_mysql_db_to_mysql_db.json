@@ -24,7 +24,7 @@
       {
         "subtask": "91",
         "source": {
-          "task_group": "0",
+          "task_group": "1",
           "object_name": "multiple_parquet",
           "object_type": "Table",
           "schema_name": "test",
@@ -45,7 +45,7 @@
       {
         "subtask": "81",
         "source": {
-          "task_group": "0",
+          "task_group": "1",
           "object_name": "nested_json",
           "object_type": "Table",
           "schema_name": "test",
@@ -66,7 +66,7 @@
       {
         "subtask": "71",
         "source": {
-          "task_group": "0",
+          "task_group": "1",
           "object_name": "sales",
           "object_type": "Table",
           "schema_name": "test",
@@ -87,7 +87,7 @@
       {
         "subtask": "61",
         "source": {
-          "task_group": "0",
+          "task_group": "1",
           "object_name": "sales_data",
           "object_type": "Table",
           "schema_name": "test",
@@ -108,7 +108,7 @@
       {
         "subtask": "51",
         "source": {
-          "task_group": "0",
+          "task_group": "1",
           "object_name": "sales_joiner",
           "object_type": "Table",
           "schema_name": "test",
