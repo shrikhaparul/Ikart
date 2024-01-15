@@ -1,0 +1,58 @@
+{
+  "login_id": "shilpi",
+  "id": 379,
+  "project_name": "test",
+  "pipeline_name": "test",
+  "project_id": 62,
+  "pipeline_id": 156,
+  "task_name": "file_to_file",
+  "task_description": "file_to_file",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "vw_task_base_202401151621_1.csv",
+      "file_path": "/home/shilpi/data/",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "quote_char": "",
+      "compression": null,
+      "escape_char": "",
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": "\"sec\",\"connection_subtype\",\"connection_name\",\"field_id\",\"display_name\",\"value_01\",\"field_type\",\"display_sequence\",\"category\",CRTD_BY,CRTD_DTTM,UPDT_BY,UPDT_DTTM",
+      "connection_name": "localserver_shilpi"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "index": "False",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "vw_task_base_202401151621_3.csv",
+      "file_path": "/home/shilpi/data/",
+      "file_type": "csv",
+      "quote_char": "\"",
+      "compression": "",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_shilpi",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
