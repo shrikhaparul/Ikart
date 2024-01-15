@@ -23,7 +23,7 @@
   "task": {
     "details": [
       {
-        "group": "1",
+        "subtask": "1",
         "source": {
           "task_group": "0",
           "object_name": "new",
@@ -44,7 +44,7 @@
         }
       },
       {
-        "group": "2",
+        "subtask": "2",
         "tource": {
           "task_group": "1",
           "object_name": "new3",
