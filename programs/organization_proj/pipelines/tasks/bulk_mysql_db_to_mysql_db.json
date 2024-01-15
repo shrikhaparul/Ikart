@@ -276,7 +276,7 @@
       {
         "subtask": "1",
         "source": {
-          "task_group": "18",
+          "task_group": "1",
           "object_name": "employee",
           "object_type": "Table",
           "schema_name": "test",
