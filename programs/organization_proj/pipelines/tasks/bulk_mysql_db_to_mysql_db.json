@@ -24,7 +24,7 @@
       {
         "subtask": "91",
         "source": {
-          "task_group": "10",
+          "task_group": "3",
           "object_name": "multiple_parquet",
           "object_type": "Table",
           "schema_name": "test",
@@ -45,7 +45,7 @@
       {
         "subtask": "81",
         "source": {
-          "task_group": "9",
+          "task_group": "4",
           "object_name": "nested_json",
           "object_type": "Table",
           "schema_name": "test",
@@ -66,7 +66,7 @@
       {
         "subtask": "71",
         "source": {
-          "task_group": "1",
+          "task_group": "5",
           "object_name": "sales",
           "object_type": "Table",
           "schema_name": "test",
@@ -87,7 +87,7 @@
       {
         "subtask": "61",
         "source": {
-          "task_group": "3",
+          "task_group": "6",
           "object_name": "sales_data",
           "object_type": "Table",
           "schema_name": "test",
@@ -108,7 +108,7 @@
       {
         "subtask": "51",
         "source": {
-          "task_group": "1",
+          "task_group": "7",
           "object_name": "sales_joiner",
           "object_type": "Table",
           "schema_name": "test",
@@ -129,7 +129,7 @@
       {
         "subtask": "4",
         "source": {
-          "task_group": "0",
+          "task_group": "8",
           "object_name": "sales_limited",
           "object_type": "Table",
           "schema_name": "test",
@@ -150,7 +150,7 @@
       {
         "subtask": "3",
         "source": {
-          "task_group": "0",
+          "task_group": "9",
           "object_name": "encypted_Parq_Shipped",
           "object_type": "Table",
           "schema_name": "test",
@@ -171,7 +171,7 @@
       {
         "subtask": "2",
         "source": {
-          "task_group": "0",
+          "task_group": "1",
           "object_name": "employee_excel",
           "object_type": "Table",
           "schema_name": "test",
