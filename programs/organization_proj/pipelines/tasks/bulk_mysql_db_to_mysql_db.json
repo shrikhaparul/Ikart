@@ -192,7 +192,7 @@
       {
         "subtask": "13",
         "source": {
-          "task_group": "0",
+          "task_group": "1",
           "object_name": "encypted_sales_data",
           "object_type": "Table",
           "schema_name": "test",
