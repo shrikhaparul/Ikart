@@ -24,7 +24,7 @@
     "details": [
       {
         "group": "1",
-        "Source": {
+        "source": {
           "task_group": "0",
           "object_name": "new",
           "object_type": "Table",
@@ -34,7 +34,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "tgt_Employee",
           "schema_name": "sys",
           "audit_fields": "yes",
@@ -45,7 +45,7 @@
       },
       {
         "group": "2",
-        "Source": {
+        "tource": {
           "task_group": "1",
           "object_name": "new3",
           "object_type": "Table",
@@ -55,7 +55,7 @@
           "extraction_type": "Full",
           "extraction_criteria": ""
         },
-        "Target": {
+        "target": {
           "object_name": "tgt_EmployeeDepartmentHistory",
           "schema_name": "sys",
           "audit_fields": "yes",
