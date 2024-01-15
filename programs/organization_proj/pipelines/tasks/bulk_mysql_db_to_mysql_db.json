@@ -22,7 +22,7 @@
   "task": {
     "details": [
       {
-        "subtask": "9",
+        "subtask": "91",
         "source": {
           "task_group": "0",
           "object_name": "multiple_parquet",
@@ -43,7 +43,7 @@
         }
       },
       {
-        "subtask": "8",
+        "subtask": "81",
         "source": {
           "task_group": "0",
           "object_name": "nested_json",
@@ -64,7 +64,7 @@
         }
       },
       {
-        "subtask": "7",
+        "subtask": "71",
         "source": {
           "task_group": "0",
           "object_name": "sales",
@@ -85,7 +85,7 @@
         }
       },
       {
-        "subtask": "6",
+        "subtask": "61",
         "source": {
           "task_group": "0",
           "object_name": "sales_data",
@@ -106,7 +106,7 @@
         }
       },
       {
-        "subtask": "5",
+        "subtask": "51",
         "source": {
           "task_group": "0",
           "object_name": "sales_joiner",
