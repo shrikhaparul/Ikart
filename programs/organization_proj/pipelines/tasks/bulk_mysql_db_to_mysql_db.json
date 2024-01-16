@@ -24,7 +24,7 @@
       {
         "subtask": "1",
         "source": {
-          "task_group": "3",
+          "task_group": "31",
           "object_name": "multiple_parquet",
           "object_type": "Table",
           "schema_name": "test",
@@ -66,7 +66,7 @@
       {
         "subtask": "71",
         "source": {
-          "task_group": "5",
+          "task_group": "50",
           "object_name": "sales",
           "object_type": "Table",
           "schema_name": "test",
@@ -276,7 +276,7 @@
       {
         "subtask": "1",
         "source": {
-          "task_group": "2",
+          "task_group": "1",
           "object_name": "employee",
           "object_type": "Table",
           "schema_name": "test",
