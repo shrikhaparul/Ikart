@@ -1,0 +1,68 @@
+{
+  "login_id": "jjones",
+  "id": 378,
+  "project_name": "ORG_EMP",
+  "pipeline_name": "Ingest_data",
+  "project_id": 61,
+  "pipeline_id": 154,
+  "task_name": "Bulk_Ing_DB2BD",
+  "task_description": "Bulk_Ing_DB2BD",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-17T05:25:05.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "group": "2",
+        "source": {
+          "task_group": "0",
+          "object_name": "EmployeeDepartmentHistory",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "connection_name": "134",
+          "extraction_type": "full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_EmployeeDepartmentHistory",
+          "schema_name": "config",
+          "audit_fields": "yes",
+          "database_name": "config",
+          "action_on_table": "truncate_load",
+          "connection_name": "123"
+        }
+      },
+      {
+        "group": "3",
+        "source": {
+          "task_group": "0",
+          "object_name": "Employee",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "connection_name": "134",
+          "extraction_type": "incremental",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_Employee",
+          "schema_name": "config",
+          "audit_fields": "No",
+          "database_name": "config",
+          "action_on_table": "insert",
+          "connection_name": "123"
+        }
+      }
+    ]
+  }
+}
