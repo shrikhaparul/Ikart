@@ -1,0 +1,78 @@
+{
+  "login_id": "jjones",
+  "id": 379,
+  "project_name": "ORG_EMP",
+  "pipeline_name": "Ingest_data",
+  "project_id": 61,
+  "pipeline_id": 154,
+  "task_name": "Bulk_ing_DB2Files",
+  "task_description": "Bulk_ing_DB2Files",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-17T08:08:09.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "group": "2",
+        "source": {
+          "task_group": "0",
+          "object_name": "Employee",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "connection_name": "134",
+          "extraction_type": "incremental",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "compression": "gzip",
+          "file_pathname": "/home/madhu",
+          "transfer_mode": "binary",
+          "connection_name": "120",
+          "object_sufix_name": "%DD%MM%YYYY%",
+          "object_prefix_name": "lnk",
+          "target_file_format": "csv",
+          "target_max_record_count": "10000"
+        }
+      },
+      {
+        "group": "3",
+        "source": {
+          "task_group": "1",
+          "object_name": "EmployeeDepartmentHistory",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "connection_name": "134",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "compression": "gzip",
+          "file_pathname": "/home/madhu",
+          "transfer_mode": "binary",
+          "connection_name": "120",
+          "object_sufix_name": "%DD%MM%YYYY%",
+          "object_prefix_name": "lnk",
+          "target_file_format": "csv",
+          "target_max_record_count": "10000"
+        }
+      }
+    ]
+  }
+}
