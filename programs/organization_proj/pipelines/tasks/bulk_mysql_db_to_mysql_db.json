@@ -22,7 +22,7 @@
   "task": {
     "details": [
       {
-        "subtask": "7",
+        "subtask": "1",
         "source": {
           "task_group": "31",
           "object_name": "multiple_parquet",
