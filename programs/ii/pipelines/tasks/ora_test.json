@@ -40,7 +40,7 @@
           "audit_fields": "yes",
           "database_name": "sys",
           "action_on_table": "CREATE IF NOT",
-          "connection_name": "mysql_1"
+          "connection_name": "Oracle_local"
         }
       },
       {
