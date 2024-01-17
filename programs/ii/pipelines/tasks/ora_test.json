@@ -31,32 +31,11 @@
           "schema_name": "sys",
           "database_name": "sys",
           "connection_name": "mysql_1",
-          "extraction_type": "Full",
+          "extraction_type": "Incremental",
           "extraction_criteria": ""
         },
         "target": {
           "object_name": "tgt_Employee",
-          "schema_name": "sys",
-          "audit_fields": "yes",
-          "database_name": "sys",
-          "action_on_table": "CREATE IF NOT",
-          "connection_name": "mysql_1"
-        }
-      },
-      {
-        "subtask": "2",
-        "source": {
-          "task_group": "1",
-          "object_name": "new3",
-          "object_type": "Table",
-          "schema_name": "sys",
-          "database_name": "sys ",
-          "connection_name": "mysql_1",
-          "extraction_type": "Full",
-          "extraction_criteria": ""
-        },
-        "target": {
-          "object_name": "tgt_EmployeeDepartmentHistory",
           "schema_name": "sys",
           "audit_fields": "yes",
           "database_name": "sys",
