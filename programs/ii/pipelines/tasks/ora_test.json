@@ -32,7 +32,7 @@
           "database_name": "sys",
           "connection_name": "mysql_1",
           "extraction_type": "Incremental",
-          "extraction_criteria": ""
+          "extraction_criteria": "id='12'"
         },
         "target": {
           "object_name": "tgt_Employee",
