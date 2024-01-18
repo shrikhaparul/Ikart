@@ -1,0 +1,57 @@
+{
+  "login_id": "jjones",
+  "id": 312,
+  "project_name": "project_toastify",
+  "pipeline_name": "pipeline_toastify_",
+  "project_id": 53,
+  "pipeline_id": 140,
+  "task_name": "task_csv_csv",
+  "task_description": "task_csv_csv",
+  "task_type": "Ingestion",
+  "task_sequence": "\"311\"",
+  "updated_dttm": "2023-09-29T10:07:55.000Z",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "admin",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales.csv",
+      "file_path": "/home/madhu/Ingestion_code2/",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "quote_char": null,
+      "escape_char": null,
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": "ORDER,QUANTITY,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,STATUS,QTR_ID,MONTH_ID,YEAR,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE",
+      "parameter_type": "Local Server",
+      "select_columns": "ORDER,QUANTITY,PRICEEACH,ORDERLINENUMBER",
+      "connection_name": "ikart_local_server_connection"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "index": "True",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "target_file_%DD%-%MM%-%YYYY%",
+      "file_path": "/home/madhu/Ingestion_code2/",
+      "file_type": "csv",
+      "quote_char": "\"",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "ikart_local_server_connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
