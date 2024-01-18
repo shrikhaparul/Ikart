@@ -43,6 +43,27 @@
         }
       },
       {
+        "subtask": "10",
+        "source": {
+          "task_group": "4",
+          "object_name": "json",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_json",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "INSERT",
+          "connection_name": "mysql"
+        }
+      },
+      {
         "subtask": "21",
         "source": {
           "task_group": "4",
