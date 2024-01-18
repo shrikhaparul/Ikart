@@ -18,7 +18,7 @@
   "chunk_size": 100,
   "source_type": "bulk_mysql_read",
   "target_type": "bulk_mysql_write",
-  "restartability": "begin",
+  "restartability": "normal",
   "task": {
     "details": [
       {
