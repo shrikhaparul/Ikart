@@ -1,0 +1,70 @@
+{
+  "login_id": "jjones",
+  "id": 384,
+  "project_name": "ORG_EMP",
+  "pipeline_name": "testBulk",
+  "project_id": 61,
+  "pipeline_id": 155,
+  "task_name": "File",
+  "task_description": "File",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-18T03:35:13.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "skip",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_new",
+          "object_name": "lkp_dq_master",
+          "object_type": "Table",
+          "schema_name": "core",
+          "database_name": "core",
+          "extraction_type": "incremental",
+          "extraction_criteria": "sys_dttm>dttm"
+        },
+        "target": {
+          "object_name": "tgt_lkp_dq_master",
+          "connection_name": "muysql_toastify_conn",
+          "primary_key": "",
+          "schema_name": "config",
+          "audit_fields": "yes",
+          "database_name": "config",
+          "action_on_table": "insert"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mysql_new",
+          "object_name": "tbl_configuration",
+          "object_type": "Table",
+          "schema_name": "core",
+          "database_name": "core",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_tbl_configuration",
+          "connection_name": "muysql_toastify_conn",
+          "primary_key": "",
+          "schema_name": "config",
+          "audit_fields": "No",
+          "database_name": "config",
+          "action_on_table": "insert"
+        }
+      }
+    ]
+  }
+}
