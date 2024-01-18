@@ -29,7 +29,7 @@
           "object_type": "Table",
           "schema_name": "sys",
           "database_name": "sys",
-          "connection_name": "126",
+          "connection_name": "MYSQL",
           "extraction_type": "FULL",
           "extraction_criteria": ""
         },
@@ -40,7 +40,7 @@
           "audit_fields": "YES",
           "database_name": "sys",
           "action_on_table": "CREATE IF NOT",
-          "connection_name": "126"
+          "connection_name": "MYSQL"
         }
       },
       {
@@ -51,7 +51,7 @@
           "object_type": "Table",
           "schema_name": "sys",
           "database_name": "sys",
-          "connection_name": "126",
+          "connection_name": "MYSQL",
           "extraction_type": "FULL",
           "extraction_criteria": ""
         },
@@ -62,7 +62,7 @@
           "audit_fields": "YES",
           "database_name": "sys",
           "action_on_table": "CREATE IF NOT",
-          "connection_name": "126"
+          "connection_name": "MYSQL"
         }
       },
       {
@@ -73,7 +73,7 @@
           "object_type": "Table",
           "schema_name": "sys",
           "database_name": "sys",
-          "connection_name": "126",
+          "connection_name": "MYSQL",
           "extraction_type": "FULL",
           "extraction_criteria": ""
         },
@@ -84,7 +84,7 @@
           "audit_fields": "YES",
           "database_name": "sys",
           "action_on_table": "CREATE IF NOT",
-          "connection_name": "126"
+          "connection_name": "MYSQL"
         }
       }
     ]
