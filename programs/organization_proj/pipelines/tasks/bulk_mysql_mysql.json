@@ -57,7 +57,7 @@
         "target": {
           "object_name": "trgt_employee2",
           "schema_name": "test",
-          "audit_fields": "NO",
+          "audit_fields": "YES",
           "database_name": "test",
           "action_on_table": "CREATE IF NOT",
           "connection_name": "mysql_ikart_connection"
@@ -78,7 +78,7 @@
         "target": {
           "object_name": "trgt_sales_data",
           "schema_name": "test",
-          "audit_fields": "NO",
+          "audit_fields": "YES",
           "database_name": "test",
           "action_on_table": "CREATE IF NOT",
           "connection_name": "mysql_ikart_connection"
@@ -99,7 +99,7 @@
         "target": {
           "object_name": "trgt_sales_limited",
           "schema_name": "test",
-          "audit_fields": "NO",
+          "audit_fields": "YES",
           "database_name": "test",
           "action_on_table": "CREATE IF NOT",
           "connection_name": "mysql_ikart_connection"
