@@ -15,208 +15,94 @@
   "is_active": "Y",
   "created_by": "jjones",
   "updated_by": "jjones",
-  "chunk_size": 10000,
-  "source_type": "DB",
-  "target_type": "DB",
-  "restartability": "begin",
+  "chunk_size": 1000,
+  "source_type": "bulk_mysql_read",
+  "target_type": "bulk_mysql_write",
+  "restartability": "skip",
   "task": {
     "details": [
       {
         "subtask": "1",
         "source": {
           "task_group": "0",
-          "connection_name": "mysql",
-          "object_name": "combined_sales",
+          "object_name": "employee",
           "object_type": "Table",
           "schema_name": "test",
           "database_name": "test",
+          "connection_name": "mysql",
           "extraction_type": "FULL",
           "extraction_criteria": ""
         },
         "target": {
-          "object_name": "trgt_combined_sales",
-          "connection_name": "mysql_ikart_connection",
-          "primary_key": "",
+          "object_name": "trgt_employee",
           "schema_name": "test",
-          "audit_fields": "YES",
+          "audit_fields": "NO",
           "database_name": "test",
-          "action_on_table": "CREATE IF NOT"
+          "action_on_table": "CREATE IF NOT",
+          "connection_name": "mysql_ikart_connection"
         }
       },
       {
         "subtask": "2",
         "source": {
           "task_group": "0",
-          "connection_name": "mysql",
           "object_name": "employee",
           "object_type": "Table",
           "schema_name": "test",
           "database_name": "test",
+          "connection_name": "mysql",
           "extraction_type": "FULL",
           "extraction_criteria": ""
         },
         "target": {
-          "object_name": "trgt_employee",
-          "connection_name": "mysql_ikart_connection",
-          "primary_key": "",
+          "object_name": "trgt_employee2",
           "schema_name": "test",
-          "audit_fields": "YES",
+          "audit_fields": "NO",
           "database_name": "test",
-          "action_on_table": "CREATE IF NOT"
+          "action_on_table": "CREATE IF NOT",
+          "connection_name": "mysql_ikart_connection"
         }
       },
       {
         "subtask": "3",
         "source": {
-          "task_group": "0",
-          "connection_name": "mysql",
-          "object_name": "employee_excel",
+          "task_group": "1",
+          "object_name": "sales_data",
           "object_type": "Table",
           "schema_name": "test",
           "database_name": "test",
+          "connection_name": "mysql",
           "extraction_type": "FULL",
           "extraction_criteria": ""
         },
         "target": {
-          "object_name": "trgt_employee_excel",
-          "connection_name": "mysql_ikart_connection",
-          "primary_key": "",
+          "object_name": "trgt_sales_data",
           "schema_name": "test",
-          "audit_fields": "YES",
+          "audit_fields": "NO",
           "database_name": "test",
-          "action_on_table": "CREATE IF NOT"
+          "action_on_table": "CREATE IF NOT",
+          "connection_name": "mysql_ikart_connection"
         }
       },
       {
         "subtask": "4",
         "source": {
-          "task_group": "0",
-          "connection_name": "mysql",
-          "object_name": "encypted_Parq_Shipped",
-          "object_type": "Table",
-          "schema_name": "test",
-          "database_name": "test",
-          "extraction_type": "FULL",
-          "extraction_criteria": ""
-        },
-        "target": {
-          "object_name": "trgt_encypted_Parq_Shipped",
-          "connection_name": "mysql_ikart_connection",
-          "primary_key": "",
-          "schema_name": "test",
-          "audit_fields": "NO",
-          "database_name": "test",
-          "action_on_table": "CREATE IF NOT"
-        }
-      },
-      {
-        "subtask": "5",
-        "source": {
-          "task_group": "1",
-          "connection_name": "mysql",
-          "object_name": "encypted_sales_data",
-          "object_type": "Table",
-          "schema_name": "test",
-          "database_name": "test",
-          "extraction_type": "FULL",
-          "extraction_criteria": ""
-        },
-        "target": {
-          "object_name": "trgt_encypted_sales_data",
-          "connection_name": "mysql_ikart_connection",
-          "primary_key": "",
-          "schema_name": "test",
-          "audit_fields": "NO",
-          "database_name": "test",
-          "action_on_table": "CREATE IF NOT"
-        }
-      },
-      {
-        "subtask": "6",
-        "source": {
-          "task_group": "1",
-          "connection_name": "mysql",
-          "object_name": "encypted_sales_xml",
-          "object_type": "Table",
-          "schema_name": "test",
-          "database_name": "test",
-          "extraction_type": "FULL",
-          "extraction_criteria": ""
-        },
-        "target": {
-          "object_name": "trgt_encypted_sales_xml",
-          "connection_name": "mysql_ikart_connection",
-          "primary_key": "",
-          "schema_name": "test",
-          "audit_fields": "NO",
-          "database_name": "test",
-          "action_on_table": "CREATE IF NOT"
-        }
-      },
-      {
-        "subtask": "7",
-        "source": {
           "task_group": "2",
-          "connection_name": "mysql",
-          "object_name": "icpc_data",
+          "object_name": "sales_limited",
           "object_type": "Table",
           "schema_name": "test",
           "database_name": "test",
+          "connection_name": "mysql",
           "extraction_type": "FULL",
           "extraction_criteria": ""
         },
         "target": {
-          "object_name": "trgt_icpc_data",
-          "connection_name": "mysql_ikart_connection",
-          "primary_key": "",
+          "object_name": "trgt_sales_limited",
           "schema_name": "test",
-          "audit_fields": "YES",
+          "audit_fields": "NO",
           "database_name": "test",
-          "action_on_table": "UPDATE AND INSERT"
-        }
-      },
-      {
-        "subtask": "8",
-        "source": {
-          "task_group": "2",
-          "connection_name": "mysql",
-          "object_name": "json",
-          "object_type": "Table",
-          "schema_name": "test",
-          "database_name": "test",
-          "extraction_type": "FULL",
-          "extraction_criteria": ""
-        },
-        "target": {
-          "object_name": "trgt_json",
-          "connection_name": "mysql_ikart_connection",
-          "primary_key": "",
-          "schema_name": "test",
-          "audit_fields": "YES",
-          "database_name": "test",
-          "action_on_table": "UPDATE AND INSERT"
-        }
-      },
-      {
-        "subtask": "9",
-        "source": {
-          "task_group": "3",
-          "connection_name": "mysql",
-          "object_name": "multiple_parquet",
-          "object_type": "Table",
-          "schema_name": "test",
-          "database_name": "test",
-          "extraction_type": "FULL",
-          "extraction_criteria": ""
-        },
-        "target": {
-          "object_name": "trgt_multiple_parquet",
-          "connection_name": "mysql_ikart_connection",
-          "primary_key": "",
-          "schema_name": "test",
-          "audit_fields": "YES",
-          "database_name": "test",
-          "action_on_table": "UPDATE AND INSERT"
+          "action_on_table": "CREATE IF NOT",
+          "connection_name": "mysql_ikart_connection"
         }
       }
     ]
