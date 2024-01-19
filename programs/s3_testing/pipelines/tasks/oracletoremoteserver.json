@@ -1,0 +1,49 @@
+{
+  "login_id": "swetha",
+  "id": 470,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "oracletoremoteserver",
+  "task_description": "oracletoremoteserver",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "Oracle",
+  "target": "Remote Server",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "select * from system.excelsales_data",
+      "schema": "system",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "excelsales_data",
+      "parameter_type": "Oracle",
+      "select_columns": null,
+      "connection_name": "connection_oracle"
+    },
+    "target": {
+      "target_type": "remote_server_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "file_name": "oracletest.csv",
+      "file_path": "/home/swetha/",
+      "file_type": "csv",
+      "operation": "append",
+      "compression": "",
+      "escape_char": "",
+      "parameter_type": "Remote Server",
+      "connection_name": "connection_remote_server",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
