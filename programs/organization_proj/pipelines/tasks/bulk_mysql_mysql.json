@@ -30,7 +30,7 @@
           "schema_name": "test",
           "database_name": "test",
           "connection_name": "mysql",
-          "extraction_type": "Full",
+          "extraction_type": "FULL",
           "extraction_criteria": ""
         },
         "target": {
@@ -51,7 +51,7 @@
           "schema_name": "test",
           "database_name": "test",
           "connection_name": "mysql",
-          "extraction_type": "Full",
+          "extraction_type": "FULL",
           "extraction_criteria": ""
         },
         "target": {
@@ -72,7 +72,7 @@
           "schema_name": "test",
           "database_name": "test",
           "connection_name": "mysql",
-          "extraction_type": "Full",
+          "extraction_type": "FULL",
           "extraction_criteria": ""
         },
         "target": {
@@ -93,7 +93,7 @@
           "schema_name": "test",
           "database_name": "test",
           "connection_name": "mysql",
-          "extraction_type": "Full",
+          "extraction_type": "FULL",
           "extraction_criteria": ""
         },
         "target": {
