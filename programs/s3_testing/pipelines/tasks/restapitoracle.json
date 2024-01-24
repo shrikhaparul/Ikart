@@ -1,0 +1,43 @@
+{
+  "login_id": "swetha",
+  "id": 476,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "restapitoracle",
+  "task_description": "restapitoracle",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "source": "REST API",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "rest_api_read",
+      "timeout": null,
+      "content_type": "json",
+      "query_params": null,
+      "parameter_type": "REST API",
+      "connection_name": "rest_api_access",
+      "response_headers": null,
+      "chunk_size": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "system",
+      "operation": "create",
+      "table_name": "testrestapi",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "connection_oracle",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
