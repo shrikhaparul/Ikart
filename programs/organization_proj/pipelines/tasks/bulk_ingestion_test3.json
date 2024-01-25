@@ -39,7 +39,7 @@
           "schema_name": "test",
           "audit_fields": "YES",
           "database_name": "test",
-          "action_on_table": "CREATE IF NOT"
+          "action_on_table": "DROP AND CREATE"
         }
       },
       {
@@ -60,7 +60,7 @@
           "schema_name": "test",
           "audit_fields": "YES",
           "database_name": "test",
-          "action_on_table": "CREATE IF NOT"
+          "action_on_table": "DROP AND CREATE"
         }
       }
     ]
