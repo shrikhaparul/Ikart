@@ -1,0 +1,202 @@
+{
+  "login_id": "pgopi",
+  "id": 383,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "bulk_ingestion_test3",
+  "task_description": "bulk_ingestion_test3",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-16T05:15:13.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "Source": {
+          "task_group": "3",
+          "object_name": "SalesData_8k",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "FULL",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "targ_SalesData_8k",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "NO",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT",
+          "connection_name": "mysql"
+        },
+        "subtask": "1"
+      },
+      {
+        "Source": {
+          "task_group": "3",
+          "object_name": "combined_sales",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "FULL",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "targ_combined_sales",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT",
+          "connection_name": "mysql"
+        },
+        "subtask": "2"
+      },
+      {
+        "Source": {
+          "task_group": "3",
+          "object_name": "employee",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "FULL",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "targ_employee",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "NO",
+          "database_name": "test",
+          "action_on_table": "DROP AND CREATE",
+          "connection_name": "mysql"
+        },
+        "subtask": "3"
+      },
+      {
+        "Source": {
+          "task_group": "1",
+          "object_name": "employee_excel",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "FULL",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "targ_employee_excel",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "DROP AND CREATE",
+          "connection_name": "mysql"
+        },
+        "subtask": "4"
+      },
+      {
+        "Source": {
+          "task_group": "1",
+          "object_name": "encypted_Parq_Shipped",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "FULL",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "targ_encypted_Parq_Shipped",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "NO",
+          "database_name": "test",
+          "action_on_table": "TRUNCATE AND LOAD",
+          "connection_name": "mysql"
+        },
+        "subtask": "5"
+      },
+      {
+        "Source": {
+          "task_group": "1",
+          "object_name": "encypted_sales_data",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "FULL",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "targ_encypted_sales_data",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "TRUNCATE AND LOAD",
+          "connection_name": "mysql"
+        },
+        "subtask": "6"
+      },
+      {
+        "Source": {
+          "task_group": "0",
+          "object_name": "encypted_sales_xml",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "FULL",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "targ_encypted_sales_xml",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mysql"
+        },
+        "subtask": "7"
+      },
+      {
+        "Source": {
+          "task_group": "0",
+          "object_name": "icpc_data",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "connection_name": "mysql",
+          "extraction_type": "FULL",
+          "extraction_criteria": ""
+        },
+        "Target": {
+          "object_name": "targ_icpc_data",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "UPDATE AND INSERT",
+          "connection_name": "mysql"
+        },
+        "subtask": "8"
+      }
+    ]
+  }
+}
