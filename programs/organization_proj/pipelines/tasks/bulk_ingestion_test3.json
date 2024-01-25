@@ -31,7 +31,7 @@
           "schema_name": "test",
           "database_name": "test",
           "extraction_type": "INCREMENTAL",
-          "extraction_criteria": "Age IN (21,23,24,25,26,27,28,29,31,32,34,35,36,37,38,39,40,41,42,58)"
+          "extraction_criteria": "Age IN (21,23,24,25,26,27,28,29)"
         },
         "target": {
           "object_name": "stg_trgt_sales_limited",
