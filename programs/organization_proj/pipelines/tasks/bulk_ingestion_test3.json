@@ -34,7 +34,7 @@
           "extraction_criteria": "Age IN (21,23,24,25,26,27,28,29,31,32,34,35,36,37,38,39,40,41,42,58)"
         },
         "target": {
-          "object_name": "trgt_sales_limited",
+          "object_name": "stg_trgt_sales_limited",
           "connection_name": "mysql",
           "schema_name": "test",
           "audit_fields": "YES",
@@ -55,7 +55,7 @@
           "extraction_criteria": ""
         },
         "target": {
-          "object_name": "trgt_employee",
+          "object_name": "stg_trgt_employee",
           "connection_name": "mysql",
           "schema_name": "test",
           "audit_fields": "YES",
