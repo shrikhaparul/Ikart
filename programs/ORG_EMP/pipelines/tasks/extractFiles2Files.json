@@ -1,0 +1,56 @@
+{
+  "login_id": "jjones",
+  "id": 399,
+  "project_name": "ORG_EMP",
+  "pipeline_name": "extract_Bulk_Data",
+  "project_id": 61,
+  "pipeline_id": 158,
+  "task_name": "extractFiles2Files",
+  "task_description": "extractFiles2Files",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-29T06:44:18.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "local_new_conn",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "quote_char": "\"",
+          "compression": "gzip",
+          "escape_char": "\\",
+          "skip_footer": "0",
+          "skip_header": "1",
+          "transfer_mode": "binary",
+          "files_filter_name": "/home/madhu/src/",
+          "subfolder_included": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_new_conn",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "compression": "bzip",
+          "file_pathname": "/home/madhu/src/new",
+          "transfer_mode": "ascii",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      }
+    ]
+  }
+}
