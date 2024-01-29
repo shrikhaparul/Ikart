@@ -1,0 +1,136 @@
+{
+  "login_id": "jjones",
+  "id": 397,
+  "project_name": "ORG_EMP",
+  "pipeline_name": "extract_Bulk_Data",
+  "project_id": 61,
+  "pipeline_id": 158,
+  "task_name": "extractDB2DB",
+  "task_description": "extractDB2DB",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-29T06:47:59.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_HR",
+          "object_name": "Employee",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_Employee_new",
+          "connection_name": "Mysql_HR",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "YES",
+          "database_name": "ikart",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_HR",
+          "object_name": "EmployeeDepartmentHistory",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_EmployeeDepartmentHistory",
+          "connection_name": "Mysql_HR",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "YES",
+          "database_name": "ikart",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_HR",
+          "object_name": "EmployeePayHistory",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_EmployeePayHistory",
+          "connection_name": "Mysql_HR",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "No",
+          "database_name": "ikart",
+          "action_on_table": "UPDATE AND INSERT"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_HR",
+          "object_name": "JobCandidate",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_JobCandidate",
+          "connection_name": "Mysql_HR",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "YES",
+          "database_name": "ikart",
+          "action_on_table": "DROP AND CREATE"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "Mysql_HR",
+          "object_name": "new_employee",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_new_employee",
+          "connection_name": "Mysql_HR",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "YES",
+          "database_name": "ikart",
+          "action_on_table": "UPDATE AND INSERT"
+        }
+      }
+    ]
+  }
+}
