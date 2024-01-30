@@ -16,8 +16,6 @@
   "created_by": "jjones",
   "updated_by": "jjones",
   "chunk_size": 1000,
-  "source_type": "bulk_mysql_read",
-  "target_type": "bulk_mysql_write",
   "restartability": "normal",
   "task": {
     "details": [
