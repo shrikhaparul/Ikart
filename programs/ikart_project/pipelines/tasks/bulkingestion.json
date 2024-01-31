@@ -1,0 +1,114 @@
+{
+  "login_id": "shilpi",
+  "id": 371,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "bulkingestion",
+  "task_description": "bulk ingestion mysql",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-31T12:07:49.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_config",
+          "object_name": "lnk_user_project",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_lnk_user_project",
+          "connection_name": "mysql_shilpi",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "YES",
+          "database_name": "ikart",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_config",
+          "object_name": "sales123",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_sales123",
+          "connection_name": "mysql_shilpi",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "YES",
+          "database_name": "ikart",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_config",
+          "object_name": "tbl_connection",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_tbl_connection",
+          "connection_name": "mysql_shilpi",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "YES",
+          "database_name": "ikart",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mysql_config",
+          "object_name": "tbl_connection_detail",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_tbl_connection_detail",
+          "connection_name": "mysql_shilpi",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "YES",
+          "database_name": "ikart",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
