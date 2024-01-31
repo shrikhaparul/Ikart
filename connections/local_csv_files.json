@@ -1,0 +1,11 @@
+{
+  "project_id": 62,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "local_csv_files",
+  "connection_details": {
+    "file_name": "",
+    "file_path": "/home/madhu/Ingestion_code2/csv_folder",
+    "updated_by": "jjones"
+  }
+}
