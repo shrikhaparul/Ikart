@@ -28,7 +28,7 @@
           "object_type": "Table",
           "schema_name": "test",
           "database_name": "test",
-          "extraction_type": "INCREMENTAL",
+          "extraction_type": "Incremental",
           "extraction_criteria": "code = 1666"
         },
         "target": {
@@ -49,7 +49,7 @@
           "object_type": "Table",
           "schema_name": "test",
           "database_name": "test",
-          "extraction_type": "FULL",
+          "extraction_type": "Full",
           "extraction_criteria": ""
         },
         "target": {
