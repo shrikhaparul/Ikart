@@ -1,0 +1,53 @@
+{
+  "login_id": "swetha",
+  "id": 371,
+  "project_name": "project_swetha",
+  "pipeline_name": "pipeline_1",
+  "project_id": 62,
+  "pipeline_id": 156,
+  "task_name": "ingest_csv",
+  "task_description": "testing",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2023-11-21T07:45:24.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "|",
+      "file_name": "dd.csv",
+      "file_path": "/home/dswetha/csv/",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "quote_char": "",
+      "compression": "",
+      "escape_char": "",
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": "a,b,c,d",
+      "connection_name": "connection_csv"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "replace",
+      "table_name": "testcsv",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "connection_ikart",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
