@@ -1,0 +1,114 @@
+{
+  "login_id": "swetha",
+  "id": 480,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "bulk",
+  "task_description": "bulk",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-01T12:21:46.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "connection_ikart",
+          "object_name": "exceltest",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_exceltest",
+          "connection_name": "connection_ikart",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "YES",
+          "database_name": "ikart",
+          "action_on_table": "DROP AND CREATE"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "connection_ikart",
+          "object_name": "ikart_1",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_ikart_1",
+          "connection_name": "connection_ikart",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "YES",
+          "database_name": "ikart",
+          "action_on_table": "DROP AND CREATE"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "connection_ikart",
+          "object_name": "ikart_2",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_ikart_2",
+          "connection_name": "connection_ikart",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "YES",
+          "database_name": "ikart",
+          "action_on_table": "DROP AND CREATE"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "connection_ikart",
+          "object_name": "ikart_excel",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_ikart_excel",
+          "connection_name": "connection_ikart",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "YES",
+          "database_name": "ikart",
+          "action_on_table": "DROP AND CREATE"
+        }
+      }
+    ]
+  }
+}
