@@ -35,12 +35,12 @@
           "extraction_criteria": ""
         },
         "target": {
-          "object_name": "tgt_new",
+          "object_name": "tgt_new1",
           "connection_name": "MYSQL",
           "primary_key": "",
-          "schema_name": "sys1",
+          "schema_name": "sys",
           "audit_fields": "NO",
-          "database_name": "sys1",
+          "database_name": "sys",
           "action_on_table": "INSERT"
         }
       }
