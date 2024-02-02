@@ -1,0 +1,20 @@
+{
+  "login_id": "shilpi",
+  "id": 381,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "postgres_bulk",
+  "task_description": "postgres bulk",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-02T13:12:01.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": null,
+  "chunk_size": null,
+  "task": {}
+}
