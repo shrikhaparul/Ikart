@@ -35,7 +35,7 @@
           "extraction_criteria": ""
         },
         "target": {
-          "object_name": "tgt_new1",
+          "object_name": "tgt_new",
           "connection_name": "MYSQL",
           "primary_key": "",
           "schema_name": "sys",
