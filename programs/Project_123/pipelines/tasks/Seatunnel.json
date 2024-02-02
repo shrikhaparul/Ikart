@@ -40,7 +40,7 @@
           "primary_key": "",
           "schema_name": "sys1",
           "audit_fields": "NO",
-          "database_name": "sys",
+          "database_name": "sys1",
           "action_on_table": "INSERT"
         }
       }
