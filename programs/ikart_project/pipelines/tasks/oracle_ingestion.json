@@ -1,0 +1,55 @@
+{
+  "login_id": "shilpi",
+  "id": 383,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "oracle_ingestion",
+  "task_description": "oracle ingestion",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-03T12:18:08.000Z",
+  "source": "Local Server",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales.csv",
+      "file_path": "/home/shilpi/data/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": "",
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": "",
+      "connection_name": "localserver_shilpi",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "test",
+      "operation": "create",
+      "table_name": "sales",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_shilpi",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
