@@ -1,0 +1,224 @@
+{
+  "login_id": "shilpi",
+  "id": 377,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "bulk_mssql",
+  "task_description": "bulk mssql",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-03T15:06:00.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "skip",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_shilpi",
+          "object_name": "spt_fallback_db",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_spt_fallback_db",
+          "connection_name": "mssql_shilpi",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "master",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_shilpi",
+          "object_name": "spt_fallback_dev",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_spt_fallback_dev",
+          "connection_name": "mssql_shilpi",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "master",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_shilpi",
+          "object_name": "spt_fallback_usg",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_spt_fallback_usg",
+          "connection_name": "mssql_shilpi",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "master",
+          "action_on_table": "INSERT"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_shilpi",
+          "object_name": "sales",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_sales",
+          "connection_name": "mssql_shilpi",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "master",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_shilpi",
+          "object_name": "sales_sea",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_sales_sea",
+          "connection_name": "mssql_shilpi",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "master",
+          "action_on_table": "DROP AND CREATE"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_shilpi",
+          "object_name": "employees",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_employees",
+          "connection_name": "mssql_shilpi",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "master",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_shilpi",
+          "object_name": "spt_monitor",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_spt_monitor",
+          "connection_name": "mssql_shilpi",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "master",
+          "action_on_table": "INSERT"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_shilpi",
+          "object_name": "MSreplication_options",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_MSreplication_options",
+          "connection_name": "mssql_shilpi",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "master",
+          "action_on_table": "INSERT"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_shilpi",
+          "object_name": "spt_values",
+          "object_type": "View",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_spt_values",
+          "connection_name": "mssql_shilpi",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "master",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
