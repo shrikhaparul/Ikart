@@ -1,0 +1,114 @@
+{
+  "login_id": "swetha",
+  "id": 482,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "bulk_ingest",
+  "task_description": "bulk_ingest",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-05T04:55:27.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "connection_ikart",
+          "object_name": "exceltest",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_exceltest",
+          "connection_name": "connection_target",
+          "primary_key": "",
+          "schema_name": "target",
+          "audit_fields": "YES",
+          "database_name": "target",
+          "action_on_table": "UPDATE AND INSERT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "1",
+          "connection_name": "connection_ikart",
+          "object_name": "ikart_1",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_ikart_1",
+          "connection_name": "connection_target",
+          "primary_key": "",
+          "schema_name": "target",
+          "audit_fields": "YES",
+          "database_name": "target",
+          "action_on_table": "UPDATE AND INSERT"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "2",
+          "connection_name": "connection_ikart",
+          "object_name": "ikart_2",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_ikart_2",
+          "connection_name": "connection_target",
+          "primary_key": "",
+          "schema_name": "target",
+          "audit_fields": "YES",
+          "database_name": "target",
+          "action_on_table": "UPDATE AND INSERT"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "2",
+          "connection_name": "connection_ikart",
+          "object_name": "ikart_excel",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_ikart_excel",
+          "connection_name": "connection_target",
+          "primary_key": "",
+          "schema_name": "target",
+          "audit_fields": "YES",
+          "database_name": "target",
+          "action_on_table": "UPDATE AND INSERT"
+        }
+      }
+    ]
+  }
+}
