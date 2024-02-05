@@ -1,0 +1,12 @@
+{
+  "created_dttm": "2024-02-05T04:53:16.808Z",
+  "updated_dttm": "2024-02-05T04:53:16.808Z",
+  "id": 66,
+  "program_id": 269,
+  "project_name": "internal_demo",
+  "project_description": "Project to test ingestion, sql_execution and bulk_ingestion pipeline",
+  "project_manager": "Admin",
+  "project_lead": "Admin",
+  "is_active": "Y",
+  "created_by": "Puneeth"
+}
