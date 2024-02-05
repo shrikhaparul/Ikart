@@ -1,0 +1,59 @@
+{
+  "login_id": "jjones",
+  "id": 404,
+  "project_name": "ORG_Bulk_data_proj",
+  "pipeline_name": "ORG_Bulk_data_pipe",
+  "project_id": 62,
+  "pipeline_id": 159,
+  "task_name": "Files2Files_bulk",
+  "task_description": "Files2Files_bulk",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-31T03:46:33.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "Engine",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "local_conn_org",
+          "encoding": "utf-8",
+          "ftp_mode": "active",
+          "delimiter": ",",
+          "file_path": "/home/madhu/Ingestion_code2/",
+          "operation": "copy",
+          "quote_char": "\"",
+          "compression": "gzip",
+          "escape_char": "\\n",
+          "skip_footer": "0",
+          "skip_header": "0",
+          "transfer_mode": "binary",
+          "files_filter_name": "*",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_conn_org",
+          "delimiter": ",",
+          "compression": "gzip",
+          "file_pathname": "home/madhu/src/dest_path",
+          "transfer_mode": "ascii",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "object_prefix_name": "tgt",
+          "target_file_format": "json",
+          "target_max_record_count": "1000"
+        }
+      }
+    ]
+  }
+}
