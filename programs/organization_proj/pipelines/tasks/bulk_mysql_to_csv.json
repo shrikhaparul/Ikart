@@ -43,7 +43,9 @@
           "file_name": "employee",
           "transfer_mode": "",
           "object_prefix_name": "file_",
-          "target_file_format": "csv"
+          "object_suffix_name": "_1",
+          "target_file_format": "csv",
+          "audit_columns":"active"
         }
       },
       {
@@ -68,7 +70,9 @@
           "file_name": "employee",
           "transfer_mode": "",
           "object_prefix_name": "file_",
-          "target_file_format": "csv"
+          "object_suffix_name": "_2",
+          "target_file_format": "csv",
+          "audit_columns":"active"
         }
       },
       {
@@ -93,7 +97,9 @@
           "file_name": "employee",
           "transfer_mode": "",
           "object_prefix_name": "file_",
-          "target_file_format": "csv"
+          "object_suffix_name": "_3",
+          "target_file_format": "csv",
+          "audit_columns":"active"
         }
       },
       {
@@ -119,7 +125,9 @@
           "file_name": "employee",
           "transfer_mode": "",
           "object_prefix_name": "file_",
-          "target_file_format": "csv"
+          "object_suffix_name": "_4",
+          "target_file_format": "csv",
+          "audit_columns":"active"
         }
       }
     ]
