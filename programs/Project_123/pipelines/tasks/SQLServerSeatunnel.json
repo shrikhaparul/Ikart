@@ -27,7 +27,7 @@
         "source": {
           "task_group": "0",
           "connection_name": "SQLSERVER",
-          "object_name": "sales",
+          "object_name": "sys",
           "object_type": "Table",
           "schema_name": "dbo",
           "database_name": "master",
@@ -35,7 +35,7 @@
           "extraction_criteria": ""
         },
         "target": {
-          "object_name": "tgt_sales",
+          "object_name": "tgt_sys",
           "connection_name": "SQLSERVER",
           "primary_key": "",
           "schema_name": "dbo",
