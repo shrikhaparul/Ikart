@@ -40,6 +40,7 @@
           "delimiter": ",",
           "compression": "",
           "file_pathname": "/home/rperuman/src_files/files/csv files/",
+          "file_name": "employee",
           "transfer_mode": "",
           "object_prefix_name": "file_",
           "target_file_format": "csv"
@@ -64,6 +65,7 @@
           "delimiter": ",",
           "compression": "",
           "file_pathname": "/home/rperuman/src_files/files/csv files/",
+          "file_name": "employee",
           "transfer_mode": "",
           "object_prefix_name": "file_",
           "target_file_format": "csv"
@@ -88,6 +90,7 @@
           "delimiter": ",",
           "compression": "",
           "file_pathname": "/home/rperuman/src_files/files/csv files/",
+          "file_name": "employee",
           "transfer_mode": "",
           "object_prefix_name": "file_",
           "target_file_format": "csv"
@@ -99,6 +102,7 @@
           "task_group": "1",
           "connection_name": "mysql",
           "object_name": "sales_limited",
+          "file_name": "employee",
           "object_type": "Table",
           "schema_name": "test",
           "database_name": "test",
@@ -112,6 +116,7 @@
           "delimiter": ",",
           "compression": "",
           "file_pathname": "/home/rperuman/src_files/files/csv files/",
+          "file_name": "employee",
           "transfer_mode": "",
           "object_prefix_name": "file_",
           "target_file_format": "csv"
