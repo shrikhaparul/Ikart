@@ -40,11 +40,13 @@
           "encoding": "utf-8",
           "delimiter": ",",
           "compression": "",
-          "file_pathname": "/home/rperuman/src_files/files/csv files/",
+          "file_path": "/home/rperuman/src_files/files/csv files/",
+          "file_name": "employee",
           "transfer_mode": "binary",
           "object_sufix_name": "_1",
           "object_prefix_name": "file_",
-          "target_file_format": "csv"
+          "target_file_format": "csv",
+          "audit_columns":"active"
         }
       },
       {
@@ -65,11 +67,13 @@
           "encoding": "utf-8",
           "delimiter": ",",
           "compression": "",
-          "file_pathname": "/home/rperuman/src_files/files/csv files/",
+          "file_path": "/home/rperuman/src_files/files/csv files/",
+          "file_name": "employee_excel",
           "transfer_mode": "binary",
           "object_sufix_name": "_1",
           "object_prefix_name": "file_",
-          "target_file_format": "csv"
+          "target_file_format": "csv",
+          "audit_columns":"active"
         }
       },
       {
@@ -85,16 +89,18 @@
           "extraction_criteria": ""
         },
         "target": {
-          "header": "Y",
+          "header": "N",
           "connection_name": "localserver",
           "encoding": "utf-8",
           "delimiter": ",",
           "compression": "",
-          "file_pathname": "/home/rperuman/src_files/files/csv files/",
+          "file_path": "/home/rperuman/src_files/files/csv files/",
+          "file_name": "sales_data",
           "transfer_mode": "binary",
           "object_sufix_name": "_1",
           "object_prefix_name": "file_",
-          "target_file_format": "csv"
+          "target_file_format": "csv",
+          "audit_columns":"active"
         }
       },
       {
@@ -110,16 +116,18 @@
           "extraction_criteria": ""
         },
         "target": {
-          "header": "Y",
+          "header": "N",
           "connection_name": "localserver",
           "encoding": "utf-8",
           "delimiter": ",",
           "compression": "",
-          "file_pathname": "/home/rperuman/src_files/files/csv files/",
+          "file_path": "/home/rperuman/src_files/files/csv files/",
+          "file_name": "sales_limited",
           "transfer_mode": "binary",
           "object_sufix_name": "_1",
           "object_prefix_name": "file_",
-          "target_file_format": "csv"
+          "target_file_format": "csv",
+          "audit_columns":"inactive"
         }
       }
     ]
