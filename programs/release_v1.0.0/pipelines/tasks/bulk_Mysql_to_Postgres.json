@@ -1,0 +1,92 @@
+{
+  "login_id": "Puneeth",
+  "id": 467,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "Bulk_Ingestion_Test",
+  "project_id": 61,
+  "pipeline_id": 166,
+  "task_name": "bulk_Mysql_to_Postgres",
+  "task_description": "ingest mysql to postgres",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-06T17:11:04.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_karttest_connection_puneeth",
+          "object_name": "nest_ui",
+          "object_type": "Table",
+          "schema_name": "karttest",
+          "database_name": "karttest",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "from_mysql_nest_ui",
+          "connection_name": "postgres_connection_puneeth",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "YES",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mysql_karttest_connection_puneeth",
+          "object_name": "newfile",
+          "object_type": "Table",
+          "schema_name": "karttest",
+          "database_name": "karttest",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "from_mysql_newfile",
+          "connection_name": "postgres_connection_puneeth",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "YES",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mysql_karttest_connection_puneeth",
+          "object_name": "remote_server_file",
+          "object_type": "Table",
+          "schema_name": "karttest",
+          "database_name": "karttest",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "from_mysql_remote_server_file",
+          "connection_name": "postgres_connection_puneeth",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "YES",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
