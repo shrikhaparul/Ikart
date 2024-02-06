@@ -44,7 +44,8 @@
           "transfer_mode": "binary",
           "object_sufix_name": "_1",
           "object_prefix_name": "file_",
-          "target_file_format": "csv"
+          "target_file_format": "csv",
+          "audit_columns":"inactive"
         }
       },
       {
@@ -69,7 +70,9 @@
           "transfer_mode": "binary",
           "object_sufix_name": "_1",
           "object_prefix_name": "file_",
-          "target_file_format": "csv"
+          "target_file_format": "csv",
+          "audit_columns":"active"
+          
         }
       },
       {
@@ -85,7 +88,7 @@
           "extraction_criteria": ""
         },
         "target": {
-          "header": "Y",
+          "header": "N",
           "connection_name": "localserver",
           "encoding": "utf-8",
           "delimiter": ",",
@@ -94,7 +97,8 @@
           "transfer_mode": "binary",
           "object_sufix_name": "_1",
           "object_prefix_name": "file_",
-          "target_file_format": "csv"
+          "target_file_format": "csv",
+          "audit_columns":"inactive"
         }
       },
       {
@@ -119,7 +123,8 @@
           "transfer_mode": "binary",
           "object_sufix_name": "_1",
           "object_prefix_name": "file_",
-          "target_file_format": "csv"
+          "target_file_format": "csv",
+          "audit_columns":"active"
         }
       }
     ]
