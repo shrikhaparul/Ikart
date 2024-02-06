@@ -45,7 +45,7 @@
           "object_prefix_name": "file_",
           "object_suffix_name": "_1",
           "target_file_format": "csv",
-          "audit_columns":"active"
+          "audit_columns":"inactive"
         }
       },
       {
@@ -72,7 +72,7 @@
           "object_prefix_name": "file_",
           "object_suffix_name": "_2",
           "target_file_format": "csv",
-          "audit_columns":"active"
+          "audit_columns":"inactive"
         }
       },
       {
