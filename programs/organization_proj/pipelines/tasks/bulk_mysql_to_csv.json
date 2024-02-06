@@ -34,7 +34,7 @@
           "extraction_criteria": ""
         },
         "target": {
-          "header": "Y",
+          "header": "N",
           "connection_name": "localserver",
           "encoding": "utf-8",
           "delimiter": ",",
