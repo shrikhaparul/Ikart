@@ -1,0 +1,49 @@
+{
+  "login_id": "pgopi",
+  "id": 386,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "bulk_csv_to_csv",
+  "task_description": "bulk_csv_to_csv",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-06T06:43:45.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "Engine",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "Target": {
+          "header": "Y",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "compression": "gzip",
+          "transfer_mode": "binary",
+          "object_sufix_name": "_1",
+          "object_prefix_name": "target",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        },
+        "subtask": "1",
+        "source": {
+          "ftp_mode": "active",
+          "connection_name": "localserver",
+          "file_path": "/home/rperuman/src_files/files/csv_files/",
+          "operation": "copy",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        }
+      }
+    ]
+  }
+}
