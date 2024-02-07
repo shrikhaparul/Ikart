@@ -1,0 +1,44 @@
+{
+  "login_id": "pgopi",
+  "id": 386,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "bulk_csv_to_csv",
+  "task_description": "bulk_csv_to_csv",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-06T06:43:45.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "Engine",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "ftp_mode": "active",
+          "connection_name": "localserver",
+          "file_path": "/home/rperuman/src_files/files/csv files/",
+          "operation": "copy",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "file_path": "/home/rperuman/src_files/files/target/",
+          "connection_name": "localserver",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "_%HH%%MI%%SS%"
+        }
+      }
+    ]
+  }
+}
