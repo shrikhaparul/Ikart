@@ -1,0 +1,92 @@
+{
+  "login_id": "Puneeth",
+  "id": 468,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "Bulk_Ingestion_Test",
+  "project_id": 61,
+  "pipeline_id": 166,
+  "task_name": "bulk_P_to_My",
+  "task_description": "ingestion from postgres to mysql",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-06T17:50:04.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "1",
+          "connection_name": "postgres_connection_puneeth",
+          "object_name": "\"tgt_nest_UI\"",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "from_Pg_\"tgt_nest_UI\"",
+          "connection_name": "mysql_ikart_connection",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "NO",
+          "database_name": "ikart",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "4",
+          "connection_name": "postgres_connection_puneeth",
+          "object_name": "\"tgt_newfile\"",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "from_Pg_\"tgt_newfile\"",
+          "connection_name": "mysql_ikart_connection",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "NO",
+          "database_name": "ikart",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "4",
+          "connection_name": "postgres_connection_puneeth",
+          "object_name": "\"tgt_NN\"",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "from_Pg_\"tgt_NN\"",
+          "connection_name": "mysql_ikart_connection",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "NO",
+          "database_name": "ikart",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
