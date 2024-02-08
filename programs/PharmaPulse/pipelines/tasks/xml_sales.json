@@ -1,0 +1,55 @@
+{
+  "login_id": "rperuman",
+  "id": 454,
+  "project_name": "PharmaPulse",
+  "pipeline_name": "data_loading",
+  "project_id": 67,
+  "pipeline_id": 166,
+  "task_name": "xml_sales",
+  "task_description": "loading of xml data",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-08T10:11:36.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "xml_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales.xml",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+      "file_type": "xml",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local_server",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "sys",
+      "operation": "append",
+      "table_name": "sales_xml",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
