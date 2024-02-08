@@ -1,0 +1,11 @@
+{
+  "created_dttm": "2024-02-08T08:04:57.071Z",
+  "updated_dttm": "2024-02-08T08:04:57.071Z",
+  "id": 270,
+  "program_name": "pharma",
+  "program_description": "this project deals with commercial pharma ETL activities",
+  "primary_stakeholder": "ravi kiran",
+  "secondary_stakeholder": "madhu",
+  "is_active": "Y",
+  "created_by": "rperuman"
+}
