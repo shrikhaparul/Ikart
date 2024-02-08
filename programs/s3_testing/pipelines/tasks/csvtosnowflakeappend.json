@@ -1,0 +1,53 @@
+{
+  "login_id": "swetha",
+  "id": 452,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "csvtosnowflakeappend",
+  "task_description": "csv to snowflake append",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-08T04:46:02.000Z",
+  "source": "Local Server",
+  "target": "Snowflake",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "house.csv",
+      "file_path": "/home/dswetha/csv/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": "hlpi_name,series_ref,quarter,hlpi,nzhec,nzhec_name,nzhec_short,level,index,change.q,change.a",
+      "connection_name": "connection_csv"
+    },
+    "target": {
+      "target_type": "snowflake_write",
+      "schema": "jjj",
+      "operation": "create",
+      "table_name": "csv_file_snowflake",
+      "audit_columns": "active",
+      "parameter_type": "Snowflake",
+      "connection_name": "connection_snowflake",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
