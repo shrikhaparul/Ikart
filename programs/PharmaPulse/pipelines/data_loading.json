@@ -1,0 +1,13 @@
+{
+  "id": 166,
+  "project_id": 67,
+  "pipeline_name": "data_loading",
+  "pipeline_cd": null,
+  "pipeline_description": "loading of files into mysql database",
+  "pipeline_sequence": 1,
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "created_dttm": "2024-02-08T08:11:17.000Z",
+  "updated_by": "rperuman",
+  "updated_dttm": "2024-02-08T08:11:17.000Z"
+}
