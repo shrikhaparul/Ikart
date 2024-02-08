@@ -1,0 +1,55 @@
+{
+  "login_id": "rperuman",
+  "id": 450,
+  "project_name": "PharmaPulse",
+  "pipeline_name": "data_loading",
+  "project_id": 67,
+  "pipeline_id": 166,
+  "task_name": "sales_data_load",
+  "task_description": "loading sales data into mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "updated_dttm": "2024-02-08T16:06:12.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_data.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": 100,
+      "skip_header": null,
+      "alias_columns": "",
+      "parameter_type": "Local Server",
+      "select_columns": "ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,SHIPDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE",
+      "connection_name": "local_server",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "sys",
+      "operation": "create",
+      "table_name": "sales_data",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
