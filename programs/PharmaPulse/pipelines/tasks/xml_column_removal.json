@@ -1,0 +1,46 @@
+{
+  "login_id": "rperuman",
+  "id": 460,
+  "project_name": "PharmaPulse",
+  "pipeline_name": "data_loading",
+  "project_id": 67,
+  "pipeline_id": 166,
+  "task_name": "xml_column_removal",
+  "task_description": "remove extra column and load into mssql from mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-08T15:24:47.000Z",
+  "source": "MySQL",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select ORDERNUMBER, QUANTITYORDERED, PRICEEACH, ORDERLINENUMBER, SALES, ORDERDATE, SHIPDATE, STATUS, QTR_ID, MONTH_ID, YEAR_ID, PRODUCTLINE, MSRP, PRODUCTCODE, CUSTOMERNAME, PHONE, ADDRESSLINE1, ADDRESSLINE2, CITY, STATE, POSTALCODE, COUNTRY, TERRITORY, CONTACTLASTNAME, CONTACTFIRSTNAME, DEALSIZE, CRTD_BY, CRTD_DTTM, UPDT_BY, UPDT_DTTM from sys.sales_xml",
+      "schema": "sys",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "sales_xml",
+      "parameter_type": "MySQL",
+      "select_columns": "",
+      "connection_name": "mysql"
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "append",
+      "table_name": "stg_sales",
+      "audit_columns": "inactive",
+      "parameter_type": "MSSQL",
+      "connection_name": "mssql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
