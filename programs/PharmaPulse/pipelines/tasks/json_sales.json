@@ -1,0 +1,55 @@
+{
+  "login_id": "rperuman",
+  "id": 453,
+  "project_name": "PharmaPulse",
+  "pipeline_name": "data_loading",
+  "project_id": 67,
+  "pipeline_id": 166,
+  "task_name": "json_sales",
+  "task_description": "loading of json data into mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-08T10:03:31.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "json_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": null,
+      "file_name": "SalesData.json",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+      "file_type": "json",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local_server",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "sys",
+      "operation": "create",
+      "table_name": "sales_json",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
