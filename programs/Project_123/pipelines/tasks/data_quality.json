@@ -1,0 +1,81 @@
+{
+  "login_id": "jjones",
+  "id": 388,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "data_quality",
+  "task_description": "ds",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-08T13:07:17.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "xlsx_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": null,
+      "file_name": "sales_data.xlsx",
+      "file_path": "/home/pshrikh/test_files/",
+      "file_type": "xlsx",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": "",
+      "connection_name": "ikart_local_server_connection",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "sys",
+      "operation": "create",
+      "table_name": "test_demo",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "MYSQL",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "STATE"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_max_to_be_between",
+        "parameters": {
+          "column": "QTR_ID",
+          "max_value": "3",
+          "min_value": "0"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
