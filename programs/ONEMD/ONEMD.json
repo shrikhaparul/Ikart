@@ -1,0 +1,12 @@
+{
+  "created_dttm": "2024-02-08T08:09:32.311Z",
+  "updated_dttm": "2024-02-08T08:09:32.311Z",
+  "id": 67,
+  "program_id": 270,
+  "project_name": "ONEMD",
+  "project_description": "onemd deals with all the medical reps ,surgeon and patients end to end details",
+  "project_manager": "jagadeesh",
+  "project_lead": "prajwal",
+  "is_active": "Y",
+  "created_by": "rperuman"
+}
