@@ -1,0 +1,55 @@
+{
+  "login_id": "rperuman",
+  "id": 455,
+  "project_name": "PharmaPulse",
+  "pipeline_name": "data_loading",
+  "project_id": 67,
+  "pipeline_id": 166,
+  "task_name": "sales_mysql",
+  "task_description": "loading sales data into mssql",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "updated_dttm": "2024-02-08T16:06:12.000Z",
+  "source": "AWS S3",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_data.csv",
+      "file_path": "csv_folder/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "",
+      "parameter_type": "AWS S3",
+      "select_columns": "",
+      "connection_name": "AWS_S3",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "sys",
+      "operation": "replace",
+      "table_name": "s3_sales",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
