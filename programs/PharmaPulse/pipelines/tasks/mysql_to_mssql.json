@@ -63,7 +63,7 @@
           "schema_name": "dbo",
           "audit_fields": "NO",
           "database_name": "sys",
-          "action_on_table": "DROP AND CREATE"
+          "action_on_table": "INSERT"
         }
       },
       {
@@ -85,7 +85,7 @@
           "schema_name": "dbo",
           "audit_fields": "NO",
           "database_name": "sys",
-          "action_on_table": "DROP AND CREATE"
+          "action_on_table": "INSERT"
         }
       },
       {
@@ -107,7 +107,7 @@
           "schema_name": "dbo",
           "audit_fields": "NO",
           "database_name": "sys",
-          "action_on_table": "DROP AND CREATE"
+          "action_on_table": "INSERT"
         }
       }
     ]
