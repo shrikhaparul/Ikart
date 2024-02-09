@@ -1,0 +1,57 @@
+{
+  "login_id": "jjones",
+  "id": 462,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "Data_Quality_File_Conversions",
+  "project_id": 68,
+  "pipeline_id": 168,
+  "task_name": "xml_to_excel",
+  "task_description": "xml to excel demo test",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-08T18:01:58.000Z",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "parquet_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": null,
+      "file_name": "Shipped_file.parquet",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+      "file_type": "parquet",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver_ikart_connection",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "xlsx_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "file_name": "Shipped_file.xlsx",
+      "file_path": "/home/Admin/actions-runner/_work/UI/tgt_files/",
+      "file_type": "xlsx",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_ikart_connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    }
+  }
+}
