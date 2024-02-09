@@ -1,0 +1,93 @@
+{
+  "login_id": "Puneeth",
+  "id": 466,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "Bulk_Ingestion_Test",
+  "project_id": 61,
+  "pipeline_id": 166,
+  "task_name": "bulk_M_to_P",
+  "task_description": "To test bulk ingestion tasks mysql_to_postgres",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-30T10:21:39.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Engine",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_karttest_connection_puneeth",
+          "object_name": "NN",
+          "object_type": "Table",
+          "schema_name": "karttest",
+          "database_name": "karttest",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_NN",
+          "connection_name": "postgres_connection_puneeth",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "DROP AND CREATE"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_karttest_connection_puneeth",
+          "object_name": "nest_UI",
+          "object_type": "Table",
+          "schema_name": "karttest",
+          "database_name": "karttest",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nest_UI",
+          "connection_name": "postgres_connection_puneeth",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "DROP AND CREATE"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_karttest_connection_puneeth",
+          "object_name": "newfile",
+          "object_type": "Table",
+          "schema_name": "karttest",
+          "database_name": "karttest",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_newfile",
+          "connection_name": "postgres_connection_puneeth",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "DROP AND CREATE"
+        }
+      }
+    ]
+  }
+}
