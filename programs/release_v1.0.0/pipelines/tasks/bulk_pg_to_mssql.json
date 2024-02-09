@@ -1,0 +1,115 @@
+{
+  "login_id": "Puneeth",
+  "id": 470,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "Bulk_Ingestion_Test",
+  "project_id": 61,
+  "pipeline_id": 166,
+  "task_name": "bulk_pg_to_mssql",
+  "task_description": "bulk ingest from pg to mssql",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-07T08:26:59.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Engine",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "postgres_connection_puneeth",
+          "object_name": "customer",
+          "object_type": "Table",
+          "schema_name": "raw",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "from_pg_customer",
+          "connection_name": "sql_server_connection_puneeth",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "karttest",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "postgres_connection_puneeth",
+          "object_name": "customer_type",
+          "object_type": "Table",
+          "schema_name": "raw",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "from_pg_customer_type",
+          "connection_name": "sql_server_connection_puneeth",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "karttest",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "postgres_connection_puneeth",
+          "object_name": "customer_phone",
+          "object_type": "Table",
+          "schema_name": "raw",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "from_pg_customer_phone",
+          "connection_name": "sql_server_connection_puneeth",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "karttest",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "postgres_connection_puneeth",
+          "object_name": "customer_phone_type",
+          "object_type": "Table",
+          "schema_name": "raw",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "from_pg_customer_phone_type",
+          "connection_name": "sql_server_connection_puneeth",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "karttest",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
