@@ -1,0 +1,93 @@
+{
+  "login_id": "Puneeth",
+  "id": 469,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "Bulk_Ingestion_Test",
+  "project_id": 61,
+  "pipeline_id": 166,
+  "task_name": "bulk_mssql_to_postgres",
+  "task_description": "task to test mssql to postgres",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-07T08:15:46.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Engine",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "sql_server_connection_puneeth",
+          "object_name": "nested_xml_data",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "karttest",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "from_mssql_nested_xml_data",
+          "connection_name": "postgres_connection_puneeth",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "YES",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "sql_server_connection_puneeth",
+          "object_name": "AW_products_test",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "karttest",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "from_mssql_AW_products_test",
+          "connection_name": "postgres_connection_puneeth",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "YES",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "sql_server_connection_puneeth",
+          "object_name": "fromsnow",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "karttest",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "from_mssql_fromsnow",
+          "connection_name": "postgres_connection_puneeth",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "YES",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
