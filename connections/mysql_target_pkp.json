@@ -1,0 +1,14 @@
+{
+  "project_id": 62,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MySQL",
+  "connection_name": "mysql_target_pkp",
+  "connection_details": {
+    "port": "3306",
+    "database": "ikart",
+    "hostname": "localhost",
+    "password": "b82ef62efa0ad8406ca92872bf984c40200a9da3",
+    "username": "root",
+    "updated_by": "jjones"
+  }
+}
