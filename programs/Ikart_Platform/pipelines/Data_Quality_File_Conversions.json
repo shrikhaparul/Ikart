@@ -1,0 +1,142 @@
+{
+  "pipeline_id": 168,
+  "project_id": 68,
+  "pipeline_name": "Data_Quality_File_Conversions",
+  "pipeline_cd": null,
+  "pipeline_description": "Data transfer",
+  "is_active": "Y",
+  "tasks_details": {
+    "Checks": 0,
+    "xml2excel": [
+      "Postgres_to_json"
+    ],
+    "MYSQL_postgres": [
+      "file_conversion",
+      "Checks"
+    ],
+    "file_conversion": 0,
+    "Postgres_to_json": [
+      "MYSQL_postgres"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "457",
+      "data": {
+        "label": "457-Checks"
+      },
+      "position": {
+        "x": 50,
+        "y": 2000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "459",
+      "data": {
+        "label": "459-file_conversion"
+      },
+      "position": {
+        "x": 50,
+        "y": 2050
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "461",
+      "data": {
+        "label": "461-MYSQL_postgres"
+      },
+      "position": {
+        "x": 50,
+        "y": 2100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "462",
+      "data": {
+        "label": "462-xml_to_excel"
+      },
+      "position": {
+        "x": 50,
+        "y": 2150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "463",
+      "data": {
+        "label": "463-Postgres_to_json"
+      },
+      "position": {
+        "x": 50,
+        "y": 2200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "464",
+      "data": {
+        "label": "464-xml2excel"
+      },
+      "position": {
+        "x": 50,
+        "y": 2250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-463-464",
+      "source": "463",
+      "target": "464"
+    },
+    {
+      "id": "flow-461-463",
+      "source": "461",
+      "target": "463"
+    },
+    {
+      "id": "flow-0-459",
+      "source": "0",
+      "target": "459"
+    },
+    {
+      "id": "flow-457-461",
+      "source": "457",
+      "target": "461"
+    },
+    {
+      "id": "flow-459-461",
+      "source": "459",
+      "target": "461"
+    },
+    {
+      "id": "flow-0-457",
+      "source": "0",
+      "target": "457"
+    }
+  ],
+  "created_dttm": "2024-02-09T04:04:14.243Z",
+  "updated_dttm": "2024-02-09T04:04:14.243Z"
+}
