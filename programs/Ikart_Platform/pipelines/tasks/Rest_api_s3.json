@@ -1,0 +1,48 @@
+{
+  "login_id": "jjones",
+  "id": 467,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "Data_Quality_File_Conversions",
+  "project_id": 68,
+  "pipeline_id": 168,
+  "task_name": "Rest_api_s3",
+  "task_description": "restapi",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-09T07:06:22.000Z",
+  "source": "REST API",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "rest_api_read",
+      "timeout": "100",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "content_type": "json",
+      "query_params": null,
+      "parameter_type": "REST API",
+      "connection_name": "Public_Rest_API",
+      "response_headers": null
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "file_name": "rest_api_test.json",
+      "file_path": "test/",
+      "file_type": "json",
+      "operation": "append",
+      "parameter_type": "AWS S3",
+      "connection_name": "AWS_S3",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
