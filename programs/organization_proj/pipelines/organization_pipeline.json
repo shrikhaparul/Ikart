@@ -4,7 +4,7 @@
   "pipeline_name": "organization_pipeline",
   "pipeline_cd": null,
   "pipeline_description": "organization_pipeline",
-  "is_active": "Y",
+  "is_active": "N",
   "tasks_details": {
     "task_for_organization_pipeline": 0
   },
