@@ -1,0 +1,50 @@
+{
+  "login_id": "Puneeth",
+  "id": 472,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "testing_purpose",
+  "project_id": 61,
+  "pipeline_id": 160,
+  "task_name": "rest_api_to_localserver",
+  "task_description": "to ingest the data from restapi to local server",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-12T07:34:17.000Z",
+  "source": "REST API",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "rest_api_read",
+      "timeout": "100",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "content_type": "json",
+      "query_params": null,
+      "parameter_type": "REST API",
+      "connection_name": "gorest_restapi_connection",
+      "response_headers": null
+    },
+    "target": {
+      "target_type": "csv_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "file_from_restapi_%DD%%MM%",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "compression": "",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_connection_puneeth",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
