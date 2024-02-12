@@ -12,7 +12,7 @@
   "updated_dttm": "2024-01-18T07:46:31.000Z",
   "source": "DB",
   "target": "DB",
-  "is_active": "Y",
+  "is_active": "N",
   "created_by": "jjones",
   "updated_by": "jjones",
   "chunk_size": 10000,
