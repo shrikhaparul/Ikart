@@ -1,0 +1,62 @@
+{
+  "login_id": "Puneeth",
+  "id": 471,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "dq_testing",
+  "project_id": 61,
+  "pipeline_id": 165,
+  "task_name": "pg_to_local",
+  "task_description": "ingest data from pg to local server csv file",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-12T07:21:36.000Z",
+  "source": "PostgreSQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "select * from public.new",
+      "schema": "public",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "new",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "postgres_connection_puneeth"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_from_pg_%DD%%MM%",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_connection_puneeth",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "ORDERNUMBER"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
