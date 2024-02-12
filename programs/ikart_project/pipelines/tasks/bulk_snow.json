@@ -1,0 +1,48 @@
+{
+  "login_id": "shilpi",
+  "id": 390,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "bulk_snow",
+  "task_description": "bulk_snow",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-12T06:06:53.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mysql_shilpi",
+          "object_name": "sales",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "n_sales",
+          "connection_name": "snowflake_shilpi",
+          "primary_key": "",
+          "schema_name": "PUBLIC",
+          "audit_fields": "YES",
+          "database_name": "ikart_test",
+          "action_on_table": "INSERT"
+        }
+      }
+    ]
+  }
+}
