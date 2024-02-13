@@ -40,7 +40,7 @@
           "primary_key": "",
           "schema_name": "sys33",
           "audit_fields": "YES",
-          "database_name": "sys11",
+          "database_name": "wahta",
           "action_on_table": "INSERT"
         }
       }
