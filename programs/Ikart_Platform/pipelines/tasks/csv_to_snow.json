@@ -1,0 +1,55 @@
+{
+  "login_id": "jjones",
+  "id": 468,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "Data_Quality_File_Conversions",
+  "project_id": 68,
+  "pipeline_id": 168,
+  "task_name": "csv_to_snow",
+  "task_description": "csv to snow",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-13T11:27:09.000Z",
+  "source": "Local Server",
+  "target": "Snowflake",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "N",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_data.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver_ikart_connection",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "snowflake_write",
+      "schema": "public",
+      "operation": "create",
+      "table_name": "data",
+      "audit_columns": "active",
+      "parameter_type": "Snowflake",
+      "connection_name": "snowflake_shilpi",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
