@@ -41,7 +41,7 @@
           "schema_name": "syst",
           "audit_fields": "YES",
           "database_name": "sys",
-          "action_on_table": "CREATE IF NOT"
+          "action_on_table": "TRUNCATE AND LOAD"
         }
       }
     ]
