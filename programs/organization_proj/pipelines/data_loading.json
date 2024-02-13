@@ -1,0 +1,66 @@
+{
+  "pipeline_id": 150,
+  "project_id": 60,
+  "pipeline_name": "data_loading",
+  "pipeline_cd": null,
+  "pipeline_description": "data_loading",
+  "is_active": "Y",
+  "tasks_details": {
+    "ysql_to_csv": [
+      "mssql_extract"
+    ],
+    "mssql_extract": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "389",
+      "data": {
+        "label": "389-mssql_extract"
+      },
+      "position": {
+        "x": 50,
+        "y": 2400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "390",
+      "data": {
+        "label": "390-ysql_to_csv"
+      },
+      "position": {
+        "x": 50,
+        "y": 2450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-389",
+      "source": "0",
+      "target": "389"
+    },
+    {
+      "id": "flow-389-390",
+      "source": "389",
+      "target": "390"
+    }
+  ],
+  "created_dttm": "2024-02-13T11:19:37.675Z",
+  "updated_dttm": "2024-02-13T11:19:37.675Z"
+}
