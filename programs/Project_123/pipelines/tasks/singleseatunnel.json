@@ -36,7 +36,7 @@
         },
         "target": {
           "object_name": "tgt_nano",
-          "connection_name": "MYSQL",
+          "connection_name": "MYSQLi",
           "primary_key": "",
           "schema_name": "sys33",
           "audit_fields": "YES",
