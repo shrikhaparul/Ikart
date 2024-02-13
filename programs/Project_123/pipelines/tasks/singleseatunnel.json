@@ -27,7 +27,7 @@
         "source": {
           "task_group": "2",
           "connection_name": "MYSQL",
-          "object_name": "ikart",
+          "object_name": "nano",
           "object_type": "Table",
           "schema_name": "sys",
           "database_name": "sys",
@@ -35,7 +35,7 @@
           "extraction_criteria": ""
         },
         "target": {
-          "object_name": "ttgtikart",
+          "object_name": "tgt_nano",
           "connection_name": "MYSQL",
           "primary_key": "",
           "schema_name": "sys",
