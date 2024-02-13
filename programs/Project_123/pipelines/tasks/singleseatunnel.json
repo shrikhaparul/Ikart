@@ -38,10 +38,10 @@
           "object_name": "ttgtikart",
           "connection_name": "MYSQL",
           "primary_key": "",
-          "schema_name": "syst",
+          "schema_name": "sys",
           "audit_fields": "YES",
           "database_name": "sys",
-          "action_on_table": "INSERT"
+          "action_on_table": "CREATE IF NOT"
         }
       }
     ]
