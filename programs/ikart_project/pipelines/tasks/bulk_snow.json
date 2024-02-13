@@ -1,0 +1,136 @@
+{
+  "login_id": "shilpi",
+  "id": 390,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "bulk_snow",
+  "task_description": "bulk_snow",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-12T06:06:53.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "skip",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "snowflake_shilpi",
+          "object_name": "N_SALES",
+          "object_type": "Table",
+          "schema_name": "PUBLIC",
+          "database_name": "ikart_test",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "TT_N_SALES",
+          "connection_name": "snowflake_shilpi",
+          "primary_key": "",
+          "schema_name": "PUBLIC",
+          "audit_fields": "NO",
+          "database_name": "ikart_test",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "snowflake_shilpi",
+          "object_name": "SALES",
+          "object_type": "Table",
+          "schema_name": "PUBLIC",
+          "database_name": "ikart_test",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "TT_SALES",
+          "connection_name": "snowflake_shilpi",
+          "primary_key": "",
+          "schema_name": "PUBLIC",
+          "audit_fields": "NO",
+          "database_name": "ikart_test",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "snowflake_shilpi",
+          "object_name": "SALES_AS",
+          "object_type": "Table",
+          "schema_name": "PUBLIC",
+          "database_name": "ikart_test",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SALES_AS",
+          "connection_name": "snowflake_shilpi",
+          "primary_key": "",
+          "schema_name": "PUBLIC",
+          "audit_fields": "NO",
+          "database_name": "ikart_test",
+          "action_on_table": "INSERT"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "snowflake_shilpi",
+          "object_name": "SALES_SATA",
+          "object_type": "Table",
+          "schema_name": "PUBLIC",
+          "database_name": "ikart_test",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SALES_SATA",
+          "connection_name": "snowflake_shilpi",
+          "primary_key": "",
+          "schema_name": "PUBLIC",
+          "audit_fields": "NO",
+          "database_name": "ikart_test",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "snowflake_shilpi",
+          "object_name": "SALES_SATA_AS",
+          "object_type": "Table",
+          "schema_name": "PUBLIC",
+          "database_name": "ikart_test",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "TT_SALES_SATA_AS",
+          "connection_name": "snowflake_shilpi",
+          "primary_key": "",
+          "schema_name": "PUBLIC",
+          "audit_fields": "NO",
+          "database_name": "ikart_test",
+          "action_on_table": "UPDATE AND INSERT"
+        }
+      }
+    ]
+  }
+}
