@@ -41,7 +41,7 @@
           "schema_name": "sys",
           "audit_fields": "YES",
           "database_name": "sys",
-          "action_on_table": "DROP AND CREATE"
+          "action_on_table": "INSERT"
         }
       }
     ]
