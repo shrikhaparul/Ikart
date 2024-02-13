@@ -1,0 +1,12 @@
+{
+  "project_id": 62,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "nandish_local_connection",
+  "connection_details": {
+    "file_name": "*.xlsx",
+    "file_path": "/home/nandishms/code/excel_folder",
+    "created_by": "jjones",
+    "updated_by": "jjones"
+  }
+}
