@@ -38,7 +38,7 @@
           "object_name": "tgt_nano",
           "connection_name": "MYSQL",
           "primary_key": "",
-          "schema_name": "sys",
+          "schema_name": "sys33",
           "audit_fields": "YES",
           "database_name": "sys11",
           "action_on_table": "INSERT"
