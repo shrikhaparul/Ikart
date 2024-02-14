@@ -35,7 +35,7 @@
           "extraction_criteria": ""
         },
         "target": {
-          "object_name": "tgt_nano",
+          "object_name": "nano",
           "connection_name": "Postgres",
           "primary_key": "",
           "schema_name": "public",
