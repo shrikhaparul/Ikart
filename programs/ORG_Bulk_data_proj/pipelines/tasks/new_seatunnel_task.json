@@ -1,0 +1,46 @@
+{
+  "login_id": "jjones",
+  "id": 408,
+  "project_name": "ORG_Bulk_data_proj",
+  "pipeline_name": "ORG_Bulk_data_pipe",
+  "project_id": 62,
+  "pipeline_id": 159,
+  "task_name": "new_seatunnel_task",
+  "task_description": "new_seatunnel_task",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-14T11:23:20.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "Target": {
+          "object_name": "tgt_tbl_new",
+          "primary_key": "",
+          "audit_fields": "YES",
+          "action_on_table": "UPDATE AND INSERT"
+        },
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_target_pkp",
+          "object_name": "tbl_new",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      }
+    ]
+  }
+}
