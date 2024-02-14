@@ -1,0 +1,12 @@
+{
+  "id": 267,
+  "program_name": "HR_Employee",
+  "program_description": "Organization Employee details ",
+  "primary_stakeholder": "H. Andrson",
+  "secondary_stakeholder": "admin",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "created_dttm": "2023-12-29T10:03:13.000Z",
+  "updated_by": "jjones",
+  "updated_dttm": "2023-12-29T10:03:13.000Z"
+}
