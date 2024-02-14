@@ -1,0 +1,46 @@
+{
+  "login_id": "jjones",
+  "id": 469,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "Data_Quality_File_Conversions",
+  "project_id": 68,
+  "pipeline_id": 168,
+  "task_name": "snowf_to_snowflake",
+  "task_description": "snow to snowflake",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-14T08:28:18.000Z",
+  "source": "Snowflake",
+  "target": "Snowflake",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "snowflake_read",
+      "query": "select * from public.sales",
+      "schema": "public",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "sales",
+      "parameter_type": "Snowflake",
+      "select_columns": null,
+      "connection_name": "snowflake_shilpi"
+    },
+    "target": {
+      "target_type": "snowflake_write",
+      "schema": "public",
+      "operation": "create",
+      "table_name": "s_data",
+      "audit_columns": "inactive",
+      "parameter_type": "Snowflake",
+      "connection_name": "snowflake_shilpi",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
