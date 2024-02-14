@@ -1,0 +1,14 @@
+{
+  "project_id": 61,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MSSQL",
+  "connection_name": "mssql_adv",
+  "connection_details": {
+    "port": "1437",
+    "database": "AdventureWorks2022",
+    "hostname": "localhost",
+    "password": "932eec28b6a36ed8eeaa213c733759a93fb83f000441cf08922ff93dabcbee0a",
+    "username": "sa",
+    "updated_by": "shilpi"
+  }
+}
