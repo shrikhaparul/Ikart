@@ -41,7 +41,7 @@
           "schema_name": "public",
           "audit_fields": "YES",
           "database_name": "postgres",
-          "action_on_table": "TRUNCATE AND LOAD"
+          "action_on_table": "INSERT"
         }
       }
     ]
