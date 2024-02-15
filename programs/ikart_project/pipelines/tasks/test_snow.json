@@ -1,0 +1,598 @@
+{
+  "login_id": "shilpi",
+  "id": 393,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "test_snow",
+  "task_description": "test snow",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-15T06:24:36.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_adv",
+          "object_name": "SalesTaxRate",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SalesTaxRate",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "10",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mssql_adv",
+          "object_name": "CreditCard",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "CreditCard",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "11",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mssql_adv",
+          "object_name": "Currency",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "Currency",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "12",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mssql_adv",
+          "object_name": "CurrencyRate",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "CurrencyRate",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "13",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mssql_adv",
+          "object_name": "Customer",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "Customer",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "14",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mssql_adv",
+          "object_name": "SalesOrderDetail",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SalesOrderDetail",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "15",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_adv",
+          "object_name": "SalesOrderHeader",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SalesOrderHeader",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "16",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_adv",
+          "object_name": "SalesOrderHeaderSalesReason",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SalesOrderHeaderSalesReason",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "17",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_adv",
+          "object_name": "SalesPerson",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SalesPerson",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "18",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_adv",
+          "object_name": "SalesPersonQuotaHistory",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SalesPersonQuotaHistory",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "19",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_adv",
+          "object_name": "SalesReason",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SalesReason",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_adv",
+          "object_name": "PersonCreditCard",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "PersonCreditCard",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "20",
+        "source": {
+          "task_group": "4",
+          "connection_name": "mssql_adv",
+          "object_name": "vIndividualCustomer",
+          "object_type": "View",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "vIndividualCustomer",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "21",
+        "source": {
+          "task_group": "4",
+          "connection_name": "mssql_adv",
+          "object_name": "vPersonDemographics",
+          "object_type": "View",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "vPersonDemographics",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "22",
+        "source": {
+          "task_group": "4",
+          "connection_name": "mssql_adv",
+          "object_name": "vSalesPerson",
+          "object_type": "View",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "vSalesPerson",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "23",
+        "source": {
+          "task_group": "4",
+          "connection_name": "mssql_adv",
+          "object_name": "vSalesPersonSalesByFiscalYears",
+          "object_type": "View",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "vSalesPersonSalesByFiscalYears",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "24",
+        "source": {
+          "task_group": "4",
+          "connection_name": "mssql_adv",
+          "object_name": "vStoreWithDemographics",
+          "object_type": "View",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "vStoreWithDemographics",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "25",
+        "source": {
+          "task_group": "5",
+          "connection_name": "mssql_adv",
+          "object_name": "vStoreWithContacts",
+          "object_type": "View",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "vStoreWithContacts",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "26",
+        "source": {
+          "task_group": "5",
+          "connection_name": "mssql_adv",
+          "object_name": "vStoreWithAddresses",
+          "object_type": "View",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "vStoreWithAddresses",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_adv",
+          "object_name": "SalesTerritory",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SalesTerritory",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_adv",
+          "object_name": "SalesTerritoryHistory",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SalesTerritoryHistory",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_adv",
+          "object_name": "ShoppingCartItem",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ShoppingCartItem",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_adv",
+          "object_name": "SpecialOffer",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SpecialOffer",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_adv",
+          "object_name": "SpecialOfferProduct",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SpecialOfferProduct",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_adv",
+          "object_name": "Store",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "Store",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_adv",
+          "object_name": "CountryRegionCurrency",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "CountryRegionCurrency",
+          "connection_name": "postgres_shilpi",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
