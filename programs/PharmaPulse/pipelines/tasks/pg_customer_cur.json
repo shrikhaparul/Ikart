@@ -1,0 +1,22 @@
+{
+  "task_id": 478,
+  "pipeline_id": 170,
+  "task_name": "pg_customer_cur",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "postgres",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "truncate table curated.dim_customer_profile;",
+      "table_used_desc": "truncates the table curated.dim_customer_profile if it has data"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "insert into curated.dim_customer_profile \n(SELECT p.\"BusinessEntityID\"\n      ,\"PersonType\"\n      ,\"Title\"\n      ,\"FirstName\"\n      ,\"MiddleName\"\n      ,\"LastName\"\n      ,\"Suffix\"\n      ,\"EmailPromotion\"\n      ,\"Demographics\"\n      ,\"rowguid\"\n      ,pc.\"ModifiedDate\"\n  FROM raw.customer p left join \n  (SELECT \"BusinessEntityID\"\n      ,\"PhoneNumber\"\n      ,pp.\"PhoneNumberTypeID\"\n      ,pp.\"ModifiedDate\"\n\t  , pn.\"Name\" Phone_number_typ\n  FROM raw.customer_phone pp\n  left join raw.customer_phone_type pn on pp.\"PhoneNumberTypeID\"  = pn.\"PhoneNumberTypeID\") pc\n  on p.\"BusinessEntityID\" = pc.\"BusinessEntityID\")",
+      "table_used_desc": "insert statement to bring data from all the tables based on the joins"
+    }
+  ]
+}
