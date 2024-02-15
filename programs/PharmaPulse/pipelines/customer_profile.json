@@ -1,0 +1,238 @@
+{
+  "pipeline_id": 170,
+  "project_id": 67,
+  "pipeline_name": "customer_profile",
+  "pipeline_cd": null,
+  "pipeline_description": "To demonstrate end to end processing of customer data",
+  "is_active": "Y",
+  "tasks_details": {
+    "cust_ingest": 0,
+    "pg_cust_raw": [
+      "cust_ingest"
+    ],
+    "cust_typ_ingest": 0,
+    "pg_customer_cur": [
+      "pg_cust_type_raw",
+      "pg_cust_phone_type_raw",
+      "pg_cust_phone_raw",
+      "pg_cust_raw"
+    ],
+    "archiv_dim_cust": [
+      "pg_customer_cur"
+    ],
+    "pg_cust_type_raw": [
+      "cust_typ_ingest"
+    ],
+    "pg_cust_phone_raw": [
+      "cust_phone__ingest"
+    ],
+    "cust_phone__ingest": 0,
+    "cust_phone_typ_ingest": 0,
+    "pg_cust_phone_type_raw": [
+      "cust_phone_typ_ingest"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "471",
+      "data": {
+        "label": "471-cust_typ_ingest"
+      },
+      "position": {
+        "x": 50,
+        "y": 2050
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "472",
+      "data": {
+        "label": "472-cust_phone__ingest"
+      },
+      "position": {
+        "x": 50,
+        "y": 2100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "473",
+      "data": {
+        "label": "473-cust_phone_typ_ingest"
+      },
+      "position": {
+        "x": 50,
+        "y": 2150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "474",
+      "data": {
+        "label": "474-pg_cust_raw"
+      },
+      "position": {
+        "x": 50,
+        "y": 2200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "475",
+      "data": {
+        "label": "475-pg_cust_phone_raw"
+      },
+      "position": {
+        "x": 50,
+        "y": 2250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "476",
+      "data": {
+        "label": "476-pg_cust_phone_type_raw"
+      },
+      "position": {
+        "x": 50,
+        "y": 2300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "477",
+      "data": {
+        "label": "477-pg_cust_type_raw"
+      },
+      "position": {
+        "x": 50,
+        "y": 2350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "478",
+      "data": {
+        "label": "478-pg_customer_cur"
+      },
+      "position": {
+        "x": 50,
+        "y": 2400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "479",
+      "data": {
+        "label": "479-archiv_dim_cust"
+      },
+      "position": {
+        "x": 50,
+        "y": 2450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "470",
+      "data": {
+        "label": "470-cust_ingest"
+      },
+      "position": {
+        "x": 50,
+        "y": 2000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-470",
+      "source": "0",
+      "target": "470"
+    },
+    {
+      "id": "flow-0-471",
+      "source": "0",
+      "target": "471"
+    },
+    {
+      "id": "flow-0-472",
+      "source": "0",
+      "target": "472"
+    },
+    {
+      "id": "flow-0-473",
+      "source": "0",
+      "target": "473"
+    },
+    {
+      "id": "flow-470-474",
+      "source": "470",
+      "target": "474"
+    },
+    {
+      "id": "flow-472-475",
+      "source": "472",
+      "target": "475"
+    },
+    {
+      "id": "flow-473-476",
+      "source": "473",
+      "target": "476"
+    },
+    {
+      "id": "flow-471-477",
+      "source": "471",
+      "target": "477"
+    },
+    {
+      "id": "flow-477-478",
+      "source": "477",
+      "target": "478"
+    },
+    {
+      "id": "flow-476-478",
+      "source": "476",
+      "target": "478"
+    },
+    {
+      "id": "flow-475-478",
+      "source": "475",
+      "target": "478"
+    },
+    {
+      "id": "flow-474-478",
+      "source": "474",
+      "target": "478"
+    },
+    {
+      "id": "flow-478-479",
+      "source": "478",
+      "target": "479"
+    }
+  ],
+  "created_dttm": "2024-02-15T13:46:37.171Z",
+  "updated_dttm": "2024-02-15T13:46:37.171Z"
+}
