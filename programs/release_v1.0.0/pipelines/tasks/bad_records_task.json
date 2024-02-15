@@ -1,0 +1,71 @@
+{
+  "login_id": "Puneeth",
+  "id": 474,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "dq_testing",
+  "project_id": 61,
+  "pipeline_id": 165,
+  "task_name": "bad_records_task",
+  "task_description": "to check bad records data ",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-13T03:13:05.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "customer_data.csv",
+      "file_path": "/home/puneeths/sample_data/dq_test/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver_connection_puneeth",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "replace",
+      "table_name": "dq",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_ikart_connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_value_lengths_to_equal",
+        "parameters": {
+          "value": "18",
+          "column": "IBAN",
+          "max_value": "",
+          "min_value": ""
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 10,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
