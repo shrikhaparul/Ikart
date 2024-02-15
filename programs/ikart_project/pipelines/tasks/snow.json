@@ -1,0 +1,48 @@
+{
+  "login_id": "shilpi",
+  "id": 394,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "snow",
+  "task_description": "snow",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-15T07:58:56.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mssql_adv",
+          "object_name": "Customer",
+          "object_type": "Table",
+          "schema_name": "Sales",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "s_Customer",
+          "connection_name": "snowflake_shilpi",
+          "primary_key": "",
+          "schema_name": "SALES",
+          "audit_fields": "NO",
+          "database_name": "ikart_test",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
