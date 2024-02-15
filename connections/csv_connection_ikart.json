@@ -1,0 +1,12 @@
+{
+  "project_id": 63,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "csv_connection_ikart",
+  "connection_details": {
+    "file_name": ".csv",
+    "file_path": "/home/dswetha/csv/",
+    "created_by": "jjones",
+    "updated_by": "jjones"
+  }
+}
