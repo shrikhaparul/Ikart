@@ -1,0 +1,44 @@
+{
+  "login_id": "jbanad",
+  "id": 485,
+  "project_name": "PharmaPulse",
+  "pipeline_name": "customer_profile",
+  "project_id": 67,
+  "pipeline_id": 170,
+  "task_name": "fct_sales",
+  "task_description": "modelling the fact dimension ",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-16T14:42:23.000Z",
+  "source": "PostgreSQL",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT \"CustomerID\", \"RevisionNumber\", \"OrderDate\", \"DueDate\", \"ShipDate\", \"Status\",\n\"OnlineOrderFlag\", \"SalesOrderNumber\", \"AccountNumber\", \"FromCurrencyCode\",\n\"SalesOrderID\", \"TerritoryID\", \"ShipToAddressID\",  \"SubTotal_USD\", \"SubTotal_GBP\",\n  \"TotalDue_USD\", \"totaldue_gbp\"\nFROM stg.stg_sales_orders\nwhere \"FromCurrencyCode\" is not NULL",
+      "schema": "",
+      "chunk_size": 10000,
+      "table_name": "fct_sales",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "postgres"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "dwh",
+      "operation": "create",
+      "table_name": "fct_sales",
+      "audit_columns": "active",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
