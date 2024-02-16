@@ -1,0 +1,62 @@
+{
+  "login_id": "jbanad",
+  "id": 471,
+  "project_name": "PharmaPulse",
+  "pipeline_name": "customer_profile",
+  "project_id": 67,
+  "pipeline_id": 170,
+  "task_name": "sql2csv_cust_typ_ingest",
+  "task_description": "task to ingest customer type data from sql server to AWS s3",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "updated_dttm": "2024-02-16T07:21:03.000Z",
+  "source": "MSSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "select * from dbo.Person",
+      "schema": "dbo",
+      "chunk_size": 10000,
+      "table_name": "Person",
+      "parameter_type": "MSSQL",
+      "select_columns": "",
+      "connection_name": "ec2_mssql"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "person_%DD%%MM%%YYYY%%HH%%MI%%SS%.csv",
+      "file_path": "demo/landing/",
+      "file_type": "csv",
+      "operation": "replace",
+      "quote_char": "\"",
+      "escape_char": "\\",
+      "parameter_type": "AWS S3",
+      "connection_name": "AWS_S3",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "MiddleName"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
