@@ -1,0 +1,46 @@
+{
+  "login_id": "prajwal",
+  "id": 447,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "test",
+  "task_description": "ert",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-16T12:42:18.000Z",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select created_by, created_dttm, full_name, id, is_active, login_id, password, resetLink, updated_by, updated_dttm, user_email, user_phone from config.tbl_user",
+      "schema": "config",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "tbl_user",
+      "parameter_type": "MySQL",
+      "select_columns": "created_by,created_dttm,full_name,id,is_active,login_id,password,resetLink,updated_by,updated_dttm,user_email,user_phone",
+      "connection_name": "mysql_EC2_Connection"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikarttest",
+      "operation": "create",
+      "table_name": "new",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_EC2_Connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
