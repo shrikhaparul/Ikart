@@ -1,0 +1,49 @@
+{
+  "login_id": "jbanad",
+  "id": 479,
+  "project_name": "PharmaPulse",
+  "pipeline_name": "customer_profile",
+  "project_id": 67,
+  "pipeline_id": 170,
+  "task_name": "dwh2exp_export_dim_cust",
+  "task_description": "archives the curated  data in postgres table to s3 file",
+  "task_type": "Ingestion",
+  "task_sequence": "\"485\", \"478\"",
+  "updated_dttm": "2024-02-16T15:52:30.000Z",
+  "source": "PostgreSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "select * from dwh.dim_customer limit 10000",
+      "schema": "curated",
+      "chunk_size": 100000,
+      "table_name": "dim_customer",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "postgres"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "",
+      "file_name": "dim_customer_%DD%%MM%%YYYY%.parquet",
+      "file_path": "demo/archive/",
+      "file_type": "parquet",
+      "operation": "replace",
+      "quote_char": "",
+      "escape_char": "",
+      "parameter_type": "AWS S3",
+      "connection_name": "AWS_S3",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
