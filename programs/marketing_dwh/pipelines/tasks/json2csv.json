@@ -1,0 +1,58 @@
+{
+  "login_id": "luke",
+  "id": 375,
+  "project_name": "marketing_dwh",
+  "pipeline_name": "JSON",
+  "project_id": 61,
+  "pipeline_id": 159,
+  "task_name": "json2csv",
+  "task_description": "Converts JSON to XML",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "updated_dttm": "2023-12-27T12:49:53.000Z",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "luke",
+  "updated_by": "luke",
+  "task": {
+    "source": {
+      "source_type": "json_read",
+      "header": null,
+      "encoding": "utf-8",
+      "delimiter": null,
+      "file_name": "issues_16nov.json",
+      "file_path": "/home/luke/datafiles/src/",
+      "file_type": "json",
+      "chunk_size": 10000,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "assignees,author,body,closed,closedAt,comments,createdAt,id,labels,number,state,title,updatedAt,url",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local_files"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "index": "True",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "|",
+      "file_name": "issues_16nov.csv",
+      "file_path": "/home/luke/datafiles/tgt/",
+      "file_type": "csv",
+      "quote_char": "\"",
+      "audit_columns": "",
+      "parameter_type": "Local Server",
+      "connection_name": "local_files",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
