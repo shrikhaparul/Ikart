@@ -1,0 +1,46 @@
+{
+  "login_id": "shilpi",
+  "id": 391,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "snow_to_snow",
+  "task_description": "snow to snow",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-13T06:10:40.000Z",
+  "source": "MSSQL",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "select * from Sales.customer",
+      "schema": "Sales",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "customer",
+      "parameter_type": "MSSQL",
+      "select_columns": null,
+      "connection_name": "mssql_adv"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "test",
+      "operation": "create",
+      "table_name": "cust",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_shilpi",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
