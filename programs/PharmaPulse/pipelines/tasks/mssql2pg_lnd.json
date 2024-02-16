@@ -1,0 +1,115 @@
+{
+  "login_id": "jbanad",
+  "id": 483,
+  "project_name": "PharmaPulse",
+  "pipeline_name": "customer_profile",
+  "project_id": 67,
+  "pipeline_id": 170,
+  "task_name": "mssql2pg_lnd",
+  "task_description": "bulk task  to ingest data from mssql to postgres db",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-16T12:14:46.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Engine",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "1",
+          "connection_name": "ec2_mssql",
+          "object_name": "SalesTaxRate",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SalesTaxRate",
+          "connection_name": "postgres",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "ec2_mssql",
+          "object_name": "Currency",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Incremental",
+          "extraction_criteria": "CurrencyCode IN ( 'AED','ALL')"
+        },
+        "target": {
+          "object_name": "Currency",
+          "connection_name": "postgres",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "ec2_mssql",
+          "object_name": "CurrencyRate",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "CurrencyRate",
+          "connection_name": "postgres",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "ec2_mssql",
+          "object_name": "SalesOrderHeader",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SalesOrderHeader",
+          "connection_name": "postgres",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
