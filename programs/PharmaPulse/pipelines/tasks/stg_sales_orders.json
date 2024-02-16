@@ -1,0 +1,17 @@
+{
+  "task_id": 484,
+  "pipeline_id": 170,
+  "task_name": "stg_sales_orders",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "postgres",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "select\n\ts.\"CustomerID\",    \n    s.\"RevisionNumber\",\n    s.\"OrderDate\",\n    s.\"DueDate\",\n    s.\"ShipDate\",\n    s.\"Status\",\n    s.\"OnlineOrderFlag\",\n    s.\"SalesOrderNumber\",\n    s.\"AccountNumber\",\n    c.\"FromCurrencyCode\", c.\"ToCurrencyCode\",s.\"SalesOrderID\",\n    s.\"TerritoryID\", s.\"ShipToAddressID\", s.\"CurrencyRateID\",\n    s.\"SubTotal\" as \"SubTotal_USD\", s.\"SubTotal\"/c.\"AverageRate\" as \"SubTotal_GBP\",\n    s.\"TaxAmt\",\n    s.\"Freight\",\n    s.\"TotalDue\" as \"TotalDue_USD\",    \n    s.\"TotalDue\"/c.\"AverageRate\" as  \"totaldue_gbp\"\nFROM\n    lnd.salesorderheader s\nLEFT JOIN\n    lnd.currencyrate c ON s.\"CurrencyRateID\" = c.\"CurrencyRateID\"\nWHERE\n    c.\"FromCurrencyCode\" IS NOT NULL;",
+      "table_used_desc": "query to bring data from landing to stage layer for sales data"
+    }
+  ]
+}
