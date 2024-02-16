@@ -1,0 +1,57 @@
+{
+  "login_id": "jjones",
+  "id": 457,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "Data_Quality_File_Conversions",
+  "project_id": 68,
+  "pipeline_id": 168,
+  "task_name": "sales_csv_to_parquet",
+  "task_description": "t",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "updated_dttm": "2024-02-16T04:17:38.000Z",
+  "source": "Local Server",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Sales_data_information.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/tgt_files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver_ikart_connection",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "file_name": "Sales_data_%DD%%MM%%YYYY%.parquet",
+      "file_path": "target_parquet/",
+      "file_type": "parquet",
+      "operation": "replace",
+      "parameter_type": "AWS S3",
+      "connection_name": "AWS_S3",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
