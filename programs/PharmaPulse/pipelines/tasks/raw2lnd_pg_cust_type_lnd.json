@@ -1,0 +1,55 @@
+{
+  "login_id": "jbanad",
+  "id": 477,
+  "project_name": "PharmaPulse",
+  "pipeline_name": "customer_profile",
+  "project_id": 67,
+  "pipeline_id": 170,
+  "task_name": "raw2lnd_pg_cust_type_lnd",
+  "task_description": "task to load data from ASW s3 file to postgres table",
+  "task_type": "Ingestion",
+  "task_sequence": "\"471\"",
+  "updated_dttm": "2024-02-16T07:29:28.000Z",
+  "source": "AWS S3",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "cust_typ_*.csv",
+      "file_path": "demo/landing/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": "\"",
+      "compression": null,
+      "escape_char": "\\",
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "AWS S3",
+      "select_columns": null,
+      "connection_name": "AWS_S3",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "raw",
+      "operation": "create",
+      "table_name": "customer_type",
+      "audit_columns": "active",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
