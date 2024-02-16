@@ -1,0 +1,46 @@
+{
+  "login_id": "jjones",
+  "id": 461,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "Data_Quality_File_Conversions",
+  "project_id": 68,
+  "pipeline_id": 168,
+  "task_name": "MYSQL_postgres",
+  "task_description": "Data_transfer",
+  "task_type": "Ingestion",
+  "task_sequence": "\"457\", \"459\"",
+  "updated_dttm": "2024-02-08T19:23:51.000Z",
+  "source": "PostgreSQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "select * from demo.employee_table",
+      "schema": "demo",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "employee_table",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "postgres"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikarttest",
+      "operation": "replace",
+      "table_name": "tgt_sales_postgres",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
