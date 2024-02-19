@@ -27,13 +27,13 @@
         "source": {
           "ftp_mode": "active",
           "connection_name": "nandish_local_connection",
-          "file_path": "/home/nandishms/code/csv_folder2",
+          "file_path": "/home/nandishms/code/cv_folder2",
           "operation": "copy",
           "files_filter_name": "*.*",
           "subfolder_included": "yes"
         },
         "target": {
-          "file_path": "test_s/an/",
+          "file_path": "test_s/nan/",
           "connection_name": "aws_conn_ikart",
           "object_sufix_name": "YY-MM-DD",
           "object_prefix_name": "tgt_"
