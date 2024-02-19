@@ -1,0 +1,55 @@
+{
+  "login_id": "jjones",
+  "id": 406,
+  "project_name": "ingestion_flow",
+  "pipeline_name": "snowflake",
+  "project_id": 63,
+  "pipeline_id": 160,
+  "task_name": "csvtosnowflake",
+  "task_description": "csvtosnowflake",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-15T17:24:04.000Z",
+  "source": "Local Server",
+  "target": "Snowflake",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "house.csv",
+      "file_path": "/home/dswetha/csv/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": "hlpi_name,series_ref,quarter,hlpi,nzhec,nzhec_name,nzhec_short,level,index,change.q,change.a",
+      "connection_name": "csv_connection_ikart",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "snowflake_write",
+      "schema": "pub",
+      "operation": "create",
+      "table_name": "tasty",
+      "audit_columns": "active",
+      "parameter_type": "Snowflake",
+      "connection_name": "connection_snowflake_test",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
