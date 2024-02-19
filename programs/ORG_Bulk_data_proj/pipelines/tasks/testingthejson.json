@@ -33,7 +33,7 @@
           "subfolder_included": "yes"
         },
         "target": {
-          "file_path": "test_s/nan/",
+          "file_path": "test_s/an/",
           "connection_name": "aws_conn_ikart",
           "object_sufix_name": "YY-MM-DD",
           "object_prefix_name": "tgt_"
