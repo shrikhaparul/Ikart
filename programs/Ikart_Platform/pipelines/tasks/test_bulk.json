@@ -1,0 +1,48 @@
+{
+  "login_id": "rperuman",
+  "id": 487,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "Data_Quality_File_Conversions",
+  "project_id": 68,
+  "pipeline_id": 168,
+  "task_name": "test_bulk",
+  "task_description": ",dcn",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-19T07:35:52.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Engine",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql",
+          "object_name": "s3_sales",
+          "object_type": "Table",
+          "schema_name": "sys",
+          "database_name": "sys",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_s3_sales",
+          "connection_name": "mysql",
+          "primary_key": "",
+          "schema_name": "sys",
+          "audit_fields": "YES",
+          "database_name": "sys",
+          "action_on_table": "UPDATE AND INSERT"
+        }
+      }
+    ]
+  }
+}
