@@ -1,0 +1,44 @@
+{
+  "login_id": "jjones",
+  "id": 407,
+  "project_name": "ORG_Bulk_data_proj",
+  "pipeline_name": "ORG_Bulk_data_pipe",
+  "project_id": 62,
+  "pipeline_id": 159,
+  "task_name": "Bulk_test",
+  "task_description": "Bulk_test",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-10T05:24:02.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "Engine",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "ftp_mode": "active",
+          "connection_name": "aws_conn_ikart",
+          "file_path": "csv_folder/",
+          "operation": "copy",
+          "files_filter_name": "icpc*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "file_path": "copy_test/",
+          "connection_name": "aws_conn_ikart",
+          "object_sufix_name": "YY-MM-DD",
+          "object_prefix_name": "tgt_"
+        }
+      }
+    ]
+  }
+}
