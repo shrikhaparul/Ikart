@@ -27,7 +27,7 @@
         "source": {
           "ftp_mode": "active",
           "connection_name": "nandish_local_connection",
-          "file_path": "/home/nandishms/code/csv_foder",
+          "file_path": "/home/nandishms/code/csv_folder",
           "operation": "copy",
           "files_filter_name": "icpc*.csv",
           "subfolder_included": "yes"
