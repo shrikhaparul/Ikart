@@ -4,7 +4,7 @@
   "pipeline_name": "data_loading",
   "pipeline_cd": null,
   "pipeline_description": "data_loading",
-  "is_active": "Y",
+  "is_active": "N",
   "tasks_details": {
     "ysql_to_csv": [
       "mssql_extract"
