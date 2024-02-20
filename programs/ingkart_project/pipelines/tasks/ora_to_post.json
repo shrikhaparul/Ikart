@@ -1,0 +1,49 @@
+{
+  "login_id": "shilpi",
+  "id": 492,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "ora_to_post",
+  "task_description": "test",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-20T07:40:17.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Engine",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_s",
+          "object_name": "EMPLOYEES",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "EMPLOYEES",
+          "connection_name": "postgres_s",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "INSERT"
+        }
+      }
+    ]
+  }
+}
