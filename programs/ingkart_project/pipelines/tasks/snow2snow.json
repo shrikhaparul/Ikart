@@ -1,0 +1,46 @@
+{
+  "login_id": "shilpi",
+  "id": 494,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "snow2snow",
+  "task_description": "test",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-20T08:56:13.000Z",
+  "source": "Snowflake",
+  "target": "Snowflake",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "snowflake_read",
+      "query": "select * from ikart_test.public.SALES_SATA",
+      "schema": "public",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "SALES_SATA",
+      "parameter_type": "Snowflake",
+      "select_columns": null,
+      "connection_name": "snowflake_s"
+    },
+    "target": {
+      "target_type": "snowflake_write",
+      "schema": "public",
+      "operation": "append",
+      "table_name": "SALES_SATA",
+      "audit_columns": "inactive",
+      "parameter_type": "Snowflake",
+      "connection_name": "snowflake_s",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
