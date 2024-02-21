@@ -1,0 +1,13 @@
+{
+  "id": 150,
+  "project_id": 58,
+  "pipeline_name": "Pipeline_123",
+  "pipeline_cd": null,
+  "pipeline_description": "Pipeline_123",
+  "pipeline_sequence": 1,
+  "is_active": "N",
+  "created_by": "jjones",
+  "created_dttm": "2023-10-16T07:07:57.000Z",
+  "updated_by": "jjones",
+  "updated_dttm": "2023-10-16T07:07:57.000Z"
+}
