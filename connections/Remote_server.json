@@ -1,0 +1,14 @@
+{
+  "project_id": 62,
+  "connection_type": "File Storage",
+  "connection_subtype": "Remote Server",
+  "connection_name": "Remote_server",
+  "connection_details": {
+    "path": "/Files/",
+    "port": "22",
+    "hostname": "192.168.15.218",
+    "password": "b82ef62efa0ad8406ca92872bf984c40200a9da3",
+    "username": "walu",
+    "updated_by": "jjones"
+  }
+}
