@@ -29,7 +29,7 @@
           "connection_name": "nandish_local_connection",
           "file_path": "/home/nandishms/code/csv_folder",
           "operation": "copy",
-          "files_filter_name": "agre*.csv",
+          "files_filter_name": "*.csv",
           "subfolder_included": "no"
         },
         "target": {
