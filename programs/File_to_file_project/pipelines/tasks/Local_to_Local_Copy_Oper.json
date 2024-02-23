@@ -1,0 +1,41 @@
+{
+  "login_id": "jjones",
+  "id": 498,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "Local_to_Local_Copy_Oper",
+  "task_description": "Local_to_Local_Copy_Oper_using_rclone",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-23T08:58:46.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "/home/Admin/actions-runner/_work/UI/files/",
+          "connection_name": "ec2_local_server_files_to_files",
+          "operation": "copy",
+          "files_filter_name": "*.parquet",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "file_path": "files_pasted/",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "object_sufix_name": "YY-MM-DD",
+          "object_prefix_name": "Tgt_"
+        }
+      }
+    ]
+  }
+}
