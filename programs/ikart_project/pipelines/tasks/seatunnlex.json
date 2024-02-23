@@ -1,0 +1,71 @@
+{
+  "login_id": "shilpi",
+  "id": 401,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "seatunnlex",
+  "task_description": "seatunnlex",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-23T10:57:43.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_shilpi",
+          "object_name": "Customer",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "Target_Customer",
+          "connection_name": "mssql_shilpi",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "YES",
+          "database_name": "master",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mysql_shilpi",
+          "object_name": "sales",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "Target_sales",
+          "connection_name": "mssql_shilpi",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "YES",
+          "database_name": "master",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
