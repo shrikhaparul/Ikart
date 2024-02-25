@@ -1,0 +1,62 @@
+{
+  "login_id": "Puneeth",
+  "id": 476,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "testing_purpose",
+  "project_id": 61,
+  "pipeline_id": 160,
+  "task_name": "aws_to_aws_dq_test",
+  "task_description": "to test aws_s3 to aws_s3 dq",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-25T16:09:36.000Z",
+  "source": "MySQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from ikart.sales",
+      "schema": "ikart",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "sales",
+      "parameter_type": "MySQL",
+      "select_columns": null,
+      "connection_name": "mysql_ikart_connection"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "test_dq",
+      "file_path": "test/",
+      "file_type": "csv",
+      "operation": "replace",
+      "parameter_type": "AWS S3",
+      "connection_name": "awss3_connection_puneeth",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "ORDERNUMBER"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "post_check"
+      }
+    ]
+  }
+}
