@@ -1,0 +1,52 @@
+{
+  "login_id": "Puneeth",
+  "id": 435,
+  "project_name": "demo",
+  "pipeline_name": "demo_customer",
+  "project_id": 63,
+  "pipeline_id": 164,
+  "task_name": "ingest_cust_typ",
+  "task_description": "Ingest the customer data into environment",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "updated_dttm": "2023-12-15T05:57:40.000Z",
+  "source": "MSSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "select * from dbo.Person",
+      "schema": "dbo",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "Person",
+      "parameter_type": "MSSQL",
+      "select_columns": null,
+      "connection_name": "sql_server_connection_puneeth"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "person_%DD%%MM%%YYYY%.csv",
+      "file_path": "demo/landing/",
+      "file_type": "csv",
+      "operation": "replace",
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": "\\",
+      "parameter_type": "AWS S3",
+      "connection_name": "awss3_connection_puneeth",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
