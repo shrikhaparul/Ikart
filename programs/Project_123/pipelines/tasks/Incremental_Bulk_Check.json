@@ -1,0 +1,49 @@
+{
+  "login_id": "jjones",
+  "id": 384,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "Incremental_Bulk_Check",
+  "task_description": "upsert demo",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-23T10:23:10.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "MYSQL",
+          "object_name": "example_table",
+          "object_type": "Table",
+          "schema_name": "sys",
+          "database_name": "sys",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_example_data",
+          "connection_name": "MYSQL",
+          "primary_key": "[\"id\"]",
+          "schema_name": "sys",
+          "audit_fields": "YES",
+          "database_name": "sys",
+          "action_on_table": "UPDATE AND INSERT"
+        }
+      }
+    ]
+  }
+}
