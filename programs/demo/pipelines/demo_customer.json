@@ -1,0 +1,266 @@
+{
+  "pipeline_id": 164,
+  "project_id": 63,
+  "pipeline_name": "demo_customer",
+  "pipeline_cd": null,
+  "pipeline_description": "To demonstrate end to end processing of customer data",
+  "is_active": "Y",
+  "tasks_details": {
+    "ingest_cust": 0,
+    "pg_raw_cust": [
+      "ingest_cust"
+    ],
+    "ingest_cust_typ": 0,
+    "pg_cur_customer": [
+      "pg_raw_cust_type",
+      "pg_raw_cust_phone_type",
+      "pg_raw_cust_phone",
+      "pg_raw_cust"
+    ],
+    "export_dim_cust": [
+      "pg_cur_customer"
+    ],
+    "pg_raw_cust_type": [
+      "ingest_cust_typ"
+    ],
+    "archive_dim_cust": [
+      "export_dim_cust"
+    ],
+    "ingest_cust_phone": [
+      "ingest_cust",
+      "0"
+    ],
+    "pg_raw_cust_phone": [
+      "ingest_cust_phone"
+    ],
+    "ingest_cust_phone_typ": 0,
+    "pg_raw_cust_phone_type": [
+      "ingest_cust_phone_typ"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "434",
+      "data": {
+        "label": "434-ingest_cust"
+      },
+      "position": {
+        "x": 50,
+        "y": 5650
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "435",
+      "data": {
+        "label": "435-ingest_cust_typ"
+      },
+      "position": {
+        "x": 50,
+        "y": 5700
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "436",
+      "data": {
+        "label": "436-ingest_cust_phone"
+      },
+      "position": {
+        "x": 50,
+        "y": 5750
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "437",
+      "data": {
+        "label": "437-ingest_cust_phone_typ"
+      },
+      "position": {
+        "x": 50,
+        "y": 5800
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "438",
+      "data": {
+        "label": "438-pg_raw_cust"
+      },
+      "position": {
+        "x": 50,
+        "y": 5850
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "439",
+      "data": {
+        "label": "439-pg_raw_cust_phone"
+      },
+      "position": {
+        "x": 50,
+        "y": 5900
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "440",
+      "data": {
+        "label": "440-pg_raw_cust_phone_type"
+      },
+      "position": {
+        "x": 50,
+        "y": 5950
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "441",
+      "data": {
+        "label": "441-pg_raw_cust_type"
+      },
+      "position": {
+        "x": 50,
+        "y": 6000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "442",
+      "data": {
+        "label": "442-pg_cur_customer"
+      },
+      "position": {
+        "x": 50,
+        "y": 6050
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "443",
+      "data": {
+        "label": "443-export_dim_cust"
+      },
+      "position": {
+        "x": 50,
+        "y": 6100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "444",
+      "data": {
+        "label": "444-archive_dim_cust"
+      },
+      "position": {
+        "x": 50,
+        "y": 6150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-443-444",
+      "source": "443",
+      "target": "444"
+    },
+    {
+      "id": "flow-442-443",
+      "source": "442",
+      "target": "443"
+    },
+    {
+      "id": "flow-438-442",
+      "source": "438",
+      "target": "442"
+    },
+    {
+      "id": "flow-439-442",
+      "source": "439",
+      "target": "442"
+    },
+    {
+      "id": "flow-440-442",
+      "source": "440",
+      "target": "442"
+    },
+    {
+      "id": "flow-441-442",
+      "source": "441",
+      "target": "442"
+    },
+    {
+      "id": "flow-435-441",
+      "source": "435",
+      "target": "441"
+    },
+    {
+      "id": "flow-437-440",
+      "source": "437",
+      "target": "440"
+    },
+    {
+      "id": "flow-436-439",
+      "source": "436",
+      "target": "439"
+    },
+    {
+      "id": "flow-434-438",
+      "source": "434",
+      "target": "438"
+    },
+    {
+      "id": "flow-434-436",
+      "source": "434",
+      "target": "436"
+    },
+    {
+      "id": "flow-0-437",
+      "source": "0",
+      "target": "437"
+    },
+    {
+      "id": "flow-0-436",
+      "source": "0",
+      "target": "436"
+    },
+    {
+      "id": "flow-0-435",
+      "source": "0",
+      "target": "435"
+    },
+    {
+      "id": "flow-0-434",
+      "source": "0",
+      "target": "434"
+    }
+  ],
+  "created_dttm": "2024-02-26T11:02:04.607Z",
+  "updated_dttm": "2024-02-26T11:02:04.607Z"
+}
