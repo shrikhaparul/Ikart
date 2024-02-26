@@ -1,0 +1,49 @@
+{
+  "login_id": "jjones",
+  "id": 383,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "Bulk",
+  "task_description": "nk",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-22T16:59:14.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "1",
+          "connection_name": "SQLSERVER",
+          "object_name": "MSreplication_options",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_latest_MSreplication_options",
+          "connection_name": "Mysql_connnn_123",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
