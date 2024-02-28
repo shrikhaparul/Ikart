@@ -1,0 +1,46 @@
+{
+  "login_id": "pgopi",
+  "id": 345,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "postgres_to_postgres",
+  "task_description": "csv_mysql_ikart12",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "updated_dttm": "2023-10-06T06:44:50.000Z",
+  "source": "PostgreSQL",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "select * from public786.sales",
+      "schema": "public786",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "sales",
+      "parameter_type": "PostgreSQL",
+      "select_columns": "",
+      "connection_name": "postgres"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "replace",
+      "table_name": "string_sales",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
