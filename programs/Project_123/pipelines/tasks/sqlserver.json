@@ -1,0 +1,51 @@
+{
+  "login_id": "jjones",
+  "id": 387,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "sqlserver",
+  "task_description": "jkscn",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-20T18:12:24.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "local_new_conn",
+          "encoding": "utf-8",
+          "file_path": "/home/pshrikh/test_files/",
+          "operation": "move",
+          "task_group": "0",
+          "object_name": "sales_data.xlsx",
+          "object_type": "xlsx",
+          "files_filter_name": "*.xlsx",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "sales_data.xlsx",
+          "connection_name": "SQLSERVER",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "YES",
+          "database_name": "master",
+          "action_on_table": "UPDATE AND INSERT"
+        }
+      }
+    ]
+  }
+}
