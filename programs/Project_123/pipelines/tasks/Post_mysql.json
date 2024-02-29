@@ -45,7 +45,7 @@
           "schema_name": "sys",
           "audit_fields": "YES",
           "database_name": "sys",
-          "action_on_table": "UPDATE AND INSERT"
+          "action_on_table": "INSERT"
         }
       }
     ]
