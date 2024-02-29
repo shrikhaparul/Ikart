@@ -1,0 +1,13 @@
+{
+  "id": 153,
+  "project_id": 61,
+  "pipeline_name": "Extract_Employee",
+  "pipeline_cd": null,
+  "pipeline_description": "Bulk Ingestion of Employee ",
+  "pipeline_sequence": 1,
+  "is_active": "N",
+  "created_by": "jjones",
+  "created_dttm": "2023-12-29T12:05:43.000Z",
+  "updated_by": "jjones",
+  "updated_dttm": "2023-12-29T12:05:43.000Z"
+}
