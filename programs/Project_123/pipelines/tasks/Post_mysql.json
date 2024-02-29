@@ -39,7 +39,7 @@
           "subfolder_included": "yes"
         },
         "target": {
-          "object_name": "Oracle_Test_Dump.csv",
+          "object_name": "tgt_example_table",
           "connection_name": "MYSQL",
           "primary_key": "",
           "schema_name": "sys",
