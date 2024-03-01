@@ -29,13 +29,13 @@
           "connection_name": "IKART_file_conn",
           "encoding": "utf-8",
           "delimiter": ",",
-          "file_path": "/home/pshrikh/test_files/",
+          "file_path": "/home/pshrikh/sales_seatunnel/",
           "operation": "move",
           "task_group": "0",
-          "object_name": "employee_data_test.csv",
-          "object_type": "csv",
+          "object_name": "test.parquet",
+          "object_type": "parquet",
           "skip_header": "1",
-          "files_filter_name": "*.csv",
+          "files_filter_name": "",
           "subfolder_included": "yes"
         },
         "target": {
