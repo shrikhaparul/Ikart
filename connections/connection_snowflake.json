@@ -1,0 +1,15 @@
+{
+  "project_id": 64,
+  "connection_type": "Cloud DB",
+  "connection_subtype": "Snowflake",
+  "connection_name": "connection_snowflake",
+  "connection_details": {
+    "role": "ACCOUNTADMIN",
+    "account": "sjb61017.us-east-1",
+    "database": "IKART",
+    "password": "9824fd3e9f822c989bcdb8e3c30aa5f397af0ab7eca3090b",
+    "username": "swetha",
+    "warehouse": "COMPUTE_WH",
+    "updated_by": "prajwal"
+  }
+}
