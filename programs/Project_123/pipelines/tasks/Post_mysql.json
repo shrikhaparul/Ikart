@@ -32,7 +32,7 @@
           "file_path": "/home/pshrikh/test_files/",
           "operation": "move",
           "task_group": "0",
-          "object_name": "employee_data_test.csv",
+          "object_name": "employee_data.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv",
