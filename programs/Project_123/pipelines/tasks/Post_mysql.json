@@ -32,20 +32,20 @@
           "file_path": "/home/pshrikh/test_files/",
           "operation": "move",
           "task_group": "0",
-          "object_name": "test1.csv",
+          "object_name": "employee_data_test.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv",
           "subfolder_included": "yes"
         },
         "target": {
-          "object_name": "Oracle_Test_Dump.csv",
+          "object_name": "test_employee_table",
           "connection_name": "MYSQL",
           "primary_key": "",
           "schema_name": "sys",
           "audit_fields": "YES",
           "database_name": "sys",
-          "action_on_table": "UPDATE AND INSERT"
+          "action_on_table": "INSERT"
         }
       }
     ]
