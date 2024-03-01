@@ -32,8 +32,8 @@
           "file_path": "/home/pshrikh/sales_seatunnel/",
           "operation": "move",
           "task_group": "0",
-          "object_name": "test.parquet",
-          "object_type": "parquet",
+          "object_name": "test.json",
+          "object_type": "json",
           "skip_header": "1",
           "files_filter_name": "",
           "subfolder_included": "yes"
