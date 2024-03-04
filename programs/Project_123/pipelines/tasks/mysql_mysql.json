@@ -1,0 +1,48 @@
+{
+  "login_id": "jjones",
+  "id": 385,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "mysql_mysql",
+  "task_description": "jkscn",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"391\"",
+  "updated_dttm": "2024-02-22T17:00:31.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "/home/pshrikh/test_files/",
+          "connection_name": "IKART_file_conn",
+          "task_group": "0",
+          "object_name": "save.txt",
+          "object_type": "txt",
+          "files_filter_name": "*",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "save",
+          "connection_name": "Mysql_connnn_123",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
