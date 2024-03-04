@@ -1,0 +1,22 @@
+{
+  "task_id": 364,
+  "pipeline_id": 150,
+  "task_name": "task_sql",
+  "task_type": "SQL Execution",
+  "sql_execution": {
+    "connection_name": "ikart_mysql_ikart_connection",
+    "restart": "normal"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "select * ",
+      "table_used_desc": "new"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "update ",
+      "table_used_desc": ""
+    }
+  ]
+}
