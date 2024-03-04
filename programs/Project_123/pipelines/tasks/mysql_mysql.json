@@ -37,9 +37,9 @@
           "object_name": "example_table",
           "connection_name": "Mysql_connnn_123",
           "primary_key": "['id']",
-          "schema_name": "test",
+          "schema_name": "sys",
           "audit_fields": "YES",
-          "database_name": "test",
+          "database_name": "sys",
           "action_on_table": "UPDATE AND INSERT"
         }
       }
