@@ -1,0 +1,174 @@
+{
+  "login_id": "jjones",
+  "id": 405,
+  "project_name": "ORG_Bulk_data_proj",
+  "pipeline_name": "ORG_Bulk_data_pipe",
+  "project_id": 62,
+  "pipeline_id": 159,
+  "task_name": "DB2Files_bulk",
+  "task_description": "DB2Files_bulk",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-31T03:44:13.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_HR",
+          "object_name": "Employee",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_csv_files",
+          "delimiter": ",",
+          "object_name": "Employee",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "target_file_format": "xml"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_HR",
+          "object_name": "EmployeeDepartmentHistory",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_csv_files",
+          "delimiter": ",",
+          "object_name": "EmployeeDepartmentHistory",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "target_file_format": "xml"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_HR",
+          "object_name": "EmployeePayHistory",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_csv_files",
+          "delimiter": ",",
+          "object_name": "EmployeePayHistory",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "target_file_format": "xml"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_HR",
+          "object_name": "JobCandidate",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_csv_files",
+          "delimiter": ",",
+          "object_name": "JobCandidate",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "target_file_format": "xml"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "Mysql_HR",
+          "object_name": "new_employee",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_csv_files",
+          "delimiter": ",",
+          "object_name": "new_employee",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "target_file_format": "xml"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "1",
+          "connection_name": "Mysql_HR",
+          "object_name": "tbl_neww",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_csv_files",
+          "delimiter": ",",
+          "object_name": "tbl_neww",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "target_file_format": "xml"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "1",
+          "connection_name": "Mysql_HR",
+          "object_name": "users",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_csv_files",
+          "delimiter": ",",
+          "object_name": "users",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "target_file_format": "xml"
+        }
+      }
+    ]
+  }
+}
