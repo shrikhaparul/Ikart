@@ -1,0 +1,46 @@
+{
+  "login_id": "swetha",
+  "id": 466,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "oracletopostgre",
+  "task_description": "oracletopostgre",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-18T09:05:10.000Z",
+  "source": "Oracle",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "select * from system.postgrestest",
+      "schema": "system",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "postgrestest",
+      "parameter_type": "Oracle",
+      "select_columns": null,
+      "connection_name": "connection_oracle"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "create",
+      "table_name": "TEST_ORACLE",
+      "audit_columns": "active",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "connection_postgre",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
