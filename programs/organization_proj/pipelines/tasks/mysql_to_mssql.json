@@ -1,0 +1,46 @@
+{
+  "login_id": "pgopi",
+  "id": 395,
+  "project_name": "organization_proj",
+  "pipeline_name": "status_demo",
+  "project_id": 60,
+  "pipeline_id": 151,
+  "task_name": "mysql_to_mssql",
+  "task_description": "mysql_to_mssql",
+  "task_type": "Ingestion",
+  "task_sequence": "\"394\"",
+  "updated_dttm": "2024-03-05T06:07:27.000Z",
+  "source": "MySQL",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select ADDRESSLINE1, ADDRESSLINE2, CITY, CONTACTFIRSTNAME from test.sales_data",
+      "schema": "test",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "sales_data",
+      "parameter_type": "MySQL",
+      "select_columns": "ADDRESSLINE1,ADDRESSLINE2,CITY,CONTACTFIRSTNAME",
+      "connection_name": "mysql"
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "truncate",
+      "table_name": "sales_d",
+      "audit_columns": "inactive",
+      "parameter_type": "MSSQL",
+      "connection_name": "sql_server",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
