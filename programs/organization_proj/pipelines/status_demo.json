@@ -1,0 +1,66 @@
+{
+  "pipeline_id": 151,
+  "project_id": 60,
+  "pipeline_name": "status_demo",
+  "pipeline_cd": null,
+  "pipeline_description": "showing different status for pipeline",
+  "is_active": "Y",
+  "tasks_details": {
+    "mysql_to_mssql": [
+      "mysql_to_postgres"
+    ],
+    "mysql_to_postgres": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "394",
+      "data": {
+        "label": "394-mysql_to_postgres"
+      },
+      "position": {
+        "x": 50,
+        "y": 2650
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "395",
+      "data": {
+        "label": "395-mysql_to_mssql"
+      },
+      "position": {
+        "x": 50,
+        "y": 2700
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-394",
+      "source": "0",
+      "target": "394"
+    },
+    {
+      "id": "flow-394-395",
+      "source": "394",
+      "target": "395"
+    }
+  ],
+  "created_dttm": "2024-03-05T06:09:08.376Z",
+  "updated_dttm": "2024-03-05T06:09:08.376Z"
+}
