@@ -1,0 +1,127 @@
+{
+  "login_id": "prajwal",
+  "id": 456,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "snow",
+  "task_description": "snow",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-05T17:15:19.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Engine",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "Target": {
+          "object_name": "target_PHONENUMBER",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "YES",
+          "action_on_table": "CREATE IF NOT"
+        },
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "connection_snowflake",
+          "object_name": "PHONENUMBER",
+          "object_type": "Table",
+          "schema_name": "PUBLIC",
+          "database_name": "IKART",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "target_PHONENUMBERTYPE",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "YES",
+          "action_on_table": "CREATE IF NOT"
+        },
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "connection_snowflake",
+          "object_name": "PHONENUMBERTYPE",
+          "object_type": "Table",
+          "schema_name": "PUBLIC",
+          "database_name": "IKART",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "target_SALESMYSQL",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "YES",
+          "action_on_table": "UPDATE AND INSERT"
+        },
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "connection_snowflake",
+          "object_name": "SALESMYSQL",
+          "object_type": "Table",
+          "schema_name": "PUBLIC",
+          "database_name": "IKART",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "target_SALESMYSQL_TEST",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "YES",
+          "action_on_table": "UPDATE AND INSERT"
+        },
+        "subtask": "4",
+        "source": {
+          "task_group": "2",
+          "connection_name": "connection_snowflake",
+          "object_name": "SALESMYSQL_TEST",
+          "object_type": "Table",
+          "schema_name": "PUBLIC",
+          "database_name": "IKART",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "target_SALES_CUSTOMER",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "YES",
+          "action_on_table": "UPDATE AND INSERT"
+        },
+        "subtask": "5",
+        "source": {
+          "task_group": "2",
+          "connection_name": "connection_snowflake",
+          "object_name": "SALES_CUSTOMER",
+          "object_type": "Table",
+          "schema_name": "PUBLIC",
+          "database_name": "IKART",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      }
+    ]
+  }
+}
