@@ -1,0 +1,55 @@
+{
+  "login_id": "jjones",
+  "id": 388,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "data_quality",
+  "task_description": "ds",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-08T13:07:17.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "json_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "",
+      "file_name": "example_table_0.json",
+      "file_path": "/home/pshrikh/sales_seatunnel/",
+      "file_type": "json",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": "",
+      "connection_name": "ikart_local_server_connection",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "sys",
+      "operation": "create",
+      "table_name": "test_demo_new",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "MYSQL",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
