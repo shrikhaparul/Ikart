@@ -1,0 +1,115 @@
+{
+  "login_id": "freddie",
+  "id": 503,
+  "project_name": "demo",
+  "pipeline_name": "demo_customer",
+  "project_id": 64,
+  "pipeline_id": 164,
+  "task_name": "snowflake_bulk",
+  "task_description": "snowflake_bulk",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-05T17:43:23.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Engine",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "connection_snowflake",
+          "object_name": "PHONENUMBER",
+          "object_type": "Table",
+          "schema_name": "PUBLIC",
+          "database_name": "IKART",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "TARGET_PHONENUMBER",
+          "connection_name": "connection_snowflake",
+          "primary_key": "",
+          "schema_name": "PUBLIC",
+          "audit_fields": "NO",
+          "database_name": "IKART",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "connection_snowflake",
+          "object_name": "PHONENUMBERTYPE",
+          "object_type": "Table",
+          "schema_name": "PUBLIC",
+          "database_name": "IKART",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "TARGET_PHONENUMBERTYPE",
+          "connection_name": "connection_snowflake",
+          "primary_key": "",
+          "schema_name": "PUBLIC",
+          "audit_fields": "NO",
+          "database_name": "IKART",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "connection_snowflake",
+          "object_name": "SALESMYSQL",
+          "object_type": "Table",
+          "schema_name": "PUBLIC",
+          "database_name": "IKART",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "TARGET_SALESMYSQL",
+          "connection_name": "connection_snowflake",
+          "primary_key": "",
+          "schema_name": "PUBLIC",
+          "audit_fields": "NO",
+          "database_name": "IKART",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "connection_snowflake",
+          "object_name": "SALESMYSQL_TEST",
+          "object_type": "Table",
+          "schema_name": "PUBLIC",
+          "database_name": "IKART",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "TARGET_SALESMYSQL_TEST",
+          "connection_name": "connection_snowflake",
+          "primary_key": "",
+          "schema_name": "PUBLIC",
+          "audit_fields": "NO",
+          "database_name": "IKART",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
