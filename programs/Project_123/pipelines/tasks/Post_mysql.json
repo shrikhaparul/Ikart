@@ -34,7 +34,7 @@
           "task_group": "0",
           "object_name": "BabyFood_file.csv",
           "object_type": "csv",
-          "skip_header": "1",
+          "skip_header": "0",
           "files_filter_name": "*.csv",
           "subfolder_included": "yes"
         },
