@@ -1,0 +1,46 @@
+{
+  "login_id": "rperuman",
+  "id": 507,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "Data_Quality_File_Conversions",
+  "project_id": 68,
+  "pipeline_id": 168,
+  "task_name": "DB_restapi",
+  "task_description": "kb",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-07T09:37:17.000Z",
+  "source": "Oracle",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "select EMPLOYEE_ID, FIRST_NAME, JOB_TITLE, LAST_NAME, SALARY from TEST.EMPLOYEES",
+      "schema": "TEST",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "EMPLOYEES",
+      "parameter_type": "Oracle",
+      "select_columns": "EMPLOYEE_ID,FIRST_NAME,JOB_TITLE,LAST_NAME,SALARY",
+      "connection_name": "oracle_xe"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "dbo",
+      "operation": "create",
+      "table_name": "emp",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
