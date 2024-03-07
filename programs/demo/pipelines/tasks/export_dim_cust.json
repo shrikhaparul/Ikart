@@ -1,0 +1,52 @@
+{
+  "login_id": "freddie",
+  "id": 443,
+  "project_name": "demo",
+  "pipeline_name": "demo_customer",
+  "project_id": 64,
+  "pipeline_id": 164,
+  "task_name": "export_dim_cust",
+  "task_description": "export dim customer profile into remote server",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-15T11:54:17.000Z",
+  "source": "PostgreSQL",
+  "target": "Remote Server",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "select * from curated.dim_customer_profile",
+      "schema": "curated",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "dim_customer_profile",
+      "parameter_type": "PostgreSQL",
+      "select_columns": "",
+      "connection_name": "ec2_postgres"
+    },
+    "target": {
+      "target_type": "remote_server_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "dim_customer_profile.csv",
+      "file_path": "sftp_files/",
+      "file_type": "csv",
+      "operation": "replace",
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": "\\",
+      "parameter_type": "Remote Server",
+      "connection_name": "oraclexe_remoteserver",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
