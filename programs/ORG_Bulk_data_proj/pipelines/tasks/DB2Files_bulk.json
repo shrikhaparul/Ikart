@@ -1,0 +1,216 @@
+{
+  "login_id": "jjones",
+  "id": 405,
+  "project_name": "ORG_Bulk_data_proj",
+  "pipeline_name": "ORG_Bulk_data_pipe",
+  "project_id": 62,
+  "pipeline_id": 159,
+  "task_name": "DB2Files_bulk",
+  "task_description": "DB2Files_bulk",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-31T03:44:13.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_HR",
+          "object_name": "Employee",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_csv_files",
+          "encoding": "utf-16",
+          "delimiter": ",",
+          "file_path": "/home/madhu/",
+          "compression": "bzip",
+          "object_name": "Employee",
+          "audit_fields": "yes",
+          "transfer_mode": "ascii",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "target_file_format": "xml",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_HR",
+          "object_name": "EmployeeDepartmentHistory",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_csv_files",
+          "encoding": "utf-16",
+          "delimiter": ",",
+          "file_path": "/home/madhu/",
+          "compression": "bzip",
+          "object_name": "EmployeeDepartmentHistory",
+          "audit_fields": "yes",
+          "transfer_mode": "ascii",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "target_file_format": "xml",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_HR",
+          "object_name": "EmployeePayHistory",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_csv_files",
+          "encoding": "utf-16",
+          "delimiter": ",",
+          "file_path": "/home/madhu/",
+          "compression": "bzip",
+          "object_name": "EmployeePayHistory",
+          "audit_fields": "yes",
+          "transfer_mode": "ascii",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "target_file_format": "xml",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_HR",
+          "object_name": "JobCandidate",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_csv_files",
+          "encoding": "utf-16",
+          "delimiter": ",",
+          "file_path": "/home/madhu/",
+          "compression": "bzip",
+          "object_name": "JobCandidate",
+          "audit_fields": "yes",
+          "transfer_mode": "ascii",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "target_file_format": "xml",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "Mysql_HR",
+          "object_name": "new_employee",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_csv_files",
+          "encoding": "utf-16",
+          "delimiter": ",",
+          "file_path": "/home/madhu/",
+          "compression": "bzip",
+          "object_name": "new_employee",
+          "audit_fields": "yes",
+          "transfer_mode": "ascii",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "target_file_format": "xml",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "1",
+          "connection_name": "Mysql_HR",
+          "object_name": "tbl_neww",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_csv_files",
+          "encoding": "utf-16",
+          "delimiter": ",",
+          "file_path": "/home/madhu/",
+          "compression": "bzip",
+          "object_name": "tbl_neww",
+          "audit_fields": "yes",
+          "transfer_mode": "ascii",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "target_file_format": "xml",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "1",
+          "connection_name": "Mysql_HR",
+          "object_name": "users",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "local_csv_files",
+          "encoding": "utf-16",
+          "delimiter": ",",
+          "file_path": "/home/madhu/",
+          "compression": "bzip",
+          "object_name": "users",
+          "audit_fields": "yes",
+          "transfer_mode": "ascii",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "target_file_format": "xml",
+          "target_max_record_count": "0"
+        }
+      }
+    ]
+  }
+}
