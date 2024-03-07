@@ -1,0 +1,16 @@
+{
+  "project_id": 67,
+  "connection_type": "Application",
+  "connection_subtype": "REST API",
+  "connection_name": "Public_Rest_API",
+  "connection_details": {
+    "url": "https://gorest.co.in/public/v2/users",
+    "password": "a3283961424fce5896946e768d64ced0",
+    "username": "",
+    "api_token": "",
+    "access_token": "5b17375018974a6cd376e78fc0673da90a655225ecaea806e6b1b12bfeb26b03",
+    "authentication_type": "access_token",
+    "created_by": "rperuman",
+    "updated_by": "rperuman"
+  }
+}
