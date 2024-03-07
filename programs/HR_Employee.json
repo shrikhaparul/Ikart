@@ -1,0 +1,13 @@
+{
+  "id": 267,
+  "program_name": "HR_Employee",
+  "program_description": "Organization Employee details ",
+  "git_repo": "Ikart_UI",
+  "primary_stakeholder": "H. Andrson",
+  "secondary_stakeholder": "admin",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "created_dttm": "2023-12-29T10:03:13.000Z",
+  "updated_by": "Madhu",
+  "updated_dttm": "2024-03-07T07:11:16.000Z"
+}
