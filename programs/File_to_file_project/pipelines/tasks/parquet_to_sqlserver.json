@@ -1,0 +1,78 @@
+{
+  "login_id": "jjones",
+  "id": 510,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "parquet_to_sqlserver",
+  "task_description": "test_version",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-08T07:00:38.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "Ikart_file_conn",
+          "encoding": "utf-8",
+          "delimiter": "",
+          "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+          "operation": "move",
+          "task_group": "0",
+          "object_name": "Disputed_file.parquet",
+          "object_type": "parquet",
+          "skip_header": "0",
+          "files_filter_name": "*.parquet",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "Disputed_file_parquet",
+          "connection_name": "SQLSERVER",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "YES",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "header": "Y",
+          "connection_name": "Ikart_file_conn",
+          "encoding": "utf-8",
+          "delimiter": "",
+          "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+          "operation": "move",
+          "task_group": "0",
+          "object_name": "Shipped_file.parquet",
+          "object_type": "parquet",
+          "skip_header": "0",
+          "files_filter_name": "*.parquet",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "Shipped_file_parquet",
+          "connection_name": "SQLSERVER",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "YES",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
