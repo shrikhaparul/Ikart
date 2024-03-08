@@ -1,0 +1,46 @@
+{
+  "login_id": "pgopi",
+  "id": 394,
+  "project_name": "organization_proj",
+  "pipeline_name": "status_demo",
+  "project_id": 60,
+  "pipeline_id": 151,
+  "task_name": "mysql_to_postgres",
+  "task_description": "mysql_to_mssql",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "updated_dttm": "2024-03-05T06:07:27.000Z",
+  "source": "MSSQL",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "select * from dbo.Employee",
+      "schema": "dbo",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "Employee",
+      "parameter_type": "MSSQL",
+      "select_columns": "",
+      "connection_name": "sql_server"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "create",
+      "table_name": "EMPLOYEE_DTYPE",
+      "audit_columns": "active",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
