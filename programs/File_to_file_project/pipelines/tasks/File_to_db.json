@@ -1,0 +1,137 @@
+{
+  "login_id": "jjones",
+  "id": 512,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "File_to_db",
+  "task_description": "bulk",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-08T09:36:10.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+          "connection_name": "Ikart_file_conn",
+          "task_group": "0",
+          "object_name": "Disputed_file.parquet",
+          "object_type": "parquet",
+          "files_filter_name": "*",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "tgt_target_Disputed_file_parquet",
+          "connection_name": "P_mysql",
+          "primary_key": "",
+          "schema_name": "sys",
+          "audit_fields": "YES",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+          "connection_name": "Ikart_file_conn",
+          "task_group": "0",
+          "object_name": "Shipped_file.parquet",
+          "object_type": "parquet",
+          "files_filter_name": "*",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "tgt_target_Shipped_file_parquet",
+          "connection_name": "P_mysql",
+          "primary_key": "",
+          "schema_name": "sys",
+          "audit_fields": "YES",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "header": "Y",
+          "connection_name": "Ikart_file_conn",
+          "encoding": "utf-8",
+          "delimiter": "",
+          "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+          "operation": "move",
+          "task_group": "0",
+          "object_name": "emp_details.json",
+          "object_type": "json",
+          "skip_header": "0",
+          "files_filter_name": "*",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "tgt_target_emp_details_json",
+          "connection_name": "P_mysql",
+          "primary_key": "",
+          "schema_name": "sys",
+          "audit_fields": "YES",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+          "connection_name": "Ikart_file_conn",
+          "task_group": "0",
+          "object_name": "example_table.json",
+          "object_type": "json",
+          "files_filter_name": "*",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "tgt_target_example_table_json",
+          "connection_name": "P_mysql",
+          "primary_key": "",
+          "schema_name": "sys",
+          "audit_fields": "YES",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+          "connection_name": "Ikart_file_conn",
+          "task_group": "1",
+          "object_name": "sales_data.csv",
+          "object_type": "csv",
+          "files_filter_name": "*",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "tgt_target_sales_data_csv",
+          "connection_name": "P_mysql",
+          "primary_key": "",
+          "schema_name": "sys",
+          "audit_fields": "YES",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
