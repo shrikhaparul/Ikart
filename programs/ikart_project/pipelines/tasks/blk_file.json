@@ -1,0 +1,755 @@
+{
+  "login_id": "shilpi",
+  "id": 409,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "blk_file",
+  "task_description": "blk_file",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-04T10:58:26.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 1000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_adv",
+          "object_name": "Product",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "Product",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "10",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mssql_adv",
+          "object_name": "ProductModelIllustration",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "ProductModelIllustration",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "11",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mssql_adv",
+          "object_name": "ProductModelProductDescriptionCulture",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "ProductModelProductDescriptionCulture",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "12",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mssql_adv",
+          "object_name": "BillOfMaterials",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "BillOfMaterials",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "13",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mssql_adv",
+          "object_name": "ProductPhoto",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "ProductPhoto",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "14",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mssql_adv",
+          "object_name": "ProductProductPhoto",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "ProductProductPhoto",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "15",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_adv",
+          "object_name": "TransactionHistory",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "TransactionHistory",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "16",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_adv",
+          "object_name": "ProductReview",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "ProductReview",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "17",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_adv",
+          "object_name": "TransactionHistoryArchive",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "TransactionHistoryArchive",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "18",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_adv",
+          "object_name": "ProductSubcategory",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "ProductSubcategory",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "19",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_adv",
+          "object_name": "UnitMeasure",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "UnitMeasure",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_adv",
+          "object_name": "ScrapReason",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "ScrapReason",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "20",
+        "source": {
+          "task_group": "4",
+          "connection_name": "mssql_adv",
+          "object_name": "WorkOrder",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "WorkOrder",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "21",
+        "source": {
+          "task_group": "4",
+          "connection_name": "mssql_adv",
+          "object_name": "Culture",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "Culture",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "22",
+        "source": {
+          "task_group": "4",
+          "connection_name": "mssql_adv",
+          "object_name": "WorkOrderRouting",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "WorkOrderRouting",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "23",
+        "source": {
+          "task_group": "4",
+          "connection_name": "mssql_adv",
+          "object_name": "Document",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "Document",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "24",
+        "source": {
+          "task_group": "4",
+          "connection_name": "mssql_adv",
+          "object_name": "Illustration",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "Illustration",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "25",
+        "source": {
+          "task_group": "5",
+          "connection_name": "mssql_adv",
+          "object_name": "Location",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "Location",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "26",
+        "source": {
+          "task_group": "5",
+          "connection_name": "mssql_adv",
+          "object_name": "vProductAndDescription",
+          "object_type": "View",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "vProductAndDescription",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "27",
+        "source": {
+          "task_group": "5",
+          "connection_name": "mssql_adv",
+          "object_name": "vProductModelCatalogDescription",
+          "object_type": "View",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "vProductModelCatalogDescription",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "28",
+        "source": {
+          "task_group": "5",
+          "connection_name": "mssql_adv",
+          "object_name": "vProductModelInstructions",
+          "object_type": "View",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "vProductModelInstructions",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_adv",
+          "object_name": "ProductCategory",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "ProductCategory",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_adv",
+          "object_name": "ProductCostHistory",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "ProductCostHistory",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_adv",
+          "object_name": "ProductDescription",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "ProductDescription",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_adv",
+          "object_name": "ProductDocument",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "ProductDocument",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_adv",
+          "object_name": "ProductInventory",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "ProductInventory",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_adv",
+          "object_name": "ProductListPriceHistory",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "ProductListPriceHistory",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_adv",
+          "object_name": "ProductModel",
+          "object_type": "Table",
+          "schema_name": "Production",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "N",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_name": "abc_sales",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "",
+          "object_name": "ProductModel",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      }
+    ]
+  }
+}
