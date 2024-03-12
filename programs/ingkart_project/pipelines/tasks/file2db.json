@@ -1,0 +1,61 @@
+{
+  "login_id": "shilpi",
+  "id": 520,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "file2db",
+  "task_description": "file2db",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-12T14:38:16.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "Target": {
+          "object_name": "Baby Food_file.csv",
+          "primary_key": "",
+          "audit_fields": "YES",
+          "action_on_table": "CREATE IF NOT"
+        },
+        "subtask": "1",
+        "source": {
+          "file_path": "/home/Admin/actions-runner/_work/UI/src_files",
+          "connection_name": "localserver_s",
+          "task_group": "0",
+          "object_name": "Baby Food_file.csv",
+          "object_type": "csv",
+          "files_filter_name": "*csv"
+        }
+      },
+      {
+        "Target": {
+          "object_name": "Beverages_file.csv",
+          "primary_key": "",
+          "audit_fields": "YES",
+          "action_on_table": "CREATE IF NOT"
+        },
+        "subtask": "2",
+        "source": {
+          "file_path": "/home/Admin/actions-runner/_work/UI/src_files",
+          "connection_name": "localserver_s",
+          "task_group": "0",
+          "object_name": "Beverages_file.csv",
+          "object_type": "csv",
+          "files_filter_name": "*csv"
+        }
+      }
+    ]
+  }
+}
