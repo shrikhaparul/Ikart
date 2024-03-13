@@ -1,0 +1,44 @@
+{
+  "login_id": "jjones",
+  "id": 393,
+  "project_name": "ikart_project_questkart_update",
+  "pipeline_name": "ikart_pipeline_questkart",
+  "project_id": 59,
+  "pipeline_id": 148,
+  "task_name": "oracle_to_oracle",
+  "task_description": "oracle_to_oracle",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-28T08:33:42.000Z",
+  "source": "Oracle",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "select * from stage.sales123",
+      "schema": "stage",
+      "chunk_size": 10000,
+      "table_name": "sales123",
+      "parameter_type": "Oracle",
+      "select_columns": null,
+      "connection_name": "oracle"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "system",
+      "operation": "create",
+      "table_name": "sales_data_1234",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
