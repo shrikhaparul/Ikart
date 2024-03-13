@@ -1,0 +1,49 @@
+{
+  "login_id": "shilpi",
+  "id": 519,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "mssql2ora",
+  "task_description": "mssql2ora",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-12T11:38:03.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_s",
+          "object_name": "SalesReason",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SalesReason",
+          "connection_name": "oracle_s",
+          "primary_key": "",
+          "schema_name": "SYS",
+          "audit_fields": "YES",
+          "database_name": "XE",
+          "action_on_table": "CREATE IF NOT"
+        }
+      }
+    ]
+  }
+}
