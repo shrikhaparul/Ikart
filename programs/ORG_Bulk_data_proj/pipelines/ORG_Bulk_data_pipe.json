@@ -1,0 +1,94 @@
+{
+  "pipeline_id": 159,
+  "project_id": 62,
+  "pipeline_name": "ORG_Bulk_data_pipe",
+  "pipeline_cd": null,
+  "pipeline_description": "ORG_Bulk_data_pipe",
+  "is_active": "Y",
+  "tasks_details": {
+    "ORG_Ing_task": 0
+  },
+  "nodes": [
+    {
+      "id": "405",
+      "data": {
+        "label": "405-DB2Files_bulk"
+      },
+      "position": {
+        "x": 50,
+        "y": 3900
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "403",
+      "data": {
+        "label": "403-Files2DB_bulk"
+      },
+      "position": {
+        "x": 50,
+        "y": 3800
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "404",
+      "data": {
+        "label": "404-Files2Files_bulk"
+      },
+      "position": {
+        "x": 50,
+        "y": 3850
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "402",
+      "data": {
+        "label": "402-DB2DB_bulk"
+      },
+      "position": {
+        "x": 50,
+        "y": 3750
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "401",
+      "data": {
+        "label": "401-ORG_Ing_task"
+      },
+      "position": {
+        "x": 50,
+        "y": 3700
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-401",
+      "source": "0",
+      "target": "401"
+    }
+  ],
+  "created_dttm": "2024-03-13T04:02:23.007Z",
+  "updated_dttm": "2024-03-13T04:02:23.007Z"
+}
