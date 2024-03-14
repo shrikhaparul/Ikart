@@ -29,7 +29,7 @@
           "connection_name": "aws_s3",
           "encoding": "utf-8",
           "delimiter": ",",
-          "file_path": "demo/landing/lnd_dim_customer_profile_2024.csv",
+          "file_path": "demo/landing/",
           "operation": "copy",
           "quote_char": "\"",
           "task_group": "0",
@@ -41,13 +41,13 @@
           "subfolder_included": "no"
         },
         "target": {
-          "object_name": "lnd_dim_customer_profile_2024.csv",
+          "object_name": "lnd_dim_customer_profile",
           "connection_name": "mysql",
           "primary_key": "",
           "schema_name": "test",
           "audit_fields": "YES",
           "database_name": "test",
-          "action_on_table": "DROP AND CREATE"
+          "action_on_table": "CREATE IF NOT"
         }
       },
       {
@@ -57,7 +57,7 @@
           "connection_name": "aws_s3",
           "encoding": "utf-8",
           "delimiter": ",",
-          "file_path": "demo/landing/lnd_employee_details_2024.csv",
+          "file_path": "demo/landing/",
           "operation": "copy",
           "quote_char": "\"",
           "task_group": "1",
@@ -69,13 +69,13 @@
           "subfolder_included": "no"
         },
         "target": {
-          "object_name": "lnd_employee_details_2024.csv",
+          "object_name": "lnd_employee_details",
           "connection_name": "mysql",
           "primary_key": "",
           "schema_name": "test",
           "audit_fields": "YES",
           "database_name": "test",
-          "action_on_table": "DROP AND CREATE"
+          "action_on_table": "CREATE IF NOT"
         }
       }
     ]
