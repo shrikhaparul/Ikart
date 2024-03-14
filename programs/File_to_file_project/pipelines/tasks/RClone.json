@@ -1,0 +1,42 @@
+{
+  "login_id": "jjones",
+  "id": 525,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "RClone",
+  "task_description": "RClone",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-14T07:43:38.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+          "connection_name": "ec2_local_server_files_to_files",
+          "operation": "copy",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "file_path": "/home/Admin/actions-runner/_work/UI/src_files2/",
+          "connection_name": "ec2_local_server_files_to_files",
+          "object_sufix_name": "YY-MM-DD",
+          "object_prefix_name": "tgt_"
+        }
+      }
+    ]
+  }
+}
