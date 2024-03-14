@@ -38,7 +38,9 @@
           "object_type": "csv",
           "transfer_mode": "binary",
           "files_filter_name": "*_2024.csv",
-          "subfolder_included": "no"
+          "subfolder_included": "no",
+          "skip_footer":None,
+          "skip_header":None
         },
         "target": {
           "object_name": "lnd_dim_customer_profile",
@@ -66,7 +68,9 @@
           "object_type": "csv",
           "transfer_mode": "binary",
           "files_filter_name": "*_2024.csv",
-          "subfolder_included": "no"
+          "subfolder_included": "no",
+          "skip_footer": None,
+          "skip_header":None
         },
         "target": {
           "object_name": "lnd_employee_details",
