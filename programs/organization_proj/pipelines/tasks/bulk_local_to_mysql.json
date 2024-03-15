@@ -1,0 +1,57 @@
+{
+  "login_id": "pgopi",
+  "id": 399,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "bulk_local_to_mysql",
+  "task_description": "bulk_local_to_mysql",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-15T09:40:16.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "localserver",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/rperuman/src_files/files/csv files/",
+          "operation": "copy",
+          "quote_char": "\"",
+          "task_group": "0",
+          "compression": "gzip",
+          "escape_char": "\\",
+          "object_name": "Beverages_file.csv",
+          "object_type": "csv",
+          "skip_footer": "10",
+          "skip_header": "10",
+          "transfer_mode": "binary",
+          "files_filter_name": "*_file.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "Beverages_file.csv",
+          "connection_name": "mysql",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "UPDATE AND INSERT"
+        }
+      }
+    ]
+  }
+}
