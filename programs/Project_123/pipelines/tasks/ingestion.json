@@ -1,0 +1,46 @@
+{
+  "login_id": "jjones",
+  "id": 394,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "ingestion",
+  "task_description": "acs",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-16T18:08:04.000Z",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from sys.Emplyee_Table",
+      "schema": "sys",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 500,
+      "table_name": "Emplyee_Table",
+      "parameter_type": "MySQL",
+      "select_columns": null,
+      "connection_name": "MYSQL"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "test",
+      "operation": "replace",
+      "table_name": "tulip",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "Mysql_connnn_123",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
