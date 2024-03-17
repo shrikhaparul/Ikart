@@ -69,10 +69,9 @@
       },
       {
         "seq_no": "3",
-        "check": "column_values_to_not_be_null",
+        "check": "expect_column_count_comparison",
         "parameters": {
-          "column": "SHIPDATE"
-        },
+          },
         "active": "Y",
         "ignore_bad_records": "N",
         "threshold_bad_records": 5,
