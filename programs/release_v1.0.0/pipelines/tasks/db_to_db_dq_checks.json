@@ -69,7 +69,7 @@
       },
       {
         "seq_no": "3",
-        "check": "expect_column_count_comparison",
+        "check": "column_count_comparison",
         "parameters": {
           },
         "active": "Y",
