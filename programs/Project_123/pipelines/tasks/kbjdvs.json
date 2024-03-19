@@ -39,7 +39,7 @@
           "subfolder_included": "yes"
         },
         "target": {
-          "object_name": "sample_data.csv",
+          "object_name": "sample_data_csv",
           "connection_name": "Postgres",
           "primary_key": "",
           "schema_name": "test",
