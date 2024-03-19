@@ -1,0 +1,44 @@
+{
+  "login_id": "freddie",
+  "id": 532,
+  "project_name": "demo",
+  "pipeline_name": "demo_customer",
+  "project_id": 64,
+  "pipeline_id": 164,
+  "task_name": "mssql_testing",
+  "task_description": "mssql_testing",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-19T08:59:00.000Z",
+  "source": "MSSQL",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "select * from config.tbl_user",
+      "schema": "dbo",
+      "chunk_size": 10000,
+      "table_name": "tbl_user",
+      "parameter_type": "MSSQL",
+      "select_columns": null,
+      "connection_name": "ec2_mssql"
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "append",
+      "table_name": "test",
+      "audit_columns": "active",
+      "parameter_type": "MSSQL",
+      "connection_name": "ec2_mssql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
