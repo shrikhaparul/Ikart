@@ -1,0 +1,55 @@
+{
+  "login_id": "jjones",
+  "id": 531,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "testing2",
+  "task_description": "test",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-18T08:38:45.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": null,
+      "file_name": "*.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "ec2_local_server_files_to_files",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "config",
+      "operation": "create",
+      "table_name": "tbl_us",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
