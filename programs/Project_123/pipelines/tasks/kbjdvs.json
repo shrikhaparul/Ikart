@@ -26,7 +26,7 @@
         "subtask": "1",
         "source": {
           "header": "Y",
-          "connection_name": "IKART_file_conn",
+          "connection_name": "aws_YUSS3",
           "encoding": "utf-8",
           "delimiter": "",
           "file_path": "/home/pshrikh/test_files/",
