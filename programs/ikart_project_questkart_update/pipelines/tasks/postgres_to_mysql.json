@@ -1,0 +1,44 @@
+{
+  "login_id": "jjones",
+  "id": 346,
+  "project_name": "ikart_project_questkart_update",
+  "pipeline_name": "ikart_pipeline_questkart",
+  "project_id": 59,
+  "pipeline_id": 148,
+  "task_name": "postgres_to_mysql",
+  "task_description": null,
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "updated_dttm": "2023-10-06T11:32:46.000Z",
+  "source": "PostgreSQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "select * from public.sales",
+      "schema": "public",
+      "chunk_size": 1000,
+      "table_name": "",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "postgres"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "test",
+      "operation": "create",
+      "table_name": "string_sales",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
