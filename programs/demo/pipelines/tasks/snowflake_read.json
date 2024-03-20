@@ -1,0 +1,44 @@
+{
+  "login_id": "freddie",
+  "id": 502,
+  "project_name": "demo",
+  "pipeline_name": "demo_customer",
+  "project_id": 64,
+  "pipeline_id": 164,
+  "task_name": "snowflake_read",
+  "task_description": "snowflake_read",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-04T06:35:44.000Z",
+  "source": "Snowflake",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "snowflake_read",
+      "query": "select * from public.phonenumbertype",
+      "schema": "fff",
+      "chunk_size": 10000,
+      "table_name": "phonenumbertype",
+      "parameter_type": "Snowflake",
+      "select_columns": null,
+      "connection_name": "connection_snowflake_ec2"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "create",
+      "table_name": "NUMBER",
+      "audit_columns": "active",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "ec2_postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
