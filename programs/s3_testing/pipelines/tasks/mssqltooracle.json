@@ -1,0 +1,46 @@
+{
+  "login_id": "swetha",
+  "id": 475,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "mssqltooracle",
+  "task_description": "mssqltooracle",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-24T11:47:45.000Z",
+  "source": "MSSQL",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "select addressline1, addressline2, city, contactfirstname, contactlastname, country, customername, dealsize, month_id, msrp, orderdate, orderlinenumber, ordernumber, phone, postalcode, priceeach, productcode, productline, qtr_id, quantityordered, sales, shipdate, state, status, territory, year_id from dbo.test_orac",
+      "schema": "dbo",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "test_orac",
+      "parameter_type": "MSSQL",
+      "select_columns": "addressline1,addressline2,city,contactfirstname,contactlastname,country,customername,dealsize,month_id,msrp,orderdate,orderlinenumber,ordernumber,phone,postalcode,priceeach,productcode,productline,qtr_id,quantityordered,sales,shipdate,state,status,territory,year_id",
+      "connection_name": "connection_mssql"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "ff",
+      "operation": "create",
+      "table_name": "mssqltest",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "connection_oracle",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
