@@ -1,0 +1,15 @@
+{
+  "project_id": 59,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "PostgreSQL",
+  "connection_name": "postgres",
+  "connection_details": {
+    "port": "5432",
+    "username": "postgres",
+    "password": "a738ea3f85b078dfe9a4202b356a18ecb76483246cb4db778fba84587307b06f",
+    "hostname": "localhost",
+    "database": "postgres",
+    "created_by": "jjones",
+    "updated_by": "jjones"
+  }
+}
