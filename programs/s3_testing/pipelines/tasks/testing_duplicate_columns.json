@@ -1,0 +1,44 @@
+{
+  "login_id": "swetha",
+  "id": 489,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "testing_duplicate_columns",
+  "task_description": "testing_duplicate_columns",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-18T10:28:10.000Z",
+  "source": "MySQL",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select ordernumber, quantityordered, priceeach, orderlinenumber, sales, orderdate, shipdate, status, qtr_id, month_id, year_id, productline, msrp, productcode, customername, phone, addressline1, addressline2, city, state, postalcode, country, territory, contactlastname, contactfirstname, dealsize, crtd_by, crtd_dttm, updt_by, updt_dttm from target.test_oracle",
+      "schema": "rrrrrrrrrrr",
+      "chunk_size": 10000,
+      "table_name": "test_oracle",
+      "parameter_type": "MySQL",
+      "select_columns": "ordernumber,quantityordered,priceeach,orderlinenumber,sales,orderdate,shipdate,status,qtr_id,month_id,year_id,productline,msrp,productcode,customername,phone,addressline1,addressline2,city,state,postalcode,country,territory,contactlastname,contactfirstname,dealsize,crtd_by,crtd_dttm,updt_by,updt_dttm",
+      "connection_name": "connection_target"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "ikart",
+      "operation": "create",
+      "table_name": "sales_cst",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "connection_oracle",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
