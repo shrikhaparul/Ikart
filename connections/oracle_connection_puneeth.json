@@ -1,0 +1,15 @@
+{
+  "project_id": 59,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "Oracle",
+  "connection_name": "oracle_connection_puneeth",
+  "connection_details": {
+    "port": "1521",
+    "database": "XE",
+    "hostname": "localhost",
+    "password": "b82ef62efa0ad8406ca92872bf984c40200a9da3",
+    "username": "system",
+    "created_by": "Puneeth",
+    "updated_by": "Puneeth"
+  }
+}
