@@ -1,0 +1,59 @@
+{
+  "login_id": "Puneeth",
+  "id": 483,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "dq_testing",
+  "project_id": 61,
+  "pipeline_id": 165,
+  "task_name": "pg_to_pg_dq_test",
+  "task_description": "to test postgres to postgres check",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-24T12:24:26.000Z",
+  "source": "PostgreSQL",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "select * from public.new",
+      "schema": "public",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "new",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "postgres_connection_puneeth"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "create",
+      "table_name": "pg2pg_dqtest",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "postgres_connection_puneeth",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "ORDERNUMBER"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
