@@ -1,0 +1,57 @@
+{
+  "login_id": "Puneeth",
+  "id": 478,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "dq_testing",
+  "project_id": 61,
+  "pipeline_id": 165,
+  "task_name": "remote_to_remote_test_dq",
+  "task_description": "To test remote server to remote server dq",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-25T16:43:31.000Z",
+  "source": "Remote Server",
+  "target": "Remote Server",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "remote_server_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": null,
+      "file_name": "sales.csv",
+      "file_path": "Files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "parameter_type": "Remote Server",
+      "select_columns": null,
+      "connection_name": "remote_server_connection_puneeth_1",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "remote_server_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_dq.csv",
+      "file_path": "Files/",
+      "file_type": "csv",
+      "operation": "replace",
+      "parameter_type": "Remote Server",
+      "connection_name": "remote_server_connection_puneeth_1",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
