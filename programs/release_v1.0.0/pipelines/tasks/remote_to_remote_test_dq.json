@@ -22,7 +22,7 @@
       "encoding": "utf-8",
       "delimiter": null,
       "file_name": "sales.csv",
-      "file_path": "Files/",
+      "file_path": "/Files/",
       "file_type": "csv",
       "chunk_size": 10000,
       "encryption": null,
