@@ -20,7 +20,7 @@
       "source_type": "remote_server_read",
       "header": "Y",
       "encoding": "utf-8",
-      "delimiter": null,
+      "delimiter": ",",
       "file_name": "sales.csv",
       "file_path": "/Files/",
       "file_type": "csv",
