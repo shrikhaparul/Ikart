@@ -1,0 +1,64 @@
+{
+  "pipeline_id": 163,
+  "project_id": 63,
+  "pipeline_name": "testing",
+  "pipeline_cd": null,
+  "pipeline_description": "testing_new",
+  "is_active": "Y",
+  "tasks_details": {
+    "mssql_testing": 0,
+    "mysql_testing": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "490",
+      "data": {
+        "label": "490-mssql_testing"
+      },
+      "position": {
+        "x": 50,
+        "y": 6850
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "491",
+      "data": {
+        "label": "491-mysql_testing"
+      },
+      "position": {
+        "x": 50,
+        "y": 6900
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-490",
+      "source": "0",
+      "target": "490"
+    },
+    {
+      "id": "flow-0-491",
+      "source": "0",
+      "target": "491"
+    }
+  ],
+  "created_dttm": "2024-04-01T12:25:48.068Z",
+  "updated_dttm": "2024-04-01T12:25:48.068Z"
+}
