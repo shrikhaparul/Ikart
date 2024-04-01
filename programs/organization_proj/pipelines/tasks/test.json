@@ -1,0 +1,46 @@
+{
+  "login_id": "prajwal",
+  "id": 447,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "test",
+  "task_description": "ert",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-28T10:49:23.000Z",
+  "source": "Snowflake",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "snowflake_read",
+      "query": "select * from demo.public.PHONENUMBERTYPE",
+      "schema": "public",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "PHONENUMBERTYPE",
+      "parameter_type": "Snowflake",
+      "select_columns": "",
+      "connection_name": "connection_snowflake_ec2"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "testing",
+      "operation": "INSERT",
+      "table_name": "test_dup",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_EC2_Connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
