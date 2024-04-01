@@ -1,0 +1,44 @@
+{
+  "login_id": "swetha",
+  "id": 490,
+  "project_name": "s3_testing",
+  "pipeline_name": "testing",
+  "project_id": 63,
+  "pipeline_id": 163,
+  "task_name": "mssql_testing",
+  "task_description": "mssql_testing",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-01T11:16:33.000Z",
+  "source": "MySQL",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from target.test_csv",
+      "schema": "target",
+      "chunk_size": 10000,
+      "table_name": "test_csv",
+      "parameter_type": "MySQL",
+      "select_columns": "",
+      "connection_name": "connection_target"
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "create",
+      "table_name": "test_csv",
+      "audit_columns": "inactive",
+      "parameter_type": "MSSQL",
+      "connection_name": "connection_mssql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
