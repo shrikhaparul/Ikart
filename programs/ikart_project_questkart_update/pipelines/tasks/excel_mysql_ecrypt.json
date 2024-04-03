@@ -1,0 +1,55 @@
+{
+  "login_id": "jjones",
+  "id": 378,
+  "project_name": "ikart_project_questkart_update",
+  "pipeline_name": "ikart_pipeline_questkart",
+  "project_id": 59,
+  "pipeline_id": 148,
+  "task_name": "excel_mysql_ecrypt",
+  "task_description": "excel_mysql_ecrypt",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2023-10-05T11:22:26.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "parquet_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Shipped_file.parquet.gpg",
+      "file_path": "/home/rperuman/src_files/compression/csv/",
+      "file_type": "parquet",
+      "chunk_size": 3000,
+      "encryption": "yes",
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "",
+      "parameter_type": "Local Server",
+      "select_columns": "",
+      "connection_name": "localserver",
+      "private_key_path": "Hercules@1927!"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "test",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "encypted_Parq_Shipped",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
