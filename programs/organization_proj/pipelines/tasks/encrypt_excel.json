@@ -1,0 +1,60 @@
+{
+  "login_id": "pgopi",
+  "id": 406,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "encrypt_excel",
+  "task_description": "encrypt_excel",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-03T11:32:21.000Z",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "xlsx_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Female_file.xlsx",
+      "file_path": "/home/rperuman/src_files/",
+      "file_type": "xlsx",
+      "chunk_size": 10000,
+      "encryption": "no",
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "xlsx_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Female.xlsx",
+      "file_path": "/home/rperuman/src_files/encryption/",
+      "file_type": "xlsx",
+      "encryption": "yes",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver",
+      "public_key_path": "/home/rperuman/UI_code/rperuman_public_key.asc",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
