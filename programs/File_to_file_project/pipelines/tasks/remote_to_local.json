@@ -1,0 +1,56 @@
+{
+  "login_id": "jjones",
+  "id": 538,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "remote_to_local",
+  "task_description": "remote_to_local",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-02T17:11:48.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "Nan_remote_conn",
+          "encoding": "utf-8",
+          "delimiter": "",
+          "file_path": "test1/",
+          "operation": "copy",
+          "task_group": "0",
+          "compression": "bzip",
+          "object_name": "Cancelled_file.parquet.bz2",
+          "object_type": "bz2",
+          "skip_header": "1",
+          "files_filter_name": "*.*",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "file_path": "/home/Admin/actions-runner/_work/UI/src_files2/",
+          "connection_name": "ec2_local_server_files_to_files",
+          "object_name": "Cancelled_fileparquetbz2_j",
+          "primary_key": "",
+          "schema_name": "sys",
+          "audit_fields": "YES",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "YY-MM-DD",
+          "object_prefix_name": "target_"
+        }
+      }
+    ]
+  }
+}
