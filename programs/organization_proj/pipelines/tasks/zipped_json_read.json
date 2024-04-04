@@ -1,0 +1,55 @@
+{
+  "login_id": "pgopi",
+  "id": 412,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "zipped_json_read",
+  "task_description": "zipped_json_read",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-04T10:51:47.000Z",
+  "source": "Local Server",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "json_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": null,
+      "file_name": "tgt_SALES_2024.json.gz",
+      "file_path": "/home/rperuman/src_files/compression/",
+      "file_type": "json",
+      "chunk_size": 10000,
+      "encryption": "no",
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "sys",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "sales_zipped",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
