@@ -1,0 +1,93 @@
+{
+  "login_id": "freddie",
+  "id": 550,
+  "project_name": "demo",
+  "pipeline_name": "testing",
+  "project_id": 64,
+  "pipeline_id": 180,
+  "task_name": "test_invalid_schema_bulk",
+  "task_description": "test_invalid_schema_bulk",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-04T13:37:51.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "ec2_postgres",
+          "object_name": "customer",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "TARGET_customer",
+          "connection_name": "mysql_EC2_Connection",
+          "primary_key": "",
+          "schema_name": "testing",
+          "audit_fields": "YES",
+          "database_name": "testing",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "ec2_postgres",
+          "object_name": "xy_sales_data",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "TARGET_xy_sales_data",
+          "connection_name": "mysql_EC2_Connection",
+          "primary_key": "",
+          "schema_name": "testing",
+          "audit_fields": "YES",
+          "database_name": "testing",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "ec2_postgres",
+          "object_name": "phonen",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "TARGET_phonen",
+          "connection_name": "mysql_EC2_Connection",
+          "primary_key": "",
+          "schema_name": "testing",
+          "audit_fields": "YES",
+          "database_name": "testing",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
