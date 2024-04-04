@@ -1,0 +1,44 @@
+{
+  "login_id": "freddie",
+  "id": 550,
+  "project_name": "demo",
+  "pipeline_name": "testing",
+  "project_id": 64,
+  "pipeline_id": 180,
+  "task_name": "test_duplicate_columns",
+  "task_description": "test_invalid_schema_bulk",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-04T17:07:03.000Z",
+  "source": "PostgreSQL",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "select * from xyz.dim_customer",
+      "schema": "xyz",
+      "chunk_size": 10000,
+      "table_name": "dim_customer",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "ec2_postgres"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "system",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "test_table",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "ec2_oracle",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
