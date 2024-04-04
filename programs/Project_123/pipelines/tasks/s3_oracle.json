@@ -53,7 +53,7 @@
           "connection_name": "remote_server_local",
           "delimiter": "",
           "file_path": "/home/Admin/test/",
-          "task_group": "0",
+          "task_group": "1",
           "object_name": "user3.parquet",
           "object_type": "parquet",
           "skip_header": "1",
