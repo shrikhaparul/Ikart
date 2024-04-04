@@ -1,0 +1,11 @@
+{
+  "project_id": 64,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "connection_csv_ec2_local_server",
+  "connection_details": {
+    "file_name": ".csv",
+    "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+    "updated_by": "prajwal"
+  }
+}
