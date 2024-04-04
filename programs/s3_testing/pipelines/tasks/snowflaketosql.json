@@ -1,0 +1,44 @@
+{
+  "login_id": "swetha",
+  "id": 440,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "snowflaketosql",
+  "task_description": "snowflaketosql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-02T09:01:34.000Z",
+  "source": "Snowflake",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "snowflake_read",
+      "query": "select * from demo.public.test_dup",
+      "schema": "public",
+      "chunk_size": 10000,
+      "table_name": "test_dup",
+      "parameter_type": "Snowflake",
+      "select_columns": "",
+      "connection_name": "connection_snowflake"
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "test_snowflake",
+      "audit_columns": "inactive",
+      "parameter_type": "MSSQL",
+      "connection_name": "connection_mssql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
