@@ -1,0 +1,146 @@
+{
+  "pipeline_id": 180,
+  "project_id": 64,
+  "pipeline_name": "testing_exceptions",
+  "pipeline_cd": null,
+  "pipeline_description": "testing new changes",
+  "is_active": "Y",
+  "tasks_details": {},
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "543",
+      "data": {
+        "label": "543-mysql_testing"
+      },
+      "position": {
+        "x": 50,
+        "y": 2100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "544",
+      "data": {
+        "label": "544-local_mysql"
+      },
+      "position": {
+        "x": 50,
+        "y": 2150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "549",
+      "data": {
+        "label": "549-test_invalid_schema"
+      },
+      "position": {
+        "x": 50,
+        "y": 2200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "550",
+      "data": {
+        "label": "550-test_duplicate_columns"
+      },
+      "position": {
+        "x": 50,
+        "y": 2250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "551",
+      "data": {
+        "label": "551-duplicate_column_bulk"
+      },
+      "position": {
+        "x": 50,
+        "y": 2300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "552",
+      "data": {
+        "label": "552-read_from_invalid_schema"
+      },
+      "position": {
+        "x": 50,
+        "y": 2350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "553",
+      "data": {
+        "label": "553-test_oracle"
+      },
+      "position": {
+        "x": 50,
+        "y": 2400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "554",
+      "data": {
+        "label": "554-test_oracle_write"
+      },
+      "position": {
+        "x": 50,
+        "y": 2450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "555",
+      "data": {
+        "label": "555-test_oracle_w"
+      },
+      "position": {
+        "x": 50,
+        "y": 2500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "556",
+      "data": {
+        "label": "556-duplicate_column_snowflake"
+      },
+      "position": {
+        "x": 50,
+        "y": 2550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": null,
+  "created_dttm": "2024-04-05T06:38:00.935Z",
+  "updated_dttm": "2024-04-05T06:38:00.935Z"
+}
