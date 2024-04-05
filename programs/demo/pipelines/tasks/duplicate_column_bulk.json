@@ -1,0 +1,115 @@
+{
+  "login_id": "freddie",
+  "id": 551,
+  "project_name": "demo",
+  "pipeline_name": "testing_exceptions",
+  "project_id": 64,
+  "pipeline_id": 180,
+  "task_name": "duplicate_column_bulk",
+  "task_description": "duplicate_column_bulk",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-05T05:42:14.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_EC2_Connection",
+          "object_name": "TARGET_customer",
+          "object_type": "Table",
+          "schema_name": "testing",
+          "database_name": "testing",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_TARGET_customer",
+          "connection_name": "mysql_EC2_Connection",
+          "primary_key": "",
+          "schema_name": "testing",
+          "audit_fields": "YES",
+          "database_name": "testing",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_EC2_Connection",
+          "object_name": "TARGET_lkp_column_reference",
+          "object_type": "Table",
+          "schema_name": "testing",
+          "database_name": "testing",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_TARGET_lkp_column_reference",
+          "connection_name": "mysql_EC2_Connection",
+          "primary_key": "",
+          "schema_name": "testing",
+          "audit_fields": "YES",
+          "database_name": "testing",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mysql_EC2_Connection",
+          "object_name": "TARGET_lnk_user_project",
+          "object_type": "Table",
+          "schema_name": "testing",
+          "database_name": "testing",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_TARGET_lnk_user_project",
+          "connection_name": "mysql_EC2_Connection",
+          "primary_key": "",
+          "schema_name": "testing",
+          "audit_fields": "YES",
+          "database_name": "testing",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mysql_EC2_Connection",
+          "object_name": "phonen",
+          "object_type": "Table",
+          "schema_name": "testing",
+          "database_name": "testing",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_phonen",
+          "connection_name": "mysql_EC2_Connection",
+          "primary_key": "",
+          "schema_name": "testing",
+          "audit_fields": "NO",
+          "database_name": "testing",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
