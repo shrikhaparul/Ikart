@@ -1,0 +1,13 @@
+{
+  "id": 180,
+  "project_id": 64,
+  "pipeline_name": "testing_exceptions",
+  "pipeline_cd": null,
+  "pipeline_description": "testing new changes",
+  "pipeline_sequence": 1,
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "created_dttm": "2024-04-02T10:02:34.000Z",
+  "updated_by": "prajwal",
+  "updated_dttm": "2024-04-02T10:02:34.000Z"
+}
