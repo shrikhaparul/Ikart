@@ -33,7 +33,6 @@
         },
         "target": {
           "file_path": "nandishms_test/",
-          "connection_name": "aws_conn_ikart",
           "object_sufix_name": "None"
         }
       }
