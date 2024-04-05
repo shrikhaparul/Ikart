@@ -27,14 +27,13 @@
         "source": {
           "file_path": "newFolder/",
           "connection_name": "aws_conn_ikart",
-          "operation": "move",
+          "operation": "copy",
           "files_filter_name": "*.*",
           "subfolder_included": "yes"
         },
         "target": {
           "file_path": "nandishms_test/",
-          "connection_name": "aws_conn_ikart",
-          "object_prefix_name": "TGT_"
+          "connection_name": "aws_conn_ikart"
         }
       }
     ]
