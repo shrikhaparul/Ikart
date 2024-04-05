@@ -1,0 +1,46 @@
+{
+  "login_id": "freddie",
+  "id": 559,
+  "project_name": "demo",
+  "pipeline_name": "testing_exceptions",
+  "project_id": 64,
+  "pipeline_id": 180,
+  "task_name": "schema_permission",
+  "task_description": "schema_permission",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-05T09:00:10.000Z",
+  "source": "PostgreSQL",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "select * from public.phonenumbertype",
+      "schema": "public",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "phonenumbertype",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "ec2_postgres"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "TEST",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "temp_table",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "ec2_oracle",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
