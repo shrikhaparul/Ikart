@@ -27,7 +27,7 @@
         "source": {
           "file_path": "newFolder/",
           "connection_name": "aws_conn_ikart",
-          "operation": "move",
+          "operation": "copy",
           "files_filter_name": "*.*",
           "subfolder_included": "yes"
         },
