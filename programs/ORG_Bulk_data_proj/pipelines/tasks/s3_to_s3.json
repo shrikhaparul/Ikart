@@ -29,7 +29,7 @@
           "connection_name": "aws_conn_ikart",
           "operation": "move",
           "files_filter_name": "*.*",
-          "subfolder_included": "no"
+          "subfolder_included": "yes"
         },
         "target": {
           "file_path": "nandishms_test/",
