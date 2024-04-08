@@ -1,0 +1,51 @@
+{
+  "login_id": "jjones",
+  "id": 547,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "local_to_local1",
+  "task_description": "local_to_local1",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-03T02:57:35.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "Nan_remote_conn",
+          "delimiter": "",
+          "file_path": "/home/Admin/test/",
+          "task_group": "0",
+          "object_name": "yellow_tripdata_2018-(1) - Copy.parquet",
+          "object_type": "parquet",
+          "skip_header": "1",
+          "files_filter_name": "*.parquet",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "yellow_tripdata_2018",
+          "connection_name": "Oracle",
+          "primary_key": "",
+          "schema_name": "TEST",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
