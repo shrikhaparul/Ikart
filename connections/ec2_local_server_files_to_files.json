@@ -1,0 +1,12 @@
+{
+  "project_id": 73,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "ec2_local_server_files_to_files",
+  "connection_details": {
+    "file_name": "yellow_tripdata_2018-01.parquet",
+    "file_path": "/home/Admin/actions-runner/_work/UI/files/",
+    "created_by": "jjones",
+    "updated_by": "jjones"
+  }
+}
