@@ -1,0 +1,55 @@
+{
+  "login_id": "Puneeth",
+  "id": 561,
+  "project_name": "DQ_Test",
+  "pipeline_name": "file2db_dq_test",
+  "project_id": 75,
+  "pipeline_id": 182,
+  "task_name": "csv_to_oracle",
+  "task_description": "To test DQ for csv to oracle database",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-10T06:33:29.000Z",
+  "source": "Local Server",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_data.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "ec2_local_server",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "TEST",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "dq_test",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "ec2_oracle",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
