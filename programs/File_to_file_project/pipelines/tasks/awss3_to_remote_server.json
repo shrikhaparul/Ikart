@@ -1,0 +1,40 @@
+{
+  "login_id": "jjones",
+  "id": 563,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "awss3_to_remote_server",
+  "task_description": "awss3_to_remote_server",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-11T06:48:24.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "sales/",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "operation": "move",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "file_path": "sales/",
+          "connection_name": "remote_server_connection"
+        }
+      }
+    ]
+  }
+}
