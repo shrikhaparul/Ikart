@@ -1,0 +1,75 @@
+{
+  "login_id": "jjones",
+  "id": 539,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "s3_to_local",
+  "task_description": "s3_to_local",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-03T02:37:50.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "Nan_remote_conn",
+          "delimiter": "",
+          "file_path": "/home/Admin/test/",
+          "task_group": "0",
+          "object_name": "Employ_ss_0.parquet",
+          "object_type": "parquet",
+          "skip_header": "1",
+          "files_filter_name": "*.parquet",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "tgt_Employ_ss_0parquet",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "header": "Y",
+          "connection_name": "Nan_remote_conn",
+          "delimiter": "",
+          "file_path": "/home/Admin/test/",
+          "task_group": "1",
+          "object_name": "caa_employees_2024.parquet",
+          "object_type": "parquet",
+          "skip_header": "1",
+          "files_filter_name": "*.parquet",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "tgt_caa_employees_2024parquet",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
