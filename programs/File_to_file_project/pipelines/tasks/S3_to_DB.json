@@ -1,0 +1,127 @@
+{
+  "login_id": "jjones",
+  "id": 564,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "S3_to_DB",
+  "task_description": "files to db",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-16T16:33:44.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/Currency_202402161257.csv",
+          "task_group": "0",
+          "object_name": "Currency_202402161257.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "Currency_csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "curated",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/ProductInventory_202402202311.csv",
+          "task_group": "0",
+          "object_name": "ProductInventory_202402202311.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "ProductInventory_csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "curated",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/customer_orders_table_202402202314.csv",
+          "task_group": "0",
+          "object_name": "customer_orders_table_202402202314.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "customer_orders_table_csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "curated",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/sample_test.csv",
+          "task_group": "1",
+          "object_name": "sample_test.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "sample_testcsv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "curated",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
