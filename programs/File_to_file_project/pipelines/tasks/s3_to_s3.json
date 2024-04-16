@@ -1,0 +1,54 @@
+{
+  "login_id": "jjones",
+  "id": 540,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "s3_to_s3",
+  "task_description": "s3_to_s3",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-03T02:43:16.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "delimiter": "",
+          "file_path": "csv_test/",
+          "operation": "copy",
+          "task_group": "0",
+          "object_name": "tgt_TBL_CONNECTION_2024.parquet",
+          "object_type": "parquet",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "file_path": "ikart-s3/ikart-s3/demo/sales",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "object_name": "tgt_TBL_CONNECTION_2024parquet",
+          "primary_key": "",
+          "schema_name": "TEST",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "_16_04_2024",
+          "object_prefix_name": "16_04_2024"
+        }
+      }
+    ]
+  }
+}
