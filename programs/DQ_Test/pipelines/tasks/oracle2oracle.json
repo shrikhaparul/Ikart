@@ -1,0 +1,46 @@
+{
+  "login_id": "Puneeth",
+  "id": 548,
+  "project_name": "DQ_Test",
+  "pipeline_name": "db2db_dq_test",
+  "project_id": 75,
+  "pipeline_id": 178,
+  "task_name": "oracle2oracle",
+  "task_description": "oracle2oracle",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-03T17:29:59.000Z",
+  "source": "Oracle",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "select * from TEST.sales_datacsv;",
+      "schema": "TEST",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "sales_datacsv",
+      "parameter_type": "Oracle",
+      "select_columns": null,
+      "connection_name": "ec2_oracle"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "TEST",
+      "operation": "DROP AND CREATE",
+      "table_name": "sales_ingestion",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "ec2_oracle",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
