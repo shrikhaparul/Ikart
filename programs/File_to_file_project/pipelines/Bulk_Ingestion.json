@@ -1,0 +1,134 @@
+{
+  "pipeline_id": 183,
+  "project_id": 73,
+  "pipeline_name": "Bulk_Ingestion",
+  "pipeline_cd": null,
+  "pipeline_description": "showing bulk ingestion functionality",
+  "is_active": "Y",
+  "tasks_details": {
+    "oracle_to_s3": [
+      "Sqlserver_to_postgres"
+    ],
+    "S3_to_postgres": 0,
+    "Remote_to_SQLserver": 0,
+    "Sqlserver_to_postgres": [
+      "Remote_to_SQLserver",
+      "S3_to_postgres"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "564",
+      "data": {
+        "label": "564-S3_to_postgres"
+      },
+      "position": {
+        "x": 50,
+        "y": 6300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "565",
+      "data": {
+        "label": "565-Remote_to_SQLserver"
+      },
+      "position": {
+        "x": 50,
+        "y": 6350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "566",
+      "data": {
+        "label": "566-Sqlserver_to_postgres"
+      },
+      "position": {
+        "x": 50,
+        "y": 6400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "567",
+      "data": {
+        "label": "567-oracle_to_s3"
+      },
+      "position": {
+        "x": 50,
+        "y": 6450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "569",
+      "data": {
+        "label": "569-File_File1"
+      },
+      "position": {
+        "x": 50,
+        "y": 6500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "570",
+      "data": {
+        "label": "570-postgres_to_s3"
+      },
+      "position": {
+        "x": 50,
+        "y": 6550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-565",
+      "source": "0",
+      "target": "565"
+    },
+    {
+      "id": "flow-0-564",
+      "source": "0",
+      "target": "564"
+    },
+    {
+      "id": "flow-565-566",
+      "source": "565",
+      "target": "566"
+    },
+    {
+      "id": "flow-564-566",
+      "source": "564",
+      "target": "566"
+    },
+    {
+      "id": "flow-566-567",
+      "source": "566",
+      "target": "567"
+    }
+  ],
+  "created_dttm": "2024-04-17T08:17:17.773Z",
+  "updated_dttm": "2024-04-17T08:17:17.773Z"
+}
