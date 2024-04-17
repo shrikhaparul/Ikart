@@ -1,0 +1,93 @@
+{
+  "login_id": "jjones",
+  "id": 566,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "Sqlserver_to_postgres",
+  "task_description": "db to db",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"565\", \"564\"",
+  "updated_dttm": "2024-04-17T07:50:26.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "SQLSERVER",
+          "object_name": "ProductDocument",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ProductDocument",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "SQLSERVER",
+          "object_name": "ProductInventory",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ProductInventory",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "SQLSERVER",
+          "object_name": "ProductModel",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ProductModel",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
