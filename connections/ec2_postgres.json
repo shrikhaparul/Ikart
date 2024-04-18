@@ -1,0 +1,15 @@
+{
+  "project_id": 60,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "PostgreSQL",
+  "connection_name": "ec2_postgres",
+  "connection_details": {
+    "username": "postgres",
+    "password": "832af83f94a379c6f0ab136973355ac336ba62bd5949ed952f848444f00ae5",
+    "hostname": "ec2-44-197-70-198.compute-1.amazonaws.com",
+    "database": "postgres",
+    "port": "5432",
+    "created_by": "prajwal",
+    "updated_by": "Puneeth"
+  }
+}
