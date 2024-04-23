@@ -1,0 +1,291 @@
+{
+  "login_id": "pgopi",
+  "id": 389,
+  "project_name": "organization_proj",
+  "pipeline_name": "data_loading",
+  "project_id": 60,
+  "pipeline_id": 150,
+  "task_name": "mssql_extract",
+  "task_description": "extract data from mssql",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"0\"",
+  "updated_dttm": "2024-03-06T06:08:11.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 1000000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "sql_server",
+          "object_name": "nested_json",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "per_nested_json",
+          "connection_name": "mysql",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "10",
+        "source": {
+          "task_group": "0",
+          "connection_name": "sql_server",
+          "object_name": "Employee",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "per_Employee",
+          "connection_name": "mysql",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "11",
+        "source": {
+          "task_group": "0",
+          "connection_name": "sql_server",
+          "object_name": "MSreplication_options",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "per_MSreplication_options",
+          "connection_name": "mysql",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "12",
+        "source": {
+          "task_group": "0",
+          "connection_name": "sql_server",
+          "object_name": "spt_values",
+          "object_type": "View",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "per_spt_values",
+          "connection_name": "mysql",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "sql_server",
+          "object_name": "products_xml",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "per_products_xml",
+          "connection_name": "mysql",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "sql_server",
+          "object_name": "sales_d3",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "per_sales_d3",
+          "connection_name": "mysql",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "sql_server",
+          "object_name": "combined_sales",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "per_combined_sales",
+          "connection_name": "mysql",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "0",
+          "connection_name": "sql_server",
+          "object_name": "string_sales",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "per_string_sales",
+          "connection_name": "mysql",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "0",
+          "connection_name": "sql_server",
+          "object_name": "sales_xml",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "per_sales_xml",
+          "connection_name": "mysql",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "0",
+          "connection_name": "sql_server",
+          "object_name": "sales",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "per_sales",
+          "connection_name": "mysql",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "task_group": "0",
+          "connection_name": "sql_server",
+          "object_name": "sales_d",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "per_sales_d",
+          "connection_name": "mysql",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "task_group": "0",
+          "connection_name": "sql_server",
+          "object_name": "spt_monitor",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "per_spt_monitor",
+          "connection_name": "mysql",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "YES",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
