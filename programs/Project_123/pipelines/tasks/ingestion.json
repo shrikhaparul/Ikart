@@ -18,7 +18,7 @@
   "task": {
     "source": {
       "source_type": "oracle_read",
-      "query": "select * from YELLOW_TRIPDATA_2018.YELLOW_TRIPDATA_2018",
+      "query": "select * from TEST.YELLOW_TRIPDATA_2018",
       "schema": "TEST",
       "file_name": null,
       "file_path": null,
