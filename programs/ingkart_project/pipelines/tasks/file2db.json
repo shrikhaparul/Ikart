@@ -1,0 +1,54 @@
+{
+  "login_id": "shilpi",
+  "id": 520,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "file2db",
+  "task_description": "file2db",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-10T10:51:18.000Z",
+  "source": "Oracle",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "select AIRPORT_FEE, CONGESTION_SURCHARGE, DOLOCATIONID, EXTRA, FARE_AMOUNT, IMPROVEMENT_SURCHARGE, MTA_TAX, PASSENGER_COUNT, PAYMENT_TYPE, PULOCATIONID, RATECODEID, STORE_AND_FWD_FLAG, TIP_AMOUNT, TOLLS_AMOUNT, TOTAL_AMOUNT, TPEP_DROPOFF_DATETIME, TPEP_PICKUP_DATETIME, TRIP_DISTANCE, VENDORID from test.YELLOW_TRIPDATA_2018",
+      "schema": "test",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000000,
+      "table_name": "YELLOW_TRIPDATA_2018",
+      "parameter_type": "Oracle",
+      "select_columns": "AIRPORT_FEE,CONGESTION_SURCHARGE,DOLOCATIONID,EXTRA,FARE_AMOUNT,IMPROVEMENT_SURCHARGE,MTA_TAX,PASSENGER_COUNT,PAYMENT_TYPE,PULOCATIONID,RATECODEID,STORE_AND_FWD_FLAG,TIP_AMOUNT,TOLLS_AMOUNT,TOTAL_AMOUNT,TPEP_DROPOFF_DATETIME,TPEP_PICKUP_DATETIME,TRIP_DISTANCE,VENDORID",
+      "connection_name": "oracle_xepdb1"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "yellow_trip_data",
+      "file_path": "/Excel_folder/concat/",
+      "file_type": "csv",
+      "operation": "CREATE IF NOT EXIST",
+      "encryption": "",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": "",
+      "skip_header": "0",
+      "parameter_type": "AWS S3",
+      "connection_name": "aws_s3_s",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
