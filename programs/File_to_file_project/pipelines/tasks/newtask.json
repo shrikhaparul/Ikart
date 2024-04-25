@@ -1,0 +1,507 @@
+{
+  "login_id": "jjones",
+  "id": 573,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "newtask",
+  "task_description": "kbjds",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-18T12:14:27.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 1000000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "0",
+          "object_name": "AGG_SALES1.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES1csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "10",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "1",
+          "object_name": "AGG_SALES18.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES18csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "11",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "2",
+          "object_name": "AGG_SALES19.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES19csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "12",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "2",
+          "object_name": "AGG_SALES2.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES2csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "13",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "3",
+          "object_name": "AGG_SALES20.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES20csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "14",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "3",
+          "object_name": "AGG_SALES3.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES3csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "15",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "3",
+          "object_name": "AGG_SALES4.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES4csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "16",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "3",
+          "object_name": "AGG_SALES5.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES5csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "17",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "4",
+          "object_name": "AGG_SALES6.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES6csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "18",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "4",
+          "object_name": "AGG_SALES7.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES7csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "19",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "4",
+          "object_name": "AGG_SALES8.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES8csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "0",
+          "object_name": "AGG_SALES10.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES10csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "20",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "4",
+          "object_name": "AGG_SALES9.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES9csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "0",
+          "object_name": "AGG_SALES11.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES11csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "0",
+          "object_name": "AGG_SALES12.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES12csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "1",
+          "object_name": "AGG_SALES13.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES13csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "1",
+          "object_name": "AGG_SALES14.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES14csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "1",
+          "object_name": "AGG_SALES15.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES15csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "2",
+          "object_name": "AGG_SALES16.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES16csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/500mb/",
+          "task_group": "2",
+          "object_name": "AGG_SALES17.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "AGG_SALES17csv",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
