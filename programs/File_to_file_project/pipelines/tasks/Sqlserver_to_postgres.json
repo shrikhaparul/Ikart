@@ -1,0 +1,335 @@
+{
+  "login_id": "jjones",
+  "id": 566,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "Sqlserver_to_postgres",
+  "task_description": "db to db",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"565\", \"564\"",
+  "updated_dttm": "2024-04-17T08:36:25.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Oracle",
+          "object_name": "SHIPPED_FILE_PARQUET",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_new_SHIPPED_FILE_PARQUET",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "YES",
+          "database_name": "postgres",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "10",
+        "source": {
+          "task_group": "7",
+          "connection_name": "Oracle",
+          "object_name": "TGT_EMP_DETAIL",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "TGT_EMP_DETAIL",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "11",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Oracle",
+          "object_name": "TGT_DQ_TEST",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "TGT_DQ_TEST",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "12",
+        "source": {
+          "task_group": "7",
+          "connection_name": "Oracle",
+          "object_name": "STORE",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "STORE",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "13",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Oracle",
+          "object_name": "AGG_SALES1CSV",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_new_AGG_SALES1CSV",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "YES",
+          "database_name": "postgres",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "14",
+        "source": {
+          "task_group": "7",
+          "connection_name": "Oracle",
+          "object_name": "CURRENCY",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_new_CURRENCY",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Oracle",
+          "object_name": "NEW_TGT_TEST_BEVERAGES_FILE1CSV",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "NEW_TGT_TEST_BEVERAGES_FILE1CSV",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "YES",
+          "database_name": "postgres",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Oracle",
+          "object_name": "NEW_TGT_TEST_TGT_DIM_CUSTOMER_PROFILE",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "NEW_TGT_TEST_TGT_DIM_CUSTOMER_PROFILE",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "7",
+          "connection_name": "Oracle",
+          "object_name": "NEW_TGT_AGG_SALESCSV",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_new_NEW_TGT_AGG_SALESCSV",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "YES",
+          "database_name": "postgres",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "7",
+          "connection_name": "Oracle",
+          "object_name": "NEW_TGT_PRODUCTMODEL",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "NEW_TGT_PRODUCTMODEL",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Oracle",
+          "object_name": "NEW_TGT_TEST_TGT_AGG_SALESCSV",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "NEW_TGT_TEST_TGT_AGG_SALESCSV",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "7",
+          "connection_name": "Oracle",
+          "object_name": "NEW_TGT_TEST_AGG_SALES1CSV",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "NEW_TGT_TEST_AGG_SALES1CSV",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "task_group": "7",
+          "connection_name": "Oracle",
+          "object_name": "NEW_TGT_BEVERAGES_FILECSV",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "NEW_TGT_BEVERAGES_FILECSV",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Oracle",
+          "object_name": "DIM_CUSTOMER_PROFILE",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_new_DIM_CUSTOMER_PROFILE",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "YES",
+          "database_name": "postgres",
+          "action_on_table": "TRUNCATE AND LOAD"
+        }
+      }
+    ]
+  }
+}
