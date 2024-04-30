@@ -1,0 +1,49 @@
+{
+  "login_id": "jjones",
+  "id": 566,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "Sqlserver_to_postgres",
+  "task_description": "db to db",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"565\", \"564\"",
+  "updated_dttm": "2024-04-17T08:36:25.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "1",
+          "connection_name": "Oracle",
+          "object_name": "TGT_NEWYELLOW_TRIPDATA3CSV",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "TGT_NEWYELLOW_TRIPDATA3CSV",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
