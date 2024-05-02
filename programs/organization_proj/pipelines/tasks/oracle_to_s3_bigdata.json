@@ -1,0 +1,53 @@
+{
+  "login_id": "pgopi",
+  "id": 418,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "oracle_to_s3_bigdata",
+  "task_description": "oracle_to_s3_bigdata",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-18T06:51:22.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle",
+          "object_name": "YELLOW_TRIPDATA",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "Xe",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_s3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/demo/raw/",
+          "compression": "",
+          "object_name": "YELLOW_TRIPDATA",
+          "audit_fields": "no",
+          "object_sufix_name": "",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      }
+    ]
+  }
+}
