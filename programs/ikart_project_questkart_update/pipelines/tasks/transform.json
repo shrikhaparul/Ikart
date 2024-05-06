@@ -1,0 +1,103 @@
+{
+  "login_id": "jjones123",
+  "id": 343,
+  "project_name": "ikart_project_questkart_update",
+  "pipeline_name": "ikart_pipeline_questkart",
+  "project_id": 59,
+  "pipeline_id": 148,
+  "task_name": "csv_transform",
+  "task_description": "csv tranformation script",
+  "task_type": "Transformation",
+  "task_sequence": "\"0\"",
+  "updated_dttm": "2023-10-05T12:25:08.000Z",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "category": "expression",
+    "sources":{
+        "source_01":{
+            "source_type":"csv",
+            "location":"/home/rperuman/src_files/files/employee_data.csv",
+            "user": null,
+            "password": null,
+            "host": null,
+            "port": null,
+            "database": null,
+            "schema": null,
+            "table_query": null
+        }
+    },
+    "operations": {
+        "expressions": {
+          "transformation_name": "Expression_01",
+          "input_columns": [
+            "employee_id",
+            "department",
+            "join_date",
+            "last_login_timestamp",
+            "salary_initial",
+            "current_salary",
+            "work_location",
+            "updated_location"
+          ],
+          "output_columns": [
+            "employee_id",
+            "department",
+            "join_date",
+            "last_login_timestamp",
+            "initial_salary",
+            "current_salary",
+            "work_location",
+            "updated_location",
+            "Employee_name",
+            "salary_hike",
+            "join_Month&Year",
+            "Department_emp_info" 
+          ],
+          "expression_list": [
+            {
+              "input_column": "updated_location",
+              "output_column": "updated_location",
+              "operator_type": "Conditional",
+              "operator_name": "coalesce",
+              "operation": "coalesce(updated_location,work_location)"
+            },
+            {
+              "input_column": "",
+              "output_column": "Employee_name",
+              "operator_type": "String",
+              "operator_name": "concat",
+              "operation": "concat(first_name,last_name)"
+            },
+            {
+              "input_column": "",
+              "output_column": "salary_hike",
+              "operator_type": "Math",
+              "operator_name": "subtraction",
+              "operation": "(current_salary-salary_initial)"
+            },
+            {
+              "input_column": "",
+              "output_column": "join_Month&Year",
+              "operator_type": "Data Type Formatting",
+              "operator_name": "to_char",
+              "operation": "to_char(join_date,'MM-YYYY')"
+            },
+            {
+              "input_column": "",
+              "output_column": "Department_emp_info",
+              "operator_type": "Window Function",
+              "operator_name": "row_number",
+              "operation": "ROW_NUMBER() OVER(PARTITION BY department ORDER BY salary_initial)"
+            }
+          ]
+        }
+      },
+    "destination":{
+        "destination_type": "csv",
+        "location": "/home/rperuman/src_files/files/expression.csv"
+    }
+
+}
