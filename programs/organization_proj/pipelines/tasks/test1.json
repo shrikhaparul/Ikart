@@ -1,0 +1,53 @@
+{
+  "login_id": "prajwal",
+  "id": 379,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "test1",
+  "task_description": "aws to mysq;",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-01-31T10:25:35.000Z",
+  "source": "AWS S3",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "green_tripdata_2018-01.parquet",
+      "file_path": "parquet_files/",
+      "file_type": "parquet",
+      "chunk_size": 100000,
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": "\\",
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "AWS S3",
+      "select_columns": null,
+      "connection_name": "aws_connection_test"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "testing",
+      "operation": "replace",
+      "table_name": "test_table",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "ec2_mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
