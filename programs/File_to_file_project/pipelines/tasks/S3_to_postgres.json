@@ -1,0 +1,50 @@
+{
+  "login_id": "jjones",
+  "id": 564,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "S3_to_postgres",
+  "task_description": "csv files to postgres",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"567\"",
+  "updated_dttm": "2024-04-17T08:36:25.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "delimiter": "",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "file_path": "Excel_folder/files/Output_data/tgt_REGION_TABLE_07052024_0.parquet",
+          "task_group": "1",
+          "object_name": "tgt_REGION_TABLE_07052024_0.parquet",
+          "object_type": "parquet",
+          "skip_header": "1",
+          "files_filter_name": "*.parquet",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "REGION_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
