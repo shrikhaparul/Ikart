@@ -1,0 +1,50 @@
+{
+  "pipeline_id": 190,
+  "project_id": 76,
+  "pipeline_name": "proto_pipeline_1",
+  "pipeline_cd": null,
+  "pipeline_description": "proto_pipeline_1",
+  "is_active": "Y",
+  "tasks_details": {},
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "578",
+      "data": {
+        "label": "578-task1_test"
+      },
+      "position": {
+        "x": 50,
+        "y": 7400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "579",
+      "data": {
+        "label": "579-test_task_2"
+      },
+      "position": {
+        "x": 50,
+        "y": 7450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": null,
+  "created_dttm": "2024-05-07T08:12:43.675Z",
+  "updated_dttm": "2024-05-07T08:12:43.675Z"
+}
