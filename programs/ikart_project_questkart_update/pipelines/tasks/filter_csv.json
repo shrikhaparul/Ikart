@@ -1,0 +1,121 @@
+{
+  "login_id": "jjones123",
+  "id": 343,
+  "project_name": "ikart_project_questkart_update",
+  "pipeline_name": "ikart_pipeline_questkart",
+  "project_id": 59,
+  "pipeline_id": 148,
+  "task_name": "filter_csv",
+  "task_description": "filtering csv files",
+  "task_type": "Transformation",
+  "task_sequence": "\"0\"",
+  "updated_dttm": "2023-10-05T12:25:08.000Z",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "category": "filter",
+    "sources": {
+      "source_01": {
+        "source_type": "csv",
+        "location": "/home/rperuman/src_files/files/departments.csv",
+        "user": null,
+        "password": null,
+        "host": null,
+        "port": null,
+        "database": null, 
+        "schema": null,
+        "table_query": null
+      }
+    },
+    "operations": {
+      "filter": {
+        "Operation_01": {
+          "column": " manager_id (Number)",
+          "operator": "isnull",
+          "value": " "
+        },
+        "Operation_02": {
+          "column": " department_id (Number)",
+          "operator": "notnull",
+          "value": " "
+        },
+        "Group_01": {
+          "operator": "or",
+          "Condition_01": {
+            "column": " manager_id (Number)",
+            "operator": "isnull",
+            "value": " "
+          },
+          "Condition_02": {
+            "column": " department_id (Number)",
+            "operator": "notnull",
+            "value": " "
+          }
+        },
+        "Group_02": {
+          "operator": "and",
+          "Condition_01": {
+            "operator": "or",
+            "Condition_01": {
+              "column": " manager_id (Number)",
+              "operator": "isnull",
+              "value": " "
+            },
+            "Condition_02": {
+              "column": " department_id (Number)",
+              "operator": "notnull",
+              "value": " "
+            }
+          },
+          "Condition_02": {
+            "column": " manager_id (Number)",
+            "operator": "isnull",
+            "value": " "
+          }
+        },
+        "Group_03": {
+          "operator": "|",
+          "Condition_01": {
+            "operator": "&",
+            "Condition_01": {
+              "operator": "|",
+              "Condition_01": {
+                "column": " manager_id (Number)",
+                "operator": "isnull",
+                "value": " "
+              },
+              "Condition_02": {
+                "column": " department_id (Number)",
+                "operator": "not_between",
+                "value": "(1,3)"
+              }
+            },
+            "Condition_02": {
+              "column": " manager_id (Number)",
+              "operator": "notnull",
+              "value": " "
+            }
+          },
+          "Condition_02": {
+            "operator": "|",
+            "Condition_01": {
+              "column": " manager_id (Number)",
+              "operator": "isnull",
+              "value": " "
+            },
+            "Condition_02": {
+              "column": " department_id (Number)",
+              "operator": "isnull",
+              "value": " "
+            }
+          }
+        }
+      }
+    },
+    "destination": {
+        "destination_type": "csv",
+        "location": "/home/rperuman/src_files/files/filter_data.csv"
+    }
+  }
