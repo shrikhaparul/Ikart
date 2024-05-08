@@ -1,0 +1,53 @@
+{
+  "login_id": "jjones",
+  "id": 579,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "S3_to_DB",
+  "task_description": "d",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-05-08T09:54:48.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/Output_data/oracle/Target_EMPLOYEE_DETAILS_08052024.csv",
+          "operation": "move",
+          "task_group": "0",
+          "object_name": "Target_EMPLOYEE_DETAILS_08052024.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "object_name": "Target_EMPLOYEE_DETAILScdv",
+          "connection_name": "Oracle",
+          "primary_key": "",
+          "schema_name": "SYS",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
