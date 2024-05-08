@@ -76,11 +76,11 @@
           }
         },
         "Group_03": {
-          "operator": "|",
+          "operator": "or",
           "Condition_01": {
-            "operator": "&",
+            "operator": "and",
             "Condition_01": {
-              "operator": "|",
+              "operator": "or",
               "Condition_01": {
                 "column": " manager_id (Number)",
                 "operator": "isnull",
@@ -88,18 +88,18 @@
               },
               "Condition_02": {
                 "column": " department_id (Number)",
-                "operator": "between",
-                "value": "(1,3)"
+                "operator": "notnull",
+                "value": " "
               }
             },
             "Condition_02": {
               "column": " manager_id (Number)",
-              "operator": "notnull",
+              "operator": "isnull",
               "value": " "
             }
           },
           "Condition_02": {
-            "operator": "|",
+            "operator": "or",
             "Condition_01": {
               "column": " manager_id (Number)",
               "operator": "isnull",
@@ -107,7 +107,7 @@
             },
             "Condition_02": {
               "column": " department_id (Number)",
-              "operator": "isnull",
+              "operator": "notnull",
               "value": " "
             }
           }
