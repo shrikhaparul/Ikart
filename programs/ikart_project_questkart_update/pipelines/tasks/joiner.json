@@ -31,8 +31,8 @@
             "join_type":"inner",
             "left_source":"source_01",
             "right_source":"source_02",
-            "left_columns":["department_id_y"],
-            "right_columns":["department_id_y"]
+            "left_columns":["department_id"],
+            "right_columns":["department_id"]
         }
     },
     "destination": {
