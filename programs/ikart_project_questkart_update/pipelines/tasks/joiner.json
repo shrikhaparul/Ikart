@@ -19,11 +19,11 @@
     "sources": {
         "source_01": {
             "source_type": "parquet",
-            "location": "/home/rperuman/src_files/files/empployees.csv"
+            "location": "/home/rperuman/src_files/files/employees.csv"
         },
         "source_02": {
             "source_type": "xml",
-            "location": "/home/rperuman/src_files/files/department.csv"
+            "location": "/home/rperuman/src_files/files/departments.csv"
         }
     },
     "operations":{
