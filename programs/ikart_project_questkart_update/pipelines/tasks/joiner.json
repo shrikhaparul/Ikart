@@ -18,11 +18,11 @@
   "category": "joiner",
     "sources": {
         "source_01": {
-            "source_type": "parquet",
+            "source_type": "csv",
             "location": "/home/rperuman/src_files/files/employees.csv"
         },
         "source_02": {
-            "source_type": "xml",
+            "source_type": "csv",
             "location": "/home/rperuman/src_files/files/departments.csv"
         }
     },
