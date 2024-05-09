@@ -1,0 +1,43 @@
+{
+  "login_id": "jjones123",
+  "id": 343,
+  "project_name": "ikart_project_questkart_update",
+  "pipeline_name": "ikart_pipeline_questkart",
+  "project_id": 59,
+  "pipeline_id": 148,
+  "task_name": "joiner",
+  "task_description": "testing joiner transformation",
+  "task_type": "Transformation",
+  "task_sequence": "\"0\"",
+  "updated_dttm": "2023-10-05T12:25:08.000Z",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "category": "joiner",
+    "sources": {
+        "source_01": {
+            "source_type": "parquet",
+            "location": "/home/rperuman/src_files/files/merged_data_1.parquet"
+        },
+        "source_02": {
+            "source_type": "xml",
+            "location": "/home/rperuman/src_files/files/merged_data_1.xml"
+        }
+    },
+    "operations":{
+        "join_01":{
+            "join_type":"inner",
+            "left_source":"source_01",
+            "right_source":"source_02",
+            "left_columns":["department_id"],
+            "right_columns":["department_id"]
+        }
+    },
+    "destination": {
+        "destination_type": "csv",
+        "location": "/home/rperuman/src_files/files/join_data.csv"
+    }
+}
+
