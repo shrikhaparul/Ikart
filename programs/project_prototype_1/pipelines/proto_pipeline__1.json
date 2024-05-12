@@ -1,0 +1,13 @@
+{
+  "id": 190,
+  "project_id": 76,
+  "pipeline_name": "proto_pipeline__1",
+  "pipeline_cd": null,
+  "pipeline_description": "proto_pipeline_1",
+  "pipeline_sequence": 5,
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "created_dttm": "2024-05-07T07:47:45.000Z",
+  "updated_by": "prajwal",
+  "updated_dttm": "2024-05-07T07:47:45.000Z"
+}
