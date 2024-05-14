@@ -1,0 +1,44 @@
+{
+  "login_id": "jjones",
+  "id": 507,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "Data_Quality_File_Conversions",
+  "project_id": 68,
+  "pipeline_id": 168,
+  "task_name": "DB_restapi",
+  "task_description": "kb",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-05-14T13:35:08.000Z",
+  "source": "Oracle",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "select ANNUAL_SALARY, BIRTH_DATE, CRTD_BY, CRTD_DTTM, EMPLOYMENT_STATUS, FIRST_NAME, GENDER, LAST_NAME, NUMBER_DATA, TAX_FILE_NO, UPDT_BY, UPDT_DTTM from TEST.EMPLOYEE_DETAILS",
+      "schema": "TEST",
+      "chunk_size": 10000,
+      "table_name": "EMPLOYEE_DETAILS",
+      "parameter_type": "Oracle",
+      "select_columns": "ANNUAL_SALARY,BIRTH_DATE,CRTD_BY,CRTD_DTTM,EMPLOYMENT_STATUS,FIRST_NAME,GENDER,LAST_NAME,NUMBER_DATA,TAX_FILE_NO,UPDT_BY,UPDT_DTTM",
+      "connection_name": "oracle_xe"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "demo",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "postgres_table",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "P_postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
