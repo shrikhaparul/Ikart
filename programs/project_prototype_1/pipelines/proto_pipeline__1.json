@@ -1,0 +1,100 @@
+{
+  "pipeline_id": 190,
+  "project_id": 76,
+  "pipeline_name": "proto_pipeline__1",
+  "pipeline_cd": null,
+  "pipeline_description": "proto_pipeline_1",
+  "is_active": "Y",
+  "tasks_details": {
+    "task1_test": 0,
+    "test_task_2": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "578",
+      "data": {
+        "label": "578-task1_test"
+      },
+      "position": {
+        "x": 50,
+        "y": 7400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "579",
+      "data": {
+        "label": "579-test_task_2"
+      },
+      "position": {
+        "x": 50,
+        "y": 7450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "581",
+      "data": {
+        "label": "581-test_bulkingestion"
+      },
+      "position": {
+        "x": 50,
+        "y": 7500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "583",
+      "data": {
+        "label": "583-test_seatunnel"
+      },
+      "position": {
+        "x": 50,
+        "y": 7550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "584",
+      "data": {
+        "label": "584-testing1_bulk"
+      },
+      "position": {
+        "x": 50,
+        "y": 7600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-578",
+      "source": "0",
+      "target": "578"
+    },
+    {
+      "id": "flow-0-579",
+      "source": "0",
+      "target": "579"
+    }
+  ],
+  "created_dttm": "2024-05-15T20:40:32.779Z",
+  "updated_dttm": "2024-05-15T20:40:32.779Z"
+}
