@@ -1,0 +1,44 @@
+{
+  "login_id": "prajwal",
+  "id": 588,
+  "project_name": "project_prototype_1",
+  "pipeline_name": "test_new_pipe_1",
+  "project_id": 76,
+  "pipeline_id": 191,
+  "task_name": "snow_to_mysql",
+  "task_description": "snow_to_mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-05-16T13:25:59.000Z",
+  "source": "Snowflake",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "snowflake_read",
+      "query": "select * from DEMO.PUBLIC.SNOWFLAKE_TAB",
+      "schema": "DEMO",
+      "chunk_size": 10000,
+      "table_name": "PUBLIC.SNOWFLAKE_TAB",
+      "parameter_type": "Snowflake",
+      "select_columns": null,
+      "connection_name": "snowflake_connection_1"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "tgt_snowflake_tab",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_local_ikart",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
