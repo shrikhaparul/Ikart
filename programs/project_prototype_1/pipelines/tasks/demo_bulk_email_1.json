@@ -1,0 +1,159 @@
+{
+  "login_id": "prajwal",
+  "id": 587,
+  "project_name": "project_prototype_1",
+  "pipeline_name": "test_new_pipe_1",
+  "project_id": 76,
+  "pipeline_id": 191,
+  "task_name": "demo_bulk_email_1",
+  "task_description": "demo_bulk_email_1",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-05-16T09:16:24.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mysql_connection_con",
+          "object_name": "tbl_connection_detail",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_tbl_connection_detail",
+          "connection_name": "mysql_local_ikart",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "NO",
+          "database_name": "ikart",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mysql_connection_con",
+          "object_name": "tbl_pipeline",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_tbl_pipeline",
+          "connection_name": "mysql_local_ikart",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "NO",
+          "database_name": "ikart",
+          "action_on_table": "DROP AND CREATE"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mysql_connection_con",
+          "object_name": "tbl_program",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_tbl_program",
+          "connection_name": "mysql_local_ikart",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "NO",
+          "database_name": "ikart",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mysql_connection_con",
+          "object_name": "tbl_project",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_tbl_project",
+          "connection_name": "mysql_local_ikart",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "NO",
+          "database_name": "ikart",
+          "action_on_table": "DROP AND CREATE"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mysql_connection_con",
+          "object_name": "tbl_task",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_tbl_task",
+          "connection_name": "mysql_local_ikart",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "NO",
+          "database_name": "ikart",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mysql_connection_con",
+          "object_name": "tbl_task_parameter",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_tbl_task_parameter",
+          "connection_name": "mysql_local_ikart",
+          "primary_key": "",
+          "schema_name": "ikart",
+          "audit_fields": "NO",
+          "database_name": "ikart",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
