@@ -1,0 +1,81 @@
+{
+  "login_id": "shilpi",
+  "id": 424,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "dbs3",
+  "task_description": "dbs3",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-20T17:21:08.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "4",
+          "connection_name": "mysql_shilpi",
+          "object_name": "new_sales123",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": "",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "gzip",
+          "object_name": "new_sales123",
+          "audit_fields": "yes",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "g_",
+          "target_file_format": "json",
+          "target_max_record_count": ""
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "4",
+          "connection_name": "mysql_shilpi",
+          "object_name": "sales",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "localserver_shilpi",
+          "encoding": "utf-8",
+          "delimiter": "",
+          "file_path": "/home/shilpi/data/testfile/",
+          "compression": "gzip",
+          "object_name": "sales",
+          "audit_fields": "yes",
+          "object_sufix_name": "%MM%",
+          "object_prefix_name": "g_",
+          "target_file_format": "json",
+          "target_max_record_count": ""
+        }
+      }
+    ]
+  }
+}
