@@ -1,0 +1,106 @@
+{
+  "pipeline_id": 193,
+  "project_id": 77,
+  "pipeline_name": "test_pipeline_1",
+  "pipeline_cd": null,
+  "pipeline_description": "test_pipeline ",
+  "is_active": "Y",
+  "tasks_details": {
+    "bulk_test_mail_1": 0,
+    "test_mail_send_1": 0,
+    "ingest_test_mail_1": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "586",
+      "data": {
+        "label": "586-mys_to_mys_test"
+      },
+      "position": {
+        "x": 50,
+        "y": 7800
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "587",
+      "data": {
+        "label": "587-bulk_test_mail_1"
+      },
+      "position": {
+        "x": 50,
+        "y": 7850
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "588",
+      "data": {
+        "label": "588-ingest_test_mail_1"
+      },
+      "position": {
+        "x": 50,
+        "y": 7900
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "589",
+      "data": {
+        "label": "589-test_bulkingestion_email_1"
+      },
+      "position": {
+        "x": 50,
+        "y": 7950
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "590",
+      "data": {
+        "label": "590-test_mail_send_1"
+      },
+      "position": {
+        "x": 50,
+        "y": 8000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-587",
+      "source": "0",
+      "target": "587"
+    },
+    {
+      "id": "flow-0-588",
+      "source": "0",
+      "target": "588"
+    },
+    {
+      "id": "flow-0-590",
+      "source": "0",
+      "target": "590"
+    }
+  ],
+  "created_dttm": "2024-05-16T05:41:57.042Z",
+  "updated_dttm": "2024-05-16T05:41:57.042Z"
+}
