@@ -1,0 +1,71 @@
+{
+  "login_id": "prajwal",
+  "id": 590,
+  "project_name": "test_project_1",
+  "pipeline_name": "test_pipeline_1",
+  "project_id": 77,
+  "pipeline_id": 193,
+  "task_name": "test_mail_send_1",
+  "task_description": "test_mail_send_1",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-05-16T05:39:36.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_connection_con",
+          "object_name": "lkp_column_reference",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "t_lkp_column_reference",
+          "connection_name": "mysql_EC2_Connection",
+          "primary_key": "",
+          "schema_name": "testing",
+          "audit_fields": "NO",
+          "database_name": "testing",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_connection_con",
+          "object_name": "tbl_connection",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "t_tbl_connection",
+          "connection_name": "mysql_EC2_Connection",
+          "primary_key": "",
+          "schema_name": "testing",
+          "audit_fields": "NO",
+          "database_name": "testing",
+          "action_on_table": "DROP AND CREATE"
+        }
+      }
+    ]
+  }
+}
