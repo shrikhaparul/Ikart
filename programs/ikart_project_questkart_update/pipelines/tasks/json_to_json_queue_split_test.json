@@ -1,0 +1,57 @@
+{
+  "login_id": "jjones",
+  "id": 425,
+  "project_name": "ikart_project_questkart_update",
+  "pipeline_name": "ikart_pipeline_questkart",
+  "project_id": 59,
+  "pipeline_id": 148,
+  "task_name": "json_to_json_queue_split_test",
+  "task_description": "json_to_json_queue_split_test",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-05-16T09:34:46.000Z",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "json_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "SalesData.json",
+      "file_path": "/home/rperuman/src_files/jsons/",
+      "file_type": "json",
+      "chunk_size": 100,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "json_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "queue.json",
+      "file_path": "/home/rperuman/src_files/files/",
+      "file_type": "json",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver",
+      "target_max_record_count": 100
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
