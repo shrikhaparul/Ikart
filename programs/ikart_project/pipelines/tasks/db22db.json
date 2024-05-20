@@ -1,0 +1,51 @@
+{
+  "login_id": "shilpi",
+  "id": 431,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "db22db",
+  "task_description": "db22db",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-05-14T11:22:07.000Z",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select ADDRESSLINE1, ADDRESSLINE2, CITY, CONTACTFIRSTNAME, CONTACTLASTNAME, COUNTRY, CRTD_BY, CRTD_DTTM, CUSTOMERNAME, DEALSIZE, MONTH_ID, MSRP, ORDERDATE, ORDERLINENUMBER, ORDERNUMBER, PHONE, POSTALCODE, PRICEEACH, PRODUCTCODE, PRODUCTLINE, QTR_ID, QUANTITYORDERED, SALES, STATE, STATUS, TERRITORY, UPDT_BY, UPDT_DTTM, YEAR_ID from ikart.sales",
+      "schema": "ikart",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 1000,
+      "table_name": "sales",
+      "parameter_type": "MySQL",
+      "select_columns": "ADDRESSLINE1,ADDRESSLINE2,CITY,CONTACTFIRSTNAME,CONTACTLASTNAME,COUNTRY,CRTD_BY,CRTD_DTTM,CUSTOMERNAME,DEALSIZE,MONTH_ID,MSRP,ORDERDATE,ORDERLINENUMBER,ORDERNUMBER,PHONE,POSTALCODE,PRICEEACH,PRODUCTCODE,PRODUCTLINE,QTR_ID,QUANTITYORDERED,SALES,STATE,STATUS,TERRITORY,UPDT_BY,UPDT_DTTM,YEAR_ID",
+      "connection_name": "mysql_shilpi"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales12.csv",
+      "file_path": "/home/shilpi/data/testfile/",
+      "file_type": "csv",
+      "quote_char": "",
+      "compression": "gzip",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_shilpi",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
