@@ -1,0 +1,194 @@
+{
+  "pipeline_id": 165,
+  "project_id": 61,
+  "pipeline_name": "dq_testing",
+  "pipeline_cd": null,
+  "pipeline_description": "to test dq",
+  "is_active": "Y",
+  "tasks_details": {
+    "task1_fordq": 0,
+    "pg_to_local": [
+      "bad_records_task",
+      "task1_fordq"
+    ],
+    "bad_records_task": [
+      "bad_records_check"
+    ],
+    "bad_records_check": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "449",
+      "data": {
+        "label": "449-task1_fordq"
+      },
+      "position": {
+        "x": 50,
+        "y": 5000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "471",
+      "data": {
+        "label": "471-pg_to_local"
+      },
+      "position": {
+        "x": 50,
+        "y": 5050
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "473",
+      "data": {
+        "label": "473-bad_records_check"
+      },
+      "position": {
+        "x": 50,
+        "y": 5100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "474",
+      "data": {
+        "label": "474-bad_records_task"
+      },
+      "position": {
+        "x": 50,
+        "y": 5150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "475",
+      "data": {
+        "label": "475-db_to_db_dq_checks"
+      },
+      "position": {
+        "x": 50,
+        "y": 5200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "477",
+      "data": {
+        "label": "477-s3_to_s3_test_dq"
+      },
+      "position": {
+        "x": 50,
+        "y": 5250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "478",
+      "data": {
+        "label": "478-remote_to_remote_test_dq"
+      },
+      "position": {
+        "x": 50,
+        "y": 5300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "479",
+      "data": {
+        "label": "479-csv_to_mysql"
+      },
+      "position": {
+        "x": 50,
+        "y": 5350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "483",
+      "data": {
+        "label": "483-pg_to_pg_dq_test"
+      },
+      "position": {
+        "x": 50,
+        "y": 5400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "484",
+      "data": {
+        "label": "484-sqlserver_2_sqlserver_dqtest"
+      },
+      "position": {
+        "x": 50,
+        "y": 5450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "485",
+      "data": {
+        "label": "485-oracle_test"
+      },
+      "position": {
+        "x": 50,
+        "y": 5500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-473",
+      "source": "0",
+      "target": "473"
+    },
+    {
+      "id": "flow-0-449",
+      "source": "0",
+      "target": "449"
+    },
+    {
+      "id": "flow-474-471",
+      "source": "474",
+      "target": "471"
+    },
+    {
+      "id": "flow-449-471",
+      "source": "449",
+      "target": "471"
+    },
+    {
+      "id": "flow-473-474",
+      "source": "473",
+      "target": "474"
+    }
+  ],
+  "created_dttm": "2024-05-21T08:20:04.064Z",
+  "updated_dttm": "2024-05-21T08:20:04.064Z"
+}
