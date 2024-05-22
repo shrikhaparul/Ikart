@@ -1,0 +1,57 @@
+{
+  "login_id": "jjones",
+  "id": 401,
+  "project_name": "ORG_Bulk_data_proj",
+  "pipeline_name": "ORG_Bulk_data_pipe",
+  "project_id": 62,
+  "pipeline_id": 159,
+  "task_name": "ORG_Ing_task",
+  "task_description": "task",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "79c86239-0474-4c8b-87d3-af66ec06744c",
+  "status": "Success",
+  "updated_dttm": "2024-02-16T05:40:45.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales.csv",
+      "file_path": "/home/madhu/Ingestion_code2/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "encryption": "no",
+      "quote_char": "\"",
+      "compression": "gzip",
+      "escape_char": "\\n",
+      "skip_footer": 0,
+      "skip_header": 1,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local_conn_org",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "config",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "tbl_neww",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "MYSQL_new_conn",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
