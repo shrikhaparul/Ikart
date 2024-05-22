@@ -19,7 +19,6 @@ PROCESS_ABORT = "Process Aborted."
 project_name = args.project_name
 password=args.password
 login_id=args.user
-
 def create_folder_structure(prj_nm, path: str, paths_data: str):
     """Function to create program folder structure in server"""
     try:
@@ -69,7 +68,7 @@ def required_files_download(paths_data:str,repo_name,branch):
                     'engine_code.py').exists():
             try:
                 main_logger.info("downloading of engine_code started...")
-                download_file_from_github(repo_name,auth_token,branch, file_path=paths_data["gh_engine_path"],
+                download_file_from_github(repo_name,branch, file_path=paths_data["gh_engine_path"],
                                     save_dir=path_src+paths_data["engine_path"])
             except Exception as error:
                 main_logger.info("error in downloading of engine_code %s", str(error))
@@ -80,7 +79,7 @@ def required_files_download(paths_data:str,repo_name,branch):
         ########### To download checks_mapping json from git ##########
         if not Path(path_src+ paths_data["dq_scripts_path"]+'checks_mapping.json').exists():
             main_logger.info("downloading of checks_mapping json started...")
-            download_file_from_github(repo_name,auth_token,branch, file_path=paths_data[
+            download_file_from_github(repo_name,branch, file_path=paths_data[
             "gh_checks_mapping_path"],save_dir =path_src+ paths_data["dq_scripts_path"])
             main_logger.info("downloading of checks_mapping json completed!")
         # else:
@@ -90,7 +89,7 @@ def required_files_download(paths_data:str,repo_name,branch):
         ########### To download mapping json from git ############
         if not Path(path_src+paths_data["engine_path"]+'mapping'+JSON).exists():
             main_logger.info("downloading of mapping json started...")
-            download_file_from_github(repo_name,auth_token,branch, file_path=paths_data[
+            download_file_from_github(repo_name,branch, file_path=paths_data[
                 "gh_mapping_path"],save_dir =path_src+paths_data["engine_path"])
             main_logger.info("downloading of mapping json completed!")
         # else:
@@ -99,7 +98,7 @@ def required_files_download(paths_data:str,repo_name,branch):
         ########### To download definitions_qc from git ##########
         if not Path(path_src+paths_data["dq_scripts_path"]+'definitions_qc.py').exists():
             main_logger.info("downloading of definitions_qc code started...")
-            download_file_from_github(repo_name,auth_token,branch, file_path=paths_data[
+            download_file_from_github(repo_name,branch, file_path=paths_data[
                 "gh_definitions_qc_path"],save_dir =path_src+paths_data["dq_scripts_path"])
             main_logger.info("downloading of definitions_qc code completed!")
         # else:
@@ -110,7 +109,7 @@ def required_files_download(paths_data:str,repo_name,branch):
         if not Path(path_src+paths_data["ingestion_path"]+'utility.py').exists():
             try:
                 main_logger.info("downloading of utility code started...")
-                download_file_from_github(repo_name,auth_token,branch, file_path=paths_data[
+                download_file_from_github(repo_name,branch, file_path=paths_data[
                     "gh_utility_path"],save_dir =path_src+paths_data["ingestion_path"])
                 main_logger.info("downloading of utility code completed!")
             except Exception as error:
@@ -123,7 +122,7 @@ def required_files_download(paths_data:str,repo_name,branch):
         if not Path(path_src+paths_data["ingestion_path"]+'connections.py').exists():
             try:
                 main_logger.info("downloading of connections code started...")
-                download_file_from_github(repo_name,auth_token,branch, file_path=paths_data[
+                download_file_from_github(repo_name,branch, file_path=paths_data[
                     "gh_connections_path"],save_dir =path_src+paths_data["ingestion_path"])
                 main_logger.info("downloading of connections code completed!")
             except Exception as error:
@@ -135,7 +134,7 @@ def required_files_download(paths_data:str,repo_name,branch):
         ############# To download orchestration code from git ##############
         if not Path(path_src+paths_data["orchestration_path"]+'orchestrate.py').exists():
             main_logger.info("downloading of orchestarte code started...")
-            download_file_from_github(repo_name,auth_token,branch, file_path=paths_data[
+            download_file_from_github(repo_name,branch, file_path=paths_data[
                 "gh_orchestrate_path"],save_dir =path_src+paths_data["orchestration_path"])
             main_logger.info("downloading of orchestarte code completed!")
         # else:
@@ -173,7 +172,6 @@ def get_conn_subtype_type(config_path:str) -> dict:
 def download_task_files(prj_nm,task_name:str, config_path:str, repo_name,branch):
     """function to download source_connection, target_connection, source.py, target.py
     files from github to server for execution"""
-    print(auth_token,"auth_tokenauth_tokenauth_tokenauth_tokenauth_tokenmmmmmmmmmmmmmmmmm")
     try:
         homepath = str(Path(config_path['folder_path']).expanduser())
         task_logger.info("entered into downloading task related files")
@@ -181,7 +179,7 @@ def download_task_files(prj_nm,task_name:str, config_path:str, repo_name,branch)
         try:
             # if not Path(f'{homepath}{"/"}{config_path["local_repo"]}{config_path["programs"]}'
             # f'{prj_nm}{config_path["task_json_path"]}{task_name}{JSON}').exists():
-            download_file_from_github(repo_name,auth_token, branch,
+            download_file_from_github(repo_name, branch,
             file_path=f'{config_path["programs"]}{prj_nm}{config_path["gh_tasks_path"]}'
             f'{task_name}{JSON}',
             save_dir = f'{homepath}{"/"}{config_path["local_repo"]}'
@@ -210,7 +208,7 @@ def download_task_files(prj_nm,task_name:str, config_path:str, repo_name,branch)
             if task_json['task_type'] == "SQL Execution":
                 source_conn_file_name = task_json['sql_execution']['connection_name']
                 try:
-                    download_file_from_github(repo_name,auth_token, branch,
+                    download_file_from_github(repo_name, branch,
                     file_path = f'{config_path["gh_connections_json_path"]}'
                     f'{source_conn_file_name}{JSON}',
                     save_dir = f'{config_path["folder_path"]}{config_path["conn_path"]}')
@@ -228,7 +226,7 @@ def download_task_files(prj_nm,task_name:str, config_path:str, repo_name,branch)
                     # if not Path(f'{config_path["folder_path"]}{config_path["conn_path"]}'
                     # f'{source_conn_file_name}{JSON}').exists():
                     try:
-                        download_file_from_github(repo_name,auth_token, branch,
+                        download_file_from_github(repo_name, branch,
                         file_path = f'{config_path["gh_connections_json_path"]}'
                         f'{source_conn_file_name}{JSON}',
                         save_dir = f'{config_path["folder_path"]}{config_path["conn_path"]}')
@@ -240,7 +238,7 @@ def download_task_files(prj_nm,task_name:str, config_path:str, repo_name,branch)
                 if (task_json['task']['target']['connection_name'])  not in ('localserver'):
                     target_conn_file_name = task_json['task']['target']['connection_name']
                     try:
-                        download_file_from_github(repo_name,auth_token, branch,
+                        download_file_from_github(repo_name, branch,
                         file_path = f'{config_path["gh_connections_json_path"]}'
                         f'{target_conn_file_name}{JSON}',
                         save_dir = f'{config_path["folder_path"]}{config_path["conn_path"]}')
@@ -262,7 +260,7 @@ def download_task_files(prj_nm,task_name:str, config_path:str, repo_name,branch)
 
                 if not Path(path_src+config_path["ingestion_path"]+source_file_name).exists():
                     try:
-                        download_file_from_github(repo_name,auth_token, branch,
+                        download_file_from_github(repo_name, branch,
                         file_path = config_path["gh_source_ingestion_path"]+source_file_name,
                         save_dir = path_src+config_path["ingestion_path"])
                     except Exception as error:
@@ -270,7 +268,7 @@ def download_task_files(prj_nm,task_name:str, config_path:str, repo_name,branch)
                         raise error
                 if not Path(path_src+config_path["ingestion_path"]+target_file_name).exists():
                     try:
-                        download_file_from_github(repo_name,auth_token,branch,
+                        download_file_from_github(repo_name, branch,
                         file_path = config_path["gh_target_ingestion_path"]+target_file_name,
                         save_dir = path_src+config_path["ingestion_path"])
                     except Exception as error:
@@ -289,7 +287,7 @@ def download_task_files(prj_nm,task_name:str, config_path:str, repo_name,branch)
                     sys.exit()
 
                 try:
-                    download_file_from_github(repo_name,auth_token, branch,
+                    download_file_from_github(repo_name, branch,
                     file_path = f'{config_path["gh_connections_json_path"]}'
                     f'{source_conn_file_name}{JSON}',
                     save_dir = f'{config_path["folder_path"]}{config_path["conn_path"]}')
@@ -299,7 +297,7 @@ def download_task_files(prj_nm,task_name:str, config_path:str, repo_name,branch)
                     sys.exit()
 
                 try:
-                    download_file_from_github(repo_name,auth_token, branch,
+                    download_file_from_github(repo_name, branch,
                     file_path = f'{config_path["gh_connections_json_path"]}'
                     f'{target_conn_file_name}{JSON}',
                     save_dir = f'{config_path["folder_path"]}{config_path["conn_path"]}')
@@ -359,7 +357,7 @@ def download_task_files(prj_nm,task_name:str, config_path:str, repo_name,branch)
 
                     if not Path(path_src+config_path["ingestion_path"]+source_file_name).exists():
                         try:
-                            download_file_from_github(repo_name,auth_token,branch,
+                            download_file_from_github(repo_name, branch,
                             file_path = config_path["gh_source_ingestion_path"]+source_file_name,
                             save_dir = path_src+config_path["ingestion_path"])
                         except Exception as error:
@@ -367,7 +365,7 @@ def download_task_files(prj_nm,task_name:str, config_path:str, repo_name,branch)
                             raise error
                     if not Path(path_src+config_path["ingestion_path"]+target_file_name).exists():
                         try:
-                            download_file_from_github(repo_name,auth_token, branch,
+                            download_file_from_github(repo_name, branch,
                             file_path = config_path["gh_target_ingestion_path"]+target_file_name,
                             save_dir = path_src+config_path["ingestion_path"])
                         except Exception as error:
@@ -390,7 +388,7 @@ def execute_pipeline_download(prj_nm,config_path:str,task_name:str,pipeline_name
         create_folder_structure(prj_nm,os.path.expanduser(
             config_path["folder_path"]),config_path)
         if task_name is None :
-            download_file_from_github(repo_name,auth_token, git_branch,
+            download_file_from_github(repo_name, git_branch,
             file_path= f'{config_path["programs"]}{prj_nm}'
             f'{config_path["gh_pipeline_path"]}{pipeline_name}{JSON}',
             save_dir =f'{homepath}{"/"}{config_path["local_repo"]}'
