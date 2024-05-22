@@ -170,6 +170,7 @@ def get_conn_subtype_type(config_path:str) -> dict:
         raise error
 
 def download_task_files(prj_nm,task_name:str, config_path:str, repo_name,branch):
+    print(prj_nm,task_name,config_path,repo_name,"lllllllllllllllllllllllllllllllllll")
     """function to download source_connection, target_connection, source.py, target.py
     files from github to server for execution"""
     try:
