@@ -11,6 +11,7 @@ from master import setup_logger,downlaod_latest_file_from_git,gitdata_query
 
 args = master.parse_arguments()
 GIT_BRANCH = args.git_branch
+print(github_auth_id,"github_auth_idgithub_auth_idgithub_auth_idgithub_auth_idmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm")
 main_logger = logging.getLogger('main_logger')
 task_logger = logging.getLogger('task_logger')
 JSON = ".json"
