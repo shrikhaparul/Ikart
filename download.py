@@ -173,6 +173,7 @@ def get_conn_subtype_type(config_path:str) -> dict:
 def download_task_files(prj_nm,task_name:str, config_path:str, repo_name,branch):
     """function to download source_connection, target_connection, source.py, target.py
     files from github to server for execution"""
+    print(auth_token,"auth_tokenauth_tokenauth_tokenauth_tokenauth_tokenmmmmmmmmmmmmmmmmm")
     try:
         homepath = str(Path(config_path['folder_path']).expanduser())
         task_logger.info("entered into downloading task related files")
