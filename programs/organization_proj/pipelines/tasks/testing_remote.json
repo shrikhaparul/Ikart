@@ -1,0 +1,46 @@
+{
+  "login_id": "prajwal",
+  "id": 558,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "testing_remote",
+  "task_description": "testing",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-04-05T08:49:05.000Z",
+  "source": "MySQL",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT CurrencyCode, ModifiedDate, Name FROM sys.CURRENCY",
+      "schema": "sys",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "CURRENCY",
+      "parameter_type": "MySQL",
+      "select_columns": "CurrencyCode,ModifiedDate,Name",
+      "connection_name": "P_mysql"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "curated",
+      "operation": "INSERT",
+      "table_name": "POST_TAB",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "P_postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
