@@ -40,6 +40,7 @@
       "encryption": "yes",
       "quote_char": "\"",
       "compression": "zip",
+      "audit_columns": "inactive",
       "escape_char": "",
       "parameter_type": "Remote Server",
       "connection_name": "ec2_remoteserver",
