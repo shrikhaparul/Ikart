@@ -34,7 +34,7 @@
       "encoding": "utf-8",
       "delimiter": ",",
       "file_name": "sales_data.csv",
-      "file_path": "/demo/features/",
+      "file_path": "demo/features/",
       "file_type": "csv",
       "operation": "append",
       "encryption": "no",
