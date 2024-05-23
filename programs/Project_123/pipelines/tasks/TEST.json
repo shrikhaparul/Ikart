@@ -1,0 +1,52 @@
+{
+  "login_id": "jjones",
+  "id": 382,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "TEST",
+  "task_description": "kkb",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-02-22T16:59:13.000Z",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT ORDERNUMBER, QUANTITYORDERED, PRICEEACH, ORDERLINENUMBER, SALES, ORDERDATE, SHIPDATE, STATUS, QTR_ID, MONTH_ID, YEAR_ID, PRODUCTLINE, MSRP, PRODUCTCODE, CUSTOMERNAME, PHONE, ADDRESSLINE1, ADDRESSLINE2, CITY, STATE, POSTALCODE, COUNTRY, TERRITORY, CONTACTLASTNAME, CONTACTFIRSTNAME, DEALSIZE, CRTD_BY, CRTD_DTTM, UPDT_BY, UPDT_DTTM FROM sys.Tgt_s3_sales",
+      "schema": "sys",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "Tgt_s3_sales",
+      "parameter_type": "MySQL",
+      "select_columns": "ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,SHIPDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE,CRTD_BY,CRTD_DTTM,UPDT_BY,UPDT_DTTM",
+      "connection_name": "mysql_ikart"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ";",
+      "file_name": "tgt_new.csv",
+      "file_path": "/home/pshrikh/test_files/",
+      "file_type": "csv",
+      "encryption": "",
+      "quote_char": "",
+      "compression": "",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "IKART_file_conn",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
