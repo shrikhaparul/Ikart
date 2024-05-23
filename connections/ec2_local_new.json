@@ -1,0 +1,11 @@
+{
+  "project_id": 60,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "ec2_local_new",
+  "connection_details": {
+    "file_name": "",
+    "file_path": "/home/Admin/actions-runner/_work/test/500mb",
+    "updated_by": "prajwal"
+  }
+}
