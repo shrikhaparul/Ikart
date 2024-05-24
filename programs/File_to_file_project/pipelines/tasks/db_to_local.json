@@ -1,0 +1,55 @@
+{
+  "login_id": "jjones",
+  "id": 591,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "db_to_local",
+  "task_description": "db to local",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-05-22T16:12:01.000Z",
+  "source": "Local Server",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "|",
+      "file_name": "Oracle_Test_Dump.csv",
+      "file_path": "/home/Admin/actions-runner/_work/test/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "no",
+      "quote_char": "",
+      "compression": "zip",
+      "escape_char": "",
+      "skip_footer": null,
+      "skip_header": 0,
+      "alias_columns": "owner,object_name,subobject_name,object_id,data_object_id,object_type,created,last_ddl_time,timestamp,status,temporary,generated,secondary,namespace,edition_name,sharing,editionable,oracle_maintained,application,default_collation,duplicated,sharded,imported_object,created_appid,created_vsnid,modified_appid,modified_vsnid,CRTD_BY,CRTD_DTTM,UPDT_BY,UPDT_DTTM",
+      "parameter_type": "Local Server",
+      "select_columns": "owner,object_name,subobject_name,object_id,data_object_id,object_type,created,last_ddl_time,timestamp,status,temporary,generated,secondary,namespace,edition_name,sharing,editionable,oracle_maintained,application,default_collation,duplicated,sharded,imported_object,created_appid,created_vsnid,modified_appid,modified_vsnid,CRTD_BY,CRTD_DTTM,UPDT_BY,UPDT_DTTM",
+      "connection_name": "ec2_local_server",
+      "private_key_path": ""
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "DROP AND CREATE",
+      "table_name": "tbl_newnm_m",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "P_postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
