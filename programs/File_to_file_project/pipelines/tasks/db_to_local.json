@@ -31,7 +31,7 @@
       "escape_char": "",
       "skip_footer": null,
       "skip_header": 0,
-      "alias_columns": "PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000�(Xw���s_",
+      "alias_columns": "None",
       "parameter_type": "Local Server",
       "select_columns": null,
       "connection_name": "ec2_local_server",
