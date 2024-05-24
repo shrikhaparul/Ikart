@@ -31,7 +31,7 @@
       "escape_char": "",
       "skip_footer": null,
       "skip_header": 0,
-      "alias_columns": null,
+      "alias_columns": "None",
       "parameter_type": "Local Server",
       "select_columns": null,
       "connection_name": "ec2_local_server",
