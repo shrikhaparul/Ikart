@@ -22,7 +22,7 @@
       "encoding": "utf-8",
       "delimiter": ";",
       "file_name": "tgt_new.csv",
-      "file_path": "/home/",
+      "file_path": "/home/pshrikh/file/",
       "file_type": "csv",
       "chunk_size": 10000,
       "encryption": "no",
