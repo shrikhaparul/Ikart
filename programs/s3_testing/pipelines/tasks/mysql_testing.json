@@ -1,0 +1,47 @@
+{
+  "login_id": "swetha",
+  "id": 491,
+  "project_name": "s3_testing",
+  "pipeline_name": "testing",
+  "project_id": 63,
+  "pipeline_id": 163,
+  "task_name": "mysql_testing",
+  "task_description": "mysql_testing",
+  "task_type": "Ingestion",
+  "task_sequence": "\"490\"",
+  "updated_dttm": "2024-04-01T12:28:37.000Z",
+  "source": "MySQL",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from ikarttest.test_update_insert",
+      "schema": "ikarttest",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "test_update_insert",
+      "parameter_type": "MySQL",
+      "select_columns": "",
+      "connection_name": "connection_mysql_ec2"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "food_up",
+      "primary_key": "",
+      "audit_columns": "active",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "connection_postgre",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
