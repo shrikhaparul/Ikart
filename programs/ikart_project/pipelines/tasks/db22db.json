@@ -1,0 +1,52 @@
+{
+  "login_id": "shilpi",
+  "id": 431,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "db22db",
+  "task_description": "db22db",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-05-14T11:22:07.000Z",
+  "source": "MySQL",
+  "target": "Remote Server",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select ORDERNUMBER, QUANTITYORDERED, PRICEEACH, ORDERLINENUMBER, SALES, ORDERDATE, STATUS, QTR_ID, MONTH_ID, YEAR_ID, PRODUCTLINE, MSRP, PRODUCTCODE, CUSTOMERNAME, PHONE, ADDRESSLINE1, ADDRESSLINE2, CITY, STATE, POSTALCODE, COUNTRY, TERRITORY, CONTACTLASTNAME, CONTACTFIRSTNAME, DEALSIZE, CRTD_BY, CRTD_DTTM, UPDT_BY, UPDT_DTTM from ikart.tgt_sales123",
+      "schema": "ikart",
+      "chunk_size": 1000,
+      "table_name": "tgt_sales123",
+      "parameter_type": "MySQL",
+      "select_columns": "ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE,CRTD_BY,CRTD_DTTM,UPDT_BY,UPDT_DTTM",
+      "connection_name": "mysql_shilpi"
+    },
+    "target": {
+      "target_type": "remote_server_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales30.csv",
+      "file_path": "/home/Admin/test/",
+      "file_type": "csv",
+      "operation": "append",
+      "encryption": "yes",
+      "quote_char": "",
+      "compression": "gzip",
+      "audit_columns": "inactive",
+      "parameter_type": "Remote Server",
+      "connection_name": "oracle_remote",
+      "public_key_path": "/home/shilpi/UI/backend-python/src/scripts/ingestion/recipient_public_key.asc",
+      "target_max_record_count": 1000
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
