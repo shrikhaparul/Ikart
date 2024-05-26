@@ -1,0 +1,146 @@
+{
+  "pipeline_id": 168,
+  "project_id": 68,
+  "pipeline_name": "Data_Quality_File_Conversions",
+  "pipeline_cd": null,
+  "pipeline_description": "Data transfer",
+  "is_active": "Y",
+  "tasks_details": {
+    "mysql_csv_sales": [
+      "employee_data_post_to_mysql",
+      "sales_data_post_mysql"
+    ],
+    "sales_csv_to_parquet": [
+      "mysql_csv_sales"
+    ],
+    "sales_data_post_mysql": 0,
+    "employee_data_post_to_mysql": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "457",
+      "data": {
+        "label": "457-sales_csv_to_parquet"
+      },
+      "position": {
+        "x": 50,
+        "y": 4200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "463",
+      "data": {
+        "label": "463-mysql_csv_sales"
+      },
+      "position": {
+        "x": 50,
+        "y": 4250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "480",
+      "data": {
+        "label": "480-sales_data_post_mysql"
+      },
+      "position": {
+        "x": 50,
+        "y": 4300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "481",
+      "data": {
+        "label": "481-employee_data_post_to_mysql"
+      },
+      "position": {
+        "x": 50,
+        "y": 4350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "487",
+      "data": {
+        "label": "487-test_bulk"
+      },
+      "position": {
+        "x": 50,
+        "y": 4400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "505",
+      "data": {
+        "label": "505-Local_server_job"
+      },
+      "position": {
+        "x": 50,
+        "y": 4450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "507",
+      "data": {
+        "label": "507-DB_restapi"
+      },
+      "position": {
+        "x": 50,
+        "y": 4500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-481-463",
+      "source": "481",
+      "target": "463"
+    },
+    {
+      "id": "flow-480-463",
+      "source": "480",
+      "target": "463"
+    },
+    {
+      "id": "flow-0-481",
+      "source": "0",
+      "target": "481"
+    },
+    {
+      "id": "flow-0-480",
+      "source": "0",
+      "target": "480"
+    },
+    {
+      "id": "flow-463-457",
+      "source": "463",
+      "target": "457"
+    }
+  ],
+  "created_dttm": "2024-05-26T15:15:09.807Z",
+  "updated_dttm": "2024-05-26T15:15:09.807Z"
+}
