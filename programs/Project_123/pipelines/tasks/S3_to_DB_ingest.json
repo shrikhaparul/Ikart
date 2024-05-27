@@ -31,9 +31,9 @@
       "escape_char": "",
       "skip_footer": null,
       "skip_header": 0,
-      "alias_columns": "null",
+      "alias_columns": null,
       "parameter_type": "Local Server",
-      "select_columns": "ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,SHIPDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE,CRTD_BY,CRTD_DTTM,UPDT_BY,UPDT_DTTM",
+      "select_columns": null,
       "connection_name": "IKART_file_conn",
       "private_key_path": null
     },
