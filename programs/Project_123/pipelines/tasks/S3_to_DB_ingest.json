@@ -21,7 +21,7 @@
       "header": "Y",
       "encoding": "utf-8",
       "delimiter": "|",
-      "file_name": "Oracle_Test_Dump.csv.gz",
+      "file_name": "Oracle_Test_Dump.csv.bz2",
       "file_path": "/home/pshrikh/file/",
       "file_type": "csv",
       "chunk_size": 10000,
