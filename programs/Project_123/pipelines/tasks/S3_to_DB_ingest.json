@@ -25,7 +25,7 @@
       "file_path": "/home/pshrikh/file/",
       "file_type": "csv",
       "chunk_size": 10000,
-      "encryption": "yes",
+      "encryption": "no",
       "quote_char": "",
       "compression": "zip",
       "escape_char": "",
