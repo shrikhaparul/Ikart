@@ -1,0 +1,55 @@
+{
+  "login_id": "jjones",
+  "id": 404,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "S3_to_DB_ingest",
+  "task_description": "k",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-05-24T09:44:44.000Z",
+  "source": "Local Server",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "json_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "",
+      "file_name": "example_table.json",
+      "file_path": "/home/pshrikh/file/json/",
+      "file_type": "json",
+      "chunk_size": 10000,
+      "encryption": "no",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": "",
+      "skip_footer": null,
+      "skip_header": 0,
+      "alias_columns": "id,name,age,email",
+      "parameter_type": "Local Server",
+      "select_columns": "",
+      "connection_name": "IKART_file_conn",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "DROP AND CREATE",
+      "table_name": "newj5",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "Postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
