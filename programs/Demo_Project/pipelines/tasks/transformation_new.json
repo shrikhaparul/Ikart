@@ -1,0 +1,59 @@
+{
+  "login_id": "Madhu",
+  "id": 594,
+  "project_name": "Demo_Project",
+  "pipeline_name": "SFTP_S3_RDS",
+  "project_id": 74,
+  "pipeline_id": 174,
+  "task_name": "transformation_new",
+  "task_description": "transformation_new",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-27T08:49:18.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+  "details": {
+    "details": {
+      "flow": {
+        "Input_input_new": "0",
+        "Output_outputData": "Input_input_new"
+      },
+      "details": [
+        {
+          "Input": [
+            {
+              "input_new": {
+                "schema": "config",
+                "output_df": "input_tr",
+                "table_name": "tbl_user",
+                "source_type": "MySQL",
+                "connection_name": "182",
+                "transformation_name": "input_new"
+              }
+            }
+          ]
+        },
+        {
+          "Output": [
+            {
+              "outputData": {
+                "schema": "public",
+                "input_df": "input_tr",
+                "operation": "create",
+                "table_name": "employee",
+                "target_type": "MySQL",
+                "connection_name": "182",
+                "transformation_name": "outputData"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
