@@ -27,7 +27,7 @@
       "chunk_size": 10000,
       "encryption": "no",
       "quote_char": "",
-      "compression": "zip",
+      "compression": "",
       "escape_char": "",
       "skip_footer": null,
       "skip_header": 0,
