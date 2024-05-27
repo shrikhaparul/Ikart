@@ -1,0 +1,57 @@
+{
+  "login_id": "prajwal",
+  "id": 556,
+  "project_name": "demo",
+  "pipeline_name": "testing_exceptions",
+  "project_id": 64,
+  "pipeline_id": 180,
+  "task_name": "duplicate_column_snowflake",
+  "task_description": "duplicate_column_snowflake",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "02df8ffe-94de-4b68-9378-40ac331b0ae1",
+  "status": "Running",
+  "updated_dttm": "2024-04-04T16:53:05.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Beverages_file.csv",
+      "file_path": "/home/Admin/actions-runner/_work/test/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Region,Country,Item_Type,Sales_Channel,Order_Priority,OrderDate,OrderID,ShipDate,UnitsSold,UnitPrice,UniCost,TotalRevenue,TotalCost,TotalProfit",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "ec2_local_new",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikarttest",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "test_update",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_EC2_Connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
