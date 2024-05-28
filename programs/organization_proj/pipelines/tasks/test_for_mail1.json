@@ -1,0 +1,63 @@
+{
+  "login_id": "jjones",
+  "id": 545,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "test_for_mail1",
+  "task_description": "test_for_mail",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "caa6164e-a44e-41c9-b54a-2c72466432c4",
+  "status": "Success",
+  "updated_dttm": "2024-05-15T05:18:05.000Z",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Cereal_file.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "no",
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Region,Country,Item Type,Sales Channel,Order Priority,Order Date,Order ID,Ship Date,Units Sold,Unit Price,Unit Cost,Total Revenue,Total Cost,Total Profit",
+      "parameter_type": "Local Server",
+      "select_columns": "Region,Country,Item Type,Sales Channel,Order Priority,Order Date,Order ID,Ship Date,Units Sold,Unit Price,Unit Cost,Total Revenue,Total Cost,Total Profit",
+      "connection_name": "ec2_local_server",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "csv_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "|",
+      "file_name": "tgt_test.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/tgt_files/",
+      "file_type": "csv",
+      "encryption": "no",
+      "quote_char": "\"",
+      "compression": "zip",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "ec2_local_server",
+      "target_max_record_count": 1000
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
