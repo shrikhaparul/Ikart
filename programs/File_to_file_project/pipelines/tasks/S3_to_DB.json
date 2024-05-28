@@ -5,7 +5,7 @@
   "pipeline_name": "Files_tranfer",
   "project_id": 73,
   "pipeline_id": 173,
-  "task_name": "ora2s3_copy",
+  "task_name": "S3_to_DB",
   "task_description": "d",
   "task_type": "Bulk Ingestion",
   "task_sequence": "0",
