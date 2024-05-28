@@ -30,16 +30,6 @@
       "select_columns": "created_by,created_dttm,id,is_active,program_id,project_description,project_lead,project_manager,project_name,updated_by,updated_dttm",
       "connection_name": "mysql_connection_con"
     },
-    "target": {
-      "target_type": "mysql_write",
-      "schema": "ikarttest",
-      "operation": "CREATE IF NOT EXIST",
-      "table_name": "new_tbl_project",
-      "audit_columns": "active",
-      "parameter_type": "MySQL",
-      "connection_name": "ec2_mysql",
-      "target_max_record_count": null
-    },
     "data_quality_execution": {
       "pre_check_enable": "N",
       "post_check_enable": "N"
