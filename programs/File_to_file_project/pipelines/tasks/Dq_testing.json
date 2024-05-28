@@ -20,7 +20,7 @@
   "task": {
     "source": {
       "source_type": "postgres_read",
-      "query": "SELECT * FROM stg.newj5",
+      "query": "SELECT * FROM public.newj5",
       "schema": "public",
       "chunk_size": 1000000,
       "table_name": "newj5",
