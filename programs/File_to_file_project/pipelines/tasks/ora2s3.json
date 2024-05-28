@@ -1,0 +1,141 @@
+{
+  "login_id": "jjones",
+  "id": 575,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "ora2s3",
+  "task_description": "ingesting data using oracle to  aws s3",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "458bf29a-5584-4f88-9bd5-dc57a95d5723",
+  "status": "Success",
+  "updated_dttm": "2024-05-07T18:48:42.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Oracle",
+          "object_name": "EMPLOYEE_DETAILS_JSON",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/Output_data/oracle/",
+          "compression": "bzip",
+          "object_name": "EMPLOYEE_DETAILS_JSON",
+          "primary_key": "",
+          "schema_name": "curated",
+          "audit_fields": "no",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "target_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Oracle",
+          "object_name": "SHIPPED_FILE_PARQUET",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/Output_data/oracle/",
+          "compression": "bzip",
+          "object_name": "SHIPPED_FILE_PARQUET",
+          "primary_key": "",
+          "schema_name": "curated",
+          "audit_fields": "no",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "target_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "Oracle",
+          "object_name": "TGT_BEVERAGES_FILECSV",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/Output_data/oracle/",
+          "compression": "bzip",
+          "object_name": "TGT_BEVERAGES_FILECSV",
+          "primary_key": "",
+          "schema_name": "curated",
+          "audit_fields": "no",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "target_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "Oracle",
+          "object_name": "SALES_DATACSV",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/Output_data/oracle/",
+          "compression": "bzip",
+          "object_name": "SALES_DATACSV",
+          "primary_key": "",
+          "schema_name": "curated",
+          "audit_fields": "no",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "target_",
+          "target_file_format": "parquet"
+        }
+      }
+    ]
+  }
+}
