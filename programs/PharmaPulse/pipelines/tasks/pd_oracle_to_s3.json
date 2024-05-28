@@ -1,0 +1,56 @@
+{
+  "login_id": "rperuman",
+  "id": 596,
+  "project_name": "PharmaPulse",
+  "pipeline_name": "bulk_data_load",
+  "project_id": 67,
+  "pipeline_id": 175,
+  "task_name": "pd_oracle_to_s3",
+  "task_description": "pandas db to file sample test",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-28T16:20:56.000Z",
+  "source": "Oracle",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT * FROM RAW.CURRENCY",
+      "schema": "RAW",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "CURRENCY",
+      "parameter_type": "Oracle",
+      "select_columns": null,
+      "connection_name": "oracle_xe"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "currnecy.csv",
+      "file_path": "demo/features/",
+      "file_type": "csv",
+      "operation": "append",
+      "encryption": "",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": "",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "AWS_S3",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
