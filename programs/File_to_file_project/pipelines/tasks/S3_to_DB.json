@@ -5,7 +5,7 @@
   "pipeline_name": "Files_tranfer",
   "project_id": 73,
   "pipeline_id": 173,
-  "task_name": "S3_to_DB",
+  "task_name": "ora2s3_copy",
   "task_description": "d",
   "task_type": "Bulk Ingestion",
   "task_sequence": "0",
@@ -37,7 +37,7 @@
           "subfolder_included": "no"
         },
         "target": {
-          "file_path": "/home/Admin/actions-runner/_work/UI/all_files",
+          "file_path": "/home/Admin/actions-runner/_work/UI/all_files/",
           "connection_name": "ec2_local_server_files_to_files",
           "object_name": "Target_AGG_SALES_09052024.csv",
           "primary_key": "",
