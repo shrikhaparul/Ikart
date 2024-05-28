@@ -1,0 +1,52 @@
+{
+  "login_id": "jjones",
+  "id": 579,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "S3_to_DB",
+  "task_description": "d",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "55073c67-2fad-43a7-9804-cc343cecbcb4",
+  "status": "Success",
+  "updated_dttm": "2024-05-08T09:54:48.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "/home/Admin/actions-runner/_work/UI/all_files",
+          "connection_name": "ec2_local_server_files_to_files",
+          "operation": "copy",
+          "task_group": "0",
+          "object_name": "Target_AGG_SALES_09052024.csv",
+          "object_type": "csv",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "file_path": "/home/Admin/all_files/",
+          "connection_name": "remote_server_connection",
+          "object_name": "Target_AGG_SALES_09052024.csv",
+          "primary_key": "",
+          "schema_name": "TEST",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": ""
+        }
+      }
+    ]
+  }
+}
