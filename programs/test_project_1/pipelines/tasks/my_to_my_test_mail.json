@@ -1,0 +1,48 @@
+{
+  "login_id": "prajwal",
+  "id": 594,
+  "project_name": "test_project_1",
+  "pipeline_name": "test_pipeline_1",
+  "project_id": 77,
+  "pipeline_id": 193,
+  "task_name": "my_to_my_test_mail",
+  "task_description": "my_to_my_test_mail",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-28T06:01:55.000Z",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT created_by, created_dttm, id, is_active, program_id, project_description, project_lead, project_manager, project_name, updated_by, updated_dttm FROM config.tbl_project",
+      "schema": "config",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "tbl_project",
+      "parameter_type": "MySQL",
+      "select_columns": "created_by,created_dttm,id,is_active,program_id,project_description,project_lead,project_manager,project_name,updated_by,updated_dttm",
+      "connection_name": "mysql_connection_con"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikarttest",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "new_tbl_project",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "ec2_mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
