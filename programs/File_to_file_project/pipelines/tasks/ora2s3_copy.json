@@ -1,0 +1,60 @@
+{
+  "login_id": "jjones",
+  "id": 580,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "ora2s3_copy",
+  "task_description": "ingesting data using oracle to  aws s3",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "529233e2-bb89-4394-a4da-996bb13465b2",
+  "status": "Failed",
+  "updated_dttm": "2024-05-07T18:48:42.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "csv_test/",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "operation": "copy",
+          "task_group": "6",
+          "object_name": "AGG_SALES1CSV",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "extraction_type": "Full",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "no",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": "",
+          "file_path": "/home/Admin/all_files/",
+          "object_name": "AGG_SALES1CSV",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "no",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "",
+          "object_prefix_name": "",
+          "target_file_format": "excel"
+        }
+      }
+    ]
+  }
+}
