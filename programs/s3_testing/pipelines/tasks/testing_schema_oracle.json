@@ -1,0 +1,47 @@
+{
+  "login_id": "swetha",
+  "id": 487,
+  "project_name": "s3_testing",
+  "pipeline_name": "pipeline_s3",
+  "project_id": 63,
+  "pipeline_id": 157,
+  "task_name": "testing_schema_oracle",
+  "task_description": "testing_schema_oracle",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-03-08T08:34:22.000Z",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "select * from ikarttest.test_update",
+      "schema": "ikarttest",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 200000,
+      "table_name": "test_update",
+      "parameter_type": "MySQL",
+      "select_columns": "",
+      "connection_name": "connection_mysql_ec2"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "demo",
+      "operation": "UPSERT",
+      "table_name": "sal_up",
+      "primary_key": "'OrderID'",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "connection_target",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
