@@ -1,0 +1,102 @@
+{
+  "login_id": "Puneeth",
+  "id": 599,
+  "project_name": "DQ_Test",
+  "pipeline_name": "demo_purpose",
+  "project_id": 75,
+  "pipeline_id": 194,
+  "task_name": "opd_test",
+  "task_description": "To apply quality checks on open payment data.",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "287e9242-f527-4a64-a165-d6b4c1ebb9da",
+  "status": "Failed",
+  "updated_dttm": "2024-05-28T17:30:54.000Z",
+  "source": "PostgreSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT * FROM stg.op_dtl_gnrl",
+      "schema": "stg",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 100000,
+      "table_name": "op_dtl_gnrl",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "ec2_postgres"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "output_file_%DD%%MM%%YYYY%.csv",
+      "file_path": "dq_test/",
+      "file_type": "csv",
+      "operation": "replace",
+      "audit_columns": "active",
+      "parameter_type": "AWS S3",
+      "connection_name": "aws_connection_test",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_be_unique",
+        "parameters": {
+          "column": "Record_ID"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_values_to_match_strftime_format",
+        "parameters": {
+          "column": "Date_of_Payment",
+          "strftime_format": "%m/%d/%Y"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "3",
+        "check": "column_max_to_be_between",
+        "parameters": {
+          "column": "Total_Amount_of_Payment_USDollars",
+          "max_value": "180000",
+          "min_value": "0"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "4",
+        "check": "column_values_to_be_in_set",
+        "parameters": {
+          "column": "Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_Countr",
+          "value_set": "United States"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
