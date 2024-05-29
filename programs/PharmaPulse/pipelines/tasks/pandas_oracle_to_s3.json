@@ -1,0 +1,89 @@
+{
+  "login_id": "rperuman",
+  "id": 598,
+  "project_name": "PharmaPulse",
+  "pipeline_name": "bulk_data_load",
+  "project_id": 67,
+  "pipeline_id": 175,
+  "task_name": "pandas_oracle_to_s3",
+  "task_description": "bulk task for loading data from oracle db to files in s3",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "b745fd32-5ff9-45bd-8659-d1f33a4314af",
+  "status": "Failed",
+  "updated_dttm": "2024-05-28T16:32:37.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "TEST_DATA",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "TEST_DATA",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "EMPLOYEE_DETAILS_JSON",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "EMPLOYEE_DETAILS_JSON",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "0"
+        }
+      }
+    ]
+  }
+}
