@@ -1,0 +1,141 @@
+{
+  "login_id": "shilpi",
+  "id": 534,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "file",
+  "task_description": "file",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "70119d12-b04c-41a8-ac5a-dfa61f74d35a",
+  "status": "Failed",
+  "updated_dttm": "2024-03-28T05:15:19.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_s",
+          "object_name": "SalesReason",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "remote_server_s",
+          "encoding": "utf-8",
+          "delimiter": "",
+          "file_path": "/home/Admin/test/",
+          "encryption": "yes",
+          "compression": "bzip",
+          "object_name": "SalesReason",
+          "audit_fields": "no",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "%YYYY%",
+          "object_prefix_name": "tg_",
+          "target_file_format": "xml"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_s",
+          "object_name": "ProductModel",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "remote_server_s",
+          "encoding": "utf-8",
+          "delimiter": "",
+          "file_path": "/home/Admin/test/",
+          "encryption": "yes",
+          "compression": "bzip",
+          "object_name": "ProductModel",
+          "audit_fields": "no",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "%YYYY%",
+          "object_prefix_name": "tg_",
+          "target_file_format": "xml"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_s",
+          "object_name": "SalesTaxRate",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "remote_server_s",
+          "encoding": "utf-8",
+          "delimiter": "",
+          "file_path": "/home/Admin/test/",
+          "encryption": "yes",
+          "compression": "bzip",
+          "object_name": "SalesTaxRate",
+          "audit_fields": "no",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "%YYYY%",
+          "object_prefix_name": "tg_",
+          "target_file_format": "xml"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mssql_s",
+          "object_name": "SalesTerritoryHistory",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "remote_server_s",
+          "encoding": "utf-8",
+          "delimiter": "",
+          "file_path": "/home/Admin/test/",
+          "encryption": "yes",
+          "compression": "bzip",
+          "object_name": "SalesTerritoryHistory",
+          "audit_fields": "no",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "%YYYY%",
+          "object_prefix_name": "tg_",
+          "target_file_format": "xml"
+        }
+      }
+    ]
+  }
+}
