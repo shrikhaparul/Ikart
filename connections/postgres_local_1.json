@@ -1,0 +1,14 @@
+{
+  "project_id": 76,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "PostgreSQL",
+  "connection_name": "postgres_local_1",
+  "connection_details": {
+    "port": "5432",
+    "database": "postgres",
+    "hostname": "localhost",
+    "password": "fb73aa6e4ad2b75d0bba94db5b4872f3cd7457fb",
+    "username": "postgres",
+    "updated_by": "prajwal"
+  }
+}
