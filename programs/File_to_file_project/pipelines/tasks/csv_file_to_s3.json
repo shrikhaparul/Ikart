@@ -1,0 +1,63 @@
+{
+  "login_id": "jjones",
+  "id": 602,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Oracle_jobs",
+  "project_id": 73,
+  "pipeline_id": 185,
+  "task_name": "csv_file_to_s3",
+  "task_description": "filet o s3",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "af36d8a0-5e8a-47e9-992e-1ed7056026e2",
+  "status": "Failed",
+  "updated_dttm": "2024-05-29T13:12:48.000Z",
+  "source": "Local Server",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Beverages_file.csv",
+      "file_path": "/home/Admin/actions-runner/_work/test/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "no",
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Region,Country,Item_Type,Sales_Channel,Order_Priority,OrderDate,OrderID,ShipDate,UnitsSold,UnitPrice,UniCost,TotalRevenue,TotalCost,TotalProfit",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "ec2_local_server_files_to_files",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "",
+      "file_name": "tgt_new_beve.parquet",
+      "file_path": "Excel_folder/files/oracle/",
+      "file_type": "parquet",
+      "operation": "replace",
+      "encryption": "no",
+      "compression": "",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "aws_S3_conn_files_to_files",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
