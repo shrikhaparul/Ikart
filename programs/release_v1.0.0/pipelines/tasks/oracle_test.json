@@ -1,0 +1,66 @@
+{
+  "login_id": "Puneeth",
+  "id": 485,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "dq_testing",
+  "project_id": 61,
+  "pipeline_id": 165,
+  "task_name": "oracle_test",
+  "task_description": "To test oracle code for DQ",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-29T11:34:34.000Z",
+  "source": "PostgreSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT * FROM stg.op_dtl_gnrl",
+      "schema": "stg",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "op_dtl_gnrl",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "ec2_postgres1"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "testfile_2.csv",
+      "file_path": "dq_test/",
+      "file_type": "csv",
+      "operation": "replace",
+      "compression": "",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "awss3_connection_puneeth",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_be_unique",
+        "parameters": {
+          "column": "Record_ID"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
