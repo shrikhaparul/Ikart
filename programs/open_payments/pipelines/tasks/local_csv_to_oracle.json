@@ -1,0 +1,57 @@
+{
+  "login_id": "rperuman",
+  "id": 608,
+  "project_name": "open_payments",
+  "pipeline_name": "ingest_payments_data",
+  "project_id": 79,
+  "pipeline_id": 196,
+  "task_name": "local_csv_to_oracle",
+  "task_description": "loads csv data into oracle tables",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-29T18:08:26.000Z",
+  "source": "Local Server",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "OP_DTL_OWNRSHP_PGYR2022_P01182024.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/all_files/",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "decryption": "no",
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": "\\",
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Change_Type,Physician_Profile_ID,Physician_NPI,Physician_First_Name,Physician_Middle_Name,Physician_Last_Name,Physician_Name_Suffix,Recipient_Primary_Business_Street_Address_Line1,Recipient_Primary_Business_Street_Address_Line2,Recipient_City,Recipient_State,Recipient_Zip_Code,Recipient_Country,Recipient_Province,Recipient_Postal_Code,Physician_Primary_Type,Physician_Specialty,Record_ID,Program_Year,Total_Amount_Invested_USDollars,Value_of_Interest,Terms_of_Interest,Submitting_Applicable_Manufacturer_or_Applicable_GPO_Name,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_ID,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_Name,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_State,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_Country,Dispute_Status,Interest_Held_by_Physician_or_an_Immediate_Family_Member,Payment_Publication_Date",
+      "parameter_type": "Local Server",
+      "select_columns": "Change_Type,Physician_Profile_ID,Physician_NPI,Physician_First_Name,Physician_Middle_Name,Physician_Last_Name,Physician_Name_Suffix,Recipient_Primary_Business_Street_Address_Line1,Recipient_Primary_Business_Street_Address_Line2,Recipient_City,Recipient_State,Recipient_Zip_Code,Recipient_Country,Recipient_Province,Recipient_Postal_Code,Physician_Primary_Type,Physician_Specialty,Record_ID,Program_Year,Total_Amount_Invested_USDollars,Value_of_Interest,Terms_of_Interest,Submitting_Applicable_Manufacturer_or_Applicable_GPO_Name,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_ID,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_Name,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_State,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_Country,Dispute_Status,Interest_Held_by_Physician_or_an_Immediate_Family_Member,Payment_Publication_Date",
+      "connection_name": "local_server",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "kart",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "OP_DTL_OWNRSHP",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_xe",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
