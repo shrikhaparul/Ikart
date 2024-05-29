@@ -1,0 +1,72 @@
+{
+  "login_id": "prajwal",
+  "id": 594,
+  "project_name": "project_prototype_1",
+  "pipeline_name": "test_new_pipe_1",
+  "project_id": 76,
+  "pipeline_id": 191,
+  "task_name": "mysql_to_postgres",
+  "task_description": "mysql_to_postgres",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-29T05:31:48.000Z",
+  "source": "MySQL",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT CurrencyCode, Name, ModifiedDate, CRTD_BY, CRTD_DTTM, UPDT_BY, UPDT_DTTM FROM ikart.tgt_snowflake_tab",
+      "schema": "ikart",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "tgt_snowflake_tab",
+      "parameter_type": "MySQL",
+      "select_columns": "CurrencyCode,Name,ModifiedDate,CRTD_BY,CRTD_DTTM,UPDT_BY,UPDT_DTTM",
+      "connection_name": "mysql_local_ikart"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "tgt_snow",
+      "audit_columns": "active",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "postgres_local_1",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_be_unique",
+        "parameters": {
+          "column": "CurrencyCode"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "Name"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
