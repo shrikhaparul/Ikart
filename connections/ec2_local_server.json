@@ -1,0 +1,10 @@
+{
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "ec2_local_server",
+  "connection_details": {
+    "file_name": "",
+    "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+    "updated_by": "swetha"
+  }
+}
