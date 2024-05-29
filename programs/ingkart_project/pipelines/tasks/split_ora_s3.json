@@ -1,0 +1,57 @@
+{
+  "login_id": "shilpi",
+  "id": 607,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "split_ora_s3",
+  "task_description": "split_ora_s3",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-29T16:17:48.000Z",
+  "source": "Oracle",
+  "target": "Remote Server",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT BUSINESSENTITYID, DEMOGRAPHICS, EMAILPROMOTION, FIRSTNAME, LASTNAME, MIDDLENAME, MODIFIEDDATE, PERSONTYPE, ROWGUID, SUFFIX, TITLE FROM test.DIM_CUSTOMER_PROFILE",
+      "schema": "test",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "DIM_CUSTOMER_PROFILE",
+      "parameter_type": "Oracle",
+      "select_columns": "BUSINESSENTITYID,DEMOGRAPHICS,EMAILPROMOTION,FIRSTNAME,LASTNAME,MIDDLENAME,MODIFIEDDATE,PERSONTYPE,ROWGUID,SUFFIX,TITLE",
+      "connection_name": "oracle_xepdb1"
+    },
+    "target": {
+      "target_type": "remote_server_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "DIM_CUSTOMER_PROFILE.csv",
+      "file_path": "/home/Admin/test/",
+      "file_type": "parquet",
+      "operation": "append",
+      "encryption": "no",
+      "quote_char": "",
+      "compression": "gzip",
+      "escape_char": "",
+      "skip_header": "0",
+      "audit_columns": "inactive",
+      "parameter_type": "Remote Server",
+      "connection_name": "remote_server_s",
+      "target_max_record_count": 10000
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
