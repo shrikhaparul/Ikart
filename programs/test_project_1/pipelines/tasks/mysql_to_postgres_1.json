@@ -1,0 +1,48 @@
+{
+  "login_id": "prajwal",
+  "id": 618,
+  "project_name": "test_project_1",
+  "pipeline_name": "Demo_1",
+  "project_id": 77,
+  "pipeline_id": 197,
+  "task_name": "mysql_to_postgres_1",
+  "task_description": "mysql_to_postgres_1",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "7e7607ef-226d-40ff-aa96-496833add43f",
+  "status": "Failed",
+  "updated_dttm": "2024-05-30T11:02:38.000Z",
+  "source": "MySQL",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT id, pipeline_id, task_name, task_description, task_type, task_sequence, is_active, created_by, created_dttm, updated_by, updated_dttm FROM config.tbl_task",
+      "schema": "config",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "tbl_task",
+      "parameter_type": "MySQL",
+      "select_columns": "id,pipeline_id,task_name,task_description,task_type,task_sequence,is_active,created_by,created_dttm,updated_by,updated_dttm",
+      "connection_name": "mysql_connection_con"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "DROP AND CREATE",
+      "table_name": "test_tgt_table",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "ec2_postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
