@@ -1,0 +1,44 @@
+{
+  "login_id": "rperuman",
+  "id": 626,
+  "project_name": "open_payments",
+  "pipeline_name": "bulk_payments_load",
+  "project_id": 79,
+  "pipeline_id": 198,
+  "task_name": "S3_to_remoteserver",
+  "task_description": "moving files  from s3 to remote server",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "648077a0-736a-491e-9825-ce57ab607f3f",
+  "status": "Failed",
+  "updated_dttm": "2024-05-30T08:55:58.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "demo/dimensions/",
+          "connection_name": "AWS_S3",
+          "operation": "move",
+          "files_filter_name": "*_30052024.parquet.bz2",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "file_path": "/home/Admin/all_files/",
+          "connection_name": "Remote_Server_latest",
+          "object_sufix_name": ""
+        }
+      }
+    ]
+  }
+}
