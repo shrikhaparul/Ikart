@@ -1,0 +1,149 @@
+{
+  "login_id": "Puneeth",
+  "id": 485,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "dq_testing",
+  "project_id": 61,
+  "pipeline_id": 165,
+  "task_name": "pg_to_awss3",
+  "task_description": "To test oracle code for DQ",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "defd047d-a675-449b-8689-1d6ed58aca8a",
+  "status": "Running",
+  "updated_dttm": "2024-05-30T06:10:22.000Z",
+  "source": "PostgreSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT * FROM stg.op_dtl_rsrch",
+      "schema": "stg",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "op_dtl_rsrch",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "ec2_postgres1"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "testfile_2.csv",
+      "file_path": "dq_test/",
+      "file_type": "csv",
+      "operation": "replace",
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": "\\",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "awss3_connection_puneeth",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "6",
+        "check": "sum_reconciliation",
+        "parameters": {
+          "sum_value": "1000000",
+          "column_name": "Total_Amount_of_Payment_USDollars"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "8",
+        "check": "table_column_count_to_equal",
+        "parameters": {
+          "value": "252"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "post_check"
+      },
+      {
+        "seq_no": "7",
+        "check": "column_values_to_match_strftime_format",
+        "parameters": {
+          "column": "Date_of_Payment",
+          "strftime_format": "%m/%d/%Y"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "post_check"
+      },
+      {
+        "seq_no": "5",
+        "check": "column_values_to_be_in_set",
+        "parameters": {
+          "column": "Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_Countr",
+          "value_set": "United States"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "4",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "Recipient_Primary_Business_Street_Address_Line1"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "3",
+        "check": "table_row_count_to_equal",
+        "parameters": {
+          "value": "10000"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_values_to_be_unique",
+        "parameters": {
+          "column": "Record_ID"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "1",
+        "check": "column_value_lengths_to_equal",
+        "parameters": {
+          "value": "2",
+          "column": "Recipient_State"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
