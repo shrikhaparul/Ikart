@@ -1,0 +1,70 @@
+{
+  "pipeline_id": 183,
+  "project_id": 73,
+  "pipeline_name": "Bulk_Ingestion",
+  "pipeline_cd": null,
+  "pipeline_description": "showing bulk ingestion functionality",
+  "is_active": "Y",
+  "tasks_details": {
+    "ora2s3": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "573",
+      "data": {
+        "label": "573-sqlserver_to_s3"
+      },
+      "position": {
+        "x": 50,
+        "y": 7450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "575",
+      "data": {
+        "label": "575-ora2s3"
+      },
+      "position": {
+        "x": 50,
+        "y": 7500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "591",
+      "data": {
+        "label": "591-db_to_local"
+      },
+      "position": {
+        "x": 50,
+        "y": 7550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-575",
+      "source": "0",
+      "target": "575"
+    }
+  ],
+  "created_dttm": "2024-05-30T06:45:11.013Z",
+  "updated_dttm": "2024-05-30T06:45:11.013Z"
+}
