@@ -1,0 +1,51 @@
+{
+  "login_id": "prajwal",
+  "id": 617,
+  "project_name": "test_project_1",
+  "pipeline_name": "Demo_1",
+  "project_id": 77,
+  "pipeline_id": 197,
+  "task_name": "mysql_to_mysql_1",
+  "task_description": "mysql_to_mysql_1",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "7e7607ef-226d-40ff-aa96-496833add43f",
+  "status": "Failed",
+  "updated_dttm": "2024-05-30T09:41:24.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mysql_connection_con",
+          "object_name": "tbl_etl_audit",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "targt_tbl_etl_audit",
+          "connection_name": "mysql_EC2_Connection",
+          "primary_key": "",
+          "schema_name": "ikarttest",
+          "audit_fields": "NO",
+          "database_name": "ikarttest",
+          "action_on_table": "DROP AND CREATE"
+        }
+      }
+    ]
+  }
+}
