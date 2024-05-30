@@ -1,0 +1,63 @@
+{
+  "login_id": "prajwal",
+  "id": 615,
+  "project_name": "test_project_1",
+  "pipeline_name": "Demo_1",
+  "project_id": 77,
+  "pipeline_id": 197,
+  "task_name": "s3_to_local_1",
+  "task_description": "s3_to_local_1",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "7e7607ef-226d-40ff-aa96-496833add43f",
+  "status": "Failed",
+  "updated_dttm": "2024-05-30T09:09:47.000Z",
+  "source": "AWS S3",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "OP_REMOVED_DELETED_PGYR2022_P01182024.csv",
+      "file_path": "new_folder/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "no",
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": "",
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Change_Type,Program_Year,Payment_Type,Record_ID",
+      "parameter_type": "AWS S3",
+      "select_columns": "Change_Type,Program_Year,Payment_Type,Record_ID",
+      "connection_name": "aws_connection_test",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "csv_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "s3_file.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/tgt_files/",
+      "file_type": "csv",
+      "encryption": "no",
+      "quote_char": "\"",
+      "compression": "",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "ec2_local_new",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
