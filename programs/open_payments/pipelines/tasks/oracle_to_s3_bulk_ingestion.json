@@ -1,0 +1,60 @@
+{
+  "login_id": "rperuman",
+  "id": 625,
+  "project_name": "open_payments",
+  "pipeline_name": "bulk_payments_load",
+  "project_id": 79,
+  "pipeline_id": 198,
+  "task_name": "oracle_to_s3_bulk_ingestion",
+  "task_description": "task that loads oracle data to s3 files",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "80189546-2121-47e4-a641-7ba034af4de6",
+  "status": "Success",
+  "updated_dttm": "2024-05-30T09:31:53.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "chunk_size": 1000000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "demo/dimensions/",
+          "connection_name": "AWS_S3",
+          "operation": "move",
+          "task_group": "2",
+          "object_name": "CURRENCY",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "extraction_type": "Full",
+          "files_filter_name": "*_30052024.parquet.bz2",
+          "subfolder_included": "no",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "Remote_Server_latest",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/Admin/sftp_files/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "CURRENCY",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "object_sufix_name": "",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      }
+    ]
+  }
+}
