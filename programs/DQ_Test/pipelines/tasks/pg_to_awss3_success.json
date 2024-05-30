@@ -1,0 +1,167 @@
+{
+  "login_id": "Puneeth",
+  "id": 623,
+  "project_name": "DQ_Test",
+  "pipeline_name": "demo_purpose",
+  "project_id": 75,
+  "pipeline_id": 194,
+  "task_name": "pg_to_awss3_success",
+  "task_description": "pg_to_awss3_success",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "e1d5e4b1-a1da-477d-b52a-947cec4fcad6",
+  "status": "Success",
+  "updated_dttm": "2024-05-30T06:26:40.000Z",
+  "source": "PostgreSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT * FROM stg.op_dtl_rsrch",
+      "schema": "stg",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "op_dtl_rsrch",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "ec2_postgres"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "output_file_1.csv",
+      "file_path": "test/",
+      "file_type": "csv",
+      "operation": "replace",
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": "\\",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "aws_connection_test",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_be_unique",
+        "parameters": {
+          "column": "Record_ID",
+          "max_value": "1000",
+          "min_value": "88"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "table_column_count_to_equal",
+        "parameters": {
+          "value": "252",
+          "column": "Noncovered_Recipient_Entity_Name",
+          "max_value": "1000",
+          "min_value": "0"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "3",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "Recipient_Primary_Business_Street_Address_Line1",
+          "max_value": "jhg",
+          "min_value": "0"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "post_check"
+      },
+      {
+        "seq_no": "4",
+        "check": "column_value_lengths_to_equal",
+        "parameters": {
+          "value": "2",
+          "column": "Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_State"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "post_check"
+      },
+      {
+        "seq_no": "5",
+        "check": "column_values_to_be_in_set",
+        "parameters": {
+          "column": "Recipient_Country",
+          "value_set": "United States",
+          "regex_list": "s"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "post_check"
+      },
+      {
+        "seq_no": "6",
+        "check": "sum_reconciliation",
+        "parameters": {
+          "column": "Recipient_Zip_Code",
+          "sum_value": "113356272.21",
+          "value_set": "s",
+          "column_name": "Total_Amount_of_Payment_USDollars"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "7",
+        "check": "file_existance_check",
+        "parameters": {
+          "column": "Teaching_Hospital_CCN",
+          "filename": "output_file_1.csv",
+          "filepath": "test/",
+          "max_value": "HH",
+          "min_value": "0"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "post_check"
+      },
+      {
+        "seq_no": "8",
+        "check": "column_values_to_match_strftime_format",
+        "parameters": {
+          "column": "Date_of_Payment",
+          "column1": "Recipient_City",
+          "column2": "Recipient_Zip_Code",
+          "max_value": "200000",
+          "min_value": "",
+          "strftime_format": "%m/%d/%Y"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "post_check"
+      }
+    ]
+  }
+}
