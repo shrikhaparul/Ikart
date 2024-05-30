@@ -1,0 +1,58 @@
+{
+  "login_id": "swetha",
+  "id": 627,
+  "project_name": "testing_upsert",
+  "pipeline_name": "upsert_demo",
+  "project_id": 78,
+  "pipeline_id": 195,
+  "task_name": "upsert_function_demo1",
+  "task_description": "upsert_function_demo1",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "5f7faff9-84e7-43f6-8227-ec07003c412d",
+  "status": "Running",
+  "updated_dttm": "2024-05-30T08:59:04.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Beverages.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files",
+      "file_type": "csv",
+      "chunk_size": 200000,
+      "decryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Region,Country,ItemType,SalesChannel,OrderPriority,OrderDate,OrderID,ShipDate,UnitsSold,UnitPrice,UnitCost,TotalRevenue,TotalCost,TotalProfit",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local_server_storage_ec2",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikarttest",
+      "operation": "UPSERT",
+      "table_name": "food",
+      "primary_key": "OrderID",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "ec2_mysql_connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
