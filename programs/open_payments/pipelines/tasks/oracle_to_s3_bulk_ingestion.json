@@ -1,0 +1,281 @@
+{
+  "login_id": "rperuman",
+  "id": 625,
+  "project_name": "open_payments",
+  "pipeline_name": "bulk_payments_load",
+  "project_id": 79,
+  "pipeline_id": 198,
+  "task_name": "oracle_to_s3_bulk_ingestion",
+  "task_description": "task that loads oracle data to s3 files",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-30T08:22:21.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "TEST_DATA",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/dimensions/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "TEST_DATA",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_xe",
+          "object_name": "SALES_DATACSV",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/dimensions/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "SALES_DATACSV",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_xe",
+          "object_name": "AGG_SALES",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/dimensions/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "AGG_SALES",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_xe",
+          "object_name": "YELLOW_TRIPDATA_2018",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/dimensions/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "YELLOW_TRIPDATA_2018",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_xe",
+          "object_name": "COUNTRY_SALES",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/dimensions/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "COUNTRY_SALES",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "EMPLOYEE_DETAILS",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/dimensions/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "EMPLOYEE_DETAILS",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_xe",
+          "object_name": "PRODUCTINVENTORY",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/dimensions/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "PRODUCTINVENTORY",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "BEVERAGES",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/dimensions/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "BEVERAGES",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_xe",
+          "object_name": "CURRENCY",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/dimensions/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "CURRENCY",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      }
+    ]
+  }
+}
