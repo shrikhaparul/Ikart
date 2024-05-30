@@ -1,0 +1,60 @@
+{
+  "login_id": "jjones",
+  "id": 580,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "ora2s3_copy",
+  "task_description": "ingesting data using oracle to  aws s3",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "654161e9-1f97-47c2-9bfc-c97f60b4eb2a",
+  "status": "Success",
+  "updated_dttm": "2024-05-29T17:52:51.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "Nandh",
+  "chunk_size": 100000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "demo/dimensions/",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "operation": "copy",
+          "task_group": "6",
+          "object_name": "AGG_SALES1CSV",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "extraction_type": "Full",
+          "files_filter_name": "TEST_DATA_30052024.parquet.bz2",
+          "subfolder_included": "yes",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "remote_server_connection",
+          "encoding": "utf-8",
+          "delimiter": "",
+          "file_path": "/home/Admin/sftp_files/",
+          "object_name": "AGG_SALES1CSV",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "no",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "",
+          "object_prefix_name": "",
+          "target_file_format": "excel"
+        }
+      }
+    ]
+  }
+}
