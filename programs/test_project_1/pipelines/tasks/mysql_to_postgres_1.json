@@ -1,0 +1,36 @@
+{
+  "login_id": "prajwal",
+  "id": 618,
+  "project_name": "test_project_1",
+  "pipeline_name": "Demo_1",
+  "project_id": 77,
+  "pipeline_id": 197,
+  "task_name": "mysql_to_postgres_1",
+  "task_description": "mysql_to_postgres_1",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-30T05:46:59.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT id, pipeline_id, task_name, task_description, task_type, task_sequence, is_active, created_by, created_dttm, updated_by, updated_dttm FROM config.tbl_task",
+      "schema": "config",
+      "chunk_size": 10000,
+      "table_name": "tbl_task",
+      "parameter_type": "MySQL",
+      "select_columns": "id,pipeline_id,task_name,task_description,task_type,task_sequence,is_active,created_by,created_dttm,updated_by,updated_dttm",
+      "connection_name": "mysql_connection_con"
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
