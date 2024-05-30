@@ -1,0 +1,66 @@
+{
+  "pipeline_id": 198,
+  "project_id": 79,
+  "pipeline_name": "bulk_payments_load",
+  "pipeline_cd": null,
+  "pipeline_description": "pipelines which loads data from multiple to multiple",
+  "is_active": "Y",
+  "tasks_details": {
+    "S3_to_remoteserver": [
+      "oracle_to_s3_bulk_ingestion"
+    ],
+    "oracle_to_s3_bulk_ingestion": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "625",
+      "data": {
+        "label": "625-oracle_to_s3_bulk_ingestion"
+      },
+      "position": {
+        "x": 50,
+        "y": 9550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "626",
+      "data": {
+        "label": "626-S3_to_remoteserver"
+      },
+      "position": {
+        "x": 50,
+        "y": 9600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-625",
+      "source": "0",
+      "target": "625"
+    },
+    {
+      "id": "flow-625-626",
+      "source": "625",
+      "target": "626"
+    }
+  ],
+  "created_dttm": "2024-05-30T10:01:40.554Z",
+  "updated_dttm": "2024-05-30T10:01:40.554Z"
+}
