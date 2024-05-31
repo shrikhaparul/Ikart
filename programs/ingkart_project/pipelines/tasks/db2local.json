@@ -1,0 +1,54 @@
+{
+  "login_id": "shilpi",
+  "id": 592,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "db2local",
+  "task_description": "db2local",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "d7d38619-40c6-430e-94ab-2057e0777d3d",
+  "status": "Failed",
+  "updated_dttm": "2024-05-20T10:53:20.000Z",
+  "source": "Oracle",
+  "target": "Remote Server",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT COUNTRY, ITEM_TYPE, ORDERDATE, ORDERID, ORDER_PRIORITY, REGION, SALES_CHANNEL, SHIPDATE, TOTALCOST, TOTALPROFIT, TOTALREVENUE, UNICOST, UNITPRICE, UNITSSOLD FROM test.BEVERAGES_FILE1CSV",
+      "schema": "test",
+      "chunk_size": 100000,
+      "table_name": "BEVERAGES",
+      "parameter_type": "Oracle",
+      "select_columns": "COUNTRY,ITEM_TYPE,ORDERDATE,ORDERID,ORDER_PRIORITY,REGION,SALES_CHANNEL,SHIPDATE,TOTALCOST,TOTALPROFIT,TOTALREVENUE,UNICOST,UNITPRICE,UNITSSOLD",
+      "connection_name": "oracle_xepdb1"
+    },
+    "target": {
+      "target_type": "remote_server_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ";",
+      "file_name": "bevrage.xlsx",
+      "file_path": "/home/Admin/test/",
+      "file_type": "xlsx",
+      "operation": "append",
+      "encryption": "yes",
+      "compression": "gzip",
+      "skip_header": "",
+      "audit_columns": "inactive",
+      "parameter_type": "Remote Server",
+      "connection_name": "remote_server_s",
+      "public_key_path": "/home/Admin/recipient_public_key.asc",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
