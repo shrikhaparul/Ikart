@@ -1,0 +1,83 @@
+{
+  "login_id": "Puneeth",
+  "id": 488,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "dq_testing",
+  "project_id": 61,
+  "pipeline_id": 165,
+  "task_name": "ls_local_to_postgres",
+  "task_description": "ls_s3_to_postgres",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-02T11:32:21.000Z",
+  "source": "AWS S3",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "OP_DTL_RSRCH_PGYR2022_P01182024.csv",
+      "file_path": "dq_test/",
+      "file_type": "csv",
+      "chunk_size": 100000,
+      "decryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "AWS S3",
+      "select_columns": null,
+      "connection_name": "awss3_connection_puneeth",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "open_payment_data",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "postgres_connection_puneeth",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "table_column_count_to_equal",
+        "parameters": {
+          "value": "91"
+        },
+        "active": "N",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_sum_to_be_between",
+        "parameters": {
+          "column": "Total_Amount_of_Payment_USDollars",
+          "max_value": "500000",
+          "min_value": "0"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
