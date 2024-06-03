@@ -1,0 +1,83 @@
+{
+  "login_id": "shilpi",
+  "id": 432,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "db2local",
+  "task_description": "db2local",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "30909cea-7d4d-43ea-8d5f-01d608fe42eb",
+  "status": "Success",
+  "updated_dttm": "2024-05-15T07:41:56.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_ec2",
+          "object_name": "TEST_DATA",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "encoding": "utf-8",
+          "connection_name": "mysql_ec2",
+          "delimiter": ",",
+          "file_path": "/home/shilpi/data/testfile/",
+          "object_name": "TEST_DATA",
+          "schema_name": "sys",
+          "audit_fields": "no",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "a_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_ec2",
+          "object_name": "TEMP_TABLE",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "encoding": "utf-8",
+          "connection_name": "mysql_ec2",
+          "delimiter": ",",
+          "file_path": "/home/shilpi/data/testfile/",
+          "object_name": "TEMP_TABLE",
+          "schema_name": "sys",
+          "audit_fields": "no",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "a_",
+          "target_file_format": "csv"
+        }
+      }
+    ]
+  }
+}
