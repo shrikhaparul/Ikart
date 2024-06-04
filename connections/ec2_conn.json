@@ -1,0 +1,14 @@
+{
+  "project_id": 58,
+  "connection_type": "File Storage",
+  "connection_subtype": "Remote Server",
+  "connection_name": "ec2_conn",
+  "connection_details": {
+    "path": "/home/Admin/actions-runner/_work/UI/src_files/",
+    "port": "22",
+    "hostname": "44.197.70.198",
+    "password": "832af82892822c9aa9f53532b04050ddce08248627988e11c7b0",
+    "username": "Admin",
+    "updated_by": "jjones"
+  }
+}
