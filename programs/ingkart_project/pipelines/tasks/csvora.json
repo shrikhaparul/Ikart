@@ -1,0 +1,57 @@
+{
+  "login_id": "shilpi",
+  "id": 606,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "csvora",
+  "task_description": "csvora",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "e128a261-c5cc-49e9-83b8-69975cd1ece7",
+  "status": "Failed",
+  "updated_dttm": "2024-05-29T15:50:05.000Z",
+  "source": "Local Server",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "employee_data_new.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/all_files",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "no",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": "",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": "number,first_name,last_name,gender,birth_date,employment_status,annual_salary",
+      "parameter_type": "Local Server",
+      "select_columns": "number,first_name,last_name,gender,birth_date,employment_status,annual_salary",
+      "connection_name": "localserver_s",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "test",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "OP_DTL_GNRL_1",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_xepdb1",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
