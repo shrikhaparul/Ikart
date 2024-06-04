@@ -1,0 +1,57 @@
+{
+  "login_id": "jjones",
+  "id": 602,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Oracle_jobs",
+  "project_id": 73,
+  "pipeline_id": 185,
+  "task_name": "csv_file_to_s3",
+  "task_description": "filet o s3",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "da8e3bd2-029a-437b-b4b0-6359a3d4b397",
+  "status": "Running",
+  "updated_dttm": "2024-05-29T19:56:23.000Z",
+  "source": "Local Server",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "appendingcsv.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "no",
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Index,Organization_Id,Name,Website,Country,Description,Founded,Industry,Number_of_employees,CRTD_BY,CRTD_DTTM,UPDT_BY,UPDT_DTTM",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "ec2_local_server_files_to_files",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "Post_new_tab",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "P_postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
