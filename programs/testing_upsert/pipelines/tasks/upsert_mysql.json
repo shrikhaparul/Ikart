@@ -1,0 +1,58 @@
+{
+  "login_id": "swetha",
+  "id": 609,
+  "project_name": "testing_upsert",
+  "pipeline_name": "upsert_demo",
+  "project_id": 78,
+  "pipeline_id": 195,
+  "task_name": "upsert_mysql",
+  "task_description": "upsert",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "f5d9193c-aba3-4571-911a-318d761123ef",
+  "status": "Success",
+  "updated_dttm": "2024-05-29T18:18:55.000Z",
+  "source": "Local Server",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "employee_data.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/all_files",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "number,first_name,last_name,gender,birth_date,employment_status,annual_salary",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local_server_storage_ec2",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "employee",
+      "primary_key": "",
+      "audit_columns": "active",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "connection_postgres_ec2",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
