@@ -1,0 +1,48 @@
+{
+  "login_id": "swetha",
+  "id": 603,
+  "project_name": "testing_upsert",
+  "pipeline_name": "upsert_demo",
+  "project_id": 78,
+  "pipeline_id": 195,
+  "task_name": "upsert_function",
+  "task_description": "demo upsert_function",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "f67d935f-7e48-4748-a4e5-f9348f5b96d1",
+  "status": "Failed",
+  "updated_dttm": "2024-05-29T15:08:52.000Z",
+  "source": "Oracle",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT * FROM test.BEVERAGES_UP",
+      "schema": "test",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 100000,
+      "table_name": "BEVERAGES_UP",
+      "parameter_type": "Oracle",
+      "select_columns": null,
+      "connection_name": "oracle_ec2_connection"
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "beveragesn",
+      "audit_columns": "active",
+      "parameter_type": "MSSQL",
+      "connection_name": "connection_mssqlserver_ec2",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
