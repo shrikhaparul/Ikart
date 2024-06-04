@@ -1,0 +1,57 @@
+{
+  "login_id": "shilpi",
+  "id": 430,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "local_to_mys",
+  "task_description": "local to mys",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "33c2f678-7f8a-4e63-9d59-2c89f9522003",
+  "status": "Failed",
+  "updated_dttm": "2024-04-12T17:03:53.000Z",
+  "source": "Local Server",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "json_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "",
+      "file_name": "sales.json",
+      "file_path": "/home/shilpi/data/splitted_file/",
+      "file_type": "json",
+      "chunk_size": 100000,
+      "decryption": "no",
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": 0,
+      "alias_columns": null,
+      "parameter_type": "Local Server",
+      "select_columns": "",
+      "connection_name": "localserver_shilpi",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "test",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "sal_json",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_shilpi",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
