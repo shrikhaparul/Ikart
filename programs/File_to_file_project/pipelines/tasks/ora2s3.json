@@ -1,0 +1,57 @@
+{
+  "login_id": "jjones",
+  "id": 575,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "ora2s3",
+  "task_description": "ingesting data using oracle to  aws s3",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "429a530d-2f85-43ca-9376-ab91dbc93c86",
+  "status": "Success",
+  "updated_dttm": "2024-05-07T18:48:42.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+          "operation": "",
+          "encryption": "no",
+          "task_group": "0",
+          "compression": "",
+          "escape_char": "",
+          "object_name": "OP_DTL_RSRCH_PGYR2022_P01182024",
+          "object_type": "csv",
+          "skip_footer": "0",
+          "skip_header": "1",
+          "files_filter_name": "*.csv"
+        },
+        "target": {
+          "object_name": "target_OP_DTL_RSRCH_PGYR2022_P01182024",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "primary_key": "",
+          "schema_name": "curated",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
