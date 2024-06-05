@@ -1,0 +1,58 @@
+{
+  "login_id": "shilpi",
+  "id": 437,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "localtodb",
+  "task_description": "local to db",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "faf4a3ef-20da-4732-b215-38843f04984b",
+  "status": "Running",
+  "updated_dttm": "2024-06-04T12:34:02.000Z",
+  "source": "Local Server",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "salesdaily.csv",
+      "file_path": "/home/shilpi/data/splitted_file/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "no",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": "",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": "datum,M01AB,M01AE,N02BA,N02BE,N05B,N05C,R03,R06,Year,Month,Hour,Weekday Name",
+      "parameter_type": "Local Server",
+      "select_columns": "",
+      "connection_name": "localserver_shilpi",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "salesdaily",
+      "primary_key": "",
+      "audit_columns": "inactive",
+      "parameter_type": "MSSQL",
+      "connection_name": "mssql_shilpi",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
