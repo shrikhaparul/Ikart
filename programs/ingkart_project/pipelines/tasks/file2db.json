@@ -1,0 +1,57 @@
+{
+  "login_id": "shilpi",
+  "id": 520,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "file2db",
+  "task_description": "file2db",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "2ff415e0-4f82-485e-ba56-4a7dc40bcb7f",
+  "status": "Failed",
+  "updated_dttm": "2024-04-10T10:51:18.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_data.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+      "file_type": "csv",
+      "chunk_size": 10000000,
+      "decryption": "no",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": 0,
+      "skip_header": null,
+      "alias_columns": "ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,SHIPDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE",
+      "parameter_type": "Local Server",
+      "select_columns": "ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,SHIPDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE",
+      "connection_name": "localserver_s",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "sys",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "sales_2.csv",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_s",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
