@@ -1,0 +1,55 @@
+{
+  "login_id": "jjones",
+  "id": 405,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "Remote_to_DB",
+  "task_description": "j",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-06-03T10:55:48.000Z",
+  "source": "Remote Server",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "remote_server_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Oracle_Test_Dump.zip.gpg",
+      "file_path": "/home/Admin/all_files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "encryption": "yes",
+      "quote_char": null,
+      "compression": "zip",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "",
+      "parameter_type": "Remote Server",
+      "select_columns": null,
+      "connection_name": "remote_server_local",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "DROP AND CREATE",
+      "table_name": "remote_test",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "Postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
