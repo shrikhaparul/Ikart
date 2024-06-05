@@ -1,0 +1,52 @@
+{
+  "login_id": "jjones",
+  "id": 401,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "files_to_db",
+  "task_description": "s",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "updated_dttm": "2024-05-07T17:02:58.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "IKART_file_conn",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/pshrikh/test_files/",
+          "task_group": "0",
+          "compression": "",
+          "object_name": "Beverages_file.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "*.csv"
+        },
+        "target": {
+          "object_name": "Beverages_file.csv",
+          "connection_name": "Postgres",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
