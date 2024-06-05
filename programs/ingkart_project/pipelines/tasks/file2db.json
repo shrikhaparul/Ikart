@@ -1,0 +1,57 @@
+{
+  "login_id": "shilpi",
+  "id": 520,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "file2db",
+  "task_description": "file2db",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "e852ab43-77f7-4b9a-adeb-fe9343c99435",
+  "status": "Success",
+  "updated_dttm": "2024-04-10T10:51:18.000Z",
+  "source": "Local Server",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "salesdaily.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/files/",
+      "file_type": "csv",
+      "chunk_size": 10000000,
+      "decryption": "no",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": 0,
+      "skip_header": null,
+      "alias_columns": "datum,M01AB,M01AE,N02BA,N02BE,N05B,N05C,R03,R06,Year,Month,Hour,Weekday Name",
+      "parameter_type": "Local Server",
+      "select_columns": "datum,M01AB,M01AE,N02BA,N02BE,N05B,N05C,R03,R06,Year,Month,Hour,Weekday Name",
+      "connection_name": "localserver_s",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "test",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "salesdaily",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_xepdb1",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
