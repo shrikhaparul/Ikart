@@ -34,7 +34,7 @@
           "file_path": "/home/pshrikh/file/items/",
           "operation": "move",
           "task_group": "3",
-          "compression": "",
+          "compression": "None",
           "object_name": "Syn",
           "object_type": "csv",
           "skip_header": "1",
