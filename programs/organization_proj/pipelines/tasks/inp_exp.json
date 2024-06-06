@@ -118,33 +118,7 @@
                     "input_col_name": "",
                     "output_col_name": "joining_date_julian",
                     "expression_value": "to_julian(join_date)"
-                  },
-                  "Neexpression_details_8":{
-                    "operator": "currency_conv",
-                      "sequence": "8",
-                      "operatorType": "Converter",
-                      "input_col_name": "",
-                      "output_col_name": "salary_USD",
-                      "expression_value": "currency_conv(salary_initial,INR,USD)"
-                    },
-                    "Neexpression_details_9": {
-                      "operator": "trunc",
-                      "sequence": "9",
-                      "operatorType": "Math",
-                      "input_col_name": "",
-                      "output_col_name": "salary_USD_trunc",
-                      "expression_value": "trunc(salary_USD,1)"
-                    
-                  },
-                  "Neexpression_details_10": {
-                    "operator": "",
-                    "sequence": "10",
-                    "operatorType": "",
-                    "input_col_name": "salary_initial",
-                    "output_col_name": "salary_initial",
-                    "expression_value": ""
-                  
-                }
+                  }
             }
           }
           ]
