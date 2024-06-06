@@ -132,7 +132,7 @@
                 "operation": "replace",
                 "table_name": "demo_exp",
                 "target_type": "PostgreSQL",
-                "connection_name": "postgress",
+                "connection_name": "postgres",
                 "transformation_name": "OutputDetails"
               }
             }
