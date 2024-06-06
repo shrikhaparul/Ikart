@@ -34,7 +34,7 @@
           "file_path": "/home/pshrikh/file/items/",
           "operation": "move",
           "task_group": "0",
-          "compression": "",
+          "compression": "None",
           "escape_char": "",
           "object_name": "DrDoS_DNS",
           "object_type": "csv",
