@@ -1,0 +1,66 @@
+{
+  "login_id": "Madhu",
+  "id": 431,
+  "project_name": "ORG_EMP",
+  "pipeline_name": "Data_export",
+  "project_id": 61,
+  "pipeline_id": 157,
+  "task_name": "Transformation_demo",
+  "task_description": "Transformation_demo",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-16T11:24:08.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+  "details": {
+    "details": {
+      "flow": {
+        "Input_Local": "0",
+        "Output_OutputDetails": "Input_Local"
+      },
+      "details": [
+        {
+          "Input": [
+            {
+              "Local": {
+              "output_df": "dept",
+              "source_type": "Local Server",
+              "transformation_name": "Local",
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_path": "/home/rperuman/src_files/transformation/data/employee_data_up.csv",
+              "file_type": "csv",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "connection_name": "147"
+              }
+            }
+          ]
+        },
+        {
+          "Output": [
+            {
+              "OutputDetails": {
+                "schema": "public",
+                "input_df": "dept",
+                "operation": "replace",
+                "table_name": "demo_sales_record",
+                "target_type": "PostgreSQL",
+                "connection_name": "postgres",
+                "transformation_name": "OutputDetails"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
