@@ -1,0 +1,170 @@
+{
+  "login_id": "Madhu",
+  "id": 431,
+  "project_name": "ORG_EMP",
+  "pipeline_name": "Data_export",
+  "project_id": 61,
+  "pipeline_id": 157,
+  "task_name": "Transformation_demo1",
+  "task_description": "Transformation_demo1",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-16T11:24:08.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+  "details": {
+    "details": {
+      "flow": {
+        "Input_Postgres": "0",
+        "Expression_Neexpression_details":"Input_Postgres",
+        "Output_OutputDetails": "Expression_Neexpression_details"
+      },
+      "details": [
+        {
+          "Input": [
+            {
+              "Postgres": {
+                "output_df": "dept",
+                "source_type": "Local Server",
+                "transformation_name": "Postgres",
+                "header": "Y",
+                "encoding": "utf-8",
+                "delimiter": ",",
+                "file_path": "/home/rperuman/src_files/transformation/data/extended_employee_data.csv",
+                "file_type": "csv",
+                "quote_char": "\"",
+                "compression": "",
+                "escape_char": "\\n",
+                "skip_header": "0",
+                "target_type": "Local Server",
+                "connection_name": "147"
+              }
+            }
+          ]
+        },
+        {
+          "Expression": [
+            
+          {
+            "Neexpression_details": {
+              "input_df": "dept",
+              "output_df": "expression_df",
+              "transformation_name": "Neexpression_details",
+              
+              "Neexpression_details_1": {
+                "operator": "coalesce",
+                "sequence": "1",
+                "operatorType": "Conditional",
+                "input_col_name": "",
+                "output_col_name": "location",
+                "expression_value": "coalesce(work_location,NA)"
+              },
+            
+            
+              "Neexpression_details_4": {
+                "operator": "multiplication",
+                "sequence": "4",
+                "operatorType": "Math",
+                "input_col_name": "",
+                "output_col_name": "hike",
+                "expression_value": "(salary_initial*0.8)"
+              
+            },
+            
+              "Neexpression_details_3": {
+                "operator": "trunc",
+                "sequence": "3",
+                "operatorType": "Math",
+                "input_col_name": "salary_initial",
+                "output_col_name": "salary_initial",
+                "expression_value": "trunc(salary_initial,1)"
+              
+            },
+            
+              "Neexpression_details_2": {
+                "operator": "getdate",
+                "sequence": "2",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "joining_date",
+                "expression_value": "getdate()"
+              
+            },
+              "Neexpression_details_5":{
+                "operator": "",
+                  "sequence": "5",
+                  "operatorType": "",
+                  "input_col_name": "first_name",
+                  "output_col_name": "FirstName",
+                  "expression_value": ""
+              },
+              "Neexpression_details_7":{
+                "operator": "to_gregorian",
+                  "sequence": "7",
+                  "operatorType": "Date and Time",
+                  "input_col_name": "",
+                  "output_col_name": "joining_date_gergorian",
+                  "expression_value": "to_gregorian(joining_date_julian)"
+                },
+                "Neexpression_details_6":{
+                  "operator": "to_julian",
+                    "sequence": "6",
+                    "operatorType": "Date and Time",
+                    "input_col_name": "",
+                    "output_col_name": "joining_date_julian",
+                    "expression_value": "to_julian(join_date)"
+                  },
+                  "Neexpression_details_8":{
+                    "operator": "currency_conv",
+                      "sequence": "8",
+                      "operatorType": "Converter",
+                      "input_col_name": "",
+                      "output_col_name": "salary_USD",
+                      "expression_value": "currency_conv(salary_initial,INR,USD)"
+                    },
+                    "Neexpression_details_9": {
+                      "operator": "trunc",
+                      "sequence": "9",
+                      "operatorType": "Math",
+                      "input_col_name": "",
+                      "output_col_name": "salary_USD_trunc",
+                      "expression_value": "trunc(salary_USD,1)"
+                    
+                  },
+                  "Neexpression_details_10": {
+                    "operator": "",
+                    "sequence": "10",
+                    "operatorType": "",
+                    "input_col_name": "salary_initial",
+                    "output_col_name": "salary_initial",
+                    "expression_value": ""
+                  
+                }
+            }
+          }
+          ]
+        },
+        {
+          "Output": [
+            {
+              "OutputDetails": {
+                "schema": "public",
+                "input_df": "expression_df",
+                "operation": "replace",
+                "table_name": "demo_exp",
+                "target_type": "PostgreSQL",
+                "connection_name": "postgress",
+                "transformation_name": "OutputDetails"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
