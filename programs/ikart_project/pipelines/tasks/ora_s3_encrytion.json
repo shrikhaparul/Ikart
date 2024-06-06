@@ -1,0 +1,59 @@
+{
+  "login_id": "shilpi",
+  "id": 435,
+  "project_name": "ikart_project",
+  "pipeline_name": "ingestion_with_encryption",
+  "project_id": 61,
+  "pipeline_id": 152,
+  "task_name": "ora_s3_encrytion",
+  "task_description": "ora_s3_encrytion",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "8f76ba0a-dced-41ae-a375-c78c648cb497",
+  "status": "Running",
+  "updated_dttm": "2024-05-30T06:25:56.000Z",
+  "source": "Oracle",
+  "target": "Remote Server",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT BusinessEntityID, ModifiedDate, ROWGUID FROM test.BUSINESSENTITY_MSSQL",
+      "schema": "test",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "BUSINESSENTITY_MSSQL",
+      "parameter_type": "Oracle",
+      "select_columns": "BusinessEntityID,ModifiedDate,ROWGUID",
+      "connection_name": "oracle_shilpi"
+    },
+    "target": {
+      "target_type": "remote_server_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "BUSINESSENTIT.csv",
+      "file_path": "Excel_folder/files/oracle/",
+      "file_type": "csv",
+      "operation": "append",
+      "encryption": "yes",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": "",
+      "skip_footer": "0",
+      "skip_header": "0",
+      "audit_columns": "inactive",
+      "parameter_type": "Remote Server",
+      "connection_name": "oracle_remote",
+      "public_key_path": "/home/shilpi/UI/backend-python/src/scripts/ingestion/recipient_public_key.asc",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
