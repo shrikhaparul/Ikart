@@ -1,0 +1,749 @@
+{
+  "login_id": "jjones",
+  "id": 636,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "postgrestoremoteserver",
+  "task_description": "sd",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-07T14:46:43.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "Target": {
+          "object_name": "aws_test_table"
+        },
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "aws_test_table",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "distribution_centerscsv"
+        },
+        "subtask": "10",
+        "source": {
+          "task_group": "2",
+          "connection_name": "P_postgres",
+          "object_name": "distribution_centerscsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "employee"
+        },
+        "subtask": "11",
+        "source": {
+          "task_group": "2",
+          "connection_name": "P_postgres",
+          "object_name": "employee",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "order_itemscsv"
+        },
+        "subtask": "12",
+        "source": {
+          "task_group": "2",
+          "connection_name": "P_postgres",
+          "object_name": "order_itemscsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "orderscsv"
+        },
+        "subtask": "13",
+        "source": {
+          "task_group": "2",
+          "connection_name": "P_postgres",
+          "object_name": "orderscsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "impt_table10"
+        },
+        "subtask": "14",
+        "source": {
+          "task_group": "2",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table10",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "test_employee_details_json"
+        },
+        "subtask": "15",
+        "source": {
+          "task_group": "3",
+          "connection_name": "P_postgres",
+          "object_name": "test_employee_details_json",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "open"
+        },
+        "subtask": "16",
+        "source": {
+          "task_group": "3",
+          "connection_name": "P_postgres",
+          "object_name": "open",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "survival_datacsv"
+        },
+        "subtask": "17",
+        "source": {
+          "task_group": "3",
+          "connection_name": "P_postgres",
+          "object_name": "survival_datacsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "impt_table7"
+        },
+        "subtask": "18",
+        "source": {
+          "task_group": "3",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table7",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "test_test_data"
+        },
+        "subtask": "19",
+        "source": {
+          "task_group": "4",
+          "connection_name": "P_postgres",
+          "object_name": "test_test_data",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "sales_11"
+        },
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "sales_11",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "productscsv"
+        },
+        "subtask": "20",
+        "source": {
+          "task_group": "4",
+          "connection_name": "P_postgres",
+          "object_name": "productscsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "impt_table5"
+        },
+        "subtask": "21",
+        "source": {
+          "task_group": "5",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table5",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "ppm"
+        },
+        "subtask": "22",
+        "source": {
+          "task_group": "5",
+          "connection_name": "P_postgres",
+          "object_name": "ppm",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "sales_alias"
+        },
+        "subtask": "23",
+        "source": {
+          "task_group": "5",
+          "connection_name": "P_postgres",
+          "object_name": "sales_alias",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "postgres_table_2"
+        },
+        "subtask": "24",
+        "source": {
+          "task_group": "6",
+          "connection_name": "P_postgres",
+          "object_name": "postgres_table_2",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "traincsv"
+        },
+        "subtask": "25",
+        "source": {
+          "task_group": "6",
+          "connection_name": "P_postgres",
+          "object_name": "traincsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "impt_table6"
+        },
+        "subtask": "26",
+        "source": {
+          "task_group": "6",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table6",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "bebe"
+        },
+        "subtask": "27",
+        "source": {
+          "task_group": "6",
+          "connection_name": "P_postgres",
+          "object_name": "bebe",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "userscsv"
+        },
+        "subtask": "28",
+        "source": {
+          "task_group": "6",
+          "connection_name": "P_postgres",
+          "object_name": "userscsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "openp"
+        },
+        "subtask": "29",
+        "source": {
+          "task_group": "7",
+          "connection_name": "P_postgres",
+          "object_name": "openp",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "post"
+        },
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "post",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "impt_table1"
+        },
+        "subtask": "30",
+        "source": {
+          "task_group": "7",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table1",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "impt_table3"
+        },
+        "subtask": "31",
+        "source": {
+          "task_group": "7",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table3",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "impt_table4"
+        },
+        "subtask": "32",
+        "source": {
+          "task_group": "7",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table4",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "impt_table2"
+        },
+        "subtask": "33",
+        "source": {
+          "task_group": "7",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table2",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "syn_table"
+        },
+        "subtask": "34",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "syn_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "udp_table"
+        },
+        "subtask": "35",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "udp_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "udp_lags"
+        },
+        "subtask": "36",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "udp_lags",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "drdos_netbios_table"
+        },
+        "subtask": "37",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "drdos_netbios_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "drdos_ldap"
+        },
+        "subtask": "38",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "drdos_ldap",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "drdos_ntp_table"
+        },
+        "subtask": "39",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "drdos_ntp_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "name_mappingcsv"
+        },
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "name_mappingcsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "drdos_upd"
+        },
+        "subtask": "40",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "drdos_upd",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "tftp_table"
+        },
+        "subtask": "41",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "tftp_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "drdos_mssql_table"
+        },
+        "subtask": "42",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "drdos_mssql_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "drdos_dns_table"
+        },
+        "subtask": "43",
+        "source": {
+          "task_group": "2",
+          "connection_name": "P_postgres",
+          "object_name": "drdos_dns_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "drdos_ssdp_table"
+        },
+        "subtask": "44",
+        "source": {
+          "task_group": "2",
+          "connection_name": "P_postgres",
+          "object_name": "drdos_ssdp_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "netbios_table"
+        },
+        "subtask": "45",
+        "source": {
+          "task_group": "2",
+          "connection_name": "P_postgres",
+          "object_name": "netbios_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "temp_table"
+        },
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "temp_table",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "tbl_newnm_m"
+        },
+        "subtask": "6",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "tbl_newnm_m",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "test_data"
+        },
+        "subtask": "7",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "test_data",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "inventory_itemscsv"
+        },
+        "subtask": "8",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "inventory_itemscsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "post_tab2"
+        },
+        "subtask": "9",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "post_tab2",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      }
+    ]
+  }
+}
