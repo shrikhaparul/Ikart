@@ -33,7 +33,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "0",
-          "object_name": "DrDoS_DNS",
+          "object_name": "DrDoS_DNS.csv",
           "object_type": "csv",
           "skip_header": "0",
           "files_filter_name": "*.csv"
