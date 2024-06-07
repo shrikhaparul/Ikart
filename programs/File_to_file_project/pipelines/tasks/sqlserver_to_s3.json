@@ -1,0 +1,57 @@
+{
+  "login_id": "jjones",
+  "id": 573,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "sqlserver_to_s3",
+  "task_description": "kbjds",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "95e62941-ccd2-4467-8333-6aac059f6c5e",
+  "status": "Success",
+  "updated_dttm": "2024-05-30T06:44:56.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 1000000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "aws_test_table",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "bzip",
+          "object_name": "aws_test_table",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "TGT_",
+          "target_file_format": "parquet"
+        }
+      }
+    ]
+  }
+}
