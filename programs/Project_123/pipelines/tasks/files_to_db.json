@@ -33,7 +33,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "1",
-          "object_name": "netbios_table",
+          "object_name": "netbios_table.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
