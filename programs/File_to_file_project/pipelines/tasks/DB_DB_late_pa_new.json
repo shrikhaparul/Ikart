@@ -1,0 +1,55 @@
+{
+  "login_id": "jjones",
+  "id": 634,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "DB_DB_late_pa_new",
+  "task_description": "j",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "a87d9361-9e07-4bfd-a8fe-fc7ed70f0ba5",
+  "status": "Success",
+  "updated_dttm": "2024-06-07T07:42:55.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "6",
+          "connection_name": "P_postgres",
+          "object_name": "dr1md_table",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "remote_serve_p",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/Admin/test/",
+          "compression": "bzip",
+          "object_name": "dr1md_table",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_new_",
+          "target_file_format": "csv"
+        }
+      }
+    ]
+  }
+}
