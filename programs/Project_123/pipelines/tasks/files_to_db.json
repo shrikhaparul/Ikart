@@ -33,7 +33,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "0",
-          "object_name": "drdos_mssql_table",
+          "object_name": "drdos_mssql_table.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
@@ -57,7 +57,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "1",
-          "object_name": "drdos_ssdp_table",
+          "object_name": "drdos_ssdp_table.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
@@ -81,7 +81,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "1",
-          "object_name": "drdos_ntp_table",
+          "object_name": "drdos_ntp_table.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
@@ -105,7 +105,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "0",
-          "object_name": "drdos_netbios_table",
+          "object_name": "drdos_netbios_table.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
