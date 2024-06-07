@@ -1,0 +1,227 @@
+{
+  "login_id": "jjones",
+  "id": 575,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "ora2s3",
+  "task_description": "ingesting data using oracle to  aws s3",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "d6121ab1-f87a-4bef-8d9b-09dd97bdf97e",
+  "status": "Failed",
+  "updated_dttm": "2024-05-07T18:48:42.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "19",
+          "connection_name": "P_postgres",
+          "object_name": "udp_lags",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "udp_lags",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "19",
+          "connection_name": "P_postgres",
+          "object_name": "drdos_netbios_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "drdos_netbios_table",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "drdos_ldap",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "drdos_ldap",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "drdos_upd",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "drdos_upd",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "20",
+          "connection_name": "P_postgres",
+          "object_name": "tftp_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tftp_table",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "20",
+          "connection_name": "P_postgres",
+          "object_name": "drdos_mssql_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "drdos_mssql_table",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "2",
+          "connection_name": "P_postgres",
+          "object_name": "drdos_dns_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "drdos_dns_table",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "task_group": "2",
+          "connection_name": "P_postgres",
+          "object_name": "drdos_ssdp_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "drdos_ssdp_table",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "task_group": "21",
+          "connection_name": "P_postgres",
+          "object_name": "netbios_table",
+          "object_type": "Table",
+          "schema_name": "curated",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "netbios_table",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
