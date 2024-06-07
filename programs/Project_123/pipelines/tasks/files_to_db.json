@@ -33,7 +33,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "0",
-          "object_name": "DrDoS_MSSQL",
+          "object_name": "DrDoS_MSSQL.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
@@ -57,7 +57,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "0",
-          "object_name": "Syn",
+          "object_name": "Syn.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
@@ -81,7 +81,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "0",
-          "object_name": "DrDoS_UDP",
+          "object_name": "DrDoS_UDP.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
@@ -105,7 +105,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "0",
-          "object_name": "DrDoS_SSDP",
+          "object_name": "DrDoS_SSDP.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
@@ -129,7 +129,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "0",
-          "object_name": "DrDoS_SNMP",
+          "object_name": "DrDoS_SNMP.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
@@ -153,7 +153,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "1",
-          "object_name": "DrDoS_NetBIOS",
+          "object_name": "DrDoS_NetBIOS.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
@@ -177,7 +177,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "0",
-          "object_name": "DrDoS_NTP",
+          "object_name": "DrDoS_NTP.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
@@ -201,7 +201,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "0",
-          "object_name": "DrDoS_LDAP",
+          "object_name": "DrDoS_LDAP.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
@@ -225,7 +225,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "0",
-          "object_name": "UDPLag",
+          "object_name": "UDPLag.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
@@ -249,7 +249,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "1",
-          "object_name": "TFTP",
+          "object_name": "TFTP.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
@@ -273,7 +273,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "0",
-          "object_name": "DrDoS_DNS",
+          "object_name": "DrDoS_DNS.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
