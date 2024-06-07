@@ -33,7 +33,7 @@
           "delimiter": ",",
           "file_path": "/home/pshrikh/file/items/",
           "task_group": "2",
-          "object_name": "udp_lags",
+          "object_name": "udp_lags.csv",
           "object_type": "csv",
           "skip_header": "1",
           "files_filter_name": "*.csv"
