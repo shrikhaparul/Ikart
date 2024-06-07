@@ -1,0 +1,163 @@
+{
+  "login_id": "Madhu",
+  "id": 431,
+  "project_name": "ORG_EMP",
+  "pipeline_name": "Data_export",
+  "project_id": 61,
+  "pipeline_id": 157,
+  "task_name": "Transformation_demo1",
+  "task_description": "Transformation_demo1",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-16T11:24:08.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+  "task": {
+    "flow": {
+      "Input_localInput": "0",
+      "Expression_Neexpression_details":"Filter_FilterDetails_localcsv",
+      "Filter_FilterDetails_localcsv":"Input_localInput",
+      "Output_OutputDetails": "Expression_Neexpression_details"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "localInput": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_path": "/home/rperuman/src_files/transformation/data/extended_employee_data.csv",
+              "file_type": "csv",
+              "output_df": "input_df",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "connection_name": "147",
+              "transformation_name": "localInput"
+            }
+          }
+        ]
+      },
+      {
+        "Filter": [
+          {
+            "FilterDetails_localcsv": {
+              "input_df": "input_df",
+              "output_df": "filter_df",
+              "transformation_name": "FilterDetails_localcsv",
+              "FilterDetails_localcsv_Operation_1716796176882": {
+                "id": "FilterDetails_localcsv_Operation_1716796176882",
+                "operator": "==",
+                "column_name": "first_name",
+                "field_value": "Bob",
+                "condition_type": "operation",
+                "operation_name": "operation_02"
+              },
+              "FilterDetails_localcsv_Group_1716796176883": {
+                "id": "FilterDetails_localcsv_Group_1716796176883",
+                "operator": "and",
+                "group_name": "Group1",
+                "Condition_01": "FilterDetails_localcsv_Operation_1716796176882",
+                "Condition_02": "FilterDetails_localcsv_Operation_1716796176881",
+                "condition_type": "group"
+            },
+            "FilterDetails_localcsv_Operation_1716796176881": {
+              "id": "FilterDetails_localcsv_Operation_1716796176881",
+              "operator": ">",
+              "column_name": "employee_id",
+              "field_value": "1002",
+              "condition_type": "operation",
+              "operation_name": " operation_01"
+            }
+          }
+          }
+        ]
+      },
+      {
+        "Expression": [
+        {
+          "Neexpression_details": {
+            "input_df": "filter_df",
+            "output_df": "expression_df",
+            "transformation_name": "Neexpression_details",
+            
+            "Neexpression_details_1": {
+              "operator": "coalesce",
+              "sequence": "1",
+              "operatorType": "Conditional",
+              "input_col_name": "",
+              "output_col_name": "location",
+              "expression_value": "coalesce(work_location,NA)"
+            },
+          
+          
+            "Neexpression_details_4": {
+              "operator": "multiplication",
+              "sequence": "4",
+              "operatorType": "Math",
+              "input_col_name": "",
+              "output_col_name": "hike",
+              "expression_value": "(salary_initial*0.8)"
+          },
+          
+            "Neexpression_details_3": {
+              "operator": "trunc",
+              "sequence": "3",
+              "operatorType": "Math",
+              "input_col_name": "salary_initial",
+              "output_col_name": "salary_initial",
+              "expression_value": "trunc(salary_initial,1)"
+          },
+            "Neexpression_details_2": {
+              "operator": "getdate",
+              "sequence": "2",
+              "operatorType": "Date and Time",
+              "input_col_name": "",
+              "output_col_name": "joining_date",
+              "expression_value": "getdate()"
+          },
+            "Neexpression_details_5":{
+              "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "first_name",
+                "output_col_name": "FirstName",
+                "expression_value": ""
+              }
+          }
+        }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "OutputDetails": {
+              "input_df": "expression_df",
+              "transformation_name": "OutputDetails",
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_path": "/home/rperuman/src_files/transformation/data/inp_filter_exp.csv",
+              "file_type": "csv",
+              "output_df": "input_df",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "target_type": "Local Server",
+              "connection_name": "147"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
