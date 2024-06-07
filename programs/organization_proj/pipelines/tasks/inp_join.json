@@ -1,0 +1,92 @@
+{
+  "login_id": "Madhu",
+  "id": 431,
+  "project_name": "ORG_EMP",
+  "pipeline_name": "Data_export",
+  "project_id": 61,
+  "pipeline_id": 157,
+  "task_name": "Transformation_demo1",
+  "task_description": "Transformation_demo1",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "updated_dttm": "2024-05-16T11:24:08.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+  "task": {
+    "flow": {
+      "Input_localInput": "0",
+      "Input_mysql": "0",
+      "Joiner_new_joiner":"Input_mysql,Input_localInput",
+      "Output_OutputDetails": "Joiner_new_joiner"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "localInput": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "employee_data_up.csv",
+              "file_path": "/home/rperuman/src_files/transformation/data/employee_data_up.csv",
+              "file_type": "csv",
+              "output_df": "emp",
+              "quote_char": "\"",
+              "compression": "gzip",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "connection_name": "147"
+            }
+          },
+          {
+            "mysql": {
+              "output_df": "dept",
+              "operation": "replace",
+              "table_name": "demo_dept_data",
+              "source_type": "MYSQL",
+              "connection_name": "mysql"
+            }
+          }
+        ]
+      },
+      {
+        "Joiner": [
+          {
+            "new_joiner": {
+              "join_type": "left",
+              "output_df": "joiner_df",
+              "left_input_df": "dept",
+              "join_condition": "dept.department_id=emp.department_id",
+              "right_input_df": "emp"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "OutputDetails": {
+              "file_type": "csv",
+              "file_path": "/home/rperuman/src_files/transformation/data/inp_join.csv",
+              "input_df": "joiner_df",
+            "header": "Y",
+            "encoding": "utf-8",
+            "delimiter": ",",
+            "output_df": "input_df",
+            "quote_char": "\"",
+            "compression": "",
+            "escape_char": "\\n",
+            "skip_header": "0",
+            "target_type": "Local Server",
+            "connection_name": "147"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
