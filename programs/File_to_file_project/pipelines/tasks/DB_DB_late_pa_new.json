@@ -1,0 +1,54 @@
+{
+  "login_id": "jjones",
+  "id": 634,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "DB_DB_late_pa_new",
+  "task_description": "j",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "23492226-f712-464f-993c-2e569a086a27",
+  "status": "Failed",
+  "updated_dttm": "2024-06-07T10:22:52.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "aws_test_table",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "remote_serve_p",
+          "encoding": "utf-8",
+          "file_path": "/home/Admin/test/",
+          "compression": "bzip",
+          "object_name": "aws_test_table",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "parquet"
+        }
+      }
+    ]
+  }
+}
