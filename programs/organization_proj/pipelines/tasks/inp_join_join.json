@@ -1,0 +1,120 @@
+{
+  "login_id": "Madhu",
+  "id": 431,
+  "project_name": "ORG_EMP",
+  "pipeline_name": "Data_export",
+  "project_id": 61,
+  "pipeline_id": 157,
+  "task_name": "Transformation_demo1",
+  "task_description": "Transformation_demo1",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-16T11:24:08.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+    "task": {
+      "flow": {
+        "Input_Local": "0",
+        "Input_Postgres": "0",
+        "Input_mysql": "0",
+        "Joiner_new_joiner_1":"Input_Postgres,Input_mysql",
+        "Joiner_new_joiner_2":"Input_Local,Joiner_new_joiner_1",
+        "Output_OutputDetails": "Joiner_new_joiner_2"
+      },
+      "details": [
+        {
+          "Input": [
+            {
+              "Local": {
+                "transformation_name": "Local",
+                "output_df": "employee",
+                "source_type": "Local Server",
+                "header": "Y",
+                "encoding": "utf-8",
+                "delimiter": ",",
+                "file_path": "/home/rperuman/src_files/transformation/data/extended_employee_data.csv",
+                "file_type": "csv",
+                "quote_char": "\"",
+                "compression": "",
+                "escape_char": "\\n",
+                "skip_header": "0",
+                "target_type": "Local Server",
+                "connection_name": "147"
+              }
+            },
+            {
+              "Postgres": {
+                "schema": "public",
+                "output_df": "invoice",
+                "table_name": "demo_invoice",
+                "source_type": "PostgreSQL",
+                "connection_name": "postgress",
+                "transformation_name": "Postgres"
+              }
+            },
+            {
+              "mysql": {
+                "schema": "public",
+                "output_df": "customer",
+                "table_name": "demo_customers",
+                "source_type": "MYSQL",
+                "connection_name": "mysql",
+                "transformation_name": "mysql"
+              }
+            }
+          ]
+        },
+        {
+          "Joiner": [
+            {
+              "new_joiner_1": {
+                "join_type": "left",
+                "output_df": "intermediate_df",
+                "left_input_df": "customer",
+                "join_condition": "customer.customer_id = invoice.customer_id",
+                "right_input_df": "invoice",
+                "transformation_name": "new_joiner_1"
+              }
+            },
+            {
+              "new_joiner_2": {
+                "join_type": "left",
+                "output_df": "joiner_df",
+                "left_input_df": "intermediate_df",
+                "join_condition": "intermediate_df.employee_id_right = employee.employee_id",
+                "right_input_df": "employee",
+                "transformation_name": "new_joiner_2"
+              }
+            }
+          ]
+        },
+        {
+          "Output": [
+            {
+              "OutputDetails": {
+                "input_df": "joiner_df",
+                "file_path": "dublicate/inp_join_join.json",
+                "transformation_name": "OutputDetails",
+                "header": "Y",
+                "encoding": "utf-8",
+                "delimiter": ",",
+                "file_type": "json",
+                "output_df": "input_df",
+                "quote_char": "\"",
+                "compression": "",
+                "escape_char": "\\n",
+                "skip_header": "0",
+                "target_type": "Local Server",
+                "connection_name": "147"
+              }
+            }
+          ]
+        }
+      ]
+  }
+}
