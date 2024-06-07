@@ -1,0 +1,48 @@
+{
+  "login_id": "swetha",
+  "id": 635,
+  "project_name": "testing_upsert",
+  "pipeline_name": "upsert_demo",
+  "project_id": 78,
+  "pipeline_id": 195,
+  "task_name": "upsert_testing",
+  "task_description": "upsert_testing",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-07T09:51:54.000Z",
+  "source": "Oracle",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT * FROM test.BEVERAGES_new",
+      "schema": "test",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "BEVERAGES_new",
+      "parameter_type": "Oracle",
+      "select_columns": null,
+      "connection_name": "oracle_ec2_connection"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "bebe",
+      "audit_columns": "active",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "connection_postgres_ec2",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
