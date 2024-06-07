@@ -1,0 +1,733 @@
+{
+  "login_id": "jjones",
+  "id": 575,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "ora2s3",
+  "task_description": "ingesting data using oracle to  aws s3",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "fbb3618b-7e5b-42ad-8477-ea7522b67629",
+  "status": "Success",
+  "updated_dttm": "2024-05-07T18:48:42.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "aws_test_table",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "aws_test_table",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "10",
+        "source": {
+          "task_group": "12",
+          "connection_name": "P_postgres",
+          "object_name": "distribution_centerscsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "distribution_centerscsv",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "11",
+        "source": {
+          "task_group": "2",
+          "connection_name": "P_postgres",
+          "object_name": "employee",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "employee",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "12",
+        "source": {
+          "task_group": "2",
+          "connection_name": "P_postgres",
+          "object_name": "order_itemscsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "order_itemscsv",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "13",
+        "source": {
+          "task_group": "11",
+          "connection_name": "P_postgres",
+          "object_name": "orderscsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "orderscsv",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "14",
+        "source": {
+          "task_group": "11",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table10",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "impt_table10",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "15",
+        "source": {
+          "task_group": "3",
+          "connection_name": "P_postgres",
+          "object_name": "test_employee_details_json",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "test_employee_details_json",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "16",
+        "source": {
+          "task_group": "3",
+          "connection_name": "P_postgres",
+          "object_name": "open",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "open",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "17",
+        "source": {
+          "task_group": "10",
+          "connection_name": "P_postgres",
+          "object_name": "survival_datacsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "survival_datacsv",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "18",
+        "source": {
+          "task_group": "10",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table7",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "impt_table7",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "19",
+        "source": {
+          "task_group": "4",
+          "connection_name": "P_postgres",
+          "object_name": "test_test_data",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "test_test_data",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "sales_11",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "sales_11",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "20",
+        "source": {
+          "task_group": "4",
+          "connection_name": "P_postgres",
+          "object_name": "productscsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "productscsv",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "21",
+        "source": {
+          "task_group": "5",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table5",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "impt_table5",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "22",
+        "source": {
+          "task_group": "5",
+          "connection_name": "P_postgres",
+          "object_name": "sales_alias",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "sales_alias",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "23",
+        "source": {
+          "task_group": "6",
+          "connection_name": "P_postgres",
+          "object_name": "postgres_table_2",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "postgres_table_2",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "24",
+        "source": {
+          "task_group": "6",
+          "connection_name": "P_postgres",
+          "object_name": "traincsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "traincsv",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "25",
+        "source": {
+          "task_group": "9",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table6",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "impt_table6",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "26",
+        "source": {
+          "task_group": "9",
+          "connection_name": "P_postgres",
+          "object_name": "bebe",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "bebe",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "27",
+        "source": {
+          "task_group": "7",
+          "connection_name": "P_postgres",
+          "object_name": "userscsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "userscsv",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "28",
+        "source": {
+          "task_group": "7",
+          "connection_name": "P_postgres",
+          "object_name": "openp",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "openp",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "29",
+        "source": {
+          "task_group": "7",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table1",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "impt_table1",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "14",
+          "connection_name": "P_postgres",
+          "object_name": "post",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "post",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "30",
+        "source": {
+          "task_group": "8",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table3",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "impt_table3",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "31",
+        "source": {
+          "task_group": "8",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table4",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "impt_table4",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "32",
+        "source": {
+          "task_group": "8",
+          "connection_name": "P_postgres",
+          "object_name": "impt_table2",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "impt_table2",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "14",
+          "connection_name": "P_postgres",
+          "object_name": "name_mappingcsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "name_mappingcsv",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "13",
+          "connection_name": "P_postgres",
+          "object_name": "temp_table",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "temp_table",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "13",
+          "connection_name": "P_postgres",
+          "object_name": "tbl_newnm_m",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tbl_newnm_m",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "test_data",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "test_data",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "inventory_itemscsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "inventory_itemscsv",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "task_group": "12",
+          "connection_name": "P_postgres",
+          "object_name": "post_tab2",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "post_tab2",
+          "connection_name": "oracle_p",
+          "primary_key": "",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
