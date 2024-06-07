@@ -1,0 +1,269 @@
+{
+  "login_id": "jjones",
+  "id": 632,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "DB_DB_late_pa",
+  "task_description": "a",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "6116d949-4701-41dc-96a8-84efaa9bc938",
+  "status": "Success",
+  "updated_dttm": "2024-06-06T16:46:49.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "Excel_folder/files/Output_data/tgt_CANCELLED_FILPARQUET_2024.csv",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "task_group": "0",
+          "object_name": "tgt_CANCELLED_FILPARQUET_2024",
+          "object_type": "csv",
+          "files_filter_name": "*.csv"
+        },
+        "target": {
+          "object_name": "tgt_CANCELLED_FILPARQUET_2024",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "10",
+        "source": {
+          "file_path": "Excel_folder/files/test/pqrs_Culture.csv",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "task_group": "1",
+          "object_name": "pqrs_Culture",
+          "object_type": "csv",
+          "files_filter_name": "*.csv"
+        },
+        "target": {
+          "object_name": "pqrs_Culture",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "11",
+        "source": {
+          "file_path": "Excel_folder/files/test/pqrs_Department.csv",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "task_group": "0",
+          "object_name": "pqrs_Department",
+          "object_type": "csv",
+          "files_filter_name": "*.csv"
+        },
+        "target": {
+          "object_name": "pqrs_Department",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "12",
+        "source": {
+          "file_path": "Excel_folder/files/test/pqrs_sal1.csv",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "task_group": "0",
+          "object_name": "pqrs_sal1",
+          "object_type": "csv",
+          "files_filter_name": "*.csv"
+        },
+        "target": {
+          "object_name": "pqrs_sal1",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "file_path": "Excel_folder/files/Output_data/tgt_CURRENCY_2024.csv",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "task_group": "0",
+          "object_name": "tgt_CURRENCY_2024",
+          "object_type": "csv",
+          "files_filter_name": "*.csv"
+        },
+        "target": {
+          "object_name": "tgt_CURRENCY_2024",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "file_path": "Excel_folder/files/Output_data/tgt_dim_customer_profile_2024.csv",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "task_group": "0",
+          "object_name": "tgt_dim_customer_profile_2024",
+          "object_type": "csv",
+          "files_filter_name": "*.csv"
+        },
+        "target": {
+          "object_name": "tgt_dim_customer_profile_2024",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "file_path": "Excel_folder/files/Output_data/tgt_disputed_file_parquet_2024.csv",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "task_group": "0",
+          "object_name": "tgt_disputed_file_parquet_2024",
+          "object_type": "csv",
+          "files_filter_name": "*.csv"
+        },
+        "target": {
+          "object_name": "tgt_disputed_file_parquet_2024",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "file_path": "Excel_folder/files/Output_data/tgt_productdocument_2024.csv",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "task_group": "1",
+          "object_name": "tgt_productdocument_2024",
+          "object_type": "csv",
+          "files_filter_name": "*.csv"
+        },
+        "target": {
+          "object_name": "tgt_productdocument_2024",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "file_path": "Excel_folder/files/Output_data/tgt_productinventory_csv_2024.csv",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "task_group": "0",
+          "object_name": "tgt_productinventory_csv_2024",
+          "object_type": "csv",
+          "files_filter_name": "*.csv"
+        },
+        "target": {
+          "object_name": "tgt_productinventory_csv_2024",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "file_path": "Excel_folder/files/byz_yellow_tripdata_2018_2024.csv",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "task_group": "0",
+          "object_name": "byz_yellow_tripdata_2018_2024",
+          "object_type": "csv",
+          "files_filter_name": "*.csv"
+        },
+        "target": {
+          "object_name": "byz_yellow_tripdata_2018_2024",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "file_path": "Excel_folder/files/data_test.csv",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "task_group": "0",
+          "object_name": "data_test",
+          "object_type": "csv",
+          "files_filter_name": "*.csv"
+        },
+        "target": {
+          "object_name": "data_test",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "file_path": "Excel_folder/files/oracle/bevrages.csv",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "task_group": "0",
+          "object_name": "bevrages",
+          "object_type": "csv",
+          "files_filter_name": "*.csv"
+        },
+        "target": {
+          "object_name": "bevrages",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
