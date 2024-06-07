@@ -17,50 +17,48 @@
   "is_active": "Y",
   "created_by": "Madhu",
   "updated_by": "Madhu",
-  "details": {
-    "details": {
-      "flow": {
-        "Input_Local": "0",
-        "Output_OutputDetails": "Input_Local"
+  "task": {
+    "flow": {
+      "Input_Local": "0",
+      "Output_OutputDetails": "Input_Local"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "Local": {
+            "output_df": "dept",
+            "source_type": "Local Server",
+            "transformation_name": "Local",
+            "header": "Y",
+            "encoding": "utf-8",
+            "delimiter": ",",
+            "file_path": "/home/rperuman/src_files/transformation/data/extended_employee_data.csv",
+            "file_type": "csv",
+            "quote_char": "\"",
+            "compression": "",
+            "escape_char": "\\n",
+            "skip_header": "0",
+            "connection_name": "147"
+            }
+          }
+        ]
       },
-      "details": [
-        {
-          "Input": [
-            {
-              "Local": {
-              "output_df": "dept",
-              "source_type": "Local Server",
-              "transformation_name": "Local",
-              "header": "Y",
-              "encoding": "utf-8",
-              "delimiter": ",",
-              "file_path": "/home/rperuman/src_files/transformation/data/extended_employee_data.csv",
-              "file_type": "csv",
-              "quote_char": "\"",
-              "compression": "",
-              "escape_char": "\\n",
-              "skip_header": "0",
-              "connection_name": "147"
-              }
+      {
+        "Output": [
+          {
+            "OutputDetails": {
+              "schema": "public",
+              "input_df": "dept",
+              "operation": "replace",
+              "table_name": "demo_sales_record",
+              "target_type": "PostgreSQL",
+              "connection_name": "postgres",
+              "transformation_name": "OutputDetails"
             }
-          ]
-        },
-        {
-          "Output": [
-            {
-              "OutputDetails": {
-                "schema": "public",
-                "input_df": "dept",
-                "operation": "replace",
-                "table_name": "demo_sales_record",
-                "target_type": "PostgreSQL",
-                "connection_name": "postgres",
-                "transformation_name": "OutputDetails"
-              }
-            }
-          ]
-        }
-      ]
-    }
+          }
+        ]
+      }
+    ]
   }
 }
