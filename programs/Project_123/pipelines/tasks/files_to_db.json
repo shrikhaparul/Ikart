@@ -25,7 +25,7 @@
   "task": {
     "details": [
       {
-        "Target": {
+        "target": {
           "object_name": "DrDoS_MSSQL",
           "primary_key": "",
           "audit_fields": "NO",
@@ -46,7 +46,7 @@
         }
       },
       {
-        "Target": {
+        "target": {
           "object_name": "Syn",
           "primary_key": "",
           "audit_fields": "NO",
@@ -67,7 +67,7 @@
         }
       },
       {
-        "Target": {
+        "target": {
           "object_name": "DrDoS_UDP",
           "primary_key": "",
           "audit_fields": "NO",
@@ -88,7 +88,7 @@
         }
       },
       {
-        "Target": {
+        "target": {
           "object_name": "DrDoS_SSDP",
           "primary_key": "",
           "audit_fields": "NO",
@@ -109,7 +109,7 @@
         }
       },
       {
-        "Target": {
+        "target": {
           "object_name": "DrDoS_SNMP",
           "primary_key": "",
           "audit_fields": "NO",
@@ -130,7 +130,7 @@
         }
       },
       {
-        "Target": {
+        "target": {
           "object_name": "DrDoS_NetBIOS",
           "primary_key": "",
           "audit_fields": "NO",
@@ -151,7 +151,7 @@
         }
       },
       {
-        "Target": {
+        "target": {
           "object_name": "DrDoS_NTP",
           "primary_key": "",
           "audit_fields": "NO",
@@ -172,7 +172,7 @@
         }
       },
       {
-        "Target": {
+        "target": {
           "object_name": "DrDoS_LDAP",
           "primary_key": "",
           "audit_fields": "NO",
@@ -193,7 +193,7 @@
         }
       },
       {
-        "Target": {
+        "target": {
           "object_name": "UDPLag",
           "primary_key": "",
           "audit_fields": "NO",
@@ -214,7 +214,7 @@
         }
       },
       {
-        "Target": {
+        "target": {
           "object_name": "TFTP",
           "primary_key": "",
           "audit_fields": "NO",
@@ -235,7 +235,7 @@
         }
       },
       {
-        "Target": {
+        "target": {
           "object_name": "DrDoS_DNS",
           "primary_key": "",
           "audit_fields": "NO",
