@@ -13,6 +13,7 @@
   "updated_dttm": "2024-05-16T11:24:08.000Z",
   "source": "none",
   "target": "none",
+  "job_execution": "pandas",
   "is_active": "Y",
   "created_by": "Madhu",
   "updated_by": "Madhu",
