@@ -223,8 +223,8 @@
                 "compression": "",
                 "escape_char": "\\n",
                 "skip_header": "0",
-                "target_type": "postgres",
-                "connection_name": "postgres"
+                "target_type": "Local Server",
+                "connection_name": "147"
             }
           }
         ]
