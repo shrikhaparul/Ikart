@@ -1,0 +1,72 @@
+{
+  "MySQL": {
+    "source": "bulk_mysql_read.py",
+    "target": "bulk_mysql_write.py"
+  },
+  "REST API": {
+    "source": "bulk_rest_api_read.py",
+    "target": "bulk_rest_api_write.py"
+  },
+  "SFDC": {
+    "source": "bulk_sfdc_read.py",
+    "target": "bulk_sfdc_write.py"
+  },
+  "BigQuery": {
+    "source": "bulk_bigquery_read.py",
+    "target": "bulk_bigquery_write.py"
+  },
+  "Redshift": {
+    "source": "bulk_redshift_read.py",
+    "target": "bulk_redshift_write.py"
+  },
+  "Snowflake": {
+    "source": "bulk_snowflake_read.py",
+    "target": "bulk_snowflake_write.py"
+  },
+  "AWS S3": {
+    "source": "bulk_aws_s3_read.py",
+    "target": "bulk_aws_s3_write.py"
+  },
+  "MSSQL": {
+    "source": "bulk_mssql_read.py",
+    "target": "bulk_mssql_write.py"
+  },
+  "Oracle": {
+    "source": "bulk_oracle_read.py",
+    "target": "bulk_oracle_write.py"
+  },
+  "PostgreSQL": {
+    "source": "bulk_postgres_read.py",
+    "target": "bulk_postgres_write.py"
+  },
+  "Teradata": {
+    "source": "bulk_teradata_read.py",
+    "target": "bulk_teradata_write.py"
+  },
+  "Local Server": {
+    "csv": {
+        "source": "bulk_csv_read.py",
+        "target": "bulk_csv_write.py"
+    },
+    "xml": {
+        "source": "bulk_xml_read.py",
+        "target": "bulk_xml_write.py"
+    },
+    "json": {
+        "source": "bulk_json_read.py",
+        "target": "bulk_json_write.py"
+    },
+    "excel": {
+        "source": "bulk_xlsx_read.py",
+        "target": "bulk_xlsx_write.py"
+    },
+    "parquet": {
+        "source": "bulk_parquet_read.py",
+        "target": "bulk_parquet_write.py"
+    }
+  },
+  "Remote Server": {
+    "source": "bulk_remote_server_read.py",
+    "target": "bulk_remote_server_write.py"
+  }
+}

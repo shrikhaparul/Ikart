@@ -4,26 +4,17 @@ import logging
 import importlib
 import sys
 import os
+import gzip
+import zipfile
+import tarfile
+import bz2
 import pandas as pd
 
 task_logger = logging.getLogger('task_logger')
+module = importlib.import_module("utility")
+update_status_file=getattr(module, "update_status_file")
 
-def write_to_txt(task_id,status,file_path):
-    """Generates a text file with statuses for orchestration"""
-    try:
-        is_exist = os.path.exists(file_path)
-        if is_exist is True:
-            # task_logger.info("txt getting called")
-            data_fram =  pd.read_csv(file_path, sep='\t')
-            data_fram.loc[data_fram['task_name']==task_id, 'Job_Status'] = status
-            data_fram.to_csv(file_path ,mode='w', sep='\t',index = False, header=True)
-        else:
-            task_logger.error("pipeline txt file does not exist")
-    except Exception as error:
-        task_logger.exception("write_to_txt: %s.", str(error))
-        raise error
-
-def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,skip_header = 0,
+def read(json_data: dict,task_id,run_id,paths_data,txt_file_path,iter_value,skip_header = 0,
 skip_footer= 0, sheet_name= 0):
     """ function for reading data from excel"""
     try:
@@ -40,34 +31,55 @@ skip_footer= 0, sheet_name= 0):
         task_logger.info("list of files which were read")
         engine_code_path = paths_data["folder_path"]+paths_data["ingestion_path"]
         sys.path.insert(0, engine_code_path)
-        module = importlib.import_module("engine_code")
-        audit = getattr(module, "audit")
-        if all_files == []:
+        engine_code = importlib.import_module("engine_code")
+        audit = getattr(engine_code, "audit")
+        if not all_files:
             task_logger.error("'%s' SOURCE FILE not found in the location",
             source["file_name"])
-            write_to_txt(task_id,'FAILED',file_path)
-            audit(json_data, task_id,run_id,'STATUS','FAILED',iter_value)
+            update_status_file(task_id,'FAILED',txt_file_path)
+            audit(json_data, task_id,run_id,paths_data,'STATUS','FAILED',iter_value)
             sys.exit()
         else:
-            default_skip_header = skip_header if json_data["task"]["source"]["skip_header"]==" "\
-            else json_data["task"]["source"]["skip_header"]
-            default_skip_footer = skip_footer if json_data["task"]["source"]["skip_footer"]==" "\
-            else json_data["task"]["source"]["skip_footer"]
-            # default_sheet_name = sheet_name if json_data["task"]["source"]["sheet_name"]==" "\
-            # else json_data["task"]["source"]["sheet_name"]
+            default_skip_header = skip_header if json_data["task"]["source"]["skip_header"] \
+            in (" ",None,"None","") else json_data["task"]["source"]["skip_header"]
+            default_skip_footer = skip_footer if json_data["task"]["source"]["skip_footer"] \
+            in (" ",None,"None","") else json_data["task"]["source"]["skip_footer"]
+            if source["header"] == "Y":
+                use_header = True
+            else:
+                use_header = False
+            use_header=0 if use_header else None
             for file in all_files:
-                data = pd.read_excel(io = file)
-                # print(type(data))
-                row_count = data.shape[0]-default_skip_header-default_skip_footer
-                task_logger.info("the number of records in source file is:%s", row_count)
+                # Determine the compression format based on file extension
+                file_extension = os.path.splitext(file)[1].lower()
+
+                if file_extension == '.gz':
+                    with gzip.open(file, 'rb') as gz_file:
+                        excel_data = pd.read_excel(gz_file, sheet_name=sheet_name)
+                elif file_extension == '.zip':
+                    with zipfile.ZipFile(file, 'r') as zipf:
+                        with zipf.open(zipf.namelist()[0]) as excel_file:
+                            excel_data = pd.read_excel(excel_file, sheet_name=sheet_name)
+                elif file_extension == '.tar':
+                    with tarfile.open(file, 'r') as tar:
+                        with tar.extractfile(tar.getnames()[0]) as excel_file:
+                            excel_data = pd.read_excel(excel_file, sheet_name=sheet_name)
+                elif file_extension == '.bz2':
+                    with bz2.BZ2File(file, 'rb') as bz2_file:
+                        excel_data = pd.read_excel(bz2_file, sheet_name=sheet_name)
+                else:
+                    excel_data = pd.read_excel(file, sheet_name=sheet_name, header=use_header)
+
+                row_count = excel_data.shape[0] - default_skip_header - default_skip_footer
+                task_logger.info("The number of records in the source file is: %s", row_count)
                 count1 = 0
-                # print(row_count)
-                # datafram = pd.read_excel(io = file, sheet_name = default_sheet_name,
-                # skiprows = default_skip_header,nrows = row_count)
-                datafram = pd.read_excel(io = file, nrows = row_count)
+                if use_header != 0:
+                    excel_data.columns = [f"column{i+1}" for i in range(len(excel_data.columns))]
+                dataframe = excel_data.iloc[:row_count]
                 count1 = 1 + count1
-                task_logger.info('%s iteration' , str(count1))
-                yield datafram
+                task_logger.info('%s iteration', str(count1))
+                yield dataframe
     except Exception as error:
         task_logger.exception("reading_excel() is %s", str(error))
         raise error
+    

@@ -2,32 +2,11 @@
 import logging
 import json
 import datetime
-import os
-from pathlib import Path
 import re
-import pandas as pd 
+import os
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-
-# custom log function for framework
-def initiate_logging(project: str, log_loc: str) -> bool:
-    """Function to initiate log file which will be used across framework"""
-    try:
-        log_file_nm = project + '.log'
-        new_file1 = log_loc + log_file_nm
-        # create formatter & how we want ours logs to be formatted
-        format_str = '%(asctime)s | %(name)-10s | %(processName)-12s | %(funcName)-22s |\
-        %(levelname)-5s | %(message)s'
-        formatter = logging.Formatter(format_str)
-        logging.basicConfig(filename=new_file1, filemode='a',
-                            level=logging.INFO, format=format_str)
-        st_handler = logging.StreamHandler()  # create handler and set the log level
-        st_handler.setLevel(logging.INFO)
-        st_handler.setFormatter(formatter)
-        logging.getLogger().addHandler(st_handler)
-        return True
-    except Exception as ex:
-        logging.error('UDF Failed: initiate_logging failed')
-        raise ex
+import pandas as pd
+task_logger = logging.getLogger('task_logger')
 
 # reading the connection.json file and passing the connection details as dictionary
 def get_config_section(config_path:str) -> dict:
@@ -45,18 +24,18 @@ def get_config_section(config_path:str) -> dict:
         logging.exception("get_config_section() is %s.", str(error))
         raise error
 
-def decrypt(data):
+def decrypt(data, paths_data):
     '''function to decrypt the data'''
-    KEY = b'8ookgvdIiH2YOgBnAju6Nmxtp14fn8d3'
-    IV = b'rBEssDfxofOveRxR'
-    aesgcm = AESGCM(KEY)
-    decrypted = aesgcm.decrypt(IV, bytes.fromhex(data), None)
+    key = paths_data["key"].encode('utf-8')
+    iv = paths_data["iv"].encode('utf-8')
+    aesgcm = AESGCM(key)
+    decrypted = aesgcm.decrypt(iv, bytes.fromhex(data), None)
     return decrypted.decode('utf-8')
 
 def replace_date_placeholders(file_name):
     """function to replace the date and time placeholders in target filenames"""
     # Define the regular expression pattern to match date and time placeholders
-    date_pattern = r"%[DdMmYyHhMmIiSs]+%"
+    date_pattern = r"%[DdMmYyHhIiSs]+%"
 
     # Find all date and time placeholders in the input string
     date_time_placeholders = re.findall(date_pattern, file_name)
@@ -85,4 +64,45 @@ def replace_date_placeholders(file_name):
         elif "SS" in placeholder:
             file_name = file_name.replace(placeholder, second)
 
+    return file_name
+
+def update_status_file(task_id,status,file_path):
+    """updates a text file with statuses for orchestration"""
+    try:
+        is_exist = os.path.exists(file_path)
+        if is_exist is True:
+            data_fram =  pd.read_csv(file_path, sep='\t')
+            data_fram.loc[data_fram['task_name']==task_id, 'Job_Status'] = status
+            data_fram.to_csv(file_path ,mode='w', sep='\t',index = False, header=True)
+        else:
+            task_logger.error("status txt file does not exist")
+    except Exception as error:
+        task_logger.exception("update_status_file: %s.", str(error))
+        raise error
+
+def construct_file_name(target):
+    """
+    Constructs a file name based on the `target` dictionary and replaces date placeholders.
+    Parameters:
+    target (dict): Dictionary containing file naming components.
+    replace_date_placeholders (func): Function to replace date placeholders in the file name.
+    Returns:
+    str: Constructed file name with date placeholders replaced.
+    """
+    # Determine the object prefix name
+    object_prefix_name = "" if 'object_prefix_name' not in target or \
+    target['object_prefix_name'] in (None, "None", "") else target['object_prefix_name']
+    # Determine the object suffix name
+    object_suffix_name = "" if 'object_sufix_name' not in target or \
+    target['object_sufix_name'] in (None, "None", "") else target['object_sufix_name']
+    # Construct the file name
+    if target['target_file_format'] == "excel":
+        extension = ".xlsx"  #
+        file_name = object_prefix_name + target['object_name'] + object_suffix_name + extension
+    else:
+        file_name = object_prefix_name + target['object_name'] + object_suffix_name + '.' + \
+        target['target_file_format']
+    # Replace date placeholders in the file name
+    file_name = replace_date_placeholders(file_name)
+    task_logger.info("file_name:%s",file_name)
     return file_name

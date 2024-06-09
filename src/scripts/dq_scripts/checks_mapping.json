@@ -187,27 +187,74 @@
 		"type":"GE"
 	},
 	{
-		"func_name" : "expect_reconciliation",
-		"parameters" : "",
+		"func_name" : "expect_table_column_count_to_equal",
+		"arguments": "value",
+		"parameters" : "int",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_table_column_count_to_be_between",
+		"arguments": "min_value|max_value",
+		"parameters" : "int|int",
+		"type":"GE"
+	},
+	{
+		"func_name" : "expect_sum_reconciliation",
+		"arguments": "sum_value|column_name",
+		"parameters" : "float|string",
+		"type":"custom_checks"
+	},
+	{
+		"func_name" : "expect_avg_reconciliation",
+		"arguments": "avg_value|column_name",
+		"parameters" : "float|string",
+		"type":"custom_checks"
+	},
+	{
+		"func_name" : "expect_min_reconciliation",
+		"arguments": "min_value|column_name",
+		"parameters" : "float|string",
+		"type":"custom_checks"
+	},
+	{
+		"func_name" : "expect_max_reconciliation",
+		"arguments": "max_value|column_name",
+		"parameters" : "float|string",
+		"type":"custom_checks"
+	},
+	{
+		"func_name" : "expect_count_reconciliation",
+		"arguments": "count_value|column_name",
+		"parameters" : "float|string",
 		"type":"custom_checks"
 	},
 	{
 		"func_name" : "expect_column_count_comparison",
-		"parameters" : "",
+		"arguments" : "value",
+		"parameters" : "int",
 		"type":"custom_checks"
 	},
 	{
 		"func_name" : "expect_one_to_one_mapping",
+		"arguments": "column1|column2",
 		"parameters" : "string|string",
 		"type":"custom_checks"
 	},
 	{
 		"func_name" : "expect_multi_to_one_mapping",
+		"arguments": "column1|column2",
 		"parameters" : "string|string",
 		"type":"custom_checks"
 	},
 	{
-		"func_name" : "expect_schema_comparison",
+		"func_name" : "expect_file_existance_check",
+		"arguments": "filepath|filename",
+		"parameters" : "string|string",
+		"type":"custom_checks"
+	},
+	{
+		"func_name" : "expect_duplicate_rows_check",
+		"arguments": "",
 		"parameters" : "",
 		"type":"custom_checks"
 	}

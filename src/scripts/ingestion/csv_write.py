@@ -2,100 +2,74 @@
 import logging
 from datetime import datetime
 import os
-from ast import literal_eval
-from utility import replace_date_placeholders
+import csv
+import sys
+import importlib
+from utility import replace_date_placeholders,update_status_file
 
 task_logger = logging.getLogger('task_logger')
 
-def split_large_file(input_file, output_directory, records_per_split, ext):
-    '''function to split the large files based on number of records'''
-    # Open the input file for reading
-    with open(input_file, 'r') as infile:
-        # Read the header
-        header = infile.readline()
-
-        split_number = 1
-        record_count = 0
-        split_file_path = f"{output_directory}_part_000{split_number}{ext}" \
-        if records_per_split > 0 else f"{output_directory}{ext}"
-        split_file = open(split_file_path, 'w')
-        split_file.write(header)
-
-        if records_per_split > 0:
-            while True:
-                line = infile.readline()
-                if not line:
-                    break
-                split_file.write(line)
-                record_count += 1
-
-                if record_count >= records_per_split:
-                    # Close the current split file and create a new one
-                    split_file.close()
-                    split_number += 1
-                    split_file_path = f"{output_directory}_part_000{split_number}{ext}"
-                    split_file = open(split_file_path, 'w')
-                    split_file.write(header)
-                    record_count = 0
-
-        # Close the final split file
-        split_file.close()
-    os.remove(input_file)
-
-def write(json_data: dict,datafram, counter) -> bool:
+def write(json_data: dict,task_id,run_id,iter_value,paths_data,text_file_path,
+    datafram, counter,local_temp_path):
     """ function for writing data to csv file"""
     try:
+        engine_code_path = paths_data["folder_path"]+paths_data["src"]+paths_data["ingestion_path"]
+        sys.path.insert(0, engine_code_path)
+        audit_module = importlib.import_module("engine_code")
+        audit = getattr(audit_module, "audit")
         target = json_data["task"]["target"]
         file_name = replace_date_placeholders(target['file_name'])
-        file_path = replace_date_placeholders(target['file_path'])
-        target['filename'] = "*.*" if target['filename'] in ("",None) else target['filename']
+        file_path = local_temp_path
         task_logger.info("writing data to csv file")
         created_by = json_data['created_by'] if 'created_by' in json_data else "etl_user"
+        include_header = target.get("header", "Y") == "Y"
+        quote = target['quote_char'] if "quote_char"  in target else None
+        quote = None if quote in ("custom", "") else quote
+        quoting1 = csv.QUOTE_NONE if quote is None else csv.QUOTE_ALL
+        def_sep = "," if target["delimiter"] in ("", None, " ") else target["delimiter"]
+        def_encoding = "utf-8" if target["encoding"] in ("", None, "") else target["encoding"]
+        def_audit_columns = "inactive" if target["audit_columns"] in ("",None,"") \
+        else target["audit_columns"]
         if counter ==1: # for first iteration
             if os.path.exists(file_path+file_name):
                 os.remove(file_path+file_name)
-            if target["audit_columns"] == "active":
+            if def_audit_columns == "active":
                 # if audit_columns are active
                 datafram['CRTD_BY'] = created_by
                 datafram['CRTD_DTTM']= datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 datafram['UPDT_BY']= " "
                 datafram['UPDT_DTTM']= " "
                 datafram.to_csv(file_path+file_name,
-                sep=target["delimiter"], #header=literal_eval(target["header"]),
-                index=literal_eval(target["index"]), mode='a',
-                encoding=target["encoding"])
+                sep=def_sep, mode='a',
+                encoding=def_encoding, header = include_header, quotechar = quote,
+                quoting = quoting1, index = False,
+                escapechar='\\')
             else:
-                # if audit_columns are  not active
                 datafram.to_csv(file_path+file_name,
-                sep=target["delimiter"], #header=literal_eval(
-                # target["header"]),
-                index=literal_eval(target["index"]), mode='a',
-                encoding=target["encoding"])
+                sep=def_sep, mode='a',
+                encoding=def_encoding, header = include_header, quotechar = quote,
+                quoting = quoting1, index = False, escapechar='\\')
         else: # for iterations other than one
-            if target["audit_columns"] == "active":
+            if def_audit_columns == "active":
                 # if audit_columns are active
                 datafram['CRTD_BY'] = created_by
                 datafram['CRTD_DTTM']= datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 datafram['UPDT_BY']= " "
                 datafram['UPDT_DTTM']= " "
                 datafram.to_csv(file_path+file_name,
-                sep=target["delimiter"], header=False,
-                index=literal_eval(target["index"]),
-                mode='a', encoding=target["encoding"])
+                sep=def_sep, header=False,
+                mode='a', encoding = def_encoding, quotechar = quote, quoting = quoting1,
+                index = False, escapechar='\\')
             else:
                 # if audit_columns are  not active
                 datafram.to_csv(file_path+file_name,
-                sep=target["delimiter"], header=False,
-                index=literal_eval(target["index"]),
-                mode='a', encoding=target["encoding"])
-        filename_wo_ext = os.path.splitext(file_name)[0]
-        extension = os.path.splitext(file_name)[1]
-        records_per_split = 0 if 'target_max_record_count' not in target else \
-        target['target_max_record_count']
-        if records_per_split > 0:
-            split_large_file(file_path+file_name, file_path+filename_wo_ext,
-                            records_per_split,extension)
-        return True
+                sep=def_sep, header=False,
+                mode='a', encoding = def_encoding, quotechar = quote, quoting = quoting1,
+                index = False, escapechar='\\')
+        task_logger.info("csv ingestion completed")
+        return True, file_path, file_name
     except Exception as error:
-        task_logger.exception("ingest_data_to_csv() is %s", str(error))
+        update_status_file(task_id,'FAILED',text_file_path)
+        audit(json_data, task_id,run_id,paths_data,'STATUS','FAILED',iter_value)
+        task_logger.exception("write() is %s", str(error))
         raise error

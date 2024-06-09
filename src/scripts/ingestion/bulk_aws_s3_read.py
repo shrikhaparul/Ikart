@@ -13,6 +13,7 @@ import io
 import pandas as pd
 
 module = importlib.import_module("utility")
+update_status_file=getattr(module, "update_status_file")
 get_config_section = getattr(module, "get_config_section")
 decrypt = getattr(module, "decrypt")
 module = importlib.import_module("connections")
@@ -22,20 +23,6 @@ task_logger = logging.getLogger('task_logger')
 ITERATION = '%s iteration'
 CSV = '.csv'
 JSON = '.json'
-
-def write_to_txt(task_id,status,file_path):
-    """Generates a text file with statuses for orchestration"""
-    try:
-        is_exist = os.path.exists(file_path)
-        if is_exist is True:
-            data_fram =  pd.read_csv(file_path, sep='\t')
-            data_fram.loc[data_fram['task_name']==task_id, 'Job_Status'] = status
-            data_fram.to_csv(file_path ,mode='w', sep='\t',index = False, header=True)
-        else:
-            task_logger.error("pipeline txt file does not exist")
-    except Exception as error:
-        task_logger.exception("write_to_txt: %s.", str(error))
-        raise error
 
 def get_files_from_bucket(conn, bucket_name, path, source):
     '''Function to get files from a folder in S3 based on extension'''
@@ -249,7 +236,8 @@ def read(json_data: dict,config_file_path,task_id,run_id,paths_data,file_path,
         sys.path.insert(0, engine_code_path)
         audit_module = importlib.import_module("engine_code")
         audit = getattr(audit_module, "audit")
-        conn,connection_details = establish_conn_for_s3(json_data,'source',config_file_path)
+        conn,connection_details = establish_conn_for_s3(json_data,'source',config_file_path,
+        paths_data)
         bucket_name = connection_details["bucket_name"]
         path = source['file_path']+source['object_name']
         all_files = get_files_from_bucket(conn, bucket_name, path, source)
@@ -258,7 +246,7 @@ def read(json_data: dict,config_file_path,task_id,run_id,paths_data,file_path,
         if all_files == []:
             task_logger.error("'%s' SOURCE FILE not found in the location",
             source["object_name"])
-            write_to_txt(task_id,'FAILED',file_path)
+            update_status_file(task_id,'FAILED',file_path)
             audit(json_data, task_id,run_id,paths_data,'STATUS','FAILED',
             iter_value,group_no,subtask_no)
             sys.exit()
@@ -305,7 +293,7 @@ def read(json_data: dict,config_file_path,task_id,run_id,paths_data,file_path,
 
             return dataframes  # Return the list of dataframes
     except Exception as error:
-        write_to_txt(task_id,'FAILED',file_path)
+        update_status_file(task_id,'FAILED',file_path)
         audit(json_data, task_id,run_id,paths_data,'STATUS','FAILED',iter_value,group_no,subtask_no)
         task_logger.info("reading_s3() is %s", str(error))
         raise error

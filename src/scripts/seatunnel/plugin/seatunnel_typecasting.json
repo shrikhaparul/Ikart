@@ -1,0 +1,12 @@
+
+
+
+{
+    "MSSQL":["uniqueidentifier","binary","image","xml","geography","hierarchyid","sysname"],
+    "Oracle":["interval day(k) to second(r)","timestamp(k) with time zone","urowid","long raw","bfile"],
+    "MySQL":["geometry"],
+    "PostgreSQL":["xml","uuid","point","line","lseg","box","path","polygon","circle","inet","cidr","macaddr","bit"]
+    }
+    
+    
+    

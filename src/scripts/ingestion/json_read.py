@@ -1,37 +1,34 @@
 """ script for reading data from xml"""
 import logging
 import sys
-import os
+import json
 import glob
 import importlib
+import gzip
+import zipfile
+import tarfile
+import os
+import bz2
 import pandas as pd
 
 task_logger = logging.getLogger('task_logger')
+module = importlib.import_module("utility")
+update_status_file=getattr(module, "update_status_file")
 ITERATION='%s iteration'
 
-def write_to_txt(task_id,status,file_path):
-    """Generates a text file with statuses for orchestration"""
-    try:
-        is_exist = os.path.exists(file_path)
-        if is_exist is True:
-            # task_logger.info("txt getting called")
-            data_fram =  pd.read_csv(file_path, sep='\t')
-            data_fram.loc[data_fram['task_name']==task_id, 'Job_Status'] = status
-            data_fram.to_csv(file_path ,mode='w', sep='\t',index = False, header=True)
-        else:
-            task_logger.error("pipeline txt file does not exist")
-    except Exception as error:
-        task_logger.exception("write_to_txt: %s.", str(error))
-        raise error
-
-def read(json_data : dict,task_id,run_id,paths_data,file_path,iter_value):
+def read(json_data : dict,task_id,run_id,paths_data,txt_file_path,iter_value,local_file_path):
     """ function for reading data from json  """
     try:
         task_logger.info("json  reading started")
         source = json_data["task"]["source"]
-        file_path = source["file_path"]
-        file_name = source["file_name"]
-        pattern = f'{file_path}{file_name}'
+        
+        if local_file_path == None:
+            local_file_path = " "
+            file_path = source["file_path"]
+            file_name = source["file_name"]
+            pattern = f'{file_path}{file_name}'
+        else :
+            pattern = local_file_path
         # Use glob.glob to get a list of matching file paths
         all_files = glob.glob(pattern)
         task_logger.info("all files %s", all_files)
@@ -45,20 +42,47 @@ def read(json_data : dict,task_id,run_id,paths_data,file_path,iter_value):
         if not all_files:
             task_logger.error("'%s' SOURCE FILE not found in the location",
             source["file_name"])
-            write_to_txt(task_id,'FAILED',file_path)
-            audit(json_data, task_id,run_id,'STATUS','FAILED',iter_value)
+            update_status_file(task_id,'FAILED',file_path)
+            audit(json_data, task_id,run_id,paths_data,'STATUS','FAILED',iter_value)
             sys.exit()
         else:
             for file in all_files:
-                datafram = pd.read_json(file,encoding = json_data["task"]["source"]["encoding"],
-                                        nrows = None)
+                if file.endswith('.gz'):
+                    with gzip.open(file, 'rb') as gz_file:
+                        datafram = pd.read_json(gz_file,
+                                    encoding=json_data["task"]["source"]["encoding"])
+                elif file.endswith('.zip'):
+                    with zipfile.ZipFile(file, 'r') as zipf:
+                        with zipf.open(zipf.namelist()[0]) as json_file:
+                            datafram = pd.read_json(json_file,
+                                        encoding=json_data["task"]["source"]["encoding"])
+                elif file.endswith('.tar'):
+                    with tarfile.open(file, 'r') as tar:
+                        with tar.extractfile(tar.getnames()[0]) as json_file:
+                            datafram = pd.read_json(json_file,
+                                        encoding=json_data["task"]["source"]["encoding"])
+                elif file.endswith('.bz2'):
+                    with bz2.BZ2File(file, 'rb') as bz2_file:
+                        datafram = pd.read_json(bz2_file,
+                                    encoding=json_data["task"]["source"]["encoding"])
+                else:
+                    datafram = pd.read_json(file, encoding=json_data["task"]["source"]["encoding"])
+
+                # with open(file, 'r', encoding='utf-8') as file:
+                #     data = json.load(file)
+                # datafram = pd.json_normalize(data,max_level=0)
                 datafram.columns = datafram.columns.astype(str)
                 count1 = 1 + count1
                 task_logger.info(ITERATION , str(count1))
                 yield datafram
-        # return True
     except Exception as error:
-        write_to_txt(task_id,'FAILED',file_path)
-        audit(json_data, task_id,run_id,'STATUS','FAILED',iter_value)
+        update_status_file(task_id,'FAILED',txt_file_path)
+        audit(json_data, task_id,run_id,paths_data,'STATUS','FAILED',iter_value)
         task_logger.exception("reading json() is %s", str(error))
         raise error
+    finally:
+        if os.path.isfile(local_file_path) :
+            os.remove(local_file_path)
+            # Logging: Config file removal
+            task_logger.info("Temporary file removed: %s ", local_file_path)
+    

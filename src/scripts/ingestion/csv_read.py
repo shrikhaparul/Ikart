@@ -1,55 +1,143 @@
-""" script for reading data from csv"""
+""" script for reading data from csv file"""
 import sys
 import glob
 import logging
 import importlib
 import os
 import pandas as pd
-from io import StringIO
 
 task_logger = logging.getLogger('task_logger')
-ITERATION='%s iteration'
+module = importlib.import_module("utility")
+update_status_file=getattr(module, "update_status_file")
+ITERATION='Number of records read - %s'
 
-def write_to_txt(task_id,status,file_path):
-    """Generates a text file with statuses for orchestration"""
-    try:
-        is_exist = os.path.exists(file_path)
-        if is_exist is True:
-            # task_logger.info("txt getting called")
-            data_fram =  pd.read_csv(file_path, sep='\t')
-            data_fram.loc[data_fram['task_name']==task_id, 'Job_Status'] = status
-            data_fram.to_csv(file_path ,mode='w', sep='\t',index = False, header=True)
-        else:
-            task_logger.error("pipeline txt file does not exist")
-    except Exception as error:
-        task_logger.exception("write_to_txt: %s.", str(error))
-        raise error
+def csv_functionality(default_select_cols,default_alias_cols,source,row_count,
+    file,default_delimiter,default_quotechar,default_escapechar,default_encoding,
+    compression,default_skip_header):
+    """function to consider different parameters in place"""
+    if source["header"] == "Y":
+        use_header = True
+    else:
+        row_count = row_count + 1
+        use_header = False
+    task_logger.info("default_select_cols:%s, default_alias_cols:%s",
+     default_select_cols,default_alias_cols)
+    if default_select_cols is not None and \
+    default_alias_cols is not None:
+        # print(row_count)
+        for csv_chunk in pd.read_csv(file, header=0 if  use_header else  None,
+            chunksize=source["chunk_size"], names = default_alias_cols,
+            sep = default_delimiter, usecols = default_select_cols,
+            engine='python',
+            nrows = row_count,
+            quotechar = default_quotechar, escapechar = default_escapechar,
+            encoding = default_encoding,compression=compression
+            ):
+            if not use_header:
+                csv_chunk.columns =default_select_cols
 
-def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
+            if default_skip_header > 0:
+                csv_chunk = csv_chunk.iloc[default_skip_header:]
+            yield csv_chunk
+    elif (default_select_cols is not None and default_alias_cols is None):
+        for csv_chunk in pd.read_csv(file, header=0 if  use_header else  None,
+        chunksize=source["chunk_size"], names = default_select_cols,
+        sep = default_delimiter, usecols = default_select_cols,
+        nrows = row_count,
+        quotechar = default_quotechar, escapechar = default_escapechar,
+        encoding = default_encoding,compression=compression):
+            if not use_header:
+                if default_alias_cols is None:
+                    csv_chunk.columns = [
+                        f"column{i+1}" for i in range(len(csv_chunk.columns))]
+                else :
+                    csv_chunk.columns = list(source["alias_columns"].split(","))
+            if default_skip_header > 0:
+                csv_chunk = csv_chunk.iloc[default_skip_header:]
+            yield csv_chunk
+    elif  (default_select_cols is None and default_alias_cols is not None):
+        for csv_chunk in pd.read_csv(file, header=0 if use_header else None,
+            chunksize=source["chunk_size"], names = default_alias_cols,
+        sep = default_delimiter, usecols = default_select_cols,
+        nrows = row_count,
+        quotechar = default_quotechar, escapechar = default_escapechar,
+        encoding = default_encoding,compression=compression):
+            if not use_header:
+                if source["alias_columns"] is None:
+                    csv_chunk.columns = [
+                        f"column{i+1}" for i in range(len(csv_chunk.columns))]
+                else :
+                    csv_chunk.columns = list(source["alias_columns"].split(","))
+            if default_skip_header > 0:
+                csv_chunk = csv_chunk.iloc[default_skip_header:]
+            yield csv_chunk
+    elif default_select_cols is None and default_alias_cols is None:
+        default_select_cols = None
+        # Read the CSV data from the file
+        for csv_chunk in pd.read_csv(file, header=0 if  use_header else None,
+        chunksize=source["chunk_size"], names = default_alias_cols,
+        sep = default_delimiter, usecols = default_select_cols,
+        nrows = row_count,
+        quotechar = default_quotechar, escapechar = default_escapechar,
+        encoding = default_encoding,compression=compression):
+            if not use_header:
+                csv_chunk.columns = [
+                    f"column{i+1}" for i in range(len(csv_chunk.columns))]
+            if default_skip_header > 0:
+                csv_chunk = csv_chunk.iloc[default_skip_header:]
+            yield csv_chunk
+
+def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value, local_file_path,
         delimiter = ",", skip_header= 0,
         skip_footer= 0, quotechar = '"', escapechar = None):
     """ function for reading data from csv"""
     try:
-        source = json_data["task"]["source"]
+        
         task_logger.info("reading csv initiated...")
-        file_path = source["file_path"]
-        file_name = source["file_name"]
+        source = json_data["task"]["source"]
+        # src_file_path = local_file_path
+        if local_file_path == None:
+            local_file_path = " "
+            src_file_path = source["file_path"]
+            file_name = source["file_name"]
+            if not src_file_path.endswith('/'):
+                src_file_path = src_file_path + '/'
+            pattern = os.path.join(src_file_path, file_name)
+            
+        else :
+            pattern = local_file_path
+            
+        all_files = glob.glob(pattern)
+        # source["file_name"]   
         # function for reading files present in a folder with different csv formats
         # Combine file_path and file_name
-        pattern = f'{file_path}{file_name}'
+        # Ensure src_file_path ends with a trailing slash
+        
+        # Combine file_path and file_name using os.path.join
         # Use glob.glob to get a list of matching file paths
-        all_files = glob.glob(pattern)
-        task_logger.info("all files %s", all_files)
+        
         task_logger.info("list of files which were read")
+        task_logger.info("all files %s", all_files)
+        
+        if source['decryption'] == "yes" or source['compression'] not in ("","None"):
+            default_select_cols = None
+            default_alias_cols = None
+        else:
+            default_select_cols = None if source["select_columns"] in (None,"None","none","") else \
+                list(source["select_columns"].split(","))
+            default_alias_cols = None if source["alias_columns"] in (None,"None","none","") else\
+            list(source["alias_columns"].split(","))
+
         engine_code_path = paths_data["folder_path"]+paths_data["ingestion_path"]
         sys.path.insert(0, engine_code_path)
-        module = importlib.import_module("engine_code")
-        audit = getattr(module, "audit")
+        engine_code = importlib.import_module("engine_code")
+        audit = getattr(engine_code, "audit")
+        
         if not all_files:
             task_logger.error("'%s' SOURCE FILE not found in the location",
             source["file_name"])
-            write_to_txt(task_id,'FAILED',file_path)
-            audit(json_data, task_id,run_id,'STATUS','FAILED',iter_value)
+            update_status_file(task_id,'FAILED',file_path)
+            audit(json_data, task_id,run_id,paths_data,'STATUS','FAILED',iter_value)
             sys.exit()
         else:
             default_delimiter = delimiter if source["delimiter"] is None else\
@@ -64,121 +152,34 @@ def read(json_data: dict,task_id,run_id,paths_data,file_path,iter_value,
             else source["escape_char"]
             default_escapechar = "\t" if default_escapechar == "\\t" else default_escapechar
             default_escapechar = "\n" if default_escapechar == "\\n" else default_escapechar
-            default_alias_cols = None if source["alias_columns"] in (None,"None","none","") else\
-            list(source["alias_columns"].split(","))
-            default_encoding = "utf-8" if source["encoding"]in (None,"None","none","") else\
+            default_encoding = "utf-8" if source["encoding"] in (None,"None","none","") else\
             source["encoding"]
+            default_encoding = "latin1" if source["encoding"] == "other" else default_encoding
+            task_logger.info("Source chunk size is: %s", source["chunk_size"])
+            dataframes = []  # List to collect dataframes from all files
             for file in all_files:
+                compression = 'infer'
                 data = pd.read_csv(filepath_or_buffer = file,encoding=default_encoding,
-                low_memory=False)
-                audit(json_data, task_id,run_id,'SRC_RECORD_COUNT',data.shape[0],
+                low_memory=False,compression=compression)
+                # exit(0)
+                audit(json_data, task_id,run_id,paths_data,'SRC_RECORD_COUNT',data.shape[0],
                 iter_value)
                 row_count = data.shape[0]-default_skip_footer
-                count1 = 0
-                source["select_columns"] = None if source["select_columns"] in (None,"None","none","") else \
-                list(source["select_columns"].split(","))
-                source['alias_columns'] = None if source["alias_columns"] in (None,"None","none","") else\
-                list(source["alias_columns"].split(","))
-                if source["select_columns"] is not None and \
-                source["alias_columns"] is not None:
-                    default_header = 0
-                    # print(row_count)
-                    if source["header"] == "Y":
-                        use_header = True
-                    else:
-                        use_header = False
-                    # default_select_cols =list(source["select_columns"].split(","))
-                    for csv_chunk in pd.read_csv(file, header=0 if  use_header else  None,
-                                                 chunksize=source["chunk_size"], names = default_alias_cols,
-                        sep = default_delimiter, usecols = source["select_columns"],
-                        engine='python',
-                        nrows = row_count,
-                        # skiprows = default_skip_header,
-                        quotechar = default_quotechar, escapechar = default_escapechar,
-                        encoding = default_encoding
-                        ):
-                        if not use_header:
-                                csv_chunk.columns =source["select_columns"]
+                task_logger.info("Source file record count is: %s", data.shape[0])
 
-                        if default_skip_header > 0:
-                            csv_chunk = csv_chunk.iloc[default_skip_header:]
-                        count1 += 1
-                        task_logger.info(ITERATION, str(count1))
-                        yield csv_chunk
-                elif (source["select_columns"] is not None and source["alias_columns"] is None):
-                    default_header = 'infer' if source["alias_columns"] is None else 0
-                    if source["header"] == "Y":
-                        use_header = True
-                    else:
-                        use_header = False
-                    default_select_cols = source["select_columns"]
-
-                    for csv_chunk in pd.read_csv(file, header=0 if  use_header else  None,
-                                                chunksize=source["chunk_size"], names = default_select_cols,
-                    sep = default_delimiter, usecols = default_select_cols,
-                    nrows = row_count,
-                    # skiprows = default_skip_header,
-                    quotechar = default_quotechar, escapechar = default_escapechar,
-                    encoding = default_encoding):
-                        if not use_header:
-                            if source["alias_columns"] is None:
-                                csv_chunk.columns = [f"column{i+1}" for i in range(len(csv_chunk.columns))]
-                            else :
-                                csv_chunk.columns = list(source["alias_columns"].split(","))
-                        if default_skip_header > 0:
-                            csv_chunk = csv_chunk.iloc[default_skip_header:]
-                        count1 += 1
-                        task_logger.info(ITERATION, str(count1))
-                        yield csv_chunk
-                elif  (source["select_columns"] is None and source["alias_columns"] is not None):
-                    default_header = 'infer' if source["alias_columns"] is None else 0
-                    if source["header"] == "Y":
-                        use_header = True
-                    else:
-                        use_header = False
-                    # default_select_cols = list(source["alias_columns"].split(","))
-                    for csv_chunk in pd.read_csv(file, header=0 if use_header else  None,
-                     chunksize=source["chunk_size"], names = default_alias_cols,
-                    sep = default_delimiter, usecols = source['select_columns'],
-                    nrows = row_count,
-                    # skiprows = default_skip_header,
-                    quotechar = default_quotechar, escapechar = default_escapechar,
-                    encoding = default_encoding):
-                        if not use_header:
-                            if source["alias_columns"] is None:
-                                csv_chunk.columns = [f"column{i+1}" for i in range(len(csv_chunk.columns))]
-                            else :
-                                csv_chunk.columns = list(source["alias_columns"].split(","))
-                        if default_skip_header > 0:
-                            csv_chunk = csv_chunk.iloc[default_skip_header:]
-                        count1 += 1
-                        task_logger.info(ITERATION, str(count1))
-                        yield csv_chunk
-                elif source["select_columns"] is None and source["alias_columns"] is None:
-                    default_header = 'infer' if source["alias_columns"] is None else None
-                    if source["header"] == "Y":
-                        use_header = True
-                    else:
-                        use_header = False
-                    default_select_cols = None
-                    # Read the CSV data from the file
-                    # csv_lines = csv_data.strip().split('\n')
-                    for csv_chunk in pd.read_csv(file, header=0 if  use_header else  None,
-                    chunksize=source["chunk_size"], names = default_alias_cols,
-                    sep = default_delimiter, usecols = default_select_cols,
-                    nrows = row_count,
-                    # skiprows = default_skip_header,
-                    quotechar = default_quotechar, escapechar = default_escapechar,
-                    encoding = default_encoding):
-                        if not use_header:
-                            csv_chunk.columns = [f"column{i+1}" for i in range(len(csv_chunk.columns))]
-                        if default_skip_header > 0:
-                            csv_chunk = csv_chunk.iloc[default_skip_header:]
-                        count1 += 1
-                        task_logger.info(ITERATION, str(count1))
-                        yield csv_chunk
+                chunks = list(csv_functionality(default_select_cols,default_alias_cols,
+                source,row_count,file,default_delimiter,default_quotechar,default_escapechar,
+                default_encoding,compression,default_skip_header))
+                dataframes.extend(chunks)
+            return dataframes  # Return the list of dataframes
     except Exception as error:
-        write_to_txt(task_id,'FAILED',file_path)
-        audit(json_data, task_id,run_id,'STATUS','FAILED',iter_value)
+        update_status_file(task_id,'FAILED',file_path)
+        audit(json_data, task_id,run_id,paths_data,'STATUS','FAILED',iter_value)
         task_logger.error("reading_csv() is %s", str(error))
         raise error
+    finally:
+        if os.path.isfile(local_file_path) :
+            os.remove(local_file_path)
+            # Logging: Config file removal
+            task_logger.info("Temporary file removed: %s ", local_file_path)
+    
