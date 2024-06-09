@@ -222,7 +222,7 @@
                 "compression": "",
                 "escape_char": "\\n",
                 "skip_header": "0",
-                "target_type": "Local Server",
+                "target_type": "poastgres",
                 "connection_name": "147"
             }
           }
