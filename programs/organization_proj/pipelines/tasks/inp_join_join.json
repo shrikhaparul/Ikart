@@ -53,7 +53,7 @@
                 "output_df": "invoice",
                 "table_name": "demo_invoice",
                 "source_type": "PostgreSQL",
-                "connection_name": "postgres",
+                "connection_name": "postgress",
                 "transformation_name": "Postgres"
               }
             },
@@ -98,7 +98,7 @@
             {
               "OutputDetails": {
                 "input_df": "joiner_df",
-                "file_path": "dublicate/inp_join_join.json",
+                "file_path": "/home/rperuman/src_files/transformation/data/inp_join_join.json",
                 "transformation_name": "OutputDetails",
                 "header": "Y",
                 "encoding": "utf-8",
