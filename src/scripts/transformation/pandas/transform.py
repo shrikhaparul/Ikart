@@ -6,7 +6,7 @@ from collections import defaultdict, deque
 import logging
 import concurrent.futures
 from filter import filter_data
-from expression import expression
+from expressions import expression
 from joiner import join_operations
 from fetch import fetch_data
 from store import store_data
