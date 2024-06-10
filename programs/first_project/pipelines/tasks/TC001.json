@@ -1,0 +1,46 @@
+{
+  "login_id": "sahilphal",
+  "id": 640,
+  "project_name": "first_project",
+  "pipeline_name": "demo_pipeline_1",
+  "project_id": 80,
+  "pipeline_id": 202,
+  "task_name": "TC001",
+  "task_description": "Test 1",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "49d30cd7-6833-462f-97f8-e81f6575563e",
+  "status": "Failed",
+  "updated_dttm": "2024-06-10T11:13:01.000Z",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "sahilphal",
+  "updated_by": "sahilphal",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT col_1, col_10, col_11, col_12, col_13, col_14, col_2, col_3, col_4, col_5, col_6, col_7, col_8, col_9 FROM sys.AGG_SALES",
+      "schema": "sys",
+      "chunk_size": 10000,
+      "table_name": "AGG_SALES",
+      "parameter_type": "MySQL",
+      "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9",
+      "connection_name": "connection_01"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "E2E_Testing",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "TC001",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "connection_01",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
