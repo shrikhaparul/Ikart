@@ -7,15 +7,14 @@ from datetime import datetime
 import zipfile
 import importlib
 from collections import defaultdict
-import requests
 import multiprocessing as mp
+import requests
 import pandas as pd
 import mysql.connector
 from sqlalchemy.orm import sessionmaker
 from master import send_mail
 from file_features import compress_file,split_large_file_compress_encrypt,\
 gpg_encrypt_file,move_file, gpg_decrypt_file
-gpg_encrypt_file,move_file,gpg_decrypt_file
 from tracking import audit,update_status_file,task_failed,task_success, \
 bulk_subtask_failed,bulk_subtask_success
 from dotenv import load_dotenv
@@ -679,11 +678,11 @@ def normal_task_execution(json_data,config_file_path,task_id,run_id,paths_data,
         #if source type is local server
         elif source["source_type"] in ("csv_read", "parquet_read", "json_read",
                                     "xml_read", "xlsx_read"):
-            file_path = json_data['task']['source']['file_path'] + json_data['task']['source']['file_name']
+            file_path = json_data['task']['source']['file_path'] + \
+            json_data['task']['source']['file_name']
             local_file_path = decryption_check(json_data,file_path,local_temp_path, paths_data)
-
-            data_fram=read(json_data,task_id,run_id,paths_data,text_file_path,iter_value, local_file_path)
-
+            data_fram=read(json_data,task_id,run_id,paths_data,text_file_path,
+            iter_value,local_file_path)
             for df_chunk in data_fram :
                 counter+=1
                 records_in_chunk = len(df_chunk)
@@ -876,8 +875,9 @@ def bulk_task_execution(json_data,config_file_path,task_id,run_id,paths_data,
                 elif target not in ("bulk_csv_write", "bulk_parquet_write", "bulk_json_write",
                     "bulk_xml_write", "bulk_xlsx_write","bulk_aws_s3_write",
                     "bulk_remote_server_write"):
-                    value=write(json_data,df_chunk,counter,config_file_path,task_id,run_id,paths_data,
-                    text_file_path,iter_value,session,subtask_target_section,group_no,subtask_no)
+                    value=write(json_data,df_chunk,counter,config_file_path,task_id,run_id,
+                    paths_data,text_file_path,iter_value,session,subtask_target_section,group_no,
+                    subtask_no)
                     total_records_inserted += records_in_chunk
                     if value is False:
                         bulk_subtask_failed(task_id,json_data,run_id,paths_data,iter_value,
@@ -1112,9 +1112,6 @@ def engine_main(prj_nm,task_id,paths_data,run_id,file_path,iter_value):
                 session = begin_transaction(paths_data,json_data,config_file_path)
             else:
                 session = None
-
-            # update_status_file(task_id,'STARTED',file_path)
-            # audit(json_data, task_id,run_id,paths_data,'STATUS','STARTED',iter_value)
             json_checks = checks_mapping_read(paths_data)
             dq_scripts_path=os.path.expanduser(paths_data["folder_path"])+paths_data['src']+ \
             paths_data["dq_scripts_path"]
@@ -1199,8 +1196,8 @@ def engine_main(prj_nm,task_id,paths_data,run_id,file_path,iter_value):
                     process_file_split_and_compress(arguments,
                     output_file_name, output_file_path, target)
                 task_logger.info("Total records inserted into target:%s",good_records_df.shape[0])
-                audit(json_data, task_id,run_id,paths_data,'TRGT_RECORD_COUNT',good_records_df.shape[0],
-                        iter_value)
+                audit(json_data, task_id,run_id,paths_data,'TRGT_RECORD_COUNT',
+                good_records_df.shape[0],iter_value)
             else:
                 # ingestion execution starts here
                 normal_task_execution(json_data,config_file_path,task_id,run_id,paths_data,
@@ -1273,7 +1270,6 @@ def engine_main(prj_nm,task_id,paths_data,run_id,file_path,iter_value):
             task_logger.info(TASK_LOG,task_id)
             update_status_file(task_id,'SUCCESS',file_path)
             audit(json_data, task_id,run_id,paths_data,'STATUS','COMPLETED',iter_value)
-
         elif json_data['task_type']=="SQL Execution":
             value = restart_sql_query(prj_nm, paths_data, task_id, json_data, run_id,iter_value)
             if value :
@@ -1288,7 +1284,6 @@ def engine_main(prj_nm,task_id,paths_data,run_id,file_path,iter_value):
                     paths_data["ingestion_path"]
                 sys.path.insert(0, ingestion_path)
                 bulk_file_copy = importlib.import_module("bulk_file_copy")
-
                 audit(json_data, task_id,run_id,paths_data,'STATUS','STARTED',iter_value)
                 value,source_count,copied_count = bulk_file_copy.copy_files(json_data,
                 config_file_path,run_id,paths_data)
@@ -1326,30 +1321,22 @@ def engine_main(prj_nm,task_id,paths_data,run_id,file_path,iter_value):
                     if task_level_audit_value == 'COMPLETED':
                         task_logger.info("previous task execution completed successfully,"\
                         " so executing in without restart mode")
-                        # update_status_file(task_id,'STARTED',file_path)
-                        # audit(json_data, task_id,run_id,paths_data,'STATUS','STARTED',
-                        # iter_value)
                         new_iter_value = iter_value
                         failed_groups = engine_type(paths_data, task_id,hierarchy,
-                        file_path,config_file_path, json_data, run_id,new_iter_value,local_temp_path)
+                        file_path,config_file_path,json_data,run_id,new_iter_value,local_temp_path)
                     else:
                         task_logger.info("previous task execution was not completed "\
                         "successfully, so executing in restart mode")
                         restart_hierarchy,new_iter_value = bulk_restart(paths_data,restart_mode,
                         hierarchy,task_id,prev_task_run_id,prev_iter_value)
-                        # update_status_file(task_id,'STARTED',file_path)
-                        # audit(json_data, task_id,run_id,paths_data,'STATUS','STARTED',
-                        # new_iter_value)
                         task_logger.info("new subtasks hierarchy in restart mode:%s",
                             restart_hierarchy)
-                        failed_groups = engine_type(paths_data,task_id, restart_hierarchy,
-                        file_path,config_file_path, json_data, run_id,new_iter_value,local_temp_path)
+                        failed_groups = engine_type(paths_data,task_id,restart_hierarchy,
+                        file_path,config_file_path,json_data,run_id,new_iter_value,local_temp_path)
                 else:
                     #fresh run
                     task_logger.info("there is no previous task execution, "\
                     "so executing  a fresh run without restart mode")
-                    # update_status_file(task_id,'STARTED',file_path)
-                    # audit(json_data, task_id,run_id,paths_data,'STATUS','STARTED',iter_value)
                     task_logger.info("subtasks hierarchy:%s", hierarchy)
                     failed_groups = engine_type(paths_data,task_id, hierarchy,
                     file_path,config_file_path, json_data, run_id,iter_value,local_temp_path)
@@ -1362,17 +1349,6 @@ def engine_main(prj_nm,task_id,paths_data,run_id,file_path,iter_value):
                 task_logger.info(TASK_LOG, task_id)
         elif json_data['task_type']=="Transformation":
             task_logger.info("entered in transformation")
-            # update_status_file(task_id,'STARTED',file_path)
-            # audit(json_data, task_id,run_id,paths_data,'STATUS','STARTED',
-            # iter_value)
-            # arguments_pkg = {
-            # 'json_data' : json_data,
-			# 'task_id': task_id,
-			# 'run_id': run_id,
-            # 'paths_data' : paths_data,
-			# 'iter_value': iter_value,
-            # 'file_path': file_path
-            # }
             arguments = {
             'json_data' : json_data,
             'config_file_path':config_file_path,
@@ -1383,7 +1359,7 @@ def engine_main(prj_nm,task_id,paths_data,run_id,file_path,iter_value):
             'iter_value' :  iter_value
             }
             transform_path=os.path.expanduser(paths_data["folder_path"])+paths_data['src']+ \
-            paths_data["tansform_path"]
+            paths_data["transformation_path"]+json_data["job_execution"]+"/"
             sys.path.insert(0, transform_path)
             transform = importlib.import_module("transform")
             transform.transform_flow(arguments)
