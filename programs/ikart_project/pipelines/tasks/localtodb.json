@@ -1,0 +1,58 @@
+{
+  "login_id": "shilpi",
+  "id": 437,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "localtodb",
+  "task_description": "local to db",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "d98c57ae-8a5d-4af6-a36b-16a49e54a1fe",
+  "status": "Success",
+  "updated_dttm": "2024-06-04T12:34:02.000Z",
+  "source": "Local Server",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "OP_DTL_OWNRSHP_PGYR2022_P01182024_full.csv",
+      "file_path": "/home/shilpi/data/splitted_file/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "no",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": "",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": "Change_Type,Physician,Physician_NPI,Physician_First_Name,Physician_Middle_Name,Physician_Last_Name,Physician_Name_Suffix,Recipient_Primary_Business_Street_Address_Line1,Recipient_Primary_Business_Street_Address_Line2,Recipient_City,Recipient_State,Recipient_Zip_Code,Recipient_Country,Recipient_Province,Recipient_Postal_Code,Physician_Primary_Type,Physician_Specialty,Record_ID,Program_Year,Total_Amount_Invested_USDollars,Value_of_Interest,Terms_of_Interest,Submitting_Applicable_Manufacturer_or_Applicable_GPO_Name,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_ID,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_Name,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_State,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_Country,Dispute_Status_for_Publication,Interest_Held_by_Physician_or_an_Immediate_Family_Member,Payment_Publication_Date",
+      "parameter_type": "Local Server",
+      "select_columns": "Change_Type,Physician,Physician_NPI,Physician_First_Name,Physician_Middle_Name,Physician_Last_Name,Physician_Name_Suffix,Recipient_Primary_Business_Street_Address_Line1,Recipient_Primary_Business_Street_Address_Line2,Recipient_City,Recipient_State,Recipient_Zip_Code,Recipient_Country,Recipient_Province,Recipient_Postal_Code,Physician_Primary_Type,Physician_Specialty,Record_ID,Program_Year,Total_Amount_Invested_USDollars,Value_of_Interest,Terms_of_Interest,Submitting_Applicable_Manufacturer_or_Applicable_GPO_Name,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_ID,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_Name,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_State,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_Country,Dispute_Status_for_Publication,Interest_Held_by_Physician_or_an_Immediate_Family_Member,Payment_Publication_Date",
+      "connection_name": "localserver_shilpi",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "test",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "OP_DTL_OWN",
+      "primary_key": "",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_shilpi",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
