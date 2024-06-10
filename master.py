@@ -182,6 +182,36 @@ def downlaod_file_from_git(repo,branch,file_path,save_dir):
         file.write(file_contents)
     return file
 
+def download_folder_from_github(repo_name, branch, folder_path, save_dir):
+    """
+    Downloads a folder from a GitHub repository.
+
+    Args:
+        repo_name (str): The name of the GitHub repository.
+        branch (str): The branch of the GitHub repository.
+        folder_path (str): The path of the folder in the GitHub repository.
+        save_dir (str): The local directory to save the downloaded folder.
+
+    Returns:
+        None
+    """
+    auth_token = os.getenv("AUTH")
+    auth = Auth.Token(auth_token)
+    git = Github(auth=auth)
+    repo = git.get_repo(repo_name)
+    contents = repo.get_contents(folder_path, ref=branch)
+
+    if not Path(save_dir).exists():
+        Path(save_dir).mkdir(parents=True, exist_ok=True)
+
+    for content in contents:
+        if content.type == "file":
+            file_contents = content.decoded_content
+            file_name = content.name
+            save_path = Path(save_dir).joinpath(file_name)
+            with open(save_path, 'wb') as file:
+                file.write(file_contents)
+
 def downlaod_latest_file_from_git(repository_name,
     branch,file_path,local_file_path,filename,log_name):
     '''function to get the updated file from git'''
