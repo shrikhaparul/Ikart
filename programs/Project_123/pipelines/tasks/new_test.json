@@ -1,0 +1,73 @@
+{
+  "login_id": "jjones",
+  "id": 400,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "new_test",
+  "task_description": "vx",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "54b685cb-e380-473b-ab7b-8b24af78114f",
+  "status": "Failed",
+  "updated_dttm": "2024-05-03T03:55:10.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "10",
+          "connection_name": "Oracle_host",
+          "object_name": "DRDOS_NETBIOS_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_pandas_DRDOS_NETBIOS_TABLE",
+          "connection_name": "P_sqlserver_new",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "8",
+          "connection_name": "Oracle_host",
+          "object_name": "IMPT_TABLE10",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_pandas_IMPT_TABLE10",
+          "connection_name": "P_sqlserver_new",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
