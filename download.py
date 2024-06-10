@@ -543,6 +543,9 @@ def download_task_files(prj_nm,task_name:str, config_path:str, repo_name,branch)
             f'{task_name}{JSON}',
             save_dir = f'{homepath}{"/"}{config_path["local_repo"]}'
             f'{config_path["programs"]}{prj_nm}{config_path["task_json_path"]}')
+            # else:
+                # downlaod_latest_file_from_git(repo_name,branch,paths_data["gh_engine_path"],
+        #     path_src+paths_data["engine_path"]+'engine_code.py',"engine_code.py",main_logger)
         except Exception:
             main_logger.error("Task name not found in the git hub: %s",task_name)
             main_logger.warning(PROCESS_ABORT)
