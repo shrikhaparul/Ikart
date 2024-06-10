@@ -1,0 +1,11 @@
+{
+  "created_dttm": "2024-06-10T05:56:01.470Z",
+  "updated_dttm": "2024-06-10T05:56:01.470Z",
+  "id": 286,
+  "program_name": "demo_program",
+  "program_description": "Demo for interns",
+  "primary_stakeholder": "admin",
+  "secondary_stakeholder": "Sahil",
+  "is_active": "Y",
+  "created_by": "admin"
+}
