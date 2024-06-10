@@ -54,7 +54,7 @@
                 "output_df": "invoice",
                 "table_name": "demo_invoice",
                 "source_type": "PostgreSQL",
-                "connection_name": "postgress",
+                "connection_name": "postgres",
                 "transformation_name": "Postgres"
               }
             },
