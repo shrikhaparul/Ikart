@@ -13,6 +13,7 @@
   "source": "none",
   "target": "none",
   "is_active": "Y",
+  "job_execution": "pandas",
   "created_by": "Madhu",
   "updated_by": "Madhu",
   "task": {
