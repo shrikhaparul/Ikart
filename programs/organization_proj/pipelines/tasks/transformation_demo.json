@@ -177,13 +177,13 @@
                     "expression_value": "to_julian(join_date_left)"
                   },
                   "Neexpression_details_8":{
-                    "operator": "",
-                      "sequence": "8",
-                      "operatorType": "",
-                      "input_col_name": "salary_initial_left",
-                      "output_col_name": "salary_USD",
-                      "expression_value": ""
-                    },
+                      "operator": "currency_conv",
+                        "sequence": "8",
+                        "operatorType": "Converter",
+                        "input_col_name": "",
+                        "output_col_name": "salary_USD",
+                        "expression_value": "currency_conv(salary_initial_left,INR,USD)"
+                      },
                     "Neexpression_details_9": {
                       "operator": "trunc",
                       "sequence": "9",
