@@ -1,0 +1,14 @@
+{
+  "project_id": 80,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "Oracle",
+  "connection_name": "connection_oracle",
+  "connection_details": {
+    "port": "1521",
+    "database": "XEPDB1",
+    "hostname": "ec2-52-204-24-198.compute-1.amazonaws.com",
+    "password": "832af82892a379c6f0ab62697235b02ad4705a4da829496fc84d87d89cf6",
+    "username": "system",
+    "updated_by": "sahilphal"
+  }
+}
