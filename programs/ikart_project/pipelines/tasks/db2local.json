@@ -1,0 +1,117 @@
+{
+  "login_id": "shilpi",
+  "id": 432,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "db2local",
+  "task_description": "db2local",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "05d6c153-4558-4ede-bd0e-1ac94558b92a",
+  "status": "Success",
+  "updated_dttm": "2024-05-15T07:41:56.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_shilpi",
+          "object_name": "Cereal_file",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ora_Cereal_file",
+          "connection_name": "oracle_shilpi",
+          "primary_key": "",
+          "schema_name": "TEST",
+          "audit_fields": "NO",
+          "database_name": "xe",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_shilpi",
+          "object_name": "Culture",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ora_Culture",
+          "connection_name": "oracle_shilpi",
+          "primary_key": "",
+          "schema_name": "TEST",
+          "audit_fields": "NO",
+          "database_name": "xe",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_shilpi",
+          "object_name": "Customer",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ora_Customer",
+          "connection_name": "oracle_shilpi",
+          "primary_key": "",
+          "schema_name": "TEST",
+          "audit_fields": "NO",
+          "database_name": "xe",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_shilpi",
+          "object_name": "Department",
+          "object_type": "Table",
+          "schema_name": "ikart",
+          "database_name": "ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ora_Department",
+          "connection_name": "oracle_shilpi",
+          "primary_key": "",
+          "schema_name": "TEST",
+          "audit_fields": "NO",
+          "database_name": "xe",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
