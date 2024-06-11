@@ -1,0 +1,51 @@
+{
+  "login_id": "sahilphal",
+  "id": 650,
+  "project_name": "first_project",
+  "pipeline_name": "demo_pipeline_1",
+  "project_id": 80,
+  "pipeline_id": 202,
+  "task_name": "TC004_Oracle_S3",
+  "task_description": "Testing for Oracle -> AWS S3",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "cbe3bd7d-b5f9-41b4-8931-5c62c83067ed",
+  "status": "Running",
+  "updated_dttm": "2024-06-11T12:32:28.000Z",
+  "source": "Oracle",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "sahilphal",
+  "updated_by": "sahilphal",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT COUNTRY, ITEM_TYPE, ORDERDATE, ORDERID, ORDER_PRIORITY, REGION, SALES_CHANNEL, SHIPDATE, TOTALCOST, TOTALPROFIT, TOTALREVENUE, UNICOST, UNITPRICE, UNITSSOLD FROM STAGE.POST",
+      "schema": "STAGE",
+      "chunk_size": 100000,
+      "table_name": "POST",
+      "parameter_type": "Oracle",
+      "select_columns": "COUNTRY,ITEM_TYPE,ORDERDATE,ORDERID,ORDER_PRIORITY,REGION,SALES_CHANNEL,SHIPDATE,TOTALCOST,TOTALPROFIT,TOTALREVENUE,UNICOST,UNITPRICE,UNITSSOLD",
+      "connection_name": "connection_oracle"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Oracle_S3",
+      "file_path": "parquet_files",
+      "file_type": "parquet",
+      "operation": "append",
+      "encryption": "no",
+      "compression": "zip",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "connection_S3",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
