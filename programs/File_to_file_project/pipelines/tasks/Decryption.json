@@ -1,0 +1,57 @@
+{
+  "login_id": "jjones",
+  "id": 645,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "Decryption",
+  "task_description": "s",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-11T06:32:04.000Z",
+  "source": "Local Server",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "|",
+      "file_name": "new_encrypt_test.csv.gpg",
+      "file_path": "/home/Admin/actions-runner/_work/UI/tgt_files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "yes",
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "-----BEGIN PGP MESSAGE-----",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "ec2_local_server_files_to_files",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "Decryption_test",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "P_postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
