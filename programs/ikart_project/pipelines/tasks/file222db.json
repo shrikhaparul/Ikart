@@ -1,0 +1,49 @@
+{
+  "login_id": "shilpi",
+  "id": 434,
+  "project_name": "ikart_project",
+  "pipeline_name": "ikart_pipeline",
+  "project_id": 61,
+  "pipeline_id": 150,
+  "task_name": "file222db",
+  "task_description": "file222db",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "81674dc3-a155-495b-adbd-93129fa4ea2c",
+  "status": "Success",
+  "updated_dttm": "2024-05-24T09:15:33.000Z",
+  "source": "MySQL",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT Region, Country, ItemType, SalesChannel, OrderPriority, OrderDate, OrderID, ShipDate, UnitsSold, UnitPrice, UnitCost, TotalRevenue, TotalCost, TotalProfit FROM ikart.Cereal_file",
+      "schema": "ikart",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "Cereal_file",
+      "parameter_type": "MySQL",
+      "select_columns": "Region,Country,ItemType,SalesChannel,OrderPriority,OrderDate,OrderID,ShipDate,UnitsSold,UnitPrice,UnitCost,TotalRevenue,TotalCost,TotalProfit",
+      "connection_name": "mysql_shilpi"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "test",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "Cereal_file_23",
+      "primary_key": "",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_shilpi",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
