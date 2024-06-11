@@ -1,0 +1,99 @@
+{
+  "login_id": "Puneeth",
+  "id": 648,
+  "project_name": "internal_demo",
+  "pipeline_name": "dq_testing1",
+  "project_id": 66,
+  "pipeline_id": 205,
+  "task_name": "Dq_test",
+  "task_description": "DQ_TESTING_FOR_ADVENTURE_WORKS_DATA",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "921c7347-e446-4606-9bbd-b7cdd6a3b278",
+  "status": "Running",
+  "updated_dttm": "2024-06-11T09:04:42.000Z",
+  "source": "MSSQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "SELECT * FROM HumanResources.Employee",
+      "schema": "HumanResources",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "Employee",
+      "parameter_type": "MSSQL",
+      "select_columns": null,
+      "connection_name": "mssql_connection"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "testing",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "Adventure_HumanResources",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_EC2_Connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_be_unique",
+        "parameters": {
+          "column": "NationalIDNumber",
+          "value_set": ""
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_values_to_match_strftime_format",
+        "parameters": {
+          "column": "BirthDate",
+          "strftime_format": "%Y-%m-%d"
+        },
+        "active": "N",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "3",
+        "check": "column_values_to_be_in_set",
+        "parameters": {
+          "column": "MaritalStatus",
+          "value_set": "S,M"
+        },
+        "active": "N",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "4",
+        "check": "column_values_to_be_between",
+        "parameters": {
+          "column": "SickLeaveHours",
+          "max_value": "48",
+          "min_value": "16"
+        },
+        "active": "N",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "post_check"
+      }
+    ]
+  }
+}
