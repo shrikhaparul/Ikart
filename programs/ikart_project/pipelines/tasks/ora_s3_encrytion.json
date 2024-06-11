@@ -1,0 +1,49 @@
+{
+  "login_id": "shilpi",
+  "id": 435,
+  "project_name": "ikart_project",
+  "pipeline_name": "ingestion_with_encryption",
+  "project_id": 61,
+  "pipeline_id": 152,
+  "task_name": "ora_s3_encrytion",
+  "task_description": "ora_s3_encrytion",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "c9c1d667-05b9-4588-b860-30e8d819d021",
+  "status": "Success",
+  "updated_dttm": "2024-05-30T06:25:56.000Z",
+  "source": "Oracle",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT A81001, CLEVELAND, LAWSON STREET, STOCKTON ON TEES, THE DENSHAM SURGERY, THE HEALTH CENTRE, TS18 1HU FROM test.PRACTICES_1",
+      "schema": "test",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "PRACTICES_1",
+      "parameter_type": "Oracle",
+      "select_columns": "A81001,CLEVELAND,LAWSON STREET,STOCKTON ON TEES,THE DENSHAM SURGERY,THE HEALTH CENTRE,TS18 1HU",
+      "connection_name": "oracle_shilpi"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "practice",
+      "primary_key": "",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_shilpi",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
