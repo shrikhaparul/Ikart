@@ -1,0 +1,119 @@
+{
+  "login_id": "Madhu",
+  "id": 599,
+  "project_name": "Demo_Project",
+  "pipeline_name": "SFTP_S3_RDS",
+  "project_id": 74,
+  "pipeline_id": 174,
+  "task_name": "Filter_IO",
+  "task_description": "Filter_IO",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-29T08:47:57.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+  "job_execution": null,
+  "task": {
+    "flow": {
+      "Input_input1": "0",
+      "Input_input2": "0",
+      "Input_input3": "0",
+      "Output_output": "Joiner_joiner2",
+      "Joiner_joiner1": "Input_input2,Input_input1",
+      "Joiner_joiner2": "Joiner_joiner1,Input_input3"
+    },
+    "details": [
+      {
+        "Joiner": [
+          {
+            "joiner2": {
+              "join_type": "inner ",
+              "output_df": "jnr_cjs",
+              "left_input_df": "jnr_qpq",
+              "join_condition": "inp_cut.full_name=inp_dik.full_name",
+              "right_input_df": "inp_ngv",
+              "transformation_name": "joiner2"
+            }
+          },
+          {
+            "joiner1": {
+              "join_type": "inner ",
+              "output_df": "jnr_qpq",
+              "left_input_df": "inp_cut",
+              "join_condition": "inp_cut.full_name=inp_dik.full_name",
+              "right_input_df": "inp_dik",
+              "transformation_name": "joiner1"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "input2": {
+              "schema": "public",
+              "output_df": "inp_dik",
+              "table_name": "tbl_product",
+              "source_type": "PostgreSQL",
+              "select_columns": "id,program_name,program_description,primary_stakeholder,secondary_stakeholder,is_active,git_repo,created_by,created_dttm,updated_by,updated_dttm",
+              "connection_name": "175",
+              "transformation_name": "input2"
+            }
+          },
+          {
+            "input1": {
+              "schema": "config",
+              "output_df": "inp_cut",
+              "table_name": "tbl_program",
+              "source_type": "MySQL",
+              "select_columns": "id,program_name,program_description,primary_stakeholder,secondary_stakeholder,is_active,git_repo,created_by,created_dttm,updated_by,updated_dttm",
+              "connection_name": "182",
+              "transformation_name": "input1"
+            }
+          },
+          {
+            "input3": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "sales.csv",
+              "file_path": "/home/madhu/Ingestion_code2/",
+              "file_type": "csv",
+              "output_df": "inp_ngv",
+              "quote_char": "\"",
+              "compression": "gzip",
+              "escape_char": "\\",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "connection_name": "183",
+              "transformation_name": "input3"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output": {
+              "schema": "config",
+              "input_df": "jnr_cjs",
+              "operation": "create",
+              "table_name": "tbl_result",
+              "target_type": "PostgreSQL",
+              "connection_name": "175",
+              "transformation_name": "output"
+            }
+          }
+        ]
+      },
+      {
+        "SQL": []
+      }
+    ]
+  }
+}
