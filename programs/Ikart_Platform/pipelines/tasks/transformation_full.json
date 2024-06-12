@@ -22,6 +22,7 @@
     "flow": {
       "Input_Local": "0",
       "Input_mysql": "0",
+      "Joiner_joiner": "Input_Local,Input_mysql"
       "Output_output": "Joiner_joiner"
     },
     "details": [
@@ -32,7 +33,7 @@
               "join_type": "left",
               "output_df": "jnr_doi",
               "left_input_df": "inp_mji",
-              "join_condition": "inp_mji.department_id=jnr_doi.department_id",
+              "join_condition": "inp_mji.department_id=inp_msm.department_id",
               "right_input_df": "inp_msm",
               "transformation_name": "joiner"
             }
