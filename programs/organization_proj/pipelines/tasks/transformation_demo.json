@@ -210,8 +210,8 @@
         "Output": [
           {
             "OutputDetails": {
-              
-              "file_path": "/home/rperuman/src_files/transformation/data/inp_join_filter_exp.json",
+              "file_name": "inp_join_filter_exp.json",
+              "file_path": "/home/rperuman/src_files/transformation/data/",
               "input_df": "expression_df",
                 "transformation_name": "OutputDetails",
                 "header": "Y",
