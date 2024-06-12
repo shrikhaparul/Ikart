@@ -25,9 +25,6 @@
     },
     "details": [
       {
-        "Joiner": []
-      },
-      {
         "Input": [
           {
             "Local": {
@@ -44,7 +41,7 @@
               "skip_header": "0",
               "source_type": "Local Server",
               "select_columns": "first_name,last_name,employee_id,department_id,join_date,last_login_timestamp,salary_initial,current_salary,work_location,updated_location",
-              "connection_name": "142",
+              "connection_name": "Local Server",
               "transformation_name": "Local"
             }
           }
@@ -59,14 +56,11 @@
               "operation": "create",
               "table_name": "transform_test",
               "target_type": "MySQL",
-              "connection_name": "143",
+              "connection_name": "mysql",
               "transformation_name": "mysql"
             }
           }
         ]
-      },
-      {
-        "SQL": []
       }
     ]
   }
