@@ -1,0 +1,232 @@
+{
+  "login_id": "rperuman",
+  "id": 673,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "transformation_test",
+  "project_id": 68,
+  "pipeline_id": 207,
+  "task_name": "full_transform_flow",
+  "task_description": "full_transform_flow",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-12T13:18:55.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_input1": "0",
+      "Input_input2": "0",
+      "Joiner_joiner": "Input_input1,Input_input2",
+      "Output_output": "Expression_ExpressionData",
+      "Filter_filterNew": "Joiner_joiner",
+      "Expression_ExpressionData": "Filter_filterNew"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "filterNew": {
+              "input_df": "jnr_doi",
+              "output_df": "fil_vaj",
+              "transformation_name": "filterNew",
+              "id": {
+                "label": "Filter",
+                "displayName": "filterNew"
+              },
+              "filterNew_Group_1718199606529": {
+                "id": "filterNew_Group_1718199606529",
+                "operator": "and",
+                "group_name": "Group1",
+                "Condition_01": "filterNew_Operation_1718199606527",
+                "Condition_02": "filterNew_Operation_1718199606528",
+                "condition_type": "group"
+              },
+              "filterNew_Operation_1718199606528": {
+                "id": "filterNew_Operation_1718199606528",
+                "operator": ">",
+                "column_name": "employee_id_left",
+                "field_value": "1100",
+                "condition_type": "operation",
+                "operation_name": "operation_02"
+              },
+              "filterNew_Operation_1718199606527": {
+                "id": "filterNew_Operation_1718199606527",
+                "operator": ">",
+                "column_name": "department_id_left",
+                "field_value": "2",
+                "condition_type": "operation",
+                "operation_name": "operation_01"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Expression": [
+          {
+            "ExpressionData": {
+              "input_df": "fil_vaj",
+              "output_df": "exp_cgu",
+              "transformation_name": "ExpressionData",
+              "ExpressionData_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "join_date_left",
+                "output_col_name": "join_date_left",
+                "expression_value": " "
+              },
+              "ExpressionData_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "updated_location_left",
+                "output_col_name": "updated_location_left",
+                "expression_value": " "
+              },
+              "ExpressionData_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "department_id_left",
+                "output_col_name": "department_id_left",
+                "expression_value": " "
+              },
+              "ExpressionData_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "last_login_timestamp_left",
+                "output_col_name": "last_login_timestamp_left",
+                "expression_value": " "
+              },
+              "ExpressionData_7": {
+                "operator": "trunc",
+                "sequence": "7",
+                "operatorType": "Math",
+                "input_col_name": "salary_initial_left",
+                "output_col_name": "salary_initial_left",
+                "expression_value": "TRUNC (salary_initial_left,1)"
+              },
+              "ExpressionData_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "employee_id_left",
+                "output_col_name": "employee_id_left",
+                "expression_value": " "
+              },
+              "ExpressionData_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "last_name_left",
+                "output_col_name": "last_name_left",
+                "expression_value": " "
+              },
+              "ExpressionData_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "department_name_right",
+                "output_col_name": "department_name_right",
+                "expression_value": " "
+              },
+              "ExpressionData_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "first_name_left",
+                "output_col_name": "first_name_left",
+                "expression_value": " "
+              },
+              "ExpressionData_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "current_salary_left",
+                "output_col_name": "current_salary_left",
+                "expression_value": " "
+              },
+              "ExpressionData_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "work_location_left",
+                "output_col_name": "work_location_left",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Joiner": [
+          {
+            "joiner": {
+              "join_type": "left",
+              "output_df": "jnr_doi",
+              "left_input_df": "inp_mji",
+              "join_condition": "inp_mji.department_id=inp_msm.department_id",
+              "right_input_df": "inp_msm",
+              "transformation_name": "joiner"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "input2": {
+              "schema": "transformation",
+              "output_df": "inp_msm",
+              "table_name": "demo_dept_data",
+              "source_type": "MySQL",
+              "select_columns": "department_id,department_name",
+              "connection_name": "mysql",
+              "transformation_name": "input2"
+            }
+          },
+          {
+            "input1": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "extended_employee_data.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/transform/",
+              "file_type": "csv",
+              "output_df": "inp_mji",
+              "quote_char": "\"",
+              "escape_char": "",
+              "source_type": "Local Server",
+              "select_columns": "first_name,last_name,employee_id,department_id,join_date,last_login_timestamp,salary_initial,current_salary,work_location,updated_location",
+              "connection_name": "local_server",
+              "transformation_name": "input1"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output": {
+              "schema": "transformation",
+              "input_df": "exp_cgu",
+              "operation": "create",
+              "table_name": "full_transformation",
+              "target_type": "MySQL",
+              "connection_name": "mysql",
+              "transformation_name": "output"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
