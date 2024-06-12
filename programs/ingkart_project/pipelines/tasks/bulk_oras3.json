@@ -1,0 +1,73 @@
+{
+  "login_id": "shilpi",
+  "id": 576,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "bulk_oras3",
+  "task_description": "ingestion",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "e2730c9c-0e83-43be-8c85-a0ff6452e146",
+  "status": "Failed",
+  "updated_dttm": "2024-05-30T06:42:55.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 1000000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "postgres_s",
+          "object_name": "sales_11",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "trgt_sales_11",
+          "connection_name": "oracle_xepdb1",
+          "primary_key": "",
+          "schema_name": "TEST",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "postgres_s",
+          "object_name": "name_mappingcsv",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "trgt_name_mappingcsv",
+          "connection_name": "oracle_xepdb1",
+          "primary_key": "",
+          "schema_name": "TEST",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
