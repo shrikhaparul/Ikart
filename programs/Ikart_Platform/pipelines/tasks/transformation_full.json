@@ -1,0 +1,92 @@
+{
+  "login_id": "rperuman",
+  "id": 672,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "transformation_test",
+  "project_id": 68,
+  "pipeline_id": 207,
+  "task_name": "transformation_full",
+  "task_description": "transformation_full",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-12T13:18:55.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_input1": "0",
+      "Input_input2": "0",
+      "Joiner_joiner": "Input_input1,Input_input2",
+      "Output_output": "Joiner_joiner"
+    },
+    "details": [
+      {
+        "Joiner": [
+          {
+            "joiner": {
+              "join_type": "left",
+              "output_df": "jnr_doi",
+              "left_input_df": "inp_mji",
+              "join_condition": "inp_mji.department_id=inp_msm.department_id",
+              "right_input_df": "inp_msm",
+              "transformation_name": "joiner"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "input1": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "extended_employee_data.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/transform/",
+              "file_type": "csv",
+              "output_df": "inp_mji",
+              "quote_char": "\"",
+              "escape_char": "",
+              "source_type": "Local Server",
+              "select_columns": "first_name,last_name,employee_id,department_id,join_date,last_login_timestamp,salary_initial,current_salary,work_location,updated_location",
+              "connection_name": "local_server",
+              "transformation_name": "input1"
+            }
+          },
+          {
+            "input2": {
+              "schema": "transformation",
+              "output_df": "inp_msm",
+              "table_name": "demo_dept_data",
+              "source_type": "MySQL",
+              "select_columns": "department_id,department_name",
+              "connection_name": "mysql",
+              "transformation_name": "input2"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output": {
+              "schema": "transformation",
+              "input_df": "jnr_doi",
+              "operation": "create",
+              "table_name": "inp_join_out",
+              "target_type": "MySQL",
+              "connection_name": "mysql",
+              "transformation_name": "output"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
