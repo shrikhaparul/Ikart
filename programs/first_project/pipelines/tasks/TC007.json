@@ -1,0 +1,63 @@
+{
+  "login_id": "Madhu",
+  "id": 663,
+  "project_name": "first_project",
+  "pipeline_name": "demo_pipeline_1",
+  "project_id": 80,
+  "pipeline_id": 202,
+  "task_name": "TC007",
+  "task_description": "S3 (parquet) ->  Local Server",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-12T10:19:13.000Z",
+  "source": "Local Server",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "sahilphal",
+  "updated_by": "sahilphal",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Hr5m.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/all_files/",
+      "file_type": "csv",
+      "chunk_size": 100000,
+      "decryption": "no",
+      "quote_char": null,
+      "compression": "zip",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Emp ID,Name Prefix,First Name,Middle Initial,Last Name,Gender,E Mail,Father's Name,Mother's Name,Mother's Maiden Name,Date of Birth,Time of Birth,Age in Yrs.,Weight in Kgs.,Date of Joining,Quarter of Joining,Half of Joining,Year of Joining,Month of Joining,Month Name of Joining,Short Month,Day of Joining,DOW of Joining,Short DOW,Age in Company (Years),Salary,Last % Hike,SSN,Phone No. ,Place Name,County,City,State,Zip,Region,User Name,Password",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "ec2_local_connection",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "TC007",
+      "file_path": "Excel_folder/files/",
+      "file_type": "parquet",
+      "operation": "append",
+      "encryption": "no",
+      "compression": "zip",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "connection_S3",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
