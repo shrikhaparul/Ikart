@@ -21,7 +21,7 @@
     "flow": {
       "Input_Local": "0",
       "Input_mysql": "0",
-      "Joiner_new_joiner_1":"Input_Local1,Input_mysql",
+      "Joiner_new_joiner_1":"Input_Local,Input_mysql",
       "Filter_FilterDetails_localcsv":"Joiner_new_joiner_1",
       "Expression_Neexpression_details":"Filter_FilterDetails_localcsv",
       "Output_OutputDetails": "Expression_Neexpression_details"
