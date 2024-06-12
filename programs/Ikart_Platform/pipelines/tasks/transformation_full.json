@@ -22,7 +22,7 @@
     "flow": {
       "Input_Local": "0",
       "Input_mysql": "0",
-      "Joiner_joiner": "Input_Local,Input_mysql"
+      "Joiner_joiner": "Input_Local,Input_mysql",
       "Output_output": "Joiner_joiner"
     },
     "details": [
