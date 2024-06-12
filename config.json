@@ -26,6 +26,8 @@
 	"json":"json/",
 	"logs":"logs/",
 	"text":"text/",
+	"pandas":"pandas/",
+	"polars":"polars/",
 	"archive":"archive/",
 	"rejected":"rejected/",
 	"source_files":"source_files/",
@@ -47,7 +49,7 @@
 	"engine_path": "scripts/engine_main/",	
 	"conn_path": "/repo/connections/",
 	"ingestion_path": "scripts/ingestion/",		
-	"tansform_path": "scripts/transformation/",
+	"transformation_path": "scripts/transformation/",
 	"dq_scripts_path": "scripts/dq_scripts/",
 	"audit_api_url":"http://localhost:8080/api/audit",
 	"audit_executequery_url":"/executequery/",
@@ -79,5 +81,6 @@
 	"seatunnel_log_path":"/pipelines/tasks/seatunnel_logs/",
 	"key_path": "/home/rperuman/.ssh/id_rsa",
 	"key_pass": "Ravi@1927!",
-	"seatunnel_typecasting_file_path":"src/scripts/seatunnel/plugin/seatunnel_typecasting.json"
+	"seatunnel_typecasting_file_path":"src/scripts/seatunnel/plugin/seatunnel_typecasting.json",
+	"currency_json_path":"currency.json"
 }

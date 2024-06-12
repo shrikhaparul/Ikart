@@ -5,16 +5,14 @@ the results in different formats
 """
 
 import logging
-import fetch
-import store
 import pandas as pd
-
+from update_audit import audit_failure
 task_logger = logging.getLogger('task_logger')
 
 NOT_COMPATIBLE="Source Type not compatible"
 
 
-def join_operations(data_sources, operations):
+def join_operations(arguments,data_sources, operations):
     """
     Perform operations on data from multiple sources and merge them into a single DataFrame.
 
@@ -73,10 +71,10 @@ def join_operations(data_sources, operations):
         task_logger.info(right_source.columns)
         join_type=operations["join_type"]
         result = pd.merge(left_source, right_source, how=join_type,left_on=left_col,
-        right_on=right_col)
-        #, validate="1:1"
+        right_on=right_col, validate=None)
         result = result.loc[:, ~result.columns.duplicated()]
         return result
     except Exception as e:
         task_logger.error("Cannot join the table: %s", e)
+        audit_failure(arguments)
         raise

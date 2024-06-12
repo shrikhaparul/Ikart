@@ -3,11 +3,12 @@ Module for parsing and evaluating string expressions in DataFrames.
 """
 import logging
 import re
+from update_audit import audit_failure
 from expression.add_column import add_or_update_column
 
 task_logger = logging.getLogger('task_logger')
 
-def extract_values(values):
+def extract_values(arguments,values):
     """
     Extract values from the given list.
 
@@ -18,24 +19,29 @@ def extract_values(values):
         tuple: A tuple containing extracted values.
 
     """
-    temp_df=values[0]
-    temp_df_header=values[1]
-    df=values[2]
-    expression=values[3]
-    arguments=values[4]
-    output_column=values[5]
-    df = add_or_update_column(df,
-                                temp_df,
-                                expression['output_col_name'],
-                                expression['input_col_name'],
-                                '')
-    if arguments[0] in temp_df_header:
-        arguments[0] = temp_df[arguments[0]]
-    elif arguments[0] in df.columns:
-        arguments[0] = df[arguments[0]]
-    return df,arguments,output_column
+    try:
+        temp_df=values[0]
+        temp_df_header=values[1]
+        df=values[2]
+        expression=values[3]
+        argument=values[4]
+        output_column=values[5]
+        df = add_or_update_column(df,
+                                    temp_df,
+                                    expression['output_col_name'],
+                                    expression['input_col_name'],
+                                    '')
+        if argument[0] in temp_df_header:
+            argument[0] = temp_df[argument[0]]
+        elif argument[0] in df.columns:
+            argument[0] = df[argument[0]]
+        return df,argument,output_column
+    except Exception as e:
+        task_logger.exception("Error occured in extract_values function with error : %s",e)
+        audit_failure(arguments)
+        raise e
 
-def apply_lower(values):
+def apply_lower(arguments,values):
     """
     Apply lower case transformation to a DataFrame column.
 
@@ -46,11 +52,17 @@ def apply_lower(values):
         pandas.DataFrame: The DataFrame with the lower case transformation applied.
 
     """
-    df,arguments,output_column=extract_values(values)
-    df[output_column] = arguments[0].str.lower()
-    return df
+    try:
 
-def apply_upper(values):
+        df,argument,output_column=extract_values(arguments,values)
+        df[output_column] = argument[0].str.lower()
+        return df
+    except Exception as e:
+        task_logger.exception("Error occured in apply_lower function with error : %s",e)
+        audit_failure(arguments)
+        raise e
+
+def apply_upper(arguments,values):
     """
     Apply upper case transformation to a DataFrame column.
 
@@ -61,11 +73,17 @@ def apply_upper(values):
         pandas.DataFrame: The DataFrame with the upper case transformation applied.
 
     """
-    df,arguments,output_column=extract_values(values)
-    df[output_column] = arguments[0].str.upper()
-    return df
+    try:
 
-def trim_function(temp_df, temp_df_header,df, trim_syntax):
+        df,argument,output_column=extract_values(arguments,values)
+        df[output_column] = argument[0].str.upper()
+        return df
+    except Exception as e:
+        task_logger.exception("Error occured in apply_upper function with error : %s",e)
+        audit_failure(arguments)
+        raise e
+
+def trim_function(arguments,temp_df, temp_df_header,df, trim_syntax):
     """
     TRIM function implementation for a pandas DataFrame.
 
@@ -76,33 +94,40 @@ def trim_function(temp_df, temp_df_header,df, trim_syntax):
     Returns:
     - pandas DataFrame with the trim operation applied.
     """
-    trim_syntax = trim_syntax.replace("trim(", "").replace(")", "")
-    # Parse trim syntax
-    trim_operands = trim_syntax.split()
-    # Extract trimType, trimCharacter, and trimSource
-    trim_type = 'BOTH'  # Default trimType
-    trim_character = ' '  # Default trimCharacter
-    if len(trim_operands) >= 2:
-        trim_type = trim_operands[0].upper()
-        if trim_type not in ['LEADING', 'TRAILING', 'BOTH']:
-            raise ValueError("Invalid trimType.It must be one of 'LEADING','TRAILING', or 'BOTH'.")
-        if len(trim_operands) >=3:
-            trim_character = trim_operands[1]
-    trim_source = trim_operands[-1]
-    if trim_source in temp_df_header:
-        trim_source = temp_df[trim_source]
-    elif trim_source in df.columns:
-        trim_source = df[trim_source]
-    # Apply trim operation to DataFrame
-    if trim_type == 'LEADING':
-        result = trim_source.str.lstrip(trim_character)
-    elif trim_type == 'TRAILING':
-        result = trim_source.str.rstrip(trim_character)
-    elif trim_type == 'BOTH':
-        result = trim_source.str.strip(trim_character)
-    return result
+    try:
 
-def apply_initcap(values):
+        trim_syntax = trim_syntax.replace("trim(", "").replace(")", "")
+        # Parse trim syntax
+        trim_operands = trim_syntax.split()
+        # Extract trimType, trimCharacter, and trimSource
+        trim_type = 'BOTH'  # Default trimType
+        trim_character = ' '  # Default trimCharacter
+        if len(trim_operands) >= 2:
+            trim_type = trim_operands[0].upper()
+            if trim_type not in ['LEADING', 'TRAILING', 'BOTH']:
+                raise ValueError("Invalid trimType. It must be one of 'LEADING', \
+                'TRAILING', or 'BOTH'.")
+            if len(trim_operands) >=3:
+                trim_character = trim_operands[1]
+        trim_source = trim_operands[-1]
+        if trim_source in temp_df_header:
+            trim_source = temp_df[trim_source]
+        elif trim_source in df.columns:
+            trim_source = df[trim_source]
+        # Apply trim operation to DataFrame
+        if trim_type == 'LEADING':
+            result = trim_source.str.lstrip(trim_character)
+        elif trim_type == 'TRAILING':
+            result = trim_source.str.rstrip(trim_character)
+        elif trim_type == 'BOTH':
+            result = trim_source.str.strip(trim_character)
+        return result
+    except Exception as e:
+        task_logger.exception("Error occured in trim_function function with error : %s",e)
+        audit_failure(arguments)
+        raise e
+
+def apply_initcap(arguments,values):
     """
     Apply initcap case transformation to a DataFrame column.
 
@@ -113,11 +138,16 @@ def apply_initcap(values):
         pandas.DataFrame: The DataFrame with the initcap case transformation applied.
 
     """
-    df,arguments,output_column=extract_values(values)
-    df[output_column] = arguments[0].str.title()
-    return df
+    try:
+        df,argument,output_column=extract_values(arguments,values)
+        df[output_column] = argument[0].str.title()
+        return df
+    except Exception as e:
+        task_logger.exception("Error occured in apply_initcap function with error : %s",e)
+        audit_failure(arguments)
+        raise e
 
-def apply_replace(values):
+def apply_replace(arguments,values):
     """
     Apply string replacement to a DataFrame column.
     Args:
@@ -125,11 +155,17 @@ def apply_replace(values):
     Returns:
         pandas.DataFrame: The DataFrame with the string replacement applied.
     """
-    df,arguments,output_column=extract_values(values)
-    df[output_column] = arguments[0].str.replace(arguments[1], arguments[2])
-    return df
+    try:
 
-def apply_ltrim(values):
+        df,argument,output_column=extract_values(arguments,values)
+        df[output_column] = argument[0].str.replace(argument[1], argument[2])
+        return df
+    except Exception as e:
+        task_logger.exception("Error occured in apply_replace function with error : %s",e)
+        audit_failure(arguments)
+        raise e
+
+def apply_ltrim(arguments,values):
     """
     Apply left trim operation to a DataFrame column.
     Args:
@@ -137,14 +173,20 @@ def apply_ltrim(values):
     Returns:
         pandas.DataFrame: The DataFrame with the left trim operation applied.
     """
-    df,arguments,output_column=extract_values(values)
-    if len(arguments)>2:
-        df[output_column] = arguments[0].str.lstrip(arguments[1])
-    else:
-        df[output_column] = arguments[0].str.lstrip()
-    return df
+    try:
 
-def apply_lpad(values):
+        df,argument,output_column=extract_values(arguments,values)
+        if len(argument)>2:
+            df[output_column] = argument[0].str.lstrip(argument[1])
+        else:
+            df[output_column] = argument[0].str.lstrip()
+        return df
+    except Exception as e:
+        task_logger.exception("Error occured in apply_ltrim function with error : %s",e)
+        audit_failure(arguments)
+        raise e
+
+def apply_lpad(arguments,values):
     """
     Apply left padding to a DataFrame column.
     Args:
@@ -152,14 +194,20 @@ def apply_lpad(values):
     Returns:
         pandas.DataFrame: The DataFrame with the left padding applied.
     """
-    df,arguments,output_column=extract_values(values)
-    if len(arguments)<3:
-        arguments.append(" ")
-    df[output_column] = arguments[0].str.pad(width=int(arguments[1]),
-         side='left',fillchar=arguments[2])
-    return df
+    try:
+        df,argument,output_column=extract_values(arguments,values)
+        if len(argument)<3:
+            argument.append(" ")
+        df[output_column] = argument[0].str.pad(width=int(argument[1]),
+                                                    side='left',
+                                                    fillchar=argument[2])
+        return df
+    except Exception as e:
+        task_logger.exception("Error occured in apply_lpad function with error : %s",e)
+        audit_failure(arguments)
+        raise e
 
-def apply_regex_replace(values):
+def apply_regex_replace(arguments,values):
     """
     Apply regular expression replacement to a DataFrame column.
     Args:
@@ -167,14 +215,20 @@ def apply_regex_replace(values):
     Returns:
         pandas.DataFrame: The DataFrame with the regular expression replacement applied.
     """
-    df,arguments,output_column=extract_values(values)
-    source_string = arguments[0]
-    pattern = arguments[1]
-    replace_string = arguments[2] if len(arguments) > 2 else ''
-    df[output_column] = source_string.replace(regex=pattern, value=replace_string)
-    return df
+    try:
 
-def apply_rpad(values):
+        df,argument,output_column=extract_values(arguments,values)
+        source_string = argument[0]
+        pattern = argument[1]
+        replace_string = argument[2] if len(argument) > 2 else ''
+        df[output_column] = source_string.replace(regex=pattern, value=replace_string)
+        return df
+    except Exception as e:
+        task_logger.exception("Error occured in apply_regex_replace function with error : %s",e)
+        audit_failure(arguments)
+        raise e
+
+def apply_rpad(arguments,values):
     """
     Apply right padding to a DataFrame column.
     Args:
@@ -182,14 +236,21 @@ def apply_rpad(values):
     Returns:
         pandas.DataFrame: The DataFrame with the right padding applied.
     """
-    df,arguments,output_column=extract_values(values)
-    if len(arguments)<3:
-        arguments.append(" ")
-    df[output_column] = arguments[0].str.pad(width=int(arguments[1]),
-        side='right',fillchar=arguments[2])
-    return df
+    try:
 
-def string_exp(temp_df, temp_df_header, df, expression):
+        df,argument,output_column=extract_values(arguments,values)
+        if len(argument)<3:
+            argument.append(" ")
+        df[output_column] = argument[0].str.pad(width=int(argument[1]),
+                                                    side='right',
+                                                    fillchar=argument[2])
+        return df
+    except Exception as e:
+        task_logger.exception("Error occured in apply_rpad function with error : %s",e)
+        audit_failure(arguments)
+        raise e
+
+def string_exp(arguments,temp_df, temp_df_header, df, expression):
     """Evaluate string expressions and update the DataFrame.
 
     This function evaluates string expressions provided in the expression
@@ -219,67 +280,69 @@ def string_exp(temp_df, temp_df_header, df, expression):
             'concat': r'concat\((.*?),\s*(.*?)\)'
         }
         output_column = expression['output_col_name']
-        arguments = []
+        argument = []
         match = re.search(patterns[expression['operator']], expression['expression_value'])
         if match:
-            arguments = [arg.strip("'") if arg is not None else arg for arg in match.groups()]
+            argument = [arg.strip("'") if arg is not None else arg for arg in match.groups()]
         else:
             raise SyntaxError("Invalid Syntax")
         operator_name = expression['operator']
-        arguments = [s.strip() for s in arguments if s]
-        values=[temp_df, temp_df_header, df, expression,arguments,output_column]
+        argument = [s.strip() for s in argument if s]
+        values=[temp_df, temp_df_header, df, expression,argument,output_column]
         match operator_name:
             case 'lower':
-                df=apply_lower(values)
+                df=apply_lower(arguments,values)
             case 'upper':
-                df=apply_upper(values)
+                df=apply_upper(arguments,values)
             case 'trim':
-                df = add_or_update_column(df,
+                df = add_or_update_column(arguments,df,
                                           temp_df,
                                           expression['output_col_name'],
                                           expression['input_col_name'],
                                           '')
-                df[output_column]=trim_function(temp_df, temp_df_header,df,
+                df[output_column]=trim_function(arguments,temp_df, temp_df_header,df,
                 expression['expression_value'])
             case 'initcap':
-                df=apply_initcap(values)
+                df=apply_initcap(arguments,values)
             case 'replace':
-                df=apply_replace(values)
+                df=apply_replace(arguments,values)
             case 'ltrim':
-                df = apply_ltrim(values)
+                df = apply_ltrim(arguments,values)
             case 'lpad':
-                df=apply_lpad(values)
+                df=apply_lpad(arguments,values)
             case 'regexp_replace':
-                df=apply_regex_replace(values)
+                df=apply_regex_replace(arguments,values)
             case 'rpad':
-                df=apply_rpad(values)
+                df=apply_rpad(arguments,values)
             case 'substring':
-                df,arguments,output_column=extract_values(values)
-                df[output_column] = arguments[0].str[int(arguments[1]):int(arguments[1])
+                df,argument,output_column=extract_values(arguments,values)
+                df[output_column] = argument[0].str[int(argument[1]):int(argument[1])
                                                      +
-                                                     int(arguments[2])]
+                                                     int(argument[2])]
             case 'concat':
-                df = add_or_update_column(df,
+                df = add_or_update_column(arguments,df,
                                           temp_df,
                                           expression['output_col_name'],
                                           expression['input_col_name'],
                                           '')
                 concat_syntax=expression['expression_value'].replace("concat(","")
                 concat_syntax=concat_syntax[:-1]
-                arguments=concat_syntax.split(",")
-                print(arguments)
-                for i in range(len(arguments)):
-                    if arguments[i] in temp_df_header:
-                        arguments[i] = temp_df[arguments[i]]
-                    elif arguments[i] in df.columns:
-                        arguments[i] = df[arguments[i]]
-                df[output_column] = arguments[0]
-                for i in range(1,len(arguments)):
-                    df[output_column]+=arguments[i]
+                argument=concat_syntax.split(",")
+                # print(argument)
+                for i, argument in enumerate(argument):
+                    if argument in temp_df_header:
+                        argument[i] = temp_df[argument]
+                    elif argument in df.columns:
+                        argument[i] = df[argument]
+                df[output_column] = argument[0]
+                for i in range(1,len(argument)):
+                    df[output_column]+=argument[i]
             case _:
                 raise ValueError(f"Unsupported operation type: {expression['operator_name']}")
+
         task_logger.info("DF after string expression:%s",df.head())
         return temp_df, df
     except Exception as e:
         task_logger.error("Unable to perform string expression. Exception: %s",e)
+        audit_failure(arguments)
         raise e

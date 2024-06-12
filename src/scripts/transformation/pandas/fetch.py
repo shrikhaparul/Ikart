@@ -14,17 +14,11 @@ import logging
 import sqlalchemy
 import pandas as pd
 
+from update_audit import audit_failure
 task_logger = logging.getLogger('task_logger')
 NOT_COMPATIBLE="Source Type not compatible"
 
 SUCCESS="Data fetched successfully from"
-
-# def get_data_info(df):
-#     """fetch datframes size and rows, columns"""
-#     memory_usage_kb =(df.memory_usage(deep=True).sum())/ 1024
-#     rows, columns = df.shape
-#     task_logger.info("Fetched data memory usage :%s",memory_usage_kb)
-#     task_logger.info("The data has %d rows and %d columns.",rows,columns)
 
 def establish_connection(arguments):
     """Establishes connection module dynamically."""
@@ -37,17 +31,14 @@ def establish_connection(arguments):
         return connections
     except ImportError as e:
         task_logger.error("Failed to import connections module: %s", str(e))
-        # bulk_subtask_failed(arguments['task_id'],arguments['json_data'],
-        # arguments['run_id'],arguments['paths_data'],arguments['iter_value'],arguments['group_no'],
-        # arguments['subtask_no'])
-        # update_status_file(arguments['task_id'],'SUCCESS',arguments['text_file_path'])
+        audit_failure(arguments)
         raise
     except Exception as e:
         task_logger.error("Unexpected error in establish_connection: %s", str(e))
-        # audit_failure(arguments)
+        audit_failure(arguments)
         raise
 
-def fetch_data(source_details,arguments):
+def fetch_data(arguments,source_details):
     """
     Function that fetches data from different locations and gets a dataframe
     Parameters:
@@ -60,34 +51,36 @@ def fetch_data(source_details,arguments):
     """
     try:
         if source_details['source_type']=="Local Server":
-            if source_details['file_type'] == 'csv':
-                return fetch_data_from_csv(source_details['file_path'])
+            file_path=source_details['file_path']+source_details['file_name']
+            if source_details['file_type'] == 'csv':                
+                return fetch_data_from_csv(arguments,file_path)
             if source_details['file_type'] == 'xml':
-                return fetch_data_from_xml(source_details['file_path'])
+                return fetch_data_from_xml(arguments,file_path)
             if source_details['file_type'] == 'excel':
-                return fetch_data_from_excel(source_details['file_path'])
+                return fetch_data_from_excel(arguments,file_path)
             if source_details['file_type'] == 'parquet':
-                return fetch_data_from_parquet(source_details['file_path'])
+                return fetch_data_from_parquet(arguments,file_path)
             if source_details['file_type'] == 'json':
-                return fetch_data_from_json(source_details['file_path'])
+                return fetch_data_from_json(arguments,file_path)
         elif source_details['source_type']=="PostgreSQL":
-            return fetch_data_from_postgres(
+            return fetch_data_from_postgres(arguments,
                 source_details['connection_name'],
                 source_details['schema'],
-                source_details['table_name'],arguments
+                source_details['table_name']
             )
         elif source_details['source_type']=="MYSQL":
-            return fetch_data_from_mysql(
+            return fetch_data_from_mysql(arguments,
                 source_details['connection_name'],
-                source_details['table_name'],arguments
+                source_details['table_name']
             )
         task_logger.error(NOT_COMPATIBLE)
         raise SyntaxError(NOT_COMPATIBLE)
     except Exception as e:
         task_logger.error("Failed to fetch data: %s", e)
+        audit_failure(arguments)
         raise
 
-def fetch_data_from_csv(csv_location):
+def fetch_data_from_csv(arguments,csv_location):
     """
     Fetch data from a CSV file.
 
@@ -114,12 +107,14 @@ def fetch_data_from_csv(csv_location):
         return df
     except pd.errors.EmptyDataError:
         task_logger.error("CSV file is empty: %s", csv_location)
+        audit_failure(arguments)
         raise
     except Exception as e:
         task_logger.error("Error fetching data from CSV at %s: %s",csv_location,e)
+        audit_failure(arguments)
         raise
 
-def fetch_data_from_mssql(connection_name, table,arguments):
+def fetch_data_from_mssql(arguments,connection_name, table):
     """
     Fetch data from a SQL database.
 
@@ -141,7 +136,6 @@ def fetch_data_from_mssql(connection_name, table,arguments):
         connection,connection_detials=connections.establish_conn_for_sqlserver(
         arguments["json_data"],connection_name,arguments["config_file_path"],
         arguments["paths_data"])
-        # connection_string,connection_detials = establish_conn_for_sqlserver(connection_name)
         query = f"SELECT * FROM {table}"
         df = pd.read_sql(query, connection, dtype_backend= "pyarrow")
         task_logger.info("%s in the %s database.",table, connection_detials['database'])
@@ -149,13 +143,15 @@ def fetch_data_from_mssql(connection_name, table,arguments):
     except sqlalchemy.exc.OperationalError as e:
         task_logger.error("Operational error fetching data from SQL database %s, table %s: %s",
                       connection_detials['database'],  table, e)
+        audit_failure(arguments)
         raise
     except Exception as e:
         task_logger.error("Error fetching data from SQL database %s, table %s: %s",
                       connection_detials['database'],table,e)
+        audit_failure(arguments)
         raise
 
-def fetch_data_from_postgres(connection_name, schema, table,arguments):
+def fetch_data_from_postgres(arguments,connection_name, schema, table):
     """
     Fetch data from a SQL database.
 
@@ -176,7 +172,6 @@ def fetch_data_from_postgres(connection_name, schema, table,arguments):
         connections = establish_connection(arguments)
         connection,connection_detials=connections.establish_conn_for_postgres(arguments["json_data"]
         ,connection_name,arguments["config_file_path"],arguments["paths_data"])
-        # connection_string,connection_detials = establish_conn_for_postgres(connection_name)
         query = f"SELECT * FROM {schema}.{table}"
         df = pd.read_sql(query, connection, dtype_backend= "pyarrow")
         task_logger.info("%s.%s in the %s database.",schema,table,connection_detials['database'])
@@ -184,13 +179,15 @@ def fetch_data_from_postgres(connection_name, schema, table,arguments):
     except sqlalchemy.exc.OperationalError as e:
         task_logger.error("Operational error fetching data from SQL database %s, table %s.%s: %s",
                       connection_detials['database'], schema, table, e)
+        audit_failure(arguments)
         raise
     except Exception as e:
         task_logger.error("Error fetching data from SQL database %s, table %s.%s: %s",
                       connection_detials['database'],schema,table,e)
+        audit_failure(arguments)
         raise
 
-def fetch_data_from_mysql(connection_name, table,arguments):
+def fetch_data_from_mysql(arguments,connection_name, table):
     """
     Fetch data from a SQL database.
 
@@ -218,13 +215,15 @@ def fetch_data_from_mysql(connection_name, table,arguments):
     except sqlalchemy.exc.OperationalError as e:
         task_logger.error("Operational error fetching data from SQL database %s, table %s: %s",
                       connection_detials['database'], table, e)
+        audit_failure(arguments)
         raise
     except Exception as e:
         task_logger.error("Error fetching data from SQL database %s, table %s: %s",
                       connection_detials['database'],table,e)
+        audit_failure(arguments)
         raise
 
-def fetch_data_from_xml(xml_location):
+def fetch_data_from_xml(arguments,xml_location):
     """
     Fetch data from an XML file.
 
@@ -242,9 +241,10 @@ def fetch_data_from_xml(xml_location):
         return df
     except Exception as e:
         task_logger.error("Error fetching data from XML at %s: %s",xml_location,e)
+        audit_failure(arguments)
         raise
 
-def fetch_data_from_excel(excel_location):
+def fetch_data_from_excel(arguments,excel_location):
     """
     Fetch data from an Excel file.
 
@@ -262,9 +262,10 @@ def fetch_data_from_excel(excel_location):
         return df
     except Exception as e:
         task_logger.error("Error fetching data from Excel at %s: %s",excel_location,e)
+        audit_failure(arguments)
         raise
 
-def fetch_data_from_parquet(parquet_location):
+def fetch_data_from_parquet(arguments,parquet_location):
     """
     Fetch data from a Parquet file.
 
@@ -282,9 +283,10 @@ def fetch_data_from_parquet(parquet_location):
         return df
     except Exception as e:
         task_logger.error("Error fetching data from Parquet at %s: %s",parquet_location,e)
+        audit_failure(arguments)
         raise
 
-def fetch_data_from_json(json_location):
+def fetch_data_from_json(arguments,json_location):
     """
     Fetch data from a JSON file.
 
@@ -302,4 +304,5 @@ def fetch_data_from_json(json_location):
         return df
     except Exception as e:
         task_logger.error("Error fetching data from JSON at %s: %s",json_location,e)
+        audit_failure(arguments)
         raise

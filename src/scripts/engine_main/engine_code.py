@@ -1356,7 +1356,9 @@ def engine_main(prj_nm,task_id,paths_data,run_id,file_path,iter_value):
             'run_id' : run_id,
             'paths_data' : paths_data,
             'text_file_path' : file_path,
-            'iter_value' :  iter_value
+            'iter_value' :  iter_value,
+            'task_failed' : task_failed,
+            'audit': audit
             }
             transform_path=os.path.expanduser(paths_data["folder_path"])+paths_data['src']+ \
             paths_data["transformation_path"]+json_data["job_execution"]+"/"

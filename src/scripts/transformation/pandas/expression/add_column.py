@@ -1,55 +1,68 @@
 """
 Module for adding or updating columns in a DataFrame.
 """
+import logging
+from update_audit import audit_failure
+
+task_logger = logging.getLogger('task_logger')
+
 # def insert_new_column(df, temp_df, output_column, input_column, col):
 #     """inserts new columns in a DataFrame"""
-#     if input_column in df.columns:
-#         insert_loc = df.columns.get_loc(input_column) + 1
-#         if isinstance(col, str):
-#             if col in temp_df.columns:
-#                 df.insert(insert_loc, output_column, temp_df[col])
-#             elif col in df.columns:
-#                 df.insert(insert_loc, output_column, df[col])
-#             elif col == '':
-#                 df.insert(insert_loc, output_column, "")
-#             else:
-#                 raise ValueError(f"Column {col} not found in df or temp_df." )
-#     else:
-#         if col in temp_df.columns:
-#             df[output_column] = temp_df[col]
-#         elif col in df.columns:
-#             df[output_column] = df[col]
+#     try:
+#         if input_column in df.columns:
+#             insert_loc = df.columns.get_loc(input_column) + 1
+#             if isinstance(col, str):
+#                 if col in temp_df.columns:
+#                     df.insert(insert_loc, output_column, temp_df[col])
+#                 elif col in df.columns:
+#                     df.insert(insert_loc, output_column, df[col])
+#                 elif col == '':
+#                     df.insert(insert_loc, output_column, "")
+#                 else:
+#                     raise ValueError(f"Column {col} not found in df or temp_df." )
 #         else:
-#             df[output_column] = ''
-#     return df
+#             if col in temp_df.columns:
+#                 df[output_column] = temp_df[col]
+#             elif col in df.columns:
+#                 df[output_column] = df[col]
+#             else:
+#                 df[output_column] = ''
+#         return df
+#     except Exception as e:
+#         logging.exception("Error occured in insert_new_column function with error : %s",e)
+#         raise e
 
-def insert_new_column(df, temp_df, output_column, input_column, col):
+def insert_new_column(arguments,df, temp_df, output_column, input_column, col):
     """Inserts new columns in a DataFrame"""
-    df = df.copy()  # Ensure df is a copy to avoid SettingWithCopyWarning
+    try:
+        df = df.copy()  # Ensure df is a copy to avoid SettingWithCopyWarning
 
-    if input_column in df.columns:
-        insert_loc = df.columns.get_loc(input_column) + 1
-        if isinstance(col, str):
-            if col in temp_df.columns:
-                df.insert(insert_loc, output_column, temp_df[col].copy())
-            elif col in df.columns:
-                df.insert(insert_loc, output_column, df[col].copy())
-            elif col == '':
-                df.insert(insert_loc, output_column, "")
-            else:
-                raise ValueError(f"Column {col} not found in df or temp_df.")
-    else:
-        if col in temp_df.columns:
-            df.loc[:, output_column] = temp_df[col].copy()
-        elif col in df.columns:
-            df.loc[:, output_column] = df[col].copy()
+        if input_column in df.columns:
+            insert_loc = df.columns.get_loc(input_column) + 1
+            if isinstance(col, str):
+                if col in temp_df.columns:
+                    df.insert(insert_loc, output_column, temp_df[col].copy())
+                elif col in df.columns:
+                    df.insert(insert_loc, output_column, df[col].copy())
+                elif col == '':
+                    df.insert(insert_loc, output_column, "")
+                else:
+                    raise ValueError(f"Column {col} not found in df or temp_df.")
         else:
-            df.loc[:, output_column] = ''
+            if col in temp_df.columns:
+                df.loc[:, output_column] = temp_df[col].copy()
+            elif col in df.columns:
+                df.loc[:, output_column] = df[col].copy()
+            else:
+                df.loc[:, output_column] = ''
 
-    return df
+        return df
+    except Exception as e:
+        logging.exception("Error occured in insert_new_column function with error : %s",e)
+        audit_failure(arguments)
+        raise e
 
-
-def add_or_update_column(df, temp_df, output_column, input_column, col):
+def add_or_update_column(arguments,df, temp_df, output_column, input_column, col):
     """
     Adds a new column named `output_column` to the DataFrame `df` or updates an existing one.
 
@@ -79,14 +92,12 @@ def add_or_update_column(df, temp_df, output_column, input_column, col):
                 df[output_column] = df[col]
             else:
                 return df
-
         else:
             # Insert new column
-            df=insert_new_column(df, temp_df, output_column, input_column, col)
-
+            df=insert_new_column(arguments,df, temp_df, output_column, input_column, col)
         return df
-
     except ValueError as e:
         # Handle the specific ValueError here, if necessary
-        print(f"An error occurred: {e}")
+        task_logger.error("An error occurred in add_or_update_column function with error :%s",e)
+        audit_failure(arguments)
         raise
