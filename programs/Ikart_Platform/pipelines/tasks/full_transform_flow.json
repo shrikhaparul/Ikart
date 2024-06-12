@@ -112,7 +112,7 @@
                 "operatorType": "Math",
                 "input_col_name": "salary_initial_left",
                 "output_col_name": "salary_initial_left",
-                "expression_value": "TRUNC(salary_initial_left,1)"
+                "expression_value": "trunc(salary_initial_left,1)"
               },
               "ExpressionData_3": {
                 "operator": "",
