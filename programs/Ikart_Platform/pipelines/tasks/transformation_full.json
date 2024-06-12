@@ -1,0 +1,40 @@
+{
+  "login_id": "rperuman",
+  "id": 672,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "transformation_test",
+  "project_id": 68,
+  "pipeline_id": 207,
+  "task_name": "transformation_full",
+  "task_description": "transformation_full",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "bdbbd7e6-5bfe-439b-a316-e38500426b31",
+  "status": "Success",
+  "updated_dttm": "2024-06-12T13:18:55.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "job_execution": "pandas",
+  "task": {
+    "flow": null,
+    "details": [
+      {
+        "Joiner": [
+          {
+            "joiner": {
+              "join_type": "left",
+              "output_df": "jnr_doi",
+              "left_input_df": "inp_mji",
+              "join_condition": "inp_mi.department_id=inp_sm.department_id",
+              "right_input_df": "inp_msm",
+              "transformation_name": "joiner"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
