@@ -65,7 +65,7 @@
           {
             "new_joiner_1": {
               "join_type": "left",
-              "output_df": "joiner_df1",
+              "output_df": "joiner_df",
               "left_input_df": "emp",
               "join_condition": "dept.department_id = emp.department_id",
               "right_input_df": "dept",
