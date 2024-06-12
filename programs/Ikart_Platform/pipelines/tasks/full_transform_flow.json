@@ -42,7 +42,7 @@
               "filter_Operation_1718211599689": {
                 "id": "filter_Operation_1718211599689",
                 "operator": ">",
-                "column_name": "employee_id_right",
+                "column_name": "employee_id_left",
                 "field_value": "1100",
                 "condition_type": "operation",
                 "operation_name": "operation_02"
