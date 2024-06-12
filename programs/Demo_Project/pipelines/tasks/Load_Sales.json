@@ -1,0 +1,68 @@
+{
+  "login_id": "Madhu",
+  "id": 529,
+  "project_name": "Demo_Project",
+  "pipeline_name": "SFTP_S3_RDS",
+  "project_id": 74,
+  "pipeline_id": 174,
+  "task_name": "Load_Sales",
+  "task_description": "Load Sales from S3 to DB",
+  "task_type": "Ingestion",
+  "task_sequence": "\"527\"",
+  "last_run_id": "cc5971d1-909d-4d6f-a078-03289726a9fc",
+  "status": "Success",
+  "updated_dttm": "2024-03-14T11:47:25.000Z",
+  "source": "AWS S3",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "luke",
+  "updated_by": "luke",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "agregated_sales.csv",
+      "file_path": "demo/landing/03142024/",
+      "file_type": "csv",
+      "chunk_size": 30000,
+      "encryption": null,
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": null,
+      "parameter_type": "AWS S3",
+      "select_columns": null,
+      "connection_name": "S3_Connection",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikarttest",
+      "operation": "replace",
+      "table_name": "sales",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "ec2_mysql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "duplicate_rows_check",
+        "parameters": {},
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 40,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
