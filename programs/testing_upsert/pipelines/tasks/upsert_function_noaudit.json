@@ -1,0 +1,49 @@
+{
+  "login_id": "swetha",
+  "id": 629,
+  "project_name": "testing_upsert",
+  "pipeline_name": "upsert_demo",
+  "project_id": 78,
+  "pipeline_id": 195,
+  "task_name": "upsert_function_noaudit",
+  "task_description": "upsert_function_noaudit",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "8f58e424-f1af-479e-881e-23685fc4d1bf",
+  "status": "Running",
+  "updated_dttm": "2024-05-30T10:59:18.000Z",
+  "source": "MySQL",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT * FROM ikarttest.sal_up",
+      "schema": "ikarttest",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "sal_up",
+      "parameter_type": "MySQL",
+      "select_columns": null,
+      "connection_name": "ec2_mysql_connection"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "sal_upsert",
+      "primary_key": "",
+      "audit_columns": "active",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "connection_postgres_ec2",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
