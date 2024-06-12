@@ -55,7 +55,7 @@
               "input_df": "inp_nls",
               "operation": "create",
               "table_name": "transform_test",
-              "target_type": "MySQL",
+              "target_type": "MYSQL",
               "connection_name": "mysql",
               "transformation_name": "mysql"
             }
