@@ -1,0 +1,62 @@
+{
+  "login_id": "Madhu",
+  "id": 658,
+  "project_name": "first_project",
+  "pipeline_name": "demo_pipeline_1",
+  "project_id": 80,
+  "pipeline_id": 202,
+  "task_name": "TC006",
+  "task_description": "AWS(csv) -> local server",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-12T07:24:24.000Z",
+  "source": "AWS S3",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "sahilphal",
+  "updated_by": "sahilphal",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "byz_yellow_tripdata_2018_2024.csv",
+      "file_path": "Excel_folder/files/",
+      "file_type": "csv",
+      "chunk_size": 100000,
+      "decryption": "no",
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+      "parameter_type": "AWS S3",
+      "select_columns": null,
+      "connection_name": "connection_S3",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "parquet_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "TC006",
+      "file_path": "/home/Admin/actions-runner/_work/UI",
+      "file_type": "parquet",
+      "encryption": "no",
+      "compression": "zip",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "ec2_local_connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
