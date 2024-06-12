@@ -1,0 +1,12 @@
+{
+  "project_id": 80,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "ec2_local_connection",
+  "connection_details": {
+    "file_name": "DrDos.csv",
+    "file_path": "/home/Admin/actions-runner/_work/UI/all_files/",
+    "created_by": "sahilphal",
+    "updated_by": "sahilphal"
+  }
+}
