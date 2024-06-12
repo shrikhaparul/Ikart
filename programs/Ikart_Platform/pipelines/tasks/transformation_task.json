@@ -1,0 +1,38 @@
+{
+  "login_id": "rperuman",
+  "id": 664,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "transformation_test",
+  "project_id": 68,
+  "pipeline_id": 207,
+  "task_name": "transformation_task",
+  "task_description": "contains all the sections like inputs, output, filter, joiner, expression",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-12T11:13:13.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "job_execution": "pandas",
+  "task": {
+    "flow": null,
+    "details": [
+      {
+        "Joiner": []
+      },
+      {
+        "Input": []
+      },
+      {
+        "Output": []
+      },
+      {
+        "SQL": []
+      }
+    ]
+  }
+}
