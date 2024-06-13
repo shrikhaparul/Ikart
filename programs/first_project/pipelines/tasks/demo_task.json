@@ -1,0 +1,46 @@
+{
+  "login_id": "Madhu",
+  "id": 638,
+  "project_name": "first_project",
+  "pipeline_name": "demo_pipeline_1",
+  "project_id": 80,
+  "pipeline_id": 202,
+  "task_name": "demo_task",
+  "task_description": "demo task creation",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "ebeacf8c-94b9-450d-9c65-be1c4de02e29",
+  "status": "Success",
+  "updated_dttm": "2024-06-10T06:11:30.000Z",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "sahilphal",
+  "updated_by": "sahilphal",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT * FROM config.tbl_user_dummy",
+      "schema": "config",
+      "chunk_size": 10000,
+      "table_name": "tbl_user_dummy",
+      "parameter_type": "MySQL",
+      "select_columns": "",
+      "connection_name": "connection_01"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "config",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "demo_table",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "connection_01",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
