@@ -1,0 +1,48 @@
+{
+  "login_id": "prajwal",
+  "id": 558,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "testing_remote",
+  "task_description": "testing",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "ca2d0235-b774-44e3-8f65-25a6c9f9ed02",
+  "status": "Success",
+  "updated_dttm": "2024-06-13T05:43:12.000Z",
+  "source": "MSSQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "SELECT * FROM HumanResources.Employee",
+      "schema": "HumanResources",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "Employee",
+      "parameter_type": "MSSQL",
+      "select_columns": "",
+      "connection_name": "mssql_connection"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikarttest",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "Employee",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_EC2_Connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
