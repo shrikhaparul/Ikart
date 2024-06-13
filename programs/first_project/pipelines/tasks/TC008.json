@@ -1,0 +1,48 @@
+{
+  "login_id": "Madhu",
+  "id": 676,
+  "project_name": "first_project",
+  "pipeline_name": "demo_pipeline_1",
+  "project_id": 80,
+  "pipeline_id": 202,
+  "task_name": "TC008",
+  "task_description": "Wrong table",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-13T06:15:13.000Z",
+  "source": "MSSQL",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "sahilphal",
+  "updated_by": "Madhu",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "SELECT Country, Item_Type, Order_Date, Order_ID, Order_Priority, Region, Sales_Channel, Shi_Date, TotaCost, TotalProfit, TotalRevenue, UnitCost, UnitPrice, UnitsSold FROM dbo.agg_sales",
+      "schema": "dbo",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 100000,
+      "table_name": "agg_sales",
+      "parameter_type": "MSSQL",
+      "select_columns": "Country,Item_Type,Order_Date,Order_ID,Order_Priority,Region,Sales_Channel,Shi_Date,TotaCost,TotalProfit,TotalRevenue,UnitCost,UnitPrice,UnitsSold",
+      "connection_name": "mssql_demo_conn"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "STAGE",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "tco008",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "connection_oracle",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
