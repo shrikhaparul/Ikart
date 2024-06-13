@@ -1,0 +1,93 @@
+{
+  "login_id": "Puneeth",
+  "id": 648,
+  "project_name": "internal_demo",
+  "pipeline_name": "dq_testing1",
+  "project_id": 66,
+  "pipeline_id": 205,
+  "task_name": "Dq_Employee",
+  "task_description": "DQ_TESTING_FOR_ADVENTURE_WORKS_DATA",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "7c0c7c88-83df-48ef-8ed2-5e51d2db9cef",
+  "status": "Success",
+  "updated_dttm": "2024-06-13T05:50:48.000Z",
+  "source": "MSSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "SELECT * FROM dbo.Employee",
+      "schema": "dbo",
+      "chunk_size": 10000,
+      "table_name": "Employee",
+      "parameter_type": "MSSQL",
+      "select_columns": null,
+      "connection_name": "ec2_mssql_conn"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "HumanResources.csv",
+      "file_path": "test/",
+      "file_type": "csv",
+      "operation": "append",
+      "encryption": "no",
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": "\\",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "aws_connection_test",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_be_unique",
+        "parameters": {
+          "column": "NationalIDNumber",
+          "value_set": ""
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_values_to_be_in_set",
+        "parameters": {
+          "column": "MaritalStatus",
+          "value_set": "S,M"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "3",
+        "check": "column_values_to_be_between",
+        "parameters": {
+          "column": "SickLeaveHours",
+          "max_value": "48",
+          "min_value": "16"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 80,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
