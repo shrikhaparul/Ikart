@@ -1,0 +1,84 @@
+{
+  "pipeline_id": 208,
+  "project_id": 81,
+  "pipeline_name": "file_encryption_and_decryption",
+  "pipeline_cd": null,
+  "pipeline_description": "files will be encrypted during the ingestion into files and then we can decrypt the file",
+  "is_active": "Y",
+  "tasks_details": {
+    "awss3_to_sftp": [
+      "oracle_to_awss3"
+    ],
+    "bulk_ora_awss3": 0,
+    "oracle_to_awss3": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "680",
+      "data": {
+        "label": "680-oracle_to_awss3"
+      },
+      "position": {
+        "x": 50,
+        "y": 12400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "681",
+      "data": {
+        "label": "681-awss3_to_sftp"
+      },
+      "position": {
+        "x": 50,
+        "y": 12450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "684",
+      "data": {
+        "label": "684-bulk_ora_awss3"
+      },
+      "position": {
+        "x": 50,
+        "y": 12500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-680-681",
+      "source": "680",
+      "target": "681"
+    },
+    {
+      "id": "flow-0-684",
+      "source": "0",
+      "target": "684"
+    },
+    {
+      "id": "flow-0-680",
+      "source": "0",
+      "target": "680"
+    }
+  ],
+  "created_dttm": "2024-06-13T10:58:07.200Z",
+  "updated_dttm": "2024-06-13T10:58:07.200Z"
+}
