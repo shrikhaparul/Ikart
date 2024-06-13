@@ -1,0 +1,66 @@
+{
+  "login_id": "Puneeth",
+  "id": 491,
+  "project_name": "release_v1.0.0",
+  "pipeline_name": "dq_testing",
+  "project_id": 61,
+  "pipeline_id": 165,
+  "task_name": "ls_2_mysql_opt_task",
+  "task_description": "ls_2_mysql_opt_task",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-02T11:50:11.000Z",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT * FROM ikart._new",
+      "schema": "ikart",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "_new",
+      "parameter_type": "MySQL",
+      "select_columns": null,
+      "connection_name": "mysql_ikart_connection"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "post_check_op.csv",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "quote_char": "\"",
+      "compression": "",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_connection_puneeth",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_be_unique",
+        "parameters": {
+          "column": "PRODUCT CATEGORY"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "post_check"
+      }
+    ]
+  }
+}
