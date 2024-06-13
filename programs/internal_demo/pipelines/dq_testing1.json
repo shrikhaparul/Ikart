@@ -1,0 +1,166 @@
+{
+  "pipeline_id": 205,
+  "project_id": 66,
+  "pipeline_name": "dq_testing1",
+  "pipeline_cd": null,
+  "pipeline_description": "DQ_TESTING_FOR_ADVENTURE_WORKS_DATA",
+  "is_active": "Y",
+  "tasks_details": {
+    "Dq_Address": [
+      "Dq_Employee"
+    ],
+    "Dq_Employee": 0,
+    "Dq_EmailAddress": [
+      "Dq_Address"
+    ],
+    "Dq_SalesTaxRate": [
+      "Dq_CountryRegion"
+    ],
+    "Dq_CountryRegion": [
+      "Dq_EmailAddress"
+    ],
+    "Dq_ProductVendor": [
+      "Dq_SalesTerritory"
+    ],
+    "Dq_SalesTerritory": [
+      "Dq_SalesTaxRate"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "648",
+      "data": {
+        "label": "648-Dq_Employee"
+      },
+      "position": {
+        "x": 50,
+        "y": 2850
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "652",
+      "data": {
+        "label": "652-Dq_Address"
+      },
+      "position": {
+        "x": 50,
+        "y": 2900
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "661",
+      "data": {
+        "label": "661-Dq_EmailAddress"
+      },
+      "position": {
+        "x": 50,
+        "y": 2950
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "665",
+      "data": {
+        "label": "665-Dq_CountryRegion"
+      },
+      "position": {
+        "x": 50,
+        "y": 3000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "666",
+      "data": {
+        "label": "666-Dq_SalesTaxRate"
+      },
+      "position": {
+        "x": 50,
+        "y": 3050
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "670",
+      "data": {
+        "label": "670-Dq_SalesTerritory"
+      },
+      "position": {
+        "x": 50,
+        "y": 3100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "671",
+      "data": {
+        "label": "671-Dq_ProductVendor"
+      },
+      "position": {
+        "x": 50,
+        "y": 3150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-648",
+      "source": "0",
+      "target": "648"
+    },
+    {
+      "id": "flow-648-652",
+      "source": "648",
+      "target": "652"
+    },
+    {
+      "id": "flow-652-661",
+      "source": "652",
+      "target": "661"
+    },
+    {
+      "id": "flow-661-665",
+      "source": "661",
+      "target": "665"
+    },
+    {
+      "id": "flow-665-666",
+      "source": "665",
+      "target": "666"
+    },
+    {
+      "id": "flow-666-670",
+      "source": "666",
+      "target": "670"
+    },
+    {
+      "id": "flow-670-671",
+      "source": "670",
+      "target": "671"
+    }
+  ],
+  "created_dttm": "2024-06-13T06:58:06.888Z",
+  "updated_dttm": "2024-06-13T06:58:06.888Z"
+}
