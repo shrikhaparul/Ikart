@@ -1,0 +1,67 @@
+{
+  "login_id": "rperuman",
+  "id": 682,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "transformation_test",
+  "project_id": 68,
+  "pipeline_id": 207,
+  "task_name": "inp_out",
+  "task_description": "contains all the sections like inputs, output",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-12T11:13:13.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_Local": "0",
+      "Output_mysql": "Input_Local"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "Local": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "customer.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/transform/",
+              "file_type": "csv",
+              "output_df": "inp_nls",
+              "quote_char": null,
+              "compression": "",
+              "escape_char": "\\",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "customer_id,first_name,last_name,email,phone",
+              "connection_name": "local_server",
+              "transformation_name": "Local"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "mysql": {
+              "schema": "transformation",
+              "input_df": "inp_nls",
+              "operation": "create",
+              "table_name": "customers",
+              "target_type": "MySQL",
+              "connection_name": "mysql",
+              "transformation_name": "mysql"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
