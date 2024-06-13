@@ -1,0 +1,121 @@
+{
+  "login_id": "Puneeth",
+  "id": 666,
+  "project_name": "internal_demo",
+  "pipeline_name": "dq_testing1",
+  "project_id": 66,
+  "pipeline_id": 205,
+  "task_name": "Dq_SalesTaxRate",
+  "task_description": "DQ_TESTING_FOR_ADVENTURE_WORKS_DATA",
+  "task_type": "Ingestion",
+  "task_sequence": "\"665\"",
+  "last_run_id": "cd982863-3699-4be1-94e5-7978d1b2ba0e",
+  "status": "Failed",
+  "updated_dttm": "2024-06-13T05:48:33.000Z",
+  "source": "MSSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "SELECT * FROM dbo.SalesTaxRate",
+      "schema": "dbo",
+      "chunk_size": 10000,
+      "table_name": "SalesTaxRate",
+      "parameter_type": "MSSQL",
+      "select_columns": null,
+      "connection_name": "ec2_mssql_conn"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "SalesTaxRate.csv",
+      "file_path": "test/",
+      "file_type": "csv",
+      "operation": "append",
+      "encryption": "no",
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": "\\",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "aws_connection_test",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "sum_reconciliation",
+        "parameters": {
+          "sum_value": "263.65",
+          "column_name": "TaxRate"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "table_row_count_to_equal",
+        "parameters": {
+          "value": "29",
+          "column": "TaxType",
+          "column_a": "",
+          "column_b": "TaxType",
+          "max_value": "",
+          "min_value": "",
+          "value_set": ""
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "3",
+        "check": "column_sum_to_be_between",
+        "parameters": {
+          "column": "TaxRate",
+          "max_value": "300",
+          "min_value": "100"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "4",
+        "check": "column_most_common_value_to_be_in_set",
+        "parameters": {
+          "column": "Name",
+          "value_set": "Canadian GST"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": null,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "5",
+        "check": "column_count_comparison",
+        "parameters": {
+          "value": "7"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
