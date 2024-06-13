@@ -1,0 +1,14 @@
+{
+  "project_id": 80,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MSSQL",
+  "connection_name": "mssql_demo_conn",
+  "connection_details": {
+    "port": "1433",
+    "database": "sys",
+    "hostname": "ikart.chuukzgsbwhd.us-east-1.rds.amazonaws.com",
+    "password": "832af82892a379c6f0ab62697235b02ad4705a4da829496fc84d87d89cf6",
+    "username": "admin",
+    "updated_by": "Madhu"
+  }
+}
