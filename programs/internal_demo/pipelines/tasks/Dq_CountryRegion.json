@@ -1,0 +1,117 @@
+{
+  "login_id": "Puneeth",
+  "id": 665,
+  "project_name": "internal_demo",
+  "pipeline_name": "dq_testing1",
+  "project_id": 66,
+  "pipeline_id": 205,
+  "task_name": "Dq_CountryRegion",
+  "task_description": "DQ_TESTING_FOR_ADVENTURE_WORKS_DATA",
+  "task_type": "Ingestion",
+  "task_sequence": "\"661\"",
+  "last_run_id": "96abb42b-e7a5-4cc5-8546-21e1df06dde2",
+  "status": "Failed",
+  "updated_dttm": "2024-06-13T05:49:00.000Z",
+  "source": "MSSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "SELECT * FROM dbo.CountryRegion",
+      "schema": "dbo",
+      "chunk_size": 10000,
+      "table_name": "CountryRegion",
+      "parameter_type": "MSSQL",
+      "select_columns": null,
+      "connection_name": "ec2_mssql_conn"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "CountryRegion.csv",
+      "file_path": "test/",
+      "file_type": "csv",
+      "operation": "append",
+      "encryption": "no",
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": "\\",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "aws_connection_test",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "one_to_one_mapping",
+        "parameters": {
+          "column1": "CountryRegionCode",
+          "column2": "Name"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "5",
+        "check": "column_value_lengths_to_be_between",
+        "parameters": {
+          "value": "3",
+          "column": "CountryRegionCode",
+          "max_value": "3",
+          "min_value": "0"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "4",
+        "check": "table_column_count_to_be_between",
+        "parameters": {
+          "max_value": "10",
+          "min_value": "3"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "3",
+        "check": "table_column_count_to_equal",
+        "parameters": {
+          "value": "3"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "post_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "file_existance_check",
+        "parameters": {
+          "filename": "CountryRegion.csv",
+          "filepath": "test/"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
