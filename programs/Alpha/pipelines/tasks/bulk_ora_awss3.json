@@ -1,0 +1,225 @@
+{
+  "login_id": "shilpi",
+  "id": 684,
+  "project_name": "Alpha",
+  "pipeline_name": "file_encryption_and_decryption",
+  "project_id": 81,
+  "pipeline_id": 208,
+  "task_name": "bulk_ora_awss3",
+  "task_description": "it will transfer encrypted file from oracle to s3 ",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "5ffb5a19-540f-48d4-9f55-4d82097b8108",
+  "status": "Failed",
+  "updated_dttm": "2024-06-13T07:34:57.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xepdb1",
+          "object_name": "BEVERAGES",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_s3_s",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/",
+          "encryption": "yes",
+          "compression": "gzip",
+          "object_name": "BEVERAGES",
+          "audit_fields": "no",
+          "public_key_path": "/home/admin/action_runner/_work/recipient_public_key.asc",
+          "object_sufix_name": "%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xepdb1",
+          "object_name": "COUNTRY_SALES",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_s3_s",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/",
+          "encryption": "yes",
+          "compression": "gzip",
+          "object_name": "COUNTRY_SALES",
+          "audit_fields": "no",
+          "public_key_path": "/home/admin/action_runner/_work/recipient_public_key.asc",
+          "object_sufix_name": "%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xepdb1",
+          "object_name": "DR1M_1",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_s3_s",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/",
+          "encryption": "yes",
+          "compression": "gzip",
+          "object_name": "DR1M_1",
+          "audit_fields": "no",
+          "public_key_path": "/home/admin/action_runner/_work/recipient_public_key.asc",
+          "object_sufix_name": "%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_xepdb1",
+          "object_name": "FIRST",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_s3_s",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/",
+          "encryption": "yes",
+          "compression": "gzip",
+          "object_name": "FIRST",
+          "audit_fields": "no",
+          "public_key_path": "/home/admin/action_runner/_work/recipient_public_key.asc",
+          "object_sufix_name": "%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_xepdb1",
+          "object_name": "INITIAL_TABLE",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_s3_s",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/",
+          "encryption": "yes",
+          "compression": "gzip",
+          "object_name": "INITIAL_TABLE",
+          "audit_fields": "no",
+          "public_key_path": "/home/admin/action_runner/_work/recipient_public_key.asc",
+          "object_sufix_name": "%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_xepdb1",
+          "object_name": "NEW_SALES_DATACSV",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_s3_s",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/",
+          "encryption": "yes",
+          "compression": "gzip",
+          "object_name": "NEW_SALES_DATACSV",
+          "audit_fields": "no",
+          "public_key_path": "/home/admin/action_runner/_work/recipient_public_key.asc",
+          "object_sufix_name": "%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_xepdb1",
+          "object_name": "NEW_TAB_INVENTORY_ITEMSCSV",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_s3_s",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/",
+          "encryption": "yes",
+          "compression": "gzip",
+          "object_name": "NEW_TAB_INVENTORY_ITEMSCSV",
+          "audit_fields": "no",
+          "public_key_path": "/home/admin/action_runner/_work/recipient_public_key.asc",
+          "object_sufix_name": "%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      }
+    ]
+  }
+}
