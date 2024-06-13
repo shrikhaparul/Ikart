@@ -1,0 +1,108 @@
+{
+  "login_id": "Puneeth",
+  "id": 671,
+  "project_name": "internal_demo",
+  "pipeline_name": "dq_testing1",
+  "project_id": 66,
+  "pipeline_id": 205,
+  "task_name": "Dq_ProductVendor",
+  "task_description": "DQ_TESTING_FOR_ADVENTURE_WORKS_DATA",
+  "task_type": "Ingestion",
+  "task_sequence": "\"670\"",
+  "last_run_id": "2b7ce18d-a801-468b-bb8a-05629611c282",
+  "status": "Failed",
+  "updated_dttm": "2024-06-13T05:47:43.000Z",
+  "source": "MSSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "SELECT * FROM dbo.ProductVendor",
+      "schema": "dbo",
+      "chunk_size": 10000,
+      "table_name": "ProductVendor",
+      "parameter_type": "MSSQL",
+      "select_columns": null,
+      "connection_name": "ec2_mssql_conn"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "ProductVendor.csv",
+      "file_path": "test/",
+      "file_type": "csv",
+      "operation": "append",
+      "encryption": "no",
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": "\\",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "aws_connection_test",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "Y",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_value_lengths_to_be_between",
+        "parameters": {
+          "column": "UnitMeasureCode",
+          "max_value": "4",
+          "min_value": "1"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_max_to_be_between",
+        "parameters": {
+          "column": "StandardPrice",
+          "max_value": "80",
+          "min_value": "50"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "3",
+        "check": "column_min_to_be_between",
+        "parameters": {
+          "column": "StandardPrice",
+          "max_value": "50",
+          "min_value": "0"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "post_check"
+      },
+      {
+        "seq_no": "4",
+        "check": "column_sum_to_be_between",
+        "parameters": {
+          "column": "StandardPrice",
+          "max_value": "20000",
+          "min_value": "10000"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "post_check"
+      }
+    ]
+  }
+}
