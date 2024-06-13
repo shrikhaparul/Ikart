@@ -1,0 +1,88 @@
+{
+  "pipeline_id": 210,
+  "project_id": 80,
+  "pipeline_name": "tasj",
+  "pipeline_cd": null,
+  "pipeline_description": "tasj",
+  "is_active": "Y",
+  "tasks_details": {
+    "TC004_Oracle_S3_copy": 0,
+    "TC005_Oracle_AWS_S3_copy": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "685",
+      "data": {
+        "label": "685-Task_01"
+      },
+      "position": {
+        "x": 50,
+        "y": 12200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "686",
+      "data": {
+        "label": "686-TC004_Oracle_S3_copy"
+      },
+      "position": {
+        "x": 50,
+        "y": 12250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "687",
+      "data": {
+        "label": "687-TC005_Oracle_AWS_S3_copy"
+      },
+      "position": {
+        "x": 50,
+        "y": 12300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "688",
+      "data": {
+        "label": "688-TC004_Oracle_S3_copy_1"
+      },
+      "position": {
+        "x": 50,
+        "y": 12350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-686",
+      "source": "0",
+      "target": "686"
+    },
+    {
+      "id": "flow-0-687",
+      "source": "0",
+      "target": "687"
+    }
+  ],
+  "created_dttm": "2024-06-13T09:25:29.009Z",
+  "updated_dttm": "2024-06-13T09:25:29.009Z"
+}
