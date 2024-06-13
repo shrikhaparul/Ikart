@@ -1,0 +1,57 @@
+{
+  "login_id": "Madhu",
+  "id": 683,
+  "project_name": "first_project",
+  "pipeline_name": "demo_pipeline_1",
+  "project_id": 80,
+  "pipeline_id": 202,
+  "task_name": "TC009_copy",
+  "task_description": "TC009 testing for AWS s3 to MSSQL",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-13T08:04:07.000Z",
+  "source": "AWS S3",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "sahilphal",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "yellow_tripdata_2018-(1) - Copy.parquet",
+      "file_path": "csv_test/",
+      "file_type": "parquet",
+      "chunk_size": 1000000,
+      "decryption": "no",
+      "quote_char": "\"",
+      "compression": "gzip",
+      "escape_char": "",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": "VendorID,tpep_pickup_datetime,tpep_dropoff_datetime,passenger_count,trip_distance,RatecodeID,store_and_fwd_flag,PULocationID,DOLocationID,payment_type,fare_amount,extra,mta_tax,tip_amount,tolls_amount,improvement_surcharge,total_amount,congestion_surcharge,airport_fee",
+      "parameter_type": "AWS S3",
+      "select_columns": null,
+      "connection_name": "connection_S3",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "t009",
+      "audit_columns": "inactive",
+      "parameter_type": "MSSQL",
+      "connection_name": "mssql_demo_conn",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
