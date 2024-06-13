@@ -1,0 +1,45 @@
+{
+  "login_id": "jjones",
+  "id": 619,
+  "project_name": "Demo_Project",
+  "pipeline_name": "SFTP_S3_RDS",
+  "project_id": 74,
+  "pipeline_id": 174,
+  "task_name": "Bulk_7gb",
+  "task_description": "dataDump",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-13T05:27:32.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "/home/madhu/Ingestion_code2/csv_folder",
+          "connection_name": "local_conn",
+          "operation": "copy",
+          "files_filter_name": "OP_DTL_GNRL_PGYR2022_P01182024.csv",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "file_path": "/home/madhu/Ingestion_code2/csv_folder",
+          "connection_name": "local_conn",
+          "object_sufix_name": "%DD%MM%YYYY ",
+          "object_prefix_name": "tgt"
+        }
+      }
+    ]
+  }
+}
