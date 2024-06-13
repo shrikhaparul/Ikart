@@ -1,0 +1,12 @@
+{
+  "project_id": 74,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "local_conn",
+  "connection_details": {
+    "file_name": "sales.csv",
+    "file_path": "/home/madhu/Ingestion_code2/",
+    "created_by": "Madhu",
+    "updated_by": "Madhu"
+  }
+}
