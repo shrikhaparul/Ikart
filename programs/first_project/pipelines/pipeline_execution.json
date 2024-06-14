@@ -1,0 +1,118 @@
+{
+  "pipeline_id": 211,
+  "project_id": 80,
+  "pipeline_name": "pipeline_execution",
+  "pipeline_cd": null,
+  "pipeline_description": "To execute larger files in a pipeline",
+  "is_active": "Y",
+  "tasks_details": {
+    "TC004_Oracle_S3_copy_copy": 0,
+    "TC005_Oracle_AWS_S3_copy_copy": 0,
+    "TC004_Oracle_S3_copy_copy_copy": 0,
+    "TC005_Oracle_AWS_S3_copy_copy_copy": 0,
+    "TC004_Oracle_S3_copy_copy_copy_copy": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "691",
+      "data": {
+        "label": "691-TC005_Oracle_AWS_S3_copy_copy"
+      },
+      "position": {
+        "x": 50,
+        "y": 12500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "692",
+      "data": {
+        "label": "692-TC004_Oracle_S3_copy_copy"
+      },
+      "position": {
+        "x": 50,
+        "y": 12550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "693",
+      "data": {
+        "label": "693-TC004_Oracle_S3_copy_copy_copy"
+      },
+      "position": {
+        "x": 50,
+        "y": 12600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "695",
+      "data": {
+        "label": "695-TC005_Oracle_AWS_S3_copy_copy_copy"
+      },
+      "position": {
+        "x": 50,
+        "y": 12650
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "696",
+      "data": {
+        "label": "696-TC004_Oracle_S3_copy_copy_copy_copy"
+      },
+      "position": {
+        "x": 50,
+        "y": 12700
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-691",
+      "source": "0",
+      "target": "691"
+    },
+    {
+      "id": "flow-0-692",
+      "source": "0",
+      "target": "692"
+    },
+    {
+      "id": "flow-0-693",
+      "source": "0",
+      "target": "693"
+    },
+    {
+      "id": "flow-0-695",
+      "source": "0",
+      "target": "695"
+    },
+    {
+      "id": "flow-0-696",
+      "source": "0",
+      "target": "696"
+    }
+  ],
+  "created_dttm": "2024-06-14T11:25:41.288Z",
+  "updated_dttm": "2024-06-14T11:25:41.288Z"
+}
