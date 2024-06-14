@@ -1,0 +1,89 @@
+{
+  "login_id": "Pavan",
+  "id": 697,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Transformation_Panda",
+  "project_id": 82,
+  "pipeline_id": 214,
+  "task_name": "complete_flow",
+  "task_description": "Input joiner filter expression output",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-14T11:05:46.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_mysql_tr": "0",
+      "Joiner_joinner": "Input_local_csv,Input_mysql_tr",
+      "Input_local_csv": "0",
+      "Output_local_jki": "Joiner_joinner"
+    },
+    "details": [
+      {
+        "Joiner": [
+          {
+            "joinner": {
+              "join_type": "inner ",
+              "output_df": "jnr_onp",
+              "left_input_df": "inp_xbk",
+              "join_condition": "inp_xbk.col_1=inp_wey.col_1",
+              "right_input_df": "inp_wey",
+              "transformation_name": "joinner"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "mysql_tr": {
+              "schema": "sys",
+              "output_df": "inp_wey",
+              "table_name": "test_table",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql_tr"
+            }
+          },
+          {
+            "local_csv": {
+              "schema": "sys",
+              "file_name": "customer.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/transform/",
+              "file_type": "csv",
+              "output_df": "inp_xbk",
+              "table_name": "test_table",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9",
+              "connection_name": "mysql_tr",
+              "transformation_name": "local_csv"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "local_jki": {
+              "schema": "transformation",
+              "input_df": "jnr_onp",
+              "operation": "append",
+              "table_name": "joiner_test",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "local_jki"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
