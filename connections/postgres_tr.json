@@ -1,0 +1,14 @@
+{
+  "project_id": 82,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "PostgreSQL",
+  "connection_name": "postgres_tr",
+  "connection_details": {
+    "port": "5432",
+    "database": "postgres",
+    "hostname": "ec2-44-197-70-198.compute-1.amazonaws.com",
+    "password": "832af83f94a379c6f0ab136973355ac336ba62bd5949ed952f848444f00ae5",
+    "username": "postgres",
+    "updated_by": "Pavan"
+  }
+}
