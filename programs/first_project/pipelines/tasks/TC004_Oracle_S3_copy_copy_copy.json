@@ -1,0 +1,55 @@
+{
+  "login_id": "Madhu",
+  "id": 693,
+  "project_name": "first_project",
+  "pipeline_name": "pipeline_execution",
+  "project_id": 80,
+  "pipeline_id": 211,
+  "task_name": "TC004_Oracle_S3_copy_copy_copy",
+  "task_description": "Testing for Oracle -> AWS S3",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "4ccd525e-2f3e-4533-95ad-37a54a397e3d",
+  "status": "Success",
+  "updated_dttm": "2024-06-14T06:28:47.000Z",
+  "source": "Oracle",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "sahilphal",
+  "updated_by": "sahilphal",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT COUNTRY, ITEM_TYPE, ORDERDATE, ORDERID, ORDER_PRIORITY, REGION, SALES_CHANNEL, SHIPDATE, TOTALCOST, TOTALPROFIT, TOTALREVENUE, UNICOST, UNITPRICE, UNITSSOLD FROM STAGE.POST",
+      "schema": "STAGE",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 100000,
+      "table_name": "POST",
+      "parameter_type": "Oracle",
+      "select_columns": "COUNTRY,ITEM_TYPE,ORDERDATE,ORDERID,ORDER_PRIORITY,REGION,SALES_CHANNEL,SHIPDATE,TOTALCOST,TOTALPROFIT,TOTALREVENUE,UNICOST,UNITPRICE,UNITSSOLD",
+      "connection_name": "connection_oracle"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "P3",
+      "file_path": "parquet_files",
+      "file_type": "parquet",
+      "operation": "append",
+      "encryption": "yes",
+      "compression": "zip",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "connection_S3",
+      "public_key_path": "/home/Admin/actions-runner/_work/recipient_public_key.asc",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
