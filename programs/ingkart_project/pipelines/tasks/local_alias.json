@@ -1,0 +1,57 @@
+{
+  "login_id": "shilpi",
+  "id": 633,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "local_alias",
+  "task_description": "local_alias",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "a00a3857-6f04-4ce1-ba3f-95065e3b8ff7",
+  "status": "Success",
+  "updated_dttm": "2024-06-06T17:22:57.000Z",
+  "source": "Local Server",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Beverages.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Region,Count,Item,Salesc,OrderPri,OrderDa,OrderID,Ship,Units,UnitPr,UnitC,TotalR,TotalC,TotalP",
+      "parameter_type": "Local Server",
+      "select_columns": "Region,Count,Item,Salesc,OrderPri,OrderDa,OrderID,Ship,Units,UnitPr,UnitC,TotalR,TotalC,TotalP",
+      "connection_name": "localserver_s",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "sales_alias",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "postgres_s",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
