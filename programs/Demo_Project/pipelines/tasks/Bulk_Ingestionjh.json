@@ -1,0 +1,18 @@
+{
+  "task_id": 605,
+  "pipeline_id": 174,
+  "task_name": "Bulk_Ingestionjh",
+  "task_type": "SQL Execution",
+  "is_active": "Y",
+  "sql_execution": {
+    "connection_name": "Mysql_ikart",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "CREATE TABLE test.string_sales_new (\\n  `name` text,\\n  `country` text,\\n  `code` text,\\n  `date` text\\n);",
+      "table_used_desc": "create table"
+    }
+  ]
+}
