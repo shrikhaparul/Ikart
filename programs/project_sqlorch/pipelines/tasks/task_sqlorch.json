@@ -3,6 +3,7 @@
   "pipeline_id": 194,
   "task_name": "task_sqlorch",
   "task_type": "SQL Execution",
+  "project_name":"project_sqlorch",
   "is_active": "Y",
   "sql_execution": {
     "connection_name": "mysql_sqlorch",
