@@ -2,6 +2,7 @@
   "task_id": 620,
   "pipeline_id": 194,
   "task_name": "task_sqlorch",
+  "project_name": "project_sqlorch",
   "task_type": "SQL Execution",
   "is_active": "Y",
   "sql_execution": {
