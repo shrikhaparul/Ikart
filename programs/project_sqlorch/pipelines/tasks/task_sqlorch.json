@@ -7,7 +7,7 @@
   "is_active": "Y",
   "sql_execution": {
     "connection_name": "mysql_sqlorch",
-    "restart": "normal"
+    "restart": "begin"
   },
   "sql_list": [
     {
