@@ -1,0 +1,48 @@
+{
+  "login_id": "Madhu",
+  "id": 621,
+  "project_name": "project_sqlorch",
+  "pipeline_name": "pipeline_sqlorch",
+  "project_id": 78,
+  "pipeline_id": 194,
+  "task_name": "task_sqlorch1",
+  "task_description": "kjh",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-16T18:00:03.000Z",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT id, full_name, login_id, password, user_email, user_phone, role, is_active, created_by, created_dttm, updated_by, updated_dttm, resetLink, role1 FROM config.tbl_user",
+      "schema": "config",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "tbl_user",
+      "parameter_type": "MySQL",
+      "select_columns": "id,full_name,login_id,password,user_email,user_phone,role,is_active,created_by,created_dttm,updated_by,updated_dttm,resetLink,role1",
+      "connection_name": "mysql_sqlorch"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "config",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "tbl_new",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_sqlorch",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
