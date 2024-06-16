@@ -27,7 +27,7 @@
     },
     {
       "seq_no": 4,
-      "sql_query": "DELETE FROM test.string_sales_new\nWHERE code = '5678';\n",
+      "sql_query": "SELECT * FROM test.string_sales_new",
       "table_used_desc": "delete"
     }
   ]
