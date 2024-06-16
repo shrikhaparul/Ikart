@@ -7,7 +7,7 @@
   "is_active": "Y",
   "sql_execution": {
     "connection_name": "mysql_sqlorch",
-    "restart": "skip"
+    "restart": "normal"
   },
   "sql_list": [
     {
@@ -22,8 +22,8 @@
     },
     {
       "seq_no": 3,
-      "sql_query": "select * from sales",
-      "table_used_desc": "select"
+      "sql_query": "UPDATE test.string_sales_new\nSET code = '1000'\nWHERE name = 'Alice Johnson';\n",
+      "table_used_desc": "update"
     },
     {
       "seq_no": 4,
