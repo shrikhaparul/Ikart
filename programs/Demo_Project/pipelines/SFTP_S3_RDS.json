@@ -1,0 +1,456 @@
+{
+  "pipeline_id": 174,
+  "project_id": 74,
+  "pipeline_name": "SFTP_S3_RDS",
+  "pipeline_cd": null,
+  "pipeline_description": "Pipeline to move files from Remote Server to S3 and to load from S3 to RDS",
+  "is_active": "Y",
+  "tasks_details": {
+    "SFTP_S3": 0,
+    "Load_Sales": [
+      "Load_Employees"
+    ],
+    "Load_Customer": [
+      "SFTP_S3"
+    ],
+    "Load_Employees": [
+      "SFTP_S3"
+    ],
+    "Load_Emp_Details": [
+      "Load_Sales",
+      "Load_Customer"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "523",
+      "data": {
+        "label": "523-SFTP_S3"
+      },
+      "position": {
+        "x": 50,
+        "y": 4700
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "527",
+      "data": {
+        "label": "527-Load_Employees"
+      },
+      "position": {
+        "x": 50,
+        "y": 4850
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "528",
+      "data": {
+        "label": "528-Load_Customer"
+      },
+      "position": {
+        "x": 50,
+        "y": 4900
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "529",
+      "data": {
+        "label": "529-Load_Sales"
+      },
+      "position": {
+        "x": 50,
+        "y": 4950
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "530",
+      "data": {
+        "label": "530-Load_Emp_Details"
+      },
+      "position": {
+        "x": 50,
+        "y": 5000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "593",
+      "data": {
+        "label": "593-task_alias"
+      },
+      "position": {
+        "x": 50,
+        "y": 8150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "594",
+      "data": {
+        "label": "594-transformation_new"
+      },
+      "position": {
+        "x": 50,
+        "y": 8200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "595",
+      "data": {
+        "label": "595-taskJoiner"
+      },
+      "position": {
+        "x": 50,
+        "y": 8250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "596",
+      "data": {
+        "label": "596-Filter_expressiopncheck"
+      },
+      "position": {
+        "x": 50,
+        "y": 8300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "597",
+      "data": {
+        "label": "597-Input_Joiner_Output"
+      },
+      "position": {
+        "x": 50,
+        "y": 8350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "598",
+      "data": {
+        "label": "598-Input_2Joiner_Output"
+      },
+      "position": {
+        "x": 50,
+        "y": 8400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "599",
+      "data": {
+        "label": "599-Filter_IO"
+      },
+      "position": {
+        "x": 50,
+        "y": 8450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "600",
+      "data": {
+        "label": "600-extract78"
+      },
+      "position": {
+        "x": 50,
+        "y": 8500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "601",
+      "data": {
+        "label": "601-Input_Output_tr"
+      },
+      "position": {
+        "x": 50,
+        "y": 8550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "602",
+      "data": {
+        "label": "602-Input_filter_output_tr"
+      },
+      "position": {
+        "x": 50,
+        "y": 8600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "603",
+      "data": {
+        "label": "603-ovarall"
+      },
+      "position": {
+        "x": 50,
+        "y": 8650
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "604",
+      "data": {
+        "label": "604-ovarallEnhancement"
+      },
+      "position": {
+        "x": 50,
+        "y": 8700
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "605",
+      "data": {
+        "label": "605-Bulk_Ingestionjh"
+      },
+      "position": {
+        "x": 50,
+        "y": 8750
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "606",
+      "data": {
+        "label": "606-OverAll_Flow"
+      },
+      "position": {
+        "x": 50,
+        "y": 8800
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "607",
+      "data": {
+        "label": "607-Input_Output_demo"
+      },
+      "position": {
+        "x": 50,
+        "y": 8850
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "608",
+      "data": {
+        "label": "608-Input_Joiner_Output_demo"
+      },
+      "position": {
+        "x": 50,
+        "y": 8900
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "609",
+      "data": {
+        "label": "609-Input_Filter_Output_demo"
+      },
+      "position": {
+        "x": 50,
+        "y": 8950
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "610",
+      "data": {
+        "label": "610-Input_Expression_Output_demo"
+      },
+      "position": {
+        "x": 50,
+        "y": 9000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "611",
+      "data": {
+        "label": "611-Input_SQL_Output_demo"
+      },
+      "position": {
+        "x": 50,
+        "y": 9050
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "612",
+      "data": {
+        "label": "612-TwoJoiner_threeInput"
+      },
+      "position": {
+        "x": 50,
+        "y": 9100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "613",
+      "data": {
+        "label": "613-OvaerAll123"
+      },
+      "position": {
+        "x": 50,
+        "y": 9150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "614",
+      "data": {
+        "label": "614-Bulk_testing"
+      },
+      "position": {
+        "x": 50,
+        "y": 9200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "615",
+      "data": {
+        "label": "615-mnNewBulk"
+      },
+      "position": {
+        "x": 50,
+        "y": 9250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "616",
+      "data": {
+        "label": "616-demo_test"
+      },
+      "position": {
+        "x": 50,
+        "y": 9300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "617",
+      "data": {
+        "label": "617-Transformation1"
+      },
+      "position": {
+        "x": 50,
+        "y": 9350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "618",
+      "data": {
+        "label": "618-Expression_09"
+      },
+      "position": {
+        "x": 50,
+        "y": 9400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "619",
+      "data": {
+        "label": "619-Bulk_7gb"
+      },
+      "position": {
+        "x": 50,
+        "y": 9450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-523",
+      "source": "0",
+      "target": "523"
+    },
+    {
+      "id": "flow-528-530",
+      "source": "528",
+      "target": "530"
+    },
+    {
+      "id": "flow-529-530",
+      "source": "529",
+      "target": "530"
+    },
+    {
+      "id": "flow-527-529",
+      "source": "527",
+      "target": "529"
+    },
+    {
+      "id": "flow-523-528",
+      "source": "523",
+      "target": "528"
+    },
+    {
+      "id": "flow-523-527",
+      "source": "523",
+      "target": "527"
+    }
+  ],
+  "created_dttm": "2024-06-16T19:04:19.068Z",
+  "updated_dttm": "2024-06-16T19:04:19.068Z"
+}
