@@ -1,6 +1,7 @@
 {
   "task_id": 368,
   "pipeline_id": 148,
+  "project_name":"ikart_project_questkart_update",
   "task_name": "SQL_orchestration_test",
   "task_type": "SQL Execution",
   "is_active": "Y",
