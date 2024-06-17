@@ -1,0 +1,89 @@
+{
+  "login_id": "Pavan",
+  "id": 697,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Transformation_Panda",
+  "project_id": 82,
+  "pipeline_id": 214,
+  "task_name": "join",
+  "task_description": "Input joiner filter expression output",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "5301b60d-a282-43e9-8bbf-31464d05194b",
+  "status": "Success",
+  "updated_dttm": "2024-06-17T05:17:27.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_mysql_tr": "0",
+      "Joiner_joinner": "Input_mysql_tr2,Input_mysql_tr",
+      "Input_mysql_tr2": "0",
+      "Output_local_jki": "Joiner_joinner"
+    },
+    "details": [
+      {
+        "Joiner": [
+          {
+            "joinner": {
+              "join_type": "right",
+              "output_df": "jnr_onp",
+              "left_input_df": "inp_xbk",
+              "join_condition": "inp_xbk.department_id=inp_wey.department_id",
+              "right_input_df": "inp_wey",
+              "transformation_name": "joinner"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "mysql_tr": {
+              "schema": "transformation",
+              "output_df": "inp_wey",
+              "table_name": "transform_test",
+              "source_type": "MySQL",
+              "select_columns": "first_name,last_name,employee_id,department_id,join_date,last_login_timestamp,salary_initial,current_salary,work_location,updated_location",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql_tr"
+            }
+          },
+          {
+            "mysql_tr2": {
+              "schema": "transformation",
+              "file_name": "customer.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/transform/",
+              "file_type": "csv",
+              "output_df": "inp_xbk",
+              "table_name": "demo_dept_data",
+              "source_type": "MySQL",
+              "select_columns": "department_id,department_name",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql_tr2"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "local_jki": {
+              "schema": "transformation",
+              "input_df": "jnr_onp",
+              "operation": "replace",
+              "table_name": "joiner_test",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "local_jki"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
