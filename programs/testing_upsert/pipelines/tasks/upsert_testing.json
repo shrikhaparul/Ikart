@@ -1,0 +1,58 @@
+{
+  "login_id": "swetha",
+  "id": 635,
+  "project_name": "testing_upsert",
+  "pipeline_name": "upsert_demo",
+  "project_id": 78,
+  "pipeline_id": 195,
+  "task_name": "upsert_testing",
+  "task_description": "upsert_testing",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "32d50101-f155-4435-bf3a-a395b22e369b",
+  "status": "Success",
+  "updated_dttm": "2024-06-07T09:51:54.000Z",
+  "source": "Local Server",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "employee_data_new.csv",
+      "file_path": "/home/dswetha/csv/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "no",
+      "quote_char": null,
+      "compression": null,
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "id,first_name,last_name,gender,birth_date,employment_status,annual_salary",
+      "parameter_type": "Local Server",
+      "select_columns": "",
+      "connection_name": "connection_csv_local",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "system",
+      "operation": "UPSERT",
+      "table_name": "first_employ",
+      "primary_key": "ID",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "connection_oracle_local",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
