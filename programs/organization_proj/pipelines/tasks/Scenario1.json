@@ -1,0 +1,70 @@
+{
+  "login_id": "prajwal",
+  "id": 698,
+  "project_name": "organization_proj",
+  "pipeline_name": "organization_pipeline",
+  "project_id": 60,
+  "pipeline_id": 149,
+  "task_name": "Scenario1",
+  "task_description": "To test the dq jobs based on luke sir usecase",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "02f77408-855a-4682-8dda-bd249f6e7739",
+  "status": "Failed",
+  "updated_dttm": "2024-06-14T16:25:22.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "customer_data.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": null,
+      "quote_char": "\"",
+      "compression": null,
+      "escape_char": "\\",
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "customer_id,first_name,last_name,mobile,dob,address,email,membership_status",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "ec2_localserver_connection",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikarttest",
+      "operation": "INSERT",
+      "table_name": "customer",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_EC2_Connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "customer_id"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 30,
+        "type": "post_check"
+      }
+    ]
+  }
+}
