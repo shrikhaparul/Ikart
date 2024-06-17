@@ -1,0 +1,931 @@
+{
+  "login_id": "jjones",
+  "id": 637,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "posttoremot",
+  "task_description": "d",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "0a06f9f3-77c5-4ab0-8e0e-0597bc0ca9d8",
+  "status": "Running",
+  "updated_dttm": "2024-06-07T14:55:20.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "DISTRIBUTION_CENTERSCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_DISTRIBUTION_CENTERSCSV",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "10",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "UDP_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_UDP_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "11",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "DRDOS_NTP_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_DRDOS_NTP_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "12",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "DRDOS_UPD",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_DRDOS_UPD",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "13",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "DRDOS_LDAP",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_DRDOS_LDAP",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "14",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "DRDOS_SSDP_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_DRDOS_SSDP_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "15",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "DRDOS_DNS_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_DRDOS_DNS_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "16",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "UDP_LAGS",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_UDP_LAGS",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "17",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "DRDOS_NETBIOS_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_DRDOS_NETBIOS_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "18",
+        "source": {
+          "task_group": "4",
+          "connection_name": "oracle_p",
+          "object_name": "DRDOS_MSSQL_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_DRDOS_MSSQL_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "19",
+        "source": {
+          "task_group": "4",
+          "connection_name": "oracle_p",
+          "object_name": "TFTP_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_TFTP_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "TBL_NEWNM_M",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_TBL_NEWNM_M",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "20",
+        "source": {
+          "task_group": "4",
+          "connection_name": "oracle_p",
+          "object_name": "NETBIOS_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_NETBIOS_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "21",
+        "source": {
+          "task_group": "4",
+          "connection_name": "oracle_p",
+          "object_name": "AWS_TEST_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_AWS_TEST_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "22",
+        "source": {
+          "task_group": "4",
+          "connection_name": "oracle_p",
+          "object_name": "TEST_DATA",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_TEST_DATA",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "23",
+        "source": {
+          "task_group": "5",
+          "connection_name": "oracle_p",
+          "object_name": "INVENTORY_ITEMSCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_INVENTORY_ITEMSCSV",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "24",
+        "source": {
+          "task_group": "5",
+          "connection_name": "oracle_p",
+          "object_name": "EMPLOYEE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_EMPLOYEE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "25",
+        "source": {
+          "task_group": "5",
+          "connection_name": "oracle_p",
+          "object_name": "ORDER_ITEMSCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_ORDER_ITEMSCSV",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "26",
+        "source": {
+          "task_group": "5",
+          "connection_name": "oracle_p",
+          "object_name": "TEST_EMPLOYEE_DETAILS_JSON",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_TEST_EMPLOYEE_DETAILS_JSON",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "27",
+        "source": {
+          "task_group": "5",
+          "connection_name": "oracle_p",
+          "object_name": "OPEN",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_OPEN",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "28",
+        "source": {
+          "task_group": "6",
+          "connection_name": "oracle_p",
+          "object_name": "TEST_TEST_DATA",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_TEST_TEST_DATA",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "29",
+        "source": {
+          "task_group": "6",
+          "connection_name": "oracle_p",
+          "object_name": "PRODUCTSCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_PRODUCTSCSV",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "NAME_MAPPINGCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_NAME_MAPPINGCSV",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "30",
+        "source": {
+          "task_group": "6",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE5",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_IMPT_TABLE5",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "31",
+        "source": {
+          "task_group": "6",
+          "connection_name": "oracle_p",
+          "object_name": "SALES_ALIAS",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_SALES_ALIAS",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "32",
+        "source": {
+          "task_group": "6",
+          "connection_name": "oracle_p",
+          "object_name": "TRAINCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_TRAINCSV",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "33",
+        "source": {
+          "task_group": "7",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE1",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_IMPT_TABLE1",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "34",
+        "source": {
+          "task_group": "7",
+          "connection_name": "oracle_p",
+          "object_name": "USERSCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_USERSCSV",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "35",
+        "source": {
+          "task_group": "7",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE4",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_IMPT_TABLE4",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "36",
+        "source": {
+          "task_group": "7",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE2",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_IMPT_TABLE2",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "37",
+        "source": {
+          "task_group": "7",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE3",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_IMPT_TABLE3",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "38",
+        "source": {
+          "task_group": "8",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE6",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_IMPT_TABLE6",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "39",
+        "source": {
+          "task_group": "8",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE7",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_IMPT_TABLE7",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "BEBE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_BEBE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "40",
+        "source": {
+          "task_group": "8",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE10",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_IMPT_TABLE10",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "41",
+        "source": {
+          "task_group": "8",
+          "connection_name": "oracle_p",
+          "object_name": "OPENP",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_OPENP",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "SURVIVAL_DATACSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_SURVIVAL_DATACSV",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "SALES_11",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_SALES_11",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "ORDERSCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_ORDERSCSV",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "TEMP_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_TEMP_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "SYN_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nue_SYN_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
