@@ -3,6 +3,7 @@
   "pipeline_id": 148,
   "task_name": "SQL_orchestration_test",
   "task_type": "SQL Execution",
+  "project_name" : "ikart_project_questkart_update",
   "is_active": "Y",
   "sql_execution": {
     "connection_name": "mysql",
