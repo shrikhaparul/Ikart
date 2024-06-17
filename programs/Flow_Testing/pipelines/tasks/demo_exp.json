@@ -1,0 +1,164 @@
+{
+  "login_id": "Pavan",
+  "id": 710,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Transformation_Panda",
+  "project_id": 82,
+  "pipeline_id": 214,
+  "task_name": "demo_exp",
+  "task_description": "demo perpose",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "fb813a3e-207d-4ee7-9d47-40578768f21a",
+  "status": "Failed",
+  "updated_dttm": "2024-06-17T11:15:46.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_local_csv": "0",
+      "Output_out_tran": "Expression_expre_trial",
+      "Expression_expre_trial": "Input_local_csv"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "expre_trial": {
+              "input_df": "inp_ggw",
+              "output_df": "exp_fbd",
+              "transformation_name": "expre_trial",
+              "expre_trial_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "age",
+                "output_col_name": "age",
+                "expression_value": " "
+              },
+              "expre_trial_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "is_online",
+                "output_col_name": "is_online",
+                "expression_value": " "
+              },
+              "expre_trial_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "employee_id",
+                "output_col_name": "employee_id",
+                "expression_value": " "
+              },
+              "expre_trial_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "name",
+                "output_col_name": "name",
+                "expression_value": " "
+              },
+              "expre_trial_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "department",
+                "output_col_name": "department",
+                "expression_value": " "
+              },
+              "expre_trial_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "salary",
+                "output_col_name": "salary",
+                "expression_value": " "
+              },
+              "expre_trial_10": {
+                "operator": "to_number",
+                "sequence": "10",
+                "operatorType": "Data Type Formatting",
+                "input_col_name": "",
+                "output_col_name": "sal_int",
+                "expression_value": "to_number(salary)"
+              },
+              "expre_trial_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "performance_score",
+                "output_col_name": "performance_score",
+                "expression_value": " "
+              },
+              "expre_trial_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "hire_date",
+                "output_col_name": "hire_date",
+                "expression_value": " "
+              },
+              "expre_trial_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "contract_end",
+                "output_col_name": "contract_end",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "local_csv": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "employee_data_null.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+              "file_type": "csv",
+              "output_df": "inp_ggw",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "employee_id,name,department,salary,hire_date,contract_end,is_online,age,performance_score",
+              "connection_name": "193",
+              "transformation_name": "local_csv"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_tran": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "exp_fbd",
+              "delimiter": ",",
+              "file_name": "exp_out.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files",
+              "file_type": "csv",
+              "quote_char": "\"",
+              "target_type": "Local Server",
+              "connection_name": "193",
+              "transformation_name": "out_tran",
+              "target_max_record_count": "100000"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
