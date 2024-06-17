@@ -54,7 +54,7 @@
         "Joiner": [
           {
             "joinner": {
-              "join_type": "inner ",
+              "join_type": "inner",
               "output_df": "jnr_onp",
               "left_input_df": "inp_xbk",
               "join_condition": "inp_xbk.department_id=inp_wey.department_id",
