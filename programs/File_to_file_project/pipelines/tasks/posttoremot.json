@@ -1,0 +1,513 @@
+{
+  "login_id": "jjones",
+  "id": 637,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "posttoremot",
+  "task_description": "d",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "3d76d218-e114-4551-bb3c-16a25c7b78ff",
+  "status": "Failed",
+  "updated_dttm": "2024-06-07T14:55:20.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "AWS_TEST_TABLE",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueAWS_TEST_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "10",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE3",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueIMPT_TABLE3",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "11",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE6",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueIMPT_TABLE6",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "12",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "OPEN",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueOPEN",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "13",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "ORDER_ITEMSCSV",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueORDER_ITEMSCSV",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "14",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "POST",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nuePOST",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "15",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "SALES_11",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueSALES_11",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "16",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "SALES_ALIAS",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueSALES_ALIAS",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "17",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "SURVIVAL_DATACSV",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueSURVIVAL_DATACSV",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "18",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "TBL_NEWNM_M",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueTBL_NEWNM_M",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "19",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "TEMP_TABLE",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueTEMP_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "DISTRIBUTION_CENTERSCSV",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueDISTRIBUTION_CENTERSCSV",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "20",
+        "source": {
+          "task_group": "4",
+          "connection_name": "oracle_p",
+          "object_name": "TEST_DATA",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueTEST_DATA",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "21",
+        "source": {
+          "task_group": "4",
+          "connection_name": "oracle_p",
+          "object_name": "TEST_TEST_DATA",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueTEST_TEST_DATA",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "22",
+        "source": {
+          "task_group": "4",
+          "connection_name": "oracle_p",
+          "object_name": "TRAINCSV",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueTRAINCSV",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "DR1MD_TABLE",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueDR1MD_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "DR1MONTH_TAB",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueDR1MONTH_TAB",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "DR1MON_TAB",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueDR1MON_TAB",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "DR1MO_TABLE",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueDR1MO_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "DR1M_TABLE",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueDR1M_TABLE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "EMPLOYEE",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueEMPLOYEE",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE1",
+          "object_type": "Table",
+          "schema_name": "KART",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_nueIMPT_TABLE1",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
