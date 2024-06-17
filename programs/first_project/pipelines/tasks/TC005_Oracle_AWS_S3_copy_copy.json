@@ -1,0 +1,54 @@
+{
+  "login_id": "Madhu",
+  "id": 691,
+  "project_name": "first_project",
+  "pipeline_name": "pipeline_execution",
+  "project_id": 80,
+  "pipeline_id": 211,
+  "task_name": "TC005_Oracle_AWS_S3_copy_copy",
+  "task_description": "Oracle -> Aws S3 (JSON)",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "cc7078de-2d33-4bb5-be8e-c5f3faef622d",
+  "status": "Running",
+  "updated_dttm": "2024-06-14T06:28:47.000Z",
+  "source": "Oracle",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "sahilphal",
+  "updated_by": "sahilphal",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT * FROM STAGE.POST",
+      "schema": "STAGE",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 100000,
+      "table_name": "POST",
+      "parameter_type": "Oracle",
+      "select_columns": null,
+      "connection_name": "connection_oracle"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "P1_test_1",
+      "file_path": "/json_folder",
+      "file_type": "json",
+      "operation": "append",
+      "encryption": "no",
+      "compression": "zip",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "connection_S3",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
