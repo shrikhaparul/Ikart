@@ -1,0 +1,183 @@
+{
+  "login_id": "Pavan",
+  "id": 711,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Pandas_Transform",
+  "project_id": 82,
+  "pipeline_id": 216,
+  "task_name": "in_exp_ou",
+  "task_description": "testing of expression ",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "fccbc157-14c5-499d-a64d-83e27583c824",
+  "status": "Success",
+  "updated_dttm": "2024-06-17T12:22:52.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_mysql": "0",
+      "Expression_expr_tr": "Input_mysql",
+      "Output_output_mysql": "Expression_expr_tr"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "expr_tr": {
+              "input_df": "inp_vnl",
+              "output_df": "exp_uap",
+              "transformation_name": "expr_tr",
+              "expr_tr_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "col_7",
+                "output_col_name": "col_7",
+                "expression_value": " "
+              },
+              "expr_tr_5": {
+                "operator": "to_number",
+                "sequence": "5",
+                "operatorType": "Data Type Formatting",
+                "input_col_name": "col_13",
+                "output_col_name": "col_13",
+                "expression_value": "to_number(col_13)"
+              },
+              "expr_tr_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "col_4",
+                "output_col_name": "col_4",
+                "expression_value": " "
+              },
+              "expr_tr_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "col_3",
+                "output_col_name": "col_3",
+                "expression_value": " "
+              },
+              "expr_tr_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "col_2",
+                "output_col_name": "col_2",
+                "expression_value": " "
+              },
+              "expr_tr_6": {
+                "operator": "to_number",
+                "sequence": "6",
+                "operatorType": "Data Type Formatting",
+                "input_col_name": "col_14",
+                "output_col_name": "col_14",
+                "expression_value": "to_number(col_14)"
+              },
+              "expr_tr_4": {
+                "operator": "to_number",
+                "sequence": "4",
+                "operatorType": "Data Type Formatting",
+                "input_col_name": "col_12",
+                "output_col_name": "col_12",
+                "expression_value": "to_number(col_12)"
+              },
+              "expr_tr_2": {
+                "operator": "to_number",
+                "sequence": "2",
+                "operatorType": "Data Type Formatting",
+                "input_col_name": "col_10",
+                "output_col_name": "col_10",
+                "expression_value": "to_number(col_10)"
+              },
+              "expr_tr_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "col_9",
+                "output_col_name": "col_9",
+                "expression_value": " "
+              },
+              "expr_tr_3": {
+                "operator": "to_number",
+                "sequence": "3",
+                "operatorType": "Data Type Formatting",
+                "input_col_name": "col_11",
+                "output_col_name": "col_11",
+                "expression_value": "to_number(col_11)"
+              },
+              "expr_tr_1": {
+                "operator": "to_number",
+                "sequence": "1",
+                "operatorType": "Data Type Formatting",
+                "input_col_name": "col_1",
+                "output_col_name": "col_1",
+                "expression_value": "to_number(col_1)"
+              },
+              "expr_tr_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "col_5",
+                "output_col_name": "col_5",
+                "expression_value": " "
+              },
+              "expr_tr_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "col_6",
+                "output_col_name": "col_6",
+                "expression_value": " "
+              },
+              "expr_tr_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "col_8",
+                "output_col_name": "col_8",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "mysql": {
+              "schema": "transformation",
+              "output_df": "inp_vnl",
+              "table_name": "EC_01",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_mysql": {
+              "schema": "transformation",
+              "input_df": "exp_uap",
+              "operation": "create",
+              "table_name": "EC_02",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "output_mysql"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
