@@ -1,0 +1,98 @@
+{
+  "login_id": "Pavan",
+  "id": 706,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Transformation_Panda",
+  "project_id": 82,
+  "pipeline_id": 214,
+  "task_name": "input_filter_output",
+  "task_description": "Input_filter_output",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-17T06:32:07.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_mysql": "0",
+      "Filter_filter_tr": "Input_mysql"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "filter_tr": {
+              "input_df": "inp_nae",
+              "output_df": "fil_cas",
+              "transformation_name": "filter_tr",
+              "filter_tr_Operation_1718604267862": {
+                "id": "filter_tr_Operation_1718604267862",
+                "operator": "==",
+                "column_name": "first_name",
+                "field_value": "Bob",
+                "condition_type": "operation",
+                "operation_name": "operation_1"
+              },
+              "filter_tr_Operation_1718604267863": {
+                "id": "filter_tr_Operation_1718604267863",
+                "operator": ">",
+                "column_name": "employee_id",
+                "field_value": "1012",
+                "condition_type": "operation",
+                "operation_name": "operation_2"
+              },
+              "filter_tr_Group_1718604267864": {
+                "id": "filter_tr_Group_1718604267864",
+                "operator": "and",
+                "group_name": "group_1",
+                "Condition_01": "filter_tr_Operation_1718604267862",
+                "Condition_02": "filter_tr_Operation_1718604267863",
+                "condition_type": "group"
+              },
+              "id": {
+                "label": "Filter",
+                "displayName": "filter_tr"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "mysql": {
+              "schema": "transformation",
+              "output_df": "inp_nae",
+              "table_name": "transform_test",
+              "source_type": "MySQL",
+              "select_columns": "first_name,last_name,employee_id,department_id,join_date,last_login_timestamp,salary_initial,current_salary,work_location,updated_location",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "postgres_01": {
+              "schema": "public",
+              "input_df": "fil_orf",
+              "operation": "create",
+              "table_name": "filter_res",
+              "target_type": "PostgreSQL",
+              "connection_name": "postgres_tr",
+              "transformation_name": "postgres_01"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
