@@ -1,0 +1,45 @@
+{
+  "login_id": "prajwal",
+  "id": 596,
+  "project_name": "project_prototype_1",
+  "pipeline_name": "proto_pipeline__1",
+  "project_id": 76,
+  "pipeline_id": 190,
+  "task_name": "s3_to_mysql_1",
+  "task_description": "s3_to_mysql_1",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "8bd0ed36-2b15-44a7-b1d4-ea6957771521",
+  "status": "Failed",
+  "updated_dttm": "2024-06-06T11:04:54.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "demo/features/",
+          "connection_name": "aws_connection_test",
+          "operation": "copy",
+          "files_filter_name": "*.parquet.snappy",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "file_path": "/home/data_files/new/",
+          "connection_name": "my_local_con_test",
+          "object_sufix_name": "parquet",
+          "object_prefix_name": ""
+        }
+      }
+    ]
+  }
+}
