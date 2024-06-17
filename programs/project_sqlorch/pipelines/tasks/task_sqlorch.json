@@ -22,7 +22,7 @@
     },
     {
       "seq_no": 3,
-      "sql_query": "INSERT INTO test.string_sales_new (name, country, code, date) VALUES\n('Alice Johnson', 'USA', '1234', '2023-01-01'),\n('Bob Smith', 'Canada', '5678', '2023-01-02'),\n('Carol White', 'UK', '9101', '2023-01-03'),\n('David Brown', 'Australia', '1121', '2023-01-04'),\n('Eve Davis', 'Germany', '3141', '2023-01-05'),\n('Frank Miller', 'France', '5161', '2023-01-06'),\n('Grace Wilson', 'Italy', '7181', '2023-01-07'),\n('Hank Lewis', 'Spain', '9202', '2023-01-08'),\n('Ivy Walker', 'Japan', '1222', '2023-01-09'),\n('Jack King', 'Brazil', '3242', '2023-01-10');\n",
+      "sql_query": "INSERT INTO test1.string_sales_new (name, country, code, date) VALUES\n('Alice Johnson', 'USA', '1234', '2023-01-01'),\n('Bob Smith', 'Canada', '5678', '2023-01-02'),\n('Carol White', 'UK', '9101', '2023-01-03'),\n('David Brown', 'Australia', '1121', '2023-01-04'),\n('Eve Davis', 'Germany', '3141', '2023-01-05'),\n('Frank Miller', 'France', '5161', '2023-01-06'),\n('Grace Wilson', 'Italy', '7181', '2023-01-07'),\n('Hank Lewis', 'Spain', '9202', '2023-01-08'),\n('Ivy Walker', 'Japan', '1222', '2023-01-09'),\n('Jack King', 'Brazil', '3242', '2023-01-10');\n",
       "table_used_desc": "insert"
     },
     {
