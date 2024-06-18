@@ -1,0 +1,148 @@
+{
+  "login_id": "Pavan",
+  "id": 719,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Pandas_Transform",
+  "project_id": 82,
+  "pipeline_id": 216,
+  "task_name": "demo",
+  "task_description": "testing for prototype",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "34e38f8c-33d8-4426-982d-db152d4a15e2",
+  "status": "Failed",
+  "updated_dttm": "2024-06-18T11:35:46.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_local_csv": "0",
+      "Expression_expre_tr": "Input_local_csv",
+      "Output_local_csv_tr": "Expression_expre_tr"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "expre_tr": {
+              "input_df": "inp_kbe",
+              "output_df": "exp_rme",
+              "transformation_name": "expre_tr",
+              "expre_tr_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "dob",
+                "output_col_name": "dob",
+                "expression_value": " "
+              },
+              "expre_tr_4": {
+                "operator": "replace",
+                "sequence": "4",
+                "operatorType": "String",
+                "input_col_name": "mobile",
+                "output_col_name": "mobile",
+                "expression_value": "replace(mobile, X, 0)"
+              },
+              "expre_tr_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "first_name",
+                "output_col_name": "first_name",
+                "expression_value": " "
+              },
+              "expre_tr_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "last_name",
+                "output_col_name": "last_name",
+                "expression_value": " "
+              },
+              "expre_tr_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "customer_id",
+                "output_col_name": "customer_id",
+                "expression_value": " "
+              },
+              "expre_tr_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "membership_status",
+                "output_col_name": "membership_status",
+                "expression_value": " "
+              },
+              "expre_tr_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "address",
+                "output_col_name": "address",
+                "expression_value": " "
+              },
+              "expre_tr_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "email",
+                "output_col_name": "email",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "local_csv": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "visa_card.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+              "file_type": "csv",
+              "output_df": "inp_kbe",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\t",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "customer_id,first_name,last_name,mobile,dob,address,email,membership_status",
+              "connection_name": "193",
+              "transformation_name": "local_csv"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "local_csv_tr": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "exp_rme",
+              "delimiter": ",",
+              "file_name": "exp_result.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+              "file_type": "csv",
+              "quote_char": "",
+              "target_type": "Local Server",
+              "connection_name": "193",
+              "transformation_name": "local_csv_tr",
+              "target_max_record_count": "100000"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
