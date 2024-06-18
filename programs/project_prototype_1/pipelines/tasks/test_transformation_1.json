@@ -1,0 +1,480 @@
+{
+  "login_id": "prajwal",
+  "id": 597,
+  "project_name": "project_prototype_1",
+  "pipeline_name": "proto_pipeline__1",
+  "project_id": 76,
+  "pipeline_id": 190,
+  "task_name": "test_transformation_1",
+  "task_description": "test_transformation_1",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "487281d4-3b1e-4a14-93cd-8fa9e5d10804",
+  "status": "Failed",
+  "updated_dttm": "2024-06-13T11:00:24.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_input1": "0",
+      "Input_input2": "0",
+      "Filter_filter1": "Joiner_joiner1",
+      "Joiner_joiner1": "Input_input1,Input_input2",
+      "Output_output1": "Expression_expression,Expression_expression1",
+      "Expression_expression": "Filter_filter1",
+      "Expression_expression1": "Filter_filter1"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "filter1": {
+              "input_df": "jnr_ceh",
+              "output_df": "fil_jyl",
+              "transformation_name": "filter1",
+              "filter1_Group_1718689610324": {
+                "id": "filter1_Group_1718689610324",
+                "operator": "AND",
+                "group_name": "group1",
+                "Condition_01": "filter1_Operation_1718689610322",
+                "Condition_02": "filter1_Operation_1718689610323",
+                "condition_type": "group"
+              },
+              "filter1_Operation_1718689610322": {
+                "id": "filter1_Operation_1718689610322",
+                "operator": "==",
+                "column_name": "program_id_right",
+                "field_value": "279",
+                "condition_type": "operation",
+                "operation_name": "operation1"
+              },
+              "filter1_Operation_1718689610323": {
+                "id": "filter1_Operation_1718689610323",
+                "operator": "==",
+                "column_name": "id_left",
+                "field_value": "279",
+                "condition_type": "operation",
+                "operation_name": "operation2"
+              },
+              "id": {
+                "label": "Filter",
+                "displayName": "filter1"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Expression": [
+          {
+            "expression": {
+              "input_df": "fil_jyl",
+              "output_df": "exp_wtg",
+              "transformation_name": "expression",
+              "expression_2": {
+                "operator": "upper",
+                "sequence": "2",
+                "operatorType": "String",
+                "input_col_name": "program_name_left",
+                "output_col_name": "program_name_left",
+                "expression_value": "upper(program_name_left)"
+              },
+              "expression_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "updated_dttm_left",
+                "output_col_name": "updated_dttm_left",
+                "expression_value": " "
+              },
+              "expression_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "id_right",
+                "output_col_name": "id_right",
+                "expression_value": " "
+              },
+              "expression_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "program_id_right",
+                "output_col_name": "program_id_right",
+                "expression_value": " "
+              },
+              "expression_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "project_name_right",
+                "output_col_name": "project_name_right",
+                "expression_value": " "
+              },
+              "expression_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "project_description_right",
+                "output_col_name": "project_description_right",
+                "expression_value": " "
+              },
+              "expression_15": {
+                "operator": "",
+                "sequence": "15",
+                "operatorType": "",
+                "input_col_name": "project_manager_right",
+                "output_col_name": "project_manager_right",
+                "expression_value": " "
+              },
+              "expression_16": {
+                "operator": "",
+                "sequence": "16",
+                "operatorType": "",
+                "input_col_name": "project_lead_right",
+                "output_col_name": "project_lead_right",
+                "expression_value": " "
+              },
+              "expression_17": {
+                "operator": "",
+                "sequence": "17",
+                "operatorType": "",
+                "input_col_name": "is_active_right",
+                "output_col_name": "is_active_right",
+                "expression_value": " "
+              },
+              "expression_18": {
+                "operator": "",
+                "sequence": "18",
+                "operatorType": "",
+                "input_col_name": "created_by_right",
+                "output_col_name": "created_by_right",
+                "expression_value": " "
+              },
+              "expression1_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "id_left",
+                "output_col_name": "id_left",
+                "expression_value": " "
+              },
+              "expression1": {
+                "input_df": "fil_jyl",
+                "output_df": "exp_wtg",
+                "transformation_name": "expression1"
+              },
+              "expression_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "created_dttm_left",
+                "output_col_name": "created_dttm_left",
+                "expression_value": " "
+              },
+              "expression_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "created_by_left",
+                "output_col_name": "created_by_left",
+                "expression_value": " "
+              },
+              "expression_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "is_active_left",
+                "output_col_name": "is_active_left",
+                "expression_value": " "
+              },
+              "expression_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "secondary_stakeholder_left",
+                "output_col_name": "secondary_stakeholder_left",
+                "expression_value": " "
+              },
+              "expression_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "primary_stakeholder_left",
+                "output_col_name": "primary_stakeholder_left",
+                "expression_value": " "
+              },
+              "expression_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "program_description_left",
+                "output_col_name": "program_description_left",
+                "expression_value": " "
+              },
+              "expression_21": {
+                "operator": "",
+                "sequence": "21",
+                "operatorType": "",
+                "input_col_name": "updated_dttm_right",
+                "output_col_name": "updated_dttm_right",
+                "expression_value": " "
+              },
+              "expression_20": {
+                "operator": "",
+                "sequence": "20",
+                "operatorType": "",
+                "input_col_name": "updated_by_right",
+                "output_col_name": "updated_by_right",
+                "expression_value": " "
+              },
+              "expression_19": {
+                "operator": "",
+                "sequence": "19",
+                "operatorType": "",
+                "input_col_name": "created_dttm_right",
+                "output_col_name": "created_dttm_right",
+                "expression_value": " "
+              },
+              "expression1_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "updated_by_left",
+                "output_col_name": "updated_by_left",
+                "expression_value": " "
+              },
+              "expression1_19": {
+                "operator": "",
+                "sequence": "19",
+                "operatorType": "",
+                "input_col_name": "created_dttm_right",
+                "output_col_name": "created_dttm_right",
+                "expression_value": " "
+              },
+              "expression1_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "updated_dttm_left",
+                "output_col_name": "updated_dttm_left",
+                "expression_value": " "
+              },
+              "expression1_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "id_right",
+                "output_col_name": "id_right",
+                "expression_value": " "
+              },
+              "expression1_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "program_id_right",
+                "output_col_name": "program_id_right",
+                "expression_value": " "
+              },
+              "expression1_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "project_name_right",
+                "output_col_name": "project_name_right",
+                "expression_value": " "
+              },
+              "expression1_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "project_description_right",
+                "output_col_name": "project_description_right",
+                "expression_value": " "
+              },
+              "expression1_15": {
+                "operator": "",
+                "sequence": "15",
+                "operatorType": "",
+                "input_col_name": "project_manager_right",
+                "output_col_name": "project_manager_right",
+                "expression_value": " "
+              },
+              "expression1_16": {
+                "operator": "",
+                "sequence": "16",
+                "operatorType": "",
+                "input_col_name": "project_lead_right",
+                "output_col_name": "project_lead_right",
+                "expression_value": " "
+              },
+              "expression1_17": {
+                "operator": "",
+                "sequence": "17",
+                "operatorType": "",
+                "input_col_name": "is_active_right",
+                "output_col_name": "is_active_right",
+                "expression_value": " "
+              },
+              "expression1_18": {
+                "operator": "",
+                "sequence": "18",
+                "operatorType": "",
+                "input_col_name": "created_by_right",
+                "output_col_name": "created_by_right",
+                "expression_value": " "
+              },
+              "expression1_2": {
+                "operator": "upper",
+                "sequence": "2",
+                "operatorType": "String",
+                "input_col_name": "program_name_left",
+                "output_col_name": "program_name_left",
+                "expression_value": "upper(program_name_left)"
+              },
+              "expression_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "updated_by_left",
+                "output_col_name": "updated_by_left",
+                "expression_value": " "
+              },
+              "expression1_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "created_dttm_left",
+                "output_col_name": "created_dttm_left",
+                "expression_value": " "
+              },
+              "expression1_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "created_by_left",
+                "output_col_name": "created_by_left",
+                "expression_value": " "
+              },
+              "expression1_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "is_active_left",
+                "output_col_name": "is_active_left",
+                "expression_value": " "
+              },
+              "expression1_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "secondary_stakeholder_left",
+                "output_col_name": "secondary_stakeholder_left",
+                "expression_value": " "
+              },
+              "expression1_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "primary_stakeholder_left",
+                "output_col_name": "primary_stakeholder_left",
+                "expression_value": " "
+              },
+              "expression1_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "program_description_left",
+                "output_col_name": "program_description_left",
+                "expression_value": " "
+              },
+              "expression1_21": {
+                "operator": "",
+                "sequence": "21",
+                "operatorType": "",
+                "input_col_name": "updated_dttm_right",
+                "output_col_name": "updated_dttm_right",
+                "expression_value": " "
+              },
+              "expression1_20": {
+                "operator": "",
+                "sequence": "20",
+                "operatorType": "",
+                "input_col_name": "updated_by_right",
+                "output_col_name": "updated_by_right",
+                "expression_value": " "
+              },
+              "expression_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "id_left",
+                "output_col_name": "id_left",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Joiner": [
+          {
+            "joiner1": {
+              "join_type": "full",
+              "output_df": "jnr_ceh",
+              "left_input_df": "inp_tuh",
+              "join_condition": "inp_tuh.id = inp_dwt.program_id",
+              "right_input_df": "inp_dwt",
+              "transformation_name": "joiner1"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "input1": {
+              "schema": "config",
+              "output_df": "inp_tuh",
+              "table_name": "tbl_program",
+              "source_type": "MySQL",
+              "select_columns": "id,program_name,program_description,primary_stakeholder,secondary_stakeholder,is_active,created_by,created_dttm,updated_by,updated_dttm",
+              "connection_name": "mysql_connection_con",
+              "transformation_name": "input1"
+            }
+          },
+          {
+            "input2": {
+              "schema": "config",
+              "output_df": "inp_dwt",
+              "table_name": "tbl_project",
+              "source_type": "MySQL",
+              "select_columns": "id,program_id,project_name,project_description,project_manager,project_lead,is_active,created_by,created_dttm,updated_by,updated_dttm",
+              "connection_name": "mysql_connection_con",
+              "transformation_name": "input2"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output1": {
+              "schema": "ikart",
+              "input_df": "exp_wtg",
+              "operation": "create",
+              "table_name": "transformation_test",
+              "target_type": "MySQL",
+              "connection_name": "mysql_local_ikart",
+              "transformation_name": "output1"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
