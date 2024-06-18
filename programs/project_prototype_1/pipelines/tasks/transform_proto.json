@@ -1,0 +1,290 @@
+{
+  "login_id": "prajwal",
+  "id": 598,
+  "project_name": "project_prototype_1",
+  "pipeline_name": "proto_pipeline__1",
+  "project_id": 76,
+  "pipeline_id": 190,
+  "task_name": "transform_proto",
+  "task_description": "transform_proto",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "e3427748-3491-4008-a6c9-7f62a35eab1a",
+  "status": "Success",
+  "updated_dttm": "2024-06-18T06:20:27.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_input1": "0",
+      "Input_input2": "0",
+      "Filter_fil_tr": "Joiner_join_tr",
+      "Joiner_join_tr": "Input_input1,Input_input2",
+      "Output_mysql_tr": "Expression_expr_tr",
+      "Expression_expr_tr": "Filter_fil_tr"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "fil_tr": {
+              "input_df": "jnr_jds",
+              "output_df": "fil_kto",
+              "transformation_name": "fil_tr",
+              "fil_tr_Operation_1718690679262": {
+                "id": "fil_tr_Operation_1718690679262",
+                "operator": "==",
+                "column_name": "created_by_right",
+                "field_value": "jjones",
+                "condition_type": "operation",
+                "operation_name": "created"
+              },
+              "id": {
+                "label": "Filter",
+                "displayName": "fil_tr"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Expression": [
+          {
+            "expr_tr": {
+              "input_df": "fil_kto",
+              "output_df": "exp_cpf",
+              "transformation_name": "expr_tr",
+              "expr_tr_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "project_description_right",
+                "output_col_name": "project_description_right",
+                "expression_value": " "
+              },
+              "expr_tr_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "project_name_right",
+                "output_col_name": "project_name_right",
+                "expression_value": " "
+              },
+              "expr_tr_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "program_id_right",
+                "output_col_name": "program_id_right",
+                "expression_value": " "
+              },
+              "expr_tr_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "id_right",
+                "output_col_name": "id_right",
+                "expression_value": " "
+              },
+              "expr_tr_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "updated_dttm_left",
+                "output_col_name": "updated_dttm_left",
+                "expression_value": " "
+              },
+              "expr_tr_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "id_left",
+                "output_col_name": "ID",
+                "expression_value": " "
+              },
+              "expr_tr_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "updated_by_left",
+                "output_col_name": "updated_by_left",
+                "expression_value": " "
+              },
+              "expr_tr_15": {
+                "operator": "",
+                "sequence": "15",
+                "operatorType": "",
+                "input_col_name": "project_manager_right",
+                "output_col_name": "project_manager_right",
+                "expression_value": " "
+              },
+              "expr_tr_16": {
+                "operator": "",
+                "sequence": "16",
+                "operatorType": "",
+                "input_col_name": "project_lead_right",
+                "output_col_name": "project_lead_right",
+                "expression_value": " "
+              },
+              "expr_tr_17": {
+                "operator": "",
+                "sequence": "17",
+                "operatorType": "",
+                "input_col_name": "is_active_right",
+                "output_col_name": "is_active_right",
+                "expression_value": " "
+              },
+              "expr_tr_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "primary_stakeholder_left",
+                "output_col_name": "primary_stakeholder",
+                "expression_value": " "
+              },
+              "expr_tr_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "created_dttm_left",
+                "output_col_name": "created_dttm_left",
+                "expression_value": " "
+              },
+              "expr_tr_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "created_by_left",
+                "output_col_name": "created_by_left",
+                "expression_value": " "
+              },
+              "expr_tr_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "is_active_left",
+                "output_col_name": "is_active_left",
+                "expression_value": " "
+              },
+              "expr_tr_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "secondary_stakeholder_left",
+                "output_col_name": "secondary_stakeholder",
+                "expression_value": " "
+              },
+              "expr_tr_18": {
+                "operator": "",
+                "sequence": "18",
+                "operatorType": "",
+                "input_col_name": "created_by_right",
+                "output_col_name": "created_by_right",
+                "expression_value": " "
+              },
+              "expr_tr_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "program_description_left",
+                "output_col_name": "program_description",
+                "expression_value": " "
+              },
+              "expr_tr_21": {
+                "operator": "",
+                "sequence": "21",
+                "operatorType": "",
+                "input_col_name": "updated_dttm_right",
+                "output_col_name": "updated_dttm_right",
+                "expression_value": " "
+              },
+              "expr_tr_20": {
+                "operator": "",
+                "sequence": "20",
+                "operatorType": "",
+                "input_col_name": "updated_by_right",
+                "output_col_name": "updated_by_right",
+                "expression_value": " "
+              },
+              "expr_tr_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "program_name_left",
+                "output_col_name": "Program_name",
+                "expression_value": " "
+              },
+              "expr_tr_19": {
+                "operator": "",
+                "sequence": "19",
+                "operatorType": "",
+                "input_col_name": "created_dttm_right",
+                "output_col_name": "created_dttm_right",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Joiner": [
+          {
+            "join_tr": {
+              "join_type": "left",
+              "output_df": "jnr_jds",
+              "left_input_df": "inp_puk",
+              "join_condition": "inp_puk.id=inp_ztu.program_id",
+              "right_input_df": "inp_ztu",
+              "transformation_name": "join_tr"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "input1": {
+              "schema": "config",
+              "output_df": "inp_puk",
+              "table_name": "tbl_program",
+              "source_type": "MySQL",
+              "select_columns": "id,program_name,program_description,primary_stakeholder,secondary_stakeholder,is_active,created_by,created_dttm,updated_by,updated_dttm",
+              "connection_name": "mysql_connection_con",
+              "transformation_name": "input1"
+            }
+          },
+          {
+            "input2": {
+              "schema": "config",
+              "output_df": "inp_ztu",
+              "table_name": "tbl_project",
+              "source_type": "MySQL",
+              "select_columns": "id,program_id,project_name,project_description,project_manager,project_lead,is_active,created_by,created_dttm,updated_by,updated_dttm",
+              "connection_name": "mysql_connection_con",
+              "transformation_name": "input2"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "mysql_tr": {
+              "schema": "ikart",
+              "input_df": "exp_cpf",
+              "operation": "create",
+              "table_name": "transformation_test",
+              "target_type": "MySQL",
+              "connection_name": "mysql_local_ikart",
+              "transformation_name": "mysql_tr"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
