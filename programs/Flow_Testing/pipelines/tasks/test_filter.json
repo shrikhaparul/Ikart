@@ -1,0 +1,99 @@
+{
+  "login_id": "Pavan",
+  "id": 715,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Pandas_Transform",
+  "project_id": 82,
+  "pipeline_id": 216,
+  "task_name": "test_filter",
+  "task_description": "filtering test",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "143bd5e8-2c41-40a5-820a-03252ab790a3",
+  "status": "Failed",
+  "updated_dttm": "2024-06-18T06:48:24.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_mysql": "0",
+      "Output_mysql_ou": "Filter_filter_01",
+      "Filter_filter_01": "Input_mysql"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "filter_01": {
+              "input_df": "inp_qha",
+              "output_df": "fil_mrc",
+              "transformation_name": "filter_01",
+              "filter_01_Group_1718693091623": {
+                "id": "filter_01_Group_1718693091623",
+                "operator": "and",
+                "group_name": "group_1",
+                "Condition_01": "filter_01_Operation_1718693091621",
+                "Condition_02": "filter_01_Operation_1718693091622",
+                "condition_type": "group"
+              },
+              "filter_01_Operation_1718693091621": {
+                "id": "filter_01_Operation_1718693091621",
+                "operator": "between",
+                "column_name": "col_1",
+                "field_value": "(115,120)",
+                "condition_type": "operation",
+                "operation_name": "operation_01"
+              },
+              "filter_01_Operation_1718693091622": {
+                "id": "filter_01_Operation_1718693091622",
+                "operator": "some==\r",
+                "column_name": "col_2",
+                "field_value": "('Asia','Europe')",
+                "condition_type": "operation",
+                "operation_name": "operation_02"
+              },
+              "id": {
+                "label": "Filter",
+                "displayName": "filter_01"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "mysql": {
+              "schema": "transformation",
+              "output_df": "inp_qha",
+              "table_name": "EC_02",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "mysql_ou": {
+              "schema": "transformation",
+              "input_df": "fil_mrc",
+              "operation": "create",
+              "table_name": "filter_result",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql_ou"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
