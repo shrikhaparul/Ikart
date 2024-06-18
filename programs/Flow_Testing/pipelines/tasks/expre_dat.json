@@ -1,0 +1,60 @@
+{
+  "login_id": "Pavan",
+  "id": 716,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Pandas_Transform",
+  "project_id": 82,
+  "pipeline_id": 216,
+  "task_name": "expre_dat",
+  "task_description": "expression testing related to date and time",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-18T07:20:09.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Expression_": "Input_mysql_tr",
+      "Input_mysql_tr": "0",
+      "Output_expre_tr": "Expression_"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "mysql_tr": {
+              "schema": "transformation",
+              "output_df": "inp_nhu",
+              "table_name": "EC_02",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,getdate",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql_tr"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "expre_tr": {
+              "schema": "transformation",
+              "input_df": "exp_wak",
+              "operation": "create",
+              "table_name": "EC_03",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "expre_tr"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
