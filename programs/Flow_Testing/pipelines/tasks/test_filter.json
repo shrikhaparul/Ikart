@@ -50,7 +50,7 @@
               },
               "filter_01_Operation_1718693091622": {
                 "id": "filter_01_Operation_1718693091622",
-                "operator": "some==\r",
+                "operator": "some==",
                 "column_name": "col_2",
                 "field_value": "('Asia','Europe')",
                 "condition_type": "operation",
