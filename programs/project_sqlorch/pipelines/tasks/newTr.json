@@ -1,0 +1,59 @@
+{
+  "login_id": "Madhu",
+  "id": 624,
+  "project_name": "project_sqlorch",
+  "pipeline_name": "pipeline_sqlorch",
+  "project_id": 78,
+  "pipeline_id": 194,
+  "task_name": "newTr",
+  "task_description": ".kjhnbv",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-19T18:34:14.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_tr1": "0",
+      "Output_tr3": "Input_tr1"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "tr1": {
+              "schema": "config",
+              "output_df": "inp_cyn",
+              "table_name": "tbl_program",
+              "source_type": "MySQL",
+              "select_columns": "git_repo,id",
+              "connection_name": "conn_mysql",
+              "transformation_name": "tr1"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "tr3": {
+              "schema": "config",
+              "input_df": "inp_cyn",
+              "operation": "create",
+              "table_name": "tbl_userNew",
+              "target_type": "MySQL",
+              "connection_name": "conn_mysql",
+              "transformation_name": "tr3"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
