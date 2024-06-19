@@ -194,7 +194,7 @@
               "encoding": "utf-8",
               "delimiter": ",",
               "file_name": "employee_data.csv",
-              "file_path": "/home/madhu/Ingestion_code2/csv_files",
+              "file_path": "/home/madhu/Ingestion_code2/csv_files/",
               "file_type": "csv",
               "output_df": "inp_rlz",
               "quote_char": "\"",
