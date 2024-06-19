@@ -1,0 +1,46 @@
+{
+  "login_id": "Madhu",
+  "id": 621,
+  "project_name": "project_sqlorch",
+  "pipeline_name": "pipeline_sqlorch",
+  "project_id": 78,
+  "pipeline_id": 194,
+  "task_name": "task_sqlorch1",
+  "task_description": "kjh",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "ee4fcaca-b408-41e3-80d6-6ac986ed0e69",
+  "status": "Success",
+  "updated_dttm": "2024-06-16T18:00:03.000Z",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "new",
+      "schema": "config",
+      "chunk_size": 10000,
+      "table_name": "tbl_user",
+      "parameter_type": "MySQL",
+      "select_columns": "",
+      "connection_name": "mysql_sqlorch"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "config",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "tbl_new",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_sqlorch",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
