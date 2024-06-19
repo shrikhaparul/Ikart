@@ -1,0 +1,138 @@
+{
+  "login_id": "jjones",
+  "id": 606,
+  "project_name": "Demo_Project",
+  "pipeline_name": "SFTP_S3_RDS",
+  "project_id": 74,
+  "pipeline_id": 174,
+  "task_name": "OverAll_Flow",
+  "task_description": "OverAll_Flow",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-05-31T08:15:23.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_input_2": "0",
+      "Expression_new": "Filter_Filter_details",
+      "Input_input_local": "0",
+      "Output_outputData": "Expression_new",
+      "Joiner_joinerDetails": "Input_input_2,Input_input_local",
+      "Filter_Filter_details": "Joiner_joinerDetails"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "Filter_details": {
+              "label": "Filter",
+              "input_df": "jnr_zdf",
+              "output_df": "fil_udk",
+              "displayName": "Filter_details",
+              "transformation_name": "Filter_details",
+              "Filter_details_undefined": {
+                "id": "Filter_details_undefined",
+                "operator": ">",
+                "column_name": "employee_id_right",
+                "field_value": "1100",
+                "condition_type": "operation",
+                "operation_name": "Operation_02"
+              },
+              "Filter_details_Operation_1717142961441": {
+                "id": "Filter_details_Operation_1717142961441",
+                "operator": "and",
+                "group_name": "group1",
+                "Condition_01": "transformation_name",
+                "Condition_02": "Filter_details_undefined",
+                "condition_type": "group"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Expression": [
+          {
+            "new": {
+              "input_df": "fil_udk",
+              "output_df": "exp_pdo",
+              "transformation_name": "new"
+            }
+          }
+        ]
+      },
+      {
+        "Joiner": [
+          {
+            "joinerDetails": {
+              "join_type": "left",
+              "output_df": "jnr_zdf",
+              "left_input_df": "inp_gst",
+              "join_condition": "inp_gst.department.id=inp_ind.department_id",
+              "right_input_df": "inp_ivd",
+              "transformation_name": "joinerDetails"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "input_local": {
+              "header": "Y",
+              "schema": "ikart",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "employee_data.csv",
+              "file_path": "/home/madhu/Ingestion_code2/csv_files",
+              "file_type": "csv",
+              "output_df": "inp_gst",
+              "quote_char": "\"",
+              "table_name": "customers",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "first_name,last_name,employee_id,department,join_date,last_login_timestamp,salary_initial,current_salary,work_location,updated_location",
+              "connection_name": "local_conn",
+              "transformation_name": "input_local"
+            }
+          },
+          {
+            "input_2": {
+              "schema": "ikart",
+              "output_df": "inp_ivd",
+              "table_name": "departments",
+              "source_type": "MySQL",
+              "select_columns": "department_id,department_name",
+              "connection_name": "Mysql_ikart",
+              "transformation_name": "input_2"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "outputData": {
+              "schema": "config",
+              "input_df": "exp_pdo",
+              "operation": "create",
+              "table_name": "tbl_product",
+              "target_type": "MySQL",
+              "connection_name": "conn_mysql",
+              "transformation_name": "outputData"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
