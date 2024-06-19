@@ -1,0 +1,44 @@
+{
+  "login_id": "jjones",
+  "id": 727,
+  "project_name": "Prj_Data_Model",
+  "pipeline_name": "Pip_Bulk_Ingestion_Open_Payment_Data",
+  "project_id": 83,
+  "pipeline_id": 219,
+  "task_name": "Bulk_Remote_to_S3",
+  "task_description": "Bulk ingestion of parquet files",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-19T09:31:46.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "/home/Admin/all_files/bulk/source/",
+          "connection_name": "remote_serve_p",
+          "operation": "copy",
+          "files_filter_name": "*.parquet",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "file_path": "Excel_folder/files/Output_data/remote_data/",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "object_sufix_name": ""
+        }
+      }
+    ]
+  }
+}
