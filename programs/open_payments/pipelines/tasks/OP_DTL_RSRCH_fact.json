@@ -1,0 +1,19 @@
+{
+  "task_id": 734,
+  "pipeline_id": 217,
+  "project_name": "open_payments",
+  "task_name": "OP_DTL_RSRCH_fact",
+  "task_type": "SQL Execution",
+  "is_active": "Y",
+  "sql_execution": {
+    "connection_name": "oracle_xe",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "CREATE TABLE \"DWH\".\"OP_DTL_FACT\" AS\nSELECT\n    \"Record_ID\"\n    \"Change_Type\",\n    \"Submitting_Applicable_Manufacturer_or_Applicable_GPO_Name\",\n    \"Related_Product_Indicator\",\n    \"Total_Amount_of_Payment_USDollars\",\n    \"Date_of_Payment\",\n    \"Form_of_Payment_or_Transfer_of_Value\",\n    \"Preclinical_Research_Indicator\",\n    \"Delay_in_Publication_Indicator\",\n    \"Name_of_Study\",\n    \"Dispute_Status_for_Publication\",\n    \"Program_Year\",\n    \"Payment_Publication_Date\",\n    \"ClinicalTrials_Gov_Identifier\",\n    \"Research_Information_Link\",\n    \"Context_of_Research\"\nFROM\n    \"LND\".\"OP_DTL_RSRCH\"",
+      "table_used_desc": "from landing table we are creating fact table with all the measures in dwh schema"
+    }
+  ]
+}
