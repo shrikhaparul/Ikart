@@ -1,0 +1,1054 @@
+{
+  "login_id": "jjones",
+  "id": 728,
+  "project_name": "Prj_Data_Model",
+  "pipeline_name": "Pip_Bulk_Ingestion_Open_Payment_Data",
+  "project_id": 83,
+  "pipeline_id": 219,
+  "task_name": "Bulk_Oracle_to_S3",
+  "task_description": "Bulk Ingestion from oracle to s3 location.\nParquet files will be compressed in s3 location.",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-19T07:14:30.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "DISTRIBUTION_CENTERSCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "DISTRIBUTION_CENTERSCSV",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "10",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "UDP_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "UDP_TABLE",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "11",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "DRDOS_NTP_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "DRDOS_NTP_TABLE",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "12",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "DRDOS_UPD",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "DRDOS_UPD",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "13",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "DRDOS_LDAP",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "DRDOS_LDAP",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "14",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "DRDOS_SSDP_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "DRDOS_SSDP_TABLE",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "15",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "DRDOS_DNS_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "DRDOS_DNS_TABLE",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "16",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "UDP_LAGS",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "UDP_LAGS",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "17",
+        "source": {
+          "task_group": "3",
+          "connection_name": "oracle_p",
+          "object_name": "DRDOS_NETBIOS_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "DRDOS_NETBIOS_TABLE",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "18",
+        "source": {
+          "task_group": "4",
+          "connection_name": "oracle_p",
+          "object_name": "DRDOS_MSSQL_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "DRDOS_MSSQL_TABLE",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "19",
+        "source": {
+          "task_group": "4",
+          "connection_name": "oracle_p",
+          "object_name": "TFTP_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "TFTP_TABLE",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "TBL_NEWNM_M",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "TBL_NEWNM_M",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "20",
+        "source": {
+          "task_group": "4",
+          "connection_name": "oracle_p",
+          "object_name": "NETBIOS_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "NETBIOS_TABLE",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "21",
+        "source": {
+          "task_group": "4",
+          "connection_name": "oracle_p",
+          "object_name": "AWS_TEST_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "AWS_TEST_TABLE",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "22",
+        "source": {
+          "task_group": "4",
+          "connection_name": "oracle_p",
+          "object_name": "TEST_DATA",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "TEST_DATA",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "23",
+        "source": {
+          "task_group": "5",
+          "connection_name": "oracle_p",
+          "object_name": "INVENTORY_ITEMSCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "INVENTORY_ITEMSCSV",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "24",
+        "source": {
+          "task_group": "5",
+          "connection_name": "oracle_p",
+          "object_name": "EMPLOYEE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "EMPLOYEE",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "25",
+        "source": {
+          "task_group": "5",
+          "connection_name": "oracle_p",
+          "object_name": "ORDER_ITEMSCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "ORDER_ITEMSCSV",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "26",
+        "source": {
+          "task_group": "5",
+          "connection_name": "oracle_p",
+          "object_name": "TEST_EMPLOYEE_DETAILS_JSON",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "TEST_EMPLOYEE_DETAILS_JSON",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "27",
+        "source": {
+          "task_group": "5",
+          "connection_name": "oracle_p",
+          "object_name": "OPEN",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "OPEN",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "28",
+        "source": {
+          "task_group": "6",
+          "connection_name": "oracle_p",
+          "object_name": "TEST_TEST_DATA",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "TEST_TEST_DATA",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "29",
+        "source": {
+          "task_group": "6",
+          "connection_name": "oracle_p",
+          "object_name": "PRODUCTSCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "PRODUCTSCSV",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "NAME_MAPPINGCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "NAME_MAPPINGCSV",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "30",
+        "source": {
+          "task_group": "6",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE5",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "IMPT_TABLE5",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "31",
+        "source": {
+          "task_group": "6",
+          "connection_name": "oracle_p",
+          "object_name": "SALES_ALIAS",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "SALES_ALIAS",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "32",
+        "source": {
+          "task_group": "6",
+          "connection_name": "oracle_p",
+          "object_name": "TRAINCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "TRAINCSV",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "33",
+        "source": {
+          "task_group": "7",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE1",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "IMPT_TABLE1",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "34",
+        "source": {
+          "task_group": "7",
+          "connection_name": "oracle_p",
+          "object_name": "USERSCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "USERSCSV",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "35",
+        "source": {
+          "task_group": "7",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE4",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "IMPT_TABLE4",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "36",
+        "source": {
+          "task_group": "7",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE2",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "IMPT_TABLE2",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "37",
+        "source": {
+          "task_group": "7",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE3",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "IMPT_TABLE3",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "38",
+        "source": {
+          "task_group": "8",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE6",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "IMPT_TABLE6",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "39",
+        "source": {
+          "task_group": "8",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE7",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "IMPT_TABLE7",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "BEBE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "BEBE",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "40",
+        "source": {
+          "task_group": "8",
+          "connection_name": "oracle_p",
+          "object_name": "IMPT_TABLE10",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "IMPT_TABLE10",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "41",
+        "source": {
+          "task_group": "8",
+          "connection_name": "oracle_p",
+          "object_name": "OPENP",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "OPENP",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "SURVIVAL_DATACSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "SURVIVAL_DATACSV",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "SALES_11",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "SALES_11",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "ORDERSCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "ORDERSCSV",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "TEMP_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "TEMP_TABLE",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_p",
+          "object_name": "SYN_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "file_path": "Excel_folder/files/oracle/",
+          "compression": "gzip",
+          "object_name": "SYN_TABLE",
+          "audit_fields": "no",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "Tgt_",
+          "target_file_format": "parquet"
+        }
+      }
+    ]
+  }
+}
