@@ -1,0 +1,59 @@
+{
+  "login_id": "Madhu",
+  "id": 624,
+  "project_name": "project_sqlorch",
+  "pipeline_name": "pipeline_sqlorch",
+  "project_id": 78,
+  "pipeline_id": 194,
+  "task_name": "newTr",
+  "task_description": ".kjhnbv",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "046b668d-ac5c-4a24-9d4d-61399f70ac9f",
+  "status": "Success",
+  "updated_dttm": "2024-06-19T18:34:14.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_tr1": "0",
+      "Output_tr3": "Input_tr1"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "tr1": {
+              "schema": "STAGE",
+              "output_df": "inp_cyn",
+              "table_name": "DISTRIBUTION_CENTERSCSV",
+              "source_type": "Oracle",
+              "select_columns": "CRTD_BY,CRTD_DTTM,ID,LATITUDE,LONGITUDE,NAME,UPDT_BY,UPDT_DTTM",
+              "connection_name": "oracle_conn_test",
+              "transformation_name": "tr1"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "tr3": {
+              "schema": "STAGE",
+              "input_df": "inp_cyn",
+              "operation": "create",
+              "table_name": "tbl_userNew",
+              "target_type": "Oracle",
+              "connection_name": "oracle_conn_test",
+              "transformation_name": "tr3"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
