@@ -1,0 +1,59 @@
+{
+  "login_id": "rperuman",
+  "id": 747,
+  "project_name": "open_payments",
+  "pipeline_name": "OP_research_facts_dimensions",
+  "project_id": 79,
+  "pipeline_id": 217,
+  "task_name": "transformed_file_load",
+  "task_description": "loads data from postgres table to S3 file in compressed and encrypted format",
+  "task_type": "Ingestion",
+  "task_sequence": "\"744\"",
+  "last_run_id": "13556a01-32d0-45c9-ac36-5b17e1990569",
+  "status": "Success",
+  "updated_dttm": "2024-06-20T19:18:20.000Z",
+  "source": "PostgreSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT \n    \"COVERED_RECIPIENT_TYPE\", \n    \"COVERED_RECIPIENT_NPI\", \n    \"COVERED_RECIPIENT_FIRST_NAME\", \n    \"COVERED_RECIPIENT_LAST_NAME\", \n    \"RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE1\", \n    \"RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE2\", \n    \"RECIPIENT_CITY\", \n    \"RECIPIENT_STATE\", \n    \"RECIPIENT_ZIP_CODE\", \n    \"RECIPIENT_COUNTRY\", \n    \"RECIPIENT_PROVINCE\", \n    \"RECIPIENT_POSTAL_CODE\", \n    \"RECORD_ID\", \n    \"SUBMITTING_MANUFACTURER_NAME\", \n    \"TOTAL_AMOUNT_OF_PAYMENT_USDOLLARS\", \n    \"DATE_OF_PAYMENT\", \n    \"FORM_OF_PAYMENT_OR_TRANSFER_OF_VALUE\", \n    \"PRECLINICAL_RESEARCH_INDICATOR\", \n    \"NAME_OF_STUDY\", \n    \"PROGRAM_YEAR\", \n    \"PAYMENT_PUBLICATION_DATE\", \n    \"MANUFACTURER_PAYMENT_ID\", \n    \"MANUFACTURER_PAYMENT_NAME\", \n    \"MANUFACTURER_PAYMENT_COUNTRY\", \n    \"julian_date_of_payment\", \n    \"gregorian_date_of_payment\",\n    \"total_amount_of_payment_in_rupees\"\nFROM \n    dwh.modified_op_dtl_rsrch",
+      "schema": "dwh",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 100000,
+      "table_name": "modified_op_dtl_rsrch",
+      "parameter_type": "PostgreSQL",
+      "select_columns": "COVERED_RECIPIENT_TYPE,COVERED_RECIPIENT_NPI,COVERED_RECIPIENT_FIRST_NAME,COVERED_RECIPIENT_LAST_NAME,RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE1,RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE2,RECIPIENT_CITY,RECIPIENT_STATE,RECIPIENT_ZIP_CODE,RECIPIENT_COUNTRY,RECIPIENT_PROVINCE,RECIPIENT_POSTAL_CODE,RECORD_ID,SUBMITTING_MANUFACTURER_NAME,TOTAL_AMOUNT_OF_PAYMENT_USDOLLARS,DATE_OF_PAYMENT,FORM_OF_PAYMENT_OR_TRANSFER_OF_VALUE,PRECLINICAL_RESEARCH_INDICATOR,NAME_OF_STUDY,PROGRAM_YEAR,PAYMENT_PUBLICATION_DATE,MANUFACTURER_PAYMENT_ID,MANUFACTURER_PAYMENT_NAME,MANUFACTURER_PAYMENT_COUNTRY,julian_date_of_payment,gregorian_date_of_payment,total_amount_of_payment_in_rupees",
+      "connection_name": "postgres"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "OP_DTL_RSRCH_%DD%%MM%%YYYY%.parquet",
+      "file_path": "demo/features/",
+      "file_type": "parquet",
+      "operation": "append",
+      "encryption": "yes",
+      "quote_char": "\"",
+      "compression": "snappy",
+      "escape_char": "\\",
+      "skip_footer": "0",
+      "skip_header": "0",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "AWS_S3",
+      "public_key_path": "/home/Admin/actions-runner/_work/recipient_public_key.asc",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
