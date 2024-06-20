@@ -1,0 +1,109 @@
+{
+  "login_id": "rperuman",
+  "id": 744,
+  "project_name": "open_payments",
+  "pipeline_name": "OP_research_facts_dimensions",
+  "project_id": 79,
+  "pipeline_id": 217,
+  "task_name": "OP_DTL_Transformations",
+  "task_description": "applies transformations on OP_DTL facts and dimensions data",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "cedae34c-d236-4251-9450-2fd8b9bd7d4e",
+  "status": "Failed",
+  "updated_dttm": "2024-06-20T13:48:42.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_fact": "0",
+      "Joiner_join1": "Input_fact,Input_Manufacturer",
+      "Joiner_join2": "Input_Covered_recipient,Joiner_join1",
+      "Output_result": "Joiner_join2",
+      "Input_Manufacturer": "0",
+      "Input_Covered_recipient": "0"
+    },
+    "details": [
+      {
+        "Joiner": [
+          {
+            "join1": {
+              "join_type": "inner",
+              "output_df": "jnr_tbl",
+              "left_input_df": "inp_yrm",
+              "join_condition": "inp_yrm.record_id = inp_nfw.record_id",
+              "right_input_df": "inp_nfw",
+              "transformation_name": "join1"
+            }
+          },
+          {
+            "join2": {
+              "join_type": "inner",
+              "output_df": "jnr_goa",
+              "left_input_df": "inp_mhv",
+              "join_condition": "jnr_tbl.record_id_left = inp_mhv.record_id",
+              "right_input_df": "jnr_tbl",
+              "transformation_name": "join2"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "Covered_recipient": {
+              "schema": "DWH",
+              "output_df": "inp_mhv",
+              "table_name": "COVERED_RECIPIENT",
+              "source_type": "Oracle",
+              "select_columns": "RECORD_ID,RECIPIENT_ZIP_CODE,RECIPIENT_STATE,RECIPIENT_PROVINCE,RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE2,RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE1,COVERED_RECIPIENT_FIRST_NAME,COVERED_RECIPIENT_LAST_NAME,COVERED_RECIPIENT_NPI,COVERED_RECIPIENT_TYPE,RECIPIENT_CITY,RECIPIENT_COUNTRY,RECIPIENT_POSTAL_CODE",
+              "connection_name": "oracle_xe",
+              "transformation_name": "Covered_recipient"
+            }
+          },
+          {
+            "fact": {
+              "schema": "DWH",
+              "output_df": "inp_yrm",
+              "table_name": "OP_DTL_RSRCH_FACT",
+              "source_type": "Oracle",
+              "select_columns": "CHANGE_TYPE,CLINICALTRIALS_GOV_IDENTIFIER,CONTEXT_OF_RESEARCH,DATE_OF_PAYMENT,DELAY_IN_PUBLICATION_INDICATOR,DISPUTE_STATUS_FOR_PUBLICATION,FORM_OF_PAYMENT_OR_TRANSFER_OF_VALUE,NAME_OF_STUDY,PAYMENT_PUBLICATION_DATE,PRECLINICAL_RESEARCH_INDICATOR,PROGRAM_YEAR,RECORD_ID,RELATED_PRODUCT_INDICATOR,RESEARCH_INFORMATION_LINK,SUBMITTING_APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_NAME,TOTAL_AMOUNT_OF_PAYMENT_USDOLLARS",
+              "connection_name": "oracle_xe",
+              "transformation_name": "fact"
+            }
+          },
+          {
+            "Manufacturer": {
+              "schema": "DWH",
+              "output_df": "inp_nfw",
+              "table_name": "MANUFACTURER",
+              "source_type": "Oracle",
+              "select_columns": "APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_COUNTRY,APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_ID,APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_NAME,APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_STATE,RECORD_ID",
+              "connection_name": "oracle_xe",
+              "transformation_name": "Manufacturer"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "result": {
+              "schema": "dwh",
+              "input_df": "jnr_goa",
+              "operation": "replace",
+              "table_name": "modified_op_dtl_rsrch",
+              "target_type": "PostgreSQL",
+              "connection_name": "postgres",
+              "transformation_name": "result"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
