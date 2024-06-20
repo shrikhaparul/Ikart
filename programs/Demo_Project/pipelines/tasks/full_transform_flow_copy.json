@@ -74,9 +74,9 @@
               "input_df": "fil_avx",
               "output_df": "exp_cgu",
               "transformation_name": "ExpressionData",
-              "ExpressionData_3": {
+              "ExpressionData_4": {
                 "operator": "to_gregorian",
-                "sequence": "3",
+                "sequence": "4",
                 "operatorType": "Date and Time",
                 "input_col_name": "",
                 "output_col_name": "joining_date_gergorian",
@@ -130,9 +130,9 @@
                 "output_col_name": "salary_USD",
                 "expression_value": "currency_conv(salary_initial_left,INR,USD)"
               },
-              "ExpressionData_4": {
+              "ExpressionData_3": {
                 "operator": "to_julian",
-                "sequence": "4",
+                "sequence": "3",
                 "operatorType": "Date and Time",
                 "input_col_name": "",
                 "output_col_name": "joining_date_julian",
