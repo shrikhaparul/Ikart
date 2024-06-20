@@ -1,0 +1,392 @@
+{
+  "login_id": "rperuman",
+  "id": 744,
+  "project_name": "open_payments",
+  "pipeline_name": "OP_research_facts_dimensions",
+  "project_id": 79,
+  "pipeline_id": 217,
+  "task_name": "OP_DTL_Transformations",
+  "task_description": "applies transformations on OP_DTL facts and dimensions data",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-20T13:48:42.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_fact": "0",
+      "Joiner_join1": "Input_fact,Input_Manufacturer",
+      "Joiner_join2": "Joiner_join1,Input_Covered_recipient",
+      "Output_result": "Expression_conversion",
+      "Input_Manufacturer": "0",
+      "Expression_conversion": "Joiner_join2",
+      "Input_Covered_recipient": "0"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "conversion": {
+              "input_df": "jnr_goa",
+              "output_df": "exp_vll",
+              "transformation_name": "conversion",
+              "conversion_16": {
+                "operator": "",
+                "sequence": "16",
+                "operatorType": "",
+                "input_col_name": "TOTAL_AMOUNT_OF_PAYMENT_USDOLLARS_left_left",
+                "output_col_name": "TOTAL_AMOUNT_OF_PAYMENT_USDOLLARS_left_left",
+                "expression_value": " "
+              },
+              "conversion_28": {
+                "operator": "",
+                "sequence": "28",
+                "operatorType": "",
+                "input_col_name": "COVERED_RECIPIENT_FIRST_NAME_right",
+                "output_col_name": "COVERED_RECIPIENT_FIRST_NAME_right",
+                "expression_value": " "
+              },
+              "conversion_17": {
+                "operator": "",
+                "sequence": "17",
+                "operatorType": "",
+                "input_col_name": "APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_COUNTRY_right_left",
+                "output_col_name": "APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_COUNTRY_right_left",
+                "expression_value": " "
+              },
+              "conversion_26": {
+                "operator": "",
+                "sequence": "26",
+                "operatorType": "",
+                "input_col_name": "RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE2_right",
+                "output_col_name": "RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE2_right",
+                "expression_value": " "
+              },
+              "conversion_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "FORM_OF_PAYMENT_OR_TRANSFER_OF_VALUE_left_left",
+                "output_col_name": "FORM_OF_PAYMENT_OR_TRANSFER_OF_VALUE_left_left",
+                "expression_value": " "
+              },
+              "conversion_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "DISPUTE_STATUS_FOR_PUBLICATION_left_left",
+                "output_col_name": "DISPUTE_STATUS_FOR_PUBLICATION_left_left",
+                "expression_value": " "
+              },
+              "conversion_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "DELAY_IN_PUBLICATION_INDICATOR_left_left",
+                "output_col_name": "DELAY_IN_PUBLICATION_INDICATOR_left_left",
+                "expression_value": " "
+              },
+              "conversion_27": {
+                "operator": "",
+                "sequence": "27",
+                "operatorType": "",
+                "input_col_name": "RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE1_right",
+                "output_col_name": "RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE1_right",
+                "expression_value": " "
+              },
+              "conversion_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "DATE_OF_PAYMENT_left_left",
+                "output_col_name": "DATE_OF_PAYMENT_left_left",
+                "expression_value": " "
+              },
+              "conversion_34": {
+                "operator": "",
+                "sequence": "34",
+                "operatorType": "",
+                "input_col_name": "RECIPIENT_POSTAL_CODE_right",
+                "output_col_name": "RECIPIENT_POSTAL_CODE_right",
+                "expression_value": " "
+              },
+              "conversion_33": {
+                "operator": "",
+                "sequence": "33",
+                "operatorType": "",
+                "input_col_name": "RECIPIENT_COUNTRY_right",
+                "output_col_name": "RECIPIENT_COUNTRY_right",
+                "expression_value": " "
+              },
+              "conversion_31": {
+                "operator": "",
+                "sequence": "31",
+                "operatorType": "",
+                "input_col_name": "COVERED_RECIPIENT_TYPE_right",
+                "output_col_name": "COVERED_RECIPIENT_TYPE_right",
+                "expression_value": " "
+              },
+              "conversion_30": {
+                "operator": "",
+                "sequence": "30",
+                "operatorType": "",
+                "input_col_name": "COVERED_RECIPIENT_NPI_right",
+                "output_col_name": "COVERED_RECIPIENT_NPI_right",
+                "expression_value": " "
+              },
+              "conversion_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "CONTEXT_OF_RESEARCH_left_left",
+                "output_col_name": "CONTEXT_OF_RESEARCH_left_left",
+                "expression_value": " "
+              },
+              "conversion_24": {
+                "operator": "",
+                "sequence": "24",
+                "operatorType": "",
+                "input_col_name": "RECIPIENT_STATE_right",
+                "output_col_name": "RECIPIENT_STATE_right",
+                "expression_value": " "
+              },
+              "conversion_29": {
+                "operator": "",
+                "sequence": "29",
+                "operatorType": "",
+                "input_col_name": "COVERED_RECIPIENT_LAST_NAME_right",
+                "output_col_name": "COVERED_RECIPIENT_LAST_NAME_right",
+                "expression_value": " "
+              },
+              "conversion_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "RESEARCH_INFORMATION_LINK_left_left",
+                "output_col_name": "RESEARCH_INFORMATION_LINK_left_left",
+                "expression_value": " "
+              },
+              "conversion_19": {
+                "operator": "",
+                "sequence": "19",
+                "operatorType": "",
+                "input_col_name": "APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_NAME_right_left",
+                "output_col_name": "APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_NAME_right_left",
+                "expression_value": " "
+              },
+              "conversion_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "PAYMENT_PUBLICATION_DATE_left_left",
+                "output_col_name": "PAYMENT_PUBLICATION_DATE_left_left",
+                "expression_value": " "
+              },
+              "conversion_22": {
+                "operator": "",
+                "sequence": "22",
+                "operatorType": "",
+                "input_col_name": "RECORD_ID_right",
+                "output_col_name": "RECORD_ID_right",
+                "expression_value": " "
+              },
+              "conversion_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "NAME_OF_STUDY_left_left",
+                "output_col_name": "NAME_OF_STUDY_left_left",
+                "expression_value": " "
+              },
+              "conversion_25": {
+                "operator": "",
+                "sequence": "25",
+                "operatorType": "",
+                "input_col_name": "RECIPIENT_PROVINCE_right",
+                "output_col_name": "RECIPIENT_PROVINCE_right",
+                "expression_value": " "
+              },
+              "conversion_21": {
+                "operator": "",
+                "sequence": "21",
+                "operatorType": "",
+                "input_col_name": "RECORD_ID_right_left",
+                "output_col_name": "RECORD_ID_right_left",
+                "expression_value": " "
+              },
+              "conversion_20": {
+                "operator": "",
+                "sequence": "20",
+                "operatorType": "",
+                "input_col_name": "APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_STATE_right_left",
+                "output_col_name": "APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_STATE_right_left",
+                "expression_value": " "
+              },
+              "conversion_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "CLINICALTRIALS_GOV_IDENTIFIER_left_left",
+                "output_col_name": "CLINICALTRIALS_GOV_IDENTIFIER_left_left",
+                "expression_value": " "
+              },
+              "conversion_32": {
+                "operator": "",
+                "sequence": "32",
+                "operatorType": "",
+                "input_col_name": "RECIPIENT_CITY_right",
+                "output_col_name": "RECIPIENT_CITY_right",
+                "expression_value": " "
+              },
+              "conversion_18": {
+                "operator": "",
+                "sequence": "18",
+                "operatorType": "",
+                "input_col_name": "APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_ID_right_left",
+                "output_col_name": "APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_ID_right_left",
+                "expression_value": " "
+              },
+              "conversion_23": {
+                "operator": "",
+                "sequence": "23",
+                "operatorType": "",
+                "input_col_name": "RECIPIENT_ZIP_CODE_right",
+                "output_col_name": "RECIPIENT_ZIP_CODE_right",
+                "expression_value": " "
+              },
+              "conversion_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "CHANGE_TYPE_left_left",
+                "output_col_name": "CHANGE_TYPE_left_left",
+                "expression_value": " "
+              },
+              "conversion_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "PRECLINICAL_RESEARCH_INDICATOR_left_left",
+                "output_col_name": "PRECLINICAL_RESEARCH_INDICATOR_left_left",
+                "expression_value": " "
+              },
+              "conversion_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "PROGRAM_YEAR_left_left",
+                "output_col_name": "PROGRAM_YEAR_left_left",
+                "expression_value": " "
+              },
+              "conversion_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "RECORD_ID_left_left",
+                "output_col_name": "RECORD_ID_left_left",
+                "expression_value": " "
+              },
+              "conversion_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "RELATED_PRODUCT_INDICATOR_left_left",
+                "output_col_name": "RELATED_PRODUCT_INDICATOR_left_left",
+                "expression_value": " "
+              },
+              "conversion_15": {
+                "operator": "",
+                "sequence": "15",
+                "operatorType": "",
+                "input_col_name": "SUBMITTING_APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_NAME_left_left",
+                "output_col_name": "SUBMITTING_APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_NAME_left_left",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Joiner": [
+          {
+            "join2": {
+              "join_type": "inner",
+              "output_df": "jnr_goa",
+              "left_input_df": "jnr_tbl",
+              "join_condition": "jnr_tbl.RECORD_ID_left = inp_mhv.RECORD_ID",
+              "right_input_df": "inp_mhv",
+              "transformation_name": "join2"
+            }
+          },
+          {
+            "join1": {
+              "join_type": "inner",
+              "output_df": "jnr_tbl",
+              "left_input_df": "inp_yrm",
+              "join_condition": "inp_yrm.RECORD_ID = inp_nfw.RECORD_ID",
+              "right_input_df": "inp_nfw",
+              "transformation_name": "join1"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "fact": {
+              "schema": "DWH",
+              "output_df": "inp_yrm",
+              "table_name": "OP_DTL_RSRCH_FACT",
+              "source_type": "Oracle",
+              "select_columns": "CHANGE_TYPE,CLINICALTRIALS_GOV_IDENTIFIER,CONTEXT_OF_RESEARCH,DATE_OF_PAYMENT,DELAY_IN_PUBLICATION_INDICATOR,DISPUTE_STATUS_FOR_PUBLICATION,FORM_OF_PAYMENT_OR_TRANSFER_OF_VALUE,NAME_OF_STUDY,PAYMENT_PUBLICATION_DATE,PRECLINICAL_RESEARCH_INDICATOR,PROGRAM_YEAR,RECORD_ID,RELATED_PRODUCT_INDICATOR,RESEARCH_INFORMATION_LINK,SUBMITTING_APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_NAME,TOTAL_AMOUNT_OF_PAYMENT_USDOLLARS",
+              "connection_name": "oracle_xe",
+              "transformation_name": "fact"
+            }
+          },
+          {
+            "Covered_recipient": {
+              "schema": "DWH",
+              "output_df": "inp_mhv",
+              "table_name": "COVERED_RECIPIENT",
+              "source_type": "Oracle",
+              "select_columns": "RECORD_ID,RECIPIENT_ZIP_CODE,RECIPIENT_STATE,RECIPIENT_PROVINCE,RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE2,RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE1,COVERED_RECIPIENT_FIRST_NAME,COVERED_RECIPIENT_LAST_NAME,COVERED_RECIPIENT_NPI,COVERED_RECIPIENT_TYPE,RECIPIENT_CITY,RECIPIENT_COUNTRY,RECIPIENT_POSTAL_CODE",
+              "connection_name": "oracle_xe",
+              "transformation_name": "Covered_recipient"
+            }
+          },
+          {
+            "Manufacturer": {
+              "schema": "DWH",
+              "output_df": "inp_nfw",
+              "table_name": "MANUFACTURER",
+              "source_type": "Oracle",
+              "select_columns": "APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_COUNTRY,APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_ID,APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_NAME,APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_STATE,RECORD_ID",
+              "connection_name": "oracle_xe",
+              "transformation_name": "Manufacturer"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "result": {
+              "schema": "dwh",
+              "input_df": "exp_vll",
+              "operation": "replace",
+              "target_type": "PostgreSQL",
+              "connection_name": "postgres",
+              "transformation_name": "result"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
