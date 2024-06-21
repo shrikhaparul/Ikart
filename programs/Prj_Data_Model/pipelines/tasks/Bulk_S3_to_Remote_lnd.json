@@ -1,0 +1,45 @@
+{
+  "login_id": "jjones",
+  "id": 729,
+  "project_name": "Prj_Data_Model",
+  "pipeline_name": "Pip_Bulk_Ingestion_Open_Payment_Data",
+  "project_id": 83,
+  "pipeline_id": 219,
+  "task_name": "Bulk_S3_to_Remote_lnd",
+  "task_description": "Placing the files from s3 location to remote location using Bulk Ingestion",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"728\"",
+  "last_run_id": "92fae475-69b8-418d-9960-67147f58cf42",
+  "status": "Success",
+  "updated_dttm": "2024-06-19T08:18:36.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "Excel_folder/files/oracle/",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "operation": "move",
+          "files_filter_name": "*.parquet.gz",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "file_path": "/home/Admin/actions-runner/_work/UI/tgt_files/oracle/",
+          "connection_name": "ec2_local_server_files_to_files",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": ""
+        }
+      }
+    ]
+  }
+}
