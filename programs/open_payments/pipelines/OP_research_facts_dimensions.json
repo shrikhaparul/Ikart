@@ -1,0 +1,212 @@
+{
+  "pipeline_id": 217,
+  "project_id": 79,
+  "pipeline_name": "OP_research_facts_dimensions",
+  "pipeline_cd": null,
+  "pipeline_description": "pipeline which deals with OP research data and creates dimensions and facts from it.",
+  "is_active": "Y",
+  "tasks_details": {
+    "raw_data_load": 0,
+    "Manufacturer_dim": [
+      "raw_data_load"
+    ],
+    "OP_DTL_RSRCH_fact": [
+      "Principal_Investigator",
+      "covered_recipients"
+    ],
+    "teaching_hospitals": [
+      "raw_data_load"
+    ],
+    "covered_recipients": [
+      "Manufacturer_dim"
+    ],
+    "S3ToRemoteDataLoader": [
+      "transformed_file_load"
+    ],
+    "transformed_file_load": [
+      "OP_DTL_Transformations"
+    ],
+    "Principal_Investigator": [
+      "teaching_hospitals"
+    ],
+    "OP_DTL_Transformations": [
+      "OP_DTL_RSRCH_fact"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "724",
+      "data": {
+        "label": "724-raw_data_load"
+      },
+      "position": {
+        "x": 50,
+        "y": 11650
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "725",
+      "data": {
+        "label": "725-Manufacturer_dim"
+      },
+      "position": {
+        "x": 50,
+        "y": 11700
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "726",
+      "data": {
+        "label": "726-teaching_hospitals"
+      },
+      "position": {
+        "x": 50,
+        "y": 11750
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "730",
+      "data": {
+        "label": "730-covered_recipients"
+      },
+      "position": {
+        "x": 50,
+        "y": 11800
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "731",
+      "data": {
+        "label": "731-Principal_Investigator"
+      },
+      "position": {
+        "x": 50,
+        "y": 11850
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "734",
+      "data": {
+        "label": "734-OP_DTL_RSRCH_fact"
+      },
+      "position": {
+        "x": 50,
+        "y": 11900
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "744",
+      "data": {
+        "label": "744-OP_DTL_Transformations"
+      },
+      "position": {
+        "x": 50,
+        "y": 11950
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "747",
+      "data": {
+        "label": "747-transformed_file_load"
+      },
+      "position": {
+        "x": 50,
+        "y": 12000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "748",
+      "data": {
+        "label": "748-S3ToRemoteDataLoader"
+      },
+      "position": {
+        "x": 50,
+        "y": 12050
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-724",
+      "source": "0",
+      "target": "724"
+    },
+    {
+      "id": "flow-724-725",
+      "source": "724",
+      "target": "725"
+    },
+    {
+      "id": "flow-724-726",
+      "source": "724",
+      "target": "726"
+    },
+    {
+      "id": "flow-725-730",
+      "source": "725",
+      "target": "730"
+    },
+    {
+      "id": "flow-726-731",
+      "source": "726",
+      "target": "731"
+    },
+    {
+      "id": "flow-731-734",
+      "source": "731",
+      "target": "734"
+    },
+    {
+      "id": "flow-730-734",
+      "source": "730",
+      "target": "734"
+    },
+    {
+      "id": "flow-734-744",
+      "source": "734",
+      "target": "744"
+    },
+    {
+      "id": "flow-744-747",
+      "source": "744",
+      "target": "747"
+    },
+    {
+      "id": "flow-747-748",
+      "source": "747",
+      "target": "748"
+    }
+  ],
+  "created_dttm": "2024-06-21T08:27:46.485Z",
+  "updated_dttm": "2024-06-21T08:27:46.485Z"
+}
