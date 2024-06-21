@@ -1,0 +1,55 @@
+{
+  "login_id": "jjones",
+  "id": 562,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "local_to_AWS_S3",
+  "task_description": "local_to_AWS_S3 sales 5 million testing",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "b324417c-2ea8-4fff-ba44-3fe6c15e74f6",
+  "status": "Failed",
+  "updated_dttm": "2024-04-11T06:34:26.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 1000000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/UI/all_files/",
+          "operation": "copy",
+          "task_group": "0",
+          "object_name": "agregated_sales.csv",
+          "object_type": "csv",
+          "skip_header": "1",
+          "files_filter_name": "visa_card.csv",
+          "subfolder_included": "yes"
+        },
+        "target": {
+          "file_path": "test/",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "object_name": "tgt_agregated_salessv",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "_%DD%-%MM%-%YYYY%"
+        }
+      }
+    ]
+  }
+}
