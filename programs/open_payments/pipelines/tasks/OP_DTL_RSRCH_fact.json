@@ -1,0 +1,24 @@
+{
+  "task_id": 734,
+  "pipeline_id": 217,
+  "project_name": "open_payments",
+  "task_name": "OP_DTL_RSRCH_fact",
+  "task_type": "SQL Execution",
+  "is_active": "Y",
+  "sql_execution": {
+    "connection_name": "oracle_xe",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "TRUNCATE TABLE DWH.OP_DTL_RSRCH_FACT",
+      "table_used_desc": "Truncating  the table  DWH.OP_DTL_RSRCH_FACT"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "INSERT INTO \"DWH\".\"OP_DTL_RSRCH_FACT\" (\n    \"RECORD_ID\",\n    \"CHANGE_TYPE\",\n    \"SUBMITTING_APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_NAME\",\n    \"RELATED_PRODUCT_INDICATOR\",\n    \"TOTAL_AMOUNT_OF_PAYMENT_USDOLLARS\",\n    \"DATE_OF_PAYMENT\",\n    \"FORM_OF_PAYMENT_OR_TRANSFER_OF_VALUE\",\n    \"PRECLINICAL_RESEARCH_INDICATOR\",\n    \"DELAY_IN_PUBLICATION_INDICATOR\",\n    \"NAME_OF_STUDY\",\n    \"DISPUTE_STATUS_FOR_PUBLICATION\",\n    \"PROGRAM_YEAR\",\n    \"PAYMENT_PUBLICATION_DATE\",\n    \"CLINICALTRIALS_GOV_IDENTIFIER\",\n    \"RESEARCH_INFORMATION_LINK\",\n    \"CONTEXT_OF_RESEARCH\"\n)\nSELECT\n    \"RECORD_ID\",\n    \"CHANGE_TYPE\",\n    \"SUBMITTING_APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_NAME\",\n    \"RELATED_PRODUCT_INDICATOR\",\n    \"TOTAL_AMOUNT_OF_PAYMENT_USDOLLARS\",\n    \"DATE_OF_PAYMENT\",\n    \"FORM_OF_PAYMENT_OR_TRANSFER_OF_VALUE\",\n    \"PRECLINICAL_RESEARCH_INDICATOR\",\n    \"DELAY_IN_PUBLICATION_INDICATOR\",\n    \"NAME_OF_STUDY\",\n    \"DISPUTE_STATUS_FOR_PUBLICATION\",\n    \"PROGRAM_YEAR\",\n    \"PAYMENT_PUBLICATION_DATE\",\n    \"CLINICALTRIALS_GOV_IDENTIFIER\",\n    \"RESEARCH_INFORMATION_LINK\",\n    \"CONTEXT_OF_RESEARCH\"\nFROM\n    \"LND\".\"OP_DTL_RSRCH\"",
+      "table_used_desc": "we are inserting data into fact table with all the measures in dwh schema from landing table "
+    }
+  ]
+}
