@@ -1,0 +1,24 @@
+{
+  "task_id": 734,
+  "pipeline_id": 217,
+  "project_name": "open_payments",
+  "task_name": "OP_DTL_RSRCH_fact",
+  "task_type": "SQL Execution",
+  "is_active": "Y",
+  "sql_execution": {
+    "connection_name": "oracle_xe",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "TRUNCATE TABLE DWH.OP_DTL_RSRCH_FACT",
+      "table_used_desc": "Truncating  the table  DWH.OP_DTL_RSRCH_FACT"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "CREATE TABLE \"DWH\".\"OP_DTL_RSRCH_FACT\" AS\nSELECT\n    \"RECORD_ID\",\n\t\"CHANGE_TYPE\",\n\t\"SUBMITTING_APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_NAME\",\n\t\"RELATED_PRODUCT_INDICATOR\",\n\t\"TOTAL_AMOUNT_OF_PAYMENT_USDOLLARS\",\n\t\"DATE_OF_PAYMENT\",\n\t\"FORM_OF_PAYMENT_OR_TRANSFER_OF_VALUE\",\n\t\"PRECLINICAL_RESEARCH_INDICATOR\",\n\t\"DELAY_IN_PUBLICATION_INDICATOR\",\n\t\"NAME_OF_STUDY\",\n\t\"DISPUTE_STATUS_FOR_PUBLICATION\",\n\t\"PROGRAM_YEAR\",\n\t\"PAYMENT_PUBLICATION_DATE\",\n\t\"CLINICALTRIALS_GOV_IDENTIFIER\",\n\t\"RESEARCH_INFORMATION_LINK\",\n\t\"CONTEXT_OF_RESEARCH\"\nFROM\n    \"LND\".\"OP_DTL_RSRCH\"",
+      "table_used_desc": "we are creating fact table with all the measures in dwh schema from landing table "
+    }
+  ]
+}
