@@ -1,0 +1,16 @@
+{
+  "project_id": 61,
+  "connection_type": "Cloud DB",
+  "connection_subtype": "Snowflake",
+  "connection_name": "snowflake_connection",
+  "connection_details": {
+    "role": "ACCOUNTADMIN",
+    "account": "dq36161.ap-south-1",
+    "database": "ikart",
+    "password": "992eee379fa369c3ebac3d2d763d2a2c2af820154d4964761aefdd30700497",
+    "username": "Nandi",
+    "warehouse": "COMPUTE_WH",
+    "created_by": "jjones",
+    "updated_by": "jjones"
+  }
+}
