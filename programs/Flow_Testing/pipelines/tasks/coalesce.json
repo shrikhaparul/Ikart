@@ -1,0 +1,95 @@
+{
+  "login_id": "Pavan",
+  "id": 752,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "expression_conditional",
+  "project_id": 82,
+  "pipeline_id": 225,
+  "task_name": "coalesce",
+  "task_description": "test",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-24T06:19:07.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_q": "0",
+      "Output_3": "Expression_exp_01",
+      "Expression_exp_01": "Input_q"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "exp_01": {
+              "input_df": "inp_tiw",
+              "output_df": "exp_cwh",
+              "transformation_name": "exp_01",
+              "exp_01_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "col_10",
+                "output_col_name": "col_10",
+                "expression_value": " "
+              },
+              "exp_01_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "col_1",
+                "output_col_name": "col_1",
+                "expression_value": " "
+              },
+              "exp_01_3": {
+                "operator": "coalesce",
+                "sequence": "3",
+                "operatorType": "Conditional",
+                "input_col_name": "",
+                "output_col_name": "coalse_col",
+                "expression_value": "coalesce(col_01, col_10)"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "q": {
+              "schema": "transformation",
+              "output_df": "inp_tiw",
+              "table_name": "EC_03",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10",
+              "connection_name": "mysql_tr",
+              "transformation_name": "q"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "3": {
+              "schema": "transformation",
+              "input_df": "exp_cwh",
+              "operation": "create",
+              "table_name": "coalse",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "3"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
