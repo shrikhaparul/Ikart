@@ -1,0 +1,119 @@
+{
+  "login_id": "Pavan",
+  "id": 753,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "expression_math",
+  "project_id": 82,
+  "pipeline_id": 224,
+  "task_name": "expression_sub_mul",
+  "task_description": "testing of subtraction and multiplication",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-24T06:32:00.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_mysql_input": "0",
+      "Output_output_mysql": "Expression_exp_sub_mul",
+      "Expression_exp_sub_mul": "Input_mysql_input"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "exp_sub_mul": {
+              "input_df": "inp_cvh",
+              "output_df": "exp_lhp",
+              "transformation_name": "exp_sub_mul",
+              "exp_sub_mul_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "col_10",
+                "output_col_name": "col_10",
+                "expression_value": " "
+              },
+              "exp_sub_mul_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "col_1",
+                "output_col_name": "col_1",
+                "expression_value": " "
+              },
+              "exp_sub_mul_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "col_14",
+                "output_col_name": "col_14",
+                "expression_value": " "
+              },
+              "exp_sub_mul_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "getdate",
+                "output_col_name": "getdate",
+                "expression_value": " "
+              },
+              "exp_sub_mul_5": {
+                "operator": "multiplication",
+                "sequence": "5",
+                "operatorType": "Math",
+                "input_col_name": "",
+                "output_col_name": "col_14_hike",
+                "expression_value": "(col_14 * 0.8)"
+              },
+              "exp_sub_mul_6": {
+                "operator": "subtraction",
+                "sequence": "6",
+                "operatorType": "Math",
+                "input_col_name": "",
+                "output_col_name": "remaining_amt",
+                "expression_value": "(col_10 - 1000)"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "mysql_input": {
+              "schema": "transformation",
+              "output_df": "inp_cvh",
+              "table_name": "Exp_table",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_4,col_5,col_6,col_7,col_8,col_9,getdate",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql_input"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_mysql": {
+              "schema": "transformation",
+              "input_df": "exp_lhp",
+              "operation": "create",
+              "table_name": "sub_mul",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "output_mysql"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
