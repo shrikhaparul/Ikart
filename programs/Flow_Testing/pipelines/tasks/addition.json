@@ -1,0 +1,119 @@
+{
+  "login_id": "Pavan",
+  "id": 751,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "expression_math",
+  "project_id": 82,
+  "pipeline_id": 224,
+  "task_name": "addition",
+  "task_description": "Addition testing",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-24T06:09:51.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_mysql_input": "0",
+      "Output_output_mysql": "Expression_expression_math",
+      "Expression_expression_math": "Input_mysql_input"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "expression_math": {
+              "input_df": "inp_fhe",
+              "output_df": "exp_jwq",
+              "transformation_name": "expression_math",
+              "expression_math_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "col_11",
+                "output_col_name": "col_11",
+                "expression_value": " "
+              },
+              "expression_math_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "col_10",
+                "output_col_name": "col_10",
+                "expression_value": " "
+              },
+              "expression_math_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "col_1",
+                "output_col_name": "col_1",
+                "expression_value": " "
+              },
+              "expression_math_5": {
+                "operator": "addition",
+                "sequence": "5",
+                "operatorType": "Math",
+                "input_col_name": "",
+                "output_col_name": "addition",
+                "expression_value": "(col_10 + col_11)"
+              },
+              "expression_math_6": {
+                "operator": "addition",
+                "sequence": "6",
+                "operatorType": "Math",
+                "input_col_name": "",
+                "output_col_name": "total_amount",
+                "expression_value": "(addition + 1000)"
+              },
+              "expression_math_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "getdate",
+                "output_col_name": "getdate",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "mysql_input": {
+              "schema": "transformation",
+              "output_df": "inp_fhe",
+              "table_name": "Exp_table",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_4,col_5,col_6,col_7,col_8,col_9,getdate",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql_input"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_mysql": {
+              "schema": "transformation",
+              "input_df": "exp_jwq",
+              "operation": "create",
+              "table_name": "math_res",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "output_mysql"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
