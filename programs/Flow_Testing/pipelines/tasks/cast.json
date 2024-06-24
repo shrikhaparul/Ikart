@@ -1,0 +1,87 @@
+{
+  "login_id": "Pavan",
+  "id": 757,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Dtypes",
+  "project_id": 82,
+  "pipeline_id": 226,
+  "task_name": "cast",
+  "task_description": "test",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-24T10:58:52.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_1": "0",
+      "Output_1": "Expression_EXP",
+      "Expression_EXP": "Input_1"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "EXP": {
+              "input_df": "inp_lwk",
+              "output_df": "exp_tlv",
+              "transformation_name": "EXP",
+              "EXP_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "col_1",
+                "output_col_name": "col_1",
+                "expression_value": " "
+              },
+              "EXP_2": {
+                "operator": "cast",
+                "sequence": "2",
+                "operatorType": "Data Type Formatting",
+                "input_col_name": "",
+                "output_col_name": "new_column2",
+                "expression_value": "cast(col_1 AS float)"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "1": {
+              "schema": "transformation",
+              "output_df": "inp_lwk",
+              "table_name": "EC_03",
+              "source_type": "MySQL",
+              "select_columns": "col_1",
+              "connection_name": "mysql_tr",
+              "transformation_name": "1"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "1": {
+              "schema": "transformation",
+              "input_df": "exp_tlv",
+              "operation": "create",
+              "table_name": "cast",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "1"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
