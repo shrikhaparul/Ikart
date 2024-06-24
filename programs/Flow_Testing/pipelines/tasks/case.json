@@ -1,0 +1,87 @@
+{
+  "login_id": "Pavan",
+  "id": 755,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "expression_conditional",
+  "project_id": 82,
+  "pipeline_id": 225,
+  "task_name": "case",
+  "task_description": "test",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "7c914edb-9445-47d3-9de4-9edabf628363",
+  "status": "Failed",
+  "updated_dttm": "2024-06-24T09:54:00.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_1": "0",
+      "Output_1": "Expression_exp",
+      "Expression_exp": "Input_1"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "exp": {
+              "input_df": "inp_ejr",
+              "output_df": "exp_bkz",
+              "transformation_name": "exp",
+              "exp_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "col_1",
+                "output_col_name": "col_1",
+                "expression_value": " "
+              },
+              "exp_2": {
+                "operator": "case expression",
+                "sequence": "2",
+                "operatorType": "Conditional",
+                "input_col_name": "",
+                "output_col_name": "new_column2",
+                "expression_value": "CASE when (col_1>200) then 'above' when  (col_1<100) 'below'  else 'normal' END"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "1": {
+              "schema": "transformation",
+              "output_df": "inp_ejr",
+              "table_name": "EC_03",
+              "source_type": "MySQL",
+              "select_columns": "col_1",
+              "connection_name": "mysql_tr",
+              "transformation_name": "1"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "1": {
+              "schema": "transformation",
+              "input_df": "exp_bkz",
+              "operation": "create",
+              "table_name": "case",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "1"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
