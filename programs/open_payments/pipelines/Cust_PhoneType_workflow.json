@@ -1,0 +1,86 @@
+{
+  "pipeline_id": 227,
+  "project_id": 79,
+  "pipeline_name": "Cust_PhoneType_workflow",
+  "pipeline_cd": null,
+  "pipeline_description": "process of enriching customer phone data with additional information from phone type and customer type tables",
+  "is_active": "Y",
+  "tasks_details": {
+    "Cust_PhoneType_Ingest": 0,
+    "LocalToRemoteDataLoader": [
+      "Cust_PhoneType_Transform"
+    ],
+    "Cust_PhoneType_Transform": [
+      "Cust_PhoneType_Ingest"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "761",
+      "data": {
+        "label": "761-Cust_PhoneType_Ingest"
+      },
+      "position": {
+        "x": 50,
+        "y": 12200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "762",
+      "data": {
+        "label": "762-Cust_PhoneType_Transform"
+      },
+      "position": {
+        "x": 50,
+        "y": 12250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "764",
+      "data": {
+        "label": "764-LocalToRemoteDataLoader"
+      },
+      "position": {
+        "x": 50,
+        "y": 12300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-761",
+      "source": "0",
+      "target": "761"
+    },
+    {
+      "id": "flow-761-762",
+      "source": "761",
+      "target": "762"
+    },
+    {
+      "id": "flow-762-764",
+      "source": "762",
+      "target": "764"
+    }
+  ],
+  "created_dttm": "2024-06-25T08:10:20.201Z",
+  "updated_dttm": "2024-06-25T08:10:20.201Z"
+}
