@@ -1,0 +1,87 @@
+{
+  "login_id": "Pavan",
+  "id": 758,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Dtypes",
+  "project_id": 82,
+  "pipeline_id": 226,
+  "task_name": "to_char",
+  "task_description": "test",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "b7bd652a-7f51-4f77-b812-f8f4f1470ca6",
+  "status": "Failed",
+  "updated_dttm": "2024-06-25T05:16:13.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_1": "0",
+      "Output_opt": "Expression_EXP",
+      "Expression_EXP": "Input_1"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "EXP": {
+              "input_df": "inp_mhw",
+              "output_df": "exp_odg",
+              "transformation_name": "EXP",
+              "EXP_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "col_7",
+                "output_col_name": "col_7",
+                "expression_value": " "
+              },
+              "EXP_2": {
+                "operator": "to_char",
+                "sequence": "2",
+                "operatorType": "Data Type Formatting",
+                "input_col_name": "",
+                "output_col_name": "new_column2",
+                "expression_value": "to_char(col_7,'MM/DD/YYYY')"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "1": {
+              "schema": "transformation",
+              "output_df": "inp_mhw",
+              "table_name": "EC_03",
+              "source_type": "MySQL",
+              "select_columns": "col_7",
+              "connection_name": "mysql_tr",
+              "transformation_name": "1"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "opt": {
+              "schema": "transformation",
+              "input_df": "exp_odg",
+              "operation": "create",
+              "table_name": "to_char",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "opt"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
