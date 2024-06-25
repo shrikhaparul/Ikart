@@ -1,0 +1,54 @@
+{
+  "login_id": "rperuman",
+  "id": 761,
+  "project_name": "open_payments",
+  "pipeline_name": "Cust_PhoneType_workflow",
+  "project_id": 79,
+  "pipeline_id": 227,
+  "task_name": "Cust_PhoneType_Ingest",
+  "task_description": "extracting CustomerPhoneType data from Oracle server to AWS S3",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "5fee618b-5337-4e3f-81cf-4fbe190cd788",
+  "status": "Success",
+  "updated_dttm": "2024-06-24T17:23:36.000Z",
+  "source": "Oracle",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT \n    P.\"BUSINESSENTITYID\",\n    \"PERSONTYPE\",\n    \"TITLE\",\n    \"FIRSTNAME\",\n    \"MIDDLENAME\",\n    \"LASTNAME\",\n    \"SUFFIX\",\n    \"EMAILPROMOTION\",\n    \"DEMOGRAPHICS\",\n    \"ROWGUID\",\n    PC.\"CUSTOMER_TYPE_NAME\",\n    PC.\"PHONENUMBER\",\n    PC.\"PHONE_NUMBER_TYP\",\n    PC.\"CUSTOMER_TYPE_MODIFIEDDATE\"\nFROM \n    \"LND\".\"CUSTOMER\" P\nRIGHT JOIN \n    (SELECT \n    \"BUSINESSENTITYID\",\n    \"PHONENUMBER\",\n    PP.\"PHONENUMBERTYPEID\",\n    PP.\"MODIFIEDDATE\",\n    PN.\"NAME\" AS \"PHONE_NUMBER_TYP\",\n    CT.\"CONTACTTYPEID\",\n    CT.\"NAME\" AS \"CUSTOMER_TYPE_NAME\",\n    CT.\"MODIFIEDDATE\" AS \"CUSTOMER_TYPE_MODIFIEDDATE\"\nFROM \n    \"LND\".\"CUSTOMER_PHONE\" PP\nLEFT JOIN \n    \"LND\".\"CUSTOMER_PHONE_TYPE\" PN \nON \n    PP.\"PHONENUMBERTYPEID\" = PN.\"PHONENUMBERTYPEID\"\nLEFT JOIN \n    \"LND\".\"CUSTOMER_TYPE\" CT \nON \n    PN.\"PHONENUMBERTYPEID\" = CT.\"CONTACTTYPEID\") PC\nON \n    P.\"BUSINESSENTITYID\" = PC.\"BUSINESSENTITYID\"",
+      "schema": "LND",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "customer",
+      "parameter_type": "Oracle",
+      "select_columns": "ADDITIONALCONTACTINFO,BUSINESSENTITYID,DEMOGRAPHICS,EMAILPROMOTION,FIRSTNAME,LASTNAME,MIDDLENAME,MODIFIEDDATE,NAMESTYLE,PERSONTYPE,ROWGUID,SUFFIX,TITLE",
+      "connection_name": "oracle_xe"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "CustomerPhoneType",
+      "file_path": "/home/Admin/actions-runner/_work/UI/customer/",
+      "file_type": "csv",
+      "encryption": "no",
+      "quote_char": "\"",
+      "compression": "",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "local_server",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
