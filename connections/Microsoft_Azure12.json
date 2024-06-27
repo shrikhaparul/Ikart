@@ -1,0 +1,17 @@
+{
+  "project_id": 78,
+  "connection_type": "File Storage",
+  "connection_subtype": "Azure",
+  "connection_name": "Microsoft_Azure12",
+  "connection_details": {
+    "client_id": "af78a03cd1f42dceb4f3663a7b285eb0a90496e0642f58bcf627f6397b8f13825d042532158078ae33ab515c32a63677fb05bb6d",
+    "tenant_id": "ff73ab39defa2c98b4f5353b20285eedae0496e06b7a5bbcf277a46d74df148f59062133f8606e4b9605b1064bd85e70d9bcc2de",
+    "storage_url": "https://dptutorial1.blob.core.windows.net/",
+    "client_secret": "e730ad62b7bc76dcc9b23f2d154823f2bf03cbe02a2464a8b308915a75db61ea5b4c5a13e842517880e5c2fbe0d56d6a4a8bb15b495375cf",
+    "container_name": "dptutorial",
+    "access_key": "930dca62a2b667c2da8e3a6c233212c38157cdb422016fdd973c8e693ed356dd2c017166cb41040827d9228e8b881a45d171a17d51a8163f0fefac5f8143c51a68cea2bae928233c16a5b41b41902daee47b79a31ceec57aa72bbf235833fa6eb423c67e9fd44117",
+    "account_name": "dptutorial1",
+    "created_by": "Madhu",
+    "updated_by": "Madhu"
+  }
+}
