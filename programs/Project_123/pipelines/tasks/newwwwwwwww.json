@@ -1,0 +1,57 @@
+{
+  "login_id": "jjones",
+  "id": 403,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "newwwwwwwww",
+  "task_description": "xd",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "cec0b877-17d7-49ec-87cf-afee27ea1048",
+  "status": "Success",
+  "updated_dttm": "2024-05-24T09:57:01.000Z",
+  "source": "AWS S3",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "|",
+      "file_name": "test_data*.csv.gpg",
+      "file_path": "Excel_folder/files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "yes",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": "",
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "",
+      "parameter_type": "AWS S3",
+      "select_columns": "",
+      "connection_name": "aws_S3",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "INSERT",
+      "table_name": "aws_test_table",
+      "audit_columns": "active",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "Postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
