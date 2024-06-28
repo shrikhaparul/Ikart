@@ -44,7 +44,7 @@
       "schema": "public",
       "operation": "CREATE IF NOT EXIST",
       "table_name": "aws_test_table_q",
-      "audit_columns": "active",
+      "audit_columns": "inactive",
       "parameter_type": "PostgreSQL",
       "connection_name": "Postgres",
       "target_max_record_count": null
