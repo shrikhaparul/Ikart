@@ -22,7 +22,7 @@
       "source_type": "aws_s3_read",
       "header": "Y",
       "encoding": "utf-8",
-      "delimiter": ",",
+      "delimiter": "|",
       "file_name": "data_test*.csv",
       "file_path": "Excel_folder/files/",
       "file_type": "csv",
