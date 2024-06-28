@@ -1,0 +1,60 @@
+{
+  "login_id": "shilpi",
+  "id": 684,
+  "project_name": "Alpha",
+  "pipeline_name": "file_encryption_and_decryption",
+  "project_id": 81,
+  "pipeline_id": 208,
+  "task_name": "bulk_ora_awss3",
+  "task_description": "it will transfer encrypted file from oracle to s3 ",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "0c755fdf-8ec6-4735-9566-67afc94f4a45",
+  "status": "Success",
+  "updated_dttm": "2024-06-13T10:57:25.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 100000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "/home/Admin/actions-runner/_work/UI/files",
+          "connection_name": "localserver_s",
+          "operation": "copy",
+          "task_group": "3",
+          "object_name": "DRDOS_LDAP",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "extraction_type": "Full",
+          "files_filter_name": "*csv",
+          "subfolder_included": "no",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_s3_s",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/",
+          "encryption": "yes",
+          "compression": "gzip",
+          "object_name": "DRDOS_LDAP",
+          "audit_fields": "no",
+          "public_key_path": "/home/Admin/actions-runner/_work/recipient_public_key.asc",
+          "object_sufix_name": "%YYYY%",
+          "target_file_format": "parquet",
+          "target_max_record_count": "0"
+        }
+      }
+    ]
+  }
+}
