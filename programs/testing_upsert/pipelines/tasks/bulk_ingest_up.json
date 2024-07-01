@@ -1,0 +1,49 @@
+{
+  "login_id": "swetha",
+  "id": 775,
+  "project_name": "testing_upsert",
+  "pipeline_name": "upsert_demo",
+  "project_id": 78,
+  "pipeline_id": 195,
+  "task_name": "bulk_ingest_up",
+  "task_description": "bulk_ingest_up",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "b9b82f57-d1e0-4bfb-9155-f373bbb4bee4",
+  "status": "Failed",
+  "updated_dttm": "2024-06-26T17:03:26.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
+          "connection_name": "local_server_storage_ec2",
+          "task_group": "0",
+          "object_name": "abc_up.csv",
+          "object_type": "csv",
+          "files_filter_name": "abc_up.csv",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "abc_data",
+          "connection_name": "connection_mssqlserver_ec2",
+          "primary_key": "EmpID",
+          "schema_name": "dbo",
+          "audit_fields": "YES",
+          "database_name": "EverestDB",
+          "action_on_table": "UPSERT"
+        }
+      }
+    ]
+  }
+}
