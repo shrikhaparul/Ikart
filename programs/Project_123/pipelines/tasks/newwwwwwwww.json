@@ -43,7 +43,7 @@
       "target_type": "postgres_write",
       "schema": "public",
       "operation": "CREATE IF NOT EXIST",
-      "table_name": "aws_test_table_q_1",
+      "table_name": "aws_test_table",
       "audit_columns": "inactive",
       "parameter_type": "PostgreSQL",
       "connection_name": "Postgres",
