@@ -1,0 +1,51 @@
+{
+  "login_id": "swetha",
+  "id": 775,
+  "project_name": "testing_upsert",
+  "pipeline_name": "upsert_demo",
+  "project_id": 78,
+  "pipeline_id": 195,
+  "task_name": "bulk_ingest_up",
+  "task_description": "bulk_ingest_up",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "eda1d431-00c0-4ff9-a351-71ab71b6e2a4",
+  "status": "Running",
+  "updated_dttm": "2024-06-26T17:03:26.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "swetha",
+  "updated_by": "swetha",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "5",
+          "connection_name": "connection_mssqlserver_ec2",
+          "object_name": "abc_data",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "target_abc_data",
+          "connection_name": "connection_mssqlserver_ec2",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
