@@ -1,0 +1,85 @@
+{
+  "login_id": "jjones",
+  "id": 399,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "tgt_post",
+  "task_description": "cs",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "df0d55ca-c09d-440f-8eb7-99d522f513ba",
+  "status": "Success",
+  "updated_dttm": "2024-04-15T07:20:33.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "2",
+        "source": {
+          "header": "Y",
+          "connection_name": "IKART_file_conn",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/pshrikh/file/csv/New",
+          "decryption": "yes",
+          "task_group": "0",
+          "compression": "bzip",
+          "object_name": "test_data_5.csv.bz2.gpg",
+          "object_type": "gpg",
+          "skip_footer": "0",
+          "skip_header": "1",
+          "files_filter_name": "*",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "csv_latest_test_data_5",
+          "connection_name": "Postgres",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "IKART_file_conn",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/pshrikh/file/csv/New",
+          "decryption": "yes",
+          "task_group": "0",
+          "compression": "bzip",
+          "object_name": "test_data.csv.bz2.gpg",
+          "object_type": "gpg",
+          "skip_footer": "0",
+          "skip_header": "1",
+          "files_filter_name": "*",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "csv_latest_test_data",
+          "connection_name": "Postgres",
+          "primary_key": "",
+          "schema_name": "public",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
