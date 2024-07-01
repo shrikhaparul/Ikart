@@ -23,7 +23,7 @@
       "header": "Y",
       "encoding": "utf-8",
       "delimiter": "|",
-      "file_name": "s3_test.csv.bz2",
+      "file_name": "data_test.csv.bz2",
       "file_path": "Excel_folder/files/",
       "file_type": "csv",
       "chunk_size": 10000,
