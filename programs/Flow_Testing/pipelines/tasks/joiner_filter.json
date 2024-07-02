@@ -1,0 +1,73 @@
+{
+  "login_id": "Pavan",
+  "id": 704,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Transformation_Panda",
+  "project_id": 82,
+  "pipeline_id": 214,
+  "task_name": "joiner_filter",
+  "task_description": "containas joiner and filter\n",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "93c3ce6a-a8b0-49aa-8440-fd08c6de6d63",
+  "status": "Success",
+  "updated_dttm": "2024-07-02T16:30:18.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Output_out_tr": "Input_Input_02",
+      "Input_Input_02": "0"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "Input_02": {
+              "header": "Y",
+              "encoding": "ascii",
+              "delimiter": ",",
+              "file_name": "employees.json",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/transform/",
+              "file_type": "json",
+              "output_df": "inp_ady",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "employee_id,name,department_id,position,salary,hire_date",
+              "connection_name": "193",
+              "transformation_name": "Input_02"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_tr": {
+              "header": "Y",
+              "encoding": "utf-32",
+              "input_df": "inp_ady",
+              "delimiter": "\t",
+              "file_name": "In_out.json",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/transform/",
+              "file_type": "json",
+              "quote_char": "\"",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "193",
+              "transformation_name": "out_tr",
+              "target_max_record_count": "100000"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
