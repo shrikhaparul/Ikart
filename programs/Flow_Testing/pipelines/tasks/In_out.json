@@ -1,0 +1,78 @@
+{
+  "login_id": "Pavan",
+  "id": 694,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Transformation_Panda",
+  "project_id": 82,
+  "pipeline_id": 214,
+  "task_name": "In_out",
+  "task_description": "Consists of Input and Output",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "21122b5d-377c-4fb5-a0a5-d57d843acc9f",
+  "status": "Success",
+  "updated_dttm": "2024-06-14T10:45:57.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_local_inp": "0",
+      "Output_postgresql": "Input_local_inp"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "local_inp": {
+              "header": "Y",
+              "schema": "public",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "In_out.json",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/transform/",
+              "file_type": "json",
+              "output_df": "inp_lct",
+              "quote_char": null,
+              "table_name": "EC_04",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "schema,data",
+              "connection_name": "193",
+              "transformation_name": "local_inp"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "postgresql": {
+              "header": "Y",
+              "schema": "transformation",
+              "encoding": "utf-8",
+              "input_df": "inp_lct",
+              "delimiter": ",",
+              "file_name": "In_out_1.xml",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/transform/",
+              "file_type": "xml",
+              "operation": "create",
+              "quote_char": "",
+              "table_name": "In_out_1",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "193",
+              "transformation_name": "postgresql",
+              "target_max_record_count": "100000"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
