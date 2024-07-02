@@ -1,0 +1,95 @@
+{
+  "login_id": "Pavan",
+  "id": 756,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "expression_conditional",
+  "project_id": 82,
+  "pipeline_id": 225,
+  "task_name": "nullif",
+  "task_description": "test",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "a94a0be7-649b-4a7d-b0ac-16caef948189",
+  "status": "Success",
+  "updated_dttm": "2024-06-24T10:10:09.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_1": "0",
+      "Output_1": "Expression_exp",
+      "Expression_exp": "Input_1"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "exp": {
+              "input_df": "inp_aue",
+              "output_df": "exp_hir",
+              "transformation_name": "exp",
+              "exp_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "col_1",
+                "output_col_name": "col_1",
+                "expression_value": " "
+              },
+              "exp_3": {
+                "operator": "nullif",
+                "sequence": "3",
+                "operatorType": "Conditional",
+                "input_col_name": "",
+                "output_col_name": "new_column3",
+                "expression_value": "nullif(col_1,119)"
+              },
+              "exp_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "col_10",
+                "output_col_name": "col_10",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "1": {
+              "schema": "transformation",
+              "output_df": "inp_aue",
+              "table_name": "EC_03",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,getdate,col_07",
+              "connection_name": "mysql_tr",
+              "transformation_name": "1"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "1": {
+              "schema": "transformation",
+              "input_df": "exp_hir",
+              "operation": "create",
+              "table_name": "nullif",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "1"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
