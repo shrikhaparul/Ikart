@@ -1,0 +1,207 @@
+{
+  "login_id": "Pavan",
+  "id": 772,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Expression_Date",
+  "project_id": 82,
+  "pipeline_id": 220,
+  "task_name": "to_timestamp",
+  "task_description": "testing for to_timestamp",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "57cd2eb1-420c-48e3-9857-c4c1233afdfd",
+  "status": "Failed",
+  "updated_dttm": "2024-07-02T10:26:20.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Output_out_put": "Expression_expr_lst",
+      "Input_mysql_input": "0",
+      "Expression_expr_lst": "Input_mysql_input"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "expr_lst": {
+              "input_df": "inp_ydl",
+              "output_df": "exp_axk",
+              "transformation_name": "expr_lst",
+              "expr_lst_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "col_2",
+                "output_col_name": "col_2",
+                "expression_value": " "
+              },
+              "expr_lst_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "col_10",
+                "output_col_name": "col_10",
+                "expression_value": " "
+              },
+              "expr_lst_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "col_14",
+                "output_col_name": "col_14",
+                "expression_value": " "
+              },
+              "expr_lst_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "col_3",
+                "output_col_name": "col_3",
+                "expression_value": " "
+              },
+              "expr_lst_17": {
+                "operator": "extract",
+                "sequence": "17",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "extract_year",
+                "expression_value": "extract(year from col_7)"
+              },
+              "expr_lst_16": {
+                "operator": "extract",
+                "sequence": "16",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "extract-month",
+                "expression_value": "extract(month from col_7)"
+              },
+              "expr_lst_15": {
+                "operator": "extract",
+                "sequence": "15",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "extract_week",
+                "expression_value": "extract(week from col_7)"
+              },
+              "expr_lst_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "col_9",
+                "output_col_name": "col_9",
+                "expression_value": " "
+              },
+              "expr_lst_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "col_8",
+                "output_col_name": "col_8",
+                "expression_value": " "
+              },
+              "expr_lst_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "col_13",
+                "output_col_name": "col_13",
+                "expression_value": " "
+              },
+              "expr_lst_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "col_12",
+                "output_col_name": "col_12",
+                "expression_value": " "
+              },
+              "expr_lst_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "col_11",
+                "output_col_name": "col_11",
+                "expression_value": " "
+              },
+              "expr_lst_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "col_1",
+                "output_col_name": "col_1",
+                "expression_value": " "
+              },
+              "expr_lst_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "col_5",
+                "output_col_name": "col_5",
+                "expression_value": " "
+              },
+              "expr_lst_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "col_7",
+                "output_col_name": "col_7",
+                "expression_value": " "
+              },
+              "expr_lst_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "col_6",
+                "output_col_name": "col_6",
+                "expression_value": " "
+              },
+              "expr_lst_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "col_4",
+                "output_col_name": "col_4",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "mysql_input": {
+              "schema": "transformation",
+              "output_df": "inp_ydl",
+              "table_name": "EC_04",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql_input"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_put": {
+              "schema": "transformation",
+              "input_df": "exp_axk",
+              "operation": "replace",
+              "table_name": "extract_res",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "out_put"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
