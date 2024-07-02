@@ -58,7 +58,7 @@
         "seq_no": "1",
         "check": "column_values_to_be_unique",
         "parameters": {
-          "column": "customer_id,first_name,last_name,mobile,dob,address,email,membership_status"
+          "column": "email"
         },
         "active": "Y",
         "ignore_bad_records": "N",
@@ -69,7 +69,7 @@
         "seq_no": "2",
         "check": "column_values_to_not_be_null",
         "parameters": {
-          "column": "customer_id,first_name,last_name,mobile,dob,address,email,membership_status"
+          "column": "first_name"
         },
         "active": "Y",
         "ignore_bad_records": "N",
@@ -80,7 +80,7 @@
         "seq_no": "3",
         "check": "column_values_to_be_unique",
         "parameters": {
-          "column": "customer_id,first_name,last_name,mobile,dob,address,email,membership_status"
+          "column": "customer_id"
         },
         "active": "Y",
         "ignore_bad_records": "N",
