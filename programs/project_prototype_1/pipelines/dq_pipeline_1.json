@@ -1,0 +1,76 @@
+{
+  "pipeline_id": 194,
+  "project_id": 76,
+  "pipeline_name": "dq_pipeline_1",
+  "pipeline_cd": null,
+  "pipeline_description": "dq_pipeline_1",
+  "is_active": "Y",
+  "tasks_details": {
+    "dq_task_1": 0,
+    "dq_task_1_failure": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "601",
+      "data": {
+        "label": "601-dq_task_1"
+      },
+      "position": {
+        "x": 50,
+        "y": 8200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "602",
+      "data": {
+        "label": "602-dq_task_1_failure"
+      },
+      "position": {
+        "x": 50,
+        "y": 8250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "603",
+      "data": {
+        "label": "603-dq_task_1_copy"
+      },
+      "position": {
+        "x": 50,
+        "y": 8300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-601",
+      "source": "0",
+      "target": "601"
+    },
+    {
+      "id": "flow-0-602",
+      "source": "0",
+      "target": "602"
+    }
+  ],
+  "created_dttm": "2024-07-02T10:49:25.592Z",
+  "updated_dttm": "2024-07-02T10:49:25.592Z"
+}
