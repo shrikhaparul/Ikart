@@ -1,0 +1,68 @@
+{
+  "login_id": "Pavan",
+  "id": 694,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Transformation_Panda",
+  "project_id": 82,
+  "pipeline_id": 214,
+  "task_name": "In_out",
+  "task_description": "Consists of Input and Output",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "01c9ca73-29c1-4ead-a31b-39bb280c9d5b",
+  "status": "Failed",
+  "updated_dttm": "2024-06-14T10:45:57.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_mysql": "0",
+      "Output_postgresql": "Input_mysql"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "mysql": {
+              "schema": "transformation",
+              "output_df": "inp_fzp",
+              "table_name": "EC_04",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "postgresql": {
+              "header": "Y",
+              "schema": "public",
+              "encoding": "utf-8",
+              "input_df": "inp_fzp",
+              "delimiter": ",",
+              "file_name": "In_out.xls",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/transform/",
+              "file_type": "xlsx",
+              "operation": "create",
+              "quote_char": "",
+              "table_name": "EC_04",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "193",
+              "transformation_name": "postgresql",
+              "target_max_record_count": "100000"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
