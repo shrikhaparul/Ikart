@@ -1,0 +1,78 @@
+{
+  "login_id": "Pavan",
+  "id": 694,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Transformation_Panda",
+  "project_id": 82,
+  "pipeline_id": 214,
+  "task_name": "In_out",
+  "task_description": "Consists of Input and Output",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "97b5a6b7-632d-43d4-9031-4c6e69060a22",
+  "status": "Failed",
+  "updated_dttm": "2024-06-14T10:45:57.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_local_inp": "0",
+      "Output_postgresql": "Input_local_inp"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "local_inp": {
+              "header": "Y",
+              "schema": "public",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "inp_join.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/transform/",
+              "file_type": "csv",
+              "output_df": "inp_lct",
+              "quote_char": null,
+              "table_name": "EC_04",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "department_id_left,department_name_left,first_name_right,last_name_right,employee_id_right,department_id_right,join_date_right,last_login_timestamp_right,salary_initial_right,current_salary_right,work_location_right,updated_location_right",
+              "connection_name": "193",
+              "transformation_name": "local_inp"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "postgresql": {
+              "header": "Y",
+              "schema": "public",
+              "encoding": "utf-8",
+              "input_df": "inp_lct",
+              "delimiter": ",",
+              "file_name": "In_out.json",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files/transform/",
+              "file_type": "json",
+              "operation": "create",
+              "quote_char": "",
+              "table_name": "EC_03",
+              "compression": "",
+              "target_type": "PostgreSQL",
+              "connection_name": "postgres_tr",
+              "transformation_name": "postgresql",
+              "target_max_record_count": "100000"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
