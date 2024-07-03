@@ -1,0 +1,63 @@
+{
+  "login_id": "durga",
+  "id": 781,
+  "project_name": "prj1",
+  "pipeline_name": "Test_pipeline_2_7_24",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "Ingestion_working",
+  "task_description": "Checking ingestion",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "f182f093-699a-447a-9a4a-4416d89a564e",
+  "status": "Success",
+  "updated_dttm": "2024-07-02T09:49:34.000Z",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT * FROM demo.customer",
+      "schema": "demo",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "customer",
+      "parameter_type": "MySQL",
+      "select_columns": "",
+      "connection_name": "mysql_con1"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "demo",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "copy_customer",
+      "primary_key": "customer_id",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_con1",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "sql_reconciliation",
+        "parameters": {
+          "src_sql": "select count(*) from demo.customer",
+          "tgt_sql": "select count(*) from demo.copy_customer where customer_id=1"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "post_check"
+      }
+    ]
+  }
+}
