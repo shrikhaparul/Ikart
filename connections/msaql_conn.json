@@ -1,0 +1,14 @@
+{
+  "project_id": 84,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MSSQL",
+  "connection_name": "msaql_conn",
+  "connection_details": {
+    "port": "1433",
+    "database": "master",
+    "hostname": "localhost",
+    "password": "8b25f82a96a3259eade074ff2d181be2719b23ac8ef3c55ef093",
+    "username": "SA",
+    "updated_by": "durga"
+  }
+}
