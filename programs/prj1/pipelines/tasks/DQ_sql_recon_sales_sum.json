@@ -1,0 +1,63 @@
+{
+  "login_id": "durga",
+  "id": 784,
+  "project_name": "prj1",
+  "pipeline_name": "Test_pipeline_2_7_24",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "DQ_sql_recon_sales_sum",
+  "task_description": "DQ sql_recon for sales sum",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "fcd017ac-3404-4d77-bcc7-f17a797b86e9",
+  "status": "Failed",
+  "updated_dttm": "2024-07-04T07:31:38.000Z",
+  "source": "Local Server",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales.csv",
+      "file_path": "/home/durga/Files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": null,
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "INDEX,ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,SHIPDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE",
+      "parameter_type": "Local Server",
+      "select_columns": "",
+      "connection_name": "local_con_sales",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_data.csv",
+      "file_path": "test/",
+      "file_type": "csv",
+      "operation": "replace",
+      "compression": "",
+      "escape_char": "\\n",
+      "audit_columns": "active",
+      "parameter_type": "AWS S3",
+      "connection_name": "aws_conn",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
