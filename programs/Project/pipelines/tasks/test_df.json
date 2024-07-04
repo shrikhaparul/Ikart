@@ -1,0 +1,173 @@
+{
+  "login_id": "sonika",
+  "id": 781,
+  "project_name": "Project",
+  "pipeline_name": "transformation_flow",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "test_df",
+  "task_description": "Testing_logged dfs",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-03T11:50:29.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_mysql_input": "0",
+      "Output_output_exp": "Expression_expression_01",
+      "Expression_expression_01": "Input_mysql_input"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "expression_01": {
+              "input_df": "inp_nwo",
+              "output_df": "exp_hah",
+              "transformation_name": "expression_01",
+              "expression_01_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "employee_id",
+                "output_col_name": "employee_id",
+                "expression_value": " "
+              },
+              "expression_01_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "performance_score",
+                "output_col_name": "performance_score",
+                "expression_value": " "
+              },
+              "expression_01_11": {
+                "operator": "coalesce",
+                "sequence": "11",
+                "operatorType": "Conditional",
+                "input_col_name": "",
+                "output_col_name": "coalesce",
+                "expression_value": "coalesce(employee_id,name)"
+              },
+              "expression_01_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "name",
+                "output_col_name": "name",
+                "expression_value": " "
+              },
+              "expression_01_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "department",
+                "output_col_name": "department",
+                "expression_value": " "
+              },
+              "expression_01_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "salary",
+                "output_col_name": "salary",
+                "expression_value": " "
+              },
+              "expression_01_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "hire_date",
+                "output_col_name": "hire_date",
+                "expression_value": " "
+              },
+              "expression_01_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "contract_end",
+                "output_col_name": "contract_end",
+                "expression_value": " "
+              },
+              "expression_01_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "is_online",
+                "output_col_name": "is_online",
+                "expression_value": " "
+              },
+              "expression_01_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "phone_number",
+                "output_col_name": "phone_number",
+                "expression_value": " "
+              },
+              "expression_01_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "age",
+                "output_col_name": "age",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "mysql_input": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "employee_data.csv",
+              "file_path": "/home/sonika/",
+              "file_type": "csv",
+              "output_df": "inp_nwo",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "employee_id,name,department,salary,hire_date,contract_end,is_online,phone_number,age,performance_score",
+              "connection_name": "Local_server",
+              "transformation_name": "mysql_input"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_exp": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "exp_hah",
+              "delimiter": ",",
+              "file_name": "exp_test",
+              "file_path": "/home/sonika/",
+              "file_type": "csv",
+              "quote_char": "\"",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "Local_server",
+              "transformation_name": "output_exp",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
