@@ -1,0 +1,71 @@
+{
+  "login_id": "durga",
+  "id": 785,
+  "project_name": "prj1",
+  "pipeline_name": "Test_pipeline_2_7_24",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "DQ_sql_recon_testing",
+  "task_description": "DQ_sql_recon_testing",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "d8afb861-3203-42ec-a9e7-e42aa6f352a9",
+  "status": "Failed",
+  "updated_dttm": "2024-07-04T08:08:10.000Z",
+  "source": "Local Server",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales.csv",
+      "file_path": "/home/durga/Files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": null,
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "INDEX,ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,SHIPDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local_con_sales",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "DROP AND CREATE",
+      "table_name": "sales",
+      "audit_columns": "active",
+      "parameter_type": "MSSQL",
+      "connection_name": "msaql_conn",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "sql_reconciliation",
+        "parameters": {
+          "src_sql": "SELECT PRODUCTLINE, SUM(SALES) AS TotalSales FROM sales GROUP BY PRODUCTLINE",
+          "tgt_sql": "SELECT PRODUCTLINE, SUM(SALES) AS sales FROM dbo.sales GROUP BY PRODUCTLINE"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "post_check"
+      }
+    ]
+  }
+}
