@@ -1,0 +1,58 @@
+{
+  "login_id": "jjones",
+  "id": 759,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "lo",
+  "task_description": "lo",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "4b252aab-388d-4e8e-9867-335a448c8652",
+  "status": "Failed",
+  "updated_dttm": "2024-06-26T14:11:58.000Z",
+  "source": "AWS S3",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "|",
+      "file_name": "new_encrypt_test.parquet",
+      "file_path": "Excel_folder/files/",
+      "file_type": "parquet",
+      "chunk_size": 100000,
+      "decryption": "no",
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": 0,
+      "skip_header": 1,
+      "alias_columns": "grade,brats_2017_subject_id,brats_2018_subject_id,tcga_tcia_subject_id,brats_2019_subject_id,crtd_by,crtd_dttm,updt_by,updt_dttm",
+      "parameter_type": "AWS S3",
+      "select_columns": null,
+      "connection_name": "aws_S3_conn_files_to_files",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "dwh",
+      "operation": "DROP AND CREATE",
+      "table_name": "aws_test_table",
+      "primary_key": "",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "P_postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
