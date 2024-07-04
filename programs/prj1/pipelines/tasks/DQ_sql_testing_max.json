@@ -1,0 +1,62 @@
+{
+  "login_id": "durga",
+  "id": 783,
+  "project_name": "prj1",
+  "pipeline_name": "Test_pipeline_2_7_24",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "DQ_sql_testing_max",
+  "task_description": "DQ test for sql recon with max",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "8c5d5860-8422-496c-92fb-3943a2bf86df",
+  "status": "Failed",
+  "updated_dttm": "2024-07-04T06:35:30.000Z",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT * FROM demo.copy_buisness",
+      "schema": "demo",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "copy_buisness",
+      "parameter_type": "MySQL",
+      "select_columns": null,
+      "connection_name": "mysql_con1"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "demo",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "buisness",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_con1",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "sql_reconciliation",
+        "parameters": {
+          "src_sql": "select count(*) from demo.copy_buisness",
+          "tgt_sql": "select count(*) from demo.buisness"
+        },
+        "active": "N",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "post_check"
+      }
+    ]
+  }
+}
