@@ -1,0 +1,66 @@
+{
+  "login_id": "durga",
+  "id": 784,
+  "project_name": "prj1",
+  "pipeline_name": "Test_pipeline_2_7_24",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "DQ_sql_recon_sales_sum",
+  "task_description": "DQ sql_recon for sales sum",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "b9cc6ac1-0ea2-4b03-b49e-40e8bba8fe18",
+  "status": "Failed",
+  "updated_dttm": "2024-07-04T07:31:38.000Z",
+  "source": "MSSQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "SELECT * FROM dbo.sales",
+      "schema": "dbo",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "sales",
+      "parameter_type": "MSSQL",
+      "select_columns": "",
+      "connection_name": "msaql_conn"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales_data.csv",
+      "file_path": " /home/durga/Files/",
+      "file_type": "csv",
+      "compression": "",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "local_con_sales",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "sql_reconciliation",
+        "parameters": {
+          "src_sql": "SELECT AVG(SALES) AS AvgSales FROM dbo.sales WHERE PRODUCTLINE='Motorcycles'",
+          "tgt_sql": "SELECT AVG(SALES) AS AvgSales FROM sales WHERE PRODUCTLINE='Motorcycles'"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "post_check"
+      }
+    ]
+  }
+}
