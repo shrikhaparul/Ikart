@@ -1,0 +1,12 @@
+{
+  "project_id": 84,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "123",
+  "connection_details": {
+    "file_name": "employee_data.csv",
+    "file_path": "/home/pavan/source_files/",
+    "created_by": "pavan",
+    "updated_by": "pavan"
+  }
+}
