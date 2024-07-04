@@ -32,7 +32,6 @@
           "encoding": "utf-8",
           "file_path": "/home/Admin/actions-runner/_work/UI/src_files/",
           "decryption": "no",
-          "encryption": "no",
           "task_group": "0",
           "compression": "",
           "object_name": "Cancelled_file.parquet",
