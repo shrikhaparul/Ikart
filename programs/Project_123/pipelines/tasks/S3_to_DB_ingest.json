@@ -20,7 +20,7 @@
   "task": {
     "source": {
       "source_type": "postgres_read",
-      "query": "SELECT * FROM public.beverages_file limit 10",
+      "query": "SELECT * FROM public.beverages_file",
       "schema": "dwh",
       "chunk_size": 100000,
       "table_name": "aws_test_table",
