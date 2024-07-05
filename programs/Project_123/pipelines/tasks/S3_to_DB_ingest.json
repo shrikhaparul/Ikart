@@ -1,0 +1,55 @@
+{
+  "login_id": "jjones",
+  "id": 404,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "S3_to_DB_ingest",
+  "task_description": "k",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "5c2b2718-2d8a-4d93-b628-a64a484cf2a8",
+  "status": "Success",
+  "updated_dttm": "2024-05-24T09:44:44.000Z",
+  "source": "PostgreSQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT * FROM public.aws_test_table",
+      "schema": "public",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 100000,
+      "table_name": "aws_test_table",
+      "parameter_type": "PostgreSQL",
+      "select_columns": "",
+      "connection_name": "P_postgres"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "test_data.csv",
+      "file_path": "/home/pshrikh/file/csv/",
+      "file_type": "csv",
+      "encryption": "no",
+      "quote_char": "'",
+      "compression": "",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "IKART_file_conn",
+      "public_key_path": "/home/pshrikh/UI/backend-python/recipient_public_key.asc",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
