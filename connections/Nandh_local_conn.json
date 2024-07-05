@@ -1,0 +1,11 @@
+{
+  "project_id": 60,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "Nandh_local_conn",
+  "connection_details": {
+    "file_name": "*.csv",
+    "file_path": "/home/nandishms/code/csv_folder/",
+    "updated_by": "Nandh"
+  }
+}
