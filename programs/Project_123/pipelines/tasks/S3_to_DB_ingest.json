@@ -20,7 +20,7 @@
   "task": {
     "source": {
       "source_type": "postgres_read",
-      "query": "SELECT * FROM public.aws_test_table",
+      "query": "SELECT * FROM dwh.aws_test_table",
       "schema": "dwh",
       "chunk_size": 100000,
       "table_name": "aws_test_table",
