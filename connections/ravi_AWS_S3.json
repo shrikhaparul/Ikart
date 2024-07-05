@@ -1,0 +1,14 @@
+{
+  "project_id": 79,
+  "connection_type": "File Storage",
+  "connection_subtype": "AWS S3",
+  "connection_name": "ravi_AWS_S3",
+  "connection_details": {
+    "iam_role": "",
+    "access_key": "8b0ad01bb09048fdc98c071176502fce8271ee9abdcc6ea744990b75fdcacb267a1edf32",
+    "bucket_name": "ikart",
+    "region_name": "us-east-1",
+    "secret_access_key": "8f35d637cdb04d9df58c783a33625ded8c5cca9f6a6579d38b3e853a2ad967d05f33471ecc4d764debf8d422d10fbec8c96f7c94204f00d8",
+    "updated_by": "rperuman"
+  }
+}
