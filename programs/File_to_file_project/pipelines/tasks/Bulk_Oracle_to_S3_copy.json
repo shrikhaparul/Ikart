@@ -1,0 +1,89 @@
+{
+  "login_id": "jjones",
+  "id": 749,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "Bulk_Oracle_to_S3_copy",
+  "task_description": "Bulk Ingestion from oracle to s3 location.\nParquet files will be compressed in s3 location.",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "9967857f-68a6-4ee1-b9fd-156adca6cacd",
+  "status": "Success",
+  "updated_dttm": "2024-06-20T13:06:08.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 1000000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "remote_serve_p",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/Admin/all_files/",
+          "decryption": "yes",
+          "quote_char": "",
+          "task_group": "0",
+          "compression": "gzip",
+          "escape_char": "",
+          "object_name": "s3_test_65.csv.gz.gpg",
+          "object_type": "csv",
+          "skip_footer": "0",
+          "skip_header": "1",
+          "files_filter_name": "*.csv.gz.gpg",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "remote_s3_test_65",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "header": "Y",
+          "connection_name": "remote_serve_p",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/Admin/all_files/",
+          "decryption": "yes",
+          "quote_char": "",
+          "task_group": "0",
+          "compression": "gzip",
+          "escape_char": "",
+          "object_name": "s3_test_65.csv.gz.gpg",
+          "object_type": "csv",
+          "skip_footer": "0",
+          "skip_header": "1",
+          "files_filter_name": "*.csv.gz.gpg",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "remote_s3_test_65",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
