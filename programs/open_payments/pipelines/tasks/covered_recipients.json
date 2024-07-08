@@ -1,0 +1,46 @@
+{
+  "login_id": "rperuman",
+  "id": 730,
+  "project_name": "open_payments",
+  "pipeline_name": "OP_research_facts_dimensions",
+  "project_id": 79,
+  "pipeline_id": 217,
+  "task_name": "covered_recipients",
+  "task_description": "creating covered recipients dimension  from OP research data",
+  "task_type": "Ingestion",
+  "task_sequence": "\"725\"",
+  "last_run_id": "f552e43e-374f-468e-9c95-a710d459ac17",
+  "status": "Success",
+  "updated_dttm": "2024-06-20T18:51:19.000Z",
+  "source": "Oracle",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT\n    \"COVERED_RECIPIENT_TYPE\",\n    \"NONCOVERED_RECIPIENT_ENTITY_NAME\",\n    \"COVERED_RECIPIENT_PROFILE_ID\",\n    \"COVERED_RECIPIENT_NPI\",\n    \"COVERED_RECIPIENT_FIRST_NAME\",\n    \"COVERED_RECIPIENT_MIDDLE_NAME\",\n    \"COVERED_RECIPIENT_LAST_NAME\",\n    \"COVERED_RECIPIENT_NAME_SUFFIX\",\n    \"RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE1\",\n    \"RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE2\",\n    \"RECIPIENT_CITY\",\n    \"RECIPIENT_STATE\",\n    \"RECIPIENT_ZIP_CODE\",\n    \"RECIPIENT_COUNTRY\",\n    \"RECIPIENT_PROVINCE\",\n    \"RECIPIENT_POSTAL_CODE\",\n    \"COVERED_RECIPIENT_PRIMARY_TYPE_1\",\n    \"COVERED_RECIPIENT_PRIMARY_TYPE_2\",\n    \"COVERED_RECIPIENT_PRIMARY_TYPE_3\",\n    \"COVERED_RECIPIENT_PRIMARY_TYPE_4\",\n    \"COVERED_RECIPIENT_PRIMARY_TYPE_5\",\n    \"COVERED_RECIPIENT_PRIMARY_TYPE_6\",\n    \"COVERED_RECIPIENT_SPECIALTY_1\",\n    \"COVERED_RECIPIENT_SPECIALTY_2\",\n    \"COVERED_RECIPIENT_SPECIALTY_3\",\n    \"COVERED_RECIPIENT_SPECIALTY_4\",\n    \"COVERED_RECIPIENT_SPECIALTY_5\",\n    \"COVERED_RECIPIENT_SPECIALTY_6\",\n    \"COVERED_RECIPIENT_LICENSE_STATE_CODE1\",\n    \"COVERED_RECIPIENT_LICENSE_STATE_CODE2\",\n    \"COVERED_RECIPIENT_LICENSE_STATE_CODE3\",\n    \"COVERED_RECIPIENT_LICENSE_STATE_CODE4\",\n    \"COVERED_RECIPIENT_LICENSE_STATE_CODE5\",\n    \"RECORD_ID\"\nFROM \"LND\".\"OP_DTL_RSRCH\"",
+      "schema": "",
+      "chunk_size": 100000,
+      "table_name": "",
+      "parameter_type": "Oracle",
+      "select_columns": "",
+      "connection_name": "oracle_xe"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "DWH",
+      "operation": "TRUNCATE AND LOAD",
+      "table_name": "covered_recipient",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_xe",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
