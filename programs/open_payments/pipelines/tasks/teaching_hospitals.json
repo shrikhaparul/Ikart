@@ -1,0 +1,46 @@
+{
+  "login_id": "rperuman",
+  "id": 726,
+  "project_name": "open_payments",
+  "pipeline_name": "OP_research_facts_dimensions",
+  "project_id": 79,
+  "pipeline_id": 217,
+  "task_name": "teaching_hospitals",
+  "task_description": "creating teaching hospitals dimension  from OP research data",
+  "task_type": "Ingestion",
+  "task_sequence": "\"724\"",
+  "last_run_id": "f552e43e-374f-468e-9c95-a710d459ac17",
+  "status": "Success",
+  "updated_dttm": "2024-06-25T15:51:13.000Z",
+  "source": "Oracle",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT \"RECORD_ID\", \"TEACHING_HOSPITAL_CCN\", \"TEACHING_HOSPITAL_ID\", \"TEACHING_HOSPITAL_NAME\"\nFROM \"LND\".\"OP_DTL_RSRCH\"",
+      "schema": "",
+      "chunk_size": 100000,
+      "table_name": "",
+      "parameter_type": "Oracle",
+      "select_columns": "",
+      "connection_name": "oracle_xe"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "DWH",
+      "operation": "TRUNCATE AND LOAD",
+      "table_name": "Teaching_Hospitals",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_xe",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
