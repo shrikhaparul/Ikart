@@ -1,0 +1,116 @@
+{
+  "login_id": "durga",
+  "id": 782,
+  "project_name": "prj1",
+  "pipeline_name": "Test_pipeline_2_7_24",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "transform_2_7_24",
+  "task_description": "demo transform",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "3b210e96-05d7-4e96-8373-902c08117c8d",
+  "status": "Success",
+  "updated_dttm": "2024-07-02T09:57:57.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_fetchdata": "0",
+      "Output_mask_store": "Expression_exp_maskin",
+      "Expression_exp_maskin": "Input_fetchdata"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "exp_maskin": {
+              "input_df": "inp_hwe",
+              "output_df": "exp_znt",
+              "transformation_name": "exp_maskin",
+              "exp_maskin_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "Name",
+                "output_col_name": "Name",
+                "expression_value": " "
+              },
+              "exp_maskin_2": {
+                "operator": "mask_email",
+                "sequence": "2",
+                "operatorType": "Data Annonymization/Masking",
+                "input_col_name": "Email",
+                "output_col_name": "Email",
+                "expression_value": "mask_email(Email)"
+              },
+              "exp_maskin_3": {
+                "operator": "mask_numeric",
+                "sequence": "3",
+                "operatorType": "Data Annonymization/Masking",
+                "input_col_name": "Phone_Number",
+                "output_col_name": "Phone_Number",
+                "expression_value": "mask_numeric(Phone_Number)"
+              },
+              "exp_maskin_4": {
+                "operator": "mask_date",
+                "sequence": "4",
+                "operatorType": "Data Annonymization/Masking",
+                "input_col_name": "Date_of_Birth",
+                "output_col_name": "Date_of_Birth",
+                "expression_value": "mask_date(Date_of_Birth)"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "fetchdata": {
+              "header": "Y",
+              "schema": "demo",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "personal_details.csv",
+              "file_path": "/home/durga/Files/",
+              "file_type": "csv",
+              "output_df": "inp_hwe",
+              "quote_char": "",
+              "table_name": "sales",
+              "compression": "",
+              "escape_char": "",
+              "source_type": "Local Server",
+              "select_columns": "Name,Email,Phone_Number,PAN_Number,Date_of_Birth",
+              "connection_name": "local_con_buisnes",
+              "transformation_name": "fetchdata"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "mask_store": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "exp_znt",
+              "delimiter": ",",
+              "file_name": "masked_details.csv",
+              "file_path": "/home/durga/Files/",
+              "file_type": "csv",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "local_con_sales",
+              "transformation_name": "mask_store"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
