@@ -1,0 +1,46 @@
+{
+  "pipeline_id": 231,
+  "project_id": 70,
+  "pipeline_name": "pip_Oracle_to_S3_RAW_tables",
+  "pipeline_cd": null,
+  "pipeline_description": "pip_Oracle_to_S3_RAW_tables",
+  "is_active": "Y",
+  "tasks_details": {
+    "task_Oracle_to_S3_RAW_tables_data": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "798",
+      "data": {
+        "label": "798-task_Oracle_to_S3_RAW_tables_data"
+      },
+      "position": {
+        "x": 50,
+        "y": 17900
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-798",
+      "source": "0",
+      "target": "798"
+    }
+  ],
+  "created_dttm": "2024-07-09T15:43:29.246Z",
+  "updated_dttm": "2024-07-09T15:43:29.246Z"
+}
