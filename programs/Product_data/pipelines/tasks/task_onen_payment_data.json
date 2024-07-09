@@ -1,0 +1,55 @@
+{
+  "login_id": "jbanad",
+  "id": 799,
+  "project_name": "Product_data",
+  "pipeline_name": "pip_Oracle_to_S3_RAW_tables",
+  "project_id": 70,
+  "pipeline_id": 231,
+  "task_name": "task_onen_payment_data",
+  "task_description": "task_onen_payment_data",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-09T16:14:38.000Z",
+  "source": "Oracle",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "jbanad",
+  "updated_by": "jbanad",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT BUSINESSENTITYID, MODIFIEDDATE, PHONENUMBER, PHONENUMBERTYPEID FROM LND.CUSTOMER_PHONE",
+      "schema": "LND",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "CUSTOMER_PHONE",
+      "parameter_type": "Oracle",
+      "select_columns": "BUSINESSENTITYID,MODIFIEDDATE,PHONENUMBER,PHONENUMBERTYPEID",
+      "connection_name": "oracle_xe"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Customer_phone_number.csv",
+      "file_path": "ikart-s3/Oracle_RAW_schema_files/",
+      "file_type": "csv",
+      "encryption": "",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": "",
+      "audit_columns": "active",
+      "parameter_type": "AWS S3",
+      "connection_name": "S3_Connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
