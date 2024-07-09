@@ -1,0 +1,54 @@
+{
+  "login_id": "sonika",
+  "id": 788,
+  "project_name": "Project",
+  "pipeline_name": "transformation_flow",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "ingestion",
+  "task_description": "ingestion",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-09T18:15:27.000Z",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT EmployeeID, FirstName, LastName, Position FROM Ikart.Employee",
+      "schema": "Ikart",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "Employee",
+      "parameter_type": "MySQL",
+      "select_columns": "EmployeeID,FirstName,LastName,Position",
+      "connection_name": "my_sql"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "ingestion.csv",
+      "file_path": "/home/sonika/data/",
+      "file_type": "csv",
+      "encryption": "no",
+      "quote_char": "\"",
+      "compression": "",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "Local_server",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
