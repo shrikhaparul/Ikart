@@ -1,0 +1,122 @@
+{
+  "login_id": "sonika",
+  "id": 785,
+  "project_name": "Project",
+  "pipeline_name": "transformation_flow",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "expression_flow",
+  "task_description": "expression flow in polars",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "48f40710-95eb-4a2e-ab12-63bf87f714f5",
+  "status": "Success",
+  "updated_dttm": "2024-07-08T11:15:07.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Input_exp_inp": "0",
+      "Output_exp_out": "Expression_exp_01",
+      "Expression_exp_01": "Input_exp_inp"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "exp_01": {
+              "input_df": "inp_jfz",
+              "output_df": "exp_qva",
+              "transformation_name": "exp_01",
+              "exp_01_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "employeeid",
+                "output_col_name": "employeeid",
+                "expression_value": " "
+              },
+              "exp_01_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "firstname",
+                "output_col_name": "firstname",
+                "expression_value": " "
+              },
+              "exp_01_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "lastname",
+                "output_col_name": "lastname",
+                "expression_value": " "
+              },
+              "exp_01_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "position",
+                "output_col_name": "position",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "exp_inp": {
+              "header": "Y",
+              "schema": "public",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "emp_data.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "output_df": "inp_jfz",
+              "quote_char": "\"",
+              "table_name": "employee",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "PostgreSQL",
+              "select_columns": "employeeid,firstname,lastname,position",
+              "connection_name": "postgres",
+              "transformation_name": "exp_inp"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "exp_out": {
+              "header": "Y",
+              "schema": "public",
+              "encoding": "utf-8",
+              "input_df": "exp_qva",
+              "delimiter": ",",
+              "file_name": "exp_out",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "operation": "replace",
+              "quote_char": "\"",
+              "table_name": "exp_result",
+              "compression": "",
+              "target_type": "PostgreSQL",
+              "connection_name": "postgres",
+              "transformation_name": "exp_out",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
