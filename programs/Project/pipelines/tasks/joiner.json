@@ -1,0 +1,112 @@
+{
+  "login_id": "sonika",
+  "id": 791,
+  "project_name": "Project",
+  "pipeline_name": "transformation_flow",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "joiner",
+  "task_description": "testing",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "373d48a1-3f69-4a72-b927-fe6488734207",
+  "status": "Success",
+  "updated_dttm": "2024-07-10T09:40:20.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Joiner_joiner": "Input_local_sever,Input_local_sever_01",
+      "Input_local_sever": "0",
+      "Input_local_sever_01": "0",
+      "Output_local_sever_out": "Joiner_joiner"
+    },
+    "details": [
+      {
+        "Joiner": [
+          {
+            "joiner": {
+              "join_type": "outer",
+              "output_df": "jnr_xuc",
+              "left_input_df": "inp_szc",
+              "join_condition": "inp_qfy.DR_NO=inp_szc.DR_NO",
+              "right_input_df": "inp_qfy",
+              "select_columns": "DR_NO_left,Date Rptd_left,DATE OCC_left,TIME OCC_left,AREA_left,AREA NAME_left,Rpt Dist No_left,Part 1-2_left,Crm Cd_left,Crm Cd Desc_left,Mocodes_left,Vict Age_left,Vict Sex_left,Vict Descent_left,Premis Cd_left,Premis Desc_left,Weapon Used Cd_left,Weapon Desc_left,Status_left,Status Desc_left,Crm Cd 1_left,Crm Cd 2_left,Crm Cd 3_left,Crm Cd 4_left,LOCATION_left,Cross Street_left,LAT_left,LON_left,DR_NO_right,Date Rptd_right,DATE OCC_right,TIME OCC_right,AREA_right,AREA NAME_right,Rpt Dist No_right,Part 1-2_right,Crm Cd_right,Crm Cd Desc_right,Mocodes_right,Vict Age_right,Vict Sex_right,Vict Descent_right,Premis Cd_right,Premis Desc_right,Weapon Used Cd_right,Weapon Desc_right,Status_right,Status Desc_right,Crm Cd 1_right,Crm Cd 2_right,Crm Cd 3_right,Crm Cd 4_right,LOCATION_right,Cross Street_right,LAT_right,LON_right",
+              "transformation_name": "joiner"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "local_sever_01": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "Crime_Data_from_2020_to_Present.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "output_df": "inp_qfy",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "DR_NO,Date Rptd,DATE OCC,TIME OCC,AREA,AREA NAME,Rpt Dist No,Part 1-2,Crm Cd,Crm Cd Desc,Mocodes,Vict Age,Vict Sex,Vict Descent,Premis Cd,Premis Desc,Weapon Used Cd,Weapon Desc,Status,Status Desc,Crm Cd 1,Crm Cd 2,Crm Cd 3,Crm Cd 4,LOCATION,Cross Street,LAT,LON",
+              "connection_name": "Local_server",
+              "transformation_name": "local_sever_01"
+            }
+          },
+          {
+            "local_sever": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "Crime_Data_from_2020_to_Present.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "output_df": "inp_szc",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "DR_NO,Date Rptd,DATE OCC,TIME OCC,AREA,AREA NAME,Rpt Dist No,Part 1-2,Crm Cd,Crm Cd Desc,Mocodes,Vict Age,Vict Sex,Vict Descent,Premis Cd,Premis Desc,Weapon Used Cd,Weapon Desc,Status,Status Desc,Crm Cd 1,Crm Cd 2,Crm Cd 3,Crm Cd 4,LOCATION,Cross Street,LAT,LON",
+              "connection_name": "Local_server",
+              "transformation_name": "local_sever"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "local_sever_out": {
+              "header": "Y",
+              "schema": "Ikart",
+              "encoding": "utf-8",
+              "input_df": "jnr_xuc",
+              "delimiter": ",",
+              "file_name": "exp.parquet",
+              "file_path": "/home/sonika/data/",
+              "file_type": "parquet",
+              "operation": "replace",
+              "quote_char": "\"",
+              "table_name": "exp_result",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "Local_server",
+              "transformation_name": "local_sever_out",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
