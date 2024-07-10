@@ -1,0 +1,572 @@
+{
+  "login_id": "sonika",
+  "id": 791,
+  "project_name": "Project",
+  "pipeline_name": "transformation_flow",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "joiner",
+  "task_description": "testing",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "08456cb0-1d06-4e36-8504-bf0ac8ca5840",
+  "status": "Success",
+  "updated_dttm": "2024-07-10T09:40:20.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Joiner_joiner": "Input_local_sever,Input_local_sever_01",
+      "Expression_exp_01": "Joiner_joiner",
+      "Input_local_sever": "0",
+      "Input_local_sever_01": "0",
+      "Output_local_sever_out": "Expression_exp_01"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "exp_01": {
+              "input_df": "jnr_xuc",
+              "output_df": "exp_ndx",
+              "transformation_name": "exp_01",
+              "exp_01_25": {
+                "operator": "",
+                "sequence": "25",
+                "operatorType": "",
+                "input_col_name": "LOCATION_left",
+                "output_col_name": "LOCATION_left",
+                "expression_value": " "
+              },
+              "exp_01_30": {
+                "operator": "",
+                "sequence": "30",
+                "operatorType": "",
+                "input_col_name": "Date Rptd_right",
+                "output_col_name": "Date Rptd_right",
+                "expression_value": " "
+              },
+              "exp_01_20": {
+                "operator": "",
+                "sequence": "20",
+                "operatorType": "",
+                "input_col_name": "Status Desc_left",
+                "output_col_name": "Status Desc_left",
+                "expression_value": " "
+              },
+              "exp_01_33": {
+                "operator": "",
+                "sequence": "33",
+                "operatorType": "",
+                "input_col_name": "AREA_right",
+                "output_col_name": "AREA_right",
+                "expression_value": " "
+              },
+              "exp_01_32": {
+                "operator": "",
+                "sequence": "32",
+                "operatorType": "",
+                "input_col_name": "TIME OCC_right",
+                "output_col_name": "TIME OCC_right",
+                "expression_value": " "
+              },
+              "exp_01_31": {
+                "operator": "",
+                "sequence": "31",
+                "operatorType": "",
+                "input_col_name": "DATE OCC_right",
+                "output_col_name": "DATE OCC_right",
+                "expression_value": " "
+              },
+              "exp_01_26": {
+                "operator": "",
+                "sequence": "26",
+                "operatorType": "",
+                "input_col_name": "Cross Street_left",
+                "output_col_name": "Cross Street_left",
+                "expression_value": " "
+              },
+              "exp_01_27": {
+                "operator": "",
+                "sequence": "27",
+                "operatorType": "",
+                "input_col_name": "LAT_left",
+                "output_col_name": "LAT_left",
+                "expression_value": " "
+              },
+              "exp_01_28": {
+                "operator": "",
+                "sequence": "28",
+                "operatorType": "",
+                "input_col_name": "LON_left",
+                "output_col_name": "LON_left",
+                "expression_value": " "
+              },
+              "exp_01_29": {
+                "operator": "",
+                "sequence": "29",
+                "operatorType": "",
+                "input_col_name": "DR_NO_right",
+                "output_col_name": "DR_NO_right",
+                "expression_value": " "
+              },
+              "exp_01_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "DATE OCC_left",
+                "output_col_name": "DATE OCC_left",
+                "expression_value": " "
+              },
+              "exp_01_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "Crm Cd Desc_left",
+                "output_col_name": "Crm Cd Desc_left",
+                "expression_value": " "
+              },
+              "exp_01_53": {
+                "operator": "",
+                "sequence": "53",
+                "operatorType": "",
+                "input_col_name": "LOCATION_right",
+                "output_col_name": "LOCATION_right",
+                "expression_value": " "
+              },
+              "exp_01_34": {
+                "operator": "",
+                "sequence": "34",
+                "operatorType": "",
+                "input_col_name": "AREA NAME_right",
+                "output_col_name": "AREA NAME_right",
+                "expression_value": " "
+              },
+              "exp_01_55": {
+                "operator": "",
+                "sequence": "55",
+                "operatorType": "",
+                "input_col_name": "LAT_right",
+                "output_col_name": "LAT_right",
+                "expression_value": " "
+              },
+              "exp_01_56": {
+                "operator": "",
+                "sequence": "56",
+                "operatorType": "",
+                "input_col_name": "LON_right",
+                "output_col_name": "LON_right",
+                "expression_value": " "
+              },
+              "exp_01_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "AREA NAME_left",
+                "output_col_name": "AREA NAME_left",
+                "expression_value": " "
+              },
+              "exp_01_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "Rpt Dist No_left",
+                "output_col_name": "Rpt Dist No_left",
+                "expression_value": " "
+              },
+              "exp_01_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "Part 1-2_left",
+                "output_col_name": "Part 1-2_left",
+                "expression_value": " "
+              },
+              "exp_01_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "Crm Cd_left",
+                "output_col_name": "Crm Cd_left",
+                "expression_value": " "
+              },
+              "exp_01_47": {
+                "operator": "",
+                "sequence": "47",
+                "operatorType": "",
+                "input_col_name": "Status_right",
+                "output_col_name": "Status_right",
+                "expression_value": " "
+              },
+              "exp_01_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "DR_NO_left",
+                "output_col_name": "id",
+                "expression_value": " "
+              },
+              "exp_01_54": {
+                "operator": "",
+                "sequence": "54",
+                "operatorType": "",
+                "input_col_name": "Cross Street_right",
+                "output_col_name": "Cross Street_right",
+                "expression_value": " "
+              },
+              "exp_01_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "Mocodes_left",
+                "output_col_name": "Mocodes_left",
+                "expression_value": " "
+              },
+              "exp_01_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "Vict Age_left",
+                "output_col_name": "Vict Age_left",
+                "expression_value": " "
+              },
+              "exp_01_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "Vict Sex_left",
+                "output_col_name": "Vict Sex_left",
+                "expression_value": " "
+              },
+              "exp_01_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "Vict Descent_left",
+                "output_col_name": "Vict Descent_left",
+                "expression_value": " "
+              },
+              "exp_01_15": {
+                "operator": "",
+                "sequence": "15",
+                "operatorType": "",
+                "input_col_name": "Premis Cd_left",
+                "output_col_name": "Premis Cd_left",
+                "expression_value": " "
+              },
+              "exp_01_16": {
+                "operator": "",
+                "sequence": "16",
+                "operatorType": "",
+                "input_col_name": "Premis Desc_left",
+                "output_col_name": "Premis Desc_left",
+                "expression_value": " "
+              },
+              "exp_01_17": {
+                "operator": "",
+                "sequence": "17",
+                "operatorType": "",
+                "input_col_name": "Weapon Used Cd_left",
+                "output_col_name": "Weapon Used Cd_left",
+                "expression_value": " "
+              },
+              "exp_01_18": {
+                "operator": "",
+                "sequence": "18",
+                "operatorType": "",
+                "input_col_name": "Weapon Desc_left",
+                "output_col_name": "Weapon Desc_left",
+                "expression_value": " "
+              },
+              "exp_01_19": {
+                "operator": "",
+                "sequence": "19",
+                "operatorType": "",
+                "input_col_name": "Status_left",
+                "output_col_name": "Status_left",
+                "expression_value": " "
+              },
+              "exp_01_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "Date Rptd_left",
+                "output_col_name": "date",
+                "expression_value": " "
+              },
+              "exp_01_43": {
+                "operator": "",
+                "sequence": "43",
+                "operatorType": "",
+                "input_col_name": "Premis Cd_right",
+                "output_col_name": "Premis Cd_right",
+                "expression_value": " "
+              },
+              "exp_01_24": {
+                "operator": "",
+                "sequence": "24",
+                "operatorType": "",
+                "input_col_name": "Crm Cd 4_left",
+                "output_col_name": "Crm Cd 4_left",
+                "expression_value": " "
+              },
+              "exp_01_23": {
+                "operator": "",
+                "sequence": "23",
+                "operatorType": "",
+                "input_col_name": "Crm Cd 3_left",
+                "output_col_name": "Crm Cd 3_left",
+                "expression_value": " "
+              },
+              "exp_01_22": {
+                "operator": "",
+                "sequence": "22",
+                "operatorType": "",
+                "input_col_name": "Crm Cd 2_left",
+                "output_col_name": "Crm Cd 2_left",
+                "expression_value": " "
+              },
+              "exp_01_35": {
+                "operator": "",
+                "sequence": "35",
+                "operatorType": "",
+                "input_col_name": "Rpt Dist No_right",
+                "output_col_name": "Rpt Dist No_right",
+                "expression_value": " "
+              },
+              "exp_01_36": {
+                "operator": "",
+                "sequence": "36",
+                "operatorType": "",
+                "input_col_name": "Part 1-2_right",
+                "output_col_name": "Part 1-2_right",
+                "expression_value": " "
+              },
+              "exp_01_37": {
+                "operator": "",
+                "sequence": "37",
+                "operatorType": "",
+                "input_col_name": "Crm Cd_right",
+                "output_col_name": "Crm Cd_right",
+                "expression_value": " "
+              },
+              "exp_01_38": {
+                "operator": "",
+                "sequence": "38",
+                "operatorType": "",
+                "input_col_name": "Crm Cd Desc_right",
+                "output_col_name": "Crm Cd Desc_right",
+                "expression_value": " "
+              },
+              "exp_01_39": {
+                "operator": "",
+                "sequence": "39",
+                "operatorType": "",
+                "input_col_name": "Mocodes_right",
+                "output_col_name": "Mocodes_right",
+                "expression_value": " "
+              },
+              "exp_01_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "TIME OCC_left",
+                "output_col_name": "TIME OCC_left",
+                "expression_value": " "
+              },
+              "exp_01_40": {
+                "operator": "",
+                "sequence": "40",
+                "operatorType": "",
+                "input_col_name": "Vict Age_right",
+                "output_col_name": "Vict Age_right",
+                "expression_value": " "
+              },
+              "exp_01_41": {
+                "operator": "",
+                "sequence": "41",
+                "operatorType": "",
+                "input_col_name": "Vict Sex_right",
+                "output_col_name": "Vict Sex_right",
+                "expression_value": " "
+              },
+              "exp_01_42": {
+                "operator": "",
+                "sequence": "42",
+                "operatorType": "",
+                "input_col_name": "Vict Descent_right",
+                "output_col_name": "Vict Descent_right",
+                "expression_value": " "
+              },
+              "exp_01_52": {
+                "operator": "",
+                "sequence": "52",
+                "operatorType": "",
+                "input_col_name": "Crm Cd 4_right",
+                "output_col_name": "Crm Cd 4_right",
+                "expression_value": " "
+              },
+              "exp_01_44": {
+                "operator": "",
+                "sequence": "44",
+                "operatorType": "",
+                "input_col_name": "Premis Desc_right",
+                "output_col_name": "Premis Desc_right",
+                "expression_value": " "
+              },
+              "exp_01_45": {
+                "operator": "",
+                "sequence": "45",
+                "operatorType": "",
+                "input_col_name": "Weapon Used Cd_right",
+                "output_col_name": "Weapon Used Cd_right",
+                "expression_value": " "
+              },
+              "exp_01_46": {
+                "operator": "",
+                "sequence": "46",
+                "operatorType": "",
+                "input_col_name": "Weapon Desc_right",
+                "output_col_name": "Weapon Desc_right",
+                "expression_value": " "
+              },
+              "exp_01_21": {
+                "operator": "",
+                "sequence": "21",
+                "operatorType": "",
+                "input_col_name": "Crm Cd 1_left",
+                "output_col_name": "Crm Cd 1_left",
+                "expression_value": " "
+              },
+              "exp_01_48": {
+                "operator": "",
+                "sequence": "48",
+                "operatorType": "",
+                "input_col_name": "Status Desc_right",
+                "output_col_name": "Status Desc_right",
+                "expression_value": " "
+              },
+              "exp_01_49": {
+                "operator": "",
+                "sequence": "49",
+                "operatorType": "",
+                "input_col_name": "Crm Cd 1_right",
+                "output_col_name": "Crm Cd 1_right",
+                "expression_value": " "
+              },
+              "exp_01_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "AREA_left",
+                "output_col_name": "AREA_left",
+                "expression_value": " "
+              },
+              "exp_01_50": {
+                "operator": "",
+                "sequence": "50",
+                "operatorType": "",
+                "input_col_name": "Crm Cd 2_right",
+                "output_col_name": "Crm Cd 2_right",
+                "expression_value": " "
+              },
+              "exp_01_51": {
+                "operator": "",
+                "sequence": "51",
+                "operatorType": "",
+                "input_col_name": "Crm Cd 3_right",
+                "output_col_name": "Crm Cd 3_right",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Joiner": [
+          {
+            "joiner": {
+              "join_type": "outer",
+              "output_df": "jnr_xuc",
+              "left_input_df": "inp_szc",
+              "join_condition": "inp_qfy.DR_NO=inp_szc.DR_NO",
+              "right_input_df": "inp_qfy",
+              "select_columns": "DR_NO_left,Date Rptd_left,DATE OCC_left,TIME OCC_left,AREA_left,AREA NAME_left,Rpt Dist No_left,Part 1-2_left,Crm Cd_left,Crm Cd Desc_left,Mocodes_left,Vict Age_left,Vict Sex_left,Vict Descent_left,Premis Cd_left,Premis Desc_left,Weapon Used Cd_left,Weapon Desc_left,Status_left,Status Desc_left,Crm Cd 1_left,Crm Cd 2_left,Crm Cd 3_left,Crm Cd 4_left,LOCATION_left,Cross Street_left,LAT_left,LON_left,DR_NO_right,Date Rptd_right,DATE OCC_right,TIME OCC_right,AREA_right,AREA NAME_right,Rpt Dist No_right,Part 1-2_right,Crm Cd_right,Crm Cd Desc_right,Mocodes_right,Vict Age_right,Vict Sex_right,Vict Descent_right,Premis Cd_right,Premis Desc_right,Weapon Used Cd_right,Weapon Desc_right,Status_right,Status Desc_right,Crm Cd 1_right,Crm Cd 2_right,Crm Cd 3_right,Crm Cd 4_right,LOCATION_right,Cross Street_right,LAT_right,LON_right",
+              "transformation_name": "joiner"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "local_sever_01": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "Crime_Data_from_2020_to_Present.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "output_df": "inp_qfy",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "DR_NO,Date Rptd,DATE OCC,TIME OCC,AREA,AREA NAME,Rpt Dist No,Part 1-2,Crm Cd,Crm Cd Desc,Mocodes,Vict Age,Vict Sex,Vict Descent,Premis Cd,Premis Desc,Weapon Used Cd,Weapon Desc,Status,Status Desc,Crm Cd 1,Crm Cd 2,Crm Cd 3,Crm Cd 4,LOCATION,Cross Street,LAT,LON",
+              "connection_name": "Local_server",
+              "transformation_name": "local_sever_01"
+            }
+          },
+          {
+            "local_sever": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "Crime_Data_from_2020_to_Present.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "output_df": "inp_szc",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "DR_NO,Date Rptd,DATE OCC,TIME OCC,AREA,AREA NAME,Rpt Dist No,Part 1-2,Crm Cd,Crm Cd Desc,Mocodes,Vict Age,Vict Sex,Vict Descent,Premis Cd,Premis Desc,Weapon Used Cd,Weapon Desc,Status,Status Desc,Crm Cd 1,Crm Cd 2,Crm Cd 3,Crm Cd 4,LOCATION,Cross Street,LAT,LON",
+              "connection_name": "Local_server",
+              "transformation_name": "local_sever"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "local_sever_out": {
+              "header": "Y",
+              "schema": "Ikart",
+              "encoding": "utf-8",
+              "input_df": "exp_ndx",
+              "delimiter": ",",
+              "file_name": "exp.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "operation": "replace",
+              "quote_char": "\"",
+              "table_name": "exp_result",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "Local_server",
+              "transformation_name": "local_sever_out",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
