@@ -1,0 +1,73 @@
+{
+  "login_id": "sonika",
+  "id": 789,
+  "project_name": "Project",
+  "pipeline_name": "transformation_flow",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "input_output",
+  "task_description": "testing the timings",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-10T07:16:30.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Input_local_sever": "0",
+      "Output_local_sever_out": "Input_local_sever"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "local_sever": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "click_stream_new.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "output_df": "inp_spi",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "session_id,event_name,event_time,event_id,traffic_source,product_id,quantity,item_price,payment_status,search_keywords,promo_code,promo_amount",
+              "connection_name": "Local_server",
+              "transformation_name": "local_sever"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "local_sever_out": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "inp_spi",
+              "delimiter": ",",
+              "file_name": "emp_data.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "quote_char": "\"",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "Local_server",
+              "transformation_name": "local_sever_out",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
