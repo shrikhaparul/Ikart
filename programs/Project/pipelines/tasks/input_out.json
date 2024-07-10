@@ -1,0 +1,76 @@
+{
+  "login_id": "sonika",
+  "id": 790,
+  "project_name": "Project",
+  "pipeline_name": "transformation_flow",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "input_out",
+  "task_description": "testing_out_inp",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "c7428c4e-ac62-4c8e-89a1-fc3430ff9cd3",
+  "status": "Running",
+  "updated_dttm": "2024-07-10T08:03:40.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Output_out_put": "Input_filter_01",
+      "Input_filter_01": "0"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "filter_01": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ";",
+              "file_name": "megamarket.parquet",
+              "file_path": "/home/sonika/data/",
+              "file_type": "parquet",
+              "output_df": "inp_lvl",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "user_id,datetime,event,item_id,category_id,price",
+              "connection_name": "Local_server",
+              "transformation_name": "filter_01"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_put": {
+              "header": "Y",
+              "schema": "Ikart",
+              "encoding": "utf-8",
+              "input_df": "inp_lvl",
+              "delimiter": ",",
+              "file_name": "exp_test.parquet",
+              "file_path": "/home/sonika/data/",
+              "file_type": "parquet",
+              "operation": "replace",
+              "quote_char": "\"",
+              "table_name": "input_output",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "Local_server",
+              "transformation_name": "out_put",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
