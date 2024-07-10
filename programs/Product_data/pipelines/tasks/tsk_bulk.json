@@ -1,0 +1,113 @@
+{
+  "login_id": "jbanad",
+  "id": 807,
+  "project_name": "Product_data",
+  "pipeline_name": "pip_Oracle_to_S3_RAW_tables",
+  "project_id": 70,
+  "pipeline_id": 231,
+  "task_name": "tsk_bulk",
+  "task_description": "bulk ingestion",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-10T10:51:59.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jbanad",
+  "updated_by": "jbanad",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "CUSTOMER",
+          "object_type": "Table",
+          "schema_name": "LND",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "S3_Connection",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "ikart-s3/customer/",
+          "encryption": "no",
+          "compression": "",
+          "object_name": "CUSTOMER",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "stg_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "CUSTOMER_INFO",
+          "object_type": "Table",
+          "schema_name": "LND",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "S3_Connection",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "ikart-s3/customer/",
+          "encryption": "no",
+          "compression": "",
+          "object_name": "CUSTOMER_INFO",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "stg_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "CUSTOMER_PHONE",
+          "object_type": "Table",
+          "schema_name": "LND",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "S3_Connection",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "ikart-s3/customer/",
+          "encryption": "no",
+          "compression": "",
+          "object_name": "CUSTOMER_PHONE",
+          "audit_fields": "no",
+          "transfer_mode": "binary",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "stg_",
+          "target_file_format": "csv"
+        }
+      }
+    ]
+  }
+}
