@@ -1,0 +1,65 @@
+{
+  "login_id": "sonika",
+  "id": 787,
+  "project_name": "Project",
+  "pipeline_name": "transformation_flow",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "custom_update",
+  "task_description": "custom",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "6e1aba6e-5881-44c8-99de-88aa5ac52ad0",
+  "status": "Failed",
+  "updated_dttm": "2024-07-09T17:58:38.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Output_out": "Input_input_exp",
+      "Input_input_exp": "0"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "input_exp": {
+              "schema": "Ikart",
+              "output_df": "inp_iat",
+              "table_name": "Employee",
+              "source_type": "MySQL",
+              "select_columns": "EmployeeID,FirstName,LastName,Position",
+              "connection_name": "my_sql",
+              "transformation_name": "input_exp"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "inp_iat",
+              "delimiter": ",",
+              "file_name": "exp_test",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "quote_char": "\"",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "Local_server",
+              "transformation_name": "out",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
