@@ -1,0 +1,106 @@
+{
+  "login_id": "rperuman",
+  "id": 805,
+  "project_name": "open_payments",
+  "pipeline_name": "ingest_payments_data",
+  "project_id": 79,
+  "pipeline_id": 196,
+  "task_name": "DQ_postgres_to_mssql",
+  "task_description": "DQ testing",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "0ad5aeab-fc45-4683-9c61-ec198a85cbce",
+  "status": "Success",
+  "updated_dttm": "2024-07-10T07:19:15.000Z",
+  "source": "PostgreSQL",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT * FROM stg.op_dtl_ownrshp",
+      "schema": "stg",
+      "chunk_size": 10000,
+      "table_name": "op_dtl_ownrshp",
+      "parameter_type": "PostgreSQL",
+      "select_columns": "",
+      "connection_name": "postgres"
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "lnd",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "op_dtl_ownrshp",
+      "audit_columns": "active",
+      "parameter_type": "MSSQL",
+      "connection_name": "mssql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "Record_ID"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_value_lengths_to_equal",
+        "parameters": {
+          "value": "2",
+          "column": "Recipient_State"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "3",
+        "check": "column_values_to_be_unique",
+        "parameters": {
+          "column": "Record_ID"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "4",
+        "check": "column_values_to_match_strftime_format",
+        "parameters": {
+          "column": "Payment_Publication_Date",
+          "strftime_format": "%m/%d/%Y"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "5",
+        "check": "column_values_to_be_in_set",
+        "parameters": {
+          "column": "Dispute_Status_for_Publication",
+          "value_set": "Yes,No"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
