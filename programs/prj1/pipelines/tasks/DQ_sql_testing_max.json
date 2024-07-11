@@ -1,0 +1,73 @@
+{
+  "login_id": "durga",
+  "id": 783,
+  "project_name": "prj1",
+  "pipeline_name": "Test_pipeline_2_7_24",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "DQ_sql_testing_max",
+  "task_description": "DQ test for sql recon with max",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "4b28d7aa-593b-4481-998c-5744aa5706a6",
+  "status": "Failed",
+  "updated_dttm": "2024-07-04T06:35:30.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "\\t",
+      "file_name": "fie.tsv",
+      "file_path": "/home/durga/Files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": null,
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "0,50,5,881250949",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local_con_sales",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "demo",
+      "operation": "DROP AND CREATE",
+      "table_name": "buisness",
+      "primary_key": "",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_con1",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "",
+          "src_sql": "select count(*) from customer",
+          "tgt_sql": "select count(*) from demo.buisness"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
