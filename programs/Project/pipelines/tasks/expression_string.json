@@ -1,0 +1,72 @@
+{
+  "login_id": "sonika",
+  "id": 792,
+  "project_name": "Project",
+  "pipeline_name": "expression_flow",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "expression_string",
+  "task_description": "expression string testing ",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "71b1a616-1102-42ac-93c4-a736e59ff7e1",
+  "status": "Failed",
+  "updated_dttm": "2024-07-11T06:36:54.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Input_local": "0"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "local": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "EC_04.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "output_df": "inp_vmo",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "\"col_1\",\"col_10\",\"col_11\",\"col_12\",\"col_13\",\"col_14\",\"col_2\",\"col_3\",\"col_4\",\"col_5\",\"col_6\",\"col_7\",\"col_8\",\"col_9\"",
+              "connection_name": "Local_server",
+              "transformation_name": "local"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_exp": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "exp_whj",
+              "delimiter": ",",
+              "file_name": "exp_new.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "quote_char": "\"",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "Local_server",
+              "transformation_name": "output_exp",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
