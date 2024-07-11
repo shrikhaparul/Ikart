@@ -1,0 +1,229 @@
+{
+  "login_id": "sonika",
+  "id": 792,
+  "project_name": "Project",
+  "pipeline_name": "expression_flow",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "expression_string",
+  "task_description": "expression string testing ",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-11T06:36:54.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Input_local": "0",
+      "Expression_exp_1": "Input_local",
+      "Output_output_exp": "Expression_exp_1"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "exp_1": {
+              "input_df": "inp_vmo",
+              "output_df": "exp_whj",
+              "transformation_name": "exp_1",
+              "exp_1_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "\"col_5\"",
+                "output_col_name": "\"col_5\"",
+                "expression_value": " "
+              },
+              "exp_1_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "\"col_1\"",
+                "output_col_name": "\"col_1\"",
+                "expression_value": " "
+              },
+              "exp_1_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "\"col_4\"",
+                "output_col_name": "\"col_4\"",
+                "expression_value": " "
+              },
+              "exp_1_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "\"col_3\"",
+                "output_col_name": "\"col_3\"",
+                "expression_value": " "
+              },
+              "exp_1_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "\"col_2\"",
+                "output_col_name": "\"col_2\"",
+                "expression_value": " "
+              },
+              "exp_1_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "\"col_14\"",
+                "output_col_name": "\"col_14\"",
+                "expression_value": " "
+              },
+              "exp_1_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "\"col_13\"",
+                "output_col_name": "\"col_13\"",
+                "expression_value": " "
+              },
+              "exp_1_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "\"col_12\"",
+                "output_col_name": "\"col_12\"",
+                "expression_value": " "
+              },
+              "exp_1_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "\"col_11\"",
+                "output_col_name": "\"col_11\"",
+                "expression_value": " "
+              },
+              "exp_1_18": {
+                "operator": "replace",
+                "sequence": "18",
+                "operatorType": "String",
+                "input_col_name": "",
+                "output_col_name": "replace",
+                "expression_value": "replace(\"col_5\",on,app)"
+              },
+              "exp_1_17": {
+                "operator": "upper",
+                "sequence": "17",
+                "operatorType": "String",
+                "input_col_name": "",
+                "output_col_name": "country",
+                "expression_value": "upper( \"col_3\")"
+              },
+              "exp_1_16": {
+                "operator": "rpad",
+                "sequence": "16",
+                "operatorType": "String",
+                "input_col_name": "",
+                "output_col_name": "rpad",
+                "expression_value": "rpad(\"col_5\",20,*)"
+              },
+              "exp_1_15": {
+                "operator": "lpad",
+                "sequence": "15",
+                "operatorType": "String",
+                "input_col_name": "",
+                "output_col_name": "lpad",
+                "expression_value": "lpad(\"col_5\",20,*)"
+              },
+              "exp_1_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "\"col_9\"",
+                "output_col_name": "\"col_9\"",
+                "expression_value": " "
+              },
+              "exp_1_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "\"col_8\"",
+                "output_col_name": "\"col_8\"",
+                "expression_value": " "
+              },
+              "exp_1_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "\"col_7\"",
+                "output_col_name": "\"col_7\"",
+                "expression_value": " "
+              },
+              "exp_1_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "\"col_6\"",
+                "output_col_name": "\"col_6\"",
+                "expression_value": " "
+              },
+              "exp_1_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "\"col_10\"",
+                "output_col_name": "\"col_10\"",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "local": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "EC_04.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "output_df": "inp_vmo",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "\"col_1\",\"col_10\",\"col_11\",\"col_12\",\"col_13\",\"col_14\",\"col_2\",\"col_3\",\"col_4\",\"col_5\",\"col_6\",\"col_7\",\"col_8\",\"col_9\"",
+              "connection_name": "Local_server",
+              "transformation_name": "local"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_exp": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "exp_whj",
+              "delimiter": ",",
+              "file_name": "exp_new.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "quote_char": "\"",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "Local_server",
+              "transformation_name": "output_exp",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
