@@ -1,0 +1,117 @@
+{
+  "login_id": "shilpi",
+  "id": 576,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "bulk_oras3",
+  "task_description": "ingestion",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "987fca2c-2ee0-414f-9d06-0f859ec6089d",
+  "status": "Running",
+  "updated_dttm": "2024-05-30T06:42:55.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 1000000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "postgres_s",
+          "object_name": "sales_profit",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "az_sales_profit",
+          "connection_name": "mssql_sys",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "postgres_s",
+          "object_name": "beverages_file_6",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "az_beverages_file_6",
+          "connection_name": "mssql_sys",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "postgres_s",
+          "object_name": "order_items",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "az_order_items",
+          "connection_name": "mssql_sys",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "postgres_s",
+          "object_name": "users_details",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "az_users_details",
+          "connection_name": "mssql_sys",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
