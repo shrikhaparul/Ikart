@@ -1,0 +1,205 @@
+{
+  "login_id": "sonika",
+  "id": 793,
+  "project_name": "Project",
+  "pipeline_name": "expression_flow",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "expression_math",
+  "task_description": "maths expression testing",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "ee09ac76-2734-4320-a60c-e5f36631e6ba",
+  "status": "Success",
+  "updated_dttm": "2024-07-11T08:24:18.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Input_input": "0",
+      "Output_output_exp": "Expression_exp_math",
+      "Expression_exp_math": "Input_input"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "exp_math": {
+              "input_df": "inp_trc",
+              "output_df": "exp_vts",
+              "transformation_name": "exp_math",
+              "exp_math_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "\"col_1\"",
+                "output_col_name": "\"col_1\"",
+                "expression_value": " "
+              },
+              "exp_math_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "\"col_2\"",
+                "output_col_name": "\"col_2\"",
+                "expression_value": " "
+              },
+              "exp_math_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "\"col_14\"",
+                "output_col_name": "\"col_14\"",
+                "expression_value": " "
+              },
+              "exp_math_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "\"col_13\"",
+                "output_col_name": "\"col_13\"",
+                "expression_value": " "
+              },
+              "exp_math_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "\"col_12\"",
+                "output_col_name": "\"col_12\"",
+                "expression_value": " "
+              },
+              "exp_math_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "\"col_9\"",
+                "output_col_name": "Id",
+                "expression_value": " "
+              },
+              "exp_math_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "\"col_11\"",
+                "output_col_name": "\"col_11\"",
+                "expression_value": " "
+              },
+              "exp_math_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "\"col_10\"",
+                "output_col_name": "\"col_10\"",
+                "expression_value": " "
+              },
+              "exp_math_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "\"col_3\"",
+                "output_col_name": "\"col_3\"",
+                "expression_value": " "
+              },
+              "exp_math_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "\"col_4\"",
+                "output_col_name": "\"col_4\"",
+                "expression_value": " "
+              },
+              "exp_math_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "\"col_8\"",
+                "output_col_name": "\"col_8\"",
+                "expression_value": " "
+              },
+              "exp_math_15": {
+                "operator": "addition",
+                "sequence": "15",
+                "operatorType": "Math",
+                "input_col_name": "",
+                "output_col_name": "addition",
+                "expression_value": "(col_1 + col_10  + col_11)"
+              },
+              "exp_math_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "\"col_7\"",
+                "output_col_name": "\"col_7\"",
+                "expression_value": " "
+              },
+              "exp_math_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "\"col_6\"",
+                "output_col_name": "\"col_6\"",
+                "expression_value": " "
+              },
+              "exp_math_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "\"col_5\"",
+                "output_col_name": "Country",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "input": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "EC_04.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "output_df": "inp_trc",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "\"col_1\",\"col_10\",\"col_11\",\"col_12\",\"col_13\",\"col_14\",\"col_2\",\"col_3\",\"col_4\",\"col_5\",\"col_6\",\"col_7\",\"col_8\",\"col_9\"",
+              "connection_name": "Local_server",
+              "transformation_name": "input"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_exp": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "exp_vts",
+              "delimiter": ",",
+              "file_name": "exp_new.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "quote_char": "\"",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "Local_server",
+              "transformation_name": "output_exp",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
