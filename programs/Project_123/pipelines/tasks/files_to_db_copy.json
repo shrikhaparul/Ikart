@@ -1,0 +1,49 @@
+{
+  "login_id": "jjones",
+  "id": 406,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "files_to_db_copy",
+  "task_description": "s",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "5b1e1846-369d-48d1-8fe5-4240207d9db6",
+  "status": "Success",
+  "updated_dttm": "2024-07-10T10:21:57.000Z",
+  "source": "PostgreSQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT * FROM demo.currency",
+      "schema": "demo",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "currency",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "P_postgres"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "test",
+      "operation": "UPSERT",
+      "table_name": "currency2",
+      "primary_key": "CurrencyCode",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "Mysql_connnn_123",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
