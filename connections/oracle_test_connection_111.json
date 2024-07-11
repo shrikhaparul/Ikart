@@ -1,0 +1,15 @@
+{
+  "project_id": 60,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "Oracle",
+  "connection_name": "oracle_test_connection_111",
+  "connection_details": {
+    "port": "1521",
+    "database": "MYPDB",
+    "hostname": "localhost",
+    "password": "8533f8398aa75d9aabf6040d9e637e704da62ce6d0d9ab56c144",
+    "username": "system",
+    "created_by": "prajwal",
+    "updated_by": "prajwal"
+  }
+}
