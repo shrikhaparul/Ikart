@@ -1,0 +1,116 @@
+{
+  "login_id": "rperuman",
+  "id": 811,
+  "project_name": "open_payments",
+  "pipeline_name": "ingest_payments_data",
+  "project_id": 79,
+  "pipeline_id": 196,
+  "task_name": "oracle_to_s3_bulk_ingestion_test_11",
+  "task_description": "oracle_to_s3_bulk_ingestion_test",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "a2425597-8d2f-43ae-b89c-0d26006ed3c4",
+  "status": "Success",
+  "updated_dttm": "2024-07-10T11:40:00.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "CUSTOMER_INFO",
+          "object_type": "Table",
+          "schema_name": "LND",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "S3_Connection",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "user/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "CUSTOMER_INFO",
+          "audit_fields": "no",
+          "transfer_mode": "ascii",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "stg_",
+          "target_file_format": "csv",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "CUSTOMER_PHONE",
+          "object_type": "Table",
+          "schema_name": "LND",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "S3_Connection",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "user/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "CUSTOMER_PHONE",
+          "audit_fields": "no",
+          "transfer_mode": "ascii",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "stg_",
+          "target_file_format": "csv",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "CUSTOMER_PHONE_TYPE",
+          "object_type": "Table",
+          "schema_name": "LND",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "S3_Connection",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "user/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "CUSTOMER_PHONE_TYPE",
+          "audit_fields": "no",
+          "transfer_mode": "ascii",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "stg_",
+          "target_file_format": "csv",
+          "target_max_record_count": "0"
+        }
+      }
+    ]
+  }
+}
