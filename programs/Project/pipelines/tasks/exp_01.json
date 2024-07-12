@@ -1,0 +1,183 @@
+{
+  "login_id": "sonika",
+  "id": 794,
+  "project_name": "Project",
+  "pipeline_name": "expression_flow",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "exp_01",
+  "task_description": "expression testing",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-12T10:06:35.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Output_mysql": "Expression_expr_01",
+      "Input_mssql_input": "0",
+      "Expression_expr_01": "Input_mssql_input"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "expr_01": {
+              "input_df": "inp_jqb",
+              "output_df": "exp_jtc",
+              "transformation_name": "expr_01",
+              "expr_01_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "City",
+                "output_col_name": "City",
+                "expression_value": " "
+              },
+              "expr_01_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "Address",
+                "output_col_name": "Address",
+                "expression_value": " "
+              },
+              "expr_01_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "State",
+                "output_col_name": "State",
+                "expression_value": " "
+              },
+              "expr_01_13": {
+                "operator": "to_gregorian",
+                "sequence": "13",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "gregorian",
+                "expression_value": "to_gregorian(julian)"
+              },
+              "expr_01_11": {
+                "operator": "addition",
+                "sequence": "11",
+                "operatorType": "Math",
+                "input_col_name": "ZipCode",
+                "output_col_name": "addition",
+                "expression_value": "(ZipCode + 1000)"
+              },
+              "expr_01_12": {
+                "operator": "to_julian",
+                "sequence": "12",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "julian",
+                "expression_value": "to_julian(DateCreated)"
+              },
+              "expr_01_14": {
+                "operator": "concat",
+                "sequence": "14",
+                "operatorType": "String",
+                "input_col_name": "",
+                "output_col_name": "customer_name",
+                "expression_value": "concat(FirstName,LastName)"
+              },
+              "expr_01_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "Country",
+                "output_col_name": "Country",
+                "expression_value": " "
+              },
+              "expr_01_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "CustomerID",
+                "output_col_name": "CustomerID",
+                "expression_value": " "
+              },
+              "expr_01_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "DateCreated",
+                "output_col_name": "DateCreated",
+                "expression_value": " "
+              },
+              "expr_01_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "Email",
+                "output_col_name": "Email",
+                "expression_value": " "
+              },
+              "expr_01_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "FirstName",
+                "output_col_name": "FirstName",
+                "expression_value": " "
+              },
+              "expr_01_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "LastName",
+                "output_col_name": "LastName",
+                "expression_value": " "
+              },
+              "expr_01_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "Phone",
+                "output_col_name": "Phone",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "mssql_input": {
+              "schema": "dbo",
+              "output_df": "inp_jqb",
+              "table_name": "Customers",
+              "source_type": "MSSQL",
+              "select_columns": "Address,City,Country,CustomerID,DateCreated,Email,FirstName,LastName,Phone,State,ZipCode",
+              "connection_name": "ms_sql",
+              "transformation_name": "mssql_input"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "mysql": {
+              "schema": "Ikart",
+              "input_df": "exp_jtc",
+              "operation": "replace",
+              "table_name": "Exp_new",
+              "target_type": "MySQL",
+              "connection_name": "my_sql",
+              "transformation_name": "mysql"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
