@@ -1,0 +1,15 @@
+{
+  "project_id": 84,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "MySQL",
+  "connection_name": "my_sql",
+  "connection_details": {
+    "password": "b82ef62efa0ad8406ca92872bf984c40200a9da3",
+    "username": "root",
+    "hostname": "localhost",
+    "database": "Ikart",
+    "port": "6603",
+    "created_by": "sonika",
+    "updated_by": "sonika"
+  }
+}
