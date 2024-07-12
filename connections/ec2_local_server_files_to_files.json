@@ -1,0 +1,12 @@
+{
+  "project_id": 73,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "ec2_local_server_files_to_files",
+  "connection_details": {
+    "file_name": "cust_ph_typ_24062024135621.csv",
+    "file_path": "/home/nandishms/code/csv_folder/",
+    "created_by": "jjones",
+    "updated_by": "jjones"
+  }
+}
