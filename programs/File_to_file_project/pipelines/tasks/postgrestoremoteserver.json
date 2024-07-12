@@ -1,0 +1,107 @@
+{
+  "login_id": "jjones",
+  "id": 636,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "postgrestoremoteserver",
+  "task_description": "sd",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "99a1a31a-f28c-4741-b31d-cff9a101795e",
+  "status": "Success",
+  "updated_dttm": "2024-06-07T14:46:43.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "name_mapping",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/",
+          "compression": "",
+          "object_name": "name_mapping",
+          "audit_fields": "YES",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_test_",
+          "target_file_format": "json"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "4",
+          "connection_name": "P_postgres",
+          "object_name": "json_test1",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/",
+          "compression": "",
+          "object_name": "json_test1",
+          "audit_fields": "YES",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_test_",
+          "target_file_format": "json"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "5",
+          "connection_name": "P_postgres",
+          "object_name": "json_testlatest",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/",
+          "compression": "",
+          "object_name": "json_testlatest",
+          "audit_fields": "YES",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_test_",
+          "target_file_format": "json"
+        }
+      }
+    ]
+  }
+}
