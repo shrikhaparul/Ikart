@@ -1,0 +1,50 @@
+{
+  "login_id": "jjones",
+  "id": 407,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "test_task_dgc",
+  "task_description": "s",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "a2bac0cb-aa2f-49cb-bb05-fccc54357258",
+  "status": "Failed",
+  "updated_dttm": "2024-07-10T10:21:57.000Z",
+  "source": "PostgreSQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT * FROM public.beverages_file\n where \"Country\" = 'Austria'",
+      "schema": "public",
+      "chunk_size": 10000,
+      "table_name": "beverages_file",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "P_postgres"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "test_beverage.csv",
+      "file_path": "/home/pshrikh/file/",
+      "file_type": "csv",
+      "compression": "",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "IKART_file_conn",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
