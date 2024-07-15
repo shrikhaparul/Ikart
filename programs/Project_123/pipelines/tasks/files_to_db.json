@@ -26,7 +26,7 @@
       "file_name": "test_beverage.csv",
       "file_path": "/home/pshrikh/file/",
       "file_type": "csv",
-      "chunk_size": 10000,
+      "chunk_size": 30000,
       "decryption": "no",
       "quote_char": null,
       "compression": "",
