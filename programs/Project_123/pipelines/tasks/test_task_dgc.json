@@ -20,7 +20,7 @@
   "task": {
     "source": {
       "source_type": "postgres_read",
-      "query": "SELECT * FROM public.beverages_file\n where \"Country\" = 'Austria'",
+      "query": "SELECT * FROM public.beverages_file",
       "schema": "public",
       "chunk_size": 10000,
       "table_name": "beverages_file",
@@ -33,7 +33,7 @@
       "header": "Y",
       "encoding": "utf-8",
       "delimiter": ",",
-      "file_name": "test_beverage.csv",
+      "file_name": "test_beverage_1.csv",
       "file_path": "/home/pshrikh/file/",
       "file_type": "csv",
       "compression": "",
