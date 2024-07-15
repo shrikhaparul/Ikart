@@ -20,7 +20,7 @@
   "task": {
     "source": {
       "source_type": "postgres_read",
-      "query": "SELECT * FROM public.beverages_file\n where  \"Region\" = 'Asia'",
+      "query": "SELECT * FROM public.beverages_file",
       "schema": "public",
       "file_name": null,
       "file_path": null,
