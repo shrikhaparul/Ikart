@@ -24,7 +24,7 @@
       "encoding": "utf-8",
       "delimiter": ",",
       "file_name": "test_beverage.csv",
-      "file_path": "/home/pshrikh/test_files/",
+      "file_path": "/home/pshrikh/file/",
       "file_type": "csv",
       "chunk_size": 10000,
       "decryption": "no",
