@@ -1,0 +1,58 @@
+{
+  "login_id": "jjones",
+  "id": 401,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "files_to_db",
+  "task_description": "s",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "e4e5cbef-fee2-4474-93f1-82a454048bcf",
+  "status": "Failed",
+  "updated_dttm": "2024-07-10T10:21:57.000Z",
+  "source": "Local Server",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "test_beverage.csv",
+      "file_path": "/home/pshrikh/test_files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "no",
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Region,Country,Item_Type,Sales_Channel,Order_Priority,OrderDate,OrderID,ShipDate,UnitsSold,UnitPrice,UniCost,TotalRevenue,TotalCost,TotalProfit,id",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "IKART_file_conn",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "STAGE",
+      "operation": "UPSERT",
+      "table_name": "test_data_new_audit",
+      "primary_key": "ID",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "Oracle_host",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
