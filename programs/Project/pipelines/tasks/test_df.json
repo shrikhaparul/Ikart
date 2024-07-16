@@ -1,0 +1,75 @@
+{
+  "login_id": "sonika",
+  "id": 781,
+  "project_name": "Project",
+  "pipeline_name": "transformation_flow",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "test_df",
+  "task_description": "Testing_logged dfs",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "1a1fbe37-cf46-4933-95af-6bd95e8fbdb5",
+  "status": "Success",
+  "updated_dttm": "2024-07-16T07:52:29.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "pab",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_mysql_input": "0",
+      "Output_output_exp": "Input_mysql_input"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "mysql_input": {
+              "header": "Y",
+              "schema": "sys",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "employee_data.csv",
+              "file_path": "/home/sonika/",
+              "file_type": "csv",
+              "output_df": "inp_nwo",
+              "quote_char": "\"",
+              "table_name": "sys_config",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "MySQL",
+              "select_columns": "variable,value,set_time,set_by",
+              "connection_name": "mysql",
+              "transformation_name": "mysql_input"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_exp": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "inp_nwo",
+              "delimiter": ",",
+              "file_name": "exp_test",
+              "file_path": "/home/pavan/",
+              "file_type": "csv",
+              "quote_char": "\"",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "Local_server",
+              "transformation_name": "output_exp",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
