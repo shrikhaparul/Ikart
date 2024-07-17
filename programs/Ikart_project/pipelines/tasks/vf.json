@@ -1,0 +1,22 @@
+{
+  "login_id": "sahil",
+  "id": 815,
+  "project_name": "Ikart_project",
+  "pipeline_name": "test",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "vf",
+  "task_description": "44",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-17T10:19:25.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sahil",
+  "updated_by": null,
+  "chunk_size": null,
+  "task": {}
+}
