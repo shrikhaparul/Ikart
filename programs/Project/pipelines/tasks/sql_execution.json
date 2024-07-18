@@ -1,0 +1,92 @@
+{
+  "login_id": "sonika",
+  "id": 799,
+  "project_name": "Project",
+  "pipeline_name": "expression_flow",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "sql_execution",
+  "task_description": "sql_execution ",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "7f16a6cd-407e-472e-afe6-0ba44bad3db9",
+  "status": "Failed",
+  "updated_dttm": "2024-07-17T15:16:56.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "SQL_sql_exec": "Input_local_server_01,Input_local_sever",
+      "Input_local_sever": "0",
+      "Output_output_exp": "SQL_sql_exec",
+      "Input_local_server_01": "0"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "local_sever": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "employee_data.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "output_df": "inp_gco",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "employee_id,name,department,salary,hire_date,contract_end,is_online,phone_number,age,performance_score",
+              "connection_name": "Local_server",
+              "transformation_name": "local_sever"
+            }
+          },
+          {
+            "local_server_01": {
+              "schema": "Ikart",
+              "output_df": "inp_vhr",
+              "table_name": "employee_result",
+              "source_type": "MySQL",
+              "select_columns": "addition,contract_end,department,employee_id,hire_date,is_online,multiplication,name,performance_score,phone_number,salary,subtraction",
+              "connection_name": "my_sql",
+              "transformation_name": "local_server_01"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_exp": {
+              "schema": "Ikart",
+              "input_df": "sql_czr",
+              "operation": "replace",
+              "table_name": "EC_03",
+              "target_type": "MySQL",
+              "connection_name": "my_sql",
+              "transformation_name": "output_exp"
+            }
+          }
+        ]
+      },
+      {
+        "SQL": [
+          {
+            "sql_exec": {
+              "input_df": "inp_vhr,inp_gco",
+              "output_df": "sql_czr",
+              "sql_query": "SELECT * FROM inp_gco JOIN inp_vhr ON inp_gco.department_id = inp_vhr.department_id;",
+              "transformation_name": "sql_exec"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
