@@ -1,0 +1,149 @@
+{
+  "login_id": "jjones",
+  "id": 749,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "Bulk_Oracle_to_S3_copy",
+  "task_description": "Bulk Ingestion from oracle to s3 location.\nParquet files will be compressed in s3 location.",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "3f14d133-a627-491c-8355-b5eeec591bc2",
+  "status": "Success",
+  "updated_dttm": "2024-06-20T13:06:08.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 1000000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/data_test.csv.bz2",
+          "decryption": "no",
+          "quote_char": "",
+          "task_group": "0",
+          "compression": "bzip",
+          "escape_char": "",
+          "object_name": "data_test.csv.bz2",
+          "object_type": "bz2",
+          "skip_footer": "0",
+          "skip_header": "1",
+          "files_filter_name": "*",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "tgt_latest_18-07_data_test",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/data_test_1.csv.bz2",
+          "decryption": "no",
+          "quote_char": "",
+          "task_group": "0",
+          "compression": "bzip",
+          "escape_char": "",
+          "object_name": "data_test_1.csv.bz2",
+          "object_type": "bz2",
+          "skip_footer": "0",
+          "skip_header": "1",
+          "files_filter_name": "*",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "tgt_latest_18-07_data_test_1",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/name_mapping.csv.bz2",
+          "decryption": "no",
+          "quote_char": "",
+          "task_group": "0",
+          "compression": "bzip",
+          "escape_char": "",
+          "object_name": "name_mapping.csv.bz2",
+          "object_type": "bz2",
+          "skip_footer": "0",
+          "skip_header": "1",
+          "files_filter_name": "*",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "tgt_latest_18-07_name_mapping",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/bulk/pq_Culture28052024.csv.gz",
+          "decryption": "no",
+          "quote_char": "",
+          "task_group": "0",
+          "compression": "gzip",
+          "escape_char": "",
+          "object_name": "pq_Culture28052024.csv.gz",
+          "object_type": "gz",
+          "skip_footer": "0",
+          "skip_header": "1",
+          "files_filter_name": "*",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "tgt_latest_18-07_pq_Culture28052024",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
