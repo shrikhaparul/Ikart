@@ -1,0 +1,53 @@
+{
+  "login_id": "jjones",
+  "id": 600,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "Dq_testing_copy",
+  "task_description": "dq_test",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "6f6b86e5-4ead-40a8-853a-afd64f41c8af",
+  "status": "Success",
+  "updated_dttm": "2024-07-18T13:25:52.000Z",
+  "source": "PostgreSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT * FROM public.name_mapping",
+      "schema": "public",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 1000000,
+      "table_name": "name_mapping",
+      "parameter_type": "PostgreSQL",
+      "select_columns": null,
+      "connection_name": "P_postgres"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "name_mapping.csv",
+      "file_path": "Excel_folder/files/te/",
+      "file_type": "csv",
+      "quote_char": "",
+      "compression": "bzip",
+      "audit_columns": "inactive",
+      "parameter_type": "AWS S3",
+      "connection_name": "aws_S3_conn_files_to_files",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
