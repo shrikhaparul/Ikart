@@ -1,0 +1,117 @@
+{
+  "login_id": "shilpi",
+  "id": 820,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "db_mssql",
+  "task_description": "db to mssql",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "e78a9d3a-5b65-4fae-a87c-70bef18adc3c",
+  "status": "Failed",
+  "updated_dttm": "2024-07-18T08:59:12.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 1000000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mysql_s",
+          "object_name": "sales_12",
+          "object_type": "Table",
+          "schema_name": "sys",
+          "database_name": "sys",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ss_sales_12",
+          "connection_name": "mssql_s",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mysql_s",
+          "object_name": "sales_2.csv",
+          "object_type": "Table",
+          "schema_name": "sys",
+          "database_name": "sys",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ss_sales_2",
+          "connection_name": "mssql_s",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mysql_s",
+          "object_name": "salesdaily",
+          "object_type": "Table",
+          "schema_name": "sys",
+          "database_name": "sys",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ss_salesdaily",
+          "connection_name": "mssql_s",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mysql_s",
+          "object_name": "target_examplesv",
+          "object_type": "Table",
+          "schema_name": "sys",
+          "database_name": "sys",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ss_target_examplesv",
+          "connection_name": "mssql_s",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
