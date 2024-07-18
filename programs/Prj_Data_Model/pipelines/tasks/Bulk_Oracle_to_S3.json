@@ -1,0 +1,87 @@
+{
+  "login_id": "jjones",
+  "id": 728,
+  "project_name": "Prj_Data_Model",
+  "pipeline_name": "Pip_Bulk_Ingestion_Open_Payment_Data",
+  "project_id": 83,
+  "pipeline_id": 219,
+  "task_name": "Bulk_Oracle_to_S3",
+  "task_description": "Bulk Ingestion from oracle to s3 location.\nParquet files will be compressed in s3 location.",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "990b11dd-193f-4a16-b9f7-7d7be43ee763",
+  "status": "Failed",
+  "updated_dttm": "2024-07-09T13:22:46.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "remote_serve_p",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/Admin/all_files/",
+          "decryption": "no",
+          "quote_char": "",
+          "task_group": "0",
+          "compression": "bzip",
+          "object_name": "test1.parquet.bz2",
+          "object_type": "bz2",
+          "skip_footer": "0",
+          "skip_header": "1",
+          "files_filter_name": "*.parquet.bz2",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "Tgt_test1",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "header": "Y",
+          "connection_name": "remote_serve_p",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/Admin/all_files/",
+          "decryption": "no",
+          "quote_char": "",
+          "task_group": "0",
+          "compression": "bzip",
+          "object_name": "test.parquet.bz2",
+          "object_type": "bz2",
+          "skip_footer": "0",
+          "skip_header": "1",
+          "files_filter_name": "*.parquet.bz2",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "Tgt_test",
+          "connection_name": "P_postgres",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
