@@ -1,0 +1,117 @@
+{
+  "login_id": "shilpi",
+  "id": 534,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "file",
+  "task_description": "file",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "06fb2420-ec43-4c2f-b550-223604c21bb7",
+  "status": "Failed",
+  "updated_dttm": "2024-03-28T05:15:19.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "postgres_s",
+          "object_name": "sales_profit",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ac_sales_profit",
+          "connection_name": "mssql_s",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "postgres_s",
+          "object_name": "users_details_2",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ac_users_details_2",
+          "connection_name": "mssql_s",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "postgres_s",
+          "object_name": "name_mapping",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ac_name_mapping",
+          "connection_name": "mssql_s",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "postgres_s",
+          "object_name": "beverages_file_6",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ac_beverages_file_6",
+          "connection_name": "mssql_s",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
