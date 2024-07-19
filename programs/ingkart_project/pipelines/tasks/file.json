@@ -1,0 +1,73 @@
+{
+  "login_id": "shilpi",
+  "id": 534,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "file",
+  "task_description": "file",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "457414a9-88d6-429d-9e68-34bf333bbba1",
+  "status": "Failed",
+  "updated_dttm": "2024-03-28T05:15:19.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 1000000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_sys",
+          "object_name": "abc_inventory_items",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "sys",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "aa_abc_inventory_items",
+          "connection_name": "mssql_s",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "YES",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_sys",
+          "object_name": "abc_sales_profit",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "sys",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "aa_abc_sales_profit",
+          "connection_name": "mssql_s",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "YES",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
