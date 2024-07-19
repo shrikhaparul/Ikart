@@ -1,0 +1,199 @@
+{
+  "login_id": "Pavan",
+  "id": 773,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Expression_String",
+  "project_id": 82,
+  "pipeline_id": 223,
+  "task_name": "all_string",
+  "task_description": "testing for string types",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "3c43906f-7b01-4f9c-ac8b-a85031504871",
+  "status": "Failed",
+  "updated_dttm": "2024-06-26T10:51:30.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Output_out_tr": "Expression_exp_maskin",
+      "Input_local_csv": "0",
+      "Expression_exp_maskin": "Input_local_csv"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "exp_maskin": {
+              "input_df": "inp_ath",
+              "output_df": "exp_cwi",
+              "transformation_name": "exp_maskin",
+              "exp_maskin_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "col_10",
+                "output_col_name": "col_10",
+                "expression_value": " "
+              },
+              "exp_maskin_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "col_3",
+                "output_col_name": "col_3",
+                "expression_value": " "
+              },
+              "exp_maskin_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "col_07",
+                "output_col_name": "col_07",
+                "expression_value": " "
+              },
+              "exp_maskin_8": {
+                "operator": "mask_alphanumeric",
+                "sequence": "8",
+                "operatorType": "Data Masking",
+                "input_col_name": "col_2",
+                "output_col_name": "col_2",
+                "expression_value": "mask_alphanumeric(col_2)"
+              },
+              "exp_maskin_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "col_14",
+                "output_col_name": "col_14",
+                "expression_value": " "
+              },
+              "exp_maskin_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "col_1",
+                "output_col_name": "col_1",
+                "expression_value": " "
+              },
+              "exp_maskin_16": {
+                "operator": "mask_date",
+                "sequence": "16",
+                "operatorType": "Data Masking",
+                "input_col_name": "getdate",
+                "output_col_name": "getdate",
+                "expression_value": "mask_date(getdate)"
+              },
+              "exp_maskin_15": {
+                "operator": "",
+                "sequence": "15",
+                "operatorType": "",
+                "input_col_name": "col_9",
+                "output_col_name": "col_9",
+                "expression_value": " "
+              },
+              "exp_maskin_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "col_8",
+                "output_col_name": "col_8",
+                "expression_value": " "
+              },
+              "exp_maskin_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "col_7",
+                "output_col_name": "col_7",
+                "expression_value": " "
+              },
+              "exp_maskin_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "col_6",
+                "output_col_name": "col_6",
+                "expression_value": " "
+              },
+              "exp_maskin_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "col_5",
+                "output_col_name": "col_5",
+                "expression_value": " "
+              },
+              "exp_maskin_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "col_4",
+                "output_col_name": "col_4",
+                "expression_value": " "
+              },
+              "exp_maskin_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "col_13",
+                "output_col_name": "col_13",
+                "expression_value": " "
+              },
+              "exp_maskin_4": {
+                "operator": "mask_numeric",
+                "sequence": "4",
+                "operatorType": "Data Masking",
+                "input_col_name": "col_11",
+                "output_col_name": "col_11",
+                "expression_value": "mask_numeric(col_11)"
+              },
+              "exp_maskin_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "col_12",
+                "output_col_name": "col_12",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "local_csv": {
+              "schema": "transformation",
+              "output_df": "inp_ath",
+              "table_name": "EC_03",
+              "source_type": "MySQL",
+              "select_columns": "col_07,col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,getdate",
+              "connection_name": "mysql_tr",
+              "transformation_name": "local_csv"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_tr": {
+              "schema": "transformation",
+              "input_df": "exp_cwi",
+              "operation": "create",
+              "table_name": "exp_result",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "out_tr"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
