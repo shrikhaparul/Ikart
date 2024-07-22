@@ -1,0 +1,75 @@
+{
+  "login_id": "durga",
+  "id": 792,
+  "project_name": "prj1",
+  "pipeline_name": "DQ_pipeline_test",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "Ingestion_DQ_pipeline",
+  "task_description": "Ingestion_DQ_pipeline",
+  "task_type": "Ingestion",
+  "task_sequence": "\"794\"",
+  "last_run_id": "bb2f473f-b8b5-423e-8857-9d96fa30d662",
+  "status": "Failed",
+  "updated_dttm": "2024-07-22T10:58:05.000Z",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "test_file_good.csv",
+      "file_path": "/home/durga/Files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "no",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": "",
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "NAME,EMAIL,PHONE_NUMBER,PAN_NUMBER,DATE_OF_BIRTH",
+      "parameter_type": "Local Server",
+      "select_columns": "NAME,EMAIL,PHONE_NUMBER,PAN_NUMBER,DATE_OF_BIRTH",
+      "connection_name": "local_con_buisnes",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "csv_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "ingested_good.csv",
+      "file_path": " /home/durga/Files/",
+      "file_type": "csv",
+      "encryption": "",
+      "compression": "",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "local_con_buisnes",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "PHONE_NUMBER"
+        },
+        "active": "N",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
