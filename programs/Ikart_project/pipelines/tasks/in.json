@@ -1,0 +1,48 @@
+{
+  "login_id": "sahil",
+  "id": 819,
+  "project_name": "Ikart_project",
+  "pipeline_name": "Test_Suite_UI",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "in",
+  "task_description": "test",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-22T06:04:04.000Z",
+  "source": "Athena",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "sahil",
+  "updated_by": "sahil",
+  "task": {
+    "source": {
+      "source_type": "athena_read",
+      "query": "SELECT employee_id, name FROM my_database.employee",
+      "schema": "my_database",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "employee",
+      "parameter_type": "Athena",
+      "select_columns": "employee_id,name",
+      "connection_name": "athena"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "test",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "athena_employee",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_conn",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
