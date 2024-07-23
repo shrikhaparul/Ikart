@@ -1,0 +1,93 @@
+{
+  "login_id": "sonika",
+  "id": 801,
+  "project_name": "Project",
+  "pipeline_name": "expression_flow",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "employee_flow",
+  "task_description": "overall flow testing",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "5dbfadba-dab0-44a9-99b0-cf1f505fbf2f",
+  "status": "Success",
+  "updated_dttm": "2024-07-23T11:12:40.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Joiner_joiner_01": "Input_mysql_input,Input_mysql_input2",
+      "Input_mysql_input": "0",
+      "Output_csv_output": "Joiner_joiner_01",
+      "Input_mysql_input2": "0"
+    },
+    "details": [
+      {
+        "Joiner": [
+          {
+            "joiner_01": {
+              "join_type": "inner",
+              "output_df": "jnr_dml",
+              "left_input_df": "inp_tpv",
+              "join_condition": "inp_tpv.department_id=inp_nua.department_id",
+              "right_input_df": "inp_nua",
+              "select_columns": "current_salary_left,department_id_left,email_left,employee_id_left,first_name_left,hire_date_left,last_name_left,salary_left,department_id_right,department_name_right,location_right",
+              "transformation_name": "joiner_01"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "mysql_input": {
+              "schema": "Ikart",
+              "output_df": "inp_tpv",
+              "table_name": "employees",
+              "source_type": "MySQL",
+              "select_columns": "current_salary,department_id,email,employee_id,first_name,hire_date,last_name,salary",
+              "connection_name": "my_sql",
+              "transformation_name": "mysql_input"
+            }
+          },
+          {
+            "mysql_input2": {
+              "schema": "Ikart",
+              "output_df": "inp_nua",
+              "table_name": "department",
+              "source_type": "MySQL",
+              "select_columns": "department_id,department_name,location",
+              "connection_name": "my_sql",
+              "transformation_name": "mysql_input2"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "csv_output": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "jnr_dml",
+              "delimiter": ",",
+              "file_name": "join_result",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "quote_char": "\"",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "Local_server",
+              "transformation_name": "csv_output",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
