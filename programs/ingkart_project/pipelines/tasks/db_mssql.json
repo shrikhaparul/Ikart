@@ -1,0 +1,117 @@
+{
+  "login_id": "shilpi",
+  "id": 820,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "db_mssql",
+  "task_description": "db to mssql",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "be12f79d-2f8a-4e30-a9b0-93946dce28e1",
+  "status": "Success",
+  "updated_dttm": "2024-07-18T08:59:12.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 1000000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_s",
+          "object_name": "ProductInventory",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ProductInventory",
+          "connection_name": "mssql_s",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_s",
+          "object_name": "SalesPersonQuotaHistory",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SalesPersonQuotaHistory",
+          "connection_name": "mssql_s",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_s",
+          "object_name": "ProductListPriceHistory",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "ProductListPriceHistory",
+          "connection_name": "mssql_s",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_s",
+          "object_name": "SalesReason",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "EverestDB",
+          "extraction_type": "Filter",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "SalesReason",
+          "connection_name": "mssql_s",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "database_name": "EverestDB",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
