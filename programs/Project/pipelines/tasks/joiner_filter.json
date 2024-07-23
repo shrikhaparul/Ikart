@@ -1,0 +1,123 @@
+{
+  "login_id": "sonika",
+  "id": 802,
+  "project_name": "Project",
+  "pipeline_name": "expression_flow",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "joiner_filter",
+  "task_description": "testing",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-23T11:53:31.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Filter_filter_01": "Joiner_joiner_01",
+      "Joiner_joiner_01": "Input_mysql_input,Input_mysql_input2",
+      "Input_mysql_input": "0",
+      "Input_mysql_input2": "0",
+      "Output_output_mysql": "Filter_filter_01"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "filter_01": {
+              "input_df": "jnr_mnm",
+              "output_df": "fil_jih",
+              "transformation_name": "filter_01",
+              "filter_01_Group_492": {
+                "id": "filter_01_Group_492",
+                "operator": "and",
+                "group_name": "group_01",
+                "Condition_01": "filter_01_Operation_435",
+                "Condition_02": "filter_01_Operation_886",
+                "condition_type": "group"
+              },
+              "filter_01_Operation_435": {
+                "id": "filter_01_Operation_435",
+                "operator": ">=",
+                "column_name": "department_id_right",
+                "field_value": "5",
+                "condition_type": "operation",
+                "operation_name": "operation_01"
+              },
+              "filter_01_Operation_886": {
+                "id": "filter_01_Operation_886",
+                "operator": "==",
+                "column_name": "department_name_right",
+                "field_value": "IT",
+                "condition_type": "operation",
+                "operation_name": "operation_02"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Joiner": [
+          {
+            "joiner_01": {
+              "join_type": "outer",
+              "output_df": "jnr_mnm",
+              "left_input_df": "inp_jlf",
+              "join_condition": "inp_jif.department_id=inp_oge.department_id",
+              "right_input_df": "inp_oge",
+              "select_columns": "current_salary_left,department_id_left,email_left,employee_id_left,first_name_left,hire_date_left,last_name_left,salary_left,department_id_right,department_name_right,location_right",
+              "transformation_name": "joiner_01"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "mysql_input": {
+              "schema": "Ikart",
+              "output_df": "inp_jlf",
+              "table_name": "employees",
+              "source_type": "MySQL",
+              "select_columns": "current_salary,department_id,email,employee_id,first_name,hire_date,last_name,salary",
+              "connection_name": "my_sql",
+              "transformation_name": "mysql_input"
+            }
+          },
+          {
+            "mysql_input2": {
+              "schema": "Ikart",
+              "output_df": "inp_oge",
+              "table_name": "department",
+              "source_type": "MySQL",
+              "select_columns": "department_id,department_name,location",
+              "connection_name": "my_sql",
+              "transformation_name": "mysql_input2"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_mysql": {
+              "schema": "Ikart",
+              "input_df": "fil_jih",
+              "operation": "replace",
+              "table_name": "result",
+              "target_type": "MySQL",
+              "connection_name": "my_sql",
+              "transformation_name": "output_mysql"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
