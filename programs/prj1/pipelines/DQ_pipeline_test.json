@@ -1,0 +1,82 @@
+{
+  "pipeline_id": 229,
+  "project_id": 84,
+  "pipeline_name": "DQ_pipeline_test",
+  "pipeline_cd": null,
+  "pipeline_description": "DQ pipeline",
+  "is_active": "Y",
+  "tasks_details": {
+    "Ingestion_DQ_pipeline": 0,
+    "Ingestion_DQ_pipeline_bad": 0,
+    "Personal_Ingestion_DQ_pipeline": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "792",
+      "data": {
+        "label": "792-Ingestion_DQ_pipeline"
+      },
+      "position": {
+        "x": 50,
+        "y": 600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "793",
+      "data": {
+        "label": "793-Ingestion_DQ_pipeline_bad"
+      },
+      "position": {
+        "x": 50,
+        "y": 650
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "794",
+      "data": {
+        "label": "794-Personal_Ingestion_DQ_pipeline"
+      },
+      "position": {
+        "x": 50,
+        "y": 700
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-792",
+      "source": "0",
+      "target": "792"
+    },
+    {
+      "id": "flow-0-793",
+      "source": "0",
+      "target": "793"
+    },
+    {
+      "id": "flow-0-794",
+      "source": "0",
+      "target": "794"
+    }
+  ],
+  "created_dttm": "2024-07-23T11:30:24.408Z",
+  "updated_dttm": "2024-07-23T11:30:24.408Z"
+}
