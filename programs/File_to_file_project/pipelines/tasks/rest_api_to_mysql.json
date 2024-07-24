@@ -1,0 +1,55 @@
+{
+  "login_id": "jjones",
+  "id": 826,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "rest_api_to_mysql",
+  "task_description": "rest_api_to_mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "351ff69b-e05c-4c92-8212-41d8be0be0a9",
+  "status": "Success",
+  "updated_dttm": "2024-07-24T06:20:34.000Z",
+  "source": "REST API",
+  "target": "Remote Server",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "rest_api_read",
+      "timeout": "10000",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "content_type": "json",
+      "query_params": "?page=1&per_page=20",
+      "parameter_type": "REST API",
+      "connection_name": "rest_api_conn",
+      "response_headers": null
+    },
+    "target": {
+      "target_type": "remote_server_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "rest_api.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/testing/",
+      "file_type": "csv",
+      "encryption": "no",
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": "\\",
+      "audit_columns": "inactive",
+      "parameter_type": "Remote Server",
+      "connection_name": "remote_serve_p",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
