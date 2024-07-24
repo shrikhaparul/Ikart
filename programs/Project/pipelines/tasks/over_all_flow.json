@@ -1,0 +1,215 @@
+{
+  "login_id": "sonika",
+  "id": 805,
+  "project_name": "Project",
+  "pipeline_name": "expression_flow",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "over_all_flow",
+  "task_description": "testing the flow",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "8d26f43b-4e15-464f-996f-49ff71448cbf",
+  "status": "Failed",
+  "updated_dttm": "2024-07-24T09:56:01.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Filter_filter_01": "Joiner_joiner_01",
+      "Joiner_joiner_01": "Input_local_input,Input_local_inp_01",
+      "Input_local_input": "0",
+      "Input_local_inp_01": "0",
+      "Output_output_mysql": "Expression_expression_01",
+      "Expression_expression_01": "Filter_filter_01"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "filter_01": {
+              "input_df": "jnr_pib",
+              "output_df": "fil_rcq",
+              "transformation_name": "filter_01",
+              "filter_01_Operation_432": {
+                "id": "filter_01_Operation_432",
+                "operator": "==",
+                "column_name": "AREA NAME_left",
+                "field_value": "('Central','Southwest')",
+                "condition_type": "operation",
+                "operation_name": "operation_01"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Expression": [
+          {
+            "expression_01": {
+              "input_df": "fil_rcq",
+              "output_df": "exp_mou",
+              "transformation_name": "expression_01",
+              "expression_01_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "AREA_left",
+                "output_col_name": "AREA",
+                "expression_value": " "
+              },
+              "expression_01_8": {
+                "operator": "to_julian",
+                "sequence": "8",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "Julian",
+                "expression_value": "to_julian(Date Rptd_left)"
+              },
+              "expression_01_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "AREA NAME_left",
+                "output_col_name": "AREA NAME",
+                "expression_value": " "
+              },
+              "expression_01_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "LOCATION_right",
+                "output_col_name": "LOCATION",
+                "expression_value": " "
+              },
+              "expression_01_9": {
+                "operator": "to_gregorian",
+                "sequence": "9",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "Calender_date",
+                "expression_value": "to_gregorian(Julian)"
+              },
+              "expression_01_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "DR_NO_left",
+                "output_col_name": "DR_NO",
+                "expression_value": " "
+              },
+              "expression_01_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "TIME OCC_left",
+                "output_col_name": "TIME OCC",
+                "expression_value": " "
+              },
+              "expression_01_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "DATE OCC_left",
+                "output_col_name": "DATE OCC",
+                "expression_value": " "
+              },
+              "expression_01_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "Date Rptd_left",
+                "output_col_name": "Date Rptd",
+                "expression_value": " "
+              },
+              "expression_01_10": {
+                "operator": "concat",
+                "sequence": "10",
+                "operatorType": "String",
+                "input_col_name": "",
+                "output_col_name": "Complete_address",
+                "expression_value": "concat(AREA NAME_left,' ',LOCATION_right)"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Joiner": [
+          {
+            "joiner_01": {
+              "join_type": "left",
+              "output_df": "jnr_pib",
+              "left_input_df": "inp_kjx",
+              "join_condition": "inp_kjx.DR_NO=inp_bpz.DR_NO",
+              "right_input_df": "inp_bpz",
+              "select_columns": "DR_NO_left,Date Rptd_left,DATE OCC_left,TIME OCC_left,AREA_left,AREA NAME_left,Rpt Dist No_left,Part 1-2_left,Crm Cd_left,Crm Cd Desc_left,Mocodes_left,Vict Age_left,Vict Sex_left,Vict Descent_left,Premis Cd_left,Premis Desc_left,Weapon Used Cd_left,Weapon Desc_left,Status_left,Status Desc_left,Crm Cd 1_left,Crm Cd 2_left,Crm Cd 3_left,Crm Cd 4_left,LOCATION_left,Cross Street_left,LAT_left,LON_left,DR_NO_right,Date Rptd_right,DATE OCC_right,TIME OCC_right,AREA_right,AREA NAME_right,Rpt Dist No_right,Part 1-2_right,Crm Cd_right,Crm Cd Desc_right,Mocodes_right,Vict Age_right,Vict Sex_right,Vict Descent_right,Premis Cd_right,Premis Desc_right,Weapon Used Cd_right,Weapon Desc_right,Status_right,Status Desc_right,Crm Cd 1_right,Crm Cd 2_right,Crm Cd 3_right,Crm Cd 4_right,LOCATION_right,Cross Street_right,LAT_right,LON_right",
+              "transformation_name": "joiner_01"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "local_input": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "crime_data.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "output_df": "inp_kjx",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "DR_NO,Date Rptd,DATE OCC,TIME OCC,AREA,AREA NAME,Rpt Dist No,Part 1-2,Crm Cd,Crm Cd Desc,Mocodes,Vict Age,Vict Sex,Vict Descent,Premis Cd,Premis Desc,Weapon Used Cd,Weapon Desc,Status,Status Desc,Crm Cd 1,Crm Cd 2,Crm Cd 3,Crm Cd 4,LOCATION,Cross Street,LAT,LON",
+              "connection_name": "Local_server",
+              "transformation_name": "local_input"
+            }
+          },
+          {
+            "local_inp_01": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "crime_data.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "output_df": "inp_bpz",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "DR_NO,Date Rptd,DATE OCC,TIME OCC,AREA,AREA NAME,Rpt Dist No,Part 1-2,Crm Cd,Crm Cd Desc,Mocodes,Vict Age,Vict Sex,Vict Descent,Premis Cd,Premis Desc,Weapon Used Cd,Weapon Desc,Status,Status Desc,Crm Cd 1,Crm Cd 2,Crm Cd 3,Crm Cd 4,LOCATION,Cross Street,LAT,LON",
+              "connection_name": "Local_server",
+              "transformation_name": "local_inp_01"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_mysql": {
+              "schema": "Ikart",
+              "input_df": "exp_mou",
+              "operation": "replace",
+              "table_name": "crime_data",
+              "target_type": "MySQL",
+              "connection_name": "my_sql",
+              "transformation_name": "output_mysql"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
