@@ -1,0 +1,117 @@
+{
+  "login_id": "jjones",
+  "id": 399,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "tgt_post",
+  "task_description": "cs",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "b01e5cc1-0f2c-4a9a-af15-5f1b522c6c35",
+  "status": "Success",
+  "updated_dttm": "2024-04-15T07:20:33.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_connnn_123",
+          "object_name": "Beverages_file_csv",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_Beverages_file_csv",
+          "connection_name": "sql_sqerver_local_sys",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "master",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_connnn_123",
+          "object_name": "Currency",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_Currency",
+          "connection_name": "sql_sqerver_local_sys",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "master",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_connnn_123",
+          "object_name": "Employee_Details",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_Employee_Details",
+          "connection_name": "sql_sqerver_local_sys",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "master",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Mysql_connnn_123",
+          "object_name": "Employee_Details_new_job_scl",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "test",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_Employee_Details_new_job_scl",
+          "connection_name": "sql_sqerver_local_sys",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "master",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
