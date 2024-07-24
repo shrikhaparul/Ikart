@@ -1,0 +1,61 @@
+{
+  "login_id": "shilpi",
+  "id": 824,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "file_c",
+  "task_description": "conversion testing",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "a3f25e56-6d3c-48b2-a618-1254ac144cff",
+  "status": "Success",
+  "updated_dttm": "2024-07-24T05:50:42.000Z",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "employee_data.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files2",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": "",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": "id,first_name_1,last_name,gender,birth_date,employment_status,annual_salary",
+      "parameter_type": "Local Server",
+      "select_columns": "id,first_name_1,last_name,gender,birth_date,employment_status,annual_salary",
+      "connection_name": "localserver_s",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "xlsx_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "file_name": "employee_data_au.xlsx",
+      "file_path": "/home/Admin/actions-runner/_work/UI/tgt_files",
+      "file_type": "xlsx",
+      "encryption": "no",
+      "compression": "",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_s",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
