@@ -1,0 +1,84 @@
+{
+  "login_id": "sonika",
+  "id": 804,
+  "project_name": "Project",
+  "pipeline_name": "expression_flow",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "sql_test",
+  "task_description": "testing for sql_execution",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "19fcee67-70ea-42bb-ad25-070a2b52be82",
+  "status": "Success",
+  "updated_dttm": "2024-07-24T06:45:08.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "SQL_sql_exec": "Input_mysql_input_01,Input_mysql_in",
+      "Input_mysql_in": "0",
+      "Output_out_put": "SQL_sql_exec",
+      "Input_mysql_input_01": "0"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "mysql_in": {
+              "schema": "Ikart",
+              "output_df": "inp_nmf",
+              "table_name": "employees",
+              "source_type": "MySQL",
+              "select_columns": "current_salary,department_id,email,employee_id,first_name,hire_date,last_name,salary",
+              "connection_name": "my_sql",
+              "transformation_name": "mysql_in"
+            }
+          },
+          {
+            "mysql_input_01": {
+              "schema": "Ikart",
+              "output_df": "inp_huq",
+              "table_name": "department",
+              "source_type": "MySQL",
+              "select_columns": "department_id,department_name,location",
+              "connection_name": "my_sql",
+              "transformation_name": "mysql_input_01"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_put": {
+              "schema": "Ikart",
+              "input_df": "sql_uqk",
+              "operation": "replace",
+              "table_name": "sql_resul",
+              "target_type": "MySQL",
+              "connection_name": "my_sql",
+              "transformation_name": "out_put"
+            }
+          }
+        ]
+      },
+      {
+        "SQL": [
+          {
+            "sql_exec": {
+              "input_df": "inp_huq,inp_nmf",
+              "output_df": "sql_uqk",
+              "sql_query": "SELECT \n    employee_id AS id,first_name AS name,NULL AS department_name,NULL AS location \nFROM inp_huq\nUNION\nSELECT \n    NULL AS id,NULL AS name,department_name,location \nFROM inp_nmf;",
+              "transformation_name": "sql_exec"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
