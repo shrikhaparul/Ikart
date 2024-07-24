@@ -1,0 +1,49 @@
+{
+  "login_id": "jjones",
+  "id": 826,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "rest_api_to_mysql",
+  "task_description": "rest_api_to_mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "e565ab09-56d4-4969-abcd-b934f56133f2",
+  "status": "Success",
+  "updated_dttm": "2024-07-24T06:20:34.000Z",
+  "source": "REST API",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "rest_api_read",
+      "timeout": "10000",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "content_type": "json",
+      "query_params": "?page=1&per_page=20",
+      "parameter_type": "REST API",
+      "connection_name": "rest_api_conn",
+      "response_headers": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "TEST",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "rest_api",
+      "primary_key": "",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_p",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
