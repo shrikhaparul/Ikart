@@ -1,49 +1,63 @@
 {
-  "login_id": "jjones",
-  "id": 515,
-  "project_name": "File_to_file_project",
-  "pipeline_name": "Files_tranfer",
-  "project_id": 73,
-  "pipeline_id": 173,
-  "task_name": "DB_DB",
-  "task_description": "Local_to_Local",
-  "task_type": "Bulk Ingestion",
+  "login_id": "shilpi",
+  "id": 827,
+  "project_name": "ingkart_project",
+  "pipeline_name": "conversion",
+  "project_id": 72,
+  "pipeline_id": 234,
+  "task_name": "csv_to_json",
+  "task_description": "converting a csv file to json file format",
+  "task_type": "Ingestion",
   "task_sequence": "0",
-  "updated_dttm": "2024-03-11T10:57:43.000Z",
-  "source": "DB",
-  "target": "DB",
+  "last_run_id": "d2691918-12c9-42fa-b336-3f7009e506bf",
+  "status": "Failed",
+  "updated_dttm": "2024-07-24T10:28:13.000Z",
+  "source": "Local Server",
+  "target": "Local Server",
   "is_active": "Y",
-  "created_by": "jjones",
-  "updated_by": "jjones",
-  "chunk_size": 10000,
-  "source_type": "DB",
-  "target_type": "DB",
-  "job_execution": "SeaTunnel",
-  "restartability": "begin",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
   "task": {
-    "details": [
-      {
-        "subtask": "1",
-        "source": {
-          "task_group": "1",
-          "connection_name": "P_sqlserver",
-          "object_name": "emp_new",
-          "object_type": "Table",
-          "schema_name": "dbo",
-          "database_name": "sys",
-          "extraction_type": "Full",
-          "extraction_criteria": ""
-        },
-        "target": {
-          "object_name": "emp_new3",
-          "connection_name": "P_sqlserver",
-          "primary_key": "[\"employee_id\"]",
-          "schema_name": "dbo",
-          "audit_fields": "NO",
-          "database_name": "sys",
-          "action_on_table": "UPSERT"
-        }
-      }
-    ]
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "employee_data.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files2/",
+      "file_type": "csv",
+      "chunk_size": 1000000,
+      "decryption": "",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": "",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": "id,first_name_1,last_name,gender,birth_date,employment_status,annual_salary",
+      "parameter_type": "Local Server",
+      "select_columns": "id,first_name_1,last_name,gender,birth_date,employment_status,annual_salary",
+      "connection_name": "localserver_s",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "json_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "",
+      "file_name": "abc.json",
+      "file_path": "/home/Admin/actions-runner/_work/UI/tgt_files/",
+      "file_type": "json",
+      "encryption": "no",
+      "quote_char": "",
+      "compression": "gzip",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_s",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
   }
 }
