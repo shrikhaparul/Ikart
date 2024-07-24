@@ -1,0 +1,209 @@
+{
+  "login_id": "jjones",
+  "id": 728,
+  "project_name": "Prj_Data_Model",
+  "pipeline_name": "Pip_Bulk_Ingestion_Open_Payment_Data",
+  "project_id": 83,
+  "pipeline_id": 219,
+  "task_name": "Bulk_Oracle_to_S3",
+  "task_description": "Bulk Ingestion from oracle to s3 location.\nParquet files will be compressed in s3 location.",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "8f6f47f3-2100-4795-bff4-b10e69c15af7",
+  "status": "Success",
+  "updated_dttm": "2024-07-09T13:22:46.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "DISTRIBUTION_CENTER",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/oracle/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "DISTRIBUTION_CENTER",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "OWNER_DETAILS",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/oracle/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "OWNER_DETAILS",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "NAME_MAPPING",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/oracle/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "NAME_MAPPING",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "ORDER_BY_REGION",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/oracle/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "ORDER_BY_REGION",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "SURVIVAL_DATA",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/oracle/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "SURVIVAL_DATA",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "SALES_11",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/oracle/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "SALES_11",
+          "primary_key": "",
+          "schema_name": "dwh",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "parquet"
+        }
+      }
+    ]
+  }
+}
