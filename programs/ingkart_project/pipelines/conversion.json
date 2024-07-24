@@ -1,0 +1,62 @@
+{
+  "pipeline_id": 234,
+  "project_id": 72,
+  "pipeline_name": "conversion",
+  "pipeline_cd": null,
+  "pipeline_description": "mutiple tasks created to perform file conversions",
+  "is_active": "Y",
+  "tasks_details": {},
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "827",
+      "data": {
+        "label": "827-csv_to_json"
+      },
+      "position": {
+        "x": 50,
+        "y": 19250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "828",
+      "data": {
+        "label": "828-json_to_parquet"
+      },
+      "position": {
+        "x": 50,
+        "y": 19300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "831",
+      "data": {
+        "label": "831-s3remotedataload"
+      },
+      "position": {
+        "x": 50,
+        "y": 19450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": null,
+  "created_dttm": "2024-07-24T14:09:02.772Z",
+  "updated_dttm": "2024-07-24T14:09:02.772Z"
+}
