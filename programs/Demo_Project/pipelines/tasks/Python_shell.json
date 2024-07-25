@@ -1,0 +1,72 @@
+{
+  "login_id": "jjones",
+  "id": 632,
+  "project_name": "Demo_Project",
+  "pipeline_name": "SFTP_S3_RDS",
+  "project_id": 74,
+  "pipeline_id": 174,
+  "task_name": "Python_shell",
+  "task_description": "passing python shell",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-25T06:51:19.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_input": "0",
+      "Output_output": "Python_python",
+      "Python_python": "Input_input"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "input": {
+              "schema": "config",
+              "output_df": "inp_mcn",
+              "table_name": "tbl_user",
+              "source_type": "MySQL",
+              "select_columns": "full_name",
+              "connection_name": "conn_mysql",
+              "transformation_name": "input"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output": {
+              "input_df": "python_iwm",
+              "file_name": "sales.csv",
+              "file_path": "/home/madhu/Ingestion_code2/csv_files",
+              "target_type": "Local Server",
+              "connection_name": "ec2_local_server",
+              "transformation_name": "output"
+            }
+          }
+        ]
+      },
+      {
+        "Python": [
+          {
+            "python": {
+              "input_df": "inp_mcn",
+              "output_df": "python_iwm",
+              "script_type": "inline_code",
+              "python_script": "import pandas as pd\nfrom io import StringIO\n\ndef merge_tables(employee_df, department_df) -> pd.DataFrame:\n    # Perform the join operation\n    result_df = pd.merge(employee_df, department_df, on='department_id')\n    return result_df\n\nif __name__ == \"__main__\":\n    # Sample data for employee_df\n    emp_data = \"\"\"department_id,employee_id,employee_name\n    1,101,John Doe\n    2,102,Jane Smith\n    3,103,Emily Davis\"\"\"\n    \n    # Sample data for department_df\n    dept_data = \"\"\"department_id,department_name\n    1,HR\n    2,Finance\n    3,IT\"\"\"\n    \n    # Creating DataFrames\n    employee_df = pd.read_csv(StringIO(emp_data))\n    department_df = pd.read_csv(StringIO(dept_data))\n    \n    # Merge the tables and print the result\n    result_df = merge_tables(employee_df, department_df)\n    print(result_df)",
+              "transformation_name": "python"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
