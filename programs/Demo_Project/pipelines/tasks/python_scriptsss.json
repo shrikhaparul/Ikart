@@ -1,0 +1,72 @@
+{
+  "login_id": "jjones",
+  "id": 631,
+  "project_name": "Demo_Project",
+  "pipeline_name": "SFTP_S3_RDS",
+  "project_id": 74,
+  "pipeline_id": 174,
+  "task_name": "python_scriptsss",
+  "task_description": "sd",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-25T06:38:49.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "jjones",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_mysql": "0",
+      "Output_output": "Python_python",
+      "Python_python": "Input_mysql"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "mysql": {
+              "schema": "config",
+              "output_df": "inp_xsl",
+              "table_name": "tbl_program",
+              "source_type": "MySQL",
+              "select_columns": "program_name,primary_stakeholder",
+              "connection_name": "conn_mysql",
+              "transformation_name": "mysql"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output": {
+              "input_df": "python_qze",
+              "file_name": "sales.py",
+              "file_path": "/home/madhu/Ingestion_code2/",
+              "target_type": "Local Server",
+              "connection_name": "ec2_local_server_files_to_files",
+              "transformation_name": "output"
+            }
+          }
+        ]
+      },
+      {
+        "Python": [
+          {
+            "python": {
+              "input_df": "inp_xsl",
+              "output_df": "python_qze",
+              "script_type": "shell_script",
+              "python_script": "source ~./bashrc",
+              "transformation_name": "python"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
