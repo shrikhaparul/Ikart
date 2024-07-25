@@ -1,0 +1,84 @@
+{
+  "login_id": "durga",
+  "id": 791,
+  "project_name": "prj1",
+  "pipeline_name": "Test_pipeline_2_7_24",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "Transformation_data_masking_copy",
+  "task_description": "Transformation data_masking testing",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "a97b302e-7bd3-4f27-a867-845cac30ad1e",
+  "status": "Success",
+  "updated_dttm": "2024-07-11T11:12:06.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Output_store_mask": "Input_fetchdata_mask",
+      "Output_store_mask_2": "Input_fetchdata_mask",
+      "Input_fetchdata_mask": "0"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "fetchdata_mask": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "personal_details.csv",
+              "file_path": "/home/durga/Files/",
+              "file_type": "csv",
+              "output_df": "inp_gbk",
+              "compression": "",
+              "escape_char": "\\n",
+              "source_type": "Local Server",
+              "select_columns": "Name,Email,Phone_Number,PAN_Number,Date_of_Birth",
+              "connection_name": "local_con_buisnes",
+              "transformation_name": "fetchdata_mask"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "store_mask": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "inp_gbk",
+              "delimiter": ",",
+              "file_name": "masked_details_polar.csv",
+              "file_path": "/home/durga/Files/",
+              "file_type": "csv",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "local_con_buisnes",
+              "transformation_name": "store_mask"
+            }
+          },
+          {
+            "store_mask_2": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "inp_gbk",
+              "delimiter": ",",
+              "file_name": "test.csv",
+              "file_path": "/home/durga/Files/",
+              "file_type": "csv",
+              "target_type": "Local Server",
+              "connection_name": "local_con_sales",
+              "transformation_name": "store_mask_2"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
