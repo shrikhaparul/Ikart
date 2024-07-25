@@ -1,0 +1,73 @@
+{
+  "login_id": "jjones",
+  "id": 630,
+  "project_name": "Demo_Project",
+  "pipeline_name": "SFTP_S3_RDS",
+  "project_id": 74,
+  "pipeline_id": 174,
+  "task_name": "python_scripts",
+  "task_description": "python_scripts",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-25T06:15:51.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "jjones",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_tr1": "0",
+      "Output_tr3": "Python_tr2",
+      "Python_tr2": "Input_tr1"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "tr1": {
+              "schema": "config",
+              "output_df": "inp_aks",
+              "table_name": "tbl_program",
+              "source_type": "MySQL",
+              "select_columns": "program_name,program_description",
+              "connection_name": "conn_mysql",
+              "transformation_name": "tr1"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "tr3": {
+              "schema": "public",
+              "input_df": "python_fic",
+              "operation": "append",
+              "table_name": "tbl_program",
+              "target_type": "MySQL",
+              "connection_name": "mysql_local",
+              "transformation_name": "tr3"
+            }
+          }
+        ]
+      },
+      {
+        "Python": [
+          {
+            "tr2": {
+              "input_df": "inp_aks",
+              "output_df": "python_fic",
+              "script_type": "",
+              "python_script": "source ~./bashrc",
+              "transformation_name": "tr2"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
