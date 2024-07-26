@@ -1,0 +1,58 @@
+{
+  "login_id": "jjones",
+  "id": 784,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "local_to_local_test",
+  "task_description": "local_to_local_test",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "2e9e3191-4df4-4764-8728-cdcbf8122071",
+  "status": "Failed",
+  "updated_dttm": "2024-07-15T16:24:32.000Z",
+  "source": "Local Server",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "Nandh",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "test_beverage_1.csv",
+      "file_path": "/home/Admin/actions-runner/_work/test/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "no",
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Region,Country,Item_Type,Sales_Channel,Order_Priority,OrderDate,OrderID,ShipDate,UnitsSold,UnitPrice,UniCost,TotalRevenue,TotalCost,TotalProfit,id",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "ec2_local_server_files_to_files",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "STAGE",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "test_beverage_csv_2_new",
+      "primary_key": "ID",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "P_sqlserver",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
