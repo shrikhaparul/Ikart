@@ -1,0 +1,47 @@
+{
+  "login_id": "shilpi",
+  "id": 633,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "local_alias",
+  "task_description": "local_alias",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "d747004e-1a7b-4dda-bc09-7b5cff3a6a39",
+  "status": "Success",
+  "updated_dttm": "2024-06-06T17:22:57.000Z",
+  "source": "MSSQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "SELECT * FROM sys.file_test",
+      "schema": "sys",
+      "chunk_size": 10000,
+      "table_name": "file_test",
+      "parameter_type": "MSSQL",
+      "select_columns": "",
+      "connection_name": "mysql_s"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "sys",
+      "operation": "UPSERT",
+      "table_name": "file_test_7",
+      "primary_key": "ID",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_s",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
