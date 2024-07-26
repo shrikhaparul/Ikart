@@ -1,0 +1,84 @@
+{
+  "login_id": "Pavan",
+  "id": 819,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Dtypes",
+  "project_id": 82,
+  "pipeline_id": 226,
+  "task_name": "sql_execution",
+  "task_description": "testing of sql execution ",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "62e883a0-0dbb-42e9-90a2-0403325b549c",
+  "status": "Failed",
+  "updated_dttm": "2024-07-16T10:21:27.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "SQL_sql_exec": "Input_mysql_input2,Input_mysql_input",
+      "Output_mysql_out": "SQL_sql_exec",
+      "Input_mysql_input": "0",
+      "Input_mysql_input2": "0"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "mysql_input": {
+              "schema": "transformation",
+              "output_df": "inp_ytf",
+              "table_name": "EC_03",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql_input"
+            }
+          },
+          {
+            "mysql_input2": {
+              "schema": "transformation",
+              "output_df": "inp_mgn",
+              "table_name": "EC_04",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql_input2"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "mysql_out": {
+              "schema": "transformation",
+              "input_df": "sql_fpu",
+              "operation": "replace",
+              "table_name": "sql_result",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "mysql_out"
+            }
+          }
+        ]
+      },
+      {
+        "SQL": [
+          {
+            "sql_exec": {
+              "input_df": "inp_mgn",
+              "output_df": "sql_fpu",
+              "sql_query": "inp_mgn.col_10 from inp_mgn left join inp_ytf on inp_mgn.col_1=inp_ytf.col_1",
+              "transformation_name": "sql_exec"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
