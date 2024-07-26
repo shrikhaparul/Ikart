@@ -1,0 +1,48 @@
+{
+  "login_id": "Madhu",
+  "id": 832,
+  "project_name": "first_project",
+  "pipeline_name": "Test_Suite_UI",
+  "project_id": 80,
+  "pipeline_id": 229,
+  "task_name": "Athena",
+  "task_description": "-",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-26T06:55:48.000Z",
+  "source": "Athena",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "sahilphal",
+  "updated_by": "sahilphal",
+  "task": {
+    "source": {
+      "source_type": "athena_read",
+      "query": "SELECT 1 AS employee_id, 2 AS name, 3 AS department_id, 4 AS position FROM my_database.employee",
+      "schema": "my_database",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "employee",
+      "parameter_type": "Athena",
+      "select_columns": "employee_id,name,department_id,position",
+      "connection_name": "athena"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "config",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "athena_test",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "connection_01",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
