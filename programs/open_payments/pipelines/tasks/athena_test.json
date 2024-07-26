@@ -1,0 +1,50 @@
+{
+  "login_id": "rperuman",
+  "id": 834,
+  "project_name": "open_payments",
+  "pipeline_name": "bulk_payments_load",
+  "project_id": 79,
+  "pipeline_id": 198,
+  "task_name": "athena_test",
+  "task_description": "athena_test",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-26T11:06:44.000Z",
+  "source": "Athena",
+  "target": "Athena",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "athena_read",
+      "query": "SELECT * FROM my_database.employee_data",
+      "schema": "my_database",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "employee_data",
+      "parameter_type": "Athena",
+      "select_columns": "",
+      "connection_name": "AWS_athena"
+    },
+    "target": {
+      "target_type": "athena_write",
+      "schema": "my_database",
+      "s3_path": "ikart/",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "employee_data",
+      "file_format": "Option",
+      "audit_columns": "inactive",
+      "parameter_type": "Athena",
+      "connection_name": "AWS_athena",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
