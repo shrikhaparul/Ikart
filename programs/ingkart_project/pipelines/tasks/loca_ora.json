@@ -1,0 +1,58 @@
+{
+  "login_id": "shilpi",
+  "id": 651,
+  "project_name": "ingkart_project",
+  "pipeline_name": "bulk_data_test",
+  "project_id": 72,
+  "pipeline_id": 172,
+  "task_name": "loca_ora",
+  "task_description": "loca_ora",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "7d5d55b5-c6eb-4673-afdc-6d3db6125044",
+  "status": "Success",
+  "updated_dttm": "2024-06-11T12:26:57.000Z",
+  "source": "Local Server",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "file_test.csv",
+      "file_path": "/home/Admin/actions-runner/_work/UI/src_files2/",
+      "file_type": "csv",
+      "chunk_size": 100000,
+      "decryption": "no",
+      "quote_char": "",
+      "compression": "",
+      "escape_char": "",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": "id,description,amount",
+      "parameter_type": "Local Server",
+      "select_columns": "id,description,amount",
+      "connection_name": "localserver_s",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "test",
+      "operation": "UPSERT",
+      "table_name": "file_6",
+      "primary_key": "ID",
+      "audit_columns": "active",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_xepdb1",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
