@@ -1,0 +1,16 @@
+{
+  "project_id": 78,
+  "connection_type": "Cloud DB",
+  "connection_subtype": "Snowflake",
+  "connection_name": "connection_snowflake_local",
+  "connection_details": {
+    "role": "ACCOUNTADMIN",
+    "account": "wr01436.ap-south-1",
+    "database": "DEMO",
+    "password": "9b34fc2992a97cd9ed85627a45064d14dfe11b57bccbed67e5e947",
+    "username": "pshrikh",
+    "warehouse": "COMPUTE_WH",
+    "created_by": "swetha",
+    "updated_by": "swetha"
+  }
+}
