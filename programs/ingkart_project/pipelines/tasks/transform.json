@@ -1,0 +1,148 @@
+{
+  "login_id": "shilpi",
+  "id": 837,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "transform",
+  "task_description": "transforming data",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "654143a2-86ae-4ef4-a949-c463ad837f68",
+  "status": "Success",
+  "updated_dttm": "2024-07-31T06:09:33.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Filter_filter": "Joiner_joiner_p",
+      "Joiner_joiner_p": "Input_join_pipeline_id,Input_join_pipeline",
+      "Output_pipeline": "Filter_filter",
+      "Input_join_pipeline": "0",
+      "Input_join_pipeline_id": "0"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "filter": {
+              "input_df": "jnr_zgt",
+              "output_df": "fil_tgr",
+              "transformation_name": "filter",
+              "filter_Operation_731": {
+                "id": "filter_Operation_731",
+                "operator": ">=",
+                "column_name": "pipeline_id_left",
+                "field_value": "100",
+                "condition_type": "operation",
+                "operation_name": "pipeline_id_left"
+              },
+              "filter_Operation_599": {
+                "id": "filter_Operation_599",
+                "operator": "==",
+                "column_name": "run_id_left",
+                "field_value": "5244e801-b16d-438f-aca3-22bc484d5707",
+                "condition_type": "operation",
+                "operation_name": "run_id_left"
+              },
+              "filter_Group_420": {
+                "id": "filter_Group_420",
+                "operator": "and",
+                "group_name": "ad",
+                "Condition_01": "filter_Operation_731",
+                "Condition_02": "filter_Operation_599",
+                "condition_type": "group"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Joiner": [
+          {
+            "joiner_p": {
+              "join_type": "left",
+              "output_df": "jnr_zgt",
+              "left_input_df": "inp_eak",
+              "join_condition": "inp_eak.pipeline_id = inp_flv.pipeline_id",
+              "right_input_df": "inp_flv",
+              "select_columns": "id_left,pipeline_id_left,taskorpipeline_name_left,run_id_left,task_group_left,sequence_left,iteration_left,audit_type_left,audit_value_left,process_dttm_left,created_dttm_left,login_id_right,id_right,project_name_right,pipeline_name_right,project_id_right,pipeline_id_right,task_name_right,task_description_right,task_type_right,task_sequence_right,last_run_id_right,status_right,updated_dttm_right,source_right,target_right,is_active_right,created_by_right,updated_by_right,details_right",
+              "transformation_name": "joiner_p"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "join_pipeline": {
+              "header": "Y",
+              "schema": "config",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "department.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files2/",
+              "file_type": "csv",
+              "output_df": "inp_flv",
+              "table_name": "vw_task_list",
+              "skip_header": "0",
+              "source_type": "MySQL",
+              "select_columns": "login_id,id,project_name,pipeline_name,project_id,pipeline_id,task_name,task_description,task_type,task_sequence,last_run_id,status,updated_dttm,source,target,is_active,created_by,updated_by,details",
+              "connection_name": "mysql_config",
+              "transformation_name": "join_pipeline"
+            }
+          },
+          {
+            "join_pipeline_id": {
+              "header": "Y",
+              "schema": "config",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "employ.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files2/",
+              "file_type": "csv",
+              "output_df": "inp_eak",
+              "quote_char": "",
+              "table_name": "tbl_etl_audit",
+              "compression": "",
+              "escape_char": "",
+              "skip_header": "0",
+              "source_type": "MySQL",
+              "select_columns": "id,pipeline_id,taskorpipeline_name,run_id,task_group,sequence,iteration,audit_type,audit_value,process_dttm,created_dttm",
+              "connection_name": "mysql_config",
+              "transformation_name": "join_pipeline_id"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "pipeline": {
+              "header": "Y",
+              "schema": "test",
+              "encoding": "utf-8",
+              "input_df": "fil_tgr",
+              "delimiter": ",",
+              "file_name": "result.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files2/",
+              "file_type": "csv",
+              "operation": "create",
+              "table_name": "test_pipeline_2",
+              "compression": "",
+              "target_type": "Oracle",
+              "connection_name": "oracle_xepdb1",
+              "transformation_name": "pipeline",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
