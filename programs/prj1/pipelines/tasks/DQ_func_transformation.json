@@ -1,0 +1,65 @@
+{
+  "login_id": "durga",
+  "id": 800,
+  "project_name": "prj1",
+  "pipeline_name": "DQ_Decouple__seq",
+  "project_id": 84,
+  "pipeline_id": 231,
+  "task_name": "DQ_func_transformation",
+  "task_description": "DQ_func_transformation",
+  "task_type": "Transformation",
+  "task_sequence": "\"798\"",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-31T06:28:03.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_fetchdata": "0",
+      "Output_store_data": "Input_fetchdata"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "fetchdata": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "personal_details_good.csv",
+              "file_path": "/home/durga/Files/",
+              "file_type": "csv",
+              "output_df": "inp_hpd",
+              "compression": "",
+              "source_type": "Local Server",
+              "connection_name": "local_con_buisnes",
+              "transformation_name": "fetchdata"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "store_data": {
+              "encoding": "",
+              "input_df": "inp_hpd",
+              "file_name": "personal_details_trans.csv",
+              "file_path": "/home/durga/Files/",
+              "file_type": "csv",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "local_con_buisnes",
+              "transformation_name": "store_data"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
