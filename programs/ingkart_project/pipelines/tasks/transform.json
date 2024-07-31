@@ -1,0 +1,110 @@
+{
+  "login_id": "shilpi",
+  "id": 837,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "transform",
+  "task_description": "transforming data",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "becceacd-4d5a-46b0-be7a-51913752a099",
+  "status": "Failed",
+  "updated_dttm": "2024-07-31T06:09:33.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Joiner_joiner": "Input_join_department_id,Input_join_department",
+      "Output_result": "Joiner_joiner",
+      "Input_join_department": "0",
+      "Input_join_department_id": "0"
+    },
+    "details": [
+      {
+        "Joiner": [
+          {
+            "joiner": {
+              "join_type": "left",
+              "output_df": "jnr_zgt",
+              "left_input_df": "inp_eak",
+              "join_condition": "inp_eak.department_id = inp_flv.department_id",
+              "right_input_df": "inp_flv",
+              "select_columns": "employee_id_left,employee_name_left,department_id_left,department_id_right,department_name_right",
+              "transformation_name": "joiner"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "join_department": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "department.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files2/",
+              "file_type": "csv",
+              "output_df": "inp_flv",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "department_id,department_name",
+              "connection_name": "localserver_s",
+              "transformation_name": "join_department"
+            }
+          },
+          {
+            "join_department_id": {
+              "header": "Y",
+              "schema": "config",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "employ.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files2/",
+              "file_type": "csv",
+              "output_df": "inp_eak",
+              "quote_char": "",
+              "table_name": "tbl_etl_audit",
+              "compression": "",
+              "escape_char": "",
+              "skip_header": "0",
+              "source_type": "Local Server",
+              "select_columns": "employee_id,employee_name,department_id",
+              "connection_name": "localserver_s",
+              "transformation_name": "join_department_id"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "result": {
+              "header": "Y",
+              "schema": "dbo",
+              "encoding": "utf-8",
+              "input_df": "jnr_zgt",
+              "delimiter": ",",
+              "file_name": "result.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files2/",
+              "file_type": "csv",
+              "operation": "create",
+              "table_name": "test_joiner",
+              "compression": "",
+              "target_type": "MSSQL",
+              "connection_name": "mssql_sys",
+              "transformation_name": "result",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
