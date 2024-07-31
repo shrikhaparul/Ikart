@@ -1,0 +1,449 @@
+{
+  "login_id": "rperuman",
+  "id": 598,
+  "project_name": "PharmaPulse",
+  "pipeline_name": "bulk_data_load",
+  "project_id": 67,
+  "pipeline_id": 175,
+  "task_name": "pandas_oracle_to_s3",
+  "task_description": "bulk task for loading data from oracle db to files in s3",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "ce7f2725-834c-4a18-997c-8a8ca4e6f517",
+  "status": "Failed",
+  "updated_dttm": "2024-05-28T16:32:37.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "EMPLOYEES",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "EMPLOYEES",
+          "audit_fields": "NO",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      },
+      {
+        "subtask": "10",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_xe",
+          "object_name": "FILE_5",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "FILE_5",
+          "audit_fields": "NO",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      },
+      {
+        "subtask": "11",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_xe",
+          "object_name": "FILE_6",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "FILE_6",
+          "audit_fields": "NO",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      },
+      {
+        "subtask": "12",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_xe",
+          "object_name": "FILE_TEST",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "FILE_TEST",
+          "audit_fields": "NO",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      },
+      {
+        "subtask": "13",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_xe",
+          "object_name": "REST_API",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "REST_API",
+          "audit_fields": "NO",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      },
+      {
+        "subtask": "14",
+        "source": {
+          "task_group": "2",
+          "connection_name": "oracle_xe",
+          "object_name": "TT_EMPLOYEE_DATA",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "TT_EMPLOYEE_DATA",
+          "audit_fields": "NO",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "EMPLOYEES_N",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "EMPLOYEES_N",
+          "audit_fields": "NO",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "EMPLOYEE_RESULT",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "EMPLOYEE_RESULT",
+          "audit_fields": "NO",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "EMPLOY_DATA",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "EMPLOY_DATA",
+          "audit_fields": "NO",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_xe",
+          "object_name": "EMPLOY_DATA_NEW",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "EMPLOY_DATA_NEW",
+          "audit_fields": "NO",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_xe",
+          "object_name": "EXAMPLE_TAB",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "EXAMPLE_TAB",
+          "audit_fields": "NO",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_xe",
+          "object_name": "EXAMPLE_TAB_2",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "EXAMPLE_TAB_2",
+          "audit_fields": "NO",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_xe",
+          "object_name": "EXAMPLE_TAB_AUDIT",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "EXAMPLE_TAB_AUDIT",
+          "audit_fields": "NO",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_xe",
+          "object_name": "EXAMPLE_TAB_SQL",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "demo/features/",
+          "encryption": "no",
+          "compression": "gzip",
+          "object_name": "EXAMPLE_TAB_SQL",
+          "audit_fields": "NO",
+          "transfer_mode": "binary",
+          "public_key_path": "/home/Admin/recipient_public_key.asc",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "test_",
+          "target_file_format": "csv",
+          "target_max_record_count": "1000"
+        }
+      }
+    ]
+  }
+}
