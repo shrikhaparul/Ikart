@@ -1,0 +1,86 @@
+{
+  "pipeline_id": 231,
+  "project_id": 84,
+  "pipeline_name": "DQ_Decouple__seq",
+  "pipeline_cd": null,
+  "pipeline_description": "DQ_Decouple__seq",
+  "is_active": "Y",
+  "tasks_details": {
+    "DQ_func": 0,
+    "DQ_func_ingestion": [
+      "DQ_func"
+    ],
+    "DQ_func_transformation": [
+      "DQ_func"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "798",
+      "data": {
+        "label": "798-DQ_func"
+      },
+      "position": {
+        "x": 50,
+        "y": 900
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "799",
+      "data": {
+        "label": "799-DQ_func_ingestion"
+      },
+      "position": {
+        "x": 50,
+        "y": 950
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "800",
+      "data": {
+        "label": "800-DQ_func_transformation"
+      },
+      "position": {
+        "x": 50,
+        "y": 1000
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-798",
+      "source": "0",
+      "target": "798"
+    },
+    {
+      "id": "flow-798-799",
+      "source": "798",
+      "target": "799"
+    },
+    {
+      "id": "flow-798-800",
+      "source": "798",
+      "target": "800"
+    }
+  ],
+  "created_dttm": "2024-07-31T06:31:30.707Z",
+  "updated_dttm": "2024-07-31T06:31:30.707Z"
+}
