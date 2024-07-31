@@ -1,0 +1,51 @@
+{
+  "login_id": "rperuman",
+  "id": 574,
+  "project_name": "PharmaPulse",
+  "pipeline_name": "bulk_data_load",
+  "project_id": 67,
+  "pipeline_id": 175,
+  "task_name": "sqlserver_files",
+  "task_description": "sqlserver_files",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "fc523cef-9c64-432d-b338-ef0c9d6f7509",
+  "status": "Success",
+  "updated_dttm": "2024-07-31T11:11:54.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mysql",
+          "object_name": "demo_dept_data",
+          "object_type": "Table",
+          "schema_name": "transformation",
+          "database_name": "transformation",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "upsert_demo_dept_data",
+          "connection_name": "mysql",
+          "primary_key": "department_id",
+          "schema_name": "transformation",
+          "audit_fields": "NO",
+          "database_name": "transformation",
+          "action_on_table": "UPSERT"
+        }
+      }
+    ]
+  }
+}
