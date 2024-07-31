@@ -1,0 +1,46 @@
+{
+  "pipeline_id": 237,
+  "project_id": 85,
+  "pipeline_name": "pip_demo_bulk_ingest1",
+  "pipeline_cd": null,
+  "pipeline_description": "pip_demo_bulk_ingest1",
+  "is_active": "Y",
+  "tasks_details": {
+    "task_demo_bulk_ingest1": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "839",
+      "data": {
+        "label": "839-task_demo_bulk_ingest1"
+      },
+      "position": {
+        "x": 50,
+        "y": 19850
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-839",
+      "source": "0",
+      "target": "839"
+    }
+  ],
+  "created_dttm": "2024-07-31T10:23:59.710Z",
+  "updated_dttm": "2024-07-31T10:23:59.710Z"
+}
