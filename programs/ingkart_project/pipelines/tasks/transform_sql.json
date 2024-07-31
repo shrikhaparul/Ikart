@@ -1,0 +1,84 @@
+{
+  "login_id": "shilpi",
+  "id": 843,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "transform_sql",
+  "task_description": "transform_sql",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "c501dc78-d4d6-4732-ab02-9d5ac2d8d8a7",
+  "status": "Failed",
+  "updated_dttm": "2024-07-31T16:09:31.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "SQL_query": "Input_table_2,Input_table_1",
+      "Input_table_1": "0",
+      "Input_table_2": "0",
+      "Output_result": "SQL_query"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "table_1": {
+              "schema": "config",
+              "output_df": "inp_nfg",
+              "table_name": "tbl_etl_audit",
+              "source_type": "MySQL",
+              "select_columns": "id,pipeline_id,taskorpipeline_name,run_id,task_group,sequence,iteration,audit_type,audit_value,process_dttm,created_dttm",
+              "connection_name": "mysql_config",
+              "transformation_name": "table_1"
+            }
+          },
+          {
+            "table_2": {
+              "schema": "config",
+              "output_df": "inp_ybr",
+              "table_name": "vw_task_list",
+              "source_type": "MySQL",
+              "select_columns": "login_id,id,project_name,pipeline_name,project_id,pipeline_id,task_name,task_description,task_type,task_sequence,last_run_id,status,updated_dttm,source,target,is_active,created_by,updated_by,details",
+              "connection_name": "mysql_config",
+              "transformation_name": "table_2"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "result": {
+              "schema": "public",
+              "input_df": "sql_exg",
+              "operation": "create",
+              "table_name": "sql_test",
+              "target_type": "PostgreSQL",
+              "connection_name": "postgres_s",
+              "transformation_name": "result"
+            }
+          }
+        ]
+      },
+      {
+        "SQL": [
+          {
+            "query": {
+              "input_df": "inp_nfg",
+              "output_df": "sql_exg",
+              "sql_query": "tbl_etl_audit.*\nFROM \n    config.vw_task_list\nLEFT JOIN \n    config.tbl_etl_audit \nON \n    vw_task_list.pipeline_id = tbl_etl_audit.pipeline_id;",
+              "transformation_name": "query"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
