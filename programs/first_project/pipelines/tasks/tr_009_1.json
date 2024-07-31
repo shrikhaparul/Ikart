@@ -1,0 +1,87 @@
+{
+  "login_id": "Madhu",
+  "id": 803,
+  "project_name": "first_project",
+  "pipeline_name": "tasj",
+  "project_id": 80,
+  "pipeline_id": 210,
+  "task_name": "tr_009_1",
+  "task_description": "newww",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-29T09:23:56.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "sahilphal",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_inp": "0",
+      "Output_tr_output": "Expression_tr_exp_1",
+      "Expression_tr_exp_1": "Input_inp"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "tr_exp_1": {
+              "input_df": "inp_wfo",
+              "output_df": "exp_crz",
+              "transformation_name": "tr_exp_1",
+              "tr_exp_1_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "password",
+                "output_col_name": "password",
+                "expression_value": " "
+              },
+              "tr_exp_1_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "login_id",
+                "output_col_name": "login_id",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "inp": {
+              "schema": "config",
+              "output_df": "inp_wfo",
+              "table_name": "tbl_user",
+              "source_type": "MySQL",
+              "select_columns": "login_id,password",
+              "connection_name": "connection_01",
+              "transformation_name": "inp"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "tr_output": {
+              "schema": "public",
+              "input_df": "exp_crz",
+              "operation": "truncate",
+              "table_name": "tbl_user",
+              "target_type": "MySQL",
+              "connection_name": "connection_01",
+              "transformation_name": "tr_output"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
