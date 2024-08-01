@@ -1,0 +1,78 @@
+{
+  "login_id": "shilpi",
+  "id": 844,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "transform_ssql",
+  "task_description": "transform_ssql",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "300d1f7d-1a04-49de-a2a9-d4384a995d9d",
+  "status": "Failed",
+  "updated_dttm": "2024-08-01T07:26:50.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "SQL_check_sqla": "Input_check_sql",
+      "Input_check_sql": "0",
+      "Output_check_sql_file": "SQL_check_sqla"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "check_sql": {
+              "schema": "config",
+              "output_df": "inp_aia",
+              "table_name": "tbl_etl_audit",
+              "source_type": "MySQL",
+              "select_columns": "id,pipeline_id,taskorpipeline_name,run_id,task_group,sequence,iteration,audit_type,audit_value,process_dttm,created_dttm",
+              "connection_name": "mysql_config",
+              "transformation_name": "check_sql"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "check_sql_file": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "sql_qup",
+              "delimiter": ",",
+              "file_name": "sql_result.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files2/",
+              "file_type": "csv",
+              "quote_char": "",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "localserver_s",
+              "transformation_name": "check_sql_file",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      },
+      {
+        "SQL": [
+          {
+            "check_sqla": {
+              "input_df": "inp_aia",
+              "output_df": "sql_qup",
+              "sql_query": "SELECT pipeline_id\n    FROM config.tbl_etl_audit\n    LIMIT 10;",
+              "transformation_name": "check_sqla"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
