@@ -1,0 +1,87 @@
+{
+  "login_id": "shilpi",
+  "id": 843,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "transform_sql",
+  "task_description": "transform_sql",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "8a2f87ea-726a-42e2-9471-2235bddd1042",
+  "status": "Failed",
+  "updated_dttm": "2024-07-31T16:09:31.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_table_1": "0",
+      "Input_table_2": "0",
+      "Output_result": "Joiner_join_id",
+      "Joiner_join_id": "Input_table_2,Input_table_1"
+    },
+    "details": [
+      {
+        "Joiner": [
+          {
+            "join_id": {
+              "join_type": "left",
+              "output_df": "jnr_wtu",
+              "left_input_df": "inp_ybr",
+              "join_condition": "inp_ybr.id= inp_nfg.id",
+              "right_input_df": "inp_nfg",
+              "select_columns": "id_left,page_count_left,print_type_left,avg_rating_left,rating_count_left,is_ebook_left,id_right,title_right,subtitle_right,authors_right,publisher_right,published_date_right,category_right",
+              "transformation_name": "join_id"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "table_1": {
+              "schema": "lnd",
+              "output_df": "inp_nfg",
+              "table_name": "databook_details_cl",
+              "source_type": "PostgreSQL",
+              "select_columns": "id,title,subtitle,authors,publisher,published_date,category",
+              "connection_name": "postgres_s",
+              "transformation_name": "table_1"
+            }
+          },
+          {
+            "table_2": {
+              "schema": "lnd",
+              "output_df": "inp_ybr",
+              "table_name": "databooks_desc_cl",
+              "source_type": "PostgreSQL",
+              "select_columns": "id,page_count,print_type,avg_rating,rating_count,is_ebook",
+              "connection_name": "postgres_s",
+              "transformation_name": "table_2"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "result": {
+              "schema": "public",
+              "input_df": "jnr_wtu",
+              "operation": "create",
+              "table_name": "datab",
+              "target_type": "PostgreSQL",
+              "connection_name": "postgres_s",
+              "transformation_name": "result"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
