@@ -1,0 +1,84 @@
+{
+  "login_id": "shilpi",
+  "id": 853,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "tra_test",
+  "task_description": "tra_test",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "68fb4713-49d4-471d-9805-6716674df184",
+  "status": "Failed",
+  "updated_dttm": "2024-08-01T13:13:22.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "SQL_query": "Input_join_dd,Input_join_desc",
+      "Input_join_dd": "0",
+      "Output_result": "SQL_query",
+      "Input_join_desc": "0"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "join_desc": {
+              "schema": "sys",
+              "output_df": "inp_aaa",
+              "table_name": "databooks_desc",
+              "source_type": "MySQL",
+              "select_columns": "﻿details_id,title,subtitle,authors,publisher,published_date,category",
+              "connection_name": "mysql_s",
+              "transformation_name": "join_desc"
+            }
+          },
+          {
+            "join_dd": {
+              "schema": "sys",
+              "output_df": "inp_dip",
+              "table_name": "databooks_details",
+              "source_type": "MySQL",
+              "select_columns": "﻿details_id,title,subtitle,authors,publisher,published_date,category",
+              "connection_name": "mysql_s",
+              "transformation_name": "join_dd"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "result": {
+              "schema": "lnd",
+              "input_df": "sql_pkk",
+              "operation": "create",
+              "table_name": "sql_da",
+              "target_type": "PostgreSQL",
+              "connection_name": "postgres_s",
+              "transformation_name": "result"
+            }
+          }
+        ]
+      },
+      {
+        "SQL": [
+          {
+            "query": {
+              "input_df": "inp_dip,inp_aaa",
+              "output_df": "sql_pkk",
+              "sql_query": "SELECT \n    inp_dip.detials_id,inp_dip.title,inp_dip.subtitle,inp_dip.authors,inp_dip.publisher,inp_dip.published_date,inp_dip.category,inp_aaa.page_count,inp_aaa.print_type,inp_aaa.avg_rating,inp_aaa.rating_count,inp_aaa.is_ebook\t\nFROM \n    inp_dip\nJOIN \n    inp_aaa ON inp_dip.detials_id = inp_aaa.desc_id",
+              "transformation_name": "query"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
