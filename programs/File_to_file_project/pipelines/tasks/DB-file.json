@@ -1,0 +1,141 @@
+{
+  "login_id": "jjones",
+  "id": 855,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "DB-file",
+  "task_description": "-",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "78def895-da79-466e-a7c8-86380337b020",
+  "status": "Success",
+  "updated_dttm": "2024-08-02T08:02:45.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "DISTRIBUTION_CENTER",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": "|",
+          "file_path": "Excel_folder/files/test/",
+          "compression": "",
+          "object_name": "DISTRIBUTION_CENTER",
+          "primary_key": "",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "OWNER_DETAILS",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": "|",
+          "file_path": "Excel_folder/files/test/",
+          "compression": "",
+          "object_name": "OWNER_DETAILS",
+          "primary_key": "",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_p",
+          "object_name": "NAME_MAPPING",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": "|",
+          "file_path": "Excel_folder/files/test/",
+          "compression": "",
+          "object_name": "NAME_MAPPING",
+          "primary_key": "",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_p",
+          "object_name": "ORDER_BY_REGION",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "aws_S3_conn_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": "|",
+          "file_path": "Excel_folder/files/test/",
+          "compression": "",
+          "object_name": "ORDER_BY_REGION",
+          "primary_key": "",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "csv"
+        }
+      }
+    ]
+  }
+}
