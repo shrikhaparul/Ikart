@@ -1,0 +1,141 @@
+{
+  "login_id": "rperuman",
+  "id": 856,
+  "project_name": "open_payments",
+  "pipeline_name": "ingest_payments_data",
+  "project_id": 79,
+  "pipeline_id": 196,
+  "task_name": "oracle_to_s3_bulk_ingest",
+  "task_description": "oracle_to_s3_bulk_ingest",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "e1889e3e-58e3-49b0-8b5e-9663b94516ee",
+  "status": "Success",
+  "updated_dttm": "2024-08-02T11:51:46.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "EMPLOYEE_RESULT",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "test/RK/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "EMPLOYEE_RESULT",
+          "audit_fields": "YES",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "rk_",
+          "target_file_format": "csv",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "oracle_xe",
+          "object_name": "EMPLOY_DATA",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "test/RK/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "EMPLOY_DATA",
+          "audit_fields": "YES",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "rk_",
+          "target_file_format": "csv",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_xe",
+          "object_name": "EMPLOY_DATA_NEW",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "test/RK/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "EMPLOY_DATA_NEW",
+          "audit_fields": "YES",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "rk_",
+          "target_file_format": "csv",
+          "target_max_record_count": "0"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "oracle_xe",
+          "object_name": "EXAMPLE_TAB",
+          "object_type": "Table",
+          "schema_name": "TEST",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "AWS_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "test/RK/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "EXAMPLE_TAB",
+          "audit_fields": "YES",
+          "object_sufix_name": "_%DD%%MM%%YYYY%",
+          "object_prefix_name": "rk_",
+          "target_file_format": "csv",
+          "target_max_record_count": "0"
+        }
+      }
+    ]
+  }
+}
