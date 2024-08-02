@@ -1,0 +1,96 @@
+{
+  "login_id": "shilpi",
+  "id": 853,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "tra_test",
+  "task_description": "tra_test",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "86bf8227-053f-4055-af56-d950731112c0",
+  "status": "Failed",
+  "updated_dttm": "2024-08-01T13:13:22.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "SQL_query": "Input_join_dd,Input_join_desc,Input_join_price",
+      "Input_join_dd": "0",
+      "Output_result": "SQL_query",
+      "Input_join_desc": "0",
+      "Input_join_price": "0"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "join_desc": {
+              "schema": "lnd",
+              "output_df": "inp_aaa",
+              "table_name": "databooks_desc",
+              "source_type": "PostgreSQL",
+              "select_columns": "﻿id,page_count,print_type,avg_rating,rating_count,is_ebook",
+              "connection_name": "postgres_s",
+              "transformation_name": "join_desc"
+            }
+          },
+          {
+            "join_dd": {
+              "schema": "lnd",
+              "output_df": "inp_dip",
+              "table_name": "databook_details",
+              "source_type": "PostgreSQL",
+              "select_columns": "﻿id,title,subtitle,authors,publisher,published_date,category",
+              "connection_name": "postgres_s",
+              "transformation_name": "join_dd"
+            }
+          },
+          {
+            "join_price": {
+              "schema": "lnd",
+              "output_df": "inp_vmg",
+              "table_name": "databooks_price",
+              "source_type": "PostgreSQL",
+              "select_columns": "﻿id,price,retail_price,currency_code",
+              "connection_name": "postgres_s",
+              "transformation_name": "join_price"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "result": {
+              "schema": "lnd",
+              "input_df": "sql_pkk",
+              "operation": "create",
+              "table_name": "sql_da",
+              "target_type": "PostgreSQL",
+              "connection_name": "postgres_s",
+              "transformation_name": "result"
+            }
+          }
+        ]
+      },
+      {
+        "SQL": [
+          {
+            "query": {
+              "input_df": "inp_dip,inp_aaa,inp_vmg",
+              "output_df": "sql_pkk",
+              "sql_query": "SELECT \n    dip.\"﻿id\",dip.title,dip.subtitle,dip.authors,dip.publisher,dip.published_date,dip.category,aaa.page_count,aaa.print_type,aaa.avg_rating,aaa.rating_count,aaa.is_ebook,zvt.price,zvt.retail_price,zvt.currency_code\nFROM \n    dip\nJOIN \n    aaa ON dip.\"﻿id\"= aaa.\"﻿id\"\nJOIN \n    zvt ON dip.\"﻿id\" = zvt.\"﻿id\";",
+              "transformation_name": "query"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
