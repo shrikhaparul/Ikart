@@ -1,0 +1,59 @@
+{
+  "login_id": "jjones",
+  "id": 409,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "bulk_test1",
+  "task_description": "sd",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "6ab45513-e3f9-4e17-a843-536f48e2e9ee",
+  "status": "Failed",
+  "updated_dttm": "2024-07-29T17:30:49.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "SeaTunnel",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "aws_S3",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "Excel_folder/files/test/test_beverage.csv",
+          "operation": "",
+          "decryption": "no",
+          "task_group": "0",
+          "compression": "",
+          "escape_char": "",
+          "object_name": "test_beverage.csv",
+          "object_type": "csv",
+          "skip_footer": "0",
+          "skip_header": "1",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "test_beverage_upsert",
+          "connection_name": "P_postgres",
+          "primary_key": "['id']",
+          "schema_name": "dwh",
+          "audit_fields": "YES",
+          "database_name": "postgres",
+          "action_on_table": "UPSERT"
+        }
+      }
+    ]
+  }
+}
