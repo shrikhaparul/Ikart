@@ -46,11 +46,11 @@
         },
         "target": {
           "object_name": "s3_test",
-          "connection_name": "P_sqlserver",
+          "connection_name": "P_postgres",
           "primary_key": "",
-          "schema_name": "dbo",
+          "schema_name": "dwh",
           "audit_fields": "NO",
-          "database_name": "sys",
+          "database_name": "postgres",
           "action_on_table": "CREATE IF NOT EXIST"
         }
       },
@@ -76,11 +76,11 @@
         },
         "target": {
           "object_name": "test_beverage_upsert",
-          "connection_name": "P_sqlserver",
+          "connection_name": "P_postgres",
           "primary_key": "",
-          "schema_name": "dbo",
+          "schema_name": "dwh",
           "audit_fields": "YES",
-          "database_name": "sys",
+          "database_name": "postgres",
           "action_on_table": "CREATE IF NOT EXIST"
         }
       }
