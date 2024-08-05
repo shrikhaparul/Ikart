@@ -48,9 +48,9 @@
           "object_name": "s3_test",
           "connection_name": "P_postgres",
           "primary_key": "",
-          "schema_name": "dbo",
+          "schema_name": "dwh",
           "audit_fields": "NO",
-          "database_name": "sys",
+          "database_name": "postgres",
           "action_on_table": "CREATE IF NOT EXIST"
         }
       },
@@ -78,9 +78,9 @@
           "object_name": "s3_test_65",
           "connection_name": "P_postgres",
           "primary_key": "",
-          "schema_name": "dbo",
+          "schema_name": "dwh",
           "audit_fields": "NO",
-          "database_name": "sys",
+          "database_name": "postgres",
           "action_on_table": "CREATE IF NOT EXIST"
         }
       }
