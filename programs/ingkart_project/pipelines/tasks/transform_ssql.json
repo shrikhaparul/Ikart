@@ -1,0 +1,120 @@
+{
+  "login_id": "shilpi",
+  "id": 844,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "transform_ssql",
+  "task_description": "transform_ssql",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "03daae32-093d-404a-916d-7de5f47bab02",
+  "status": "Success",
+  "updated_dttm": "2024-08-01T07:26:50.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_data_price": "0",
+      "Output_check_sql_file": "Expression_add_price_in_usd",
+      "Expression_add_price_in_usd": "Input_data_price"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "add_price_in_usd": {
+              "input_df": "inp_aia",
+              "output_df": "exp_djz",
+              "transformation_name": "add_price_in_usd",
+              "add_price_in_usd_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "retail_price",
+                "output_col_name": "retail_price",
+                "expression_value": " "
+              },
+              "add_price_in_usd_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "currency_code",
+                "output_col_name": "currency_code",
+                "expression_value": " "
+              },
+              "add_price_in_usd_5": {
+                "operator": "currency_conv",
+                "sequence": "5",
+                "operatorType": "Converter",
+                "input_col_name": "",
+                "output_col_name": "price_usd",
+                "expression_value": "currency_conv(price,INR,USD))"
+              },
+              "add_price_in_usd_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "id",
+                "output_col_name": "id",
+                "expression_value": " "
+              },
+              "add_price_in_usd_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "price",
+                "output_col_name": "price_ind",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "data_price": {
+              "schema": "lnd",
+              "output_df": "inp_aia",
+              "table_name": "databooks_price_cl",
+              "source_type": "PostgreSQL",
+              "select_columns": "id,price,retail_price,currency_code",
+              "connection_name": "postgres_s",
+              "transformation_name": "data_price"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "check_sql_file": {
+              "header": "Y",
+              "schema": "test",
+              "encoding": "utf-8",
+              "input_df": "exp_djz",
+              "delimiter": ",",
+              "file_name": "sql_result.csv",
+              "file_path": "/home/Admin/actions-runner/_work/UI/src_files2/",
+              "file_type": "csv",
+              "operation": "create",
+              "quote_char": "",
+              "table_name": "price_cl",
+              "compression": "",
+              "target_type": "Oracle",
+              "connection_name": "oracle_xepdb1",
+              "transformation_name": "check_sql_file",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
