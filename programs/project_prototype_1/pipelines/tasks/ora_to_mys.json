@@ -1,0 +1,49 @@
+{
+  "login_id": "prajwal",
+  "id": 609,
+  "project_name": "project_prototype_1",
+  "pipeline_name": "proto_pipeline__1",
+  "project_id": 76,
+  "pipeline_id": 190,
+  "task_name": "ora_to_mys",
+  "task_description": "ora_to_mys",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "33468db6-4ee6-4d6c-b170-a342e4a5c52f",
+  "status": "Running",
+  "updated_dttm": "2024-08-05T10:43:43.000Z",
+  "source": "Oracle",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT ID, FIRST_NAME_1, LAST_NAME, GENDER, BIRTH_DATE, EMPLOYMENT_STATUS, ANNUAL_SALARY, CRTD_BY, CRTD_DTTM, UPDT_BY, UPDT_DTTM FROM TEST.EMPLOY_DATA",
+      "schema": "TEST",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "EMPLOY_DATA",
+      "parameter_type": "Oracle",
+      "select_columns": "ID,FIRST_NAME_1,LAST_NAME,GENDER,BIRTH_DATE,EMPLOYMENT_STATUS,ANNUAL_SALARY,CRTD_BY,CRTD_DTTM,UPDT_BY,UPDT_DTTM",
+      "connection_name": "ec2_oracle"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "ikart",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "fromorac",
+      "primary_key": "ID",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_local_ikart",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
