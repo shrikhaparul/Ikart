@@ -1,0 +1,58 @@
+{
+  "login_id": "jjones",
+  "id": 759,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "lo",
+  "task_description": "lo",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "8429fd25-242c-44eb-bed7-1a35176b907e",
+  "status": "Success",
+  "updated_dttm": "2024-07-17T13:44:23.000Z",
+  "source": "AWS S3",
+  "target": "Snowflake",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "test_beverage.csv",
+      "file_path": "Excel_folder/files/test/",
+      "file_type": "csv",
+      "chunk_size": 100000,
+      "decryption": "no",
+      "quote_char": "none",
+      "compression": "",
+      "escape_char": "",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": "region,country,item_type,sales_channel,order_priority,orderdate,orderid,shipdate,unitsold,unitprice,unitcost,totalrevenue,totalcost,totalprofit,id",
+      "parameter_type": "AWS S3",
+      "select_columns": null,
+      "connection_name": "aws_S3_conn_files_to_files",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "snowflake_write",
+      "schema": "PUBLIC",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "upsert_tab",
+      "primary_key": "",
+      "audit_columns": "inactive",
+      "parameter_type": "Snowflake",
+      "connection_name": "P_snow",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
