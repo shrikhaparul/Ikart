@@ -46,7 +46,7 @@
         },
         "target": {
           "object_name": "s3_test",
-          "connection_name": "P_sqlserver",
+          "connection_name": "P_postgres",
           "primary_key": "",
           "schema_name": "dbo",
           "audit_fields": "NO",
@@ -76,7 +76,7 @@
         },
         "target": {
           "object_name": "s3_test_65",
-          "connection_name": "P_sqlserver",
+          "connection_name": "P_postgres",
           "primary_key": "",
           "schema_name": "dbo",
           "audit_fields": "NO",
