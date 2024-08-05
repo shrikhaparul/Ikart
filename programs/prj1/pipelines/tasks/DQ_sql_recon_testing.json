@@ -1,0 +1,71 @@
+{
+  "login_id": "durga",
+  "id": 785,
+  "project_name": "prj1",
+  "pipeline_name": "Test_pipeline_2_7_24",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "DQ_sql_recon_testing",
+  "task_description": "DQ_sql_recon_testing",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "1e97935e-f3ab-4c6c-8171-acf16f2e2bd4",
+  "status": "Running",
+  "updated_dttm": "2024-07-04T08:08:10.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "personal_details.csv",
+      "file_path": "/home/durga/Files/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": null,
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "Name,Email,Phone_Number,PAN_Number,Date_of_Birth",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "local_con_sales",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "demo",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "sales",
+      "audit_columns": "active",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_con1",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "sql_reconciliation",
+        "parameters": {
+          "src_sql": "select count(*) from customer",
+          "tgt_sql": "SELECT count(*) FROM demo.sales"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "post_check"
+      }
+    ]
+  }
+}
