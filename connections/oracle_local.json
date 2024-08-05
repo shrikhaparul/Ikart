@@ -1,0 +1,14 @@
+{
+  "project_id": 84,
+  "connection_type": "RDBMS DB",
+  "connection_subtype": "Oracle",
+  "connection_name": "oracle_local",
+  "connection_details": {
+    "port": "1521",
+    "database": "mypdb",
+    "hostname": "localhost",
+    "password": "bb36fc2892bb2c99aaf1667a622080124ebd9ecee9cd5a4e017b5e",
+    "username": "system",
+    "updated_by": "sonika"
+  }
+}
