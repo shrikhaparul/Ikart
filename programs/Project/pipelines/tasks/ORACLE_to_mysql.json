@@ -1,0 +1,47 @@
+{
+  "login_id": "sonika",
+  "id": 813,
+  "project_name": "Project",
+  "pipeline_name": "oracle_test",
+  "project_id": 84,
+  "pipeline_id": 230,
+  "task_name": "ORACLE_to_mysql",
+  "task_description": "ORACLE_to_mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "92e77add-570f-4094-9e29-c47640fed711",
+  "status": "Running",
+  "updated_dttm": "2024-08-05T12:02:49.000Z",
+  "source": "PostgreSQL",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT vendorid, tpep_pickup_datetime, tpep_dropoff_datetime, passenger_count, trip_distance, ratecodeid, store_and_fwd_flag, pulocationid, dolocationid, payment_type, fare_amount, extra, mta_tax, tip_amount, tolls_amount, improvement_surcharge, total_amount, congestion_surcharge, airport_fee FROM demo.yellow_tripdata_2018",
+      "schema": "demo",
+      "chunk_size": 1000000,
+      "table_name": "yellow_tripdata_2018",
+      "parameter_type": "PostgreSQL",
+      "select_columns": "vendorid,tpep_pickup_datetime,tpep_dropoff_datetime,passenger_count,trip_distance,ratecodeid,store_and_fwd_flag,pulocationid,dolocationid,payment_type,fare_amount,extra,mta_tax,tip_amount,tolls_amount,improvement_surcharge,total_amount,congestion_surcharge,airport_fee",
+      "connection_name": "postgres_ec2"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "MYNEWDB",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "EMPLOYEE_RESULT",
+      "primary_key": "",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_local",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
