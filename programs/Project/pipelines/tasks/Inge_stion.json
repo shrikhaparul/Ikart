@@ -1,0 +1,49 @@
+{
+  "login_id": "sonika",
+  "id": 812,
+  "project_name": "Project",
+  "pipeline_name": "oracle_test",
+  "project_id": 84,
+  "pipeline_id": 230,
+  "task_name": "Inge_stion",
+  "task_description": "testing oracle",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "3745b7c4-8673-4b68-adc3-a18cb346fddf",
+  "status": "Success",
+  "updated_dttm": "2024-08-05T08:21:01.000Z",
+  "source": "Oracle",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT ANNUAL_SALARY, BIRTH_DATE, CRTD_BY, CRTD_DTTM, EMPLOYMENT_STATUS, FIRST_NAME_1, GENDER, ID, LAST_NAME, UPDT_BY, UPDT_DTTM FROM TEST.EMPLOY_DATA",
+      "schema": "STAGE",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 100000,
+      "table_name": "POST",
+      "parameter_type": "Oracle",
+      "select_columns": "ANNUAL_SALARY,BIRTH_DATE,CRTD_BY,CRTD_DTTM,EMPLOYMENT_STATUS,FIRST_NAME_1,GENDER,ID,LAST_NAME,UPDT_BY,UPDT_DTTM",
+      "connection_name": "orac_conn"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "MYNEWDB",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "EMPLOYEE_RESULT",
+      "primary_key": "",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_local",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
