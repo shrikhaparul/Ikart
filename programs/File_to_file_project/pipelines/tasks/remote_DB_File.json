@@ -1,0 +1,119 @@
+{
+  "login_id": "jjones",
+  "id": 857,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "remote_DB_File",
+  "task_description": "ssssss",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "fd91fc3e-c867-4eee-951f-4660eda020ea",
+  "status": "Failed",
+  "updated_dttm": "2024-08-05T14:41:10.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "SeaTunnel",
+  "restartability": "skip",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "employee",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/folder/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "employee",
+          "primary_key": "",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "public_key_path": "/home/Admin/actions-runner/_work/recipient_public_key.asc",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "name_mapping",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/folder/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "name_mapping",
+          "primary_key": "",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "public_key_path": "/home/Admin/actions-runner/_work/recipient_public_key.asc",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "parquet"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "P_postgres",
+          "object_name": "employee_data",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "header": "Y",
+          "connection_name": "ec2_local_server_files_to_files",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/Admin/actions-runner/_work/test/folder/",
+          "encryption": "no",
+          "compression": "bzip",
+          "object_name": "employee_data",
+          "primary_key": "",
+          "audit_fields": "NO",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "public_key_path": "/home/Admin/actions-runner/_work/recipient_public_key.asc",
+          "object_sufix_name": "%DD%%MM%%YYYY%",
+          "object_prefix_name": "tgt_",
+          "target_file_format": "parquet"
+        }
+      }
+    ]
+  }
+}
