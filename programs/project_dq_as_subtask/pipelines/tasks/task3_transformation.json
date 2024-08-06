@@ -1,0 +1,47 @@
+{
+  "login_id": "Puneeth",
+  "id": 503,
+  "project_name": "project_dq_as_subtask",
+  "pipeline_name": "pip1",
+  "project_id": 65,
+  "pipeline_id": 171,
+  "task_name": "task3_transformation",
+  "task_description": "task3_transformation",
+  "task_type": "Transformation",
+  "task_sequence": "\"501\"",
+  "last_run_id": "a7ef9d5b-b016-4770-924d-e5d8f87c2887",
+  "status": "Failed",
+  "updated_dttm": "2024-08-05T17:02:53.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "job_execution": null,
+  "task": {
+    "flow": {
+      "Input_Input": "0"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "Input": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "sales.csv",
+              "file_path": "/home/puneeths/sample_data/",
+              "file_type": "csv",
+              "output_df": "inp_xuo",
+              "escape_char": "",
+              "source_type": "Local Server",
+              "connection_name": "localserver_connection_puneeth",
+              "transformation_name": "Input"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
