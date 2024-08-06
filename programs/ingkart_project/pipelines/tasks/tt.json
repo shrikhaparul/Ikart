@@ -1,0 +1,135 @@
+{
+  "login_id": "shilpi",
+  "id": 859,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "tt",
+  "task_description": "tt",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "ac36605e-55a3-4536-855a-cce0dcc6e50c",
+  "status": "Success",
+  "updated_dttm": "2024-08-06T05:42:49.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Output_result": "Expression_date",
+      "Expression_date": "Input_check_date",
+      "Input_check_date": "0"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "date": {
+              "input_df": "inp_xns",
+              "output_df": "exp_hor",
+              "transformation_name": "date",
+              "date_8": {
+                "operator": "to_julian",
+                "sequence": "8",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "datee_in julian",
+                "expression_value": "to_julian(published_date)"
+              },
+              "date_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "category",
+                "output_col_name": "category",
+                "expression_value": " "
+              },
+              "date_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "published_date",
+                "output_col_name": "published_date",
+                "expression_value": " "
+              },
+              "date_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "id",
+                "output_col_name": "id",
+                "expression_value": " "
+              },
+              "date_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "title",
+                "output_col_name": "title",
+                "expression_value": " "
+              },
+              "date_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "publisher",
+                "output_col_name": "publisher",
+                "expression_value": " "
+              },
+              "date_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "authors",
+                "output_col_name": "authors",
+                "expression_value": " "
+              },
+              "date_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "subtitle",
+                "output_col_name": "subtitle",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "check_date": {
+              "schema": "lnd",
+              "output_df": "inp_xns",
+              "table_name": "databook_details_cl",
+              "source_type": "PostgreSQL",
+              "select_columns": "id,title,subtitle,authors,publisher,published_date,category",
+              "connection_name": "postgres_s",
+              "transformation_name": "check_date"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "result": {
+              "schema": "test",
+              "input_df": "exp_hor",
+              "operation": "create",
+              "table_name": "change_date",
+              "target_type": "Oracle",
+              "connection_name": "oracle_xepdb1",
+              "transformation_name": "result"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
