@@ -1,0 +1,57 @@
+{
+  "login_id": "shilpi",
+  "id": 863,
+  "project_name": "ingkart_project",
+  "pipeline_name": "data_transformation",
+  "project_id": 72,
+  "pipeline_id": 239,
+  "task_name": "s3_data_load",
+  "task_description": "After transforming data put it into s3 bucket",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "087864c9-81a9-49c6-9f17-365ee1631a67",
+  "status": "Success",
+  "updated_dttm": "2024-08-06T08:02:42.000Z",
+  "source": "PostgreSQL",
+  "target": "AWS S3",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT id_left, page_count, print_type, avg_rating, rating_count, is_ebook, title, subtitle, authors, publisher, published_date, category, price, retail_price, currency_code FROM lnd.book_details",
+      "schema": "lnd",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "book_details",
+      "parameter_type": "PostgreSQL",
+      "select_columns": "id_left,page_count,print_type,avg_rating,rating_count,is_ebook,title,subtitle,authors,publisher,published_date,category,price,retail_price,currency_code",
+      "connection_name": "postgres_s"
+    },
+    "target": {
+      "target_type": "aws_s3_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": "",
+      "file_name": "book_details_parquet",
+      "file_path": "Excel_folder/files/",
+      "file_type": "parquet",
+      "encryption": "yes",
+      "compression": "gzip",
+      "escape_char": "",
+      "skip_footer": "0",
+      "skip_header": "0",
+      "audit_columns": "active",
+      "parameter_type": "AWS S3",
+      "connection_name": "aws_s3_s",
+      "public_key_path": "/home/Admin/actions-runner/_work/recipient_public_key.asc",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
