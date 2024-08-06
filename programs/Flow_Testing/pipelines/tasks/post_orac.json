@@ -1,0 +1,48 @@
+{
+  "login_id": "Pavan",
+  "id": 866,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Ingestion",
+  "project_id": 82,
+  "pipeline_id": 238,
+  "task_name": "post_orac",
+  "task_description": "-",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-06T11:40:46.000Z",
+  "source": "PostgreSQL",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT id, product_id, created_at, sold_at, cost, product_category, product_name, product_brand, product_retail_price, product_department, product_sku, product_distribution_center_id, crtd_by, crtd_dttm, updt_by, updt_dttm FROM public.inventory_items",
+      "schema": "public",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 100000,
+      "table_name": "inventory_items",
+      "parameter_type": "PostgreSQL",
+      "select_columns": "id,product_id,created_at,sold_at,cost,product_category,product_name,product_brand,product_retail_price,product_department,product_sku,product_distribution_center_id,crtd_by,crtd_dttm,updt_by,updt_dttm",
+      "connection_name": "postgres_tr"
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "STAGE",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "EMPLOYEE_RESULT",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "Oracle_input",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
