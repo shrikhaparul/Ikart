@@ -1,0 +1,119 @@
+{
+  "login_id": "sonika",
+  "id": 809,
+  "project_name": "Project",
+  "pipeline_name": "expression_flow",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "test",
+  "task_description": "testing",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "dfc80529-fbc9-417f-931f-5528cf9a66c5",
+  "status": "Failed",
+  "updated_dttm": "2024-07-31T14:23:39.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Input_input": "0",
+      "Expression_exp": "Input_input",
+      "Output_output_exp": "Expression_exp"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "exp": {
+              "input_df": "inp_ksy",
+              "output_df": "exp_jcm",
+              "transformation_name": "exp",
+              "exp_4": {
+                "operator": "to_julian",
+                "sequence": "4",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "",
+                "expression_value": "to_julian(published_date)"
+              },
+              "exp_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "published_date",
+                "output_col_name": "published_date",
+                "expression_value": " "
+              },
+              "exp_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "subtitle",
+                "output_col_name": "subtitle",
+                "expression_value": " "
+              },
+              "exp_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "id",
+                "output_col_name": "id",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "input": {
+              "header": "Y",
+              "schema": "lnd",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "emp_data.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "output_df": "inp_ksy",
+              "quote_char": "\"",
+              "table_name": "databook_details_cl",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "PostgreSQL",
+              "select_columns": "id,subtitle,published_date",
+              "connection_name": "postgres_ec2",
+              "transformation_name": "input"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_exp": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "exp_jcm",
+              "delimiter": ",",
+              "file_name": "sample_data",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "quote_char": "\"",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "Local_server",
+              "transformation_name": "output_exp",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
