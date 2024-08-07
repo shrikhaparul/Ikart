@@ -49,7 +49,7 @@
           "object_name": "test_beverage_upsert",
           "connection_name": "Postgres",
           "primary_key": "id",
-          "schema_name": "dwh",
+          "schema_name": "public",
           "audit_fields": "YES",
           "database_name": "postgres",
           "action_on_table": "CREATE IF NOT EXIST"
