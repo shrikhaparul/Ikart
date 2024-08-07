@@ -52,7 +52,7 @@
           "schema_name": "test",
           "audit_fields": "YES",
           "database_name": "postgres",
-          "action_on_table": "CREATE IF NOT EXIST"
+          "action_on_table": "UPSERT"
         }
       }
     ]
