@@ -1,0 +1,29 @@
+{
+  "task_id": 870,
+  "pipeline_id": 239,
+  "project_name": "ingkart_project",
+  "task_name": "sql_transform",
+  "task_type": "SQL Execution",
+  "is_active": "Y",
+  "sql_execution": {
+    "connection_name": "postgres_s",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "\nWITH RankedData AS (\n    SELECT\n        id,  \n        ROW_NUMBER() OVER (PARTITION BY id ORDER BY id) AS rn\n    FROM\n        lnd.databook_details\n)\nDELETE FROM lnd.databook_details\nWHERE id IN (\n    SELECT id\n    FROM RankedData\n    WHERE rn > 1\n);",
+      "table_used_desc": "removing duplicate data"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "\nWITH RankedData AS (\n    SELECT\n        id,  \n        ROW_NUMBER() OVER (PARTITION BY id ORDER BY id) AS rn\n    FROM\n        lnd.databooks_price\n)\nDELETE FROM lnd.databooks_price\nWHERE id IN (\n    SELECT id\n    FROM RankedData\n    WHERE rn > 1\n);\n",
+      "table_used_desc": "removing duplicate data"
+    },
+    {
+      "seq_no": 3,
+      "sql_query": "\t\nWITH RankedData AS (\n    SELECT\n        id, \n        ROW_NUMBER() OVER (PARTITION BY id ORDER BY id) AS rn\n    FROM\n        lnd.databooks_desc\n)\nDELETE FROM lnd.databooks_desc\nWHERE id IN (\n    SELECT id\n    FROM RankedData\n    WHERE rn > 1\n);",
+      "table_used_desc": "duplicate data remove"
+    }
+  ]
+}
