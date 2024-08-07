@@ -47,7 +47,7 @@
         },
         "target": {
           "object_name": "test_beverage_upsert",
-          "connection_name": "P_postgres",
+          "connection_name": "Postgres",
           "primary_key": "id",
           "schema_name": "dwh",
           "audit_fields": "YES",
