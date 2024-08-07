@@ -1,0 +1,55 @@
+{
+  "login_id": "Puneeth",
+  "id": 504,
+  "project_name": "project_dq_as_subtask",
+  "pipeline_name": "pip1",
+  "project_id": 65,
+  "pipeline_id": 171,
+  "task_name": "task4_bulk_ingestion",
+  "task_description": "task4_bulk_ingestion",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "\"501\"",
+  "last_run_id": "a7ef9d5b-b016-4770-924d-e5d8f87c2887",
+  "status": "Failed",
+  "updated_dttm": "2024-08-05T17:02:53.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "localserver_connection_puneeth",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/puneeths/sample_data/dq_test/",
+          "operation": "copy",
+          "decryption": "no",
+          "task_group": "0",
+          "object_name": "fake_customer_data.csv",
+          "object_type": "csv",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "fake_customer_data",
+          "connection_name": "mysql_karttest_connection_puneeth",
+          "primary_key": "",
+          "schema_name": "karttest",
+          "audit_fields": "NO",
+          "database_name": "karttest",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
