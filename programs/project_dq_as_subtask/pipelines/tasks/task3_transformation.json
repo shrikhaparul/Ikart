@@ -1,0 +1,300 @@
+{
+  "login_id": "Puneeth",
+  "id": 503,
+  "project_name": "project_dq_as_subtask",
+  "pipeline_name": "pip1",
+  "project_id": 65,
+  "pipeline_id": 171,
+  "task_name": "task3_transformation",
+  "task_description": "task3_transformation",
+  "task_type": "Transformation",
+  "task_sequence": "\"501\"",
+  "last_run_id": "a7ef9d5b-b016-4770-924d-e5d8f87c2887",
+  "status": "Failed",
+  "updated_dttm": "2024-08-05T17:02:53.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "job_execution": null,
+  "task": {
+    "flow": {
+      "Input_Input": "0",
+      "Output_output_df": "Expression_Transform1",
+      "Expression_Transform1": "Input_Input"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "Transform1": {
+              "input_df": "inp_xuo",
+              "output_df": "exp_mif",
+              "transformation_name": "Transform1",
+              "Transform1_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "STATUS",
+                "output_col_name": "STATUS",
+                "expression_value": " "
+              },
+              "Transform1_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "QTR_ID",
+                "output_col_name": "QTR_ID",
+                "expression_value": " "
+              },
+              "Transform1_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "MONTH_ID",
+                "output_col_name": "MONTH_ID",
+                "expression_value": " "
+              },
+              "Transform1_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "YEAR_ID",
+                "output_col_name": "YEAR_ID",
+                "expression_value": " "
+              },
+              "Transform1_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "PRODUCTLINE",
+                "output_col_name": "PRODUCTLINE",
+                "expression_value": " "
+              },
+              "Transform1_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "MSRP",
+                "output_col_name": "MSRP",
+                "expression_value": " "
+              },
+              "Transform1_15": {
+                "operator": "",
+                "sequence": "15",
+                "operatorType": "",
+                "input_col_name": "PRODUCTCODE",
+                "output_col_name": "PRODUCTCODE",
+                "expression_value": " "
+              },
+              "Transform1_16": {
+                "operator": "",
+                "sequence": "16",
+                "operatorType": "",
+                "input_col_name": "CUSTOMERNAME",
+                "output_col_name": "CUSTOMERNAME",
+                "expression_value": " "
+              },
+              "Transform1_17": {
+                "operator": "",
+                "sequence": "17",
+                "operatorType": "",
+                "input_col_name": "PHONE",
+                "output_col_name": "PHONE",
+                "expression_value": " "
+              },
+              "Transform1_18": {
+                "operator": "",
+                "sequence": "18",
+                "operatorType": "",
+                "input_col_name": "ADDRESSLINE1",
+                "output_col_name": "ADDRESSLINE1",
+                "expression_value": " "
+              },
+              "Transform1_19": {
+                "operator": "",
+                "sequence": "19",
+                "operatorType": "",
+                "input_col_name": "ADDRESSLINE2",
+                "output_col_name": "ADDRESSLINE2",
+                "expression_value": " "
+              },
+              "Transform1_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "ORDERNUMBER",
+                "output_col_name": "ORDERNUMBER",
+                "expression_value": " "
+              },
+              "Transform1_20": {
+                "operator": "",
+                "sequence": "20",
+                "operatorType": "",
+                "input_col_name": "CITY",
+                "output_col_name": "CITY",
+                "expression_value": " "
+              },
+              "Transform1_21": {
+                "operator": "",
+                "sequence": "21",
+                "operatorType": "",
+                "input_col_name": "STATE",
+                "output_col_name": "STATE",
+                "expression_value": " "
+              },
+              "Transform1_22": {
+                "operator": "",
+                "sequence": "22",
+                "operatorType": "",
+                "input_col_name": "POSTALCODE",
+                "output_col_name": "POSTALCODE",
+                "expression_value": " "
+              },
+              "Transform1_23": {
+                "operator": "",
+                "sequence": "23",
+                "operatorType": "",
+                "input_col_name": "COUNTRY",
+                "output_col_name": "COUNTRY",
+                "expression_value": " "
+              },
+              "Transform1_24": {
+                "operator": "",
+                "sequence": "24",
+                "operatorType": "",
+                "input_col_name": "TERRITORY",
+                "output_col_name": "TERRITORY",
+                "expression_value": " "
+              },
+              "Transform1_25": {
+                "operator": "",
+                "sequence": "25",
+                "operatorType": "",
+                "input_col_name": "CONTACTLASTNAME",
+                "output_col_name": "CONTACTLASTNAME",
+                "expression_value": " "
+              },
+              "Transform1_26": {
+                "operator": "",
+                "sequence": "26",
+                "operatorType": "",
+                "input_col_name": "CONTACTFIRSTNAME",
+                "output_col_name": "CONTACTFIRSTNAME",
+                "expression_value": " "
+              },
+              "Transform1_27": {
+                "operator": "",
+                "sequence": "27",
+                "operatorType": "",
+                "input_col_name": "DEALSIZE",
+                "output_col_name": "DEALSIZE",
+                "expression_value": " "
+              },
+              "Transform1_28": {
+                "operator": "getdate",
+                "sequence": "28",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "Date",
+                "expression_value": "getdate()"
+              },
+              "Transform1_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "QUANTITYORDERED",
+                "output_col_name": "QUANTITYORDERED",
+                "expression_value": " "
+              },
+              "Transform1_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "PRICEEACH",
+                "output_col_name": "PRICEEACH",
+                "expression_value": " "
+              },
+              "Transform1_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "ORDERLINENUMBER",
+                "output_col_name": "ORDERLINENUMBER",
+                "expression_value": " "
+              },
+              "Transform1_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "SALES",
+                "output_col_name": "SALES",
+                "expression_value": " "
+              },
+              "Transform1_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "ORDERDATE",
+                "output_col_name": "ORDERDATE",
+                "expression_value": " "
+              },
+              "Transform1_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "SHIPDATE",
+                "output_col_name": "SHIPDATE",
+                "expression_value": " "
+              },
+              "Transform1_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "INDEX",
+                "output_col_name": "INDEX",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "Input": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "sales.csv",
+              "file_path": "/home/puneeths/sample_data/",
+              "file_type": "csv",
+              "output_df": "inp_xuo",
+              "escape_char": "",
+              "source_type": "Local Server",
+              "select_columns": "INDEX,ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,SHIPDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE",
+              "connection_name": "localserver_connection_puneeth",
+              "transformation_name": "Input"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_df": {
+              "schema": "karttest",
+              "input_df": "exp_mif",
+              "operation": "create",
+              "table_name": "transform",
+              "target_type": "MySQL",
+              "connection_name": "mysql_karttest_connection_puneeth",
+              "transformation_name": "output_df"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
