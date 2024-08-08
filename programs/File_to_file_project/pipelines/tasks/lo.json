@@ -1,0 +1,58 @@
+{
+  "login_id": "jjones",
+  "id": 759,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "lo",
+  "task_description": "lo",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "b1b97d5e-bac0-4f1e-ac7f-9caeb830e993",
+  "status": "Success",
+  "updated_dttm": "2024-07-17T13:44:23.000Z",
+  "source": "AWS S3",
+  "target": "Oracle",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "tgt_TEST_DATA.csv",
+      "file_path": "test/",
+      "file_type": "csv",
+      "chunk_size": 100000,
+      "decryption": "no",
+      "quote_char": "none",
+      "compression": "",
+      "escape_char": "",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": "IMID,REGION,COUNTRY,ITEM_TYPE,SALES_CHANNEL,ORDER_PRIORITY,ORDERDATE,ORDERID,SHIPDATE,UNITSSOLD,UNITPRICE,UNICOST,TOTALREVENUE,TOTALCOST,TOTALPROFIT,ID,CRTD_BY,CRTD_DTTM,UPDT_BY,UPDT_DTTM",
+      "parameter_type": "AWS S3",
+      "select_columns": null,
+      "connection_name": "aws_S3_conn_files_to_files",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "oracle_write",
+      "schema": "TEST",
+      "operation": "UPSERT",
+      "table_name": "test_imid_upsert",
+      "primary_key": "IMID",
+      "audit_columns": "inactive",
+      "parameter_type": "Oracle",
+      "connection_name": "oracle_p",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
