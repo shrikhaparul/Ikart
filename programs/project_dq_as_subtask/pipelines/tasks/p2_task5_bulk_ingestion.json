@@ -1,0 +1,69 @@
+{
+  "login_id": "Puneeth",
+  "id": 509,
+  "project_name": "project_dq_as_subtask",
+  "pipeline_name": "pip2",
+  "project_id": 65,
+  "pipeline_id": 172,
+  "task_name": "p2_task5_bulk_ingestion",
+  "task_description": "p2_task5_bulk_ingestion",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-11T14:43:39.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "/home/puneeths/sample_data/",
+          "connection_name": "localserver_connection_puneeth",
+          "task_group": "0",
+          "object_name": "goods.csv",
+          "object_type": "csv",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "p2_t4_goods",
+          "connection_name": "mysql_karttest_connection_puneeth",
+          "primary_key": "",
+          "audit_fields": "NO",
+          "database_name": "karttest",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "file_path": "/home/puneeths/sample_data/",
+          "connection_name": "localserver_connection_puneeth",
+          "task_group": "1",
+          "object_name": "house.csv",
+          "object_type": "csv",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "p2_t4_house",
+          "connection_name": "mysql_karttest_connection_puneeth",
+          "primary_key": "",
+          "audit_fields": "NO",
+          "database_name": "karttest",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
