@@ -1,0 +1,124 @@
+{
+  "pipeline_id": 172,
+  "project_id": 65,
+  "pipeline_name": "pip2",
+  "pipeline_cd": null,
+  "pipeline_description": "pipeline to test scenario2 and dataquality as sub task",
+  "is_active": "Y",
+  "tasks_details": {
+    "p2_task3_ingestion": [
+      "p2_task1_dataquality"
+    ],
+    "p2_task1_dataquality": 0,
+    "p2_task2_dataquality": 0,
+    "p2_task4_transformation": [
+      "p2_task2_dataquality"
+    ],
+    "p2_task5_bulk_ingestion": [
+      "p2_task1_dataquality"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "505",
+      "data": {
+        "label": "505-p2_task1_dataquality"
+      },
+      "position": {
+        "x": 50,
+        "y": 7100
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "506",
+      "data": {
+        "label": "506-p2_task2_dataquality"
+      },
+      "position": {
+        "x": 50,
+        "y": 7150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "507",
+      "data": {
+        "label": "507-p2_task3_ingestion"
+      },
+      "position": {
+        "x": 50,
+        "y": 7200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "508",
+      "data": {
+        "label": "508-p2_task4_transformation"
+      },
+      "position": {
+        "x": 50,
+        "y": 7250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "509",
+      "data": {
+        "label": "509-p2_task5_bulk_ingestion"
+      },
+      "position": {
+        "x": 50,
+        "y": 7300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-506-508",
+      "source": "506",
+      "target": "508"
+    },
+    {
+      "id": "flow-505-509",
+      "source": "505",
+      "target": "509"
+    },
+    {
+      "id": "flow-505-507",
+      "source": "505",
+      "target": "507"
+    },
+    {
+      "id": "flow-0-506",
+      "source": "0",
+      "target": "506"
+    },
+    {
+      "id": "flow-0-505",
+      "source": "0",
+      "target": "505"
+    }
+  ],
+  "created_dttm": "2024-08-11T14:48:54.514Z",
+  "updated_dttm": "2024-08-11T14:48:54.514Z"
+}
