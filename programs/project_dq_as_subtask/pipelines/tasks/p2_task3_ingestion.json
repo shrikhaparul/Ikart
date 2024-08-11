@@ -1,0 +1,57 @@
+{
+  "login_id": "Puneeth",
+  "id": 507,
+  "project_name": "project_dq_as_subtask",
+  "pipeline_name": "pip2",
+  "project_id": 65,
+  "pipeline_id": 172,
+  "task_name": "p2_task3_ingestion",
+  "task_description": "p2_task3_ingestion",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-11T14:05:46.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "customer_data.csv",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "no",
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "customer_id,first_name,last_name,mobile,dob,address,email,membership_status",
+      "parameter_type": "Local Server",
+      "select_columns": null,
+      "connection_name": "localserver_connection_puneeth",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "karttest",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "test_file_good_p2_t3",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_karttest_connection_puneeth",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
