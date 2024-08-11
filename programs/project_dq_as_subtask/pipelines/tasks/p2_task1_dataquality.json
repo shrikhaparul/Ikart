@@ -27,31 +27,48 @@
       "file_path": "/home/puneeths/sample_data/",
       "file_type": "csv",
       "chunk_size": 10000,
-      "decryption": null,
-      "quote_char": "\"",
-      "compression": null,
+      "decryption": "no",
+      "quote_char": null,
+      "compression": "",
       "escape_char": null,
       "skip_footer": null,
       "skip_header": null,
-      "alias_columns": "customer_id,first_name,last_name,mobile,dob,address,email,membership_status",
+      "alias_columns": "",
       "parameter_type": "Local Server",
       "select_columns": null,
-      "connection_name": "localserver_connection_puneeth",
+      "connection_name": "local_con_sales",
       "private_key_path": null
     },
     "target": {
-      "target_type": "mysql_write",
-      "schema": "karttest",
-      "operation": "CREATE IF NOT EXIST",
-      "table_name": "test_file_good_p2",
-      "audit_columns": "inactive",
-      "parameter_type": "MySQL",
-      "connection_name": "mysql_karttest_connection_puneeth",
-      "target_max_record_count": null
+      "generate_bad_record":"N",
+      "target_type": "csv_write",
+      "good_record_file_name": "p2_test_file_good.csv",
+      "good_record_file_path": "/home/puneeths/sample_data/",
+      "bad_record_file_name": "test_file_bad.parquet",
+      "bad_record_file_path": "/home/durga/Files/",
+      "connection_name":""
     },
-    "data_quality_execution": {
-      "pre_check_enable": "N",
-      "post_check_enable": "N"
-    }
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_be_unique",
+        "parameters": {
+          "column": "customer_id"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100
+      },
+      {
+        "seq_no": "2",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "dob"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 30
+      }
+    ]
   }
 }
