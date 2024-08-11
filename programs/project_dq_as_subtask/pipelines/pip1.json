@@ -6,8 +6,8 @@
   "pipeline_description": "pip1",
   "is_active": "Y",
   "tasks_details": {
-    "task2_ingestion": 0,
     "task1_dataquality": 0,
+    "task2_ingestion": 0,
     "task3_transformation": 0,
     "task4_bulk_ingestion": 0
   },
