@@ -1,0 +1,25 @@
+{
+  "login_id": "shilpi",
+  "id": 877,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "data_tras",
+  "task_description": "datatras",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "32a7899e-5b56-44db-8c3c-2b683463e809",
+  "status": "Failed",
+  "updated_dttm": "2024-08-12T14:00:52.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "job_execution": "pandas",
+  "task": {
+    "flow": null,
+    "details": []
+  }
+}
