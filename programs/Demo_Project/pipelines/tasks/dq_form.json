@@ -1,0 +1,70 @@
+{
+  "login_id": "jjones",
+  "id": 633,
+  "project_name": "Demo_Project",
+  "pipeline_name": "dq_form",
+  "project_id": 74,
+  "pipeline_id": 196,
+  "task_name": "dq_form",
+  "task_description": "dq_form_checking",
+  "task_type": "Data Quality",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-05T10:43:06.000Z",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "CREATE ALGORITHM = UNDEFINED DEFINER = ``root``@``localhost`` SQL SECURITY DEFINER VIEW ``config``.``vw_pipeline_list`` AS\n\nSELECT DISTINCT ``config``.``vw_object_list``.``login_id`` AS ``login_id``\n\t,``config``.``tbl_pipeline``.``id`` AS ``id``\n\t,``config``.``tbl_pipeline``.``project_id`` AS ``project_id``\n\t,``config``.``tbl_pipeline``.``pipeline_name`` AS ``pipeline_name``\n\t,``config``.``tbl_pipeline``.``pipeline_cd`` AS ``pipeline_cd``\n\t,``config``.``tbl_pipeline``.``pipeline_description`` AS ``pipeline_description``\n\t,``config``.``tbl_pipeline``.``pipeline_sequence`` AS ``pipeline_sequence``\n\t,``config``.``tbl_pipeline``.``is_active`` AS ``is_active``\n\t,``config``.``tbl_pipeline``.``created_by`` AS ``created_by``\n\t,``config``.``tbl_pipeline``.``created_dttm`` AS ``created_dttm``\n\t,``config``.``tbl_pipeline``.``updated_by`` AS ``updated_by``\n\t,``config``.``tbl_pipeline``.``updated_dttm`` AS ``updated_dttm``\n\t,``al``.``last_run_id`` AS ``last_run_id``\n\t,(\n\t\tCASE \n\t\t\tWHEN (``al``.``audit_value`` IS NULL)\n\t\t\t\tTHEN 'New'\n\t\t\tWHEN (``al``.``audit_value`` = 'COMPLETED')\n\t\t\t\tTHEN 'Success'\n\t\t\tWHEN (``al``.``audit_value`` LIKE 'FAILED%')\n\t\t\t\tTHEN 'Failed'\n\t\t\tWHEN (``al``.``audit_value`` = 'NOT STARTED')\n\t\t\t\tTHEN 'Failed'\n\t\t\tELSE 'Running'\n\t\t\tEND\n\t\t) AS ``audit_value``\n\t,(json_unquote(json_extract(``jt``.``option_info``, '$.read')) collate utf8mb4_unicode_ci) AS ``option_read``\n\t,(json_unquote(json_extract(``jt``.``option_info``, '$.write')) collate utf8mb4_unicode_ci) AS ``option_write``\n\t,(json_unquote(json_extract(``jt``.``option_info``, '$.execute')) collate utf8mb4_unicode_ci) AS ``option_execute``\nFROM (\n\t(\n\t\t(\n\t\t\t(\n\t\t\t\t``config``.``tbl_pipeline`` JOIN ``config``.``vw_object_list`` ON ((``config``.``vw_object_list``.``object_id`` = ('pipeline_id' collate utf8mb4_unicode_ci)))\n\t\t\t\t) JOIN json_table(``config``.``vw_object_list``.``option_list``, '$[*]' columns(``option_info`` json path '$')) ``jt`` ON (true)\n\t\t\t) LEFT JOIN (\n\t\t\tSELECT cast(``config``.``tbl_etl_audit``.``pipeline_id`` AS unsigned) AS ``pipeline_id``\n\t\t\t\t,``config``.``tbl_etl_audit``.``taskorpipeline_name`` AS ``job_name``\n\t\t\t\t,``config``.``tbl_etl_audit``.``run_id`` AS ``last_run_id``\n\t\t\t\t,``config``.``tbl_etl_audit``.``audit_type`` AS ``audit_type``\n\t\t\t\t,``config``.``tbl_etl_audit``.``audit_value`` AS ``audit_value``\n\t\t\t\t,``config``.``tbl_etl_audit``.``process_dttm`` AS ``process_dttm``\n\t\t\t\t,rank() OVER (\n\t\t\t\t\tPARTITION BY ``config``.``tbl_etl_audit``.``pipeline_id`` ORDER BY ``config``.``tbl_etl_audit``.``process_dttm`` DESC\n\t\t\t\t\t) AS ``status_rank``\n\t\t\tFROM ``config``.``tbl_etl_audit``\n\t\t\t) ``al`` ON ((``config``.``tbl_pipeline``.``id`` = ``al``.``pipeline_id``))\n\t\t) LEFT JOIN ``config``.``tbl_task`` ON ((``config``.``tbl_pipeline``.``id`` = ``config``.``tbl_task``.``pipeline_id``))\n\t)\nWHERE (\n\t\t(``config``.``tbl_pipeline``.``pipeline_name`` = json_unquote(json_extract(``jt``.``option_info``, '$.name')))\n\t\tAND (json_unquote(json_extract(``jt``.``option_info``, '$.read')) <> 0)\n\t\tAND (\n\t\t\t(``al``.``status_rank`` = 1)\n\t\t\tOR (``al``.``status_rank`` IS NULL)\n\t\t\t)\n\t\t)\n",
+      "schema": "config",
+      "chunk_size": 10000,
+      "table_name": "tbl_user",
+      "parameter_type": "MySQL",
+      "select_columns": "id,full_name,login_id,password,user_email,user_phone,is_active,role,git_user,git_auth_id,git_branch,created_by,created_dttm,updated_by,updated_dttm,resetLink",
+      "connection_name": "conn_mysql"
+    },
+    "target": {
+      "target_type": "parquet_write",
+      "file_name": "Oracle_S3",
+      "file_path": "/home/madhu/Ingestion_code2/csv_folder",
+      "file_type": "parquet",
+      "bad_records": "yes",
+      "parameter_type": "Local Server",
+      "connection_name": "",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_be_in_type_list",
+        "parameters": {
+          "column": "git_user",
+          "type_list": "int,string"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 40,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_values_to_be_null",
+        "parameters": {
+          "column": "full_name"
+        },
+        "active": "N",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": null
+      }
+    ]
+  }
+}
