@@ -1,0 +1,72 @@
+{
+  "login_id": "Pavan",
+  "id": 869,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Dtypes",
+  "project_id": 82,
+  "pipeline_id": 226,
+  "task_name": "transform_01",
+  "task_description": "-",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "591bb1be-9516-4212-9451-44722724426d",
+  "status": "Success",
+  "updated_dttm": "2024-08-07T06:31:10.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Input_local_sever": "0",
+      "Output_output_exp": "SQL_sql_transform",
+      "SQL_sql_transform": "Input_local_sever"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "local_sever": {
+              "schema": "transformation",
+              "output_df": "inp_zeu",
+              "table_name": "EC_04",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9",
+              "connection_name": "mysql_tr",
+              "transformation_name": "local_sever"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_exp": {
+              "schema": "transformation",
+              "input_df": "sql_uwd",
+              "operation": "truncate",
+              "table_name": "EC_05",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "output_exp"
+            }
+          }
+        ]
+      },
+      {
+        "SQL": [
+          {
+            "sql_transform": {
+              "input_df": "inp_zeu",
+              "output_df": "sql_uwd",
+              "sql_query": "select * from inp",
+              "transformation_name": "sql_transform"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
