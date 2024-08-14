@@ -1,0 +1,127 @@
+{
+  "login_id": "shilpi",
+  "id": 872,
+  "project_name": "ingkart_project",
+  "pipeline_name": "transforming_data",
+  "project_id": 72,
+  "pipeline_id": 240,
+  "task_name": "interest_calculator",
+  "task_description": "calculating the interest",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "1294a0b7-9f2a-4101-aa7f-9138314e4329",
+  "status": "Success",
+  "updated_dttm": "2024-08-07T16:29:32.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Input_SI_data": "0",
+      "Output_result": "Expression_interest_calculator",
+      "Expression_interest_calculator": "Input_SI_data"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "interest_calculator": {
+              "input_df": "inp_ing",
+              "output_df": "exp_nkd",
+              "transformation_name": "interest_calculator",
+              "interest_calculator_7": {
+                "operator": "division",
+                "sequence": "7",
+                "operatorType": "Math",
+                "input_col_name": "",
+                "output_col_name": "interest",
+                "expression_value": "(total/ 100)"
+              },
+              "interest_calculator_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "principal",
+                "output_col_name": "principal",
+                "expression_value": " "
+              },
+              "interest_calculator_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "id",
+                "output_col_name": "id",
+                "expression_value": " "
+              },
+              "interest_calculator_6": {
+                "operator": "multiplication",
+                "sequence": "6",
+                "operatorType": "Math",
+                "input_col_name": "",
+                "output_col_name": "total",
+                "expression_value": "(principal* rate*time)"
+              },
+              "interest_calculator_5": {
+                "operator": "multiplication",
+                "sequence": "5",
+                "operatorType": "Math",
+                "input_col_name": "simple_interest",
+                "output_col_name": "simple_interest",
+                "expression_value": "((principal* rate*time)/100)"
+              },
+              "interest_calculator_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "time",
+                "output_col_name": "time",
+                "expression_value": " "
+              },
+              "interest_calculator_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "rate",
+                "output_col_name": "rate",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "SI_data": {
+              "schema": "public",
+              "output_df": "inp_ing",
+              "table_name": "simple_interest_data",
+              "source_type": "PostgreSQL",
+              "select_columns": "id,principal,rate,time,simple_interest",
+              "connection_name": "postgres_s",
+              "transformation_name": "SI_data"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "result": {
+              "schema": "lnd",
+              "input_df": "exp_nkd",
+              "operation": "create",
+              "table_name": "interest",
+              "target_type": "PostgreSQL",
+              "connection_name": "postgres_s",
+              "transformation_name": "result"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
