@@ -1,0 +1,183 @@
+{
+  "login_id": "shilpi",
+  "id": 877,
+  "project_name": "ingkart_project",
+  "pipeline_name": "oracle_ingestion",
+  "project_id": 72,
+  "pipeline_id": 189,
+  "task_name": "data_tras",
+  "task_description": "datatras",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "4200627c-1692-4129-b355-334199ae6ade",
+  "status": "Success",
+  "updated_dttm": "2024-08-12T14:00:52.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Output_result": "Expression_transform",
+      "Input_employee": "0",
+      "Expression_transform": "Input_employee"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "transform": {
+              "input_df": "inp_bou",
+              "output_df": "exp_mbw",
+              "transformation_name": "transform",
+              "transform_8": {
+                "operator": "rpad",
+                "sequence": "8",
+                "operatorType": "String",
+                "input_col_name": "employment_status",
+                "output_col_name": "employment_status",
+                "expression_value": "rpad(employment_status, 10,*)"
+              },
+              "transform_5": {
+                "operator": "lower",
+                "sequence": "5",
+                "operatorType": "String",
+                "input_col_name": "last_name",
+                "output_col_name": "last_name",
+                "expression_value": "lower(last_name)"
+              },
+              "transform_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "gender",
+                "output_col_name": "gender",
+                "expression_value": " "
+              },
+              "transform_7": {
+                "operator": "getdate",
+                "sequence": "7",
+                "operatorType": "Date and Time",
+                "input_col_name": "birth_date",
+                "output_col_name": "birth_date",
+                "expression_value": "getdate()"
+              },
+              "transform_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "UPDT_BY",
+                "output_col_name": "UPDT_BY",
+                "expression_value": " "
+              },
+              "transform_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "number",
+                "output_col_name": "number",
+                "expression_value": " "
+              },
+              "transform_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "CRTD_BY",
+                "output_col_name": "CRTD_BY",
+                "expression_value": " "
+              },
+              "transform_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "CRTD_DTTM",
+                "output_col_name": "CRTD_DTTM",
+                "expression_value": " "
+              },
+              "transform_14": {
+                "operator": "concat",
+                "sequence": "14",
+                "operatorType": "String",
+                "input_col_name": "",
+                "output_col_name": "full_name",
+                "expression_value": "concat(first_name_1,last_name)"
+              },
+              "transform_4": {
+                "operator": "upper",
+                "sequence": "4",
+                "operatorType": "String",
+                "input_col_name": "first_name_1",
+                "output_col_name": "first_name_1",
+                "expression_value": "upper(first_name_1)"
+              },
+              "transform_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "annual_salary",
+                "output_col_name": "annual_salary",
+                "expression_value": " "
+              },
+              "transform_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "first_name",
+                "output_col_name": "first_name",
+                "expression_value": " "
+              },
+              "transform_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "id",
+                "output_col_name": "id",
+                "expression_value": " "
+              },
+              "transform_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "UPDT_DTTM",
+                "output_col_name": "UPDT_DTTM",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "employee": {
+              "schema": "sys",
+              "output_df": "inp_bou",
+              "table_name": "employee",
+              "source_type": "MySQL",
+              "select_columns": "number,id,first_name,first_name_1,last_name,gender,birth_date,employment_status,annual_salary,CRTD_BY,CRTD_DTTM,UPDT_BY,UPDT_DTTM",
+              "connection_name": "mysql_s",
+              "transformation_name": "employee"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "result": {
+              "schema": "sys",
+              "input_df": "exp_mbw",
+              "operation": "create",
+              "table_name": "emp_transform",
+              "target_type": "MySQL",
+              "connection_name": "mysql_s",
+              "transformation_name": "result"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
