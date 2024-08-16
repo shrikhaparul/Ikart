@@ -1,0 +1,51 @@
+{
+  "login_id": "jjones",
+  "id": 410,
+  "project_name": "Project_123",
+  "pipeline_name": "Pipeline_123",
+  "project_id": 58,
+  "pipeline_id": 150,
+  "task_name": "bulk_postgres_to_ora",
+  "task_description": "sd",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "b12bbcbe-575b-45ec-98b8-2c04b41e12f5",
+  "status": "Success",
+  "updated_dttm": "2024-07-29T17:30:49.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 1000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "4",
+          "connection_name": "Postgres",
+          "object_name": "test_tgt_test",
+          "object_type": "Table",
+          "schema_name": "test",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "test_tgt_test",
+          "connection_name": "Oracle_host",
+          "primary_key": "ID",
+          "schema_name": "STAGE",
+          "audit_fields": "NO",
+          "database_name": "XEPDB1",
+          "action_on_table": "UPSERT"
+        }
+      }
+    ]
+  }
+}
