@@ -1,0 +1,59 @@
+{
+  "login_id": "sonika",
+  "id": 817,
+  "project_name": "Project",
+  "pipeline_name": "expression_flow",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "create_ststus_file",
+  "task_description": "-",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "a15f479e-e431-4c86-8382-590b810e2e87",
+  "status": "Success",
+  "updated_dttm": "2024-08-19T07:52:38.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Output_mysql_out": "Input_mysql_input",
+      "Input_mysql_input": "0"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "mysql_input": {
+              "schema": "Ikart",
+              "output_df": "inp_xfr",
+              "table_name": "employees",
+              "source_type": "MySQL",
+              "select_columns": "employee_id,first_name,last_name,department_id",
+              "connection_name": "my_sql",
+              "transformation_name": "mysql_input"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "mysql_out": {
+              "schema": "resd",
+              "input_df": "inp_xfr",
+              "operation": "replace",
+              "table_name": "create_status",
+              "target_type": "MySQL",
+              "connection_name": "my_sql",
+              "transformation_name": "mysql_out"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
