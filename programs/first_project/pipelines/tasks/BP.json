@@ -1,0 +1,45 @@
+{
+  "login_id": "Madhu",
+  "id": 883,
+  "project_name": "first_project",
+  "pipeline_name": "tasj",
+  "project_id": 80,
+  "pipeline_id": 210,
+  "task_name": "BP",
+  "task_description": "-",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-20T06:22:48.000Z",
+  "source": "Files",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "sahilphal",
+  "updated_by": "sahilphal",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "/home/admin/_work/UI/UI/",
+          "connection_name": "connection_S3",
+          "operation": "copy",
+          "files_filter_name": "*.csv",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "file_path": "/home/Admin/",
+          "connection_name": "ec2_local_connection",
+          "object_sufix_name": "tgt_",
+          "object_prefix_name": ""
+        }
+      }
+    ]
+  }
+}
