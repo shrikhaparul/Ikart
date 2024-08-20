@@ -1,0 +1,17 @@
+{
+  "project_id": 84,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "local_con_buisnes",
+  "connection_details": {
+    "port": "6603",
+    "database": "config",
+    "password": "b82ef62efa0ad8406ca92872bf984c40200a9da3",
+    "username": "root",
+    "hostname": "localhost",
+    "file_name": "businessdata.csv",
+    "file_path": "/home/durga/Files/",
+    "created_by": "durga",
+    "updated_by": "durga"
+  }
+}
