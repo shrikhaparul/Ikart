@@ -1,0 +1,12 @@
+{
+  "id": 289,
+  "program_name": "Platform_Data_Model",
+  "program_description": "Data used for proper pipeline flow",
+  "primary_stakeholder": "admin",
+  "secondary_stakeholder": "admin2",
+  "is_active": "N",
+  "created_by": "admin",
+  "created_dttm": "2024-06-18T14:47:39.000Z",
+  "updated_by": "admin",
+  "updated_dttm": "2024-06-18T14:47:39.000Z"
+}
