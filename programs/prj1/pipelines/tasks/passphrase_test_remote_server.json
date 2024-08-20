@@ -1,0 +1,61 @@
+{
+  "login_id": "durga",
+  "id": 814,
+  "project_name": "prj1",
+  "pipeline_name": "Decryption_check",
+  "project_id": 84,
+  "pipeline_id": 232,
+  "task_name": "passphrase_test_remote_server",
+  "task_description": "decrpyt check",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "b68d2c02-af31-4894-80e8-60f035d742a9",
+  "status": "Failed",
+  "updated_dttm": "2024-08-14T09:08:04.000Z",
+  "source": "Remote Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "task": {
+    "source": {
+      "source_type": "remote_server_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "passphrase_test_file.csv.gpg",
+      "file_path": "/home/Admin/test/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "yes",
+      "passphrase": "Term-Gravity-Mix2-Practice-Ice",
+      "quote_char": null,
+      "compression": "",
+      "escape_char": null,
+      "skip_footer": null,
+      "skip_header": null,
+      "parameter_type": "Remote Server",
+      "select_columns": null,
+      "connection_name": "remote_server_conn",
+      "private_key_path": "/home/durga/pyspark/decrypt/private_with_passphrase.asc"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "ingested.csv",
+      "file_path": "/home/durga/Files/",
+      "file_type": "csv",
+      "encryption": "no",
+      "compression": "",
+      "audit_columns": "active",
+      "parameter_type": "Local Server",
+      "connection_name": "local_con_buisnes",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
