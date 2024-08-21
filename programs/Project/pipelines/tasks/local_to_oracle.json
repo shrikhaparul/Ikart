@@ -1,0 +1,57 @@
+{
+  "login_id": "sonika",
+  "id": 814,
+  "project_name": "Project",
+  "pipeline_name": "oracle_test",
+  "project_id": 84,
+  "pipeline_id": 230,
+  "task_name": "local_to_oracle",
+  "task_description": "local_to_oracle",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "bd9ecf26-839e-4d5e-9de2-9243a09465a7",
+  "status": "Failed",
+  "updated_dttm": "2024-08-21T11:17:01.000Z",
+  "source": "Local Server",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "crime_data.csv",
+      "file_path": "/home/sonika/data/",
+      "file_type": "csv",
+      "chunk_size": 100000,
+      "decryption": "no",
+      "quote_char": "\"",
+      "compression": "",
+      "escape_char": "\\n",
+      "skip_footer": 0,
+      "skip_header": 0,
+      "alias_columns": "DR_NO,Date_Rptd,DATE_OCC,TIME_OCC,AREA,AREA_NAME,Rpt_Dist_No,Part_1-2,Crm_Cd,Crm_Cd_Desc,Mocodes,Vict_Age,Vict_Sex,Vict_Descent,Premis_Cd,Premis_Desc,Weapon_Used_Cd,Weapon_Desc,Status,Status_Desc,Crm_Cd_1,Crm_Cd_2,Crm_Cd_3,Crm_Cd_4,LOCATION,Cross_Street,LAT,LON",
+      "parameter_type": "Local Server",
+      "select_columns": "DR_NO,Date_Rptd,DATE_OCC,TIME_OCC,AREA,AREA_NAME,Mocodes,Vict_Age,Premis_Cd,Premis_Desc,Status",
+      "connection_name": "Local_server",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "Ikart",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "Crime_data",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "my_sql",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
