@@ -1,0 +1,25 @@
+{
+  "login_id": "Madhu",
+  "id": 679,
+  "project_name": "Ikart_Platform",
+  "pipeline_name": "transformation_test",
+  "project_id": 68,
+  "pipeline_id": 207,
+  "task_name": "inp_join_join",
+  "task_description": "will join 3 inputs (csv,mysql,postgres)  and write to a target",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-06-13T07:13:18.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "job_execution": "pandas",
+  "task": {
+    "flow": null,
+    "details": []
+  }
+}
