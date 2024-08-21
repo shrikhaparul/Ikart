@@ -1,0 +1,318 @@
+{
+  "login_id": "sonika",
+  "id": 816,
+  "project_name": "Project",
+  "pipeline_name": "transformation_flow",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "test_flow",
+  "task_description": "-",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-14T10:50:45.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Input_oracle_3": "0",
+      "Filter_filter_02": "Joiner_joiner_02",
+      "Joiner_joiner_01": "Input_orac_input_01,Input_orac_input_02",
+      "Joiner_joiner_02": "Joiner_joiner_01,Input_oracle_3",
+      "Output_local_sever": "Expression_expression_01",
+      "Input_orac_input_01": "0",
+      "Input_orac_input_02": "0",
+      "Expression_expression_01": "Filter_filter_02"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "filter_02": {
+              "input_df": "jnr_lvv",
+              "output_df": "fil_lgn",
+              "transformation_name": "filter_02",
+              "filter_02_Operation_310": {
+                "id": "filter_02_Operation_310",
+                "operator": "==",
+                "column_name": "COVERED_RECIPIENT_TYPE_left_left",
+                "field_value": "Covered Recipient Teaching Hospital",
+                "condition_type": "operation",
+                "operation_name": "operation_01"
+              },
+              "filter_02_Operation_538": {
+                "id": "filter_02_Operation_538",
+                "operator": "!=",
+                "column_name": "COVERED_RECIPIENT_SPECIALTY_1_left_left",
+                "field_value": "nan",
+                "condition_type": "operation",
+                "operation_name": "operation_02"
+              },
+              "filter_02_Group_921": {
+                "id": "filter_02_Group_921",
+                "operator": "and",
+                "group_name": "group_01",
+                "Condition_01": "filter_02_Operation_310",
+                "Condition_02": "filter_02_Operation_538",
+                "condition_type": "group"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Expression": [
+          {
+            "expression_01": {
+              "input_df": "fil_lgn",
+              "output_df": "exp_ckx",
+              "transformation_name": "expression_01",
+              "expression_01_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "UPDT_BY_left_left",
+                "output_col_name": "UPDT_BY",
+                "expression_value": " "
+              },
+              "expression_01_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "CRTD_DTTM_left_left",
+                "output_col_name": "CRTD_DTTM",
+                "expression_value": " "
+              },
+              "expression_01_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "RECIPIENT_PROVINCE_left_left",
+                "output_col_name": "RECIPIENT_PROVINCE_left_left",
+                "expression_value": " "
+              },
+              "expression_01_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "RECIPIENT_COUNTRY_left_left",
+                "output_col_name": "RECIPIENT_COUNTRY_left_left",
+                "expression_value": " "
+              },
+              "expression_01_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "RECIPIENT_POSTAL_CODE_left_left",
+                "output_col_name": "RECIPIENT_POSTAL_CODE_left_left",
+                "expression_value": " "
+              },
+              "expression_01_20": {
+                "operator": "to_julian",
+                "sequence": "20",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "julian_date",
+                "expression_value": "to_julian(UPDT_DTTM_left_left)"
+              },
+              "expression_01_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "RECIPIENT_ZIP_CODE_left_left",
+                "output_col_name": "RECIPIENT_ZIP_CODE_left_left",
+                "expression_value": " "
+              },
+              "expression_01_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "COVERED_RECIPIENT_PRIMARY_TYPE_1_left_left",
+                "output_col_name": "COVERED_RECIPIENT_PRIMARY_TYPE_1_left_left",
+                "expression_value": " "
+              },
+              "expression_01_19": {
+                "operator": "",
+                "sequence": "19",
+                "operatorType": "",
+                "input_col_name": "CONTEXT_OF_RESEARCH_right",
+                "output_col_name": "CONTEXT_OF_RESEARCH_right",
+                "expression_value": " "
+              },
+              "expression_01_17": {
+                "operator": "",
+                "sequence": "17",
+                "operatorType": "",
+                "input_col_name": "TOTAL_AMOUNT_OF_PAYMENT_USDOLLARS_right",
+                "output_col_name": "TOTAL_AMOUNT_OF_PAYMENT_USDOLLARs",
+                "expression_value": " "
+              },
+              "expression_01_16": {
+                "operator": "",
+                "sequence": "16",
+                "operatorType": "",
+                "input_col_name": "RELATED_PRODUCT_INDICATOR_right",
+                "output_col_name": "RELATED_PRODUCT_INDICATOR",
+                "expression_value": " "
+              },
+              "expression_01_15": {
+                "operator": "",
+                "sequence": "15",
+                "operatorType": "",
+                "input_col_name": "UPDT_DTTM_left_left",
+                "output_col_name": "UPDT_DTTM",
+                "expression_value": " "
+              },
+              "expression_01_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "COVERED_RECIPIENT_PRIMARY_TYPE_2_left_left",
+                "output_col_name": "COVERED_RECIPIENT_PRIMARY_TYPE_2_left_left",
+                "expression_value": " "
+              },
+              "expression_01_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "COVERED_RECIPIENT_PRIMARY_TYPE_3_left_left",
+                "output_col_name": "COVERED_RECIPIENT_PRIMARY_TYPE_3_left_left",
+                "expression_value": " "
+              },
+              "expression_01_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "RECORD_ID_left_left",
+                "output_col_name": "RECORD_ID",
+                "expression_value": " "
+              },
+              "expression_01_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "COVERED_RECIPIENT_SPECIALTY_1_left_left",
+                "output_col_name": "COVERED_RECIPIENT_SPECIALTY",
+                "expression_value": " "
+              },
+              "expression_01_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "COVERED_RECIPIENT_PRIMARY_TYPE_4_left_left",
+                "output_col_name": "COVERED_RECIPIENT_PRIMARY_TYPE_4_left_left",
+                "expression_value": " "
+              },
+              "expression_01_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "COVERED_RECIPIENT_PRIMARY_TYPE_5_left_left",
+                "output_col_name": "COVERED_RECIPIENT_PRIMARY_TYPE_5_left_left",
+                "expression_value": " "
+              },
+              "expression_01_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "COVERED_RECIPIENT_TYPE_left_left",
+                "output_col_name": "COVERED_RECIPIENT_TYPE_left_left",
+                "expression_value": " "
+              },
+              "expression_01_18": {
+                "operator": "",
+                "sequence": "18",
+                "operatorType": "",
+                "input_col_name": "DATE_OF_PAYMENT_right",
+                "output_col_name": "DATE_OF_PAYMENT",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Joiner": [
+          {
+            "joiner_01": {
+              "join_type": "left",
+              "output_df": "jnr_rnz",
+              "left_input_df": "inp_gkz",
+              "join_condition": "inp_gkz.RECORD_ID=inp_ved.RECORD_ID",
+              "right_input_df": "inp_ved",
+              "select_columns": "COVERED_RECIPIENT_TYPE_left,NONCOVERED_RECIPIENT_ENTITY_NAME_left,COVERED_RECIPIENT_PROFILE_ID_left,COVERED_RECIPIENT_NPI_left,COVERED_RECIPIENT_FIRST_NAME_left,COVERED_RECIPIENT_MIDDLE_NAME_left,COVERED_RECIPIENT_LAST_NAME_left,COVERED_RECIPIENT_NAME_SUFFIX_left,RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE1_left,RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE2_left,RECIPIENT_CITY_left,RECIPIENT_STATE_left,RECIPIENT_ZIP_CODE_left,RECIPIENT_COUNTRY_left,RECIPIENT_PROVINCE_left,RECIPIENT_POSTAL_CODE_left,COVERED_RECIPIENT_PRIMARY_TYPE_1_left,COVERED_RECIPIENT_PRIMARY_TYPE_2_left,COVERED_RECIPIENT_PRIMARY_TYPE_3_left,COVERED_RECIPIENT_PRIMARY_TYPE_4_left,COVERED_RECIPIENT_PRIMARY_TYPE_5_left,COVERED_RECIPIENT_PRIMARY_TYPE_6_left,COVERED_RECIPIENT_SPECIALTY_1_left,COVERED_RECIPIENT_SPECIALTY_2_left,COVERED_RECIPIENT_SPECIALTY_3_left,COVERED_RECIPIENT_SPECIALTY_4_left,COVERED_RECIPIENT_SPECIALTY_5_left,COVERED_RECIPIENT_SPECIALTY_6_left,COVERED_RECIPIENT_LICENSE_STATE_CODE1_left,COVERED_RECIPIENT_LICENSE_STATE_CO",
+              "transformation_name": "joiner_01"
+            }
+          },
+          {
+            "joiner_02": {
+              "output_df": "jnr_lvv",
+              "left_input_df": "jnr_rnz",
+              "join_condition": "jnr_rnz.RECORD_ID_left = inp_arb.RECORD_ID",
+              "right_input_df": "inp_arb",
+              "select_columns": "COVERED_RECIPIENT_TYPE_left_left,NONCOVERED_RECIPIENT_ENTITY_NAME_left_left,COVERED_RECIPIENT_PROFILE_ID_left_left,COVERED_RECIPIENT_NPI_left_left,COVERED_RECIPIENT_FIRST_NAME_left_left,COVERED_RECIPIENT_MIDDLE_NAME_left_left,COVERED_RECIPIENT_LAST_NAME_left_left,COVERED_RECIPIENT_NAME_SUFFIX_left_left,RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE1_left_left,RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE2_left_left,RECIPIENT_CITY_left_left,RECIPIENT_STATE_left_left,RECIPIENT_ZIP_CODE_left_left,RECIPIENT_COUNTRY_left_left,RECIPIENT_PROVINCE_left_left,RECIPIENT_POSTAL_CODE_left_left,COVERED_RECIPIENT_PRIMARY_TYPE_1_left_left,COVERED_RECIPIENT_PRIMARY_TYPE_2_left_left,COVERED_RECIPIENT_PRIMARY_TYPE_3_left_left,COVERED_RECIPIENT_PRIMARY_TYPE_4_left_left,COVERED_RECIPIENT_PRIMARY_TYPE_5_left_left,COVERED_RECIPIENT_PRIMARY_TYPE_6_left_left,COVERED_RECIPIENT_SPECIALTY_1_left_left,COVERED_RECIPIENT_SPECIALTY_2_left_left,COVERED_RECIPIENT_SPECIALTY_3_left_left,COVERED_RECIPIENT_SPECIALTY_4_left_left,COVERED_RECIPIENT",
+              "transformation_name": "joiner_02"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "orac_input_01": {
+              "schema": "DWH",
+              "output_df": "inp_gkz",
+              "table_name": "COVERED_RECIPIENT",
+              "source_type": "Oracle",
+              "select_columns": "COVERED_RECIPIENT_TYPE,NONCOVERED_RECIPIENT_ENTITY_NAME,COVERED_RECIPIENT_PROFILE_ID,COVERED_RECIPIENT_NPI,COVERED_RECIPIENT_FIRST_NAME,COVERED_RECIPIENT_MIDDLE_NAME,COVERED_RECIPIENT_LAST_NAME,COVERED_RECIPIENT_NAME_SUFFIX,RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE1,RECIPIENT_PRIMARY_BUSINESS_STREET_ADDRESS_LINE2,RECIPIENT_CITY,RECIPIENT_STATE,RECIPIENT_ZIP_CODE,RECIPIENT_COUNTRY,RECIPIENT_PROVINCE,RECIPIENT_POSTAL_CODE,COVERED_RECIPIENT_PRIMARY_TYPE_1,COVERED_RECIPIENT_PRIMARY_TYPE_2,COVERED_RECIPIENT_PRIMARY_TYPE_3,COVERED_RECIPIENT_PRIMARY_TYPE_4,COVERED_RECIPIENT_PRIMARY_TYPE_5,COVERED_RECIPIENT_PRIMARY_TYPE_6,COVERED_RECIPIENT_SPECIALTY_1,COVERED_RECIPIENT_SPECIALTY_2,COVERED_RECIPIENT_SPECIALTY_3,COVERED_RECIPIENT_SPECIALTY_4,COVERED_RECIPIENT_SPECIALTY_5,COVERED_RECIPIENT_SPECIALTY_6,COVERED_RECIPIENT_LICENSE_STATE_CODE1,COVERED_RECIPIENT_LICENSE_STATE_CODE2,COVERED_RECIPIENT_LICENSE_STATE_CODE3,COVERED_RECIPIENT_LICENSE_STATE_CODE4,COVERED_RECIPIENT_LICENSE_STATE_CODE5,RECORD_ID,CRTD_BY,CRTD_DTTM",
+              "connection_name": "orac_conn",
+              "transformation_name": "orac_input_01"
+            }
+          },
+          {
+            "orac_input_02": {
+              "schema": "DWH",
+              "output_df": "inp_ved",
+              "table_name": "MANUFACTURER",
+              "source_type": "Oracle",
+              "select_columns": "APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_ID,APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_NAME,APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_STATE,APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_MAKING_PAYMENT_COUNTRY,RECORD_ID,CRTD_BY,CRTD_DTTM,UPDT_BY,UPDT_DTTM",
+              "connection_name": "orac_conn",
+              "transformation_name": "orac_input_02"
+            }
+          },
+          {
+            "oracle_3": {
+              "schema": "DWH",
+              "output_df": "inp_arb",
+              "table_name": "OP_DTL_RSRCH_FACT",
+              "source_type": "Oracle",
+              "select_columns": "RECORD_ID,CHANGE_TYPE,SUBMITTING_APPLICABLE_MANUFACTURER_OR_APPLICABLE_GPO_NAME,RELATED_PRODUCT_INDICATOR,TOTAL_AMOUNT_OF_PAYMENT_USDOLLARS,DATE_OF_PAYMENT,FORM_OF_PAYMENT_OR_TRANSFER_OF_VALUE,PRECLINICAL_RESEARCH_INDICATOR,DELAY_IN_PUBLICATION_INDICATOR,NAME_OF_STUDY,DISPUTE_STATUS_FOR_PUBLICATION,PROGRAM_YEAR,PAYMENT_PUBLICATION_DATE,CLINICALTRIALS_GOV_IDENTIFIER,RESEARCH_INFORMATION_LINK,CONTEXT_OF_RESEARCH",
+              "connection_name": "orac_conn",
+              "transformation_name": "oracle_3"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "local_sever": {
+              "schema": "Ikart",
+              "input_df": "exp_ckx",
+              "operation": "replace",
+              "table_name": "new_table",
+              "target_type": "MySQL",
+              "connection_name": "my_sql",
+              "transformation_name": "local_sever"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
