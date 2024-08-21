@@ -1,0 +1,74 @@
+{
+  "login_id": "sonika",
+  "id": 796,
+  "project_name": "Project",
+  "pipeline_name": "Python_shell",
+  "project_id": 84,
+  "pipeline_id": 230,
+  "task_name": "Python_inline_1",
+  "task_description": "----",
+  "task_type": "Transformation",
+  "task_sequence": "\"0\"",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-21T07:11:08.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "pab",
+  "updated_by": "pab",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_inp_tr": "0",
+      "Output_out_tr": "Python_python_code",
+      "Python_python_code": "Input_inp_tr"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "inp_tr": {
+              "schema": "public",
+              "output_df": "inp_ncy",
+              "table_name": "ec_04",
+              "source_type": "PostgreSQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9",
+              "connection_name": "Postgres_ec2",
+              "transformation_name": "inp_tr"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_tr": {
+              "schema": "public",
+              "input_df": "python_evl",
+              "operation": "replace",
+              "table_name": "EC_04_python",
+              "target_type": "PostgreSQL",
+              "connection_name": "Postgres_ec2",
+              "transformation_name": "out_tr"
+            }
+          }
+        ]
+      },
+      {
+        "Python": [
+          {
+            "python_code": {
+              "input_df": "inp_ncy",
+              "output_df": "python_evl",
+              "script_type": "inline_code",
+              "python_script": "import pandas as pd\n\ndef process_dataframe(df):\n    if all(col in df.columns for col in ['col_10']):\n        df['Simple_Interest'] = (df['col_10'] * 5 * 10) / 100\n    else:\n        raise ValueError(\"The DataFrame must contain 'col_10' columns for interest calculation.\")\n    return df\n\n# New function to sort DataFrame by Simple_Interest\ndef sort_by_simple_interest(inp_ncy, ascending=True):\n    df=process_dataframe(inp_ncy)\n    if 'Simple_Interest' not in df.columns:\n        raise ValueError(\"The DataFrame must contain 'Simple_Interest' column for sorting.\")\n    sorted_df = df.sort_values(by='Simple_Interest', ascending=ascending)\n    \n    return sorted_df",
+              "select_columns": "col_1,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,Simple_Interest",
+              "transformation_name": "python_code"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
