@@ -1,0 +1,24 @@
+{
+  "task_id": 882,
+  "pipeline_id": 183,
+  "project_name": "File_to_file_project",
+  "task_name": "postgres_to_oracle_copy",
+  "task_type": "Ingestion",
+  "is_active": "Y",
+  "sql_execution": {
+    "connection_name": "P_snow",
+    "restart": "skip"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "select * from config.lkp_col;",
+      "table_used_desc": "metadata details"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "select * from core.tbl_taks_param;",
+      "table_used_desc": "Extraction"
+    }
+  ]
+}
