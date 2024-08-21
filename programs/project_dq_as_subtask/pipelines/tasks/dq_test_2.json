@@ -1,0 +1,49 @@
+{
+  "login_id": "Puneeth",
+  "id": 511,
+  "project_name": "project_dq_as_subtask",
+  "pipeline_name": "test_subtasks",
+  "project_id": 65,
+  "pipeline_id": 173,
+  "task_name": "dq_test_2",
+  "task_description": "dq_test_2",
+  "task_type": "Data Quality",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-18T14:27:12.000Z",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT id, FirstName, LastName, Gender, DateOfBirth, PhoneNumber, Occupation, Company, PersonalEmail, OfficialEmail, BSNNumber, IBAN, HouseNumber, StreetName, PostCode, City, Country FROM karttest.fake_customer_data",
+      "schema": "karttest",
+      "chunk_size": 10000,
+      "table_name": "fake_customer_data",
+      "alias_columns": "id,FirstName,LastName,Gender,DateOfBirth,PhoneNumber,Occupation,Company,PersonalEmail,OfficialEmail,BSNNumber,IBAN,HouseNumber,StreetName,PostCode,City,Country",
+      "parameter_type": "MySQL",
+      "select_columns": "id,FirstName,LastName,Gender,DateOfBirth,PhoneNumber,Occupation,Company,PersonalEmail,OfficialEmail,BSNNumber,IBAN,HouseNumber,StreetName,PostCode,City,Country",
+      "connection_name": "mysql_karttest_connection_puneeth"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "file_type": "csv",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_connection_puneeth",
+      "generate_bad_record": "no",
+      "bad_record_file_name": "bad_file_.csv",
+      "bad_record_file_path": "/home/puneeths/sample_data/",
+      "good_record_file_name": "good_file_.csv",
+      "good_record_file_path": "/home/puneeths/sample_data/",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
