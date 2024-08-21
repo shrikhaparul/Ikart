@@ -1,0 +1,59 @@
+{
+  "login_id": "sonika",
+  "id": 795,
+  "project_name": "Project",
+  "pipeline_name": "pandas",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "inp_out_oracle_ec2",
+  "task_description": "testing for oracle connection",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-01T06:03:57.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "pab",
+  "updated_by": "pab",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_inp_tr": "0",
+      "Output_out_tr": "Input_inp_tr"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "inp_tr": {
+              "schema": "TEST",
+              "output_df": "inp_cwv",
+              "table_name": "RESULT",
+              "source_type": "Oracle",
+              "select_columns": "REGION,COUNTRY",
+              "connection_name": "Oracle_ec2_ser",
+              "transformation_name": "inp_tr"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_tr": {
+              "schema": "TEST",
+              "input_df": "inp_cwv",
+              "operation": "replace",
+              "table_name": "RESULT",
+              "target_type": "Oracle",
+              "connection_name": "Oracle_ec2_ser",
+              "transformation_name": "out_tr"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
