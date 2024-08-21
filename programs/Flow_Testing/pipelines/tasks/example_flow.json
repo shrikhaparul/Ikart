@@ -1,0 +1,59 @@
+{
+  "login_id": "Pavan",
+  "id": 880,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Dtypes",
+  "project_id": 82,
+  "pipeline_id": 226,
+  "task_name": "example_flow",
+  "task_description": "-",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-21T09:55:37.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Input_mysql_input": "0",
+      "Output_oracle_output": "Input_mysql_input"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "mysql_input": {
+              "schema": "TEST",
+              "output_df": "inp_fpa",
+              "table_name": "TEST_BEVERAGE",
+              "source_type": "Oracle",
+              "select_columns": "REGION,COUNTRY,ITEM_TYPE,SALES_CHANNEL,ORDER_PRIORITY,ORDERDATE,ORDERID,SHIPDATE,UNITSOLD,UNITPRICE,UNITCOST,TOTALREVENUE,TOTALCOST,TOTALPROFIT,ID",
+              "connection_name": "Oracle_input",
+              "transformation_name": "mysql_input"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "oracle_output": {
+              "schema": "TEST",
+              "input_df": "inp_fpa",
+              "operation": "replace",
+              "table_name": "result",
+              "target_type": "Oracle",
+              "connection_name": "Oracle_input",
+              "transformation_name": "oracle_output"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
