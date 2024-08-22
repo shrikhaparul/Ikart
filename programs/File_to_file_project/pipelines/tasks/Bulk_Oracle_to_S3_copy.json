@@ -1,0 +1,73 @@
+{
+  "login_id": "jjones",
+  "id": 749,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "Bulk_Oracle_to_S3_copy",
+  "task_description": "Bulk Ingestion from oracle to s3 location.\nParquet files will be compressed in s3 location.",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "c4c9cb3b-bebd-4eaf-9301-061d42f4e78e",
+  "status": "Success",
+  "updated_dttm": "2024-06-20T13:06:08.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "chunk_size": 1000000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "file_test",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "tgt_file_test",
+          "connection_name": "P_sqlserver",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "P_postgres",
+          "object_name": "stock_data",
+          "object_type": "Table",
+          "schema_name": "public",
+          "database_name": "postgres",
+          "extraction_type": "Filter",
+          "extraction_criteria": "id < 10"
+        },
+        "target": {
+          "object_name": "tgt_stock_data",
+          "connection_name": "P_sqlserver",
+          "primary_key": "id",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "UPSERT"
+        }
+      }
+    ]
+  }
+}
