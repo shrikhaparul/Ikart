@@ -1,0 +1,93 @@
+{
+  "login_id": "durga",
+  "id": 820,
+  "project_name": "prj1",
+  "pipeline_name": "Decryption_check",
+  "project_id": 84,
+  "pipeline_id": 232,
+  "task_name": "Bulk_check_decrypt_1",
+  "task_description": "Bulk_check_decrypt_1",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "1679e731-c45f-4f9c-977a-d3bca1ee74b8",
+  "status": "Failed",
+  "updated_dttm": "2024-08-22T09:17:39.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "local_con_sales",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/durga/pyspark/decrypt/bulk_check/",
+          "operation": "copy",
+          "decryption": "yes",
+          "quote_char": "\"",
+          "task_group": "0",
+          "compression": "",
+          "escape_char": "\\n",
+          "object_name": "passphrase_test_file.csv.gpg",
+          "object_type": "gpg",
+          "skip_footer": "0",
+          "skip_header": "0",
+          "transfer_mode": "",
+          "private_key_path": "/home/durga/pyspark/decrypt/private_with_passphrase.asc",
+          "files_filter_name": "*.csv.gpg",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "passphrase_test_file",
+          "connection_name": "mysql_con1",
+          "primary_key": "",
+          "audit_fields": "NO",
+          "database_name": "demo",
+          "action_on_table": "DROP AND CREATE"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "header": "Y",
+          "connection_name": "local_con_sales",
+          "encoding": "utf-8",
+          "delimiter": ",",
+          "file_path": "/home/durga/pyspark/decrypt/bulk_check/",
+          "operation": "copy",
+          "decryption": "yes",
+          "quote_char": "",
+          "task_group": "0",
+          "compression": "",
+          "escape_char": "\\n",
+          "object_name": "test_file.csv.gpg",
+          "object_type": "gpg",
+          "skip_footer": "0",
+          "skip_header": "0",
+          "transfer_mode": "",
+          "private_key_path": "/home/durga/pyspark/decrypt/private_key_no_passphrase.asc",
+          "files_filter_name": "*.csv.gpg",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "test_file",
+          "connection_name": "mysql_con1",
+          "primary_key": "",
+          "audit_fields": "NO",
+          "database_name": "demo",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
