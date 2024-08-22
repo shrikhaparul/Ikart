@@ -1,0 +1,48 @@
+{
+  "login_id": "Pavan",
+  "id": 891,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Ingestion",
+  "project_id": 82,
+  "pipeline_id": 238,
+  "task_name": "Ingestion_01",
+  "task_description": "-",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "4da0a8e3-6efe-4aef-9d02-489bd7c76fbc",
+  "status": "Running",
+  "updated_dttm": "2024-08-22T14:49:06.000Z",
+  "source": "Oracle",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT REGION, COUNTRY, ITEM_TYPE, SHIPDATE FROM TEST.TEST_BEVERAGE",
+      "schema": "TEST",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 100000,
+      "table_name": "TEST_BEVERAGE",
+      "parameter_type": "Oracle",
+      "select_columns": "REGION,COUNTRY,ITEM_TYPE,SHIPDATE",
+      "connection_name": "Oracle_input"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "transformation",
+      "operation": "DROP AND CREATE",
+      "table_name": "employees_res",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_tr",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
