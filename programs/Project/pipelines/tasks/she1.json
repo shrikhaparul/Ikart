@@ -1,0 +1,74 @@
+{
+  "login_id": "sonika",
+  "id": 800,
+  "project_name": "Project",
+  "pipeline_name": "Python_shell",
+  "project_id": 84,
+  "pipeline_id": 230,
+  "task_name": "she1",
+  "task_description": "-------",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-21T07:11:08.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "pab",
+  "updated_by": "pab",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_inp_tr": "0",
+      "Output_out_tr": "Python_python_tr",
+      "Python_python_tr": "Input_inp_tr"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "inp_tr": {
+              "schema": "public",
+              "output_df": "inp_ktc",
+              "table_name": "EC_04",
+              "source_type": "PostgreSQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,Simple_Interest",
+              "connection_name": "Postgres_ec2",
+              "transformation_name": "inp_tr"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_tr": {
+              "schema": "public",
+              "input_df": "python_tqw",
+              "operation": "create",
+              "table_name": "EC_shell",
+              "target_type": "PostgreSQL",
+              "connection_name": "Postgres_ec2",
+              "transformation_name": "out_tr"
+            }
+          }
+        ]
+      },
+      {
+        "Python": [
+          {
+            "python_tr": {
+              "input_df": "inp_ktc",
+              "output_df": "python_tqw",
+              "script_type": "shell_script",
+              "python_script": "#!/bin/bash\n\n# Define the Python script path\nPYTHON_SCRIPT=\"/home/pavan/durga_check/example_code.py\"\ninp_ktc={inp_ktc}\n\n# Check if the Python script exists\nif [ ! -f \"$PYTHON_SCRIPT\" ]; then\n    echo \"Error: Python script not found at $PYTHON_SCRIPT\"\n    exit 1\nfi\n\n# Check if the inp_ktc variable is set\nif [ -z \"$inp_ktc\" ]; then\n    echo \"Error: Variable inp_ktc is not set. Please set it before running the script.\"\n    exit 1\nfi\n\n# Check if the inp_ktc file exists\nif [ ! -f \"$inp_ktc\" ]; then\n    echo \"Error: Parquet file not found at $inp_ktc\"\n    exit 1\nfi\n\n# Print the paths for debugging\necho \"Running Python script: $PYTHON_SCRIPT\"\necho \"With Parquet file: $inp_ktc\"\n\n# Run the Python script with the Parquet location as an argument\npython3 \"$PYTHON_SCRIPT\" \"$inp_ktc\"\n\n# Check the exit status of the Python script\nif [ $? -eq 0 ]; then\n    echo \"Python script executed successfully.\"\nelse\n    echo \"Error: Python script failed to execute.\"\n    exit 1\nfi",
+              "select_columns": "col_1,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,Simple_Interest",
+              "transformation_name": "python_tr"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
