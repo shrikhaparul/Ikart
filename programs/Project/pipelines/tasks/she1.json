@@ -1,0 +1,74 @@
+{
+  "login_id": "sonika",
+  "id": 800,
+  "project_name": "Project",
+  "pipeline_name": "Python_shell",
+  "project_id": 84,
+  "pipeline_id": 230,
+  "task_name": "she1",
+  "task_description": "-------",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-21T07:11:08.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "pab",
+  "updated_by": "pab",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_inp_tr": "0",
+      "Output_out_tr": "Python_python_tr",
+      "Python_python_tr": "Input_inp_tr"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "inp_tr": {
+              "schema": "public",
+              "output_df": "inp_ktc",
+              "table_name": "EC_04",
+              "source_type": "PostgreSQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,Simple_Interest",
+              "connection_name": "Postgres_ec2",
+              "transformation_name": "inp_tr"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_tr": {
+              "schema": "public",
+              "input_df": "python_tqw",
+              "operation": "create",
+              "table_name": "EC_shell",
+              "target_type": "PostgreSQL",
+              "connection_name": "Postgres_ec2",
+              "transformation_name": "out_tr"
+            }
+          }
+        ]
+      },
+      {
+        "Python": [
+          {
+            "python_tr": {
+              "input_df": "inp_ktc",
+              "output_df": "python_tqw",
+              "script_type": "shell_script",
+              "python_script": "# Run the Python file\npython3 /home/pavan/Ikart/UI/backend-python/master.py -p Project -t inp_out_oracle -gitbranch sarth\n\n# Check if the script ran successfully\nif [ $? -eq 0 ]; then\n    echo \"Python script executed successfully.\"\nelse\n    echo \"Python script failed to execute.\"\nfi",
+              "select_columns": "col_1,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,Simple_Interest",
+              "transformation_name": "python_tr"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
