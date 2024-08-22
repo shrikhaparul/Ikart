@@ -1,0 +1,117 @@
+{
+  "login_id": "Pavan",
+  "id": 878,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Ingestion",
+  "project_id": 82,
+  "pipeline_id": 238,
+  "task_name": "athena_bulk",
+  "task_description": "-",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-13T11:28:54.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "2",
+          "connection_name": "Oracle_input",
+          "object_name": "LOGMNR_AGE_SPILL$",
+          "object_type": "Table",
+          "schema_name": "SYSTEM",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "test_LOGMNR_AGE_SPILL$",
+          "connection_name": "mysql_tr",
+          "primary_key": "",
+          "schema_name": "transformation",
+          "audit_fields": "NO",
+          "database_name": "transformation",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "2",
+          "connection_name": "Oracle_input",
+          "object_name": "LOGMNR_RESTART_CKPT_TXINFO$",
+          "object_type": "Table",
+          "schema_name": "SYSTEM",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "test_LOGMNR_RESTART_CKPT_TXINFO$",
+          "connection_name": "mysql_tr",
+          "primary_key": "",
+          "schema_name": "transformation",
+          "audit_fields": "NO",
+          "database_name": "transformation",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "2",
+          "connection_name": "Oracle_input",
+          "object_name": "LOGMNR_ERROR$",
+          "object_type": "Table",
+          "schema_name": "SYSTEM",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "test_LOGMNR_ERROR$",
+          "connection_name": "mysql_tr",
+          "primary_key": "",
+          "schema_name": "transformation",
+          "audit_fields": "NO",
+          "database_name": "transformation",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "3",
+          "connection_name": "Oracle_input",
+          "object_name": "LOGMNR_RESTART_CKPT$",
+          "object_type": "Table",
+          "schema_name": "SYSTEM",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "test_LOGMNR_RESTART_CKPT$",
+          "connection_name": "mysql_tr",
+          "primary_key": "",
+          "schema_name": "transformation",
+          "audit_fields": "NO",
+          "database_name": "transformation",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
