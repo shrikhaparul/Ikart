@@ -1,0 +1,93 @@
+{
+  "login_id": "sahil",
+  "id": 824,
+  "project_name": "Ikart_project",
+  "pipeline_name": "T1",
+  "project_id": 84,
+  "pipeline_id": 233,
+  "task_name": "0",
+  "task_description": "-",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-22T09:31:43.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "sahil",
+  "updated_by": "sahil",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "athena_v3",
+          "object_name": "employee",
+          "object_type": "Table",
+          "schema_name": "my_database",
+          "database_name": "my_database",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "it_employee",
+          "connection_name": "athena_v3",
+          "primary_key": "",
+          "schema_name": "my_database",
+          "audit_fields": "NO",
+          "database_name": "my_database",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "athena_v3",
+          "object_name": "employee_data",
+          "object_type": "Table",
+          "schema_name": "my_database",
+          "database_name": "my_database",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "it_employee_data",
+          "connection_name": "athena_v3",
+          "primary_key": "",
+          "schema_name": "my_database",
+          "audit_fields": "NO",
+          "database_name": "my_database",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "athena_v3",
+          "object_name": "stg_customer",
+          "object_type": "Table",
+          "schema_name": "my_database",
+          "database_name": "my_database",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "it_stg_customer",
+          "connection_name": "athena_v3",
+          "primary_key": "",
+          "schema_name": "my_database",
+          "audit_fields": "NO",
+          "database_name": "my_database",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
