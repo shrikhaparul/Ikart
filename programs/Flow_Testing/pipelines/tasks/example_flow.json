@@ -1,0 +1,121 @@
+{
+  "login_id": "Pavan",
+  "id": 880,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Dtypes",
+  "project_id": 82,
+  "pipeline_id": 226,
+  "task_name": "example_flow",
+  "task_description": "-",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "9df3ac7a-6872-4ab3-81df-45750388ba99",
+  "status": "Success",
+  "updated_dttm": "2024-08-21T09:55:37.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "SQL_sql": "Expression_transformation_exp",
+      "Input_input1": "0",
+      "Filter_filter": "Input_input1",
+      "Output_output": "SQL_sql",
+      "Expression_transformation_exp": "Filter_filter"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "filter": {
+              "input_df": "inp_ddv",
+              "output_df": "fil_bqr",
+              "transformation_name": "filter",
+              "filter_Operation_158": {
+                "id": "filter_Operation_158",
+                "operator": "any>=",
+                "column_name": "full_name",
+                "field_value": "abc",
+                "condition_type": "operation",
+                "operation_name": "myoperation"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Expression": [
+          {
+            "transformation_exp": {
+              "input_df": "fil_bqr",
+              "output_df": "exp_dnc",
+              "transformation_name": "transformation_exp",
+              "transformation_exp_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "login_id",
+                "output_col_name": "login_id",
+                "expression_value": " "
+              },
+              "transformation_exp_1": {
+                "operator": "equal",
+                "sequence": "1",
+                "operatorType": "Math",
+                "input_col_name": "full_name",
+                "output_col_name": "full_name",
+                "expression_value": "(Expr1 == Expr2 )"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "input1": {
+              "schema": "config",
+              "output_df": "inp_ddv",
+              "table_name": "tbl_user",
+              "source_type": "MySQL",
+              "select_columns": "full_name,login_id",
+              "connection_name": "mysql_tr",
+              "transformation_name": "input1"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output": {
+              "schema": "config",
+              "input_df": "sql_anh",
+              "operation": "create",
+              "table_name": "test_filter",
+              "target_type": "MySQL",
+              "connection_name": "mysql_tr",
+              "transformation_name": "output"
+            }
+          }
+        ]
+      },
+      {
+        "SQL": [
+          {
+            "sql": {
+              "input_df": "exp_dnc",
+              "output_df": "sql_anh",
+              "sql_query": "sql",
+              "select_columns": "exp_dnc.id",
+              "transformation_name": "sql"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
