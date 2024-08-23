@@ -1,0 +1,276 @@
+{
+  "login_id": "jbanad",
+  "id": 871,
+  "project_name": "ingkart_project",
+  "pipeline_name": "transforming_data",
+  "project_id": 72,
+  "pipeline_id": 240,
+  "task_name": "sql_operation",
+  "task_description": "using sql query to get unique data",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "32b70c48-891e-4209-991e-53a07bc53ac0",
+  "status": "Failed",
+  "updated_dttm": "2024-08-06T05:42:49.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "SQL_query": "Expression_mask",
+      "Output_result": "SQL_query",
+      "Expression_mask": "Input_business_data",
+      "Input_business_data": "0"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "mask": {
+              "input_df": "inp_xns",
+              "output_df": "exp_lqg",
+              "transformation_name": "mask",
+              "mask_17": {
+                "operator": "",
+                "sequence": "17",
+                "operatorType": "",
+                "input_col_name": "SameSexPartnerAsSpouseIndicator",
+                "output_col_name": "SameSexPartnerAsSpouseIndicator",
+                "expression_value": " "
+              },
+              "mask_18": {
+                "operator": "",
+                "sequence": "18",
+                "operatorType": "",
+                "input_col_name": "AgeDeterminationRule",
+                "output_col_name": "AgeDeterminationRule",
+                "expression_value": " "
+              },
+              "mask_19": {
+                "operator": "case expression",
+                "sequence": "19",
+                "operatorType": "Conditional",
+                "input_col_name": "MinimumTobaccoFreeMonthsRule",
+                "output_col_name": "MinimumTobaccoFreeMonthsRule",
+                "expression_value": "case when MinimumTobaccoFreeMonthsRule = 'Not Applicable' then 'NA' else MinimumTobaccoFreeMonthsRule end"
+              },
+              "mask_23": {
+                "operator": "extract",
+                "sequence": "23",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "extract_date",
+                "expression_value": "extract(week from ImportDate)"
+              },
+              "mask_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "StateCode",
+                "output_col_name": "StateCode",
+                "expression_value": " "
+              },
+              "mask_20": {
+                "operator": "",
+                "sequence": "20",
+                "operatorType": "",
+                "input_col_name": "CohabitationRule",
+                "output_col_name": "CohabitationRule",
+                "expression_value": " "
+              },
+              "mask_22": {
+                "operator": "to_gregorian",
+                "sequence": "22",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "ImportDate_greg",
+                "expression_value": "to_gregorian(ImportDate_julian)"
+              },
+              "mask_16": {
+                "operator": "",
+                "sequence": "16",
+                "operatorType": "",
+                "input_col_name": "DomesticPartnerAsSpouseIndicator",
+                "output_col_name": "DomesticPartnerAsSpouseIndicator",
+                "expression_value": " "
+              },
+              "mask_9": {
+                "operator": "coalesce",
+                "sequence": "9",
+                "operatorType": "Conditional",
+                "input_col_name": "ProductId",
+                "output_col_name": "ProductId",
+                "expression_value": "coalesce(ProductId,DependentMaximumAgRule )"
+              },
+              "mask_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "TIN",
+                "output_col_name": "TIN",
+                "expression_value": " "
+              },
+              "mask_7": {
+                "operator": "nullif",
+                "sequence": "7",
+                "operatorType": "Conditional",
+                "input_col_name": "IssuerId2",
+                "output_col_name": "IssuerId2",
+                "expression_value": "nullif(IssuerId, IssuerId2)"
+              },
+              "mask_6": {
+                "operator": "mask_date",
+                "sequence": "6",
+                "operatorType": "Data Masking",
+                "input_col_name": "ImportDate",
+                "output_col_name": "ImportDate",
+                "expression_value": "mask_date(ImportDate,#)"
+              },
+              "mask_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "BusinessYear",
+                "output_col_name": "BusinessYear",
+                "expression_value": " "
+              },
+              "mask_10": {
+                "operator": "mask_alphanumeric",
+                "sequence": "10",
+                "operatorType": "Data Masking",
+                "input_col_name": "StandardComponentId",
+                "output_col_name": "StandardComponentId",
+                "expression_value": "mask_alphanumeric(StandardComponentId,*)"
+              },
+              "mask_11": {
+                "operator": "replace",
+                "sequence": "11",
+                "operatorType": "String",
+                "input_col_name": "EnrolleeContractRateDeterminationRule",
+                "output_col_name": "EnrolleeContractRateDeterminationRule",
+                "expression_value": "replace(EnrolleeContractRateDeterminationRule,'(specifically for parties of two or more)','') "
+              },
+              "mask_12": {
+                "operator": "substring",
+                "sequence": "12",
+                "operatorType": "String",
+                "input_col_name": "TwoParentFamilyMaxDependentsRule",
+                "output_col_name": "TwoParentFamilyMaxDependentsRule",
+                "expression_value": "substring(TwoParentFamilyMaxDependentsRule,1,3)"
+              },
+              "mask_13": {
+                "operator": "regexp_replace",
+                "sequence": "13",
+                "operatorType": "String",
+                "input_col_name": "SingleParentFamilyMaxDependentsRule",
+                "output_col_name": "SingleParentFamilyMaxDependentsRule",
+                "expression_value": "regexp_replace(SingleParentFamilyMaxDependentsRule,'3 or more','or more')"
+              },
+              "mask_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "DependentMaximumAgRule",
+                "output_col_name": "DependentMaximumAgRule",
+                "expression_value": " "
+              },
+              "mask_21": {
+                "operator": "to_julian",
+                "sequence": "21",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "ImportDate_julian",
+                "expression_value": "to_julian(ImportDate)"
+              },
+              "mask_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "SourceName",
+                "output_col_name": "SourceName",
+                "expression_value": " "
+              },
+              "mask_24": {
+                "operator": "date_trunc",
+                "sequence": "24",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "date_trunc",
+                "expression_value": "date_trunc(week,ImportDate)"
+              },
+              "mask_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "VersionNum",
+                "output_col_name": "VersionNum",
+                "expression_value": " "
+              },
+              "mask_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "IssuerId",
+                "output_col_name": "IssuerId",
+                "expression_value": " "
+              },
+              "mask_15": {
+                "operator": "",
+                "sequence": "15",
+                "operatorType": "",
+                "input_col_name": "ChildrenOnlyContractMaxChildrenRule",
+                "output_col_name": "ChildrenOnlyContractMaxChildrenRule",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "business_data": {
+              "schema": "lnd",
+              "output_df": "inp_xns",
+              "table_name": "businesrules",
+              "source_type": "PostgreSQL",
+              "select_columns": "BusinessYear,StateCode,IssuerId,SourceName,VersionNum,ImportDate,IssuerId2,TIN,ProductId,StandardComponentId,EnrolleeContractRateDeterminationRule,TwoParentFamilyMaxDependentsRule,SingleParentFamilyMaxDependentsRule,DependentMaximumAgRule,ChildrenOnlyContractMaxChildrenRule,DomesticPartnerAsSpouseIndicator,SameSexPartnerAsSpouseIndicator,AgeDeterminationRule,MinimumTobaccoFreeMonthsRule,CohabitationRule,RowNumber,MarketCoverage,DentalOnlyPlan",
+              "connection_name": "postgres_s",
+              "transformation_name": "business_data"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "result": {
+              "schema": "lnd",
+              "input_df": "sql_cgh",
+              "operation": "create",
+              "table_name": "businesrules_change_sql_exp",
+              "target_type": "PostgreSQL",
+              "connection_name": "postgres_s",
+              "transformation_name": "result"
+            }
+          }
+        ]
+      },
+      {
+        "SQL": [
+          {
+            "query": {
+              "input_df": "exp_lqg",
+              "output_df": "sql_cgh",
+              "sql_query": "select distinct *\nFROM exp_lqg;",
+              "transformation_name": "query"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
