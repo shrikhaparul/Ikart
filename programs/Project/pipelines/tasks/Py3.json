@@ -1,0 +1,186 @@
+{
+  "login_id": "sonika",
+  "id": 801,
+  "project_name": "Project",
+  "pipeline_name": "Python_shell",
+  "project_id": 84,
+  "pipeline_id": 230,
+  "task_name": "Py3",
+  "task_description": "-----",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "ddb410f1-8012-4ff9-8679-3e70bc14f9fc",
+  "status": "Success",
+  "updated_dttm": "2024-08-21T11:16:15.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "pab",
+  "updated_by": "pab",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_inp_tr": "0",
+      "Input_inp_tr1": "0",
+      "Output_out_tr": "Expression_expr_tr",
+      "Python_py_code": "Input_inp_tr,Input_inp_tr1",
+      "Expression_expr_tr": "Python_py_code"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "expr_tr": {
+              "input_df": "python_hda",
+              "output_df": "exp_mrl",
+              "transformation_name": "expr_tr",
+              "expr_tr_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "crtd_dttm",
+                "output_col_name": "crtd_dttm",
+                "expression_value": " "
+              },
+              "expr_tr_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "employment_status",
+                "output_col_name": "employment_status",
+                "expression_value": " "
+              },
+              "expr_tr_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "annual_salary",
+                "output_col_name": "annual_salary",
+                "expression_value": " "
+              },
+              "expr_tr_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "id",
+                "output_col_name": "ID",
+                "expression_value": " "
+              },
+              "expr_tr_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "birth_date",
+                "output_col_name": "birth_date",
+                "expression_value": " "
+              },
+              "expr_tr_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "crtd_by",
+                "output_col_name": "crtd_by",
+                "expression_value": " "
+              },
+              "expr_tr_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "gender",
+                "output_col_name": "gender",
+                "expression_value": " "
+              },
+              "expr_tr_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "last_name",
+                "output_col_name": "last_name",
+                "expression_value": " "
+              },
+              "expr_tr_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "updt_by",
+                "output_col_name": "updt_by",
+                "expression_value": " "
+              },
+              "expr_tr_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "updt_dttm",
+                "output_col_name": "updt_dttm",
+                "expression_value": " "
+              },
+              "expr_tr_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "first_name_1",
+                "output_col_name": "first_name_1",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "inp_tr1": {
+              "schema": "public",
+              "output_df": "inp_rmd",
+              "table_name": "employee_data",
+              "source_type": "PostgreSQL",
+              "select_columns": "id,first_name_1,last_name,gender,birth_date,employment_status,annual_salary,crtd_by,crtd_dttm,updt_by,updt_dttm",
+              "connection_name": "Postgres_ec2",
+              "transformation_name": "inp_tr1"
+            }
+          },
+          {
+            "inp_tr": {
+              "schema": "TEST",
+              "output_df": "inp_yqs",
+              "table_name": "EMPLOY_DATA",
+              "source_type": "Oracle",
+              "select_columns": "ID,FIRST_NAME_1,LAST_NAME",
+              "connection_name": "Oracle_ec2_ser",
+              "transformation_name": "inp_tr"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_tr": {
+              "schema": "public",
+              "input_df": "exp_mrl",
+              "operation": "replace",
+              "table_name": "python_res",
+              "target_type": "PostgreSQL",
+              "connection_name": "Postgres_ec2",
+              "transformation_name": "out_tr"
+            }
+          }
+        ]
+      },
+      {
+        "Python": [
+          {
+            "py_code": {
+              "input_df": "inp_yqs,inp_rmd",
+              "output_df": "python_hda",
+              "script_type": "inline_code",
+              "python_script": "import pandas as pd\n\ndef inner_join_and_sort(inp_yqs, inp_rmd):\n    # Convert all column names to lowercase\n    inp_yqs.columns = inp_yqs.columns.str.lower()\n    inp_rmd.columns = inp_rmd.columns.str.lower()\n\n    # Perform the inner join\n    joined_df = pd.merge(\n        inp_yqs,\n        inp_rmd,\n        how='inner',\n        on=['first_name_1', 'id', 'last_name']\n    )\n    \n    # Drop duplicate columns\n    joined_df = joined_df.loc[:, ~joined_df.columns.duplicated()]\n\n    # Sort by 'id'\n    sorted_df = joined_df.sort_values(by='id').reset_index(drop=True)\n    \n    return sorted_df",
+              "select_columns": "id,first_name_1,last_name,gender,birth_date,employment_status,annual_salary,crtd_by,crtd_dttm,updt_by,updt_dttm",
+              "transformation_name": "py_code"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
