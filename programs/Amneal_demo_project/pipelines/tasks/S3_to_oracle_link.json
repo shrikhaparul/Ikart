@@ -1,0 +1,66 @@
+{
+  "login_id": "jbanad",
+  "id": 895,
+  "project_name": "Amneal_demo_project",
+  "pipeline_name": "pip_demo_bulk_ingest2",
+  "project_id": 85,
+  "pipeline_id": 243,
+  "task_name": "S3_to_oracle_link",
+  "task_description": "S3_to_oracle_link",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "c6c91b37-d779-4610-8a8f-cc8aee741134",
+  "status": "Success",
+  "updated_dttm": "2024-08-26T11:45:54.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": "admin",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Input_input": "0",
+      "Output_output": "Input_input"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "input": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "16_04_2024_icpc-3_16_04_2024.csv",
+              "file_path": "demo/raw/",
+              "file_type": "csv",
+              "output_df": "inp_hgb",
+              "quote_char": "\"",
+              "compression": "",
+              "escape_char": "",
+              "skip_header": "0",
+              "source_type": "AWS S3",
+              "connection_name": "AWS_S3",
+              "transformation_name": "input"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output": {
+              "schema": "DWH",
+              "input_df": "inp_hgb",
+              "operation": "replace",
+              "table_name": "customer_s3",
+              "target_type": "Oracle",
+              "connection_name": "oracle_xe",
+              "transformation_name": "output"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
