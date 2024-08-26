@@ -1,0 +1,213 @@
+{
+  "login_id": "jbanad",
+  "id": 892,
+  "project_name": "Amneal_demo_project",
+  "pipeline_name": "pip_demo_bulk_ingest2",
+  "project_id": 85,
+  "pipeline_id": 243,
+  "task_name": "task_transformation_test",
+  "task_description": "task_transformation_test",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "79fe7f45-5611-425e-9d6e-73de4bfd812e",
+  "status": "Success",
+  "updated_dttm": "2024-08-26T05:36:08.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "jbanad",
+  "updated_by": "admin",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Input_inp_table": "0",
+      "Output_out_results": "Expression_exp_apply_tranformation",
+      "Filter_filter_business_id": "Input_inp_table",
+      "Expression_exp_apply_tranformation": "Filter_filter_business_id"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "filter_business_id": {
+              "input_df": "inp_ipn",
+              "output_df": "fil_fjp",
+              "transformation_name": "filter_business_id",
+              "filter_business_id_Operation_261": {
+                "id": "filter_business_id_Operation_261",
+                "operator": ">",
+                "column_name": "BUSINESSENTITYID",
+                "field_value": "100",
+                "condition_type": "operation",
+                "operation_name": "Business_id_filter"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Expression": [
+          {
+            "exp_apply_tranformation": {
+              "input_df": "fil_fjp",
+              "output_df": "exp_rat",
+              "transformation_name": "exp_apply_tranformation",
+              "exp_apply_tranformation_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "BUSINESSENTITYID",
+                "output_col_name": "BUSINESSENTITYID",
+                "expression_value": " "
+              },
+              "exp_apply_tranformation_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "LASTNAME",
+                "output_col_name": "LAST_NAME",
+                "expression_value": " "
+              },
+              "exp_apply_tranformation_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "FIRSTNAME",
+                "output_col_name": "FIRST_NAME",
+                "expression_value": " "
+              },
+              "exp_apply_tranformation_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "MIDDLENAME",
+                "output_col_name": "MIDDLE_NAME",
+                "expression_value": " "
+              },
+              "exp_apply_tranformation_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "TITLE",
+                "output_col_name": "TITLE",
+                "expression_value": " "
+              },
+              "exp_apply_tranformation_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "PERSONTYPE",
+                "output_col_name": "PERSONTYPE",
+                "expression_value": " "
+              },
+              "exp_apply_tranformation_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "SUFFIX",
+                "output_col_name": "SUFFIX",
+                "expression_value": " "
+              },
+              "exp_apply_tranformation_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "EMAILPROMOTION",
+                "output_col_name": "EMAILPROMOTION",
+                "expression_value": " "
+              },
+              "exp_apply_tranformation_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "CUSTOMER_TYPE_MODIFIEDDATE",
+                "output_col_name": "CUSTOMER_TYPE_MODIFIEDDATE",
+                "expression_value": " "
+              },
+              "exp_apply_tranformation_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "DEMOGRAPHICS",
+                "output_col_name": "DEMOGRAPHICS",
+                "expression_value": " "
+              },
+              "exp_apply_tranformation_10": {
+                "operator": "",
+                "sequence": "10",
+                "operatorType": "",
+                "input_col_name": "ROWGUID",
+                "output_col_name": "ROWGUID",
+                "expression_value": " "
+              },
+              "exp_apply_tranformation_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "CUSTOMER_TYPE_NAME",
+                "output_col_name": "CUSTOMER_TYPE_NAME",
+                "expression_value": " "
+              },
+              "exp_apply_tranformation_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "PHONENUMBER",
+                "output_col_name": "PHONENUMBER",
+                "expression_value": " "
+              },
+              "exp_apply_tranformation_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "PHONENUMBERTYPEID",
+                "output_col_name": "PHONENUMBERTYPEID",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "inp_table": {
+              "schema": "LND",
+              "output_df": "inp_ipn",
+              "table_name": "CUSTOMER_INFO",
+              "source_type": "Oracle",
+              "select_columns": "BUSINESSENTITYID,PERSONTYPE,TITLE,FIRSTNAME,MIDDLENAME,LASTNAME,SUFFIX,EMAILPROMOTION,DEMOGRAPHICS,ROWGUID,CUSTOMER_TYPE_NAME,PHONENUMBER,PHONENUMBERTYPEID,CUSTOMER_TYPE_MODIFIEDDATE",
+              "connection_name": "oracle_xe",
+              "transformation_name": "inp_table"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_results": {
+              "header": "Y",
+              "schema": "testing",
+              "encoding": "utf-8",
+              "input_df": "exp_rat",
+              "delimiter": ",",
+              "file_name": "customer_info.parquet",
+              "file_path": "/home/Admin/actions-runner/_work/UI/all_files/",
+              "file_type": "csv",
+              "operation": "replace",
+              "quote_char": "\"",
+              "table_name": "customer_info_test",
+              "compression": "",
+              "escape_char": "\\",
+              "target_type": "MySQL",
+              "connection_name": "mysql",
+              "transformation_name": "out_results",
+              "target_max_record_count": "0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
