@@ -17,7 +17,7 @@
   "is_active": "Y",
   "created_by": "jbanad",
   "updated_by": "admin",
-  "job_execution": "polars",
+  "job_execution": "pandas",
   "task": {
     "flow": {
       "Input_inp_table": "0",
