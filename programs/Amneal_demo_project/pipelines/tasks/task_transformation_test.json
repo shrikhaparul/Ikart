@@ -192,7 +192,7 @@
               "encoding": "utf-8",
               "input_df": "exp_rat",
               "delimiter": ",",
-              "file_name": "customer_info.parquet\t",
+              "file_name": "customer_info.parquet",
               "file_path": "demo/raw/",
               "file_type": "parquet",
               "operation": "replace",
