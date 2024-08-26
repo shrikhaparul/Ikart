@@ -1,0 +1,63 @@
+{
+  "login_id": "sonika",
+  "id": 797,
+  "project_name": "Project",
+  "pipeline_name": "pandas",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "shell_example_1",
+  "task_description": "-------",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-20T05:07:31.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "pab",
+  "updated_by": "pab",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_inp_tr": "0",
+      "Output_out_tr": "Input_inp_tr"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "inp_tr": {
+              "path": "/home/Admin/all_files/bulk/source/rest_api.csv",
+              "port": "22",
+              "schema": "public",
+              "hostname": "52.204.24.198",
+              "username": "Admin",
+              "output_df": "inp_ktc",
+              "table_name": "EC_04",
+              "source_type": "Remote Server",
+              "select_columns": "col_1,col_10,col_11",
+              "connection_name": "Postgres_ec2",
+              "transformation_name": "inp_tr"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_tr": {
+              "schema": "public",
+              "input_df": "inp_ktc",
+              "operation": "create",
+              "table_name": "remote_ans",
+              "target_type": "PostgreSQL",
+              "connection_name": "Postgres_ec2",
+              "transformation_name": "out_tr"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
