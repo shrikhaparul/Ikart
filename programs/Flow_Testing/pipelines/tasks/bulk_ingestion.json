@@ -1,0 +1,865 @@
+{
+  "login_id": "Pavan",
+  "id": 864,
+  "project_name": "Flow_Testing",
+  "pipeline_name": "Ingestion",
+  "project_id": 82,
+  "pipeline_id": 238,
+  "task_name": "bulk_ingestion",
+  "task_description": "bul_ingestionnn",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "ddd4f4d9-022b-4729-ab37-01bdbc24cfac",
+  "status": "Running",
+  "updated_dttm": "2024-08-06T09:41:16.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "chunk_size": 1000000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "Oracle_input",
+          "object_name": "POST_TAB2",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkPOST_TAB2",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "10",
+        "source": {
+          "task_group": "2",
+          "connection_name": "Oracle_input",
+          "object_name": "DRDOS_NTP_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkDRDOS_NTP_TABLE",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "11",
+        "source": {
+          "task_group": "3",
+          "connection_name": "Oracle_input",
+          "object_name": "DRDOS_UPD",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkDRDOS_UPD",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "12",
+        "source": {
+          "task_group": "3",
+          "connection_name": "Oracle_input",
+          "object_name": "DRDOS_LDAP",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkDRDOS_LDAP",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "13",
+        "source": {
+          "task_group": "3",
+          "connection_name": "Oracle_input",
+          "object_name": "DRDOS_SSDP_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkDRDOS_SSDP_TABLE",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "14",
+        "source": {
+          "task_group": "3",
+          "connection_name": "Oracle_input",
+          "object_name": "DRDOS_DNS_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkDRDOS_DNS_TABLE",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "15",
+        "source": {
+          "task_group": "3",
+          "connection_name": "Oracle_input",
+          "object_name": "UDP_LAGS",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkUDP_LAGS",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "16",
+        "source": {
+          "task_group": "4",
+          "connection_name": "Oracle_input",
+          "object_name": "DRDOS_NETBIOS_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkDRDOS_NETBIOS_TABLE",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "17",
+        "source": {
+          "task_group": "4",
+          "connection_name": "Oracle_input",
+          "object_name": "DRDOS_MSSQL_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkDRDOS_MSSQL_TABLE",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "18",
+        "source": {
+          "task_group": "4",
+          "connection_name": "Oracle_input",
+          "object_name": "TFTP_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkTFTP_TABLE",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "19",
+        "source": {
+          "task_group": "4",
+          "connection_name": "Oracle_input",
+          "object_name": "NETBIOS_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkNETBIOS_TABLE",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "1",
+          "connection_name": "Oracle_input",
+          "object_name": "POST",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkPOST",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "20",
+        "source": {
+          "task_group": "4",
+          "connection_name": "Oracle_input",
+          "object_name": "AWS_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkAWS_TABLE",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "21",
+        "source": {
+          "task_group": "5",
+          "connection_name": "Oracle_input",
+          "object_name": "ADDRESS_DETAIL",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkADDRESS_DETAIL",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "22",
+        "source": {
+          "task_group": "5",
+          "connection_name": "Oracle_input",
+          "object_name": "INVENTORY_ITEMS",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkINVENTORY_ITEMS",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "23",
+        "source": {
+          "task_group": "5",
+          "connection_name": "Oracle_input",
+          "object_name": "ORDER_ITEMSCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkORDER_ITEMSCSV",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "24",
+        "source": {
+          "task_group": "5",
+          "connection_name": "Oracle_input",
+          "object_name": "EMPLOYEE_DETAILS",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkEMPLOYEE_DETAILS",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "25",
+        "source": {
+          "task_group": "5",
+          "connection_name": "Oracle_input",
+          "object_name": "OPEN",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkOPEN",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "26",
+        "source": {
+          "task_group": "6",
+          "connection_name": "Oracle_input",
+          "object_name": "ADDRESS_INFO",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkADDRESS_INFO",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "27",
+        "source": {
+          "task_group": "6",
+          "connection_name": "Oracle_input",
+          "object_name": "PRODUCTS",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkPRODUCTS",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "28",
+        "source": {
+          "task_group": "6",
+          "connection_name": "Oracle_input",
+          "object_name": "BNF_CODE_2016",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkBNF_CODE_2016",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "29",
+        "source": {
+          "task_group": "6",
+          "connection_name": "Oracle_input",
+          "object_name": "SALES_ALIAS",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkSALES_ALIAS",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "Oracle_input",
+          "object_name": "SURVIVAL_DATA",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkSURVIVAL_DATA",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "30",
+        "source": {
+          "task_group": "6",
+          "connection_name": "Oracle_input",
+          "object_name": "IMAGE_DETAILS",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkIMAGE_DETAILS",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "31",
+        "source": {
+          "task_group": "7",
+          "connection_name": "Oracle_input",
+          "object_name": "BNF_CODE_2018",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkBNF_CODE_2018",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "32",
+        "source": {
+          "task_group": "7",
+          "connection_name": "Oracle_input",
+          "object_name": "USERS",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkUSERS",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "33",
+        "source": {
+          "task_group": "7",
+          "connection_name": "Oracle_input",
+          "object_name": "BNF_DETAILS",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkBNF_DETAILS",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "34",
+        "source": {
+          "task_group": "7",
+          "connection_name": "Oracle_input",
+          "object_name": "BNF_CODE_2020",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkBNF_CODE_2020",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "35",
+        "source": {
+          "task_group": "7",
+          "connection_name": "Oracle_input",
+          "object_name": "BNF_CODE_2021",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkBNF_CODE_2021",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "36",
+        "source": {
+          "task_group": "8",
+          "connection_name": "Oracle_input",
+          "object_name": "BNF_CODE_2015",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkBNF_CODE_2015",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "37",
+        "source": {
+          "task_group": "8",
+          "connection_name": "Oracle_input",
+          "object_name": "BNF_CODE_2022",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkBNF_CODE_2022",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "38",
+        "source": {
+          "task_group": "8",
+          "connection_name": "Oracle_input",
+          "object_name": "BNF_CODE_2017",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkBNF_CODE_2017",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "Oracle_input",
+          "object_name": "SALES_11",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkSALES_11",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "1",
+          "connection_name": "Oracle_input",
+          "object_name": "TEST_DATA_NEW",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkTEST_DATA_NEW",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "6",
+        "source": {
+          "task_group": "2",
+          "connection_name": "Oracle_input",
+          "object_name": "ORDERSCSV",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkORDERSCSV",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "7",
+        "source": {
+          "task_group": "2",
+          "connection_name": "Oracle_input",
+          "object_name": "EMPLOYEE_PHONE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkEMPLOYEE_PHONE",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "8",
+        "source": {
+          "task_group": "2",
+          "connection_name": "Oracle_input",
+          "object_name": "SYN_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkSYN_TABLE",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "9",
+        "source": {
+          "task_group": "2",
+          "connection_name": "Oracle_input",
+          "object_name": "UDP_TABLE",
+          "object_type": "Table",
+          "schema_name": "STAGE",
+          "database_name": "XEPDB1",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "BulkUDP_TABLE",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "lnd",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
