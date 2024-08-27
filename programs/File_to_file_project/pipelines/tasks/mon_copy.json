@@ -1,0 +1,26 @@
+{
+  "login_id": "jbanad",
+  "id": 825,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Files_tranfer",
+  "project_id": 73,
+  "pipeline_id": 173,
+  "task_name": "mon_copy",
+  "task_description": "new check",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-26T21:39:36.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "admin",
+  "updated_by": null,
+  "task": {
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
