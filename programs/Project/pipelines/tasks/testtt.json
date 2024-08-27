@@ -1,0 +1,97 @@
+{
+  "login_id": "sonika",
+  "id": 807,
+  "project_name": "Project",
+  "pipeline_name": "expression_flow",
+  "project_id": 84,
+  "pipeline_id": 229,
+  "task_name": "testtt",
+  "task_description": "testing_exp",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "c422f0ef-c3dc-40bf-91cb-aacd030cb050",
+  "status": "Failed",
+  "updated_dttm": "2024-07-25T09:03:24.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Joiner_joiner": "Input_local_sever,Input_Input_mysql",
+      "Output_output": "Joiner_joiner",
+      "Input_Input_mysql": "0",
+      "Input_local_sever": "0"
+    },
+    "details": [
+      {
+        "Joiner": [
+          {
+            "joiner": {
+              "join_type": "left",
+              "output_df": "jnr_bgm",
+              "left_input_df": "inp_trr",
+              "join_condition": "inp_trr.department_id = inp_jdi.department_id",
+              "right_input_df": "inp_jdi",
+              "select_columns": "employee_id_left,first_name_left,last_name_left,department_id_left,salary_left,current_salary_left,hire_date_left,email_left,department_id_right,department_name_right,location_right",
+              "transformation_name": "joiner"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "local_sever": {
+              "header": "Y",
+              "schema": "Ikart",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "EC_04.csv",
+              "file_path": "/home/sonika/data/",
+              "file_type": "csv",
+              "output_df": "inp_trr",
+              "quote_char": "\"",
+              "table_name": "employees",
+              "compression": "",
+              "escape_char": "\\n",
+              "skip_header": "0",
+              "source_type": "MySQL",
+              "select_columns": "employee_id,first_name,last_name,department_id,salary,current_salary,hire_date,email",
+              "connection_name": "my_sql",
+              "transformation_name": "local_sever"
+            }
+          },
+          {
+            "Input_mysql": {
+              "schema": "Ikart",
+              "output_df": "inp_jdi",
+              "table_name": "department",
+              "source_type": "MySQL",
+              "select_columns": "department_id,department_name,location",
+              "connection_name": "my_sql",
+              "transformation_name": "Input_mysql"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output": {
+              "schema": "Ikart",
+              "input_df": "jnr_bgm",
+              "operation": "replace",
+              "table_name": "left_join",
+              "target_type": "MySQL",
+              "connection_name": "my_sql",
+              "transformation_name": "output"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
