@@ -1,0 +1,100 @@
+{
+  "login_id": "rperuman",
+  "id": 761,
+  "project_name": "open_payments",
+  "pipeline_name": "Cust_PhoneType_workflow",
+  "project_id": 79,
+  "pipeline_id": 227,
+  "task_name": "Cust_PhoneType_Ingest",
+  "task_description": "extracting CustomerPhoneType data from Oracle server to AWS S3",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "e2486cd1-ae6f-4320-a718-5e2b9acad859",
+  "status": "Failed",
+  "updated_dttm": "2024-07-09T10:26:43.000Z",
+  "source": "Oracle",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "rperuman",
+  "updated_by": "rperuman",
+  "task": {
+    "source": {
+      "source_type": "oracle_read",
+      "query": "SELECT BUSINESSENTITYID, PERSONTYPE, NAMESTYLE, TITLE, FIRSTNAME, MIDDLENAME, LASTNAME, SUFFIX, EMAILPROMOTION, DEMOGRAPHICS, ROWGUID, MODIFIEDDATE FROM LND.CUSTOMER",
+      "schema": "LND",
+      "chunk_size": 10000,
+      "table_name": "CUSTOMER",
+      "parameter_type": "Oracle",
+      "select_columns": "BUSINESSENTITYID,PERSONTYPE,NAMESTYLE,TITLE,FIRSTNAME,MIDDLENAME,LASTNAME,SUFFIX,EMAILPROMOTION,DEMOGRAPHICS,ROWGUID,MODIFIEDDATE",
+      "connection_name": "oracle_xe"
+    },
+    "target": {
+      "target_type": "parquet_write",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "CustomerPhoneType.parquet",
+      "file_path": "/home/Admin/actions-runner/_work/UI/customer/",
+      "file_type": "parquet",
+      "encryption": "no",
+      "quote_char": "\"",
+      "compression": "",
+      "audit_columns": "inactive",
+      "parameter_type": "Local Server",
+      "connection_name": "local_server",
+      "target_max_record_count": 0
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "4",
+        "check": "column_values_to_be_in_set",
+        "parameters": {
+          "column": "PERSONTYPE",
+          "value_set": "EM,IN,SC, SP"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 5,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "3",
+        "check": "table_column_count_to_equal",
+        "parameters": {
+          "value": "14"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "post_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_values_to_be_unique",
+        "parameters": {
+          "column": "BUSINESSENTITYID",
+          "strftime_format": ""
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "1",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "BUSINESSENTITYID"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 0,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
