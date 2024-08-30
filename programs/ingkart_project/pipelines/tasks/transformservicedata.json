@@ -1,0 +1,230 @@
+{
+  "login_id": "jbanad",
+  "id": 907,
+  "project_name": "ingkart_project",
+  "pipeline_name": "business_data",
+  "project_id": 72,
+  "pipeline_id": 244,
+  "task_name": "transformservicedata",
+  "task_description": "transformservicedata",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-30T06:48:15.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Output_result": "Expression_transform using polars",
+      "Input_service_area": "0",
+      "Expression_transform using polars": "Input_service_area"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "transform using polars": {
+              "input_df": "inp_gsb",
+              "output_df": "exp_wsc",
+              "transformation_name": "transform using polars",
+              "transform using polars_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "ImportDate",
+                "output_col_name": "ImportDate",
+                "expression_value": " "
+              },
+              "transform using polars_16": {
+                "operator": "",
+                "sequence": "16",
+                "operatorType": "",
+                "input_col_name": "RowNumber",
+                "output_col_name": "RowNumber",
+                "expression_value": " "
+              },
+              "transform using polars_18": {
+                "operator": "",
+                "sequence": "18",
+                "operatorType": "",
+                "input_col_name": "DentalOnlyPlan",
+                "output_col_name": "DentalOnlyPlan",
+                "expression_value": " "
+              },
+              "transform using polars_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "IssuerId",
+                "output_col_name": "IssuerId",
+                "expression_value": " "
+              },
+              "transform using polars_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "BusinessYear",
+                "output_col_name": "BusinessYear",
+                "expression_value": " "
+              },
+              "transform using polars_4": {
+                "operator": "",
+                "sequence": "4",
+                "operatorType": "",
+                "input_col_name": "SourceName",
+                "output_col_name": "SourceName",
+                "expression_value": " "
+              },
+              "transform using polars_12": {
+                "operator": "",
+                "sequence": "12",
+                "operatorType": "",
+                "input_col_name": "County",
+                "output_col_name": "County",
+                "expression_value": " "
+              },
+              "transform using polars_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "StateCode2",
+                "output_col_name": "StateCode2",
+                "expression_value": " "
+              },
+              "transform using polars_17": {
+                "operator": "",
+                "sequence": "17",
+                "operatorType": "",
+                "input_col_name": "MarketCoverage",
+                "output_col_name": "MarketCoverage",
+                "expression_value": " "
+              },
+              "transform using polars_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "IssuerId2",
+                "output_col_name": "IssuerId2",
+                "expression_value": " "
+              },
+              "transform using polars_15": {
+                "operator": "",
+                "sequence": "15",
+                "operatorType": "",
+                "input_col_name": "PartialCountyJustification",
+                "output_col_name": "PartialCountyJustification",
+                "expression_value": " "
+              },
+              "transform using polars_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "ServiceAreaId",
+                "output_col_name": "ServiceAreaId",
+                "expression_value": " "
+              },
+              "transform using polars_10": {
+                "operator": "case expression",
+                "sequence": "10",
+                "operatorType": "Conditional",
+                "input_col_name": "ServiceAreaName",
+                "output_col_name": "ServiceAreaName",
+                "expression_value": "case when ServiceAreaName = 'Geisinger Health Plan' then 'GHP' else ServiceAreaName end"
+              },
+              "transform using polars_11": {
+                "operator": "",
+                "sequence": "11",
+                "operatorType": "",
+                "input_col_name": "CoverEntireState",
+                "output_col_name": "CoverEntireState",
+                "expression_value": " "
+              },
+              "transform using polars_20": {
+                "operator": "to_gregorian",
+                "sequence": "20",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "import_date_greg",
+                "expression_value": "to_gregorian(import_date_julian)"
+              },
+              "transform using polars_14": {
+                "operator": "",
+                "sequence": "14",
+                "operatorType": "",
+                "input_col_name": "ZipCodes",
+                "output_col_name": "ZipCodes",
+                "expression_value": " "
+              },
+              "transform using polars_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "StateCode",
+                "output_col_name": "StateCode",
+                "expression_value": " "
+              },
+              "transform using polars_19": {
+                "operator": "to_julian",
+                "sequence": "19",
+                "operatorType": "Date and Time",
+                "input_col_name": "",
+                "output_col_name": "import_date_julian",
+                "expression_value": "to_julian(ImportDate)"
+              },
+              "transform using polars_13": {
+                "operator": "",
+                "sequence": "13",
+                "operatorType": "",
+                "input_col_name": "PartialCounty",
+                "output_col_name": "PartialCounty",
+                "expression_value": " "
+              },
+              "transform using polars_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "VersionNum",
+                "output_col_name": "VersionNum",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "service_area": {
+              "schema": "sys",
+              "output_df": "inp_gsb",
+              "table_name": "sevice_area",
+              "source_type": "MySQL",
+              "select_columns": "BusinessYear,StateCode,IssuerId,SourceName,VersionNum,ImportDate,IssuerId2,StateCode2,ServiceAreaId,ServiceAreaName,CoverEntireState,County,PartialCounty,ZipCodes,PartialCountyJustification,RowNumber,MarketCoverage,DentalOnlyPlan",
+              "connection_name": "mysql_s",
+              "transformation_name": "service_area"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "result": {
+              "schema": "dbo",
+              "input_df": "exp_wsc",
+              "table_name": "servicearea",
+              "target_type": "MSSQL",
+              "connection_name": "mssql_sys",
+              "transformation_name": "result"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
