@@ -24,8 +24,8 @@
       "schema": "karttest",
       "encoding": "utf-8",
       "delimiter": ",",
-      "file_name": "test_file_good.csv",
-      "file_path": "/home/puneeths/sample_data/",
+      "file_name": "customer_data.csv",
+      "file_path": "/home/prajwalkp/data_files/",
       "file_type": "csv",
       "quote_char": "\"",
       "table_name": "test_file_good",
@@ -43,9 +43,9 @@
       "connection_name": "localserver_connection_puneeth",
       "generate_bad_record": "yes",
       "bad_record_file_name": "bad_file_%DD%%MM%%YYYY%.csv",
-      "bad_record_file_path": "/home/puneeths/sample_data/bad_files/",
+      "bad_record_file_path": "/home/prajwalkp/data_files/",
       "good_record_file_name": "good_file_%DD%%MM%%YYYY%.csv",
-      "good_record_file_path": "/home/puneeths/sample_data/good_files/",
+      "good_record_file_path": "/home/prajwalkp/data_files/",
       "target_max_record_count": null
     },
     "data_quality_execution": {
@@ -57,7 +57,7 @@
         "seq_no": "1",
         "check": "column_values_to_not_be_null",
         "parameters": {
-          "column": "CUSTOMER_ID"
+          "column": "customer_id"
         },
         "active": "Y",
         "ignore_bad_records": "N",
@@ -67,7 +67,7 @@
         "seq_no": "2",
         "check": "column_values_to_be_in_set",
         "parameters": {
-          "column": "MEMBERSHIP_STATUS",
+          "column": "membership_status",
           "value_set": "Platinum,Silver"
         },
         "active": "Y",
