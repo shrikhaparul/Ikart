@@ -1,0 +1,59 @@
+{
+  "login_id": "sounak",
+  "id": 785,
+  "project_name": "project_01",
+  "pipeline_name": "test_pipeline",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "source",
+  "task_description": "source",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-07-03T07:19:10.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sounak",
+  "updated_by": "sounak",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_input_01": "0",
+      "Output_output_01": "Input_input_01"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "input_01": {
+              "schema": "test",
+              "output_df": "inp_euc",
+              "table_name": "employee_details",
+              "source_type": "MySQL",
+              "select_columns": "employee_id,first_name,last_name,email,phone_number,hire_date",
+              "connection_name": "test_01",
+              "transformation_name": "input_01"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "output_01": {
+              "schema": "test",
+              "input_df": "inp_euc",
+              "operation": "create",
+              "table_name": "new_table",
+              "target_type": "MySQL",
+              "connection_name": "test_01",
+              "transformation_name": "output_01"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
