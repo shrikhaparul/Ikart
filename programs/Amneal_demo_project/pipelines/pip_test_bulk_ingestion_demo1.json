@@ -1,0 +1,38 @@
+{
+  "pipeline_id": 233,
+  "project_id": 85,
+  "pipeline_name": "pip_test_bulk_ingestion_demo1",
+  "pipeline_cd": null,
+  "pipeline_description": "pip_test_bulk_ingestion_demo1",
+  "is_active": "Y",
+  "tasks_details": {},
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "817",
+      "data": {
+        "label": "817-task_bulk_ing_from_oracle3"
+      },
+      "position": {
+        "x": 50,
+        "y": 19200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": null,
+  "created_dttm": "2024-08-31T14:38:32.222Z",
+  "updated_dttm": "2024-08-31T14:38:32.222Z"
+}
