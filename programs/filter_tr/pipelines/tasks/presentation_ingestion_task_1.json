@@ -1,0 +1,48 @@
+{
+  "login_id": "pushpak",
+  "id": 802,
+  "project_name": "filter_tr",
+  "pipeline_name": "presentation_pipeline_1",
+  "project_id": 91,
+  "pipeline_id": 232,
+  "task_name": "presentation_ingestion_task_1",
+  "task_description": "Ingestion task for presentation",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-09-01T04:17:04.000Z",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "pushpak",
+  "updated_by": "pushpak",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT id, pipeline_id, task_name, task_description, task_type, task_sequence, is_active, created_by, created_dttm, updated_by, updated_dttm FROM config.tbl_task",
+      "schema": "config",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 1000,
+      "table_name": "tbl_task",
+      "parameter_type": "MySQL",
+      "select_columns": "id,pipeline_id,task_name,task_description,task_type,task_sequence,is_active,created_by,created_dttm,updated_by,updated_dttm",
+      "connection_name": "mysql_connection_config"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "encoding": "utf-8",
+      "file_name": "test_ingestion",
+      "file_path": "/home/pushpak",
+      "file_type": "csv",
+      "parameter_type": "Local Server",
+      "connection_name": "local_connection",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
