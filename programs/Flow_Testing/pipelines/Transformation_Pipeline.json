@@ -1,0 +1,66 @@
+{
+  "pipeline_id": 242,
+  "project_id": 82,
+  "pipeline_name": "Transformation_Pipeline",
+  "pipeline_cd": null,
+  "pipeline_description": "pipline to test all functions in pandas",
+  "is_active": "Y",
+  "tasks_details": {
+    "inp_oout": [
+      "aws3_store"
+    ],
+    "aws3_store": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "894",
+      "data": {
+        "label": "894-aws3_store"
+      },
+      "position": {
+        "x": 50,
+        "y": 22550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "898",
+      "data": {
+        "label": "898-inp_oout"
+      },
+      "position": {
+        "x": 50,
+        "y": 22600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-894",
+      "source": "0",
+      "target": "894"
+    },
+    {
+      "id": "flow-894-898",
+      "source": "894",
+      "target": "898"
+    }
+  ],
+  "created_dttm": "2024-09-02T12:17:39.596Z",
+  "updated_dttm": "2024-09-02T12:17:39.596Z"
+}
