@@ -1,0 +1,138 @@
+{
+  "pipeline_id": 238,
+  "project_id": 82,
+  "pipeline_name": "Ingestion",
+  "pipeline_cd": null,
+  "pipeline_description": "Ingestion",
+  "is_active": "Y",
+  "tasks_details": {
+    "Ingestion_01": [
+      "local_to_oracle"
+    ],
+    "local_to_oracle": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "860",
+      "data": {
+        "label": "860-local_to_oracle"
+      },
+      "position": {
+        "x": 50,
+        "y": 22150
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "864",
+      "data": {
+        "label": "864-bulk_ingestion"
+      },
+      "position": {
+        "x": 50,
+        "y": 22200
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "866",
+      "data": {
+        "label": "866-post_orac"
+      },
+      "position": {
+        "x": 50,
+        "y": 22250
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "867",
+      "data": {
+        "label": "867-BULKI"
+      },
+      "position": {
+        "x": 50,
+        "y": 22300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "878",
+      "data": {
+        "label": "878-athena_bulk"
+      },
+      "position": {
+        "x": 50,
+        "y": 22350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "891",
+      "data": {
+        "label": "891-Ingestion_01"
+      },
+      "position": {
+        "x": 50,
+        "y": 22400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "896",
+      "data": {
+        "label": "896-Test_Athena"
+      },
+      "position": {
+        "x": 50,
+        "y": 22450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "905",
+      "data": {
+        "label": "905-sql_ingest"
+      },
+      "position": {
+        "x": 50,
+        "y": 22500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-860",
+      "source": "0",
+      "target": "860"
+    },
+    {
+      "id": "flow-860-891",
+      "source": "860",
+      "target": "891"
+    }
+  ],
+  "created_dttm": "2024-09-02T12:19:14.448Z",
+  "updated_dttm": "2024-09-02T12:19:14.448Z"
+}
