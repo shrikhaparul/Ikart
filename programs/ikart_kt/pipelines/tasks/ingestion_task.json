@@ -1,0 +1,49 @@
+{
+  "login_id": "sounak",
+  "id": 797,
+  "project_name": "ikart_kt",
+  "pipeline_name": "kt_test",
+  "project_id": 85,
+  "pipeline_id": 230,
+  "task_name": "ingestion_task",
+  "task_description": "kt_task",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-09-02T04:09:58.000Z",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "sounak",
+  "updated_by": "sounak",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT employee_id, first_name, last_name, email, phone_number, hire_date FROM test.employee_details",
+      "schema": "test",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 5,
+      "table_name": "employee_details",
+      "parameter_type": "MySQL",
+      "select_columns": "employee_id,first_name,last_name,email,phone_number,hire_date",
+      "connection_name": "mysql_test"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "coretest",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "employee_core",
+      "primary_key": "employee_id",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "mysql_test_2",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
