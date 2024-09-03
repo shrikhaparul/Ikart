@@ -1,0 +1,139 @@
+{
+  "login_id": "Pavan",
+  "id": 914,
+  "project_name": "Success_Tra",
+  "pipeline_name": "Bulk_ing",
+  "project_id": 87,
+  "pipeline_id": 245,
+  "task_name": "Bulk_2_ing",
+  "task_description": "----",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "2b08f8b6-b1fb-4641-90ec-d22a57cf30af",
+  "status": "Failed",
+  "updated_dttm": "2024-09-03T10:59:59.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mssql_ec2_ST",
+          "object_name": "spt_monitor",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "will_spt_monitor",
+          "connection_name": "mssql_ec2_ST",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "AdventureWorks2022",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_ec2_ST",
+          "object_name": "rds_track_change",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "will_rds_track_change",
+          "connection_name": "mssql_ec2_ST",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "AdventureWorks2022",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_ec2_ST",
+          "object_name": "rds_component_version",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "will_rds_component_version",
+          "connection_name": "mssql_ec2_ST",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "AdventureWorks2022",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mssql_ec2_ST",
+          "object_name": "rds_failover_tracking",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "will_rds_failover_tracking",
+          "connection_name": "mssql_ec2_ST",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "AdventureWorks2022",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mssql_ec2_ST",
+          "object_name": "spt_values",
+          "object_type": "View",
+          "schema_name": "dbo",
+          "database_name": "master",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "will_spt_values",
+          "connection_name": "mssql_ec2_ST",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "AdventureWorks2022",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
