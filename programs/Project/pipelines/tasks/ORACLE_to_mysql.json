@@ -1,0 +1,62 @@
+{
+  "login_id": "sonika",
+  "id": 813,
+  "project_name": "Project",
+  "pipeline_name": "oracle_test",
+  "project_id": 84,
+  "pipeline_id": 230,
+  "task_name": "ORACLE_to_mysql",
+  "task_description": "ORACLE_to_mysql",
+  "task_type": "Ingestion",
+  "task_sequence": "\"0\"",
+  "last_run_id": "2062591a-0bf3-4ef3-b988-d0300cc2ea05",
+  "status": "Failed",
+  "updated_dttm": "2024-08-21T11:17:01.000Z",
+  "source": "PostgreSQL",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "task": {
+    "source": {
+      "source_type": "postgres_read",
+      "query": "SELECT employeeid, firstname, lastname, position FROM public.employee",
+      "schema": "public",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 100000,
+      "table_name": "employee",
+      "parameter_type": "PostgreSQL",
+      "select_columns": "employeeid,firstname,lastname,position",
+      "connection_name": "postgres"
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "public",
+      "operation": "DROP AND CREATE",
+      "table_name": "example_table",
+      "primary_key": "",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "postgres",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "employeeid"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
