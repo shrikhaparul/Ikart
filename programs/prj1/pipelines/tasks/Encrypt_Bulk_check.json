@@ -1,0 +1,79 @@
+{
+  "login_id": "durga",
+  "id": 826,
+  "project_name": "prj1",
+  "pipeline_name": "Decryption_check",
+  "project_id": 84,
+  "pipeline_id": 232,
+  "task_name": "Encrypt_Bulk_check",
+  "task_description": "Encrypt_Bulk_check",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "3acf0668-42c0-4638-9c02-e00c4ae248a9",
+  "status": "Failed",
+  "updated_dttm": "2024-09-03T10:00:03.000Z",
+  "source": "DB",
+  "target": "Files",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "Files",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_con1",
+          "object_name": "buisness",
+          "object_type": "Table",
+          "schema_name": "demo",
+          "database_name": "demo",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "encoding": "utf-8",
+          "connection_name": "local_con_sales",
+          "delimiter": ",",
+          "encryption": "yes",
+          "compression": "",
+          "object_name": "buisness",
+          "audit_fields": "no",
+          "public_key_path": "/home/durga/encrypt/public_key.asc",
+          "target_file_format": "csv",
+          "target_max_record_count": ""
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_con1",
+          "object_name": "customer",
+          "object_type": "Table",
+          "schema_name": "demo",
+          "database_name": "demo",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "encoding": "utf-8",
+          "connection_name": "local_con_sales",
+          "delimiter": ",",
+          "encryption": "yes",
+          "compression": "",
+          "object_name": "customer",
+          "audit_fields": "no",
+          "public_key_path": "/home/durga/encrypt/public_key.asc",
+          "target_file_format": "csv",
+          "target_max_record_count": ""
+        }
+      }
+    ]
+  }
+}
