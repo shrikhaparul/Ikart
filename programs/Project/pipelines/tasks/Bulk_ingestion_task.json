@@ -1,0 +1,249 @@
+{
+  "login_id": "sonika",
+  "id": 827,
+  "project_name": "Project",
+  "pipeline_name": "Presentation_pipeline",
+  "project_id": 84,
+  "pipeline_id": 231,
+  "task_name": "Bulk_ingestion_task",
+  "task_description": "Bulk_ingestion_task to ingest data",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-09-03T16:33:28.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "Target": {
+          "object_name": "BulkEC_03",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "NO",
+          "database_name": "Ikart",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "connection_name": ""
+        },
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "my_sql",
+          "object_name": "EC_03",
+          "object_type": "Table",
+          "schema_name": "Ikart",
+          "database_name": "Ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "Bulkservice_area",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "NO",
+          "database_name": "Ikart",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "connection_name": ""
+        },
+        "subtask": "10",
+        "source": {
+          "task_group": "6",
+          "connection_name": "my_sql",
+          "object_name": "service_area",
+          "object_type": "Table",
+          "schema_name": "Ikart",
+          "database_name": "Ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "BulkEmployee",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "NO",
+          "database_name": "Ikart",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "connection_name": ""
+        },
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "my_sql",
+          "object_name": "Employee",
+          "object_type": "Table",
+          "schema_name": "Ikart",
+          "database_name": "Ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "Bulkdepartment",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "NO",
+          "database_name": "Ikart",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "connection_name": ""
+        },
+        "subtask": "3",
+        "source": {
+          "task_group": "3",
+          "connection_name": "my_sql",
+          "object_name": "department",
+          "object_type": "Table",
+          "schema_name": "Ikart",
+          "database_name": "Ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "Bulkemployee_result",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "NO",
+          "database_name": "Ikart",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "connection_name": ""
+        },
+        "subtask": "4",
+        "source": {
+          "task_group": "3",
+          "connection_name": "my_sql",
+          "object_name": "employee_result",
+          "object_type": "Table",
+          "schema_name": "Ikart",
+          "database_name": "Ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "Bulkemployees",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "NO",
+          "database_name": "Ikart",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "connection_name": ""
+        },
+        "subtask": "5",
+        "source": {
+          "task_group": "3",
+          "connection_name": "my_sql",
+          "object_name": "employees",
+          "object_type": "Table",
+          "schema_name": "Ikart",
+          "database_name": "Ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "Bulkingestion_result",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "NO",
+          "database_name": "Ikart",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "connection_name": ""
+        },
+        "subtask": "6",
+        "source": {
+          "task_group": "3",
+          "connection_name": "my_sql",
+          "object_name": "ingestion_result",
+          "object_type": "Table",
+          "schema_name": "Ikart",
+          "database_name": "Ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "Bulkleft_join",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "NO",
+          "database_name": "Ikart",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "connection_name": ""
+        },
+        "subtask": "7",
+        "source": {
+          "task_group": "4",
+          "connection_name": "my_sql",
+          "object_name": "left_join",
+          "object_type": "Table",
+          "schema_name": "Ikart",
+          "database_name": "Ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "Bulkoverall_flow",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "NO",
+          "database_name": "Ikart",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "connection_name": ""
+        },
+        "subtask": "8",
+        "source": {
+          "task_group": "4",
+          "connection_name": "my_sql",
+          "object_name": "overall_flow",
+          "object_type": "Table",
+          "schema_name": "Ikart",
+          "database_name": "Ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      },
+      {
+        "Target": {
+          "object_name": "Bulkresult",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "NO",
+          "database_name": "Ikart",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "connection_name": ""
+        },
+        "subtask": "9",
+        "source": {
+          "task_group": "6",
+          "connection_name": "my_sql",
+          "object_name": "result",
+          "object_type": "Table",
+          "schema_name": "Ikart",
+          "database_name": "Ikart",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        }
+      }
+    ]
+  }
+}
