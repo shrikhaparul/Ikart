@@ -1,0 +1,48 @@
+{
+  "login_id": "Pavan",
+  "id": 915,
+  "project_name": "Success_Tra",
+  "pipeline_name": "Bulk_ing",
+  "project_id": 87,
+  "pipeline_id": 245,
+  "task_name": "ingest_mssql",
+  "task_description": "-----",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-09-03T11:40:11.000Z",
+  "source": "MSSQL",
+  "target": "MSSQL",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "task": {
+    "source": {
+      "source_type": "mssql_read",
+      "query": "SELECT AddressID, AddressLine1, AddressLine2, City, StateProvinceID, PostalCode, SpatialLocation, rowguid, ModifiedDate FROM dbo.Address",
+      "schema": "dbo",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 10000,
+      "table_name": "Address",
+      "parameter_type": "MSSQL",
+      "select_columns": "AddressID,AddressLine1,AddressLine2,City,StateProvinceID,PostalCode,SpatialLocation,rowguid,ModifiedDate",
+      "connection_name": "mssql_ec2_ST"
+    },
+    "target": {
+      "target_type": "mssql_write",
+      "schema": "dbo",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "trelel",
+      "audit_columns": "active",
+      "parameter_type": "MSSQL",
+      "connection_name": "mssql_ec2_ST",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
