@@ -22,7 +22,7 @@
       "source_type": "aws_s3_read",
       "encoding": "utf-8",
       "delimiter": ",",
-      "file_name": "sales.csv",
+      "file_name": "sales_data.csv",
       "file_path": "test/",
       "file_type": "csv",
       "quote_char": "\"",
@@ -51,7 +51,7 @@
         "seq_no": "1",
         "check": "column_values_to_be_unique",
         "parameters": {
-          "column": "customer_id"
+          "column": "ORDERNUMBER"
         },
         "active": "Y",
         "ignore_bad_records": "N",
