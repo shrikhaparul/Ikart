@@ -1,0 +1,50 @@
+{
+  "login_id": "prajwal",
+  "id": 730,
+  "project_name": "project_prototype_1",
+  "pipeline_name": "proto_pipeline__1",
+  "project_id": 76,
+  "pipeline_id": 190,
+  "task_name": "dq_subtask_test",
+  "task_description": "dq_subtask_test",
+  "task_type": "Data Quality",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-09-03T06:18:20.000Z",
+  "source": "AWS S3",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "prajwal",
+  "updated_by": "prajwal",
+  "task": {
+    "source": {
+      "source_type": "aws_s3_read",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "sales.csv",
+      "file_path": "test/",
+      "file_type": "csv",
+      "quote_char": "\"",
+      "escape_char": "\\",
+      "alias_columns": "INDEX,ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,SHIPDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE",
+      "parameter_type": "AWS S3",
+      "connection_name": "aws_connection_test",
+      "chunk_size": null
+    },
+    "target": {
+      "target_type": "csv_write",
+      "file_type": "csv",
+      "parameter_type": "Local Server",
+      "connection_name": "ec2_localserver_connection",
+      "generate_bad_record": "no",
+      "good_record_file_name": "good_file_%DD%%MM%%YYYY%.csv",
+      "good_record_file_path": "/home/prajwalkp/data_files/",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
