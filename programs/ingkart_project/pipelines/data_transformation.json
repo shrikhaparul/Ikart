@@ -1,0 +1,106 @@
+{
+  "pipeline_id": 239,
+  "project_id": 72,
+  "pipeline_name": "data_transformation",
+  "pipeline_cd": null,
+  "pipeline_description": "transformation layer",
+  "is_active": "Y",
+  "tasks_details": {
+    "rawdataload": 0,
+    "s3_data_load": [
+      "transform_raw_data"
+    ],
+    "sql_transform": [
+      "rawdataload"
+    ],
+    "transform_raw_data": [
+      "sql_transform"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "862",
+      "data": {
+        "label": "862-transform_raw_data"
+      },
+      "position": {
+        "x": 50,
+        "y": 8550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "863",
+      "data": {
+        "label": "863-s3_data_load"
+      },
+      "position": {
+        "x": 50,
+        "y": 8600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "868",
+      "data": {
+        "label": "868-rawdataload"
+      },
+      "position": {
+        "x": 50,
+        "y": 8650
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "870",
+      "data": {
+        "label": "870-sql_transform"
+      },
+      "position": {
+        "x": 50,
+        "y": 8700
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-868",
+      "source": "0",
+      "target": "868"
+    },
+    {
+      "id": "flow-870-862",
+      "source": "870",
+      "target": "862"
+    },
+    {
+      "id": "flow-862-863",
+      "source": "862",
+      "target": "863"
+    },
+    {
+      "id": "flow-868-870",
+      "source": "868",
+      "target": "870"
+    }
+  ],
+  "created_dttm": "2024-09-03T16:54:06.880Z",
+  "updated_dttm": "2024-09-03T16:54:06.880Z"
+}
