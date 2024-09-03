@@ -1,0 +1,59 @@
+{
+  "login_id": "sonika",
+  "id": 823,
+  "project_name": "Project",
+  "pipeline_name": "transformation_flow",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "express_test",
+  "task_description": "-",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-09-03T10:27:32.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Input_mysql_01": "0",
+      "Output_out_put": "Input_mysql_01"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "mysql_01": {
+              "schema": "sys",
+              "output_df": "inp_nwc",
+              "table_name": "sevice_area",
+              "source_type": "MySQL",
+              "select_columns": "BusinessYear,StateCode,IssuerId,SourceName,VersionNum,ImportDate,IssuerId2,StateCode2,ServiceAreaId,ServiceAreaName,CoverEntireState,County,PartialCounty,ZipCodes,PartialCountyJustification,RowNumber,MarketCoverage,DentalOnlyPlan",
+              "connection_name": "mysql_local_ec2_con",
+              "transformation_name": "mysql_01"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_put": {
+              "schema": "Ikart",
+              "input_df": "inp_nwc",
+              "operation": "replace",
+              "table_name": "service_area",
+              "target_type": "MySQL",
+              "connection_name": "my_sql",
+              "transformation_name": "out_put"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
