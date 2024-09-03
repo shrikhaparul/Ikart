@@ -12,32 +12,38 @@
   "last_run_id": null,
   "status": "New",
   "updated_dttm": "2024-09-03T06:18:20.000Z",
-  "source": "AWS S3",
+  "source": "Local Server",
   "target": "Local Server",
   "is_active": "Y",
   "created_by": "prajwal",
   "updated_by": "prajwal",
   "task": {
-    "source": {
-      "source_type": "aws_s3_read",
+   "source": {
+      "source_type": "csv_read",
+      "query": "SELECT CUSTOMER_ID, FIRST_NAME, LAST_NAME, MOBILE, DOB, ADDRESS, EMAIL, MEMBERSHIP_STATUS FROM karttest.test_file_good",
+      "schema": "karttest",
       "encoding": "utf-8",
       "delimiter": ",",
-      "file_name": "sales_data.csv",
-      "file_path": "test/",
+      "file_name": "customer_data.csv",
+      "file_path": "/home/prajwalkp/data_files/",
       "file_type": "csv",
       "quote_char": "\"",
+      "table_name": "test_file_good",
       "escape_char": "\\",
-      "alias_columns": "INDEX,ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,SHIPDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE",
-      "parameter_type": "AWS S3",
-      "connection_name": "aws_connection_test",
+      "alias_columns": "CUSTOMER_ID,FIRST_NAME,LAST_NAME,MOBILE,DOB,ADDRESS,EMAIL,MEMBERSHIP_STATUS",
+      "parameter_type": "Local Server",
+      "select_columns": "CUSTOMER_ID,FIRST_NAME,LAST_NAME,MOBILE,DOB,ADDRESS,EMAIL,MEMBERSHIP_STATUS",
+      "connection_name": "localserver_connection_puneeth",
       "chunk_size": null
     },
     "target": {
       "target_type": "csv_write",
       "file_type": "csv",
       "parameter_type": "Local Server",
-      "connection_name": "ec2_localserver_connection",
-      "generate_bad_record": "no",
+      "connection_name": "localserver_connection_puneeth",
+      "generate_bad_record": "yes",
+      "bad_record_file_name": "bad_file_%DD%%MM%%YYYY%.csv",
+      "bad_record_file_path": "/home/prajwalkp/data_files/",
       "good_record_file_name": "good_file_%DD%%MM%%YYYY%.csv",
       "good_record_file_path": "/home/prajwalkp/data_files/",
       "target_max_record_count": null
@@ -45,18 +51,28 @@
     "data_quality_execution": {
       "pre_check_enable": "N",
       "post_check_enable": "N"
-  },
+    },
     "data_quality": [
       {
         "seq_no": "1",
-        "check": "column_values_to_be_unique",
+        "check": "column_values_to_not_be_null",
         "parameters": {
-          "column": "ORDERNUMBER"
+          "column": "customer_id"
         },
         "active": "Y",
         "ignore_bad_records": "N",
-        "threshold_bad_records": 100,
-        "type": "pre_check"
+        "threshold_bad_records": 100
+      },
+      {
+        "seq_no": "2",
+        "check": "column_values_to_be_in_set",
+        "parameters": {
+          "column": "membership_status",
+          "value_set": "Platinum,Silver"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100
       }
     ]
   }
