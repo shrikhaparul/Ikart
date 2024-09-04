@@ -1,0 +1,48 @@
+{
+  "login_id": "Madhu",
+  "id": 918,
+  "project_name": "first_project",
+  "pipeline_name": "KT_demo",
+  "project_id": 80,
+  "pipeline_id": 246,
+  "task_name": "Ingestion",
+  "task_description": "Ingestion",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "ead0002f-e6a5-48aa-9051-ed3f41bd1ec2",
+  "status": "Failed",
+  "updated_dttm": "2024-06-13T07:58:46.000Z",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "sahilphal",
+  "updated_by": "sahilphal",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT col_1, col_10, col_11, col_12, col_13, col_14, col_2, col_3, col_4, col_5, col_6, col_7, col_8, col_9 FROM sys.AGG_SALES",
+      "schema": "sys",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 100000,
+      "table_name": "AGG_SALES",
+      "parameter_type": "MySQL",
+      "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9",
+      "connection_name": "connection_01"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "sys",
+      "operation": "DROP AND CREATE",
+      "table_name": "E2E_01",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "connection_01",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
