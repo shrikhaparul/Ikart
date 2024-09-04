@@ -1,0 +1,102 @@
+{
+  "pipeline_id": 245,
+  "project_id": 87,
+  "pipeline_name": "Bulk_ing",
+  "pipeline_cd": null,
+  "pipeline_description": "-",
+  "is_active": "Y",
+  "tasks_details": {
+    "sql_orc": 0,
+    "Bulk_2_ing": [
+      "ingest_mssql"
+    ],
+    "ingest_mssql": 0,
+    "bulk_task_mssql": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "913",
+      "data": {
+        "label": "913-bulk_task_mssql"
+      },
+      "position": {
+        "x": 50,
+        "y": 23450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "914",
+      "data": {
+        "label": "914-Bulk_2_ing"
+      },
+      "position": {
+        "x": 50,
+        "y": 23500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "915",
+      "data": {
+        "label": "915-ingest_mssql"
+      },
+      "position": {
+        "x": 50,
+        "y": 23550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "919",
+      "data": {
+        "label": "919-sql_orc"
+      },
+      "position": {
+        "x": 50,
+        "y": 23600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-913",
+      "source": "0",
+      "target": "913"
+    },
+    {
+      "id": "flow-0-915",
+      "source": "0",
+      "target": "915"
+    },
+    {
+      "id": "flow-0-919",
+      "source": "0",
+      "target": "919"
+    },
+    {
+      "id": "flow-915-914",
+      "source": "915",
+      "target": "914"
+    }
+  ],
+  "created_dttm": "2024-09-04T06:37:07.112Z",
+  "updated_dttm": "2024-09-04T06:37:07.112Z"
+}
