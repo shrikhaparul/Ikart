@@ -1,0 +1,186 @@
+{
+  "login_id": "durga",
+  "id": 831,
+  "project_name": "prj1",
+  "pipeline_name": "KT_reverse",
+  "project_id": 84,
+  "pipeline_id": 233,
+  "task_name": "transformation_task_kt",
+  "task_description": "transformation task kt",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-09-04T03:21:11.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Output_store_data": "Expression_student_expression",
+      "Input_student_fetch": "0",
+      "Joiner_joiner_student": "Input_student_fetch,Input_department_fetch",
+      "Input_department_fetch": "0",
+      "Expression_student_expression": "Joiner_joiner_student"
+    },
+    "details": [
+      {
+        "Expression": [
+          {
+            "student_expression": {
+              "input_df": "jnr_nyu",
+              "output_df": "exp_dol",
+              "transformation_name": "student_expression",
+              "student_expression_7": {
+                "operator": "",
+                "sequence": "7",
+                "operatorType": "",
+                "input_col_name": "department_name_right",
+                "output_col_name": "department_name",
+                "expression_value": " "
+              },
+              "student_expression_6": {
+                "operator": "",
+                "sequence": "6",
+                "operatorType": "",
+                "input_col_name": "enrollment_year_left",
+                "output_col_name": "enrollment_year",
+                "expression_value": " "
+              },
+              "student_expression_5": {
+                "operator": "",
+                "sequence": "5",
+                "operatorType": "",
+                "input_col_name": "gender_left",
+                "output_col_name": "gender_left",
+                "expression_value": " "
+              },
+              "student_expression_4": {
+                "operator": "addition",
+                "sequence": "4",
+                "operatorType": "Math",
+                "input_col_name": "age_left",
+                "output_col_name": "age_left",
+                "expression_value": "(age_left + 1)"
+              },
+              "student_expression_3": {
+                "operator": "",
+                "sequence": "3",
+                "operatorType": "",
+                "input_col_name": "department_id_left",
+                "output_col_name": "department_id_left",
+                "expression_value": " "
+              },
+              "student_expression_2": {
+                "operator": "",
+                "sequence": "2",
+                "operatorType": "",
+                "input_col_name": "student_name_left",
+                "output_col_name": "student_name_left",
+                "expression_value": " "
+              },
+              "student_expression_1": {
+                "operator": "",
+                "sequence": "1",
+                "operatorType": "",
+                "input_col_name": "student_id_left",
+                "output_col_name": "student_id_left",
+                "expression_value": " "
+              },
+              "student_expression_8": {
+                "operator": "",
+                "sequence": "8",
+                "operatorType": "",
+                "input_col_name": "building_right",
+                "output_col_name": "building",
+                "expression_value": " "
+              },
+              "student_expression_9": {
+                "operator": "",
+                "sequence": "9",
+                "operatorType": "",
+                "input_col_name": "hod_name_right",
+                "output_col_name": "hod_name",
+                "expression_value": " "
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Joiner": [
+          {
+            "joiner_student": {
+              "join_type": "outer",
+              "output_df": "jnr_nyu",
+              "left_input_df": "inp_kxp",
+              "join_condition": "inp_kxp.department_id=inp_cpt.department_id",
+              "right_input_df": "inp_cpt",
+              "select_columns": "student_id_left,student_name_left,department_id_left,age_left,gender_left,enrollment_year_left,department_id_right,department_name_right,building_right,hod_name_right",
+              "transformation_name": "joiner_student"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "student_fetch": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "student_details.csv",
+              "file_path": "/home/durga/Files/transformation_data",
+              "file_type": "csv",
+              "output_df": "inp_kxp",
+              "escape_char": "\\n",
+              "source_type": "Local Server",
+              "select_columns": "student_id,student_name,department_id,age,gender,enrollment_year",
+              "connection_name": "local_con_sales",
+              "transformation_name": "student_fetch"
+            }
+          },
+          {
+            "department_fetch": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "department_details.csv",
+              "file_path": "/home/durga/Files/transformation_data",
+              "file_type": "csv",
+              "output_df": "inp_cpt",
+              "compression": "",
+              "escape_char": "\\n",
+              "source_type": "Local Server",
+              "select_columns": "department_id,department_name,building,hod_name",
+              "connection_name": "local_con_sales",
+              "transformation_name": "department_fetch"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "store_data": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "input_df": "exp_dol",
+              "delimiter": ",",
+              "file_name": "student_final.csv",
+              "file_path": "/home/durga/Files/transformation_data",
+              "file_type": "csv",
+              "compression": "",
+              "target_type": "Local Server",
+              "connection_name": "local_con_sales",
+              "transformation_name": "store_data"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
