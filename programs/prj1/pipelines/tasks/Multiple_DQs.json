@@ -1,0 +1,108 @@
+{
+  "login_id": "durga",
+  "id": 832,
+  "project_name": "prj1",
+  "pipeline_name": "KT_reverse",
+  "project_id": 84,
+  "pipeline_id": 233,
+  "task_name": "Multiple_DQs",
+  "task_description": "Multiple DQ",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "e58d8273-4650-4973-bca6-befee01f7788",
+  "status": "Failed",
+  "updated_dttm": "2024-09-04T05:49:56.000Z",
+  "source": "Local Server",
+  "target": "PostgreSQL",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "Employee.csv",
+      "file_path": "/home/durga/Files/transformation_data/",
+      "file_type": "csv",
+      "chunk_size": 10000,
+      "decryption": "no",
+      "passphrase": null,
+      "quote_char": null,
+      "compression": "",
+      "escape_char": "\\n",
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "﻿BusinessEntityID,NationalIDNumber,LoginID,OrganizationNode,OrganizationLevel,JobTitle,BirthDate,MaritalStatus,Gender,HireDate,SalariedFlag,VacationHours,SickLeaveHours,CurrentFlag,rowguid,ModifiedDate",
+      "parameter_type": "Local Server",
+      "select_columns": "﻿BusinessEntityID,NationalIDNumber,LoginID,OrganizationNode,OrganizationLevel,JobTitle,BirthDate,MaritalStatus,Gender,HireDate,SalariedFlag,VacationHours,SickLeaveHours,CurrentFlag,rowguid,ModifiedDate",
+      "connection_name": "local_con_sales",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "postgres_write",
+      "schema": "demo",
+      "operation": "CREATE IF NOT EXIST",
+      "table_name": "DQ_Employess",
+      "audit_columns": "inactive",
+      "parameter_type": "PostgreSQL",
+      "connection_name": "postgres_conn",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_be_unique",
+        "parameters": {
+          "column": "﻿BusinessEntityID",
+          "max_value": "",
+          "min_value": ""
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "2",
+        "check": "column_values_to_not_be_null",
+        "parameters": {
+          "column": "﻿BusinessEntityID"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "3",
+        "check": "column_values_to_be_in_set",
+        "parameters": {
+          "column": "Gender",
+          "value_set": "M,F"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      },
+      {
+        "seq_no": "4",
+        "check": "column_values_to_be_in_set",
+        "parameters": {
+          "column": "MaritalStatus",
+          "value_set": "S,M"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 100,
+        "type": "pre_check"
+      }
+    ]
+  }
+}
