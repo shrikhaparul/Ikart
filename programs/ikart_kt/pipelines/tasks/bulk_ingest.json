@@ -1,0 +1,50 @@
+{
+  "login_id": "sounak",
+  "id": 800,
+  "project_name": "ikart_kt",
+  "pipeline_name": "kt_test",
+  "project_id": 85,
+  "pipeline_id": 230,
+  "task_name": "bulk_ingest",
+  "task_description": "bulk ingestion task",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "4b327ae3-7dd1-46a1-a40f-571cab77ff03",
+  "status": "Success",
+  "updated_dttm": "2024-09-04T03:35:16.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "sounak",
+  "updated_by": "sounak",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "file_path": "/home/sounak/",
+          "connection_name": "sounak_local_file_connection",
+          "task_group": "0",
+          "object_name": "employee_data.csv",
+          "object_type": "csv",
+          "files_filter_name": "employee_data.csv",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "testemployee_data",
+          "connection_name": "mysql_test",
+          "primary_key": "",
+          "schema_name": "test",
+          "audit_fields": "NO",
+          "database_name": "test",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
