@@ -1,0 +1,71 @@
+{
+  "login_id": "Puneeth",
+  "id": 933,
+  "project_name": "DQ_Test",
+  "pipeline_name": "Reverse_KT",
+  "project_id": 75,
+  "pipeline_id": 247,
+  "task_name": "Decrypt_check_bulk_ingestion",
+  "task_description": "Decrypt_check_bulk_ingestion",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-09-04T14:05:50.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "Target": {
+          "object_name": "passphrase_test_file",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "NO",
+          "database_name": "",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "connection_name": ""
+        },
+        "subtask": "1",
+        "source": {
+          "file_path": "test1/passphrase_test_file.csv.gpg",
+          "connection_name": "aws_connection_test",
+          "task_group": "0",
+          "object_name": "passphrase_test_file.csv.gpg",
+          "object_type": "gpg",
+          "files_filter_name": "*.csv.gpg",
+          "subfolder_included": "no"
+        }
+      },
+      {
+        "Target": {
+          "object_name": "test_file",
+          "primary_key": "",
+          "schema_name": "",
+          "audit_fields": "NO",
+          "database_name": "",
+          "action_on_table": "CREATE IF NOT EXIST",
+          "connection_name": ""
+        },
+        "subtask": "2",
+        "source": {
+          "file_path": "test1/test_file.csv.gpg",
+          "connection_name": "aws_connection_test",
+          "task_group": "0",
+          "object_name": "test_file.csv.gpg",
+          "object_type": "gpg",
+          "files_filter_name": "*.csv.gpg",
+          "subfolder_included": "no"
+        }
+      }
+    ]
+  }
+}
