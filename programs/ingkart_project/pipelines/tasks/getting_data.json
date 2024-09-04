@@ -1,0 +1,95 @@
+{
+  "login_id": "jbanad",
+  "id": 917,
+  "project_name": "ingkart_project",
+  "pipeline_name": "transforming_data",
+  "project_id": 72,
+  "pipeline_id": 240,
+  "task_name": "getting_data",
+  "task_description": "getting data",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "55cb6beb-9066-491a-a488-26bd3013bfc2",
+  "status": "Success",
+  "updated_dttm": "2024-09-03T17:14:16.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "shilpi",
+  "updated_by": "shilpi",
+  "chunk_size": 100000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "begin",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "1",
+          "connection_name": "postgres_s",
+          "object_name": "databook_details",
+          "object_type": "Table",
+          "schema_name": "lnd",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "databook_details",
+          "connection_name": "mssql_sys",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "DROP AND CREATE"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "1",
+          "connection_name": "postgres_s",
+          "object_name": "databooks_desc",
+          "object_type": "Table",
+          "schema_name": "lnd",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "databooks_desc",
+          "connection_name": "mssql_sys",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "DROP AND CREATE"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "1",
+          "connection_name": "postgres_s",
+          "object_name": "databooks_price",
+          "object_type": "Table",
+          "schema_name": "lnd",
+          "database_name": "postgres",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "databooks_price",
+          "connection_name": "mssql_sys",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "DROP AND CREATE"
+        }
+      }
+    ]
+  }
+}
