@@ -1,0 +1,98 @@
+{
+  "pipeline_id": 233,
+  "project_id": 91,
+  "pipeline_name": "presentation_pipeline_2",
+  "pipeline_cd": null,
+  "pipeline_description": "Presentation pipeline ",
+  "is_active": "Y",
+  "tasks_details": {
+    "transformation": [
+      "ingestion_mysql_test_local"
+    ],
+    "ingestion_mysql_test_local": [
+      "bulk_ingestion_mysql_config_to_test"
+    ],
+    "bulk_ingestion_mysql_config_to_test": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "805",
+      "data": {
+        "label": "805-sql_execution"
+      },
+      "position": {
+        "x": 50,
+        "y": 18350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "809",
+      "data": {
+        "label": "809-bulk_ingestion_mysql_config_to_test"
+      },
+      "position": {
+        "x": 50,
+        "y": 18400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "810",
+      "data": {
+        "label": "810-ingestion_mysql_test_local"
+      },
+      "position": {
+        "x": 50,
+        "y": 18450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "811",
+      "data": {
+        "label": "811-transformation"
+      },
+      "position": {
+        "x": 50,
+        "y": 18500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-809",
+      "source": "0",
+      "target": "809"
+    },
+    {
+      "id": "flow-809-810",
+      "source": "809",
+      "target": "810"
+    },
+    {
+      "id": "flow-810-811",
+      "source": "810",
+      "target": "811"
+    }
+  ],
+  "created_dttm": "2024-09-04T06:25:16.158Z",
+  "updated_dttm": "2024-09-04T06:25:16.158Z"
+}
