@@ -1,0 +1,86 @@
+{
+  "pipeline_id": 230,
+  "project_id": 85,
+  "pipeline_name": "kt_test",
+  "pipeline_cd": null,
+  "pipeline_description": "kt",
+  "is_active": "Y",
+  "tasks_details": {},
+  "nodes": [
+    {
+      "id": "801",
+      "data": {
+        "label": "801-bulk_ingestion_2"
+      },
+      "position": {
+        "x": 50,
+        "y": 750
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "800",
+      "data": {
+        "label": "800-bulk_ingest"
+      },
+      "position": {
+        "x": 50,
+        "y": 700
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "799",
+      "data": {
+        "label": "799-transformation_test"
+      },
+      "position": {
+        "x": 50,
+        "y": 650
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "798",
+      "data": {
+        "label": "798-sql_task"
+      },
+      "position": {
+        "x": 50,
+        "y": 600
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "797",
+      "data": {
+        "label": "797-ingestion_task"
+      },
+      "position": {
+        "x": 50,
+        "y": 550
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    }
+  ],
+  "edges": null,
+  "created_dttm": "2024-09-04T06:33:56.941Z",
+  "updated_dttm": "2024-09-04T06:33:56.941Z"
+}
