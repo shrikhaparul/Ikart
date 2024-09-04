@@ -1,0 +1,110 @@
+{
+  "login_id": "pushpak",
+  "id": 811,
+  "project_name": "filter_tr",
+  "pipeline_name": "presentation_pipeline_2",
+  "project_id": 91,
+  "pipeline_id": 233,
+  "task_name": "transformation",
+  "task_description": "Transformation",
+  "task_type": "Transformation",
+  "task_sequence": "\"810\"",
+  "last_run_id": "dde1cc87-b289-4455-9300-65d6414a7abb",
+  "status": "Running",
+  "updated_dttm": "2024-09-04T06:19:25.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "pushpak",
+  "updated_by": "pushpak",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Filter_fltr": "Joiner_join",
+      "Joiner_join": "Input_tbl_task,Input_mysql_table",
+      "Input_tbl_task": "0",
+      "Input_mysql_table": "0",
+      "Output_local_store": "Filter_fltr"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "fltr": {
+              "input_df": "jnr_ton",
+              "output_df": "fil_xgu",
+              "transformation_name": "fltr",
+              "fltr_Operation_073": {
+                "id": "fltr_Operation_073",
+                "operator": ">",
+                "column_name": "id_left",
+                "field_value": "500",
+                "condition_type": "operation",
+                "operation_name": "operation_01"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Joiner": [
+          {
+            "join": {
+              "join_type": "left",
+              "output_df": "jnr_ton",
+              "left_input_df": "inp_xrd",
+              "join_condition": "inp_wwo.id=inp_xrd.pipeline_id",
+              "right_input_df": "inp_wwo",
+              "select_columns": "id_left,pipeline_id_left,task_name_left,task_description_left,task_type_left,task_sequence_left,is_active_left,created_by_left,created_dttm_left,updated_by_left,updated_dttm_left,id_right,project_id_right,pipeline_name_right,pipeline_cd_right,pipeline_description_right,pipeline_sequence_right,is_active_right,created_by_right,created_dttm_right,updated_by_right,updated_dttm_right",
+              "transformation_name": "join"
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "tbl_task": {
+              "schema": "config",
+              "output_df": "inp_xrd",
+              "table_name": "tbl_task",
+              "source_type": "MySQL",
+              "select_columns": "id,pipeline_id,task_name,task_description,task_type,task_sequence,is_active,created_by,created_dttm,updated_by,updated_dttm",
+              "connection_name": "mysql_connection_config",
+              "transformation_name": "tbl_task"
+            }
+          },
+          {
+            "mysql_table": {
+              "schema": "config",
+              "output_df": "inp_wwo",
+              "table_name": "tbl_pipeline",
+              "source_type": "MySQL",
+              "select_columns": "id,project_id,pipeline_name,pipeline_cd,pipeline_description,pipeline_sequence,is_active,created_by,created_dttm,updated_by,updated_dttm",
+              "connection_name": "mysql_connection_config",
+              "transformation_name": "mysql_table"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "local_store": {
+              "encoding": "utf-8",
+              "input_df": "fil_xgu",
+              "delimiter": ",",
+              "file_name": "pipeline_task",
+              "file_path": "/home/pushpak/folder",
+              "file_type": "json",
+              "compression": "zip",
+              "target_type": "Local Server",
+              "connection_name": "local_connection",
+              "transformation_name": "local_store"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
