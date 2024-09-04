@@ -1,0 +1,24 @@
+{
+  "task_id": 798,
+  "pipeline_id": 230,
+  "project_name": "ikart_kt",
+  "task_name": "sql_task",
+  "task_type": "SQL Execution",
+  "is_active": "Y",
+  "sql_execution": {
+    "connection_name": "mysql_test_2",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "CREATE VIEW coretest.employee_core_view AS\nSELECT \n    employee_id, \n    full_name,\n    email, \n    phone_number, \n    hire_date, \n    project_id\nFROM \n    coretest.employee_core;\n",
+      "table_used_desc": "view creation"
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "SELECT \n    employee_id, \n    full_name, \n    email, \n    phone_number, \n    hire_date, \n    project_id, \n    QUARTER(hire_date) AS hire_quarter\nFROM \n    coretest.employee_core_view\nORDER BY \n    hire_quarter;\n",
+      "table_used_desc": "view values"
+    }
+  ]
+}
