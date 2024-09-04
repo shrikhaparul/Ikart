@@ -1,0 +1,85 @@
+{
+  "login_id": "durga",
+  "id": 829,
+  "project_name": "prj1",
+  "pipeline_name": "KT_reverse",
+  "project_id": 84,
+  "pipeline_id": 233,
+  "task_name": "Buisness_data_transformation",
+  "task_description": "Buisness data transformation",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-09-04T01:26:20.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "durga",
+  "updated_by": "durga",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_fetchdata": "0",
+      "Output_store_data": "Filter_filter_data",
+      "Filter_filter_data": "Input_fetchdata"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "filter_data": {
+              "input_df": "inp_gqz",
+              "output_df": "fil_jxu",
+              "transformation_name": "filter_data",
+              "filter_data_Operation_633": {
+                "id": "filter_data_Operation_633",
+                "operator": ">",
+                "column_name": "Period",
+                "field_value": "2020.06",
+                "condition_type": "operation",
+                "operation_name": "op_1"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "fetchdata": {
+              "header": "Y",
+              "encoding": "utf-8",
+              "delimiter": ",",
+              "file_name": "businessdata_2020.csv",
+              "file_path": "/home/durga/Files/",
+              "file_type": "csv",
+              "output_df": "inp_gqz",
+              "compression": "",
+              "escape_char": "",
+              "source_type": "Local Server",
+              "select_columns": "Series_reference,Period,Data_value,Suppressed,STATUS,UNITS,Magnitude,Subject,Group,Series_title_1,Series_title_2,Series_title_3,Series_title_4,Series_title_5,Year",
+              "connection_name": "local_con_sales",
+              "transformation_name": "fetchdata"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "store_data": {
+              "schema": "demo",
+              "input_df": "fil_jxu",
+              "operation": "create",
+              "table_name": "buisness_2020_2",
+              "target_type": "MySQL",
+              "connection_name": "mysql_con1",
+              "transformation_name": "store_data"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
