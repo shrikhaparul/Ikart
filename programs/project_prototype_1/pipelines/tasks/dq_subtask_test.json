@@ -72,7 +72,7 @@
         },
         "active": "Y",
         "ignore_bad_records": "N",
-        "threshold_bad_records": 100
+        "threshold_bad_records": 0
       }
     ]
   }
