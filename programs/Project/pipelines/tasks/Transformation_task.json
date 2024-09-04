@@ -1,0 +1,59 @@
+{
+  "login_id": "sonika",
+  "id": 829,
+  "project_name": "Project",
+  "pipeline_name": "Presentation_pipeline",
+  "project_id": 84,
+  "pipeline_id": 231,
+  "task_name": "Transformation_task",
+  "task_description": "transformation",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "cf471a87-8a91-44c2-a21e-070d82c359ae",
+  "status": "Success",
+  "updated_dttm": "2024-09-04T06:37:16.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_Input_01": "0",
+      "Output_out_out": "Input_Input_01"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "Input_01": {
+              "schema": "dbo",
+              "output_df": "inp_fyc",
+              "table_name": "CountryRegion",
+              "source_type": "MSSQL",
+              "select_columns": "CountryRegionCode,Name,ModifiedDate",
+              "connection_name": "mssql_ec2_con",
+              "transformation_name": "Input_01"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_out": {
+              "schema": "public",
+              "input_df": "inp_fyc",
+              "operation": "replace",
+              "table_name": "result_input",
+              "target_type": "PostgreSQL",
+              "connection_name": "postgres_ec2",
+              "transformation_name": "out_out"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
