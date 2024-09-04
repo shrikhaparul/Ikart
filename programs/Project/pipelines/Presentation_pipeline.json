@@ -1,0 +1,86 @@
+{
+  "pipeline_id": 231,
+  "project_id": 84,
+  "pipeline_name": "Presentation_pipeline",
+  "pipeline_cd": null,
+  "pipeline_description": "pipeline",
+  "is_active": "Y",
+  "tasks_details": {
+    "Ingestion_data": 0,
+    "sql_execution_task": [
+      "Bulk_ingestion_task"
+    ],
+    "Bulk_ingestion_task": [
+      "Ingestion_data"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "826",
+      "data": {
+        "label": "826-Ingestion_data"
+      },
+      "position": {
+        "x": 50,
+        "y": 2300
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "827",
+      "data": {
+        "label": "827-Bulk_ingestion_task"
+      },
+      "position": {
+        "x": 50,
+        "y": 2350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "828",
+      "data": {
+        "label": "828-sql_execution_task"
+      },
+      "position": {
+        "x": 50,
+        "y": 2400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-826",
+      "source": "0",
+      "target": "826"
+    },
+    {
+      "id": "flow-826-827",
+      "source": "826",
+      "target": "827"
+    },
+    {
+      "id": "flow-827-828",
+      "source": "827",
+      "target": "828"
+    }
+  ],
+  "created_dttm": "2024-09-04T06:24:19.151Z",
+  "updated_dttm": "2024-09-04T06:24:19.151Z"
+}
