@@ -1,0 +1,73 @@
+{
+  "login_id": "Madhu",
+  "id": 920,
+  "project_name": "first_project",
+  "pipeline_name": "KT_demo",
+  "project_id": 80,
+  "pipeline_id": 246,
+  "task_name": "buk_ingestion",
+  "task_description": "-",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "09ecb7f4-5cb9-4b52-9b28-368ca764a58d",
+  "status": "Failed",
+  "updated_dttm": "2024-09-04T06:04:44.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "sahilphal",
+  "updated_by": "sahilphal",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "connection_01",
+          "object_name": "rest_api",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "post_rest_api",
+          "connection_name": "connection_postgres",
+          "primary_key": "",
+          "schema_name": "pg_toast_temp_31",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "1",
+          "connection_name": "connection_01",
+          "object_name": "tbl_connection",
+          "object_type": "Table",
+          "schema_name": "config",
+          "database_name": "config",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "post_tbl_connection",
+          "connection_name": "connection_postgres",
+          "primary_key": "",
+          "schema_name": "pg_toast_temp_31",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
