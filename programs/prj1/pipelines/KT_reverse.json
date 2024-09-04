@@ -1,0 +1,102 @@
+{
+  "pipeline_id": 233,
+  "project_id": 84,
+  "pipeline_name": "KT_reverse",
+  "pipeline_cd": null,
+  "pipeline_description": "For reverse KT",
+  "is_active": "Y",
+  "tasks_details": {
+    "SQL_Execution": [
+      "Buisness_data_bulk_ingestion"
+    ],
+    "Ingestion_withDQ": 0,
+    "Buisness_data_bulk_ingestion": 0,
+    "Buisness_data_transformation": 0
+  },
+  "nodes": [
+    {
+      "id": "0",
+      "data": {
+        "label": "Start"
+      },
+      "type": "input",
+      "position": {
+        "x": "10",
+        "y": "10"
+      },
+      "sourcePosition": "right"
+    },
+    {
+      "id": "827",
+      "data": {
+        "label": "827-Buisness_data_bulk_ingestion"
+      },
+      "position": {
+        "x": 50,
+        "y": 2350
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "828",
+      "data": {
+        "label": "828-Ingestion_withDQ"
+      },
+      "position": {
+        "x": 50,
+        "y": 2400
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "829",
+      "data": {
+        "label": "829-Buisness_data_transformation"
+      },
+      "position": {
+        "x": 50,
+        "y": 2450
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    {
+      "id": "830",
+      "data": {
+        "label": "830-SQL_Execution"
+      },
+      "position": {
+        "x": 50,
+        "y": 2500
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "flow-0-827",
+      "source": "0",
+      "target": "827"
+    },
+    {
+      "id": "flow-0-828",
+      "source": "0",
+      "target": "828"
+    },
+    {
+      "id": "flow-0-829",
+      "source": "0",
+      "target": "829"
+    },
+    {
+      "id": "flow-827-830",
+      "source": "827",
+      "target": "830"
+    }
+  ],
+  "created_dttm": "2024-09-04T02:09:19.011Z",
+  "updated_dttm": "2024-09-04T02:09:19.011Z"
+}
