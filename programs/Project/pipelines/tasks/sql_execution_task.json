@@ -1,0 +1,19 @@
+{
+  "task_id": 828,
+  "pipeline_id": 231,
+  "project_name": "Project",
+  "task_name": "sql_execution_task",
+  "task_type": "SQL Execution",
+  "is_active": "Y",
+  "sql_execution": {
+    "connection_name": "my_sql",
+    "restart": "normal"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "INSERT INTO student (student_id, first_name, last_name, date_of_birth, email, phone_number)\nVALUES (2, 'Jane', 'Smith', '1999-08-22', 'jane.smith@example.com', '987-654-3210');\n\n-- Insert student record 3\nINSERT INTO student (student_id, first_name, last_name, date_of_birth, email, phone_number)\nVALUES (3, 'Michael', 'Johnson', '2001-01-30', 'michael.johnson@example.com', '555-123-4567');\n\n-- Insert student record 4\nINSERT INTO student (student_id, first_name, last_name, date_of_birth, email, phone_number)\nVALUES (4, 'Emily', 'Davis', '1998-12-10', 'emily.davis@example.com', '555-987-6543');\n\n-- Insert student record 5\nINSERT INTO student (student_id, first_name, last_name, date_of_birth, email, phone_number)\nVALUES (5, 'David', 'Wilson', '2002-03-25', 'david.wilson@example.com', '444-555-6666');",
+      "table_used_desc": "insert"
+    }
+  ]
+}
