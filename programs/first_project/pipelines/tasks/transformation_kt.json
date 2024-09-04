@@ -1,0 +1,79 @@
+{
+  "login_id": "Madhu",
+  "id": 921,
+  "project_name": "first_project",
+  "pipeline_name": "KT_demo",
+  "project_id": 80,
+  "pipeline_id": 246,
+  "task_name": "transformation_kt",
+  "task_description": "-",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-22T07:58:40.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sahilphal",
+  "updated_by": "sahilphal",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Output_opt": "Filter_FILTER_01",
+      "Input_inp_01": "0",
+      "Filter_FILTER_01": "Input_inp_01"
+    },
+    "details": [
+      {
+        "Filter": [
+          {
+            "FILTER_01": {
+              "input_df": "inp_xma",
+              "output_df": "fil_bag",
+              "transformation_name": "FILTER_01",
+              "FILTER_01_Operation_577": {
+                "id": "FILTER_01_Operation_577",
+                "operator": ">=",
+                "column_name": "id",
+                "field_value": "100",
+                "condition_type": "operation",
+                "operation_name": "op1"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Input": [
+          {
+            "inp_01": {
+              "schema": "config",
+              "output_df": "inp_xma",
+              "table_name": "tbl_user",
+              "source_type": "MySQL",
+              "select_columns": "id",
+              "connection_name": "connection_01",
+              "transformation_name": "inp_01"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "opt": {
+              "schema": "public",
+              "input_df": "fil_bag",
+              "operation": "create",
+              "table_name": "kt_tbl",
+              "target_type": "PostgreSQL",
+              "connection_name": "connection_postgres",
+              "transformation_name": "opt"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
