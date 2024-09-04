@@ -1,0 +1,11 @@
+{
+  "project_id": 85,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "sounak_local_file",
+  "connection_details": {
+    "file_name": "employee_data.csv",
+    "file_path": "/home/sounak/",
+    "updated_by": "sounak"
+  }
+}
