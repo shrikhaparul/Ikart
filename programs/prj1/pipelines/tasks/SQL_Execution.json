@@ -1,0 +1,24 @@
+{
+  "task_id": 830,
+  "pipeline_id": 233,
+  "project_name": "prj1",
+  "task_name": "SQL_Execution",
+  "task_type": "SQL Execution",
+  "is_active": "Y",
+  "sql_execution": {
+    "connection_name": "mysql_con1",
+    "restart": "begin"
+  },
+  "sql_list": [
+    {
+      "seq_no": 1,
+      "sql_query": "CREATE TABLE buisnessData_copy AS\nSELECT * FROM demo.businessdata_2017;\n",
+      "table_used_desc": "To create a table "
+    },
+    {
+      "seq_no": 2,
+      "sql_query": "CREATE TABLE sales_demo (\n    sale_id INT PRIMARY KEY AUTO_INCREMENT,    -- Unique identifier for each sale\n    product_id INT NOT NULL,                   -- Identifier for the product sold\n    customer_id INT NOT NULL,                  -- Identifier for the customer\n    quantity INT NOT NULL,                     -- Number of products sold\n    sale_date DATE NOT NULL,                   -- Date of the sale\n    total_amount DECIMAL(10, 2) NOT NULL       -- Total amount for the sale\n);\n",
+      "table_used_desc": "create sales data"
+    }
+  ]
+}
