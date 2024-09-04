@@ -1,0 +1,48 @@
+{
+  "login_id": "Madhu",
+  "id": 918,
+  "project_name": "first_project",
+  "pipeline_name": "KT_demo",
+  "project_id": 80,
+  "pipeline_id": 246,
+  "task_name": "Ingestion",
+  "task_description": "Ingestion",
+  "task_type": "Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "ee3eced9-08e5-4e2b-be12-d4b32e6ad744",
+  "status": "Failed",
+  "updated_dttm": "2024-06-13T07:58:46.000Z",
+  "source": "MySQL",
+  "target": "MySQL",
+  "is_active": "Y",
+  "created_by": "sahilphal",
+  "updated_by": "sahilphal",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT created_by, created_dttm, full_name, id, is_active, login_id, password, resetLink, role, updated_by, updated_dttm, user_email, user_phone, CRTD_BY, CRTD_DTTM, UPDT_BY, UPDT_DTTM FROM config.demo_table",
+      "schema": "config",
+      "file_name": null,
+      "file_path": null,
+      "chunk_size": 100000,
+      "table_name": "demo_table",
+      "parameter_type": "MySQL",
+      "select_columns": "created_by,created_dttm,full_name,id,is_active,login_id,password,resetLink,role,updated_by,updated_dttm,user_email,user_phone,CRTD_BY,CRTD_DTTM,UPDT_BY,UPDT_DTTM",
+      "connection_name": "connection_01"
+    },
+    "target": {
+      "target_type": "mysql_write",
+      "schema": "sys",
+      "operation": "DROP AND CREATE",
+      "table_name": "E2E_01",
+      "audit_columns": "inactive",
+      "parameter_type": "MySQL",
+      "connection_name": "connection_01",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
