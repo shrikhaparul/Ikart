@@ -1,0 +1,95 @@
+{
+  "login_id": "Puneeth",
+  "id": 933,
+  "project_name": "DQ_Test",
+  "pipeline_name": "Reverse_KT",
+  "project_id": 75,
+  "pipeline_id": 247,
+  "task_name": "Decrypt_check_bulk_ingestion",
+  "task_description": "Decrypt_check_bulk_ingestion",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "4cd35f97-5418-4172-922e-099e1f633476",
+  "status": "Failed",
+  "updated_dttm": "2024-09-04T14:05:50.000Z",
+  "source": "Files",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "chunk_size": 10000,
+  "source_type": "Files",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "header": "Y",
+          "connection_name": "aws_connection_test",
+          "encoding": "",
+          "delimiter": ",",
+          "file_path": "test1/test_file.csv.gpg",
+          "operation": "copy",
+          "decryption": "yes",
+          "passphrase": "",
+          "quote_char": "",
+          "task_group": "0",
+          "compression": "",
+          "escape_char": "\\n",
+          "object_name": "test_file.csv.gpg",
+          "object_type": "gpg",
+          "skip_footer": "",
+          "skip_header": "",
+          "private_key_path": "/home/Admin/actions-runner/_work/private_key_no_passphrase.asc",
+          "files_filter_name": "*.csv.gpg",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "test_file",
+          "connection_name": "ec2_mssql_conn",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "AdventureWorks2022",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "header": "Y",
+          "connection_name": "aws_connection_test",
+          "encoding": "",
+          "delimiter": ",",
+          "file_path": "test1/test_file.csv.gpg",
+          "operation": "copy",
+          "decryption": "yes",
+          "passphrase": "",
+          "quote_char": "",
+          "task_group": "0",
+          "compression": "",
+          "escape_char": "\\n",
+          "object_name": "test_file.csv.gpg",
+          "object_type": "gpg",
+          "skip_footer": "",
+          "skip_header": "",
+          "private_key_path": "/home/Admin/actions-runner/_work/private_key_no_passphrase.asc",
+          "files_filter_name": "*.csv.gpg",
+          "subfolder_included": "no"
+        },
+        "target": {
+          "object_name": "test_file",
+          "connection_name": "ec2_mssql_conn",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "AdventureWorks2022",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
