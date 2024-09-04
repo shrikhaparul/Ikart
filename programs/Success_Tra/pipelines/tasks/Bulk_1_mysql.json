@@ -1,0 +1,73 @@
+{
+  "login_id": "Pavan",
+  "id": 934,
+  "project_name": "Success_Tra",
+  "pipeline_name": "Bulk_ing",
+  "project_id": 87,
+  "pipeline_id": 245,
+  "task_name": "Bulk_1_mysql",
+  "task_description": "-----",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "7b06f43f-4809-41c4-8a03-a2ac1bfbc8bf",
+  "status": "Success",
+  "updated_dttm": "2024-09-04T16:14:23.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_tr",
+          "object_name": "EC_03",
+          "object_type": "Table",
+          "schema_name": "transformation",
+          "database_name": "transformation",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "bulk_EC_03",
+          "connection_name": "mysql_sys",
+          "primary_key": "",
+          "schema_name": "sys",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "DROP AND CREATE"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_tr",
+          "object_name": "EC_04",
+          "object_type": "Table",
+          "schema_name": "transformation",
+          "database_name": "transformation",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "bulk_EC_04",
+          "connection_name": "mysql_sys",
+          "primary_key": "",
+          "schema_name": "sys",
+          "audit_fields": "NO",
+          "database_name": "sys",
+          "action_on_table": "DROP AND CREATE"
+        }
+      }
+    ]
+  }
+}
