@@ -1,0 +1,12 @@
+{
+  "project_id": 91,
+  "connection_type": "File Storage",
+  "connection_subtype": "Local Server",
+  "connection_name": "local_connection",
+  "connection_details": {
+    "file_name": "",
+    "file_path": "/home/pushpak/folder",
+    "created_by": "pushpak",
+    "updated_by": "pushpak"
+  }
+}
