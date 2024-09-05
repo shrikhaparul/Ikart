@@ -1,0 +1,59 @@
+{
+  "login_id": "sonika",
+  "id": 823,
+  "project_name": "Project",
+  "pipeline_name": "transformation_flow",
+  "project_id": 84,
+  "pipeline_id": 228,
+  "task_name": "express_test",
+  "task_description": "-",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": "10a5531f-3692-48c9-8bd3-ef59d5da03ff",
+  "status": "Success",
+  "updated_dttm": "2024-09-03T10:27:32.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "sonika",
+  "updated_by": "sonika",
+  "job_execution": "polars",
+  "task": {
+    "flow": {
+      "Input_mysql_01": "0",
+      "Output_out_put": "Input_mysql_01"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "mysql_01": {
+              "schema": "STAGE",
+              "output_df": "inp_nwc",
+              "table_name": "EMPLOYEE_11",
+              "source_type": "Oracle",
+              "select_columns": "ID,FIRST_NAME_1,LAST_NAME,GENDER,BIRTH_DATE,EMPLOYMENT_STATUS,ANNUAL_SALARY",
+              "connection_name": "orac_conn",
+              "transformation_name": "mysql_01"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "out_put": {
+              "schema": "STAGE",
+              "input_df": "inp_nwc",
+              "operation": "replace",
+              "table_name": "service_area",
+              "target_type": "Oracle",
+              "connection_name": "orac_conn",
+              "transformation_name": "out_put"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
