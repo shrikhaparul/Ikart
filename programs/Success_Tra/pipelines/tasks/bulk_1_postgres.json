@@ -1,0 +1,117 @@
+{
+  "login_id": "Pavan",
+  "id": 936,
+  "project_name": "Success_Tra",
+  "pipeline_name": "Bulk_ing",
+  "project_id": 87,
+  "pipeline_id": 245,
+  "task_name": "bulk_1_postgres",
+  "task_description": "-----",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "dc299984-afcf-4aa1-9641-ff955d3456a8",
+  "status": "Success",
+  "updated_dttm": "2024-09-04T13:40:17.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mssql_ec2_ST",
+          "object_name": "SalesTaxRate",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "bulk_SalesTaxRate",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_ec2_ST",
+          "object_name": "EmailAddress",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "bulk_EmailAddress",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_ec2_ST",
+          "object_name": "CountryRegion",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "bulk_CountryRegion",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "3",
+          "connection_name": "mssql_ec2_ST",
+          "object_name": "Employee",
+          "object_type": "Table",
+          "schema_name": "dbo",
+          "database_name": "AdventureWorks2022",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "bulk_Employee",
+          "connection_name": "postgres_tr",
+          "primary_key": "",
+          "schema_name": "demo",
+          "audit_fields": "NO",
+          "database_name": "postgres",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
