@@ -1,0 +1,139 @@
+{
+  "login_id": "Pavan",
+  "id": 931,
+  "project_name": "Success_Tra",
+  "pipeline_name": "Bulk_ing",
+  "project_id": 87,
+  "pipeline_id": 245,
+  "task_name": "bulk_4_mssql",
+  "task_description": "-----",
+  "task_type": "Bulk Ingestion",
+  "task_sequence": "0",
+  "last_run_id": "01b0d630-ea4d-436a-8bec-f231d64f92ed",
+  "status": "Running",
+  "updated_dttm": "2024-09-04T13:40:17.000Z",
+  "source": "DB",
+  "target": "DB",
+  "is_active": "Y",
+  "created_by": "Pavan",
+  "updated_by": "Pavan",
+  "chunk_size": 10000,
+  "source_type": "DB",
+  "target_type": "DB",
+  "job_execution": "Pandas",
+  "restartability": "normal",
+  "task": {
+    "details": [
+      {
+        "subtask": "1",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_sys",
+          "object_name": "Beverages_filecsv",
+          "object_type": "Table",
+          "schema_name": "sys",
+          "database_name": "sys",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "Beverages_filecsv",
+          "connection_name": "mssql_ec2_ST",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "AdventureWorks2022",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "2",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_sys",
+          "object_name": "E2E_01",
+          "object_type": "Table",
+          "schema_name": "sys",
+          "database_name": "sys",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "E2E_01",
+          "connection_name": "mssql_ec2_ST",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "AdventureWorks2022",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "3",
+        "source": {
+          "task_group": "0",
+          "connection_name": "mysql_sys",
+          "object_name": "TC001",
+          "object_type": "Table",
+          "schema_name": "sys",
+          "database_name": "sys",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "TC001",
+          "connection_name": "mssql_ec2_ST",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "AdventureWorks2022",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "4",
+        "source": {
+          "task_group": "1",
+          "connection_name": "mysql_sys",
+          "object_name": "agg_sales",
+          "object_type": "Table",
+          "schema_name": "sys",
+          "database_name": "sys",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "agg_sales",
+          "connection_name": "mssql_ec2_ST",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "AdventureWorks2022",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      },
+      {
+        "subtask": "5",
+        "source": {
+          "task_group": "2",
+          "connection_name": "mysql_sys",
+          "object_name": "databook_details",
+          "object_type": "Table",
+          "schema_name": "sys",
+          "database_name": "sys",
+          "extraction_type": "Full",
+          "extraction_criteria": ""
+        },
+        "target": {
+          "object_name": "databook_details",
+          "connection_name": "mssql_ec2_ST",
+          "primary_key": "",
+          "schema_name": "dbo",
+          "audit_fields": "NO",
+          "database_name": "AdventureWorks2022",
+          "action_on_table": "CREATE IF NOT EXIST"
+        }
+      }
+    ]
+  }
+}
