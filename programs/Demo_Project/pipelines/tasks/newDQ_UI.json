@@ -1,0 +1,86 @@
+{
+  "login_id": "jjones",
+  "id": 637,
+  "project_name": "Demo_Project",
+  "pipeline_name": "SFTP_S3_RDS",
+  "project_id": 74,
+  "pipeline_id": 174,
+  "task_name": "newDQ_UI",
+  "task_description": "newDQ_UI",
+  "task_type": "Data Quality",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-09-10T17:57:44.000Z",
+  "source": "MySQL",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "Madhu",
+  "updated_by": "Madhu",
+  "task": {
+    "source": {
+      "source_type": "mysql_read",
+      "query": "SELECT full_name, login_id AS Login FROM config.tbl_user",
+      "schema": "config",
+      "chunk_size": 1000,
+      "table_name": "tbl_user",
+      "alias_columns": "ID,full_name,Login,password,user_email,user_phone,is_active,role,git_user,git_auth_id,git_branch,created_by,created_dttm,updated_by,updated_dttm,resetLink",
+      "parameter_type": "MySQL",
+      "select_columns": "full_name,Login",
+      "connection_name": "conn_mysql"
+    },
+    "target": {
+      "target_type": "csv_write",
+      "file_type": "csv",
+      "parameter_type": "Local Server",
+      "connection_name": "ec2_local_new",
+      "generate_bad_record": "yes",
+      "bad_record_file_name": ";lkjh",
+      "bad_record_file_path": ";l;kjh",
+      "good_record_file_name": ".kj",
+      "good_record_file_path": "/km",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    },
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_median_to_be_between",
+        "parameters": {
+          "id": "1",
+          "column": "full_name",
+          "max_value": "aa",
+          "min_value": "11"
+        },
+        "active": "N",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 1
+      },
+      {
+        "seq_no": "2",
+        "check": "column_values_to_be_decreasing",
+        "parameters": {
+          "id": "2",
+          "column": "full_name"
+        },
+        "active": "N",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 200
+      },
+      {
+        "seq_no": "3",
+        "check": "column_values_to_be_in_set",
+        "parameters": {
+          "column": "full_name",
+          "value_set": "oo"
+        },
+        "active": "N",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 1
+      }
+    ]
+  }
+}
