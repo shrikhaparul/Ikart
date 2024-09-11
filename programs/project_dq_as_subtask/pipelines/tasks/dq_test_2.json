@@ -57,7 +57,7 @@
         "seq_no": "1",
         "check": "column_values_to_be_unique",
         "parameters": {
-          "column": "CUSTOMER_ID"
+          "column": "ORDERNUMBER"
         },
         "active": "N",
         "ignore_bad_records": "N",
@@ -68,7 +68,7 @@
         "seq_no": "2",
         "check": "column_values_to_not_be_null",
         "parameters": {
-          "column": "FIRST_NAME"
+          "column": "ORDERNUMBER"
         },
         "active": "N",
         "ignore_bad_records": "N",
