@@ -54,5 +54,18 @@
       "pre_check_enable": "N",
       "post_check_enable": "N"
     }
+    ,
+    "data_quality": [
+      {
+        "seq_no": "1",
+        "check": "column_values_to_be_unique",
+        "parameters": {
+          "column": "CUSTOMER_ID"
+        },
+        "active": "Y",
+        "ignore_bad_records": "N",
+        "threshold_bad_records": 10
+      }
+    ]
   }
 }
