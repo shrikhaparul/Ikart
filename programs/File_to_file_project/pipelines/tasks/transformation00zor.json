@@ -1,0 +1,59 @@
+{
+  "login_id": "jjones",
+  "id": 827,
+  "project_name": "File_to_file_project",
+  "pipeline_name": "Bulk_Ingestion",
+  "project_id": 73,
+  "pipeline_id": 183,
+  "task_name": "transformation00zor",
+  "task_description": "Just checking the result for the fix",
+  "task_type": "Transformation",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-09-11T13:21:55.000Z",
+  "source": "none",
+  "target": "none",
+  "is_active": "Y",
+  "created_by": "jjones",
+  "updated_by": "jjones",
+  "job_execution": "pandas",
+  "task": {
+    "flow": {
+      "Input_Input_1": "0",
+      "Output_Output_1": "Input_Input_1"
+    },
+    "details": [
+      {
+        "Input": [
+          {
+            "Input_1": {
+              "schema": "transformation",
+              "output_df": "inp_xkc",
+              "table_name": "EC_03",
+              "source_type": "MySQL",
+              "select_columns": "col_1,col_10,col_11,col_12,col_13,col_14,col_2,col_3,col_4,col_5,col_6,col_7,col_8,col_9,getdate,col_07",
+              "connection_name": "mysql_zor",
+              "transformation_name": "Input_1"
+            }
+          }
+        ]
+      },
+      {
+        "Output": [
+          {
+            "Output_1": {
+              "schema": "transformation",
+              "input_df": "inp_xkc",
+              "operation": "replace",
+              "table_name": "EC_zor",
+              "target_type": "MySQL",
+              "connection_name": "mysql_zor",
+              "transformation_name": "Output_1"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
