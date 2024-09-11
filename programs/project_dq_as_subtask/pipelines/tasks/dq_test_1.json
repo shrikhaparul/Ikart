@@ -1,0 +1,59 @@
+{
+  "login_id": "Puneeth",
+  "id": 510,
+  "project_name": "project_dq_as_subtask",
+  "pipeline_name": "test_subtasks",
+  "project_id": 65,
+  "pipeline_id": 173,
+  "task_name": "dq_test_1",
+  "task_description": "dq_test_1",
+  "task_type": "Data Quality",
+  "task_sequence": "0",
+  "last_run_id": null,
+  "status": "New",
+  "updated_dttm": "2024-08-18T14:27:12.000Z",
+  "source": "Local Server",
+  "target": "Local Server",
+  "is_active": "Y",
+  "created_by": "Puneeth",
+  "updated_by": "Puneeth",
+  "task": {
+    "source": {
+      "source_type": "csv_read",
+      "header": "Y",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "file_name": "test_file_good.csv",
+      "file_path": "/home/puneeths/sample_data/",
+      "file_type": "csv",
+      "chunk_size": 1000,
+      "decryption": null,
+      "quote_char": "\"",
+      "compression": null,
+      "escape_char": "\\",
+      "skip_footer": null,
+      "skip_header": null,
+      "alias_columns": "CUSTOMER_ID,FIRST_NAME,LAST_NAME,MOBILE,DOB,ADDRESS,EMAIL,MEMBERSHIP_STATUS",
+      "parameter_type": "Local Server",
+      "select_columns": "CUSTOMER_ID,FIRST_NAME,LAST_NAME,MOBILE,DOB,ADDRESS,EMAIL,MEMBERSHIP_STATUS",
+      "connection_name": "localserver_connection_puneeth",
+      "private_key_path": null
+    },
+    "target": {
+      "target_type": "csv_write",
+      "file_type": "csv",
+      "parameter_type": "Local Server",
+      "connection_name": "localserver_connection_puneeth",
+      "generate_bad_record": "yes",
+      "bad_record_file_name": "bad_file_%DD%%MM%%YYYY%.csv",
+      "bad_record_file_path": "/home/puneeths/sample_data/bad_files/",
+      "good_record_file_name": "good_file_%DD%%MM%%YYYY%.csv",
+      "good_record_file_path": "/home/puneeths/sample_data/good_files/",
+      "target_max_record_count": null
+    },
+    "data_quality_execution": {
+      "pre_check_enable": "N",
+      "post_check_enable": "N"
+    }
+  }
+}
