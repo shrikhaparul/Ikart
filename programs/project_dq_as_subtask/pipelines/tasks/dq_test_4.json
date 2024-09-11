@@ -54,8 +54,7 @@
         },
         "active": "N",
         "ignore_bad_records": "N",
-        "threshold_bad_records": 100,
-        "type": "pre_check"
+        "threshold_bad_records": 100
       }
     ]
   }
